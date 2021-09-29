@@ -12,13 +12,15 @@ export default function HomepageHero() {
 	return (
 		<>
 			<div className="homepage-hero">
-				<StaticImage
-					src="../../images/hero-background-2.jpg"
-					alt="Vevol Media - Shopify Partners"
-					placeholder="dominantColor"
-					className="homepage-hero__bg-image"
-					quality={100}
-				/>
+				<div className="homepage-hero__bg-image" >
+					<StaticImage
+						src="../../images/hero-background-2.jpg"
+						alt="Vevol Media - Shopify Partners"
+						placeholder="dominantColor"
+						className="homepage-hero__bg-image"
+						quality={100}
+					/>
+				</div>
 				<Container>
 					<div className="homepage-hero__content">
 						<Fade top>
