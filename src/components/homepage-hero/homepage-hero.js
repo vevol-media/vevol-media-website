@@ -17,7 +17,6 @@ export default function HomepageHero() {
 						src="../../images/hero-background-2.jpg"
 						alt="Vevol Media - Shopify Partners"
 						placeholder="dominantColor"
-						className="homepage-hero__bg-image"
 						quality={100}
 					/>
 				</div>
