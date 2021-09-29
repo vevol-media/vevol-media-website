@@ -7,7 +7,6 @@ const FaqPage = () => {
         <Layout>
             <FaqSection/>
         </Layout>
-     
     )
 }
 export default FaqPage
