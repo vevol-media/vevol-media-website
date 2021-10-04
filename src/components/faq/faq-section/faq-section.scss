@@ -1,3 +1,6 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
 section.faq {
     height: 100vh;
     padding: 130px 0 100px;
@@ -5,5 +8,9 @@ section.faq {
     .container {
         display: flex;
         justify-content: space-between;
+
+        @include screen-small {
+            flex-direction: column;
+        }
     }
 }
