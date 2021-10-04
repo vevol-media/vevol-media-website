@@ -1,0 +1,52 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.form {
+    width: 45%;
+    background-color: $white;
+    border-radius: 20px;
+    padding: 2rem;
+
+    .form__title {
+        text-align: center;
+    }
+
+    .form__row {
+        label {
+            display: block;
+            padding: 20px 0px;
+        }
+
+        input {
+            width: 100%;
+            border: 1px solid $gray;
+            padding: 10px;
+            background-color: $graylight;
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 6rem;
+            border: 1px solid $gray;
+            background-color: $graylight;
+            border-radius: 5px;
+        }
+    }
+
+    .form__submit {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        border: 1px solid $gray;
+        background-color: $graylight;
+        color: $black;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $purple;
+            color: $white;
+        }
+    }
+}
