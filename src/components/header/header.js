@@ -49,7 +49,7 @@ export default function Header() {
 					<Link to="/">Services</Link>
 					<Link to="/">Portfolio</Link>
 					<Link to="/">About Us</Link>
-					<Link to="/">FAQ</Link>
+					<Link to="/faq">FAQ</Link>
 					<Link to="/">Case Studies</Link>
 					<Link to="/">Contact Us</Link>
 					<Link to="/">Strategic Partnerships</Link>
