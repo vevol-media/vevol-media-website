@@ -4,10 +4,10 @@ import HomepageHero from "../components/homepage-hero/homepage-hero";
 import HomepageServices from "../components/homepage-services/homepage-services";
 
 export default function Homepage() {
-  return (
-    <Layout>
-      <HomepageHero />
-      <HomepageServices />
-    </Layout>
-  );
+    return (
+        <Layout>
+            <HomepageHero />
+            <HomepageServices />
+        </Layout>
+    );
 }

@@ -2,20 +2,20 @@
 @import "/src/styles/mixins";
 
 .question {
-  margin: 20px 0px;
+    margin: 20px 0px;
 
-  .question__heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    color: $purple;
-    background-color: $white;
-    cursor: pointer;
-  }
+    .question__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        color: $purple;
+        background-color: $white;
+        cursor: pointer;
+    }
 
-  .question__text {
-    padding: 10px 20px;
-    color: $white;
-  }
+    .question__text {
+        padding: 10px 20px;
+        color: $white;
+    }
 }

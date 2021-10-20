@@ -5,22 +5,24 @@ import "./faq-questions.scss";
 import { Title } from "bloomer";
 
 const FaqQuestions = () => {
-  const [questions, setQuestions] = useState([]);
+    const [questions, setQuestions] = useState([]);
 
-  useEffect(() => {
-    setQuestions(generalQuestions);
-  }, []);
+    useEffect(() => {
+        setQuestions(generalQuestions);
+    }, []);
 
-  return (
-    <div className="faq-list">
-      <Title className="faq-list__heading">Frequent asked questions</Title>
-      <div className="faq-list__block">
-        {questions.map((question) => {
-          return <FaqAcordion key={question.id} {...question} />;
-        })}
-      </div>
-    </div>
-  );
+    return (
+        <div className="faq-list">
+            <Title className="faq-list__heading">
+                Frequent asked questions
+            </Title>
+            <div className="faq-list__block">
+                {questions.map((question) => {
+                    return <FaqAcordion key={question.id} {...question} />;
+                })}
+            </div>
+        </div>
+    );
 };
 
 export default FaqQuestions;

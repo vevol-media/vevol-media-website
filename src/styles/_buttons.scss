@@ -1,33 +1,33 @@
 .vm-button {
-  display: inline-block;
-  text-align: center;
-  padding: 15px 20px;
-  font-weight: bold;
-  transition: 0.3s ease all;
-  text-transform: capitalize;
-  font-size: 1em;
+    display: inline-block;
+    text-align: center;
+    padding: 15px 20px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+    text-transform: capitalize;
+    font-size: 1em;
 
-  &.vm-button--yellow {
-    background: $yellow;
-    color: $purple;
+    &.vm-button--yellow {
+        background: $yellow;
+        color: $purple;
 
-    &:hover {
-      background: $pink;
-      color: $white;
+        &:hover {
+            background: $pink;
+            color: $white;
+        }
     }
-  }
 
-  &.vm-button--transparent-white {
-    border: 1px solid $white;
+    &.vm-button--transparent-white {
+        border: 1px solid $white;
 
-    &:hover {
-      background: $white;
-      color: $pink;
+        &:hover {
+            background: $white;
+            color: $pink;
+        }
     }
-  }
 
-  &.vm-button--big {
-    padding: 20px 50px;
-    font-size: 1.5em;
-  }
+    &.vm-button--big {
+        padding: 20px 50px;
+        font-size: 1.5em;
+    }
 }

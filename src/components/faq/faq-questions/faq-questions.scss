@@ -2,13 +2,13 @@
 @import "/src/styles/mixins";
 
 .faq-list {
-  display: block;
+    display: block;
 
-  .faq-list__heading {
-    color: $white;
-  }
+    .faq-list__heading {
+        color: $white;
+    }
 
-  @include screen-small {
-    width: 100%;
-  }
+    @include screen-small {
+        width: 100%;
+    }
 }
