@@ -1,0 +1,14 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.faq-list {
+  display: block;
+
+  .faq-list__heading {
+    color: $white;
+  }
+
+  @include screen-small {
+    width: 100%;
+  }
+}
