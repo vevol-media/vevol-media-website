@@ -6,6 +6,7 @@
     transition: 0.3s ease all;
     text-transform: capitalize;
     font-size: 1em;
+    cursor: pointer;
 
     &.vm-button--yellow {
         background: $yellow;
@@ -29,5 +30,9 @@
     &.vm-button--big {
         padding: 20px 50px;
         font-size: 1.5em;
+    }
+
+    &.vm-button--full-width {
+        width: 100%;
     }
 }

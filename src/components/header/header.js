@@ -51,7 +51,7 @@ export default function Header() {
                     <Link to="/">Services</Link>
                     <Link to="/">Portfolio</Link>
                     <Link to="/">About Us</Link>
-                    <Link to="/frequently-asked-questions">FAQ</Link>
+                    <Link to="/Frequently-asked-questions">FAQ</Link>
                     <Link to="/">Case Studies</Link>
                     <Link to="/">Contact Us</Link>
                     <Link to="/">Strategic Partnerships</Link>
