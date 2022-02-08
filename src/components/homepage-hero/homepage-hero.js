@@ -4,29 +4,24 @@ import { Link } from "gatsby";
 import "./homepage-hero.scss";
 import Fade from "react-reveal/Fade";
 import Jump from "react-reveal/Jump";
-import { StaticImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { Blob } from "react-blob";
+import ClutchWidget from "./clutch-widget";
 
 export default function HomepageHero() {
     return (
         <>
             <div className="homepage-hero">
-                <div className="homepage-hero__bg-image">
-                    <StaticImage
-                        src="../../images/hero-background-2.jpg"
-                        alt="Vevol Media - Shopify Partners"
-                        placeholder="dominantColor"
-                        quality={100}
-                    />
-                </div>
+                <Blob className="homepage-hero__blob homepage-hero__blob--top" />
+                <Blob className="homepage-hero__blob" />
                 <Container>
                     <div className="homepage-hero__content">
                         <Fade top>
                             <p className="">Europe Based</p>
                         </Fade>
                         <Fade left>
-                            <Title>Digital Agency You Can Trust</Title>
+                            <Title>Shopify Experts You Can Trust</Title>
                         </Fade>
                         <Fade left delay={400}>
                             <p>
@@ -37,10 +32,13 @@ export default function HomepageHero() {
                         <Fade bottom delay={800}>
                             <Link
                                 to="/"
-                                className="vm-button vm-button--yellow vm-button--big"
+                                className="vm-button vm-button--white vm-button--big"
                             >
                                 Let's work together
                             </Link>
+                        </Fade>
+                        <Fade bottom delay={1200}>
+                            <ClutchWidget />
                         </Fade>
                     </div>
                 </Container>

@@ -9,13 +9,28 @@
         align-items: center;
         justify-content: space-between;
         padding: 20px;
-        color: $purple;
+        color: $black;
         background-color: $white;
         cursor: pointer;
+        line-height: 1.5;
+    }
+
+    .question__icon {
+        font-size: 24px;
+        transition: 0.3s ease all;
+
+        &.question__icon--open {
+            transform: rotate(135deg);
+        }
+    }
+
+    .question__title {
+        padding-right: 20px;
     }
 
     .question__text {
         padding: 10px 20px;
         color: $white;
+        line-height: 1.5;
     }
 }

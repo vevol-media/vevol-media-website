@@ -17,7 +17,12 @@ export default function FaqAccordion({ title, text }) {
                 className="question__heading"
             >
                 <h3 className="question__title">{title}</h3>
-                <FontAwesomeIcon icon={faPlus} />
+                <FontAwesomeIcon
+                    icon={faPlus}
+                    className={`question__icon ${
+                        showInfo ? "question__icon--open" : ""
+                    }`}
+                />
             </div>
 
             {showInfo && (
