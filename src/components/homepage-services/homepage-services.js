@@ -1,95 +1,190 @@
 import React from "react";
-import { Container, Title } from "bloomer";
+import { Container, Title, Box } from "bloomer";
+import { Link } from "gatsby";
 import "./homepage-services.scss";
 import Fade from "react-reveal/Fade";
-import calendarInfo from "../../enums/general";
-import { Parallax } from "react-parallax";
+import Jump from "react-reveal/Jump";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faCode,
+    faAngleDoubleRight,
+    faShoppingCart,
+    faSearchDollar,
+    faPlus,
+} from "@fortawesome/free-solid-svg-icons";
+import { Blob } from "react-blob";
 
 export default function HomepageServices() {
-    const today = new Date();
-    const day = today.getDate();
-    const weekday = calendarInfo.DAYS[today.getDay()];
-    const month = calendarInfo.MONTHS[today.getMonth()];
-    const year = today.getFullYear();
-
     return (
-        <div
-            className="homepage-services"
-            onScroll={() => {
-                console.log("asd");
-            }}
-        >
+        <div className="homepage-services">
             <Container>
-                <div className="homepage-services__intro">
-                    <div className="intro__time">
-                        <Fade top duration={300}>
-                            <span>Today is</span>
-                        </Fade>
-                        <Fade delay={600}>
-                            <span>{weekday}</span>
-                        </Fade>
-                        <Fade bottom delay={900}>
-                            <span>{`${day} ${month} ${year}`}</span>
-                        </Fade>
-                    </div>
-                    <div className="intro__text">
-                        <Fade>
-                            <p>
-                                You already waited too long. Your business needs
-                                something new, better, bold.
-                            </p>
-                        </Fade>
-                    </div>
+                <div className="heading-block">
+                    <Title tag="h2" isSize={2}>
+                        Experience the <span>right</span> way
+                    </Title>
+                    <p>
+                        You deserve quality digital services from people who
+                        know their stuff. We do that. That's our promise.
+                    </p>
                 </div>
-            </Container>
-            <div className="homepage-services__blocks">
-                <Parallax
-                    strength={200}
-                    renderLayer={(percentage) => (
-                        <div>
-                            <p
-                                style={{
-                                    left: -200 + percentage * 150,
-                                }}
-                            >
-                                {[...Array(10)].map((x, i) => (
-                                    <span key={i}>New</span>
-                                ))}
+
+                <ul className="homepage-services__list">
+                    <Fade bottom delay={250}>
+                        <li className="hs-list__block">
+                            <FontAwesomeIcon
+                                icon={faCode}
+                                className="hs-block__icon"
+                            />
+                            <FontAwesomeIcon
+                                icon={faPlus}
+                                className="hs-block__plus"
+                            />
+                            <Title tag="h3">Web Development</Title>
+                            <p>
+                                Text text text text text text text text text
+                                text text text text text text text text text
+                                text text text text text text text text text.
                             </p>
-                            <p
-                                style={{
-                                    right: percentage * 200,
-                                }}
-                            >
-                                {[...Array(10)].map((x, i) => (
-                                    <span key={i}>Better</span>
-                                ))}
+                            <ul className="hs-block__items">
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                            </ul>
+                            <Link to="/">Interested?</Link>
+                        </li>
+                    </Fade>
+                    <Fade bottom>
+                        <li className="hs-list__block">
+                            <FontAwesomeIcon
+                                icon={faShoppingCart}
+                                className="hs-block__icon"
+                            />
+                            <FontAwesomeIcon
+                                icon={faPlus}
+                                className="hs-block__plus"
+                            />
+                            <Title tag="h3">eCommerce Solutions</Title>
+                            <p>
+                                Text text text text text text text text text
+                                text text text text text text text text text
+                                text text text text text text text text text.
                             </p>
-                            <p
-                                style={{
-                                    left: -800 + percentage * 400,
-                                }}
-                            >
-                                {[...Array(10)].map((x, i) => (
-                                    <span key={i}>Bold</span>
-                                ))}
+                            <ul className="hs-block__items">
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                            </ul>
+                            <Link to="/">Interested?</Link>
+                        </li>
+                    </Fade>
+                    <Fade bottom delay={100}>
+                        <li className="hs-list__block">
+                            <FontAwesomeIcon
+                                icon={faSearchDollar}
+                                className="hs-block__icon"
+                            />
+                            <FontAwesomeIcon
+                                icon={faPlus}
+                                className="hs-block__plus"
+                            />
+                            <Title tag="h3">SEO Services</Title>
+                            <p>
+                                Text text text text text text text text text
+                                text text text text text text text text text
+                                text text text text text text text text text.
                             </p>
-                        </div>
-                    )}
-                ></Parallax>
-            </div>
-            <Container>
-                <Title tag="h2" className="homepage-services__heading">
-                    <Fade left>
-                        <span>We</span>
+                            <ul className="hs-block__items">
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon
+                                        icon={faAngleDoubleRight}
+                                        className="hs-block-items__icon"
+                                    />
+                                    <p>Text text text text</p>
+                                </li>
+                            </ul>
+                            <Link to="/">Interested?</Link>
+                        </li>
                     </Fade>
-                    <Fade top delay={750}>
-                        <span>Can</span>
-                    </Fade>
-                    <Fade right delay={1500}>
-                        <span>Help</span>
-                    </Fade>
-                </Title>
+                </ul>
+                <Fade delay={500}>
+                    <div className="has-text-centered homepage-sevices__actions">
+                        <p>We can do much more than that</p>
+                        <Link to="/" className="vm-button vm-button--green">
+                            Find out more
+                        </Link>
+                    </div>
+                </Fade>
             </Container>
         </div>
     );

@@ -1,0 +1,36 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.cursor-container {
+    pointer-events: none;
+    position: relative;
+    mix-blend-mode: exclusion;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+
+    @include screen-small {
+        display: none;
+    }
+}
+
+.cursor-wrapper {
+    position: absolute;
+    top: -40px;
+    left: -60px;
+    width: 60px;
+    height: 60px;
+    will-change: transform;
+    contain: layout style size;
+}
+
+.cursor {
+    overflow: visible;
+}
+
+::selection {
+    color: $green;
+}

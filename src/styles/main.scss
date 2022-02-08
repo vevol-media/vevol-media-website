@@ -2,21 +2,25 @@ $fullhd: 1600px;
 
 @import "bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
 @import "reset";
 @import "variables";
 @import "mixins";
 @import "buttons";
+@import "global-components";
+@import "pages";
 
 html {
-    background: $purple;
+    background: $black;
 }
 
 body {
     font-family: $font-family;
-    font-size: 18px;
+    font-size: 16px;
+    color: $black;
 
     @include screen-small {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -32,23 +36,5 @@ h6 {
 .container {
     @include screen-medium {
         padding: 0 20px;
-    }
-}
-//Styles for faq page
-
-section.faq {
-    height: 100vh;
-    padding: 130px 0 100px;
-
-    .container {
-        display: flex;
-
-        .wrapper {
-            width: 45%;
-
-            @include screen-small {
-                width: 100%;
-            }
-        }
     }
 }

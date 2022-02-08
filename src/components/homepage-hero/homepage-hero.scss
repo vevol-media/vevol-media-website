@@ -7,23 +7,31 @@
     display: flex;
     align-items: center;
     position: relative;
+    overflow: hidden;
 
-    .homepage-hero__bg-image {
+    .homepage-hero__blob {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
+        background: $green;
+        z-index: 1;
+        width: 700px;
+        height: 700px;
+        bottom: -150px;
+        right: -250px;
 
-        .gatsby-image-wrapper {
-            width: 100%;
+        &.homepage-hero__blob--top {
+            background: #000;
+            width: 1000px;
+            height: 1000px;
+            right: auto;
+            left: -200px;
+            bottom: auto;
+            top: -400px;
         }
     }
 
     .homepage-hero__continue-icon {
         position: absolute;
+        z-index: 3;
         bottom: 20px;
         left: 50%;
         transform: translateX(-50%) scale(2);
@@ -31,8 +39,9 @@
     }
 
     .homepage-hero__content {
-        max-width: 700px;
-        margin-top: -10%;
+        max-width: 725px;
+        position: relative;
+        z-index: 2;
 
         h1,
         p {
@@ -44,6 +53,7 @@
             &:first-of-type {
                 font-size: 1.25em;
                 text-transform: uppercase;
+                color: $green;
             }
 
             &:last-of-type {
@@ -53,12 +63,17 @@
         }
 
         h1 {
-            font-size: 6em;
+            font-size: 5em;
             margin: 10px 0 20px;
+            font-weight: 900;
         }
 
         .vm-button {
             margin-top: 50px;
+        }
+
+        .clutch-widget-wrapper {
+            margin-top: 30px;
         }
     }
 
@@ -79,16 +94,45 @@
     }
 
     @include screen-small {
+        .homepage-hero__blob {
+            bottom: -500px;
+            right: -250px;
+
+            &.homepage-hero__blob--top {
+                width: 500px;
+                height: 500px;
+                left: -150px;
+                top: -300px;
+            }
+        }
+
         .homepage-hero__content {
             text-align: center;
 
             h1 {
-                font-size: 3em;
-                margin: 20px;
+                font-size: 2.3em;
+                margin: 20px 0;
+                letter-spacing: 2px;
+                font-weight: 800;
             }
 
             p:last-of-type {
                 font-size: 1.3em;
+            }
+
+            .vm-button {
+                background: $white;
+            }
+
+            .clutch-widget-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .clutch-widget {
+                    position: relative;
+                    left: 58px;
+                }
             }
         }
     }

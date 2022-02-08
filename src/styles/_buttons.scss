@@ -7,13 +7,17 @@
     text-transform: capitalize;
     font-size: 1em;
 
-    &.vm-button--yellow {
-        background: $yellow;
-        color: $purple;
+    &.vm-button--white {
+        background: $white;
+        color: $black;
+    }
+
+    &.vm-button--green {
+        background: $green;
+        color: $black;
 
         &:hover {
-            background: $pink;
-            color: $white;
+            background: $white;
         }
     }
 
@@ -22,12 +26,12 @@
 
         &:hover {
             background: $white;
-            color: $pink;
+            color: $black !important;
         }
     }
 
     &.vm-button--big {
         padding: 20px 50px;
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 }

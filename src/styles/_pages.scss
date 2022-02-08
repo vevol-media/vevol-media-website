@@ -1,0 +1,17 @@
+//Styles for faq page
+section.faq {
+    height: 100vh;
+    padding: 130px 0 100px;
+
+    .container {
+        display: flex;
+
+        .wrapper {
+            width: 45%;
+
+            @include screen-small {
+                width: 100%;
+            }
+        }
+    }
+}

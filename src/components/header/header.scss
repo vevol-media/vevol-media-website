@@ -18,7 +18,7 @@
         display: inline-block;
 
         img {
-            height: 60px;
+            height: 45px;
         }
     }
 
@@ -36,10 +36,6 @@
             padding: 15px 20px;
             display: inline-block;
             transition: 0.3s ease all;
-
-            &:hover {
-                color: $pink;
-            }
         }
     }
 
@@ -119,7 +115,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: $purple;
+    background: $black;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -144,10 +140,6 @@
         letter-spacing: 1px;
         position: relative;
         z-index: 2;
-
-        &:hover {
-            color: $pink;
-        }
 
         &.vm-button {
             display: none;
@@ -185,7 +177,7 @@
         font-weight: 600;
 
         .header-animated-words__word {
-            color: $purple;
+            color: $black;
             line-height: 0.5;
             white-space: nowrap;
 
