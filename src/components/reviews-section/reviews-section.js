@@ -6,7 +6,7 @@ import SingleReview from './single-review';
 
 export default function ReviewsSection() {
 	return (
-		<div className="reviews-section">
+		<div className="reviews-section vm-section">
 			<Container>
 				<div className="heading-block">
 					<Title tag="h2" isSize={2}>

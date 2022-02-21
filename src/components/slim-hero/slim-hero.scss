@@ -1,0 +1,44 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.slim-hero {
+    position: relative;
+    overflow: hidden;
+
+    .slim-hero__blob {
+        position: absolute;
+        fill: $green;
+        z-index: 1;
+        width: 500px;
+        height: 500px;
+        bottom: -250px;
+        right: -200px;
+        mix-blend-mode: difference;
+    }
+
+    .slim-hero__content {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include screen-small {
+        .slim-hero__blob {
+            width: 700px;
+            height: 700px;
+            bottom: -500px;
+            right: -130px;
+        }
+
+        .slim-hero__content {
+            margin-top: 60px;
+        }
+    }
+}

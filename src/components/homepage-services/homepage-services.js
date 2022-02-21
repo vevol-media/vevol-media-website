@@ -14,7 +14,7 @@ export default function HomepageServices() {
 	}, []);
 
 	return (
-		<div className="homepage-services">
+		<div className="homepage-services vm-section">
 			<Container>
 				<div className="heading-block">
 					<Title tag="h2" isSize={2}>

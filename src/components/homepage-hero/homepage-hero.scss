@@ -11,21 +11,21 @@
 
     .homepage-hero__blob {
         position: absolute;
-        background: $green;
+        fill: $green;
         z-index: 1;
-        width: 700px;
-        height: 700px;
-        bottom: -150px;
-        right: -250px;
+        width: 1000px;
+        height: 1000px;
+        bottom: -300px;
+        right: -400px;
 
         &.homepage-hero__blob--top {
-            background: #000;
-            width: 1000px;
-            height: 1000px;
+            fill: #000;
+            width: 1500px;
+            height: 1500px;
             right: auto;
-            left: -200px;
+            left: -600px;
             bottom: auto;
-            top: -400px;
+            top: -450px;
         }
     }
 
@@ -97,8 +97,8 @@
         padding-top: 30px;
 
         .homepage-hero__blob {
-            bottom: -500px;
-            right: -250px;
+            right: -325px;
+            bottom: -450px;
 
             &.homepage-hero__blob--top {
                 width: 500px;

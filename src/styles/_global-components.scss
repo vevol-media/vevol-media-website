@@ -6,11 +6,29 @@
         font-size: 1.2em;
     }
 
-    .title {
-        color: inherit;
+    @include screen-small {
+        .title {
+            font-size: 2em;
+        }
+    }
+}
 
-        span {
-            font-weight: bolder;
-        }    
+.title {
+    color: inherit;
+
+    span {
+        font-weight: bolder;
+    }
+
+    @include screen-small {
+        font-size: 1.75em;
+    }
+}
+
+.vm-section {
+    padding: 100px 0;
+
+    @include screen-small {
+        padding: 50px 0;
     }
 }
