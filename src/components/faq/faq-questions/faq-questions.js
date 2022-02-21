@@ -17,8 +17,8 @@ const FaqQuestions = () => {
                 Frequent asked questions
             </Title>
             <div className="faq-list__block">
-                {questions.map((question) => {
-                    return <FaqAcordion key={question.id} {...question} />;
+                {questions.map((question, index) => {
+                    return <FaqAcordion key={index} {...question} />;
                 })}
             </div>
         </div>

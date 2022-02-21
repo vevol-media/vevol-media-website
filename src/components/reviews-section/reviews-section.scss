@@ -1,0 +1,100 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.reviews-section {
+    padding: 100px 0;
+
+    .reviews__list {
+        padding-top: 50px;
+
+        .review {
+            padding: 20px;
+            border: 1px solid rgba($white, 0.1);
+            margin-top: 30px;
+            transition: 0.3s linear all;
+            display: flex;
+
+            .review__left {
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .review__stars {
+                    margin-bottom: 20px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid rgba($white, 0.4);
+                }
+
+                .review__name {
+                    white-space: nowrap;
+
+                    p:first-child {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .review__text {
+                padding-left: 50px;
+                font-size: 1.25em;
+                line-height: 1.5;
+                text-align: right;
+                position: relative;
+                font-weight: 300;
+
+                @include screen-medium {
+                    font-size: 1.1em;
+                }
+
+                .fa-quote-left {
+                    position: absolute;
+                    left: 50px;
+                    top: 0;
+                    font-size: 70px;
+                    opacity: 0.1;
+                }
+            }
+
+            &:hover {
+                opacity: 1 !important;
+                border-color: rgba($white, 0.4);
+            }
+        }
+
+        &:hover .review {
+            opacity: 0.3;
+        }
+
+        @include screen-small {
+            padding-top: 30px;
+
+            .review {
+                flex-direction: column-reverse;
+                margin-top: 20px;
+                align-items: center;
+
+                .review__left {
+                    margin-top: 20px;
+                    width: auto;
+                    align-items: center;
+                    text-align: center;
+
+                    .review__stars {
+                        margin-bottom: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+
+                .review__text {
+                    padding: 0;
+                    text-align: center;
+
+                    .fa-quote-left {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

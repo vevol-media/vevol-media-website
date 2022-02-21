@@ -94,6 +94,8 @@
     }
 
     @include screen-small {
+        padding-top: 30px;
+
         .homepage-hero__blob {
             bottom: -500px;
             right: -250px;
