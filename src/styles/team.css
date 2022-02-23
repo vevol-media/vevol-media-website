@@ -1,0 +1,28 @@
+.container-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 90px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #f9f8fe;
+  height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-section .container-team-section {
+  width: 50%;
+}
+
+.container-section .container-team-members {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 35px;
+  background-color: #f9f8fe;
+  width: 50%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}

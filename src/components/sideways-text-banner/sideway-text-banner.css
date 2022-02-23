@@ -1,0 +1,80 @@
+.sideway-text {
+  background: #ffffff;
+  padding: 100px 0;
+  margin-bottom: 1000px;
+}
+
+.sideway-text .sideway-text__intro {
+  margin-bottom: 20px;
+}
+
+.sideway-text .sideway-text__intro .intro__time {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.sideway-text .sideway-text__intro .intro__time span {
+  display: inline-block;
+}
+
+.sideway-text .sideway-text__intro .intro__time span:nth-child(2) {
+  color: #22ffb8;
+  margin: 0 10px;
+}
+
+.sideway-text .sideway-text__intro .intro__text {
+  text-align: center;
+  font-size: 2em;
+}
+
+.sideway-text .sideway-text__blocks {
+  margin-bottom: 100px;
+}
+
+.sideway-text .sideway-text__blocks p {
+  font-size: 10em;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  line-height: 1;
+}
+
+.sideway-text .sideway-text__blocks p span:nth-child(2n) {
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #131517;
+  color: #ffffff;
+}
+
+.sideway-text .sideway-text__blocks p:nth-child(2) span {
+  color: #22ffb8;
+}
+
+.sideway-text .sideway-text__blocks p:nth-child(2) span:nth-child(2n) {
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #22ffb8;
+  color: #ffffff;
+}
+
+.sideway-text .sideway-text__heading {
+  position: relative;
+  text-align: center;
+  font-size: 4em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.sideway-text .sideway-text__heading span {
+  display: inline-block;
+  position: relative;
+  cursor: default;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+.sideway-text .sideway-text__heading span:nth-child(2) {
+  margin: 0 10px;
+  color: #22ffb8;
+}

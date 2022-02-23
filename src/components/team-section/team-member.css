@@ -1,0 +1,11 @@
+.card-team {
+  background-color: white;
+  color: #7B82FB;
+  width: 250px;
+  height: 300px;
+}
+
+.card-team .card-img-team, .card-team .card-title, .card-team .card-media-content, .card-team .card-content, .card-team .card-subtitle {
+  background-color: white;
+  color: #7B82FB;
+}

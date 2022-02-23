@@ -1,0 +1,21 @@
+.container-section {
+    display: flex;
+    margin-top: 90px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color:#f9f8fe;
+    height: 100vh;
+    justify-content: space-between;
+
+    .container-team-section {
+        width: 50%;
+    }
+    
+    .container-team-members {
+        display: flex;
+        gap: 35px;
+        background-color:#f9f8fe;
+        width: 50%;
+        flex-wrap: wrap;
+    }  
+}
