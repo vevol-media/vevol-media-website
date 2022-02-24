@@ -1,5 +1,7 @@
 import React from "react";
-import "./team-section.scss";
+// import { Link, graphql } from 'gatsby';
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
+import "./team-member.scss";
 import {
     Title,
     CardImage,
@@ -12,11 +14,21 @@ import {
 from "bloomer";
 import "./team-member.scss";
 
-const TeamMember = () => {
+const TeamMember = ({ data }) => {
+    // const image = getImage(data.file.childImageSharp.fluid);
+    // console.log('data', getImage(data))
+
     return (
         <Card className="card-team">
             <CardImage className="card-img-team">
-                <Image isRatio='8x8'src='https://via.placeholder.com/96x96' />
+                {/* <GatsbyImage image={image} alt={avatar} /> */}
+                <StaticImage
+                    src="../../images/m.png"
+                    alt="avatar"
+                    layout="fixed"
+                    width={200}
+                    height={200}
+                   />
             </CardImage>
             <CardContent className="card-content">
                 <Media>
@@ -30,3 +42,18 @@ const TeamMember = () => {
     );
 };
 export default TeamMember;
+
+// export const query = graphql`
+//     query MyQuery {
+//         file(relativePath: {eq: "m.png"}) {
+//             childrenImageSharp {
+//             fluid {
+//                 src
+//                 srcSet
+//                 sizes
+//             }
+//           }
+//         }
+//     }
+// `
+

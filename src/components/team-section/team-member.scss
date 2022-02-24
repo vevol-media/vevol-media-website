@@ -1,11 +1,13 @@
+$backroundTeamColor: #f9f8fe;
+$textTeamColor: #7B82FB;
+
 .card-team {
-    background-color: white;
-    color: #7B82FB;
-    width: 250px;
+    background-color: $backroundTeamColor;
+    color: $textTeamColor;
     height: 300px;
-    
+
     .card-img-team, .card-title, .card-media-content, .card-content, .card-subtitle {
         background-color:white;
-        color: #7B82FB;
+        color: $textTeamColor;
     }
 }

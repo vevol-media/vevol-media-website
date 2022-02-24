@@ -1,0 +1,12 @@
+$backroundTeamColor: #f9f8fe;
+$textTeamColor: #7B82FB;
+
+.content-info-team {
+    background-color:#f9f8fe;
+    color: $textTeamColor;
+    width: 50%;
+    
+    .content-title, .content-subtitle {
+        color: $textTeamColor;
+    }
+}

@@ -1,5 +1,5 @@
 import * as React from "react";
-import TeamSection from "../components/team-section/team-section";
+import TeamInfo from "../components/team-section/team-info";
 import TeamMember from "../components/team-section/team-member";
 import Layout from "../components/layout/layout";
 import "../styles/team.scss";
@@ -8,12 +8,16 @@ const Team = () => {
     return (
        <Layout>
            <div className="container-section">
-                <TeamSection className="container-team-section"/>
+                <TeamInfo />
                 <div className="container-team-members">
-                    <TeamMember/>
-                    <TeamMember/>
-                    <TeamMember/>
-                    <TeamMember/>
+                    <div className="container-team-members-pair">
+                        <TeamMember/>
+                        <TeamMember/>
+                    </div>
+                    <div className="container-team-members-pair">
+                        <TeamMember/>
+                        <TeamMember/>
+                    </div>
                 </div>
            </div>
        </Layout>
