@@ -2,10 +2,6 @@
 @import "../../styles/mixins";
 
 .sideway-text {
-    background: $white;
-    padding: 100px 0;
-    margin-bottom: 1000px;
-
     .sideway-text__intro {
         margin-bottom: 20px;
 
@@ -44,9 +40,7 @@
 
             span {
                 &:nth-child(2n) {
-                    -webkit-text-stroke: 1px;
-                    -webkit-text-stroke-color: $black;
-                    color: $white;
+                    color: $blackZero;
                 }
             }
 
@@ -54,9 +48,7 @@
                 color: $green;
 
                 &:nth-child(2n) {
-                    -webkit-text-stroke: 1px;
-                    -webkit-text-stroke-color: $green;
-                    color: $white;
+                    color: $blackZero;
                 }
             }
         }
