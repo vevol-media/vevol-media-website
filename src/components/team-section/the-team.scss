@@ -1,0 +1,16 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.team-container {
+    // outline: 2px solid black;
+    display: flex;
+    flex: 2;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @include screen-medium {
+        flex-direction: column;
+    }
+}

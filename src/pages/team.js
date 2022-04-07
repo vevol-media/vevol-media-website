@@ -1,25 +1,16 @@
 import * as React from "react";
-import TeamInfo from "../components/team-section/team-info";
-import TeamMember from "../components/team-section/team-member";
 import Layout from "../components/layout/layout";
+import TeamInfo from "../components/team-section/team-info";
+import TheTeam from "../components/team-section/the-team";
 import "../styles/team.scss";
 
 const Team = () => {
     return (
        <Layout>
-           <div className="container-section">
+            <div className="team-wrapper">
                 <TeamInfo />
-                <div className="container-team-members">
-                    <div className="container-team-members-pair">
-                        <TeamMember/>
-                        <TeamMember/>
-                    </div>
-                    <div className="container-team-members-pair">
-                        <TeamMember/>
-                        <TeamMember/>
-                    </div>
-                </div>
-           </div>
+                <TheTeam />
+            </div>
        </Layout>
     );
 };

@@ -1,12 +1,35 @@
-$backroundTeamColor: #f9f8fe;
-$textTeamColor: #7B82FB;
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
 
-.content-info-team {
-    background-color:#f9f8fe;
-    color: $textTeamColor;
-    width: 50%;
-    
-    .content-title, .content-subtitle {
-        color: $textTeamColor;
+.info-container{
+    // outline: 2px solid blue;
+    background-color: $backroundTeam;
+    color: $textTeam;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 50px;
+
+    .info-tilte-section {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+            width: 10px;
+            height: 80%;
+            background-color: $textTeam;
+            border-radius: 15px;
+        }
+
+        .info-title, .info-subtitle {
+            color: $textTeam;
+        }
     }
+
+    p {
+        color: $black;
+        padding-left: 10px;
+    }
+    
 }
