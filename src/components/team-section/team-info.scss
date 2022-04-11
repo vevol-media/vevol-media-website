@@ -1,7 +1,8 @@
-@import "/src/styles/variables";
-@import "/src/styles/mixins";
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
-.info-container{
+
+.info-container {
     // outline: 2px solid blue;
     background-color: $backroundTeam;
     color: $textTeam;
@@ -16,8 +17,8 @@
         gap: 15px;
 
         span {
-            width: 15px;
-            height: 85%;
+            width: 10px;
+            height: 12vh;
             background-color: $textTeam;
             border-radius: 15px;
         }
@@ -38,14 +39,39 @@
     }
 
     p {
-        color: $black;
         //Padding-left = info-tilte-section -> gap
         padding-left: 15px;
+        color: $black;
+    }
+
+    @include screen-general {
+        padding-bottom: 15px;
+
+        .info-tilte-section span {
+            height: 7vh;
+        }
     }
     
-    @include screen-general {
+    @include screen-medium{
+
         .info-tilte-section span {
             width: 8px;
         }
+
+        .info-titles-container .title.is-1 {
+            font-size: 2rem;
+        }
     }
+
+    @include screen-small {
+
+        .info-tilte-section span {
+            width: 5px;
+            height: 5vh;
+        }
+
+        .info-titles-container .title.is-1 {
+            font-size: 1.5rem;
+        }
+    }    
 }

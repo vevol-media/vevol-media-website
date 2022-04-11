@@ -1,10 +1,14 @@
 .card-team {
-  background-color: #f9f8fe;
+  background-color: #ffffff;
   color: #7B82FB;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .card-team .card-img-team, .card-team .card-title, .card-team .card-media-content, .card-team .card-content, .card-team .card-subtitle {
-  background-color: white;
   color: #7B82FB;
+}
+.card-team:hover {
+  box-shadow: #7B82FB 0px 2px 8px 0px;
 }

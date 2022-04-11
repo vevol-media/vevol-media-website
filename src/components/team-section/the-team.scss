@@ -1,12 +1,13 @@
-@import "/src/styles/variables";
-@import "/src/styles/mixins";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 
 .team-container {
     // outline: 2px solid black;
     display: flex;
     flex: 3;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 50px;
 
     @include screen-general {
