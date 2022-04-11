@@ -1,7 +1,8 @@
 .card-team {
   background-color: #f9f8fe;
   color: #7B82FB;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 .card-team .card-img-team, .card-team .card-title, .card-team .card-media-content, .card-team .card-content, .card-team .card-subtitle {
   background-color: white;
