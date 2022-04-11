@@ -7,7 +7,7 @@ const TeamInfo = () => {
         <Content className="info-container">
             <div className="info-tilte-section">
                 <span></span>
-                <div>
+                <div className="info-titles-container">
                     <h1 className="info-title">Company</h1>
                     <Title  className="info-subtitle" isSize={1}>Professional work team in their field</Title>
                 </div>

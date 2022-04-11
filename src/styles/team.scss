@@ -6,10 +6,10 @@
     background-color: $backroundTeam;
     display: flex;
     margin-top: 90px;
-    height: calc(100vh - 225.8px);
     padding: 50px;
     // gap: 40px;
-    // outline: 2px solid yellow;
+    // height: calc(100vh - 225.8px);
+    // outline: 2px solid red;
 
     @include screen-general {
         flex-direction: column;

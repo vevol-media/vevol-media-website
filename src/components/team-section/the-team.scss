@@ -4,13 +4,13 @@
 .team-container {
     // outline: 2px solid black;
     display: flex;
-    flex: 2;
+    flex: 3;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
+    gap: 50px;
 
-    @include screen-medium {
-        flex-direction: column;
+    @include screen-general {
+        margin-left: 15px;
     }
+
 }

@@ -4,7 +4,9 @@ $textTeamColor: #7B82FB;
 .card-team {
     background-color: $backroundTeamColor;
     color: $textTeamColor;
-    height: 300px;
+    // height: 300px;
+    display: flex;
+    flex-direction: column;
 
     .card-img-team, .card-title, .card-media-content, .card-content, .card-subtitle {
         background-color:white;

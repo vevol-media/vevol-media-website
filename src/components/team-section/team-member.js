@@ -19,7 +19,7 @@ const TeamMember = ({ data }) => {
     // console.log('data', getImage(data))
 
     return (
-        <Card className="card-team">
+        <div className="card-team">
             <CardImage className="card-img-team">
                 {/* <GatsbyImage image={image} alt={avatar} /> */}
                 <StaticImage
@@ -38,7 +38,7 @@ const TeamMember = ({ data }) => {
                     </MediaContent>
                 </Media>
             </CardContent>
-        </Card>
+        </div>
     );
 };
 export default TeamMember;
