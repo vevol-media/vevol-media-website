@@ -1,18 +1,47 @@
-@import "/src/styles/variables";
-@import "/src/styles/mixins";
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 footer {
 
-    padding: 50px 0;
     border-top: 5px solid $green;
+    padding-block: 50px;
     display: flex;
+    flex-direction: column;
 
-   .footer-column {
-       display: flex;
-       flex-direction: column;
-   }
+    .footer-content {
+        display: flex;
+        justify-content: space-evenly;
 
-   .footer-row {
-    display: flex;
+        .footer-logo {
+            width: 150px;
+        }
+
+        a {
+            color: $white;
+            margin-bottom: 5px;
+        }
+    
+       .footer-column {
+           display: flex;
+           flex-direction: column;
+       }
+    
+       .footer-row {
+            display: flex;
+    
+            a {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    .footer-copyright {
+        padding-top: 45px;
+        display: flex;
+        justify-content: center;
+
+        a {
+            color: $white;
+        }
     }
 }
