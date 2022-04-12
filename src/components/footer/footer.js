@@ -9,6 +9,7 @@ import './footer.scss';
 export default function Footer() {
 	return (
 		<footer>
+
 			<div className='footer-content'>
 				<div className='footer-logo'>
 					<StaticImage
@@ -62,7 +63,7 @@ export default function Footer() {
 			</div>
 			
 			<div className='footer-copyright'>
-				<Link to='/'>© 2022 Vevol Media | All Rights Reserved </Link>
+				<Link to='/'> © 2022 Vevol Media | All Rights Reserved </Link>
 			</div>
 			
 		</footer>
