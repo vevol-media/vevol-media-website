@@ -40,12 +40,14 @@ export default function Footer() {
 				<Link to="/">FAQ</Link>
 			</div>
 
-			<div className='footer-row'>
+			<div className='footer-column'>
 				<Title>Social</Title>
-				<a href='#'>FB</a>
-				<a href='#'>In</a>
-				<a href='#'>Tw</a>
-				<a href='#'>Yut</a>
+				<div className='footer-row'>
+					<a href='#'>FB</a>
+					<a href='#'>In</a>
+					<a href='#'>Tw</a>
+					<a href='#'>Yut</a>
+				</div>
 			</div>
 		</footer>
 	);
