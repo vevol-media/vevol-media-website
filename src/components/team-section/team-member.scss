@@ -1,22 +1,35 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-
-.card-team {
-    background-color: $white;
-    color: $textTeam;
+.team-container {
     display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    
+    flex: 3;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 50px;
 
-    .card-img-team, .card-title, .card-media-content, .card-content, .card-subtitle {
+    .card-team {
+        background-color: $white;
         color: $textTeam;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        
+    
+        .card-img-team, .card-title, .card-media-content, .card-content, .card-subtitle {
+            color: $textTeam;
+        }
+    
+        &:hover {
+            box-shadow: $textTeam 0px 2px 8px 0px;
+            // position: absolute;
+        }
     }
 
-    &:hover {
-        box-shadow: $textTeam 0px 2px 8px 0px;
-        // position: absolute;
+    @include screen-general {
+        margin-left: 15px;
     }
+
 }
+

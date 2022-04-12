@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout/layout";
 import TeamInfo from "../components/team-section/team-info";
-import TheTeam from "../components/team-section/the-team";
+import TeamMember from "../components/team-section/team-member";
 import "../styles/team.scss";
 
 const Team = () => {
@@ -9,7 +9,7 @@ const Team = () => {
        <Layout>
             <div className="team-wrapper">
                 <TeamInfo />
-                <TheTeam />
+                <TeamMember />
             </div>
        </Layout>
     );
