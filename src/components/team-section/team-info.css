@@ -1,9 +1,7 @@
 .info-container {
   background-color: #ffffff;
-  color: #7B82FB;
   display: flex;
   flex-direction: column;
-  flex: 2;
   gap: 50px;
 }
 .info-container .info-tilte-section {

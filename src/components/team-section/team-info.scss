@@ -4,11 +4,10 @@
 
 .info-container {
     // outline: 2px solid rgb(129, 129, 150);
+    // color: $textTeam;
     background-color: $white;
-    color: $textTeam;
     display: flex;
     flex-direction: column;
-    flex: 2;
     gap: 50px;
 
     .info-tilte-section {
@@ -34,27 +33,4 @@
         padding-left: 15px;
         color: $black;
     }
-
-    // @include screen-general {
-    //     padding-bottom: 15px;
-
-    //     .info-tilte-section .title.is-1 {
-    //         font-size: 2.5rem;
-    //     }
-
-    // }
-    
-    // @include screen-medium{
-
-    //     .info-tilte-section .title.is-1 {
-    //         font-size: 2rem;
-    //     }
-    // }
-
-    // @include screen-small {
-
-    //     .info-tilte-section .title.is-1 {
-    //         font-size: 1.5rem;
-    //     }
-    // }    
 }

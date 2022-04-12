@@ -9,8 +9,8 @@ const Team = () => {
        <Layout>
             <div className="team-wrapper">
                 <TeamInfo />
-                <TeamMember />
             </div>
+            <TeamMember />
        </Layout>
     );
 };
