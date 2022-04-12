@@ -4,13 +4,11 @@
 .team-wrapper {
     background-color: $backroundTeam;
     display: flex;
+    flex-direction: column;
     margin-top: 90px;
     padding: 50px;
     gap: 10px;
     // height: calc(100vh - 225.8px);
     // outline: 2px solid red;
 
-    @include screen-general {
-        flex-direction: column;
-    }
 }
