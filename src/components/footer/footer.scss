@@ -2,7 +2,17 @@
 @import "/src/styles/mixins";
 
 footer {
+
     padding: 50px 0;
     border-top: 5px solid $green;
     display: flex;
+
+   .footer-column {
+       display: flex;
+       flex-direction: column;
+   }
+
+   .footer-row {
+    display: flex;
+    }
 }
