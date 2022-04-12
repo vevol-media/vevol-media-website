@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "gatsby";
 import { Container, Title } from 'bloomer';
 import './footer.scss';
 
