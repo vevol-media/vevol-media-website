@@ -1,5 +1,5 @@
 import React from "react";
-import { teamList } from "./team-list"
+import { teamList } from "../../enums/team-list"
 // import { Link, graphql } from 'gatsby';
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import "./team-member.scss";

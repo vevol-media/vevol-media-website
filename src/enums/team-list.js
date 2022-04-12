@@ -1,31 +1,34 @@
-const dev1 = "../../images/man-avatar.png";
-const dev2 = "../../images/female-avatar.png";
-const dev3 = "../../images/m.png";
-
-export const teamList = [
+const teamList = [
 	{
-		name: 'James Jn',
+		name: 'James',
+		fullName: 'James Doe',
 		photo: "../../images/man-avatar.png",
 		role: 'developer',
 	},
 	{
-		name: 'John Deb',
+		name: 'John',
+		fullName: 'John Wick',
 		photo: "../../images/man-avatar.png",
 		role: 'developer',
 	},
 	{
 		name: 'Annabelle',
+		fullName: 'Annabelle Doe',
 		photo: "../../images/female-avatar.png",
 		role: 'designer',
 	},
 	{
 		name: 'Clare',
+		fullName: 'Clare Doe',
 		photo: "../../images/female-avatar.png",
 		role: 'manager',
 	},
 	{
 		name: 'Adrian',
+		fullName: 'Adrian Doe',
 		photo: "../../images/m.png",
 		role: 'founder',
 	},
 ];
+
+export default teamList;
