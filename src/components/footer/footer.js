@@ -43,6 +43,7 @@ export default function Footer() {
 					<Link to="/">Limodify</Link>
 					<Link to="/">FAQ</Link>
 				</div>
+				
 				<div className='footer-column'>
 					<Title tag="h4" isSize={4}>Social</Title>
 					<div className='footer-row'>
