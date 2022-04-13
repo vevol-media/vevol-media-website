@@ -4,21 +4,20 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Container, Title } from 'bloomer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import logo from "../../images/logo-vevol-media.svg";
 import './footer.scss';
 
 export default function Footer() {
+	const year = new Date().getFullYear();
+
 	return (
 		<footer>
 			<div className="footer-content">
-				<div className="footer-logo">
-					<StaticImage
-						src="../../images/logo-vevol-media.png"
-						alt="avatar"
-						layout="fullWidth"
-						width={100}
-						height={10}
-					/>
-				</div>
+
+				<Link to="/" className="footer-logo">
+                    <img src={logo} alt="Vevol Media Logo" />
+                </Link>
+
 
 				<div className="footer-column">
 					<Title tag="h4" isSize={4}>
@@ -83,7 +82,7 @@ export default function Footer() {
 			</div>
 
 			<div className="footer-copyright">
-				<Link to="/"> © 2022 Vevol Media | All Rights Reserved </Link>
+				<Link to="/"> © {year} Vevol Media | All Rights Reserved </Link>
 			</div>
 		</footer>
 	);
