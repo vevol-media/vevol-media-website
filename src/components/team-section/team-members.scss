@@ -7,51 +7,11 @@
     background-color: $white;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
-
-    .card-team {
-        background-color: $white;
-        display: flex;
-        flex-direction: column;
-        border-radius: 5px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        // color: $textTeam;
-        
-        .card-img-team, .card-title, .card-media-content, .card-content, .card-subtitle {
-            color: $black;
-        }
-
-        .card-img-team {
-            display: flex;
-            justify-content: center;
-        }
-    
-        &:hover {
-            box-shadow: 9px 9px 0 0 $green;
-        }
-    }
-    
-    @include screen-general {
-        flex-wrap: wrap;
-
-        .card-team {
-            flex-basis: 23%
-        }
-    }
-
-    @include screen-medium {
-        .card-team {
-            flex-basis: 31%
-        }
-    }
 
     @include screen-small {
         gap: 20px;
-
-        .card-team {
-            flex-basis: 33%
-        }
     }
-
 }
 

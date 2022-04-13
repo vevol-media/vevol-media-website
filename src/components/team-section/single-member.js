@@ -9,11 +9,12 @@ import {
     Subtitle,
     Card }
 from "bloomer";
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import "./single-member.scss";
 
 const SingleMember = ({ data }) => {
     // const nodes =  data.allFile.nodes;
-    console.log('DataSM:', data)
+    // console.log('DataSM:', data)
        
     return (
             <div className="card-team">
