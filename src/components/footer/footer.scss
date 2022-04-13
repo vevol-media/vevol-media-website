@@ -4,48 +4,20 @@
 footer {
 	border-top: 5px solid $green;
 	padding-block: 50px;
-	display: flex;
-	flex-direction: column;
+	// display: flex;
+	// flex-direction: column;
 
-	.footer-content {
-		display: flex;
-		justify-content: space-evenly;
+	a {
+		color: $white;
+		margin-bottom: 5px;
 
-		.footer-logo {
-			width: 150px;
+		&:hover {
+			color: $green;
 		}
+	}
 
-		a {
-			color: $white;
-			margin-bottom: 5px;
-		}
-
-		.footer-column {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.footer-row {
-			display: flex;
-
-			a {
-				margin-right: 15px;
-			}
-		}
-
-		@include screen-small {
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-
-			.footer-logo {
-				padding-bottom: 20px;
-			}
-
-			.footer-column {
-				padding-top: 20px;
-			}
-		}
+	.footer-logo {
+		width: 150px;
 	}
 
 	.footer-copyright {
@@ -55,18 +27,28 @@ footer {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
 
-		&::after {
-			content: '';
-			position: absolute;
-			background-color: grey;
-			width: 80%;
-			height: 1px;
-			top: 0;
+	.footer-copyright::after {
+		content: '';
+		position: absolute;
+		background-color: grey;
+		width: 80%;
+		height: 1px;
+		top: 0;
+	}
+
+	@include screen-medium {
+		.footer-logo {
+			padding-bottom: 20px;
+			margin-right: auto;
+			margin-left: auto;
 		}
 
-		a {
-			color: $white;
+		.columns {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
 		}
 	}
 }
