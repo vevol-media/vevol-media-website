@@ -1,74 +1,72 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 footer {
+	border-top: 5px solid $green;
+	padding-block: 50px;
+	display: flex;
+	flex-direction: column;
 
-    border-top: 5px solid $green;
-    padding-block: 50px;
-    display: flex;
-    flex-direction: column;
+	.footer-content {
+		display: flex;
+		justify-content: space-evenly;
 
-    .footer-content {
-        display: flex;
-        justify-content: space-evenly;
+		.footer-logo {
+			width: 150px;
+		}
 
-        .footer-logo {
-            width: 150px;
-        }
+		a {
+			color: $white;
+			margin-bottom: 5px;
+		}
 
-        a {
-            color: $white;
-            margin-bottom: 5px;
-        }
-    
-       .footer-column {
-           display: flex;
-           flex-direction: column;
-       }
-    
-       .footer-row {
-            display: flex;
-    
-            a {
-                margin-right: 15px;
-            }
-        }
+		.footer-column {
+			display: flex;
+			flex-direction: column;
+		}
 
-        @include screen-small {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+		.footer-row {
+			display: flex;
 
-            .footer-logo {
-                padding-bottom: 20px;
-            }
+			a {
+				margin-right: 15px;
+			}
+		}
 
-            .footer-column {
-                padding-top: 20px;
-            }
-        }
-    }
+		@include screen-small {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
 
-    .footer-copyright {
-        position: relative;
-        padding-top: 30px;
-        margin-top: 80px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+			.footer-logo {
+				padding-bottom: 20px;
+			}
 
-        &::after {
-            content: "";
-            position: absolute;
-            background-color: grey;
-            width: 80%;
-            height: 1px;
-            top: 0;
-          }
+			.footer-column {
+				padding-top: 20px;
+			}
+		}
+	}
 
-        a {
-            color: $white;
-        }
+	.footer-copyright {
+		position: relative;
+		padding-top: 30px;
+		margin-top: 80px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
-    }
+		&::after {
+			content: '';
+			position: absolute;
+			background-color: grey;
+			width: 80%;
+			height: 1px;
+			top: 0;
+		}
+
+		a {
+			color: $white;
+		}
+	}
 }
