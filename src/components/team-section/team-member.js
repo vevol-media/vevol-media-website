@@ -1,6 +1,6 @@
 import React from "react";
 import teamList from "../../enums/team-list"
-// import { Link, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import "./team-member.scss";
 import {
@@ -17,15 +17,14 @@ import "./team-member.scss";
 import { v4 as uuid } from 'uuid';
 
 const TeamMember = ({ data }) => {
-    // const image = getImage(data.file.childImageSharp.fluid);
-    // console.log('img:', image)
+    const nodes =  data.allFile.nodes;
+    console.log('Data:', nodes)
     return (
         <div className="team-container">
           {teamList.map((team, index) => {
         return (
             <div className="card-team" key={uuid()}>
                 <CardImage className="card-img-team">
-                    {/* <GatsbyImage image={image} alt={avatar} /> */}
                     <StaticImage
                         src="../../images/m.png"
                         alt="avatar"
@@ -52,18 +51,3 @@ const TeamMember = ({ data }) => {
   
 };
 export default TeamMember;
-
-// export const query = graphql`
-//     query MyQuery {
-//         file(relativePath: {eq: "m.png"}) {
-//             childrenImageSharp {
-//             fluid {
-//                 src
-//                 srcSet
-//                 sizes
-//             }
-//           }
-//         }
-//     }
-// `
-
