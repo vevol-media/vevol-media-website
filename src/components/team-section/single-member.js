@@ -18,8 +18,9 @@ const SingleMember = ({role, fullName, img}) => {
                     <GatsbyImage
                         image={img}
                         alt='member'
-                        layout="fullWidth"
-                        // width={200}
+                        // layout="fullWidth"
+                        layout="fixed"
+                        width={200}
                         // height={200}
                         
                         />
