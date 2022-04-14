@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import "./header.scss";
-import logo from "../../images/logo-vevol-media.png";
+import logo from "../../images/logo-vevol-media.svg";
 import iconClose from "../../images/icon-close.svg";
 import MenuAnimation from "./menu-animation";
 import { Container } from "bloomer";

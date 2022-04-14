@@ -2,37 +2,33 @@ import React from "react";
 import {
     Title,
     CardImage,
-    Image,
     CardContent,
     Media,
     MediaContent,
-    Subtitle,
-    Card }
+    Subtitle}
 from "bloomer";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import "./single-member.scss";
 
-const SingleMember = ({ data }) => {
-    // const nodes =  data.allFile.nodes;
-    // console.log('DataSM:', data)
+const SingleMember = ({role, fullName, img}) => {
        
     return (
             <div className="card-team">
                 <CardImage className="card-img-team">
-                    <StaticImage
-                        src="../../images/m.png"
-                        alt="avatar"
-                        layout="fixed"
-                        width={200}
-                        height={200}
+                    <GatsbyImage
+                        image={img}
+                        alt='member'
+                        layout="fullWidth"
+                        // width={200}
+                        // height={200}
                         
                         />
                 </CardImage>
                 <CardContent className="card-content">
                     <Media>
                         <MediaContent className="card-media-content">
-                            <Title className="card-title" hasTextAlign={'centered'} isSize={4}>T name</Title>
-                            <Subtitle className="card-subtitle" hasTextAlign={'centered'} isSize={6}> T role</Subtitle>
+                            <Title className="card-title" hasTextAlign={'centered'} isSize={4}>{fullName}</Title>
+                            <Subtitle className="card-subtitle" hasTextAlign={'centered'} isSize={6}> {role}</Subtitle>
                         </MediaContent>
                     </Media>
                 </CardContent>

@@ -1,32 +1,32 @@
 const teamList = [
 	{
+		id: 'member1',
 		name: 'James',
 		fullName: 'James Doe',
-		photo: "../../images/man-avatar.png",
-		role: 'developer',
-	},
-	{
-		name: 'John',
-		fullName: 'John Wick',
-		photo: "../../images/man-avatar.png",
-		role: 'developer',
-	},
-	{
-		name: 'Annabelle',
-		fullName: 'Annabelle Doe',
-		photo: "../../images/female-avatar.png",
-		role: 'designer',
-	},
-	{
-		name: 'Clare',
-		fullName: 'Clare Doe',
-		photo: "../../images/female-avatar.png",
 		role: 'manager',
 	},
 	{
+		id: 'member2',
+		name: 'John',
+		fullName: 'Liza Doe',
+		role: 'developer',
+	},
+	{
+		id: 'member3',
+		name: 'Annabelle',
+		fullName: 'Annabelle Doe',
+		role: 'designer',
+	},
+	{
+		id: 'member4',
+		name: 'Clare',
+		fullName: 'John Wick',
+		role: 'dev',
+	},
+	{
+		id: 'member5',
 		name: 'Adrian',
-		fullName: 'Adrian Doe',
-		photo: "../../images/m.png",
+		fullName: 'Adrian Duta',
 		role: 'founder',
 	},
 ];

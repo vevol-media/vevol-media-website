@@ -1,14 +1,28 @@
 import React from "react";
 import SingleMember from "./single-member";
 import teamList from "../../enums/team-list"
-import { useStaticQuery, graphql } from 'gatsby';
-// import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import "./team-members.scss";
 
 const TeamMembers = ({ data }) => {
     const nodes =  data.allFile.nodes;
-    console.log('DataTTT:', nodes)
-    const singleMember = nodes.map((m, index) =>  <SingleMember data={data} key={index}/>)
+    const singleMember = nodes.map((info, index) => {
+        const idMember = info.name; 
+        let fullName;
+        let role;
+        let img = getImage(info.childImageSharp.gatsbyImageData);
+
+        teamList.forEach(i => {
+            if (i.id === idMember) {
+                fullName = i.fullName;
+                role = i.role;
+            }
+        } );
+            
+        return (
+            <SingleMember role={role} fullName={fullName} img={img}  key={index}/>
+        );
+    });
     
     return (
         <div className="team-container">
