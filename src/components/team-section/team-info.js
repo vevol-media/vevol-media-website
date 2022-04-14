@@ -4,8 +4,8 @@ import { Title, Content } from 'bloomer';
 
 const TeamInfo = () => {
 	return (
-		<Content className="info-container">
-			<div className="heading-block">
+		<Content >
+			<div className="heading-block heading-block--reverse heading-block--black">
 				<p>Vevol Media</p>
 				<Title tag="h2" isSize={2}>
 					Professional work team in their field
@@ -16,7 +16,7 @@ const TeamInfo = () => {
 				have suffered alteration in some form, by injected humour, or randomised words which
 				don't look even slightly believable. If you are going to use a passage of Lorem
 				Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
-				text.{' '}
+				text.
 			</p>
 		</Content>
 	);

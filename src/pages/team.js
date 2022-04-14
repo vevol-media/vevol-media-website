@@ -5,7 +5,6 @@ import TeamMembers from '../components/team-section/team-members';
 import SlimHero from '../components/slim-hero/slim-hero';
 import { Container } from 'bloomer';
 import { graphql } from 'gatsby';
-import '../styles/team.scss';
 
 const Team = ({ data }) => {
 	return (
@@ -15,11 +14,11 @@ const Team = ({ data }) => {
 				subheading="A wide range of talent ."
 			/>
 
-			<div className="team-wrapper">
+			<div className="vm-section vm-section--white">
 				<Container >
 					<TeamInfo />
+					<TeamMembers data={data} />
 				</Container>
-				<TeamMembers data={data} />
 			</div>
 		</Layout>
 	);

@@ -1,15 +1,13 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
-@import '../../styles/global-components';
 
 .card-team {
 	background-color: $white;
-	flex-basis: 18%;
-	width: calc(20% - 80px);
+	width: calc(20% - 32px);
+	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	border: 1px solid $black;
 
 	.card-img-team,
 	.card-title,
@@ -25,22 +23,14 @@
 	}
 
 	@include screen-general {
-		flex-basis: 23%;
-		width: calc(25% - 60px);
-	}
-
-	@include screen-medium {
-		flex-basis: 31%;
-		width: calc(33.33% - 40px);
+		width: calc(33.33% - 26.66px);
 	}
 
 	@include screen-small {
-		flex-basis: 45%;
 		width: calc(50% - 20px);
 	}
 
 	@include screen-mobile {
-		flex-basis: 90%;
 		width: 100%;
 	}
 }

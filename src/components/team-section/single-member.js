@@ -5,7 +5,7 @@ import './single-member.scss';
 
 const SingleMember = ({ role, fullName, img }) => {
 	return (
-		<div className="card-team">
+		<div className="card-team hs-list__block--shadow">
 			<CardImage className="card-img-team">
 				<GatsbyImage
 					image={img}
@@ -20,7 +20,6 @@ const SingleMember = ({ role, fullName, img }) => {
 							{fullName}
 						</Title>
 						<Subtitle className="card-subtitle" hasTextAlign={'centered'} isSize={6}>
-							{' '}
 							{role}
 						</Subtitle>
 					</MediaContent>

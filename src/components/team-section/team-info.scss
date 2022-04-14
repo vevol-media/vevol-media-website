@@ -1,15 +1,8 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
-@import '../../styles/global-components';
 
-.info-container {
+.info-details {
 	color: $black;
-
-	h2 {
-		margin-top: 0 !important;
-	}
-
-	.info-details {
-		padding-top: 50px;
-	}
+	padding-top: 24px;
 }
+

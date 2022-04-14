@@ -1,33 +1,33 @@
 const teamList = [
 	{
 		id: 'member1',
-		name: 'James',
-		fullName: 'James Doe',
-		role: 'manager',
+		name: 'Alexia',
+		fullName: 'Alexia Chirita',
+		role: 'Account Manager/ eCommerce Specialist ',
 	},
 	{
 		id: 'member2',
-		name: 'John',
-		fullName: 'Liza Doe',
-		role: 'developer',
+		name: 'Bogdan',
+		fullName: 'Bogdan Dogaru',
+		role: 'Head of Development',
 	},
 	{
 		id: 'member3',
-		name: 'Annabelle',
-		fullName: 'Annabelle Doe',
-		role: 'designer',
+		name: 'Dan',
+		fullName: 'Dan Nistor',
+		role: 'Head of Business Development',
 	},
 	{
 		id: 'member4',
-		name: 'Clare',
-		fullName: 'John Wick',
-		role: 'dev',
+		name: 'Laura',
+		fullName: 'Laura Hirtop',
+		role: 'Front End Developer',
 	},
 	{
 		id: 'member5',
-		name: 'Adrian',
-		fullName: 'Adrian Duta',
-		role: 'founder',
+		name: 'Laurentiu',
+		fullName: 'Laurentiu Popa ',
+		role: 'Front End Developer',
 	},
 ];
 
