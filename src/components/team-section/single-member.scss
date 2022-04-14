@@ -4,7 +4,8 @@
 
 .card-team {
 	background-color: $white;
-	flex-basis: 17%;
+	flex-basis: 18%;
+	width: calc(20% - 80px);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -22,22 +23,24 @@
 		display: flex;
 		justify-content: center;
 	}
-}
 
-@include screen-general {
-	.card-team {
+	@include screen-general {
 		flex-basis: 23%;
+		width: calc(25% - 60px);
 	}
-}
 
-@include screen-medium {
-	.card-team {
+	@include screen-medium {
 		flex-basis: 31%;
+		width: calc(33.33% - 40px);
 	}
-}
 
-@include screen-small {
-	.card-team {
-		flex-basis: 33%;
+	@include screen-small {
+		flex-basis: 45%;
+		width: calc(50% - 20px);
+	}
+
+	@include screen-mobile {
+		flex-basis: 90%;
+		width: 100%;
 	}
 }

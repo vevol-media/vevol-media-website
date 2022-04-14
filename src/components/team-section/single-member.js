@@ -10,8 +10,7 @@ const SingleMember = ({ role, fullName, img }) => {
 				<GatsbyImage
 					image={img}
 					alt="vevol media member"
-					layout="fixed"
-					width={200}
+					layout="fullWidth"
 				/>
 			</CardImage>
 			<CardContent className="card-content">

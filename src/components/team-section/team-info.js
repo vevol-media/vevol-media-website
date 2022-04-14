@@ -5,7 +5,7 @@ import { Title, Content } from 'bloomer';
 const TeamInfo = () => {
 	return (
 		<Content className="info-container">
-			<div className="info-tilte-section">
+			<div className="heading-block">
 				<p>Vevol Media</p>
 				<Title tag="h2" isSize={2}>
 					Professional work team in their field
