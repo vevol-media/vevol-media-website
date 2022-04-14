@@ -19,7 +19,7 @@ export default Team;
 
 export const data = graphql`
 	query MembersData {
-		allFile(filter: {relativeDirectory: {eq: "team"}}) {
+		allFile(filter: { relativeDirectory: { eq: "team" } }) {
 			nodes {
 				name
 				childImageSharp {

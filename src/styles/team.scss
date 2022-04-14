@@ -1,11 +1,11 @@
-@import "/src/styles/variables";
-@import "/src/styles/mixins";
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
 
 .team-wrapper {
-    background-color: $white;
-    display: flex;
-    flex-direction: column;
-    margin-top: 90px;
-    padding: 50px;
-    gap: 10px;
+	background-color: $white;
+	display: flex;
+	flex-direction: column;
+	margin-top: 90px;
+	padding: 50px;
+	gap: 10px;
 }
