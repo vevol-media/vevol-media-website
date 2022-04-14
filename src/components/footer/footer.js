@@ -4,7 +4,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Column, Title, Columns } from 'bloomer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-// import logo from "../../images/logo-vevol-media.svg";
 import './footer.scss';
 
 export default function Footer() {
@@ -24,7 +23,10 @@ export default function Footer() {
 					</div>
 				</Column>
 
-				<Column isSize={{desktop: 3, widescreen: 2}} className="is-flex is-flex-direction-column">
+				<Column
+					isSize={{ desktop: 3, widescreen: 2 }}
+					className="is-flex is-flex-direction-column"
+				>
 					<Title tag="h4" isSize={4}>
 						Services
 					</Title>
@@ -59,7 +61,7 @@ export default function Footer() {
 					</Title>
 					<a
 						className="mr-5"
-						href="https://m.facebook.com/vevolmediaweb"
+						href="https://facebook.com/vevolmediaweb"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -75,14 +77,11 @@ export default function Footer() {
 					</a>
 					<a
 						className="mr-5"
-						href="https://mobile.twitter.com/vevolmedia"
+						href="https://twitter.com/vevolmedia"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<FontAwesomeIcon icon={faTwitter} />
-					</a>
-					<a href="#" target="_blank" rel="noopener noreferrer">
-						<FontAwesomeIcon icon={faYoutube} />
 					</a>
 				</Column>
 			</Columns>
