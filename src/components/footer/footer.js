@@ -16,6 +16,7 @@ export default function Footer() {
 				<Column isSize={{ desktop: 2 }}>
 					<div className="footer-logo">
 						<StaticImage
+							//src= does not support variables, only relative path and external link src
 							src="../../images/logo-vevol-media.svg"
 							alt="avatar"
 							layout="fullWidth"
