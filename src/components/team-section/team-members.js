@@ -6,16 +6,16 @@ import "./team-members.scss";
 
 const TeamMembers = ({ data }) => {
     const nodes =  data.allFile.nodes;
-    const singleMember = nodes.map((info, index) => {
-        const idMember = info.name; 
+    const singleMember = nodes.map((image, index) => {
+        const idMember = image.name; 
         let fullName;
         let role;
-        let img = getImage(info.childImageSharp.gatsbyImageData);
+        let img = getImage(image.childImageSharp.gatsbyImageData);
 
-        teamList.forEach(i => {
-            if (i.id === idMember) {
-                fullName = i.fullName;
-                role = i.role;
+        teamList.forEach(info => {
+            if (info.id === idMember) {
+                fullName = info.fullName;
+                role = info.role;
             }
         } );
             
