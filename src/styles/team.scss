@@ -1,5 +1,6 @@
 @import '/src/styles/variables';
 @import '/src/styles/mixins';
+@import "global-components";
 
 .team-wrapper {
 	background-color: $white;

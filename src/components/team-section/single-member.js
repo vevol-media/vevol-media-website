@@ -9,11 +9,9 @@ const SingleMember = ({ role, fullName, img }) => {
 			<CardImage className="card-img-team">
 				<GatsbyImage
 					image={img}
-					alt="member"
-					// layout="fullWidth"
+					alt="vevol media member"
 					layout="fixed"
 					width={200}
-					// height={200}
 				/>
 			</CardImage>
 			<CardContent className="card-content">

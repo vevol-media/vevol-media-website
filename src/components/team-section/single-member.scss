@@ -1,5 +1,6 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
+@import '../../styles/global-components';
 
 .card-team {
 	background-color: $white;
@@ -7,8 +8,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	border-radius: 5px;
-	box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+	border: 1px solid $black;
 
 	.card-img-team,
 	.card-title,
@@ -21,10 +21,6 @@
 	.card-img-team {
 		display: flex;
 		justify-content: center;
-	}
-
-	&:hover {
-		box-shadow: 9px 9px 0 0 $green;
 	}
 }
 
