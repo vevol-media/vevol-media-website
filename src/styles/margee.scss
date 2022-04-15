@@ -1,0 +1,11 @@
+@import "variables";
+@import "mixins";
+
+
+.page-intro-img {
+    height: 400px;
+    
+    .intro-img {
+        height: 100%;
+    }
+}
