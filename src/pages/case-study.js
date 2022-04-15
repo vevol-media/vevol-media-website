@@ -6,21 +6,28 @@ import SimpleImageCarousel from '../components/case-study/simple-image-carousel'
 import InformationalContent from '../components/case-study/informational-content';
 import SlimHero from '../components/slim-hero/slim-hero';
 import { Container } from 'bloomer';
+import { StaticImage } from 'gatsby-plugin-image';
 import '../styles/case-study.scss';
+import heroBg from '../images/hero-background-2.jpg'
 
 const CaseStudy = () => {
 	return (
 		<Layout>
-			<SlimHero
+			<InfoPageIntro
+				supraheading="Banding, Email &amp; Marketing, Website Development"
 				heading="MARGEE SHOPIFY STORE"
-				subheading="Branding, Email &amp; SMS Marketing, Website Development"
+				src ={heroBg}
 			/>
 
+			<div className=' vm-section--white'>
+				<Container>
+					<InfoPageText/>
+				</Container>
+			</div>
+
 			<Container>
-				<InfoPageIntro/>
-				<InfoPageText/>
-				<SimpleImageCarousel/>
-				<InformationalContent/>
+					<SimpleImageCarousel/>
+					<InformationalContent/>
 			</Container>
 		</Layout>
 	);

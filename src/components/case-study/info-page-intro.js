@@ -1,35 +1,31 @@
-import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import { Content } from 'bloomer';
+import React from 'react';
+import { Container, Title, CardImage } from 'bloomer';
+import '../slim-hero/slim-hero.scss';
 import './info-page-intro.scss';
+import Fade from 'react-reveal/Fade';
+import { StaticImage } from 'gatsby-plugin-image';
 
-const InfoPageIntro = () => {
+export default function InfoPageIntro({supraheading, heading, src }) {
+	console.log('TST', src)
 	return (
-		<div>
-           <StaticImage
-			// src=""
-			alt="avatar"
-			layout="fullWidth"
-		   />
+		<div className="slim-hero vm-section--white">
+			<Container>
+				<div className="slim-hero__content">
+					<Fade top>
+						<p>{supraheading}</p>
+					</Fade>
+					<Fade top delay={400}>
+						<Title>{heading}</Title>
+					</Fade>
+				</div>
+			</Container>
 
-		   <Content>
-			   <div>
-				<div>
-					<h4>Services</h4>
-					<p>Text1</p>
-				</div>
-				<div>
-					<h4>Industry</h4>
-					<p>Text2</p>
-				</div>
-			   </div>
-
-			   <div>
-					<h4>Overview</h4>
-					<p>Text3</p>
-				</div>
-		   </Content>
+			<div className='page-intro-img'>
+				<img
+				src={src}
+				alt="hero backround"
+				/>
+			</div>
 		</div>
 	);
-};
-export default InfoPageIntro;
+}
