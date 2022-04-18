@@ -3,9 +3,9 @@ import './informational-content.scss';
 
 const InformationalContent = () => {
 	return (
-		<h1>
+		<div className='informational-content'>
             InformationalContent
-		</h1>
+		</div>
 	);
 };
 export default InformationalContent;

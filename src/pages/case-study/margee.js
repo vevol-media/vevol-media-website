@@ -4,6 +4,7 @@ import InfoPageIntro from '../../components/case-study/info-page-intro';
 import InfoPageText from '../../components/case-study/info-page-text';
 import SimpleImageCarousel from '../../components/case-study/simple-image-carousel';
 import InformationalContent from '../../components/case-study/informational-content';
+import ProjectsList from '../../components/projects-list/projects-list'
 import { Container } from 'bloomer';
 import { leftBarArr, pageContent } from '../../enums/margee-case-study'
 import { StaticImage } from 'gatsby-plugin-image';
@@ -35,13 +36,16 @@ const CaseStudy = () => {
 						contentTitle="Overview"
 						contentText={pageContent}
 					/>
+					
 				</Container>
 			</div>
 
 			<Container>
-				<SimpleImageCarousel />
+				{/* <SimpleImageCarousel /> */}
 				<InformationalContent />
+				<ProjectsList/>
 			</Container>
+
 		</Layout>
 	);
 };
