@@ -14,7 +14,7 @@ import '../../styles/margee.scss';
 
 const splidePhotos = graphql`
 	query CasesPhotos {
-		allFile(filter: { relativeDirectory: { eq: "projects-example" } }) {
+		allFile(filter: { relativeDirectory: { eq: "stores-sliders" } }) {
 			nodes {
 				name
 				childImageSharp {
@@ -38,7 +38,7 @@ const CaseStudy = () => {
 			<div className="page-intro-img">
 				<StaticImage
 					className="intro-img"
-					src="../../images/hero-background-2.jpg"
+					src="../../images/stores-banners/margee-banner.png"
 					layout="fullWidth"
 					alt="hero background"
 					placeholder="blurred"

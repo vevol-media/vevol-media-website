@@ -23,8 +23,24 @@ export default function ProjectsList({ data }) {
 					className="projects__list"
 					options={{
                         rewind: true,
-						perPage: 3,
+						perPage: 4,
 						gap: '1rem',
+
+						breakpoints: {
+							1140: {
+								perPage: 3,
+								wheel: false,
+							},
+							749: {
+								perPage: 2,
+								wheel: false,
+							},
+							480: {
+								perPage: 1,
+								wheel: false,
+								gap: 0,
+							},
+						},
 					}}
 				>
 					{
@@ -33,7 +49,7 @@ export default function ProjectsList({ data }) {
 								<GatsbyImage
 								image={photo.childImageSharp.gatsbyImageData}
 								alt="vevol media case study"
-								layout="fixed"
+								layout="fullWidth"
 								/>
 							</SplideSlide>
 						))

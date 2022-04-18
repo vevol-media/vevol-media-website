@@ -24,7 +24,7 @@ export default function Homepage({data}) {
 
 export const data = graphql`
 	query Photos {
-		allFile(filter: { relativeDirectory: { eq: "projects-example" } }) {
+		allFile(filter: { relativeDirectory: { eq: "stores-sliders" } }) {
 			nodes {
 				name
 				childImageSharp {
