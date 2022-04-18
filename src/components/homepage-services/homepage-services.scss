@@ -18,12 +18,15 @@
 
 .hs-list__block {
     padding: 20px;
-    border: 1px solid $black;
-    box-shadow: 9px 9px 0 0 $green;
     display: flex;
     flex-direction: column;
     position: relative;
     flex: 1;
+
+    &--shadow {
+        box-shadow: 9px 9px 0 0 $green;
+        border: 1px solid $black;
+    }
 
     .hs-block__icon {
         font-size: 40px;

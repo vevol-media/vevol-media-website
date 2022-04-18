@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.team-container {
+	background-color: $white;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}

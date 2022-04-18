@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Column, Title, Columns } from 'bloomer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './footer.scss';
 
 export default function Footer() {
