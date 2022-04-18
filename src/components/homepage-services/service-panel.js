@@ -48,7 +48,7 @@ export default function ServicePanel({
 
     return (
         <Fade bottom delay={delayTime}>
-            <li className="hs-list__block">
+            <li className="hs-list__block hs-list__block--shadow">
                 {iconSwitch(icon)}
                 <FontAwesomeIcon icon={faPlus} className="hs-block__plus" />
                 <Title tag="h3">{heading}</Title>

@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.card-team {
+	background-color: $white;
+	width: calc(20% - 32px);
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.card-img-team,
+	.card-title,
+	.card-media-content,
+	.card-content,
+	.card-subtitle {
+		color: $black;
+	}
+
+	.card-img-team {
+		display: flex;
+		justify-content: center;
+	}
+
+	@include screen-general {
+		width: calc(33.33% - 26.66px);
+	}
+
+	@include screen-small {
+		width: calc(50% - 20px);
+	}
+
+	@include screen-mobile {
+		width: 100%;
+	}
+}
