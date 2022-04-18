@@ -1,10 +1,13 @@
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { Container, Title } from 'bloomer';
 import './projects-list.scss';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
-export default function ProjectsList() {
+export default function ProjectsList({ data }) {
+	const nodes = data.allFile.nodes;
+
 	return (
 		<div className="projects-list vm-section">
 			<Container>
@@ -23,18 +26,17 @@ export default function ProjectsList() {
 						gap: '1rem',
 					}}
 				>
-					<SplideSlide>
-						<p>slide1</p>
-					</SplideSlide>
-					<SplideSlide>
-						<p>slide2</p>
-					</SplideSlide>
-					<SplideSlide>
-						<p>slide3</p>
-					</SplideSlide>
-					<SplideSlide>
-						<p>slide4</p>
-					</SplideSlide>
+					{
+						nodes.map((photo, index) => (
+							<SplideSlide key={ index }>
+								<GatsbyImage
+								image={photo.childImageSharp.gatsbyImageData}
+								alt="vevol media case study"
+								layout="fixed"
+								/>
+							</SplideSlide>
+						))
+					}
 				</Splide>
 			</Container>
 		</div>

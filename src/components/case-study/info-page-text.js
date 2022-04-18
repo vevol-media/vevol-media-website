@@ -10,7 +10,7 @@ const InfoPageText = ({ leftBar, contentTitle, contentText }) => {
 		</li>
 	));
 
-	const pageTextContent = contentText.map((content, index) => <p> {content.text} </p>);
+	const pageTextContent = contentText.map((content, index) => <p key={ index }> {content.text} </p>);
 
 	return (
 		<Content className="is-flex py-6">
