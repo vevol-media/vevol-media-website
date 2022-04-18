@@ -7,6 +7,7 @@ import '@splidejs/splide/dist/css/splide.min.css';
 
 export default function ProjectsList({ data }) {
 	const nodes = data.allFile.nodes;
+	// console.log('projList', nodes)
 
 	return (
 		<div className="projects-list vm-section">

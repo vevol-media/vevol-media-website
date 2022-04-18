@@ -10,6 +10,7 @@ import { Container } from 'bloomer';
 import { leftBarArr, pageContent } from '../../enums/margee-case-study';
 import { StaticImage } from 'gatsby-plugin-image';
 import '../../styles/margee.scss';
+// import data from '../../pages/index';
 
 const splidePhotos = graphql`
 	query CasesPhotos {
