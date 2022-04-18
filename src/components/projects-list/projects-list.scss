@@ -10,7 +10,19 @@
 
         li {
             background: $white;
-            // height: 500px;
+        }
+
+        .bg-image{
+            color: $black;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+
+            p {
+                margin-bottom: 20px;
+                margin-left: 20px;
+                text-align: left;
+            }
         }
     }
 }

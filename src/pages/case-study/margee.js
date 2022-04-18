@@ -10,11 +10,10 @@ import { Container } from 'bloomer';
 import { leftBarArr, pageContent } from '../../enums/margee-case-study';
 import { StaticImage } from 'gatsby-plugin-image';
 import '../../styles/margee.scss';
-// import data from '../../pages/index';
 
-const splidePhotos = graphql`
+const nodePhotos = graphql`
 	query CasesPhotos {
-		allFile(filter: { relativeDirectory: { eq: "stores-sliders" } }) {
+		allFile(filter: { relativeDirectory: { eq: "stores-banners" } }) {
 			nodes {
 				name
 				childImageSharp {
@@ -26,7 +25,7 @@ const splidePhotos = graphql`
 `;
 
 const CaseStudy = () => {
-	const data = useStaticQuery(splidePhotos);
+	const data = useStaticQuery(nodePhotos);
 
 	return (
 		<Layout vm-header__extra-nav--white>

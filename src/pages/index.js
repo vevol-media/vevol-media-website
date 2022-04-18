@@ -7,7 +7,7 @@ import ReviewsSection from '../components/reviews-section/reviews-section';
 import ProjectsList from '../components/projects-list/projects-list';
 import { graphql } from 'gatsby';
 
-export default function Homepage({data}) {
+export default function Homepage({ data }) {
 
 	return (
 		<Layout>
@@ -24,7 +24,7 @@ export default function Homepage({data}) {
 
 export const data = graphql`
 	query Photos {
-		allFile(filter: { relativeDirectory: { eq: "stores-sliders" } }) {
+		allFile(filter: { relativeDirectory: { eq: "stores-banners" } }) {
 			nodes {
 				name
 				childImageSharp {

@@ -1,13 +1,15 @@
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import { Container, Title } from 'bloomer';
 import './projects-list.scss';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
+import { convertToBgImage, BgImage } from "gbimage-bridge"
+// import BackgroundImage from 'gatsby-background-image'
 import '@splidejs/splide/dist/css/splide.min.css';
 
 export default function ProjectsList({ data }) {
 	const nodes = data.allFile.nodes;
-	// console.log('projList', nodes)
 
 	return (
 		<div className="projects-list vm-section">
@@ -25,6 +27,7 @@ export default function ProjectsList({ data }) {
                         rewind: true,
 						perPage: 4,
 						gap: '1rem',
+						height:400,
 
 						breakpoints: {
 							1140: {
@@ -44,17 +47,30 @@ export default function ProjectsList({ data }) {
 					}}
 				>
 					{
-						nodes.map((photo, index) => (
-							<SplideSlide key={ index }>
-								<GatsbyImage
-								image={photo.childImageSharp.gatsbyImageData}
-								alt="vevol media case study"
-								layout="fullWidth"
-								/>
+						nodes.map((photo, index) => {
+							const bgImage = getImage(photo.childImageSharp.gatsbyImageData);
+							// const bgImageConv = convertToBgImage(bgImage);
+							return (
+								<SplideSlide key={ index }>
+									{/* <BackgroundImage
+										Tag="section"
+										// className={className}
+										// fluid={bgImageConv}
+										{...bgImage}
+										preserveStackingContext
+										>
+										<p>{photo.name}</p>
+									</BackgroundImage> */}
 
-								<p>{photo.name}</p>
+									<BgImage
+										className='bg-image'
+										image={bgImage}
+									>
+										<p>{photo.name}</p>
+									</BgImage>
 							</SplideSlide>
-						))
+							)
+						})
 					}
 				</Splide>
 			</Container>
