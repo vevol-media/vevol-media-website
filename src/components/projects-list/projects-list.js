@@ -51,6 +51,8 @@ export default function ProjectsList({ data }) {
 								alt="vevol media case study"
 								layout="fullWidth"
 								/>
+
+								<p>{photo.name}</p>
 							</SplideSlide>
 						))
 					}

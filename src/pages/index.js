@@ -8,7 +8,7 @@ import ProjectsList from '../components/projects-list/projects-list';
 import { graphql } from 'gatsby';
 
 export default function Homepage({data}) {
-	console.log('hpme', data)
+
 	return (
 		<Layout>
 			<HomepageHero />
