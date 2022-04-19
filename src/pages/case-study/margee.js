@@ -8,7 +8,6 @@ import ProjectsList from '../../components/projects-list/projects-list';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Container } from 'bloomer';
 import { leftBarArr, pageContent } from '../../enums/margee-case-study';
-import { StaticImage } from 'gatsby-plugin-image';
 import '../../styles/margee.scss';
 
 const nodeBgPhotos = graphql`
@@ -26,25 +25,14 @@ const nodeBgPhotos = graphql`
 
 const CaseStudy = (props) => {
 	const bgPhotos = useStaticQuery(nodeBgPhotos);
-	// console.log('CASE', props)
 
 	return (
 		<Layout vm-header__extra-nav--white>
 			<InfoPageIntro
+				data={bgPhotos} storePath={props.location.pathname}
 				supraheading="Banding, Email &amp; Marketing, Website Development"
 				heading="MARGEE SHOPIFY STORE"
 			/>
-
-			<div className="page-intro-img">
-				<StaticImage
-					className="intro-img"
-					src="../../images/stores-banners/margee-banner.png"
-					layout="fullWidth"
-					alt="hero background"
-					placeholder="blurred"
-					transformOptions={{ fit: 'cover', cropFocus: 'attention' }}
-				/>
-			</div>
 
 			<div className=" vm-section--white">
 				<Container>

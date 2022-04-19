@@ -1,27 +1,24 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
-import storesList from '../../enums/stores';
-import { Content, Title, Subtitle } from 'bloomer';
+import { Content, Title } from 'bloomer';
 import './informational-content.scss';
 
-const InformationalContent = ({data, storePath}) => {
+const InformationalContent = ({ data, storePath }) => {
 	const nodes = data.allFile.nodes;
-	const pathName = storePath.split("/case-study/").pop();
+	const pathName = storePath.split('/case-study/').pop();
+	
 	const informationalContentPhoto = nodes.map((img, index) => {
 		const bgImage = getImage(img.childImageSharp.gatsbyImageData);
-		
-			if ((img.name).includes(pathName) && (img.name).includes('perfomance')) {
-				return <BgImage key={index} className="informational-img" image={bgImage} />
-			};
+
+		if (img.name.includes(pathName) && img.name.includes('perfomance')) {
+			return <BgImage key={index} className="informational-img" image={bgImage} />;
+		}
 	});
 
 	return (
 		<div className="informational-wrapper">
-			<div className="informational-intro-img">
-				{informationalContentPhoto}
-			</div>
+			<div className="informational-intro-img">{informationalContentPhoto}</div>
 
 			<Content className="informational-content">
 				<div className="informational-details">

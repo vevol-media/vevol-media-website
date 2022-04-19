@@ -1,31 +1,30 @@
-@import "/src/styles/variables";
-@import "/src/styles/mixins";
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
 
 .projects-list {
-    .heading-block {
-        margin-bottom: 40px;
-    }
+	.heading-block {
+		margin-bottom: 40px;
+	}
 
-    .splide__list {
+	.splide__list {
+		li {
+			background: $white;
+		}
 
-        li {
-            background: $white;
-        }
+		.bg-image {
+			color: $black;
+			height: 100%;
+			display: flex;
+			align-items: flex-end;
 
-        .bg-image{
-            color: $black;
-            height: 100%;
-            display: flex;
-            align-items: flex-end;
+			a {
+				font-size: small;
+				color: $black;
+			}
 
-            a {
-                font-size: small;
-                color: $black;
-            }
-
-            svg {
-                fill: $black;
-            }
-        }
-    }
+			svg {
+				fill: $black;
+			}
+		}
+	}
 }
