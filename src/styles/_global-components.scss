@@ -48,3 +48,13 @@
         padding: 50px 0;
     }
 }
+
+.vm-bg--white {
+    background-color: $white;
+    color: $black;
+}
+
+.vm-bg--black {
+    background-color: $black;
+    color: $white;
+}

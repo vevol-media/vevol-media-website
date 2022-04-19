@@ -31,25 +31,22 @@ const CaseStudy = (props) => {
 			<InfoPageIntro
 				data={storesPhotos}
 				storePath={props.location.pathname}
-				supraheading="Banding, Email &amp; Marketing, Website Development"
+				supraheading="Branding, Email &amp; Marketing, Website Development"
 				heading="MARGEE SHOPIFY STORE"
 			/>
 
-			<div className="vm-section--white">
-				<InfoPageText
-					leftBar={leftBarArr}
-					contentTitle="Overview"
-					contentText={pageContent}
-				/>
-			</div>
+			<InfoPageText
+				bg="vm-bg--white"
+				leftBar={leftBarArr}
+				contentTitle="Overview"
+				contentText={pageContent}
+			/>
 
-			<SimpleImageCarousel storePath={props.location.pathname} />
+			<SimpleImageCarousel storePath={props.location.pathname} bgCarousel="vm-bg--black" bgContent="vm-bg--white"/>
 
 			<InformationalContent data={storesPhotos} storePath={props.location.pathname} />
 
-			<div className="vm-section--white">
-				<ProjectsList data={storesPhotos} />
-			</div>
+			<ProjectsList data={storesPhotos} bg="vm-bg--white" />
 		</Layout>
 	);
 };

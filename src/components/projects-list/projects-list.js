@@ -7,8 +7,9 @@ import { BgImage } from 'gbimage-bridge';
 import storesList from '../../enums/stores';
 import '@splidejs/splide/dist/css/splide.min.css';
 
-export default function ProjectsList({ data }) {
-	const nodes = data.allFile.nodes;
+export default function ProjectsList(props) {
+	const nodes = props.data.allFile.nodes;
+
 	const splides = nodes.map((img, index) => {
 		const bgImage = getImage(img.childImageSharp.gatsbyImageData);
 
@@ -41,7 +42,7 @@ export default function ProjectsList({ data }) {
 	});
 
 	return (
-		<div className="projects-list vm-section">
+		<div className={`projects-list vm-section ${props.bg}`}>
 			<Container>
 				<div className="heading-block">
 					<Title tag="h2" isSize={2}>

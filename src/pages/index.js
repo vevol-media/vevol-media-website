@@ -8,15 +8,17 @@ import ProjectsList from '../components/projects-list/projects-list';
 import { graphql } from 'gatsby';
 
 export default function Homepage({ data }) {
-
 	return (
 		<Layout>
 			<HomepageHero />
 			<HomepageServices />
 			<ReviewsSection />
-			<ProjectsList data={data} />
+			<ProjectsList data={data} bg="vm-bg--black" />
 			<Helmet>
-				<script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+				<script
+					type="text/javascript"
+					src="https://widget.clutch.co/static/js/widget.js"
+				></script>
 			</Helmet>
 		</Layout>
 	);

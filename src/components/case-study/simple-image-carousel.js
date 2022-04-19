@@ -37,13 +37,13 @@ const SimpleImageCarousel = (props) => {
 
 	return (
 		<div className="simple-image-carousel ">
-			<div className="vm-section ">
+			<div className={`vm-section ${props.bgCarousel}`}>
 				<Container>
 					<Splide
 						options={{
 							rewind: true,
 							perPage: 2,
-							gap: '6rem',
+							gap: '5rem',
 							height: 300,
 
 							breakpoints: {
@@ -59,7 +59,7 @@ const SimpleImageCarousel = (props) => {
 				</Container>
 			</div>
 
-			<div className="vm-section--white">
+			<div className={props.bgContent}>
 				<Container>
 					<Content className="simple-image-carousel-content is-flex">
 						<ul className="simple-image-carousel-tools is-flex is-flex-direction-column">

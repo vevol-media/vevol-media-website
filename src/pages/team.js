@@ -14,7 +14,7 @@ const Team = ({ data }) => {
 				subheading="A wide range of talent ."
 			/>
 
-			<div className="vm-section vm-section--white">
+			<div className="vm-section vm-bg--white">
 				<Container >
 					<TeamInfo />
 					<TeamMembers data={data} />
