@@ -50,5 +50,13 @@
 				}
 			}
 		}
+
+        @include screen-small {
+            flex-direction: column;
+
+            span {
+                padding: 10px;
+            }
+        }
 	}
 }
