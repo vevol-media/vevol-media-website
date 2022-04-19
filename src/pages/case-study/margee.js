@@ -24,8 +24,9 @@ const nodePhotos = graphql`
 	}
 `;
 
-const CaseStudy = () => {
+const CaseStudy = (props) => {
 	const data = useStaticQuery(nodePhotos);
+	// console.log('CaseStudy', props)
 
 	return (
 		<Layout vm-header__extra-nav--white>
@@ -56,15 +57,14 @@ const CaseStudy = () => {
 			</div>
 
 			<Container>
-				<InformationalContent />
+				<InformationalContent data={data} />
 			</Container>
 
 			<div className=" vm-section--white">
 				<Container>
-					<ProjectsList data={data} />
+					<ProjectsList data={data} path={props} />
 				</Container>
 			</div>
-
 		</Layout>
 	);
 };

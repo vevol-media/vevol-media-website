@@ -5,8 +5,7 @@ import './info-page-intro.scss';
 import Fade from 'react-reveal/Fade';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export default function InfoPageIntro({supraheading, heading }) {
-	
+export default function InfoPageIntro({ supraheading, heading }) {
 	return (
 		<div className="vm-section--white">
 			<Container>
@@ -15,7 +14,7 @@ export default function InfoPageIntro({supraheading, heading }) {
 						<p>{supraheading}</p>
 					</Fade>
 					<Fade top delay={400}>
-						<Title className='mt-2'>{heading}</Title>
+						<Title className="mt-2">{heading}</Title>
 					</Fade>
 				</div>
 			</Container>

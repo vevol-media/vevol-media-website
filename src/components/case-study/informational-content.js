@@ -1,15 +1,18 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
+import { convertToBgImage, BgImage } from 'gbimage-bridge';
 import { Content, Title, Subtitle } from 'bloomer';
 import './informational-content.scss';
 
-const InformationalContent = () => {
+const InformationalContent = (props) => {
+	// console.log('InformationalContent', props)
 	return (
-		<div className='informational-wrapper'>
-            <div className="informational-intro-img">
+		<div className="informational-wrapper">
+			<div className="informational-intro-img">
 				<StaticImage
 					className="informational-img"
-					src='../../images/result-impact/margee-impact.png'
+					src="../../images/result-impact/margee-impact.png"
 					layout="fullWidth"
 					alt="hero background"
 					placeholder="blurred"
@@ -17,13 +20,16 @@ const InformationalContent = () => {
 				/>
 			</div>
 
-			<Content className='informational-content'>
-				<div className='informational-details'>
+			<Content className="informational-content">
+				<div className="informational-details">
 					<Title tag="h4"> Result &amp; Impact </Title>
-					<p>Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+					<p>
+						Is a long established fact that a reader will be distracted by the readable
+						content of a page when looking at its layout
+					</p>
 				</div>
 
-				<div className='informational-data'>
+				<div className="informational-data">
 					<span>
 						<Title tag="h2"> 4.00% </Title>
 						<p>incrase rate</p>
@@ -33,7 +39,7 @@ const InformationalContent = () => {
 						<p>incrase conversion</p>
 					</span>
 					<span>
-					<Title tag="h2"> 30% </Title>
+						<Title tag="h2"> 30% </Title>
 						<p>incrased order</p>
 					</span>
 				</div>

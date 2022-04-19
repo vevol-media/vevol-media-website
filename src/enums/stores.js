@@ -1,31 +1,45 @@
 const storesList = [
 	{
-        name: 'A&S Market',
+		photo: 'asmarket',
+		name: 'A&S Market',
 		url: 'https://asmarket.co.uk',
+		path: '',
 	},
 	{
-        name: 'Evcoms',
+		photo: 'evcoms',
+		name: 'Evcoms',
 		url: 'https://evcoms.com',
+		path: '',
 	},
 	{
-        name: 'Folkingtons',
+		photo: 'folkingtons',
+		name: 'Folkingtons',
 		url: 'https://www.folkingtons.com',
+		path: '',
 	},
 	{
-        name: 'Margee',
+		photo: 'margee',
+		name: 'Margee',
 		url: 'https://margee.com',
+		path: '/case-study/margee/',
 	},
 	{
-        name: 'Power Laptop',
+		photo: 'powerlaptop',
+		name: 'Power Laptop',
 		url: 'https://powerlaptop.co.uk',
+		path: '',
 	},
-    {
-        name: 'Ramona Albert',
+	{
+		photo: 'ramonaalbert',
+		name: 'Ramona Albert',
 		url: 'https://ramonaalbert.shop',
+		path: '',
 	},
-    {
-        name: 'TOPL',
+	{
+		photo: 'topl',
+		name: 'TOPL',
 		url: 'https://toplcup.com',
+		path: '',
 	},
 ];
 

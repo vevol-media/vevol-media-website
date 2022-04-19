@@ -3,7 +3,7 @@
 
 .page-text-lext-bar {
 	flex: 1;
-    margin-right: 100px;
+	margin-right: 100px;
 
 	li {
 		border-bottom: 1px solid grey;
@@ -15,9 +15,9 @@
 		}
 	}
 
-    @include screen-small {
-        margin-right: 40px;
-    }
+	@include screen-small {
+		margin-right: 40px;
+	}
 }
 
 .page-text-content {
@@ -25,6 +25,6 @@
 	flex: 3;
 
 	p {
-	    max-width: 75ch;
+		max-width: 75ch;
 	}
 }
