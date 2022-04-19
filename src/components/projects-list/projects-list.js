@@ -51,11 +51,10 @@ export default function ProjectsList({ data }) {
 				</div>
 
 				<Splide
-					className="projects__list"
 					options={{
 						rewind: true,
 						perPage: 4,
-						gap: '1rem',
+						gap: '1.5rem',
 						height: 400,
 
 						breakpoints: {

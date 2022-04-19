@@ -1,23 +1,23 @@
 import * as React from 'react';
 import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
-import { Content, Title } from 'bloomer';
+import { Content, Title, Container } from 'bloomer';
 import './informational-content.scss';
 
 const InformationalContent = ({ data, storePath }) => {
-	const nodes = data.allFile.nodes;
+	const node = data.allFile.nodes;
 	const pathName = storePath.split('/case-study/').pop();
 	
-	const informationalContentPhoto = nodes.map((img, index) => {
-		const bgImage = getImage(img.childImageSharp.gatsbyImageData);
+	const informationalContentPhoto = node.map((img, index) => {
+		const image = getImage(img.childImageSharp.gatsbyImageData);
 
 		if (img.name.includes(pathName) && img.name.includes('perfomance')) {
-			return <BgImage key={index} className="informational-img" image={bgImage} />;
+			return <BgImage key={index} className="informational-img" image={image} />;
 		}
 	});
 
 	return (
-		<div className="informational-wrapper">
+		<Container className="informational-wrapper">
 			<div className="informational-intro-img">{informationalContentPhoto}</div>
 
 			<Content className="informational-content">
@@ -44,7 +44,7 @@ const InformationalContent = ({ data, storePath }) => {
 					</span>
 				</div>
 			</Content>
-		</div>
+		</Container>
 	);
 };
 export default InformationalContent;

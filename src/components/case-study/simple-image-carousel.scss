@@ -1,2 +1,47 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+
+
+.simple-image-carousel {
+    outline: 2px solid yellow;
+
+    .splide__list {
+        li {
+            background: $white;
+
+            .image-carousel {
+                height: 100%;
+            }
+        }
+    }
+    
+    .simple-image-carousel-content {
+        padding-block: 40px;
+
+        .simple-image-carousel-tools {
+            list-style: none;
+            flex: 1;
+            margin-top: 0;
+            margin-right: 100px;
+
+
+            @include screen-small {
+                margin-right: 40px;
+            }
+
+            li {
+                border-bottom: 1px solid grey;
+                padding-bottom: 20px;
+            }
+        }
+
+        .simple-image-carousel-goals {
+            flex: 3;
+        }
+
+        p {
+            max-width: 75ch
+        }
+    }
+}
+
