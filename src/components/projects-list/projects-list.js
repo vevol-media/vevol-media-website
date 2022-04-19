@@ -13,7 +13,7 @@ export default function ProjectsList({ data }) {
 		const bgImage = getImage(img.childImageSharp.gatsbyImageData);
 
 		return storesList.map((store, index) => {
-			if (store.photo === img.name) {
+			if (store.photoBanner === img.name) {
 				return (
 					<SplideSlide key={index}>
 						<BgImage className="bg-image" image={bgImage}>

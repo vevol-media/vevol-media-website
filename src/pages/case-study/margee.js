@@ -11,7 +11,7 @@ import { leftBarArr, pageContent } from '../../enums/margee-case-study';
 import { StaticImage } from 'gatsby-plugin-image';
 import '../../styles/margee.scss';
 
-const nodePhotos = graphql`
+const nodeBgPhotos = graphql`
 	query CasesPhotos {
 		allFile(filter: { relativeDirectory: { eq: "stores-banners" } }) {
 			nodes {
@@ -25,8 +25,8 @@ const nodePhotos = graphql`
 `;
 
 const CaseStudy = (props) => {
-	const data = useStaticQuery(nodePhotos);
-	// console.log('CaseStudy', props)
+	const bgPhotos = useStaticQuery(nodeBgPhotos);
+	// console.log('CASE', props)
 
 	return (
 		<Layout vm-header__extra-nav--white>
@@ -57,12 +57,12 @@ const CaseStudy = (props) => {
 			</div>
 
 			<Container>
-				<InformationalContent data={data} />
+				<InformationalContent data={bgPhotos} storePath={props.location.pathname} />
 			</Container>
 
 			<div className=" vm-section--white">
 				<Container>
-					<ProjectsList data={data} path={props} />
+					<ProjectsList data={bgPhotos} />
 				</Container>
 			</div>
 		</Layout>
