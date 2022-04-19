@@ -1,6 +1,53 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.informational-content {
-    height: 200px;
+.informational-wrapper {
+    padding-block: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    .informational-intro-img {
+        height: 500px;
+
+        .informational-img {
+            height: 100%;
+        }
+    }
+
+    .informational-content {
+        display: flex;
+        gap: 50px;
+
+        .informational-details {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            
+            h4, p {
+                color: $white;
+            }
+        }
+
+        .informational-data {
+            display: flex;
+            flex: 1;
+            gap: 25px;
+
+            span {
+                background-color: $green;
+                color: $black;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: calc(33.33% - 16.66px);
+
+                h2 {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }
