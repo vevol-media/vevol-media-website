@@ -14,6 +14,8 @@ const InformationalContent = (props) => {
 		if (img.name.includes(pathName) && img.name.includes('perfomance')) {
 			return <BgImage key={index} className="informational-img" image={image} />;
 		}
+
+		return null;
 	});
 
 	return (

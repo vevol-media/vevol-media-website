@@ -6,9 +6,7 @@ import SimpleImageCarousel from '../../components/case-study/simple-image-carous
 import InformationalContent from '../../components/case-study/informational-content';
 import ProjectsList from '../../components/projects-list/projects-list';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Container } from 'bloomer';
 import { leftBarArr, pageContent } from '../../enums/margee-case-study';
-import '../../styles/margee.scss';
 
 const nodeBgPhotos = graphql`
 	query CasesPhotos {

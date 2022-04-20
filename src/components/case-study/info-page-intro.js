@@ -14,6 +14,8 @@ export default function InfoPageIntro(props) {
 		if (img.name.includes(pathName) && img.name.includes('banner')) {
 			return <GatsbyImage className="intro-img" key={index} image={bgImage} alt={img.name} />;
 		}
+
+		return null;
 	});
 
 	return (

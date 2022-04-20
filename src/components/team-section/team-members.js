@@ -19,6 +19,8 @@ const TeamMembers = ({ data }) => {
 
 				return <SingleMember role={role} fullName={fullName} img={img} key={index} />;
 			}
+
+			return null;
 		});
 	});
 

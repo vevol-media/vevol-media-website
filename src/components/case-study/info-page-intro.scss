@@ -7,9 +7,26 @@
 }
 
 .page-intro-img {
-	height: 60vh;
+	height: 75vh;
 
 	.intro-img {
 		height: 100%;
+	}
+
+	@include screen-general {
+		height: 60vh;
+	}
+
+
+	@include screen-medium {
+		height: 50vh;
+	}
+
+	@include screen-small {
+		height: 35vh;
+	}
+
+	@include screen-mobile {
+		height: 20vh;
 	}
 }

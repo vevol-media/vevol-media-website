@@ -33,6 +33,8 @@ const SimpleImageCarousel = (props) => {
 				</SplideSlide>
 			);
 		}
+
+		return null;
 	});
 
 	return (
@@ -44,14 +46,20 @@ const SimpleImageCarousel = (props) => {
 							rewind: true,
 							perPage: 2,
 							gap: '5rem',
-							height: 300,
+							height: 500,
 
 							breakpoints: {
+
+								1140: {
+									height: 400,
+								},
 								749: {
 									perPage: 1,
 									wheel: false,
+									height: 200,
 								},
-							},
+							}
+
 						}}
 					>
 						{simpleImageCarousel}
