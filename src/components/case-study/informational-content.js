@@ -4,9 +4,9 @@ import { BgImage } from 'gbimage-bridge';
 import { Content, Title, Container } from 'bloomer';
 import './informational-content.scss';
 
-const InformationalContent = (props) => {
-	const node = props.data.allFile.nodes;
-	const pathName = props.storePath.split('/case-study/').pop();
+const InformationalContent = ({data, storePath}) => {
+	const node = data.allFile.nodes;
+	const pathName = storePath.split('/case-study/').pop();
 
 	const informationalContentPhoto = node.map((img, index) => {
 		const image = getImage(img.childImageSharp.gatsbyImageData);

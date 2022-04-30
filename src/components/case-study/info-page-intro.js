@@ -4,9 +4,9 @@ import Fade from 'react-reveal/Fade';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import './info-page-intro.scss';
 
-export default function InfoPageIntro(props) {
-	const nodes = props.data.allFile.nodes;
-	const pathName = props.storePath.split('/case-study/').pop();
+export default function InfoPageIntro({data, storePath, supraheading, heading}) {
+	const nodes = data.allFile.nodes;
+	const pathName = storePath.split('/case-study/').pop();
 
 	const storeBanner = nodes.map((img, index) => {
 		const bgImage = getImage(img.childImageSharp.gatsbyImageData);
@@ -23,10 +23,10 @@ export default function InfoPageIntro(props) {
 			<Container>
 				<div className="info-page-intro is-flex is-flex-direction-column has-text-centered mb-3">
 					<Fade top>
-						<p>{props.supraheading}</p>
+						<p>{supraheading}</p>
 					</Fade>
 					<Fade top delay={400}>
-						<Title className="mt-2">{props.heading}</Title>
+						<Title className="mt-2">{heading}</Title>
 					</Fade>
 				</div>
 			</Container>

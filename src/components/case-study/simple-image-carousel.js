@@ -19,9 +19,9 @@ const nodeSimpleImageCarousel = graphql`
 	}
 `;
 
-const SimpleImageCarousel = (props) => {
+const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent}) => {
 	const node = useStaticQuery(nodeSimpleImageCarousel).allFile.nodes;
-	const pathName = props.storePath.split('/case-study/').pop();
+	const pathName = storePath.split('/case-study/').pop();
 
 	const simpleImageCarousel = node.map((img, index) => {
 		const image = getImage(img.childImageSharp.gatsbyImageData);
@@ -39,7 +39,7 @@ const SimpleImageCarousel = (props) => {
 
 	return (
 		<div className="simple-image-carousel ">
-			<div className={`vm-section ${props.bgCarousel}`}>
+			<div className={`vm-section ${backgroundCarousel}`}>
 				<Container>
 					<Splide
 						options={{
@@ -67,7 +67,7 @@ const SimpleImageCarousel = (props) => {
 				</Container>
 			</div>
 
-			<div className={props.bgContent}>
+			<div className={backgroundContent}>
 				<Container>
 					<Content className="simple-image-carousel-content is-flex">
 						<ul className="simple-image-carousel-tools is-flex is-flex-direction-column">

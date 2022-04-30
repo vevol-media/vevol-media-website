@@ -34,17 +34,17 @@ const CaseStudy = (props) => {
 			/>
 
 			<InfoPageText
-				bg="vm-bg--white"
+				background="vm-bg--white"
 				leftBar={leftBarArr}
 				contentTitle="Overview"
 				contentText={pageContent}
 			/>
 
-			<SimpleImageCarousel storePath={props.location.pathname} bgCarousel="vm-bg--black" bgContent="vm-bg--white"/>
+			<SimpleImageCarousel storePath={props.location.pathname} backgroundCarousel="vm-bg--black" backgroundContent="vm-bg--white"/>
 
 			<InformationalContent data={storesPhotos} storePath={props.location.pathname} />
 
-			<ProjectsList data={storesPhotos} bg="vm-bg--white" />
+			<ProjectsList data={storesPhotos} background="vm-bg--white" />
 		</Layout>
 	);
 };
