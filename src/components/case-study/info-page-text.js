@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Content, Title, Subtitle, Container } from 'bloomer';
 import './info-page-text.scss';
 
-const InfoPageText = ({leftBar, contentText, background, contentTitle}) => {
-	const lftBar = leftBar.map((item, index) => (
+const InfoPageText = ({leftBarArray, contentText, background, contentTitle}) => {
+	const leftBar = leftBarArray.map((item, index) => (
 		<li key={index} className="is-flex is-flex-direction-column">
 			<Subtitle tag="h6"> {item.leftBarTitle} </Subtitle>
 			<p> {item.leftBarText} </p>
@@ -19,11 +19,11 @@ const InfoPageText = ({leftBar, contentText, background, contentTitle}) => {
 			<Container>
 				<Content className="is-flex py-6">
 					<ul className="page-text-lext-bar is-flex is-flex-direction-column mt-0">
-						{lftBar}
+						{leftBar}
 					</ul>
 
 					<div className="page-text-content is-flex is-flex-direction-column is-justify-content-center">
-						<Title tag="h4"> {contentTitle} </Title>
+						<Title tag="h4">{contentTitle}</Title>
 						{pageTextContent}
 					</div>
 				</Content>

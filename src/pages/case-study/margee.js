@@ -35,12 +35,12 @@ const CaseStudy = (props) => {
 
 			<InfoPageText
 				background="vm-bg--white"
-				leftBar={leftBarArr}
+				leftBarArray={leftBarArr}
 				contentTitle="Overview"
 				contentText={pageContent}
 			/>
 
-			<SimpleImageCarousel storePath={props.location.pathname} backgroundCarousel="vm-bg--black" backgroundContent="vm-bg--white"/>
+			<SimpleImageCarousel storePath={props.location.pathname} backgroundCarousel="black" backgroundContent="white"/>
 
 			<InformationalContent data={storesPhotos} storePath={props.location.pathname} />
 

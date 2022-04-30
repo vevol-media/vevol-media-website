@@ -39,7 +39,7 @@ const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent})
 
 	return (
 		<div className="simple-image-carousel ">
-			<div className={`vm-section ${backgroundCarousel}`}>
+			<div className={`vm-section vm-bg--${backgroundCarousel}`}>
 				<Container>
 					<Splide
 						options={{
@@ -67,7 +67,7 @@ const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent})
 				</Container>
 			</div>
 
-			<div className={backgroundContent}>
+			<div className={`vm-bg--${backgroundContent}`}>
 				<Container>
 					<Content className="simple-image-carousel-content is-flex">
 						<ul className="simple-image-carousel-tools is-flex is-flex-direction-column">
