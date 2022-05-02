@@ -40,15 +40,25 @@ const CaseStudy = (props) => {
 				contentText={pageContent}
 			/>
 
-			<SimpleImageCarousel storePath={props.location.pathname} backgroundCarousel="black" backgroundContent="white"/>
+			<SimpleImageCarousel
+				storePath={props.location.pathname}
+				backgroundCarousel="black"
+				backgroundContent="white"
+				tools='FaceBook Ads, Google Adds, Figma, Instagram'
+				goals='The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+				below for those interested. Sections 1.10.32 and 1.10.33 from "de
+				Finibus Bonorum et Malorum" by Cicero are also reproduced in their
+				exact original form, accompanied by English versions from the 1914
+				translation by H. Rackham.'
+			/>
 
-			<InformationalContent 
+			<InformationalContent
 				data={storesPhotos}
 				storePath={props.location.pathname}
-				informationalText={'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout'}
-				rateConversion={'4.00%'}
-				conversionConversion={'220%+'}
-				orderConversion={' 30%'}
+				informationalText='Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout'
+				rateConversion='4.00%'
+				conversionConversion='220%+'
+				orderConversion='30%'
 			/>
 
 			<ProjectsList data={storesPhotos} background="vm-bg--white" />

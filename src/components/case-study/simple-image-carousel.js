@@ -19,7 +19,7 @@ const nodeSimpleImageCarousel = graphql`
 	}
 `;
 
-const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent}) => {
+const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent, tools, goals}) => {
 	const node = useStaticQuery(nodeSimpleImageCarousel).allFile.nodes;
 	const pathName = storePath.split('/case-study/').pop();
 
@@ -73,19 +73,13 @@ const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent})
 						<ul className="simple-image-carousel-tools is-flex is-flex-direction-column">
 							<li>
 								<Subtitle tag="h6"> Tools </Subtitle>
-								<p>FaceBook Ads, Google Adds, Figma, Instagram</p>
+								<p>{tools}</p>
 							</li>
 						</ul>
 
 						<div className="simple-image-carousel-goals is-flex is-flex-direction-column">
 							<Title tag="h4">Goals</Title>
-							<p>
-								The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-								below for those interested. Sections 1.10.32 and 1.10.33 from "de
-								Finibus Bonorum et Malorum" by Cicero are also reproduced in their
-								exact original form, accompanied by English versions from the 1914
-								translation by H. Rackham.
-							</p>
+							<p>{goals}</p>
 						</div>
 					</Content>
 				</Container>
