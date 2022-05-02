@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Content, Title, Subtitle, Container } from 'bloomer';
 import './info-page-text.scss';
 
-const InfoPageText = ({leftBarArray, contentText, background, contentTitle}) => {
+const InfoPageText = ({ leftBarArray, contentText, background, contentTitle }) => {
 	const leftBar = leftBarArray.map((item, index) => (
 		<li key={index} className="is-flex is-flex-direction-column">
 			<Subtitle tag="h6"> {item.leftBarTitle} </Subtitle>

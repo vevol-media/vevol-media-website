@@ -4,7 +4,14 @@ import { BgImage } from 'gbimage-bridge';
 import { Content, Title, Container } from 'bloomer';
 import './informational-content.scss';
 
-const InformationalContent = ({data, storePath, informationalText, rateConversion, conversionConversion, orderConversion}) => {
+const InformationalContent = ({
+	data,
+	storePath,
+	informationalText,
+	rateConversion,
+	conversionConversion,
+	orderConversion,
+}) => {
 	const node = data.allFile.nodes;
 	const pathName = storePath.split('/case-study/').pop();
 

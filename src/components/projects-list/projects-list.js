@@ -5,13 +5,12 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
 import storesList from '../../enums/stores';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@splidejs/splide/dist/css/splide.min.css';
-import { Background } from 'react-parallax';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import { } from '@fortawesome/free-brands-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+// import { } from '@fortawesome/free-brands-svg-icons';
 
-export default function ProjectsList({data, background}) {
+export default function ProjectsList({ data, background }) {
 	const nodes = data.allFile.nodes;
 
 	const splides = nodes.map((img, index) => {

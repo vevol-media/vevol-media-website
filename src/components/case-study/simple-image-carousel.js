@@ -19,7 +19,13 @@ const nodeSimpleImageCarousel = graphql`
 	}
 `;
 
-const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent, tools, goals}) => {
+const SimpleImageCarousel = ({
+	storePath,
+	backgroundCarousel,
+	backgroundContent,
+	tools,
+	goals,
+}) => {
 	const node = useStaticQuery(nodeSimpleImageCarousel).allFile.nodes;
 	const pathName = storePath.split('/case-study/').pop();
 
@@ -49,7 +55,6 @@ const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent, 
 							height: 500,
 
 							breakpoints: {
-
 								1140: {
 									height: 400,
 								},
@@ -58,8 +63,7 @@ const SimpleImageCarousel = ({storePath, backgroundCarousel, backgroundContent, 
 									wheel: false,
 									height: 200,
 								},
-							}
-
+							},
 						}}
 					>
 						{simpleImageCarousel}
