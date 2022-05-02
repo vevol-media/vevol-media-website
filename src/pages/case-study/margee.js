@@ -42,7 +42,14 @@ const CaseStudy = (props) => {
 
 			<SimpleImageCarousel storePath={props.location.pathname} backgroundCarousel="black" backgroundContent="white"/>
 
-			<InformationalContent data={storesPhotos} storePath={props.location.pathname} />
+			<InformationalContent 
+				data={storesPhotos}
+				storePath={props.location.pathname}
+				informationalText={'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout'}
+				rateConversion={'4.00%'}
+				conversionConversion={'220%+'}
+				orderConversion={' 30%'}
+			/>
 
 			<ProjectsList data={storesPhotos} background="vm-bg--white" />
 		</Layout>

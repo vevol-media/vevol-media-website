@@ -4,7 +4,7 @@ import { BgImage } from 'gbimage-bridge';
 import { Content, Title, Container } from 'bloomer';
 import './informational-content.scss';
 
-const InformationalContent = ({data, storePath}) => {
+const InformationalContent = ({data, storePath, informationalText, rateConversion, conversionConversion, orderConversion}) => {
 	const node = data.allFile.nodes;
 	const pathName = storePath.split('/case-study/').pop();
 
@@ -25,23 +25,20 @@ const InformationalContent = ({data, storePath}) => {
 			<Content className="informational-content">
 				<div className="informational-details">
 					<Title tag="h4"> Result &amp; Impact </Title>
-					<p>
-						Is a long established fact that a reader will be distracted by the readable
-						content of a page when looking at its layout
-					</p>
+					<p>{informationalText}</p>
 				</div>
 
 				<div className="informational-data">
 					<span>
-						<Title tag="h2"> 4.00% </Title>
+						<Title tag="h2">{rateConversion}</Title>
 						<p>incrase rate</p>
 					</span>
 					<span>
-						<Title tag="h2"> 220%+ </Title>
+						<Title tag="h2">{conversionConversion}</Title>
 						<p>incrase conversion</p>
 					</span>
 					<span>
-						<Title tag="h2"> 30% </Title>
+						<Title tag="h2">{orderConversion}</Title>
 						<p>incrased order</p>
 					</span>
 				</div>
