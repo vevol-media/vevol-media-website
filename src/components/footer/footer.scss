@@ -1,5 +1,5 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 footer {
 	border-top: 5px solid $green;
@@ -7,7 +7,7 @@ footer {
 
 	a {
 		color: $white;
-		margin-bottom: 5px;
+		padding: 5px 0;
 
 		&:hover {
 			color: $green;
@@ -28,12 +28,16 @@ footer {
 	}
 
 	.footer-copyright::after {
-		content: '';
+		content: "";
 		position: absolute;
 		background-color: grey;
 		width: 80%;
 		height: 1px;
 		top: 0;
+	}
+
+	.title.is-4 {
+		margin-bottom: 15px;
 	}
 
 	@include screen-medium {
@@ -44,6 +48,7 @@ footer {
 		}
 
 		.columns {
+			margin: 0;
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
