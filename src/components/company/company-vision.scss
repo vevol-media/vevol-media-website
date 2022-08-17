@@ -1,0 +1,81 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.company-vision {
+	.company-vision__titles {
+		color: $green;
+
+		@include screen-small {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+	}
+
+	.company-vision__contact {
+		gap: 10px;
+
+		a {
+			color: $green;
+			font-size: 20px;
+			font-weight: 800;
+		}
+
+		span {
+			svg {
+				fill: $green;
+			}
+		}
+	}
+
+	.company-vision__container {
+		.company-vision__content {
+			background-color: $white;
+			gap: 20px;
+
+			.company-vision__text {
+				flex: 3;
+				font-size: 18px;
+				color: $black;
+				padding-inline: 50px;
+
+				@include screen-small {
+					text-align: center;
+					padding-inline: 10px;
+				}
+			}
+
+			.company-vision__owner {
+				flex: 1;
+
+				.company-vision__img {
+					display: flex;
+					height: 150px;
+					width: 150px;
+					align-items: center;
+					justify-content: center;
+					padding-bottom: 10px;
+
+					img {
+						border-radius: 50%;
+						height: 100%;
+						width: 100%;
+					}
+				}
+
+				.company-vision__name {
+					border-bottom: 2px solid $green;
+					font-weight: 600;
+				}
+
+				.company-vision__owner {
+					font-size: 14px;
+					font-weight: 500;
+				}
+			}
+
+			@include screen-small {
+				flex-direction: column;
+			}
+		}
+	}
+}

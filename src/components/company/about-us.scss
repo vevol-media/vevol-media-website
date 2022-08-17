@@ -1,0 +1,61 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.about-us {
+	gap: 100px;
+
+	.about-us__img {
+		flex: 2;
+
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.about-us__content {
+		flex: 3;
+		gap: 20px;
+		.about-us__titles {
+			.about-us__supratitle-container {
+				align-items: center;
+				gap: 10px;
+
+				.about-us__supratitle-ex-bullet {
+					height: 15px;
+					width: 15px;
+					border-radius: 50px;
+					border: 1px solid $green;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					.about-us__supratitle-in-bullet {
+						display: contents;
+						svg {
+							fill: $green;
+						}
+					}
+				}
+
+				.about-us__supratitle {
+					margin-bottom: 0;
+					text-transform: uppercase;
+					color: $green;
+				}
+			}
+
+			.about-us__title {
+				text-transform: capitalize;
+			}
+		}
+
+		.about-us__text {
+			display: flex;
+		}
+	}
+
+	@include screen-small {
+		flex-direction: column;
+		gap: 20px;
+	}
+}
