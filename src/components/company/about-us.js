@@ -1,6 +1,6 @@
 import React from 'react';
 import './about-us.scss';
-import { Title, Content } from 'bloomer';
+import { Title } from 'bloomer';
 import { Link } from 'gatsby';
 import Fade from 'react-reveal/Fade';
 
@@ -20,14 +20,14 @@ const AboutUs = ({ image, supraheading, heading, text }) => {
 							<span className="about-us__supratitle-ex-bullet">
 								<span className="about-us__supratitle-in-bullet">
 									<svg
-										clip-rule="evenodd"
-										fill-rule="evenodd"
-										stroke-linejoin="round"
-										stroke-miterlimit="2"
+										clipRule="evenodd"
+										fillRule="evenodd"
+										strokeLinejoin="round"
+										strokeMiterlimit="2"
 										viewBox="0 0 24 24"
 										xmlns="http://www.w3.org/2000/svg"
 									>
-										<circle cx="11.998" cy="11.998" fill-rule="nonzero" r="9.998" />
+										<circle cx="11.998" cy="11.998" fillRule="nonzero" r="9.998" />
 									</svg>
 								</span>
 							</span>
