@@ -3,23 +3,19 @@ import { Title, CardImage, CardContent, Media, MediaContent, Subtitle } from 'bl
 import { GatsbyImage } from 'gatsby-plugin-image';
 import './single-member.scss';
 
-const SingleMember = ({ role, fullName, img }) => {
+export default function SingleMember({ role, name, image }) {
 	return (
 		<div className="card-team hs-list__block--shadow">
 			<CardImage className="card-img-team">
-				<GatsbyImage
-					image={img}
-					alt="vevol media member"
-					layout="fullWidth"
-				/>
+				<GatsbyImage image={image} alt="vevol media member" layout="fullWidth" />
 			</CardImage>
 			<CardContent className="card-content">
 				<Media>
 					<MediaContent className="card-media-content">
-						<Title className="card-title" hasTextAlign={'centered'} isSize={4}>
-							{fullName}
+						<Title className="card-title" tag="h2" hasTextAlign={'centered'} isSize={4}>
+							{name}
 						</Title>
-						<Subtitle className="card-subtitle" hasTextAlign={'centered'} isSize={6}>
+						<Subtitle className="card-subtitle" tag="h3" hasTextAlign={'centered'} isSize={6}>
 							{role}
 						</Subtitle>
 					</MediaContent>
@@ -27,5 +23,4 @@ const SingleMember = ({ role, fullName, img }) => {
 			</CardContent>
 		</div>
 	);
-};
-export default SingleMember;
+}
