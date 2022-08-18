@@ -36,7 +36,9 @@ export default function BottomCTA({ title, text }) {
 			<div className="container bottom-cta__wrapper">
 				<div className="bottom-cta__logos-container">
 					<Fade top>
-						<Title>{title}</Title>
+						<Title tag="h2" isSize={2}>
+							{title}
+						</Title>
 					</Fade>
 					<Fade bottom>
 						<div className="bottom-cta__logos">
