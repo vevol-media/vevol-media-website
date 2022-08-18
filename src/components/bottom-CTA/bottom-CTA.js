@@ -7,6 +7,7 @@ import BackgroundImage from 'gatsby-background-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import './bottom-CTA.scss';
 import Fade from 'react-reveal/Fade';
+import techList from '../../enums/tech-list';
 
 export default function BottomCTA({ title, text }) {
 	const { placeholderImage } = useStaticQuery(
@@ -39,9 +40,9 @@ export default function BottomCTA({ title, text }) {
 					</Fade>
 					<Fade bottom>
 						<div className="bottom-cta__logos">
-							<span>shopify</span>
-							<span>React</span>
-							<span>Gatsby</span>
+							{techList.map((tech, index) => {
+								return <span key={index}>{tech.name}</span>;
+							})}
 						</div>
 					</Fade>
 				</div>
