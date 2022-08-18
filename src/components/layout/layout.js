@@ -4,6 +4,7 @@ import Footer from '../footer/footer';
 import Fade from 'react-reveal/Fade';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
+import BottomCTA from '../bottom-CTA/bottom-CTA';
 
 export default function Layout({ children }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -38,6 +39,10 @@ export default function Layout({ children }) {
 				</div>
 				<Header />
 				<main>{children}</main>
+				<BottomCTA
+				title="Let's Work Together"
+				text="Book a free consultation with one of out team members now"
+				/>
 				<Footer />
 			</div>
 		</Fade>
