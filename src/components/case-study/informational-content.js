@@ -1,56 +1,30 @@
-import * as React from 'react';
-import { getImage } from 'gatsby-plugin-image';
-import { BgImage } from 'gbimage-bridge';
+import React from 'react';
 import { Content, Title, Container } from 'bloomer';
+import { Fade } from 'react-reveal';
 import './informational-content.scss';
 
-const InformationalContent = ({
-	data,
-	storePath,
-	informationalText,
-	rateConversion,
-	conversionConversion,
-	orderConversion,
-}) => {
-	const node = data.allFile.nodes;
-	const pathName = storePath.split('/case-study/').pop();
-
-	const informationalContentPhoto = node.map((img, index) => {
-		const image = getImage(img.childImageSharp.gatsbyImageData);
-
-		if (img.name.includes(pathName) && img.name.includes('perfomance')) {
-			return <BgImage key={index} className="informational-img" image={image} />;
-		}
-
-		return null;
-	});
-
+export default function InformationalContent({ title, description, blocks, featuredImage }) {
 	return (
 		<Container className="informational-wrapper">
-			<div className="informational-intro-img">{informationalContentPhoto}</div>
+			<div className="informational-intro-img">{featuredImage}</div>
 
 			<Content className="informational-content">
 				<div className="informational-details">
-					<Title tag="h4"> Result &amp; Impact </Title>
-					<p>{informationalText}</p>
+					<Title tag="h4">{title}</Title>
+					<p>{description}</p>
 				</div>
 
-				<div className="informational-data">
-					<span>
-						<Title tag="h2">{rateConversion}</Title>
-						<p>incrase rate</p>
-					</span>
-					<span>
-						<Title tag="h2">{conversionConversion}</Title>
-						<p>incrase conversion</p>
-					</span>
-					<span>
-						<Title tag="h2">{orderConversion}</Title>
-						<p>incrased order</p>
-					</span>
-				</div>
+				<Fade bottom cascade>
+					<div className="informational-data">
+						{blocks.map((block, index) => (
+							<span key={index}>
+								<Title tag="h4">{block.text}</Title>
+								<p>{block.title}</p>
+							</span>
+						))}
+					</div>
+				</Fade>
 			</Content>
 		</Container>
 	);
-};
-export default InformationalContent;
+}

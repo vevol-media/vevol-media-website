@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
 
-export default function Layout({ children }) {
+export default function Layout({ children, headerBg }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
 	}));
@@ -36,7 +36,7 @@ export default function Layout({ children }) {
 						<Cursor />
 					</animated.div>
 				</div>
-				<Header />
+				<Header background={headerBg} />
 				<main>{children}</main>
 				<Footer />
 			</div>

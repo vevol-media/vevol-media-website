@@ -1,68 +1,117 @@
-import * as React from 'react';
-import Layout from '../../components/layout/layout';
-import InfoPageIntro from '../../components/case-study/info-page-intro';
-import InfoPageText from '../../components/case-study/info-page-text';
-import SimpleImageCarousel from '../../components/case-study/simple-image-carousel';
-import InformationalContent from '../../components/case-study/informational-content';
-import ProjectsList from '../../components/projects-list/projects-list';
+import React from 'react';
+import { CardImage } from 'bloomer';
 import { graphql, useStaticQuery } from 'gatsby';
-import { leftBarArr, pageContent } from '../../enums/margee-case-study';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import Layout from '../../components/layout/layout';
+import SlimHero from '../../components/slim-hero/slim-hero';
+import InformationalContent from '../../components/case-study/informational-content';
+import SidebarInfoText from '../../components/case-study/sidebar-info-text';
+import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
+import CaseStudiesCarousel from '../../components/case-studies-carousel/case-studies-carousel';
 
-const nodeBgPhotos = graphql`
-	query CasesPhotos {
-		allFile(filter: { relativeDirectory: { eq: "stores-banners" } }) {
+const projectsImagesQuery = graphql`
+	query {
+		allFile(filter: { relativeDirectory: { eq: "case-studies/margee" } }) {
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: TRACED_SVG)
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 })
 				}
 			}
 		}
 	}
 `;
 
-const CaseStudy = (props) => {
-	const storesPhotos = useStaticQuery(nodeBgPhotos);
+export default function MargeeCaseStudy() {
+	const projectsImages = useStaticQuery(projectsImagesQuery).allFile.nodes;
+	const getImageByName = (imagesArray, imageName) => {
+		const image = imagesArray.filter((image) => image.name === imageName)[0];
+
+		return getImage(image.childImageSharp.gatsbyImageData);
+	};
+
+	const projectCarouselImages = projectsImages.filter((image) => image.name.includes('carousel'));
 
 	return (
-		<Layout>
-			<InfoPageIntro
-				data={storesPhotos}
-				storePath={props.location.pathname}
-				supraheading="Branding, Email &amp; Marketing, Website Development"
-				heading="MARGEE SHOPIFY STORE"
+		<Layout headerBg="white">
+			<SlimHero
+				heading="Margee Shopify Store"
+				subheading="Branding, Email &amp; Marketing, Website Development"
+				backgroundWhite
+				hideBlob
 			/>
-
-			<InfoPageText
-				background="vm-bg--white"
-				leftBarArray={leftBarArr}
-				contentTitle="Overview"
-				contentText={pageContent}
+			<CardImage>
+				<GatsbyImage image={getImageByName(projectsImages, 'hero')} alt={'Margee Case Study - Vevol Media'} />
+			</CardImage>
+			<SidebarInfoText
+				backgroundWhite
+				sidebarContent={[
+					{
+						title: 'Services',
+						text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+					},
+					{
+						title: 'Industry',
+						text: 'Micromobility',
+					},
+				]}
+				mainContent={[
+					{
+						title: 'Overview',
+						text: 'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+					},
+					{
+						text: 'Contrary to popular belief, Lorem Ipsum is not simply random. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+					},
+				]}
 			/>
-
-			<SimpleImageCarousel
-				storePath={props.location.pathname}
-				backgroundCarousel="black"
-				backgroundContent="white"
-				tools='FaceBook Ads, Google Adds, Figma, Instagram'
-				goals='The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-				below for those interested. Sections 1.10.32 and 1.10.33 from "de
-				Finibus Bonorum et Malorum" by Cicero are also reproduced in their
-				exact original form, accompanied by English versions from the 1914
-				translation by H. Rackham.'
+			<SimpleImageCarousel imagesArray={projectCarouselImages} />
+			<SidebarInfoText
+				backgroundWhite
+				sidebarContent={[
+					{
+						title: 'Tools',
+						text: 'Facebook Ads, Google Adds, Figma, Instagram',
+					},
+				]}
+				mainContent={[
+					{
+						title: 'Goals',
+						text: 'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+					},
+					{
+						text: 'Contrary to popular belief, Lorem Ipsum is not simply random. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+					},
+				]}
 			/>
-
 			<InformationalContent
-				data={storesPhotos}
-				storePath={props.location.pathname}
-				informationalText='Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout'
-				rateConversion='4.00%'
-				conversionConversion='220%+'
-				orderConversion='30%'
+				featuredImage={
+					<GatsbyImage
+						width={`500px`}
+						image={getImageByName(projectsImages, 'bottom')}
+						alt={'Margee Case Study - Results &amp; Impact'}
+					/>
+				}
+				title={'Results & Impact'}
+				description={
+					'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout'
+				}
+				blocks={[
+					{
+						title: 'Increase rate',
+						text: '4.00%',
+					},
+					{
+						title: 'Increase rate',
+						text: '4.00%',
+					},
+					{
+						title: 'Increase rate',
+						text: '4.00%',
+					},
+				]}
 			/>
-
-			<ProjectsList data={storesPhotos} background="vm-bg--white" />
+			<CaseStudiesCarousel backgroundWhite />
 		</Layout>
 	);
-};
-export default CaseStudy;
+}

@@ -91,6 +91,27 @@
         margin-left: 20px;
     }
 
+    &--white {
+        background: $white;
+
+        .vm-header__navigation a {
+            color: $black;
+
+            &.vm-button {
+                border-color: $black;
+
+                &:hover {
+                    background: $black;
+                    color: $white !important;
+                }
+            }
+        }
+
+        .vm-header__burger span {
+            background: $black;
+        }
+    }
+
     @include screen-medium {
         .vm-header__navigation {
             display: none;

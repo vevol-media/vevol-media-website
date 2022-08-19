@@ -29,6 +29,17 @@
         }
     }
 
+    &--white {
+        background: $white;
+
+        .slim-hero__content {
+            h1,
+            p {
+                color: $black;
+            }
+        }
+    }
+
     @include screen-small {
         .slim-hero__blob {
             width: 700px;

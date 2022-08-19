@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Title } from 'bloomer';
 import { Link } from 'gatsby';
-import './homepage-services.scss';
 import Fade from 'react-reveal/Fade';
 import homepageServices from '../../enums/homepage-services';
 import ServicePanel from './service-panel';
+import './homepage-services.scss';
 
 export default function HomepageServices() {
 	const [services, setServices] = useState([]);

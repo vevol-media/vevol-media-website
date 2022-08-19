@@ -1,11 +1,10 @@
 import React from 'react';
-import Layout from '../components/layout/layout';
+import { Helmet } from 'react-helmet';
+import CaseStudiesCarousel from '../components/case-studies-carousel/case-studies-carousel';
 import HomepageHero from '../components/homepage-hero/homepage-hero';
 import HomepageServices from '../components/homepage-services/homepage-services';
-import { Helmet } from 'react-helmet';
+import Layout from '../components/layout/layout';
 import ReviewsSection from '../components/reviews-section/reviews-section';
-import ProjectsList from '../components/projects-list/projects-list';
-import { graphql } from 'gatsby';
 
 export default function Homepage({ data }) {
 	return (
@@ -13,26 +12,10 @@ export default function Homepage({ data }) {
 			<HomepageHero />
 			<HomepageServices />
 			<ReviewsSection />
-			<ProjectsList data={data} bg="vm-bg--black" />
+			<CaseStudiesCarousel />
 			<Helmet>
-				<script
-					type="text/javascript"
-					src="https://widget.clutch.co/static/js/widget.js"
-				></script>
+				<script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
 			</Helmet>
 		</Layout>
 	);
 }
-
-export const data = graphql`
-	query Photos {
-		allFile(filter: { relativeDirectory: { eq: "stores-banners" } }) {
-			nodes {
-				name
-				childImageSharp {
-					gatsbyImageData(placeholder: TRACED_SVG)
-				}
-			}
-		}
-	}
-`;
