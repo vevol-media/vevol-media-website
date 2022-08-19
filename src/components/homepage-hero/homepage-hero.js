@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container, Title } from 'bloomer';
 import { Link } from 'gatsby';
-import './homepage-hero.scss';
 import Fade from 'react-reveal/Fade';
 import Jump from 'react-reveal/Jump';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import ClutchWidget from './clutch-widget';
 import Blob from '../blob/blob';
+import './homepage-hero.scss';
 
 export default function HomepageHero() {
 	return (

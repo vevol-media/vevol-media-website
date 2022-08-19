@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import './header.scss';
-import logo from '../../images/logo-vevol-media.svg';
-import iconClose from '../../images/icon-close.svg';
 import MenuAnimation from './menu-animation';
+import { Link } from 'gatsby';
 import { Container } from 'bloomer';
+import iconClose from '../../images/icon-close.svg';
+import logoWhite from '../../images/logo-vevol-media.svg';
+import logoBlack from '../../images/logo-vevol-media-black.svg';
+import './header.scss';
 
-export default function Header() {
+export default function Header({ background }) {
 	const [isNavVisible, setIsNavVisible] = useState(false);
+	const classes = `vm-header vm-header--${background}`;
 
 	return (
-		<div className="vm-header">
+		<div className={classes}>
 			<Container>
 				<Link to="/" className="vm-header__logo">
-					<img src={logo} alt="Vevol Media Logo" />
+					<img src={background === 'white' ? logoBlack : logoWhite} alt="Vevol Media Logo" />
 				</Link>
 
 				<div className="vm-header__navigation">

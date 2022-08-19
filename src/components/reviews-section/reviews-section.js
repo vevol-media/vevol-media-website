@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Title } from 'bloomer';
-import './reviews-section.scss';
 import allReviews from '../../enums/reviews';
 import SingleReview from './single-review';
+import './reviews-section.scss';
 
 export default function ReviewsSection() {
 	return (

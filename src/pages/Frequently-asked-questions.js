@@ -1,8 +1,8 @@
-import React from 'react';
 import Layout from '../components/layout/layout';
 import FaqQuestions from '../components/faq/faq-questions/faq-questions';
-import { Container } from 'bloomer';
+import React from 'react';
 import SlimHero from '../components/slim-hero/slim-hero';
+import { Container } from 'bloomer';
 
 export default function FaqPage() {
 	return (
