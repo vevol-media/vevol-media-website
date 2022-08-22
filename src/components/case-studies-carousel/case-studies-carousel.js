@@ -16,7 +16,7 @@ const images = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, height: 400, blurredOptions: { width: 125 })
+					gatsbyImageData(placeholder: BLURRED, width: 800, blurredOptions: { width: 125 })
 				}
 			}
 		}
@@ -77,7 +77,7 @@ export default function CaseStudiesCarousel({ backgroundWhite }) {
 		<div className={`case-studies-carousel vm-section case-studies-carousel--${backgroundModifier}`}>
 			<Container>
 				<div className="heading-block">
-					<Title tag="h2" isSize={2}>
+					<Title tag="h2" isSize={1}>
 						Our previously <span>successful</span> projects
 					</Title>
 					<p>Proven track record of our hard work.</p>

@@ -19,9 +19,9 @@ export default function Header({ background }) {
 				</Link>
 
 				<div className="vm-header__navigation">
-					<Link to="/">Services</Link>
-					<Link to="/">Portfolio</Link>
-					<Link to="/" className="vm-button vm-button--transparent-white">
+					<Link to="/services">Services</Link>
+					<Link to="/portfolio">Portfolio</Link>
+					<Link to="/start-your-project" className="vm-button vm-button--transparent-white">
 						Start Your Project
 					</Link>
 				</div>
@@ -43,14 +43,14 @@ export default function Header({ background }) {
 					<span></span>
 				</div>
 				<div className={`vm-header__extra-nav ${isNavVisible ? 'show-nav' : ''}`}>
-					<Link to="/">Services</Link>
-					<Link to="/">Portfolio</Link>
-					<Link to="/team">About Us</Link>
+					<Link to="/services">Services</Link>
+					<Link to="/portfolio">Portfolio</Link>
+					<Link to="/about">About Us</Link>
 					<Link to="/frequently-asked-questions">FAQ</Link>
-					<Link to="/">Case Studies</Link>
-					<Link to="/">Contact Us</Link>
-					<Link to="/">Strategic Partnerships</Link>
-					<Link to="/" className="vm-button vm-button--transparent-white">
+					<Link to="/case-studies">Case Studies</Link>
+					<Link to="/contact">Contact Us</Link>
+					<Link to="/strategic-partnerships">Strategic Partnerships</Link>
+					<Link to="/start-your-project" className="vm-button vm-button--transparent-white">
 						Start your project
 					</Link>
 

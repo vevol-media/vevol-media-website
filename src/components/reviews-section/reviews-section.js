@@ -9,7 +9,7 @@ export default function ReviewsSection() {
 		<div className="reviews-section vm-section">
 			<Container>
 				<div className="heading-block">
-					<Title tag="h2" isSize={2}>
+					<Title tag="h2" isSize={1}>
 						We work hard to deliver <span>quality</span>
 					</Title>
 					<p>And our clients appreciate us.</p>

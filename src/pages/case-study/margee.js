@@ -1,13 +1,14 @@
 import React from 'react';
 import { CardImage } from 'bloomer';
 import { graphql, useStaticQuery } from 'gatsby';
-import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
 import SlimHero from '../../components/slim-hero/slim-hero';
 import InformationalContent from '../../components/case-study/informational-content';
 import SidebarInfoText from '../../components/case-study/sidebar-info-text';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import CaseStudiesCarousel from '../../components/case-studies-carousel/case-studies-carousel';
+import { getImageByName } from '../../helpers/helpers';
 
 const projectsImagesQuery = graphql`
 	query {
@@ -24,12 +25,6 @@ const projectsImagesQuery = graphql`
 
 export default function MargeeCaseStudy() {
 	const projectsImages = useStaticQuery(projectsImagesQuery).allFile.nodes;
-	const getImageByName = (imagesArray, imageName) => {
-		const image = imagesArray.filter((image) => image.name === imageName)[0];
-
-		return getImage(image.childImageSharp.gatsbyImageData);
-	};
-
 	const projectCarouselImages = projectsImages.filter((image) => image.name.includes('carousel'));
 
 	return (
