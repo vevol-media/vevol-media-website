@@ -1,29 +1,11 @@
 import React from 'react';
 import { CardImage, Title } from 'bloomer';
 import { Link } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
-import { graphql, useStaticQuery } from 'gatsby';
-import './bottom-CTA.scss';
+import './bottom-cta.scss';
 import Fade from 'react-reveal/Fade';
-import techList from '../../enums/tech-list';
 
-export default function BottomCTA({ title, text }) {
-	const { placeholderImage } = useStaticQuery(
-		graphql`
-			query {
-				placeholderImage: file(relativePath: { eq: "work-together-banner.jpg" }) {
-					childImageSharp {
-						gatsbyImageData(placeholder: BLURRED)
-					}
-				}
-			}
-		`
-	);
-
-	const image = getImage(placeholderImage);
-	const bgImage = convertToBgImage(image);
+export default function BottomCTA({bgImage, title, text, techList, url }) {
 
 	return (
 		<BackgroundImage
@@ -54,7 +36,7 @@ export default function BottomCTA({ title, text }) {
 						<p>{text}</p>
 					</Fade>
 					<Fade bottom>
-						<Link to="/" className="vm-button vm-button--green">
+						<Link to={url} className="vm-button vm-button--green">
 							Get in Touch
 						</Link>
 					</Fade>

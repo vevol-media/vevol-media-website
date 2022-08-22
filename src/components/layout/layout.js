@@ -2,11 +2,30 @@ import React, { useEffect } from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import Fade from 'react-reveal/Fade';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
-import BottomCTA from '../bottom-CTA/bottom-CTA';
+import BottomCTA from '../bottom-cta/bottom-cta';
+import { getImage } from 'gatsby-plugin-image';
+import { convertToBgImage } from 'gbimage-bridge';
+import techList from '../../enums/tech-list';
 
 export default function Layout({ children }) {
+	const { placeholderImage } = useStaticQuery(
+		graphql`
+			query {
+				placeholderImage: file(relativePath: { eq: "work-together-banner.jpg" }) {
+					childImageSharp {
+						gatsbyImageData(placeholder: BLURRED)
+					}
+				}
+			}
+		`
+	);
+
+	const image = getImage(placeholderImage);
+	const bgImage = convertToBgImage(image);
+
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
 	}));
@@ -40,8 +59,11 @@ export default function Layout({ children }) {
 				<Header />
 				<main>{children}</main>
 				<BottomCTA
-				title="Let's Work Together"
-				text="Book a free consultation with one of out team members now"
+					bgImage= {bgImage}
+					title="Let's Work Together"
+					text="Book a free consultation with one of out team members now"
+					techList = {techList}
+					url="/"
 				/>
 				<Footer />
 			</div>
