@@ -7,7 +7,6 @@ import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
 import BottomCTA from '../bottom-cta/bottom-cta';
 import { getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
 import techList from '../../enums/tech-list';
 
 export default function Layout({ children }) {
@@ -24,7 +23,8 @@ export default function Layout({ children }) {
 	);
 
 	const image = getImage(placeholderImage);
-	const bgImage = convertToBgImage(image);
+	// const bgImage = convertToBgImage(image);
+	const bgImage = getImage(image);
 
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,

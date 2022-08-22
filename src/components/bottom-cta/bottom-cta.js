@@ -1,20 +1,14 @@
 import React from 'react';
 import { CardImage, Title } from 'bloomer';
 import { Link } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
+import { BgImage } from 'gbimage-bridge';
 import './bottom-cta.scss';
 import Fade from 'react-reveal/Fade';
 
 export default function BottomCTA({bgImage, title, text, techList, url }) {
 
 	return (
-		<BackgroundImage
-			Tag="section"
-			className="bottom-cta__section"
-			// Spread bgImage into BackgroundImage:
-			{...bgImage}
-			preserveStackingContext
-		>
+			<BgImage className="bottom-cta__section" image={bgImage}>
 			<div className="container bottom-cta__wrapper">
 				<div className="bottom-cta__logos-container">
 					<Fade top>
@@ -42,6 +36,6 @@ export default function BottomCTA({bgImage, title, text, techList, url }) {
 					</Fade>
 				</div>
 			</div>
-		</BackgroundImage>
+			</BgImage>
 	);
 }
