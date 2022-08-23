@@ -1,0 +1,41 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.case-studies-carousel {
+	&--white {
+		background: $white;
+
+		.heading-block {
+			color: $black;
+		}
+
+		.splide__pagination__page.is-active {
+			background: $black;
+		}
+	}
+
+	.splide {
+		padding: 40px 0 60px;
+
+		.case-study-item {
+			height: 100%;
+			display: flex;
+			align-items: flex-end;
+			color: $black;
+
+			p {
+				font-weight: bold;
+				font-size: 1.3em;
+			}
+
+			svg {
+				fill: $black;
+			}
+		}
+
+		@include screen-mobile {
+			padding: 40px 0;
+			margin: 0 -20px;
+		}
+	}
+}

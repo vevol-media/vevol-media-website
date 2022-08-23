@@ -1,0 +1,12 @@
+.team-container {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .team-container {
+    gap: 20px;
+  }
+}

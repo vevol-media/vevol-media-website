@@ -7,7 +7,7 @@ const TeamInfo = () => {
 		<Content >
 			<div className="heading-block heading-block--reverse heading-block--black">
 				<p>Vevol Media</p>
-				<Title tag="h2" isSize={2}>
+				<Title tag="h2" isSize={1}>
 					Professional work team in their field
 				</Title>
 			</div>

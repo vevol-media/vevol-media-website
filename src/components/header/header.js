@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import './header.scss';
-import logo from '../../images/logo-vevol-media.svg';
-import iconClose from '../../images/icon-close.svg';
 import MenuAnimation from './menu-animation';
+import { Link } from 'gatsby';
 import { Container } from 'bloomer';
+import iconClose from '../../images/icon-close.svg';
+import logoWhite from '../../images/logo-vevol-media.svg';
+import logoBlack from '../../images/logo-vevol-media-black.svg';
+import './header.scss';
 
-export default function Header() {
+export default function Header({ background }) {
 	const [isNavVisible, setIsNavVisible] = useState(false);
+	const classes = `vm-header vm-header--${background}`;
 
 	return (
-		<div className="vm-header">
+		<div className={classes}>
 			<Container>
 				<Link to="/" className="vm-header__logo">
-					<img src={logo} alt="Vevol Media Logo" />
+					<img src={background === 'white' ? logoBlack : logoWhite} alt="Vevol Media Logo" />
 				</Link>
 
 				<div className="vm-header__navigation">
-					<Link to="/">Services</Link>
-					<Link to="/">Portfolio</Link>
-					<Link to="/" className="vm-button vm-button--transparent-white">
+					<Link to="/services">Services</Link>
+					<Link to="/portfolio">Portfolio</Link>
+					<Link to="/start-your-project" className="vm-button vm-button--transparent-white">
 						Start Your Project
 					</Link>
 				</div>
@@ -41,14 +43,14 @@ export default function Header() {
 					<span></span>
 				</div>
 				<div className={`vm-header__extra-nav ${isNavVisible ? 'show-nav' : ''}`}>
-					<Link to="/">Services</Link>
-					<Link to="/">Portfolio</Link>
-					<Link to="/team">About Us</Link>
+					<Link to="/services">Services</Link>
+					<Link to="/portfolio">Portfolio</Link>
+					<Link to="/about">About Us</Link>
 					<Link to="/frequently-asked-questions">FAQ</Link>
-					<Link to="/">Case Studies</Link>
-					<Link to="/">Contact Us</Link>
-					<Link to="/">Strategic Partnerships</Link>
-					<Link to="/" className="vm-button vm-button--transparent-white">
+					<Link to="/case-studies">Case Studies</Link>
+					<Link to="/contact">Contact Us</Link>
+					<Link to="/strategic-partnerships">Strategic Partnerships</Link>
+					<Link to="/start-your-project" className="vm-button vm-button--transparent-white">
 						Start your project
 					</Link>
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from '../header/header';
-import Footer from '../footer/footer';
+import WebsiteFooter from '../footer/footer';
 import Fade from 'react-reveal/Fade';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Cursor } from '../cursor/cursor';
@@ -9,7 +9,7 @@ import BottomCTA from '../bottom-cta/bottom-cta';
 import { getImage } from 'gatsby-plugin-image';
 import techList from '../../enums/tech-list';
 
-export default function Layout({ children }) {
+export default function Layout({ children, headerBg, showBlob }) {
 	const { placeholderImage } = useStaticQuery(
 		graphql`
 			query {
@@ -23,8 +23,8 @@ export default function Layout({ children }) {
 	);
 
 	const image = getImage(placeholderImage);
-	// const bgImage = convertToBgImage(image);
 	const bgImage = getImage(image);
+
 
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
@@ -51,12 +51,14 @@ export default function Layout({ children }) {
 	return (
 		<Fade>
 			<div onMouseMove={handleMouseMove} role="presentation">
-				<div className="cursor-container">
-					<animated.div style={animatedProps} className="cursor-wrapper">
-						<Cursor />
-					</animated.div>
-				</div>
-				<Header />
+				{showBlob && (
+					<div className="cursor-container">
+						<animated.div style={animatedProps} className="cursor-wrapper">
+							<Cursor />
+						</animated.div>
+					</div>
+				)}
+				<Header background={headerBg} />
 				<main>{children}</main>
 				<BottomCTA
 					bgImage= {bgImage}
@@ -65,7 +67,7 @@ export default function Layout({ children }) {
 					techList = {techList}
 					url="/"
 				/>
-				<Footer />
+				<WebsiteFooter />
 			</div>
 		</Fade>
 	);

@@ -14,7 +14,7 @@
     }
 
     p {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     @include screen-small {
@@ -39,11 +39,22 @@
 .vm-section {
     padding: 100px 0;
 
-    &--white {
+    &--background-white {
         background-color: $white;
+        color: $black;
     }
 
     @include screen-small {
         padding: 50px 0;
     }
+}
+
+.vm-bg--white {
+    background-color: $white;
+    color: $black;
+}
+
+.vm-bg--black {
+    background-color: $black;
+    color: $white;
 }

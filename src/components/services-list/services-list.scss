@@ -1,0 +1,48 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.services-list {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+
+        li {
+            background: $black;
+            overflow: hidden;
+            position: relative;
+            width: calc(33.33% - 1.35em);
+            box-shadow: 9px 9px 0 0 $green;
+
+            .service__background-image {
+                position: absolute;
+                z-index: 1;
+                top: -300px;
+                right: -200px;
+                opacity: 0.5;
+                transform: rotate(75deg);
+            }
+
+            > a {
+                position: relative;
+                z-index: 2;
+                padding: 30px;
+                display: block;
+                color: $white;
+
+                .service__icon {
+                    background: $green;
+                    padding: 10px;
+                    border-radius: 5px;
+                    display: inline-block;
+                    margin-bottom: 30px;
+                }
+
+                p {
+                    opacity: 0.7;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
