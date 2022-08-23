@@ -31,10 +31,26 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: 'blogs',
-				path: `${__dirname}/src/blogs/`,
+				name: 'markdown',
+				path: `${__dirname}/src/markdown/`,
 			},
-			__key: 'blogs',
+			__key: 'markdown',
+		},
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [
+					`gatsby-remark-relative-images`,
+					{
+						resolve: `gatsby-remark-images`,
+						options: {
+							linkImagesToOriginal: true,
+							withWebp: true,
+							quality: 50,
+						},
+					},
+				],
+			},
 		},
 	],
 };
