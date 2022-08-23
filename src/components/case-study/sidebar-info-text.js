@@ -10,7 +10,7 @@ export default function SidebarInfoText({ sidebarContent, mainContent, backgroun
 					<ul className="sidebar-info-text__left mb-0">
 						{sidebarContent.map((item, index) => (
 							<li key={index}>
-								<Subtitle tag="h6">{item.title}</Subtitle>
+								<Subtitle tag="h5">{item.title}</Subtitle>
 								<p>{item.text}</p>
 							</li>
 						))}

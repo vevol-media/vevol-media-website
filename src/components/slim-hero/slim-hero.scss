@@ -25,7 +25,13 @@
         text-align: center;
 
         h1 {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            max-width: 800px;
         }
     }
 
@@ -50,6 +56,10 @@
 
         .slim-hero__content {
             margin-top: 60px;
+
+            p {
+                font-size: 1em;
+            }
         }
     }
 }

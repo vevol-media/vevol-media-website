@@ -2,36 +2,13 @@
 @import "../../styles/mixins";
 
 .sideway-text {
-    .sideway-text__intro {
-        margin-bottom: 20px;
-
-        .intro__time {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 3em;
-            text-transform: uppercase;
-
-            span {
-                display: inline-block;
-
-                &:nth-child(2) {
-                    color: $green;
-                    margin: 0 10px;
-                }
-            }
-        }
-
-        .intro__text {
-            text-align: center;
-            font-size: 2em;
-        }
-    }
+    background: $blackZero;
 
     .sideway-text__blocks {
-        margin-bottom: 100px;
+        padding: 1em 0;
 
         p {
-            font-size: 10em;
+            font-size: 4em;
             font-weight: bold;
             text-transform: uppercase;
             display: block;
@@ -39,37 +16,30 @@
             line-height: 1;
 
             span {
+                font-family: $font-family-secondary;
+
                 &:nth-child(2n) {
-                    color: $blackZero;
+                    color: $green;
+                }
+                &:nth-child(2n + 1) {
+                    color: $black;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: $white;
                 }
             }
 
             &:nth-child(2) span {
-                color: $green;
+                color: $white;
 
                 &:nth-child(2n) {
-                    color: $blackZero;
+                    color: $black;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: $white;
                 }
             }
-        }
-    }
 
-    .sideway-text__heading {
-        position: relative;
-        text-align: center;
-        font-size: 4em;
-        text-transform: uppercase;
-        font-weight: bold;
-
-        span {
-            display: inline-block;
-            position: relative;
-            cursor: default;
-            transition: 0.3s ease all;
-
-            &:nth-child(2) {
-                margin: 0 10px;
-                color: $green;
+            @include screen-small {
+                font-size: 3em;
             }
         }
     }
