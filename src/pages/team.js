@@ -10,7 +10,7 @@ export default function Team({ data }) {
 		<Layout>
 			<SlimHero heading="Our team" subheading="A wide range of talent ." />
 
-			<div className="vm-section vm-section--white">
+			<div className="vm-section vm-bg--white">
 				<Container>
 					<TeamInfo />
 					<TeamMembers />
