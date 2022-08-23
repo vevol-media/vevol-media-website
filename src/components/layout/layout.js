@@ -13,7 +13,7 @@ export default function Layout({ children, headerBg, showBlob }) {
 	const { placeholderImage } = useStaticQuery(
 		graphql`
 			query {
-				placeholderImage: file(relativePath: { eq: "work-together-banner.jpg" }) {
+				placeholderImage: file(relativePath: { eq: "bottom-cta-banner.jpg" }) {
 					childImageSharp {
 						gatsbyImageData(placeholder: BLURRED)
 					}
