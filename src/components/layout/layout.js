@@ -10,12 +10,21 @@ import { getImage } from 'gatsby-plugin-image';
 import techList from '../../enums/tech-list';
 
 export default function Layout({ children, headerBg, showBlob }) {
-	const { placeholderImage } = useStaticQuery(
+	const { placeholderImage, logoImages } = useStaticQuery(
 		graphql`
 			query {
 				placeholderImage: file(relativePath: { eq: "bottom-cta-banner.jpg" }) {
 					childImageSharp {
 						gatsbyImageData(placeholder: BLURRED)
+					}
+				}
+
+				logoImages: allFile(filter: { relativeDirectory: { eq: "tech-logos" } }) {
+					nodes {
+						name
+						childImageSharp {
+							gatsbyImageData(placeholder: TRACED_SVG)
+						}
 					}
 				}
 			}
@@ -24,7 +33,6 @@ export default function Layout({ children, headerBg, showBlob }) {
 
 	const image = getImage(placeholderImage);
 	const bgImage = getImage(image);
-
 
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
@@ -61,10 +69,11 @@ export default function Layout({ children, headerBg, showBlob }) {
 				<Header background={headerBg} />
 				<main>{children}</main>
 				<BottomCTA
-					bgImage= {bgImage}
+					bgImage={bgImage}
 					title="Let's Work Together"
+					logoImages={logoImages}
 					text="Book a free consultation with one of out team members now"
-					techList = {techList}
+					techList={techList}
 					url="/"
 				/>
 				<WebsiteFooter />
