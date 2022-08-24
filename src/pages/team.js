@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Layout from '../components/layout/layout';
 import TeamInfo from '../components/team-section/team-info';
 import TeamMembers from '../components/team-section/team-members';

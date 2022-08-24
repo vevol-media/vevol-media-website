@@ -3,10 +3,18 @@
     padding: 10px 0 10px 20px;
 
     &--reverse {
-
         h2 {
             margin-block: 0 !important;
         }
+    }
+
+    &--align-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        border-left: none;
+        border-right: 5px solid $green;
+        padding: 10px 20px 10px 0;
     }
 
     &--black {
@@ -21,11 +29,16 @@
         .title {
             font-size: 2em;
         }
+
+        p {
+            font-size: 1.1em;
+        }
     }
 }
 
 .title {
     color: inherit;
+    font-size: 3em;
 
     span {
         font-weight: bolder;
@@ -33,11 +46,16 @@
 
     @include screen-small {
         font-size: 1.75em;
+
+        &.is-2,
+        &.is-3 {
+            font-size: 1.65em;
+        }
     }
 }
 
 .vm-section {
-    padding: 100px 0;
+    padding: 6em 0;
 
     &--background-white {
         background-color: $white;
@@ -45,7 +63,7 @@
     }
 
     @include screen-small {
-        padding: 50px 0;
+        padding: 4em 0;
     }
 }
 

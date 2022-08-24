@@ -51,19 +51,19 @@
 
         p {
             &:first-of-type {
-                font-size: 1.25em;
+                font-size: 1.15em;
                 text-transform: uppercase;
                 color: $green;
             }
 
             &:last-of-type {
-                font-size: 1.6em;
+                font-size: 1.3em;
                 line-height: 1.4;
             }
         }
 
         h1 {
-            font-size: 5em;
+            font-size: 4em;
             margin: 10px 0 20px;
             font-weight: 900;
         }

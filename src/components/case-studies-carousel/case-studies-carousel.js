@@ -33,11 +33,11 @@ export default function CaseStudiesCarousel({ backgroundWhite }) {
 		height: 400,
 
 		breakpoints: {
-			1140: {
+			1600: {
 				perPage: 3,
 				wheel: false,
 			},
-			749: {
+			1024: {
 				perPage: 2,
 				wheel: false,
 			},
