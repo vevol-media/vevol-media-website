@@ -13,13 +13,6 @@ const homepageServices = [
 		sublist: ['text text text textb', 'text text text text', 'text text text text', 'text text text text'],
 		url: '/',
 	},
-	{
-		icon: 'faSearchDollar',
-		heading: 'SEO Services',
-		intro: 'Text text text text text text text text text text text text text text text text text text text text text text text text text text text.',
-		sublist: ['text text text textc', 'text text text text', 'text text text text', 'text text text text'],
-		url: '/',
-	},
 ];
 
 export default homepageServices;
