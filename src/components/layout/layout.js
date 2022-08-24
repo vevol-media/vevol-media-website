@@ -2,38 +2,10 @@ import React, { useEffect } from 'react';
 import Header from '../header/header';
 import WebsiteFooter from '../footer/footer';
 import Fade from 'react-reveal/Fade';
-import { graphql, useStaticQuery } from 'gatsby';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
-import BottomCTA from '../bottom-cta/bottom-cta';
-import { getImage } from 'gatsby-plugin-image';
-import techList from '../../enums/tech-list';
 
 export default function Layout({ children, headerBg, showBlob }) {
-	const { placeholderImage, logoImages } = useStaticQuery(
-		graphql`
-			query {
-				placeholderImage: file(relativePath: { eq: "bottom-cta-banner.jpg" }) {
-					childImageSharp {
-						gatsbyImageData(placeholder: BLURRED)
-					}
-				}
-
-				logoImages: allFile(filter: { relativeDirectory: { eq: "tech-logos" } }) {
-					nodes {
-						name
-						childImageSharp {
-							gatsbyImageData(placeholder: TRACED_SVG)
-						}
-					}
-				}
-			}
-		`
-	);
-
-	const image = getImage(placeholderImage);
-	const bgImage = getImage(image);
-
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
 	}));
@@ -68,14 +40,6 @@ export default function Layout({ children, headerBg, showBlob }) {
 				)}
 				<Header background={headerBg} />
 				<main>{children}</main>
-				<BottomCTA
-					bgImage={bgImage}
-					title="Let's Work Together"
-					logoImages={logoImages}
-					text="Book a free consultation with one of out team members now"
-					techList={techList}
-					url="/"
-				/>
 				<WebsiteFooter />
 			</div>
 		</Fade>

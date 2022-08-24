@@ -2,58 +2,25 @@
 @import 'src/styles/variables';
 
 .bottom-cta__section {
-	padding-block: 100px;
+	display: flex;
+	background-color: #AAACAE;
 
-	.bottom-cta__wrapper {
+	.bottom-cta__section-left-banner {
+		width: 50%;
+		border: none;
+	}
+
+	.bottom-cta__section-right-banner {
+		width: 50%;
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
+		background-image: linear-gradient(to left, transparent 100%, #AAACAE 50% #AAACAE 100%),url('../../images/bottom-cta-banner.jpg');
 
-		.bottom-cta__logos-container {
+		.bottom-cta__btn-container {
 			display: flex;
 			flex-direction: column;
-
-			.bottom-cta__logos-title {
-				background: #0000009c;
-			}
-
-			.bottom-cta__logos {
-				padding-top: 30px;
-				display: flex;
-				gap: 10px;
-
-				img {
-					object-fit: fill !important;
-					max-width: 150px;
-					max-height: 60px;
-				}
-			}
-
-			@include screen-medium {
-				align-items: center;
-			}
-		}
-
-		.bottom-cta__button-container {
-			display: flex;
-			flex-direction: column;
-
-			p {
-				padding-bottom: 30px;
-				font-weight: 500;
-			}
-
-			@include screen-medium {
-				align-items: center;
-				p {
-					text-align: center;
-				}
-			}
-		}
-
-		@include screen-medium {
-			flex-direction: column;
-			align-items: center;
-			gap: 40px;
+			gap: 20px;
+			padding-left: 20px;
 		}
 	}
 }
