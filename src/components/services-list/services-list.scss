@@ -21,13 +21,19 @@
             box-shadow: 9px 9px 0 0 $green;
 
             .service__background-image {
+                display: flex;
+                transform: rotate(90deg);
+                top: -350px;
                 position: absolute;
-                z-index: 1;
-                top: -250px;
-                right: -200px;
-                opacity: 0.5;
-                transform: rotate(75deg);
+                right: -400px;
                 transition: 0.7s ease all;
+
+                svg {
+                    color: $green;
+                    opacity: 0.7;
+                    width: 600px;
+                    height: 600px;
+                }
             }
 
             > a {
@@ -66,7 +72,7 @@
 
                 .service__background-image {
                     filter: invert(1);
-                    transform: rotate(60deg);
+                    transform: rotate(70deg) scale(1.1);
                 }
             }
         }
