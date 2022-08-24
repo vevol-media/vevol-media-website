@@ -5,11 +5,13 @@ import HomepageHero from '../components/homepage-hero/homepage-hero';
 import HomepageServices from '../components/homepage-services/homepage-services';
 import Layout from '../components/layout/layout';
 import ReviewsSection from '../components/reviews-section/reviews-section';
+import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
 
 export default function Homepage({ data }) {
 	return (
 		<Layout>
 			<HomepageHero />
+			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
 			<HomepageServices />
 			<ReviewsSection />
 			<CaseStudiesCarousel />

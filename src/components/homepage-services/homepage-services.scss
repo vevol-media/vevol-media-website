@@ -17,15 +17,36 @@
 }
 
 .hs-list__block {
-    padding: 20px;
+    padding: 30px 100px 30px 30px;
     display: flex;
     flex-direction: column;
     position: relative;
     flex: 1;
+    overflow: hidden;
 
     &--shadow {
         box-shadow: 9px 9px 0 0 $green;
         border: 1px solid $black;
+    }
+
+    > *:not(.hs-block__pattern) {
+        z-index: 2;
+    }
+
+    .hs-block__pattern {
+        display: flex;
+        transform: rotate(90deg);
+        top: -350px;
+        position: absolute;
+        right: -400px;
+        transition: 0.7s ease all;
+
+        svg {
+            color: $green;
+
+            width: 600px;
+            height: 600px;
+        }
     }
 
     .hs-block__icon {
@@ -35,36 +56,27 @@
         margin-bottom: 20px;
     }
 
-    .hs-block__plus {
-        display: none;
-        position: absolute;
-        font-size: 40px;
-        right: 20px;
-        bottom: 20px;
-    }
-
     > a {
         margin-top: auto;
         color: $black;
         text-decoration: underline;
         font-weight: 600;
+        font-size: 1.1em;
 
         &:hover {
             text-decoration: none;
         }
     }
 
-    @include screen-medium {
-        > p,
-        .hs-block__items {
-            height: 0;
-            overflow: hidden;
-            transition: 0.5s linear all;
+    &:hover {
+        .hs-block__pattern {
+            filter: invert(1);
+            transform: rotate(70deg) scale(1.1);
         }
+    }
 
-        .hs-block__plus {
-            display: inline-block;
-        }
+    @include screen-small {
+        padding-right: 30px;
     }
 }
 

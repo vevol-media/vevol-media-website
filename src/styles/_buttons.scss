@@ -21,7 +21,8 @@
         color: $black;
 
         &:hover {
-            background: $white;
+            background: $black;
+            color: $green;
         }
     }
 
