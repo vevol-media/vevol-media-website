@@ -17,19 +17,11 @@ export const data = graphql`
 				}
 			}
 		}
-		topoPattern: allFile(filter: { name: { eq: "topo-pattern" } }) {
+		devFrameworks: allFile(filter: { relativeDirectory: { eq: "dev-frameworks" } }) {
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 150 })
-				}
-			}
-		}
-		topoPattern2: allFile(filter: { name: { eq: "06" } }) {
-			nodes {
-				name
-				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 150 })
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 20 }, width: 150)
 				}
 			}
 		}
@@ -37,6 +29,8 @@ export const data = graphql`
 `;
 
 export default function ServicesPage({ data }) {
+	const { servicesIcons, devFrameworks } = data;
+
 	return (
 		<Layout>
 			<SlimHero
@@ -51,7 +45,7 @@ export default function ServicesPage({ data }) {
 						</Title>
 						<p>Clean, scalable, flexible and re-usable. That's our way of writing code.</p>
 					</div>
-					<ServicesList imageData={data} services={services.dev} backgroundWhite topMargin />
+					<ServicesList imageData={servicesIcons.nodes} services={services.dev} backgroundWhite topMargin />
 				</Container>
 			</div>
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
@@ -63,7 +57,12 @@ export default function ServicesPage({ data }) {
 						</Title>
 						<p>Let us take your brand to the next level. Of awesomeness!</p>
 					</div>
-					<ServicesList imageData={data} services={services.ecommerce} backgroundWhite topMargin />
+					<ServicesList
+						imageData={servicesIcons.nodes}
+						services={services.ecommerce}
+						backgroundWhite
+						topMargin
+					/>
 				</Container>
 			</div>
 		</Layout>
