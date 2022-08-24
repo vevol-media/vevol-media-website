@@ -1,0 +1,16 @@
+.field:not(:last-child) {
+    margin-bottom: 1.1em;
+}
+
+.pagination-previous,
+.pagination-next,
+.pagination-link,
+.pagination-ellipsis,
+.file-cta,
+.file-name,
+.select select,
+.textarea,
+.input,
+.button {
+    height: 3em;
+}

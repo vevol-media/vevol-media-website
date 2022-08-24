@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import CaseStudiesCarousel from '../components/case-studies-carousel/case-studies-carousel';
+import MainForm from '../components/forms/main-form';
 import HomepageHero from '../components/homepage-hero/homepage-hero';
 import HomepageServices from '../components/homepage-services/homepage-services';
 import Layout from '../components/layout/layout';
@@ -15,6 +16,12 @@ export default function Homepage({ data }) {
 			<HomepageServices />
 			<ReviewsSection />
 			<CaseStudiesCarousel />
+			<MainForm
+				title={"Let's Talk About Your Business"}
+				subtitle={
+					'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
+				}
+			/>
 			<Helmet>
 				<script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
 			</Helmet>

@@ -47,6 +47,10 @@
     @include screen-small {
         font-size: 1.75em;
 
+        &.is-1 {
+            font-size: 1.75em;
+        }
+
         &.is-2,
         &.is-3 {
             font-size: 1.65em;
@@ -75,4 +79,10 @@
 .vm-bg--black {
     background-color: $black;
     color: $white;
+}
+
+.select select,
+.textarea,
+.input {
+    font-size: 1.1em;
 }
