@@ -1,5 +1,7 @@
 .vm-button {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 15px 20px;
     font-weight: bold;
@@ -10,6 +12,7 @@
     user-select: none;
     font-family: $font-family;
     -webkit-appearance: none;
+    text-decoration: none !important;
 
     &.button {
         border: none;
@@ -18,6 +21,16 @@
             border-color: $black;
             border-right-color: transparent;
             border-top-color: transparent;
+        }
+    }
+
+    &.vm-button--black {
+        background: $black;
+        color: $white !important;
+
+        &:hover {
+            background: $green;
+            color: $black !important;
         }
     }
 

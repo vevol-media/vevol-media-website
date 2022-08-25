@@ -10,7 +10,9 @@ export default function InformationalContent({ title, description, blocks, featu
 
 			<Content className="informational-content">
 				<div className="informational-details">
-					<Title tag="h3" isSize={2}>{title}</Title>
+					<Title tag="h3" isSize={2}>
+						{title}
+					</Title>
 					<p>{description}</p>
 				</div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import CaseStudiesCarousel from '../components/case-studies-carousel/case-studies-carousel';
 import MainForm from '../components/forms/main-form';
+import PagespeedChecker from '../components/forms/pagespeed-checker';
 import HomepageHero from '../components/homepage-hero/homepage-hero';
 import HomepageServices from '../components/homepage-services/homepage-services';
 import Layout from '../components/layout/layout';
@@ -16,6 +17,7 @@ export default function Homepage({ data }) {
 			<HomepageServices />
 			<ReviewsSection />
 			<CaseStudiesCarousel />
+			<PagespeedChecker />
 			<MainForm
 				title={"Let's Talk About Your Business"}
 				subtitle={

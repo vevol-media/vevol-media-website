@@ -9,6 +9,7 @@ import SidebarInfoText from '../../components/case-study/sidebar-info-text';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import CaseStudiesCarousel from '../../components/case-studies-carousel/case-studies-carousel';
 import { getImageByName } from '../../helpers/helpers';
+import Quote from '../../components/case-study/quote';
 
 const projectsImagesQuery = graphql`
 	query {
@@ -59,6 +60,12 @@ export default function MargeeCaseStudy() {
 						text: 'Contrary to popular belief, Lorem Ipsum is not simply random. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
 					},
 				]}
+			/>
+			<Quote
+				firstPart={`Vevol Media were amazing!`}
+				secondPart={`Not only they took care of the project A to Z but they continue offering monthly quality maintenance.`}
+				authorName={`Richard Gere`}
+				authorRole={`CEO, Margee`}
 			/>
 			<SimpleImageCarousel imagesArray={projectCarouselImages} />
 			<SidebarInfoText
