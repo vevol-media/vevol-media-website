@@ -8,6 +8,8 @@
     font-size: 1em;
     cursor: pointer;
     user-select: none;
+    font-family: $font-family;
+    -webkit-appearance: none;
 
     &.button {
         border: none;

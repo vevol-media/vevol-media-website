@@ -1,16 +1,21 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Field, Control, Input, TextArea, Content, Container, Title, Help } from 'bloomer';
-import './main-form.scss';
+import { useForm } from 'react-hook-form';
+import { Field, Control, Content, Container, Title, Help, Input } from 'bloomer';
 import { IconTopo } from '../../helpers/icons';
+import './main-form.scss';
 
 export default function MainForm({ title, subtitle }) {
 	const [isSending, setIsSending] = useState(false);
 	const [isSent, setIsSent] = useState(false);
 	const form = useRef();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm();
 
-	const sendEmail = (e) => {
-		e.preventDefault();
+	const onSubmit = (data) => {
 		setIsSending(true);
 
 		emailjs
@@ -39,25 +44,60 @@ export default function MainForm({ title, subtitle }) {
 					</Title>
 					<p>{subtitle}</p>
 				</Content>
-				<form className="main-contact__form" ref={form} onSubmit={sendEmail}>
+				<form className="main-contact__form" ref={form} onSubmit={handleSubmit(onSubmit)}>
 					<Field>
 						<Control>
-							<Input type="text" placeholder="Full Name" name="full_name" />
+							<input
+								className={`input ${errors.fullName && 'is-danger'}`}
+								type="text"
+								placeholder="Full Name*"
+								name="fullName"
+								{...register('fullName', { required: true })}
+							/>
+							{errors.fullName && <Help isColor="warning">Full name is required</Help>}
 						</Control>
 					</Field>
 					<Field>
 						<Control>
-							<Input type="email" placeholder="Business Email" name="email" />
+							<input
+								className={`input ${errors.email && 'is-danger'}`}
+								type="email"
+								placeholder="Business Email*"
+								name="email"
+								{...register('email', {
+									required: true,
+									pattern: /^\S+@\S+\.\S+$/i,
+									message: 'invalid email address',
+								})}
+							/>
+							{errors.email && <Help isColor="warning">Business email is required</Help>}
 						</Control>
 					</Field>
 					<Field>
 						<Control>
-							<Input type="tel" placeholder="Business Phone" name="phone" />
+							<input
+								className={`input ${errors.phone && 'is-danger'}`}
+								type="tel"
+								placeholder="Business Phone*"
+								name="phone"
+								{...register('phone', {
+									required: true,
+								})}
+							/>
+							{errors.phone && <Help isColor="warning">Business phone is required</Help>}
 						</Control>
 					</Field>
 					<Field>
 						<Control>
-							<Input type="text" placeholder="Company" autcomplete="organization" name="company" />
+							<input
+								className={`input ${errors.company && 'is-danger'}`}
+								type="text"
+								placeholder="Company*"
+								name="company"
+								{...register('company', { required: true })}
+								autoComplete="organization"
+							/>
+							{errors.company && <Help isColor="warning">Company name is required</Help>}
 						</Control>
 					</Field>
 					<Field>
@@ -67,19 +107,25 @@ export default function MainForm({ title, subtitle }) {
 					</Field>
 					<Field>
 						<Control>
-							<TextArea placeholder="Your message to us" name="message" />
+							<textarea
+								className={`textarea ${errors.message && 'is-danger'}`}
+								type="email"
+								placeholder="Your message*"
+								name="email"
+								{...register('message', { required: true })}
+							></textarea>
+							{errors.message && <Help isColor="warning">Message is required</Help>}
 						</Control>
 					</Field>
 					<p className="main-contact__disclaimer is-size-6 mb-5">
-						By Submitting this form you agree for Vevol Media to contact you in regards to your query.
+						By submitting this form you agree for Vevol Media to contact you in regards to your query.
 					</p>
-					<span
+					<button
 						className={`vm-button vm-button--green-alt button ${isSending && 'is-loading'}`}
-						type="button"
-						onClick={sendEmail}
+						type="submit"
 					>
 						Send Message
-					</span>
+					</button>
 					{isSent && <Help isColor="success">Message was successfuly sent. We'll get back to you ASAP.</Help>}
 				</form>
 			</Container>

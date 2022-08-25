@@ -14,3 +14,12 @@
 .button {
     height: 3em;
 }
+
+.input,
+.textarea {
+    transition: 0.3s ease all;
+
+    &.is-danger {
+        border-width: 1px 1px 1px 10px;
+    }
+}
