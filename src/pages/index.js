@@ -11,19 +11,19 @@ import SidewayText from '../components/sideways-text-banner/sideway-text-banner'
 import BottomCTA from '../components/bottom-cta/bottom-cta';
 
 export default function Homepage({ data }) {
-	const { placeholderImage } = useStaticQuery(
+	const { bottomBanner } = useStaticQuery(
 		graphql`
 			query {
-				placeholderImage: file(relativePath: { eq: "bottom-cta-banner.jpg" }) {
+				bottomBanner: file(relativePath: { eq: "bottom-banner.jpg" }) {
 					childImageSharp {
-						gatsbyImageData(transformOptions: {cropFocus: CENTER}, placeholder: BLURRED)
+						gatsbyImageData(placeholder: BLURRED)
 					}
 				}
 			}
 		`
 	);
 
-	const bgImage = getImage(placeholderImage);
+	const bottomBannerBackgroundImage = getImage(bottomBanner);
 
 	return (
 		<Layout>
@@ -36,10 +36,11 @@ export default function Homepage({ data }) {
 				<script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
 			</Helmet>
 			<BottomCTA
-				bgImage={bgImage}
+				bgImage={bottomBannerBackgroundImage}
 				title="Let's Work Together"
 				text="Book a free consultation with one of out team members now"
 				url="/"
+				gradientColour="black"
 			/>
 		</Layout>
 	);
