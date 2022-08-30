@@ -1,0 +1,56 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.main-contact {
+    position: relative;
+    overflow: hidden;
+
+    .main-contact__pattern-one {
+        position: absolute;
+        bottom: -300px;
+        left: -200px;
+
+        svg {
+            width: 700px;
+            height: 700px;
+            color: $green;
+            opacity: 0.5;
+        }
+    }
+
+    .container {
+        display: flex;
+
+        .main-contact__intro {
+            flex: 1;
+            margin-right: 2em;
+
+            .title {
+                color: $white;
+            }
+        }
+
+        .main-contact__form {
+            width: 550px;
+        }
+    }
+
+    @include screen-medium {
+        .main-contact__pattern-one {
+            opacity: 0.4;
+        }
+
+        .container {
+            flex-direction: column;
+            text-align: center;
+
+            .main-contact__intro {
+                margin-right: 0;
+            }
+
+            .main-contact__form {
+                width: auto;
+            }
+        }
+    }
+}

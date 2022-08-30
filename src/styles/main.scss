@@ -1,9 +1,13 @@
 $fullhd: 1600px;
+$radius: 0;
+$radius-small: $radius;
+$radius-large: $radius;
 
 @import "bulma/bulma.sass";
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
 @import "reset";
+@import "overrides";
 @import "variables";
 @import "mixins";
 @import "buttons";
@@ -26,6 +30,10 @@ body {
     @include screen-small {
         font-size: 16px;
     }
+}
+
+strong {
+    font-weight: bold;
 }
 
 h1,

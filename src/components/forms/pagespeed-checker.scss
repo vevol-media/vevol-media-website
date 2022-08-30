@@ -1,0 +1,105 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.pagespeed-checker {
+    margin: 0;
+    text-align: center;
+
+    .container {
+        h2 {
+            color: $white;
+        }
+
+        > p {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+
+        .control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .input {
+                height: 48px;
+                margin-right: 20px;
+                max-width: 540px;
+            }
+
+            @include screen-small {
+                display: block;
+
+                .input {
+                    margin-right: 0;
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+
+    .pagespeed-checker__scores {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1em;
+        flex-wrap: wrap;
+
+        svg {
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+        }
+    }
+
+    .pagespeed-checker__action {
+        margin-top: 2em;
+    }
+}
+
+.score-circle {
+    display: flex;
+    position: relative;
+    width: 160px;
+    justify-content: center;
+    align-items: center;
+
+    .score-circle__info {
+        position: absolute;
+        top: calc(50% + 5px);
+        left: 0;
+        right: 0;
+        text-align: center;
+        transform: translateY(-50%);
+        font-size: 16px;
+        margin-bottom: 0 !important;
+        line-height: 1;
+        z-index: 1;
+
+        span {
+            display: block;
+
+            &:last-child {
+                font-weight: bolder;
+                margin-top: 10px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .score-circle__animated {
+        transition: 0.5s ease all;
+    }
+
+    @include screen-small {
+        width: 150px;
+
+        svg {
+            width: 150px;
+            height: 150px;
+        }
+
+        .score-circle__info {
+            font-size: 15px;
+        }
+    }
+}

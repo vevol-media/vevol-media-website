@@ -62,8 +62,8 @@ export default function CaseStudiesCarousel({ backgroundWhite }) {
 					<BgImage className="case-study-item" image={bgImage}>
 						<div className="ml-5 mb-5">
 							<p className="pb-3">{project.name}</p>
-							View Case Study
-							<span className="ml-1">
+							<span className="is-flex is-align-items-center">
+								View Case Study
 								<FontAwesomeIcon icon={faArrowRight} />
 							</span>
 						</div>

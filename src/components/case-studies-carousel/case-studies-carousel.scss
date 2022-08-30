@@ -30,6 +30,12 @@
 
 			svg {
 				fill: $black;
+				transition: 0.3s ease all;
+				margin-left: 10px;
+			}
+
+			&:hover svg {
+				transform: rotate(-45deg);
 			}
 		}
 
