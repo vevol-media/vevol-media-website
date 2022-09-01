@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Title } from 'bloomer';
+import { Container } from 'bloomer';
 import { Link } from 'gatsby';
 import Fade from 'react-reveal/Fade';
 import homepageServices from '../../enums/homepage-services';
 import ServicePanel from './service-panel';
 import './homepage-services.scss';
+import HeadingBlock from '../heading-block/heading-block';
 
 export default function HomepageServices() {
 	const [services, setServices] = useState([]);
@@ -16,16 +17,13 @@ export default function HomepageServices() {
 	return (
 		<div className="homepage-services vm-section">
 			<Container>
-				<div className="heading-block">
-					<Title tag="h2" isSize={1}>
-						Experience the <span>right</span> way
-					</Title>
-					<p>
-						You deserve quality digital services from people who know their stuff. We do that. That's our
-						promise.
-					</p>
-				</div>
-
+				<HeadingBlock
+					title={'Experience the right way'}
+					highlightedWord={'right'}
+					subtitle={
+						"You deserve quality digital services from people who know their stuff. We do that. That's our promise."
+					}
+				/>
 				<ul className="homepage-services__list">
 					{services.map((service, index) => {
 						return <ServicePanel key={index} {...service} delayTime={index * 250} />;

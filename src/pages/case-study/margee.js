@@ -4,12 +4,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
 import SlimHero from '../../components/slim-hero/slim-hero';
-import InformationalContent from '../../components/case-study/informational-content';
-import SidebarInfoText from '../../components/case-study/sidebar-info-text';
+import InformationalContent from '../../components/general-components/informational-content';
+import SidebarInfoText from '../../components/general-components/sidebar-info-text';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import CaseStudiesCarousel from '../../components/case-studies-carousel/case-studies-carousel';
 import { getImageByName } from '../../helpers/helpers';
-import Quote from '../../components/case-study/quote';
+import Quote from '../../components/general-components/quote';
 
 const projectsImagesQuery = graphql`
 	query {

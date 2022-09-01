@@ -4,7 +4,6 @@
 .card-team {
 	background-color: $white;
 	width: calc(25% - 30px);
-	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -25,6 +24,12 @@
 	.card-img-team {
 		display: flex;
 		justify-content: center;
+		overflow: hidden;
+
+		.gatsby-image-wrapper {
+			filter: grayscale(1);
+			transition: 0.3s ease all;
+		}
 	}
 
 	.card-title {
@@ -33,6 +38,10 @@
 
 	.card-subtitle {
 		margin-top: 0 !important;
+	}
+
+	&:hover .card-img-team .gatsby-image-wrapper {
+		filter: grayscale(0);
 	}
 
 	@include screen-general {

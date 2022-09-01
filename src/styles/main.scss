@@ -3,15 +3,20 @@ $radius: 0;
 $radius-small: $radius;
 $radius-large: $radius;
 
-@import "bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+
+@import "bulma/bulma.sass";
+
 @import "reset";
 @import "overrides";
 @import "variables";
 @import "mixins";
 @import "buttons";
 @import "global-components";
+@import "component-heading-block";
+@import "component-quote";
+@import "component-image-with-text";
 @import "pages";
 
 html {

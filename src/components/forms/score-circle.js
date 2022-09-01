@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function ScoreCircle({ title, score }) {
 	const finalScore = 440 - score * 4.4;
+	const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
 
 	return (
 		<div className="score-circle">
@@ -14,10 +15,10 @@ export default function ScoreCircle({ title, score }) {
 					<title>Layer 1</title>
 					<circle
 						id="circle"
-						r={window.innerWidth < 767 ? 66 : 69.85699}
-						cy={window.innerWidth < 767 ? 76 : 81}
-						cx={window.innerWidth < 767 ? 76 : 81}
-						strokeWidth={window.innerWidth < 767 ? 12 : 15}
+						r={windowWidth < 767 ? 66 : 69.85699}
+						cy={windowWidth < 767 ? 76 : 81}
+						cx={windowWidth < 767 ? 76 : 81}
+						strokeWidth={windowWidth < 767 ? 12 : 15}
 						stroke="#444"
 						fill="none"
 						strokeDasharray={440}
@@ -26,10 +27,10 @@ export default function ScoreCircle({ title, score }) {
 					<circle
 						id="circle"
 						className="score-circle__animated"
-						r={window.innerWidth < 767 ? 66 : 69.85699}
-						cy={window.innerWidth < 767 ? 76 : 81}
-						cx={window.innerWidth < 767 ? 76 : 81}
-						strokeWidth={window.innerWidth < 767 ? 12 : 15}
+						r={windowWidth < 767 ? 66 : 69.85699}
+						cy={windowWidth < 767 ? 76 : 81}
+						cx={windowWidth < 767 ? 76 : 81}
+						strokeWidth={windowWidth < 767 ? 12 : 15}
 						stroke="#22ffb8"
 						fill="none"
 						strokeDasharray={440}

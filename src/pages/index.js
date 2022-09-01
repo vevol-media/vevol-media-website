@@ -16,9 +16,9 @@ export default function Homepage({ data }) {
 	const { bottomBanner } = useStaticQuery(
 		graphql`
 			query {
-				bottomBanner: file(relativePath: { eq: "bottom-banner.jpg" }) {
+				bottomBanner: file(name: { eq: "vevol-media-locations" }) {
 					childImageSharp {
-						gatsbyImageData(placeholder: BLURRED)
+						gatsbyImageData
 					}
 				}
 			}
@@ -29,6 +29,10 @@ export default function Homepage({ data }) {
 
 	return (
 		<Layout>
+			<Helmet>
+				<title>Shopify Experts - Vevol Media</title>
+				<script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+			</Helmet>
 			<HomepageHero />
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
 			<HomepageServices />
@@ -41,9 +45,6 @@ export default function Homepage({ data }) {
 					'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
 				}
 			/>
-			<Helmet>
-				<script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
-			</Helmet>
 			<BottomCTA
 				bgImage={bottomBannerBackgroundImage}
 				title="Let's Work Together"
