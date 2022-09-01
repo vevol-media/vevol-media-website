@@ -11,6 +11,7 @@ import Layout from '../components/layout/layout';
 import ReviewsSection from '../components/reviews-section/reviews-section';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
 import BottomCTA from '../components/bottom-cta/bottom-cta';
+import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
 
 export default function Homepage({ data }) {
 	const { bottomBanner } = useStaticQuery(
@@ -26,6 +27,7 @@ export default function Homepage({ data }) {
 	);
 
 	const bottomBannerBackgroundImage = getImage(bottomBanner);
+    const images = ["../images/partners/shopify.png", "../images/partners/woocomerce.png", "../images/partners/wordpress.png"]
 
 	return (
 		<Layout>
@@ -51,6 +53,7 @@ export default function Homepage({ data }) {
 				url="/"
 				gradientColour="black"
 			/>
+			<ImagesMiniBanner images={images}/>
 		</Layout>
 	);
 }
