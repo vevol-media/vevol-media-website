@@ -19,12 +19,11 @@ export default function ImagesMiniBanner() {
 		}
 	`).allFile.nodes;
 
-    console.log(imagesData)
-
-	const listOfImages = imagesData.map((imgData) => {
+	const listOfImages = imagesData.map((imgData, index) => {
 		const image = getImage(imgData.childImageSharp.gatsbyImageData);
+
 		return (
-			<Fade bottom>
+			<Fade bottom key={index} delay={index * 100}>
 				<GatsbyImage
 					image={image}
 					alt="vevol media partner"
@@ -36,7 +35,9 @@ export default function ImagesMiniBanner() {
 
 	return (
 		<div className="images-mini-banner">
-			<div className="container images-mini-banner__wrapper">{listOfImages}</div>
+			<div className="container images-mini-banner__wrapper">
+				{listOfImages}
+			</div>
 		</div>
 	);
 }
