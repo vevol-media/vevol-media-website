@@ -5,7 +5,9 @@ import ServicesList from '../components/services-list/services-list';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
 import { graphql } from 'gatsby';
 import services from '../enums/services';
-import { Container, Title } from 'bloomer';
+import { Container } from 'bloomer';
+import MainForm from '../components/forms/main-form';
+import HeadingBlock from '../components/heading-block/heading-block';
 
 export const data = graphql`
 	query {
@@ -39,24 +41,23 @@ export default function ServicesPage({ data }) {
 			/>
 			<div className="vm-section vm-bg--white">
 				<Container>
-					<div className="heading-block">
-						<Title tag="h2" isSize={1}>
-							We love beautiful <span>code</span>
-						</Title>
-						<p>Clean, scalable, flexible and re-usable. That's our way of writing code.</p>
-					</div>
+					<HeadingBlock
+						title={'We love beautiful code'}
+						highlightedWord={'code'}
+						subtitle={"Clean, scalable, flexible and re-usable. That's our way of writing code."}
+					/>
 					<ServicesList imageData={servicesIcons.nodes} services={services.dev} backgroundWhite topMargin />
 				</Container>
 			</div>
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
 			<div className="vm-section vm-bg--white">
 				<Container>
-					<div className="heading-block heading-block--align-right">
-						<Title tag="h2" isSize={1}>
-							We speak <span>eCommerce</span>
-						</Title>
-						<p>Let us take your brand to the next level. Of awesomeness!</p>
-					</div>
+					<HeadingBlock
+						title={'We speak eCommerce'}
+						highlightedWord={'eCommerce'}
+						subtitle={'Let us take your brand to the next level. Of awesomeness!'}
+						alignRight
+					/>
 					<ServicesList
 						imageData={servicesIcons.nodes}
 						services={services.ecommerce}
@@ -65,6 +66,12 @@ export default function ServicesPage({ data }) {
 					/>
 				</Container>
 			</div>
+			<MainForm
+				title={"Let's Talk About Your Business"}
+				subtitle={
+					'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
+				}
+			/>
 		</Layout>
 	);
 }

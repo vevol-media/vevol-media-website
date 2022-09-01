@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
-import { Container, Title } from 'bloomer';
+import { Container } from 'bloomer';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
@@ -9,6 +9,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import caseStudies from '../../enums/case-studies';
 import './case-studies-carousel.scss';
 import '@splidejs/splide/dist/css/splide.min.css';
+import HeadingBlock from '../heading-block/heading-block';
 
 const images = graphql`
 	query {
@@ -76,13 +77,11 @@ export default function CaseStudiesCarousel({ backgroundWhite }) {
 	return (
 		<div className={`case-studies-carousel vm-section case-studies-carousel--${backgroundModifier}`}>
 			<Container>
-				<div className="heading-block">
-					<Title tag="h2" isSize={1}>
-						Our previously <span>successful</span> projects
-					</Title>
-					<p>Proven track record of our hard work.</p>
-				</div>
-
+				<HeadingBlock
+					title={'Our previously successful projects'}
+					highlightedWord={'successful'}
+					subtitle={'Proven track record of our hard work.'}
+				/>
 				<Splide options={splideSettings}>{carouselItems}</Splide>
 			</Container>
 		</div>

@@ -1,0 +1,36 @@
+.image-with-text {
+    .container {
+        display: flex;
+        align-items: center;
+
+        .iwt__left {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 9px 9px 0 0 $black;
+        }
+
+        .iwt__right {
+            padding: 0 0 0 50px;
+        }
+
+        @include screen-medium {
+            display: block;
+
+            .iwt__left {
+                margin-bottom: 3em;
+            }
+
+            .iwt__right {
+                padding: 0 !important;
+            }
+        }
+    }
+
+    &--align-right .container {
+        flex-direction: row-reverse;
+
+        .iwt__right {
+            padding: 0 50px 0 0;
+        }
+    }
+}

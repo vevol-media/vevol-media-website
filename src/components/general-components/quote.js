@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Title, Container } from 'bloomer';
+import { Title, Container } from 'bloomer';
 import { Fade } from 'react-reveal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';

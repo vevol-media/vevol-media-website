@@ -1,0 +1,45 @@
+.client-quote {
+    background: $lightYellow;
+
+    .client-quote__content {
+        position: relative;
+
+        .fa-quote-left {
+            position: absolute;
+            left: -50px;
+            top: -70px;
+            font-size: 200px;
+            opacity: 0.1 !important;
+            color: $black;
+        }
+
+        h3 {
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            margin-bottom: 2em;
+
+            @include screen-small {
+                font-weight: 400;
+            }
+        }
+
+        p span {
+            display: block;
+
+            &:first-child {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    h3,
+    h4,
+    p {
+        color: $black;
+        line-height: 1;
+    }
+}
