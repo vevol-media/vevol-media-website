@@ -16,24 +16,24 @@ export default function HomepageHero() {
 			<Blob className={'homepage-hero__blob'} size={500} translate={250} />
 			<Container>
 				<div className="homepage-hero__content">
-					<Fade top>
+					<Fade bottom>
 						<p className="">Europe Based</p>
 					</Fade>
-					<Fade left>
+					<Fade bottom delay={100}>
 						<Title>Shopify Experts You Can Trust</Title>
 					</Fade>
-					<Fade left delay={400}>
+					<Fade bottom delay={300}>
 						<p>
 							As Shopify partners and experienced developers, we can become a pillar of your success
 							story.
 						</p>
 					</Fade>
-					<Fade bottom delay={800}>
+					<Fade bottom delay={600}>
 						<Link to="/" className="vm-button vm-button--white vm-button--big">
 							Let's work together
 						</Link>
 					</Fade>
-					<Fade bottom delay={1200}>
+					<Fade bottom delay={900}>
 						<ClutchWidget />
 					</Fade>
 				</div>

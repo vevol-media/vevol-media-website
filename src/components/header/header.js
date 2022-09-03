@@ -19,11 +19,8 @@ export default function Header({ background }) {
 				</Link>
 
 				<div className="vm-header__navigation">
-					<Link to="/services">Services</Link>
-					<Link to="/portfolio">Portfolio</Link>
-					<Link to="/start-your-project" className="vm-button vm-button--transparent-white">
-						Start Your Project
-					</Link>
+					<Link to="/services">Our Services</Link>
+					<Link to="/work">Our Work</Link>
 				</div>
 				<div
 					className="vm-header__burger"
@@ -44,22 +41,17 @@ export default function Header({ background }) {
 				</div>
 				<div className={`vm-header__extra-nav ${isNavVisible ? 'show-nav' : ''}`}>
 					<Link to="/services">Services</Link>
-					<Link to="/portfolio">Portfolio</Link>
+					<Link to="/work">Work</Link>
 					<Link to="/about">About Us</Link>
 					<Link to="/frequently-asked-questions">FAQ</Link>
-					<Link to="/case-studies">Case Studies</Link>
 					<Link to="/contact">Contact Us</Link>
 					<Link to="/strategic-partnerships">Strategic Partnerships</Link>
-					<Link to="/start-your-project" className="vm-button vm-button--transparent-white">
-						Start your project
-					</Link>
 
 					<div
 						className="extra-nav__close"
 						role="button"
 						tabIndex={0}
 						onKeyDown={(e) => {
-							console.log(e);
 							if (e.keyCode === 13) {
 								setIsNavVisible(!isNavVisible);
 							}

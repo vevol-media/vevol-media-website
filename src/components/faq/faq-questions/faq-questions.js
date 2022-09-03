@@ -3,6 +3,8 @@ import generalQuestions from '../../../enums/questions';
 import FaqAcordion from '../faq-accordion/faq-accordion';
 import './faq-questions.scss';
 import { Title } from 'bloomer';
+import VevolSection from '../../general-components/vm-section';
+import { Container } from 'bloomer/lib/layout/Container';
 
 const FaqQuestions = () => {
 	const [questions, setQuestions] = useState([]);
@@ -12,16 +14,18 @@ const FaqQuestions = () => {
 	}, []);
 
 	return (
-		<div className="faq-list vm-section">
-			<Title tag="h2" className="faq-list__heading">
-				Our clients have asked
-			</Title>
-			<div className="faq-list__block">
-				{questions.map((question, index) => {
-					return <FaqAcordion key={index} {...question} />;
-				})}
-			</div>
-		</div>
+		<VevolSection className={'faq-list'} whiteBackground>
+			<Container>
+				<Title tag="h2" className="faq-list__heading">
+					Our clients have asked
+				</Title>
+				<div className="faq-list__block">
+					{questions.map((question, index) => {
+						return <FaqAcordion key={index} {...question} />;
+					})}
+				</div>
+			</Container>
+		</VevolSection>
 	);
 };
 

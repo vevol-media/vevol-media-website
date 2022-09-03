@@ -4,6 +4,7 @@ import { Fade } from 'react-reveal';
 import { Link } from 'gatsby';
 import ScoreCircle from './score-circle';
 import './pagespeed-checker.scss';
+import VevolSection from '../general-components/vm-section';
 
 export default function PagespeedChecker({ title, subtitle }) {
 	const [isChecking, setIsChecking] = useState(false);
@@ -82,7 +83,7 @@ export default function PagespeedChecker({ title, subtitle }) {
 		(score > 60 && score < 81 && 'warning') || (score > 80 && 'success') || 'danger';
 
 	return (
-		<div className="pagespeed-checker vm-section vm-bg--black">
+		<VevolSection className={'pagespeed-checker'}>
 			<Container>
 				<Title tag="h2" isSize={2}>
 					Check your website's speed
@@ -140,6 +141,6 @@ export default function PagespeedChecker({ title, subtitle }) {
 					</Message>
 				</Fade>
 			</Container>
-		</div>
+		</VevolSection>
 	);
 }
