@@ -1,7 +1,7 @@
 @import "/src/styles/variables";
 @import "/src/styles/mixins";
 
-.case-studies-carousel {
+.portfolio-carousel {
 	&--white {
 		background: $white;
 
@@ -17,7 +17,7 @@
 	.splide {
 		padding: 40px 0 60px;
 
-		.case-study-item {
+		.portfolio-item {
 			height: 100%;
 			display: flex;
 			align-items: flex-end;

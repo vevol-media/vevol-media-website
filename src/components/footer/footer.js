@@ -30,17 +30,10 @@ export default function WebsiteFooter() {
 						<Title tag="h4" isSize={4}>
 							Company
 						</Title>
-						<Link to="/about">Story</Link>
-						<Link to="/careers">Careers</Link>
+						<Link to="/about">About</Link>
+						<Link to="/work">Work</Link>
 						<Link to="/contact">Contact Us</Link>
-					</Column>
-					<Column>
-						<Title tag="h4" isSize={4}>
-							Extras
-						</Title>
 						<Link to="/strategic-partnerships">Strategic Partnerships</Link>
-						<Link to="/portfolio">Portfolio</Link>
-						<Link to="/case-studies">Case Studies</Link>
 						<Link to="/frequently-asked-questions">FAQ</Link>
 					</Column>
 					<Column className="footer__social">

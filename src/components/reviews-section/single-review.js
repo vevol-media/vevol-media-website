@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 
 export default function SingleReview({ name, role, text, delayTime }) {
 	return (
-		<Fade right delay={delayTime}>
+		<Fade bottom delay={delayTime}>
 			<li>
 				<div className="review">
 					<div className="review__left">

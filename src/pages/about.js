@@ -7,32 +7,32 @@ import HeadingBlock from '../components/heading-block/heading-block';
 import { Helmet } from 'react-helmet';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import MainForm from '../components/forms/main-form';
+import { Fade } from 'react-reveal';
+import VevolSection from '../components/general-components/vm-section';
 
-export default function PageAbout() {
-	const imageData = useStaticQuery(
-		graphql`
-			query {
-				location: allFile(filter: { name: { eq: "vevol-media-locations" } }) {
-					nodes {
-						childImageSharp {
-							gatsbyImageData(placeholder: BLURRED, width: 800)
-						}
-					}
-				}
-				brasov: allFile(filter: { name: { eq: "vevol-team-brasov" } }) {
-					nodes {
-						childImageSharp {
-							gatsbyImageData(placeholder: BLURRED, width: 800)
-						}
-					}
+export const data = graphql`
+	query {
+		location: allFile(filter: { name: { eq: "vevol-media-locations" } }) {
+			nodes {
+				childImageSharp {
+					gatsbyImageData(placeholder: BLURRED, width: 800)
 				}
 			}
-		`
-	);
+		}
+		brasov: allFile(filter: { name: { eq: "vevol-team-brasov" } }) {
+			nodes {
+				childImageSharp {
+					gatsbyImageData(placeholder: BLURRED, width: 800)
+				}
+			}
+		}
+	}
+`;
 
-	const { brasov, location } = imageData;
+export default function PageAbout({ data }) {
+	const { brasov, location } = data;
 	const locationImage = getImage(location.nodes[0].childImageSharp.gatsbyImageData);
 	const brasovImage = getImage(brasov.nodes[0].childImageSharp.gatsbyImageData);
 
@@ -45,10 +45,16 @@ export default function PageAbout() {
 				heading="About Vevol Media"
 				subheading="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
 			/>
-			<div className="vm-section vm-bg--white">
+			<VevolSection whiteBackground>
 				<Container>
 					<ImageWithText
-						image={<GatsbyImage image={locationImage} alt={'Margee Case Study - Results &amp; Impact'} />}
+						image={
+							<GatsbyImage
+								image={locationImage}
+								alt={'Margee Case Study - Results &amp; Impact'}
+								layout="fullWidth"
+							/>
+						}
 						title={'Based in Europe'}
 						textContent={[
 							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
@@ -57,24 +63,26 @@ export default function PageAbout() {
 						]}
 					/>
 				</Container>
-			</div>
-			<div className="vm-section">
+			</VevolSection>
+			<VevolSection>
 				<Container>
 					<HeadingBlock
 						title={'A team of superstars'}
 						highlightedWord={'team'}
 						subtitle={'No project is too big or too complex for us. Our mindset: everything is possible!'}
 					/>
-					<p className="py-6">
-						There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-						alteration in some form, by injected humour, or randomised words which don't look even slightly
-						believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-						anything embarrassing hidden in the middle of text.
-					</p>
+					<Fade bottom>
+						<p className="py-6">
+							There are many variations of passages of Lorem Ipsum available, but the majority have
+							suffered alteration in some form, by injected humour, or randomised words which don't look
+							even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+							sure there isn't anything embarrassing hidden in the middle of text.
+						</p>
+					</Fade>
 					<TeamMembers />
 				</Container>
-			</div>
-			<div className="vm-section vm-bg--white">
+			</VevolSection>
+			<VevolSection whiteBackground>
 				<Container>
 					<ImageWithText
 						image={<GatsbyImage image={brasovImage} alt={'Margee Case Study - Results &amp; Impact'} />}
@@ -86,7 +94,7 @@ export default function PageAbout() {
 						]}
 					/>
 				</Container>
-			</div>
+			</VevolSection>
 			<MainForm
 				title={"Let's Talk About Your Business"}
 				subtitle={

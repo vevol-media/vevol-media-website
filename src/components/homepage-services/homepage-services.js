@@ -6,6 +6,7 @@ import homepageServices from '../../enums/homepage-services';
 import ServicePanel from './service-panel';
 import './homepage-services.scss';
 import HeadingBlock from '../heading-block/heading-block';
+import VevolSection from '../general-components/vm-section';
 
 export default function HomepageServices() {
 	const [services, setServices] = useState([]);
@@ -15,7 +16,7 @@ export default function HomepageServices() {
 	}, []);
 
 	return (
-		<div className="homepage-services vm-section">
+		<VevolSection className={'homepage-services'}>
 			<Container>
 				<HeadingBlock
 					title={'Experience the right way'}
@@ -38,6 +39,6 @@ export default function HomepageServices() {
 					</div>
 				</Fade>
 			</Container>
-		</div>
+		</VevolSection>
 	);
 }
