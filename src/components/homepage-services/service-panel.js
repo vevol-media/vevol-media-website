@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faAngleDoubleRight, faShoppingCart, faSearchDollar } from '@fortawesome/free-solid-svg-icons';
+import { faShopify } from '@fortawesome/free-brands-svg-icons';
 import { IconTopo } from '../../helpers/icons';
 
 export default function ServicePanel({ icon, heading, intro, sublist, url, delayTime }) {
@@ -15,6 +16,8 @@ export default function ServicePanel({ icon, heading, intro, sublist, url, delay
 				return <FontAwesomeIcon icon={faShoppingCart} className="hs-block__icon" />;
 			case 'faSearchDollar':
 				return <FontAwesomeIcon icon={faSearchDollar} className="hs-block__icon" />;
+			case 'faShopify':
+				return <FontAwesomeIcon icon={faShopify} className="hs-block__icon" />;
 			default:
 				return <FontAwesomeIcon icon={faCode} className="hs-block__icon" />;
 		}

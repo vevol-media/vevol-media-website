@@ -5,6 +5,8 @@ import Fade from 'react-reveal/Fade';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
 import MainForm from '../forms/main-form';
+import { Helmet } from 'react-helmet';
+import favicon from '../../images/icon.png';
 
 export default function Layout({ children, headerBg, showBlob }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -39,6 +41,10 @@ export default function Layout({ children, headerBg, showBlob }) {
 						</animated.div>
 					</div>
 				)}
+				<Helmet>
+					<link rel="icon" href={favicon} />
+					<title>Shopify Experts - Web Development - Vevol Media</title>
+				</Helmet>
 				<Header background={headerBg} />
 				<main>{children}</main>
 				<MainForm
