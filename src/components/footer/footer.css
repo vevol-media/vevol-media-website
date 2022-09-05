@@ -1,0 +1,46 @@
+#footer {
+  border-top: 5px solid #22ffb8;
+  padding-block: 50px;
+  background: #131517;
+}
+#footer .title.is-4 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+#footer a {
+  color: #ffffff;
+  padding: 5px 0;
+  display: block;
+  white-space: nowrap;
+}
+#footer a:hover {
+  color: #22ffb8;
+}
+#footer .footer__social a {
+  display: inline-block;
+}
+#footer .footer__copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 2em;
+  padding-top: 2em;
+  text-align: center;
+}
+#footer .footer__copyright a {
+  white-space: normal;
+}
+@media only screen and (max-width: 1023px) {
+  #footer .footer-logo {
+    padding-bottom: 20px;
+  }
+  #footer .columns {
+    margin: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+}

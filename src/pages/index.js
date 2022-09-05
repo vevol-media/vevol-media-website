@@ -9,7 +9,7 @@ import HomepageServices from '../components/homepage-services/homepage-services'
 import Layout from '../components/layout/layout';
 import ReviewsSection from '../components/reviews-section/reviews-section';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
-import BottomCTA from '../components/bottom-cta/bottom-cta';
+import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
 import PortfolioCarousel from '../components/portfolio-carousel/portfolio-carousel';
 import portfolio from '../enums/portfolio';
 
@@ -28,11 +28,19 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 })
 			}
 		}
+		partnersImages: allFile(filter: { relativeDirectory: { eq: "partners" } }) {
+			nodes {
+				name
+				childImageSharp {
+					gatsbyImageData(placeholder: TRACED_SVG)
+				}
+			}
+		}
 	}
 `;
 
 export default function Homepage({ data }) {
-	const { bottomBannerImageQuery, portfolioFeaturedImagesQuery } = data;
+	const { bottomBannerImageQuery, portfolioFeaturedImagesQuery, partnersImages } = data;
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
@@ -57,6 +65,7 @@ export default function Homepage({ data }) {
 					'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
 				}
 			/>
+			<ImagesMiniBanner images={partnersImages.nodes}/>
 			{/* <BottomCTA
 				bgImage={bottomBannerImage}
 				title="Let's Work Together"
