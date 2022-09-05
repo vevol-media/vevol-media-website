@@ -2,8 +2,6 @@
 @import "../../styles/mixins";
 
 .informational-wrapper {
-	padding-block: 8em;
-
 	.informational-content {
 		display: flex;
 		margin-top: 4em;
@@ -45,8 +43,6 @@
 	}
 
 	@include screen-general {
-		padding-block: 0 4em;
-
 		.informational-intro-img {
 			margin: 0 -20px;
 		}

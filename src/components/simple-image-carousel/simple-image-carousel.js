@@ -1,12 +1,10 @@
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { Container } from 'bloomer';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import '@splidejs/splide/dist/css/splide.min.css';
 import './simple-image-carousel.scss';
-import VevolSection from '../general-components/vm-section';
 
-export default function SimpleImageCarousel({ imagesArray, backgroundWhite }) {
+export default function SimpleImageCarousel({ imagesArray, className }) {
 	const splideSettings = {
 		rewind: true,
 		perPage: 2,
@@ -37,10 +35,8 @@ export default function SimpleImageCarousel({ imagesArray, backgroundWhite }) {
 	});
 
 	return (
-		<VevolSection className={'simple-image-carousel'} whiteBackground={backgroundWhite}>
-			<Container>
-				<Splide options={splideSettings}>{carouselImages}</Splide>
-			</Container>
-		</VevolSection>
+		<div className={`simple-image-carousel ${className}`}>
+			<Splide options={splideSettings}>{carouselImages}</Splide>
+		</div>
 	);
 }

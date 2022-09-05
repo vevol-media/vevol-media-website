@@ -17,8 +17,16 @@
         padding: 10px 20px 10px 0;
     }
 
+    &--margin-bottom {
+        margin-bottom: 4em;
+    }
+
     &--black {
         color: $black;
+    }
+
+    .title {
+        margin-bottom: 10px;
     }
 
     p {
@@ -28,6 +36,7 @@
     @include screen-small {
         .title {
             font-size: 2em;
+            margin-bottom: 15px;
         }
 
         p {

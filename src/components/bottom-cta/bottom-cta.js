@@ -1,9 +1,8 @@
 import React from 'react';
-import { Title, Container } from 'bloomer';
-import { Link } from 'gatsby';
 import { BgImage } from 'gbimage-bridge';
+import { Container, Title } from 'bloomer';
 import Fade from 'react-reveal/Fade';
-import './bottom-cta.scss';
+import { Link } from 'gatsby';
 
 export default function BottomCTA({ bgImage, title, text, url, gradientColour }) {
 	return (

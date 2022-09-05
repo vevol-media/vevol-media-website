@@ -4,6 +4,7 @@ import WebsiteFooter from '../footer/footer';
 import Fade from 'react-reveal/Fade';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
+import MainForm from '../forms/main-form';
 
 export default function Layout({ children, headerBg, showBlob }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -40,6 +41,12 @@ export default function Layout({ children, headerBg, showBlob }) {
 				)}
 				<Header background={headerBg} />
 				<main>{children}</main>
+				<MainForm
+					title={"Let's Talk About Your Business"}
+					subtitle={
+						'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
+					}
+				/>
 				<WebsiteFooter />
 			</div>
 		</Fade>

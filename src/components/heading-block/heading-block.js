@@ -2,7 +2,7 @@ import React from 'react';
 import { Title } from 'bloomer';
 import { Fade } from 'react-reveal';
 
-export default function HeadingBlock({ title, subtitle, highlightedWord, alignRight }) {
+export default function HeadingBlock({ title, subtitle, highlightedWord, alignRight, className }) {
 	const insertSpan = (string, highlightedWord) => {
 		return string.split(' ').map((word, index) => {
 			return (
@@ -12,7 +12,9 @@ export default function HeadingBlock({ title, subtitle, highlightedWord, alignRi
 	};
 
 	return (
-		<div className={`heading-block ${alignRight ? 'heading-block--align-right' : ''} `}>
+		<div
+			className={`heading-block ${alignRight ? 'heading-block--align-right' : ''} ${className ? className : ''}`}
+		>
 			<Fade bottom>
 				<Title tag="h2" isSize={1}>
 					{insertSpan(title, highlightedWord)}

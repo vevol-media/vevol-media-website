@@ -1,13 +1,12 @@
 import React from 'react';
-import { Content, Title, Container } from 'bloomer';
+import { Content, Title } from 'bloomer';
 import { Fade } from 'react-reveal';
 import './informational-content.scss';
 
 export default function InformationalContent({ title, description, blocks, featuredImage }) {
 	return (
-		<Container className="informational-wrapper">
+		<div className="informational-wrapper">
 			<div className="informational-intro-img">{featuredImage}</div>
-
 			<Content className="informational-content">
 				<div className="informational-details">
 					<Title tag="h3" isSize={2}>
@@ -27,6 +26,6 @@ export default function InformationalContent({ title, description, blocks, featu
 					</div>
 				</Fade>
 			</Content>
-		</Container>
+		</div>
 	);
 }

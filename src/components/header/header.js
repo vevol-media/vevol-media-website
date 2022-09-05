@@ -9,10 +9,9 @@ import './header.scss';
 
 export default function Header({ background }) {
 	const [isNavVisible, setIsNavVisible] = useState(false);
-	const classes = `vm-header vm-header--${background}`;
 
 	return (
-		<div className={classes}>
+		<div className={`vm-header vm-header--${background}`}>
 			<Container>
 				<Link to="/" className="vm-header__logo">
 					<img src={background === 'white' ? logoBlack : logoWhite} alt="Vevol Media Logo" />

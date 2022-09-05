@@ -2,20 +2,8 @@
 @import "/src/styles/mixins";
 
 .portfolio-carousel {
-	&--white {
-		background: $white;
-
-		.heading-block {
-			color: $black;
-		}
-
-		.splide__pagination__page.is-active {
-			background: $black;
-		}
-	}
-
 	.splide {
-		padding: 40px 0 60px;
+		padding-bottom: 3em;
 
 		.portfolio-item {
 			height: 100%;
@@ -38,9 +26,18 @@
 				transform: rotate(-45deg);
 			}
 		}
+	}
 
-		@include screen-mobile {
-			padding: 40px 0;
+	@include screen-mobile {
+		&--cut-bottom-padding {
+			margin-bottom: -4em;
+
+			.splide {
+				padding-bottom: 0;
+			}
+		}
+
+		.splide {
 			margin: 0 -20px;
 		}
 	}

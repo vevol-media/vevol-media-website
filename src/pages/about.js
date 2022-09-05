@@ -8,7 +8,6 @@ import { Helmet } from 'react-helmet';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
-import MainForm from '../components/forms/main-form';
 import { Fade } from 'react-reveal';
 import VevolSection from '../components/general-components/vm-section';
 
@@ -57,9 +56,18 @@ export default function PageAbout({ data }) {
 						}
 						title={'Based in Europe'}
 						textContent={[
-							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+							<p className="mt-3">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+								has been the industry's standard dummy text ever since the 1500s
+							</p>,
+							<p className="mt-3">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+								has been the industry's standard dummy text ever since the 1500s
+							</p>,
+							<p className="mt-3">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+								has been the industry's standard dummy text ever since the 1500s
+							</p>,
 						]}
 					/>
 				</Container>
@@ -88,19 +96,22 @@ export default function PageAbout({ data }) {
 						image={<GatsbyImage image={brasovImage} alt={'Margee Case Study - Results &amp; Impact'} />}
 						title={'A Little Background'}
 						textContent={[
-							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+							<p className="mt-3">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+								has been the industry's standard dummy text ever since the 1500s
+							</p>,
+							<p className="mt-3">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+								has been the industry's standard dummy text ever since the 1500s
+							</p>,
+							<p className="mt-3">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+								has been the industry's standard dummy text ever since the 1500s
+							</p>,
 						]}
 					/>
 				</Container>
 			</VevolSection>
-			<MainForm
-				title={"Let's Talk About Your Business"}
-				subtitle={
-					'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
-				}
-			/>
 		</Layout>
 	);
 }
