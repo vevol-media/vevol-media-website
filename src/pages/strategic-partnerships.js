@@ -3,7 +3,7 @@ import React from 'react';
 import SlimHero from '../components/slim-hero/slim-hero';
 import { Container } from 'bloomer';
 
-export default function FaqPage() {
+export default function StrategicPartnershipsPage() {
 	return (
 		<Layout>
 			<SlimHero

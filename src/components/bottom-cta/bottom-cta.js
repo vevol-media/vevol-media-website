@@ -10,16 +10,11 @@ export default function BottomCTA({ bgImage, title, text, url, gradientColour })
 		<BgImage className={`bottom-cta bottom-cta--${gradientColour} vm-section`} image={bgImage}>
 			<div className="bottom-cta__gradient"></div>
 			<Container className="bottom-cta__content">
-				<Fade top>
+				<Fade bottom cascade>
 					<Title tag="h3" isSize={2}>
 						{title}
 					</Title>
-				</Fade>
-				<Fade top>
 					<p>{text}</p>
-				</Fade>
-
-				<Fade bottom>
 					<Link to={url} className={`vm-button vm-button--${gradientColour === 'green' ? 'black' : 'green'}`}>
 						Get in Touch
 					</Link>

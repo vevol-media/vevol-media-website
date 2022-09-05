@@ -1,32 +1,18 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import { Container } from 'bloomer';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import caseStudies from '../../enums/case-studies';
-import './case-studies-carousel.scss';
+import './portfolio-carousel.scss';
 import '@splidejs/splide/dist/css/splide.min.css';
 import HeadingBlock from '../heading-block/heading-block';
+import VevolSection from '../general-components/vm-section';
 
-const images = graphql`
-	query {
-		allFile(filter: { relativeDirectory: { eq: "case-studies-carousel" } }) {
-			nodes {
-				name
-				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, width: 800, blurredOptions: { width: 125 })
-				}
-			}
-		}
-	}
-`;
-
-export default function CaseStudiesCarousel({ backgroundWhite }) {
+export default function PortfolioCarousel({ projectsList, imagesData, backgroundWhite }) {
 	const backgroundModifier = backgroundWhite ? 'white' : 'black';
-	const imagesData = useStaticQuery(images).allFile.nodes;
 	const splideSettings = {
 		rewind: true,
 		perPage: 4,
@@ -50,21 +36,23 @@ export default function CaseStudiesCarousel({ backgroundWhite }) {
 		},
 	};
 
-	const carouselItems = caseStudies.map((project, index) => {
-		const projectImage = imagesData.filter((image) => image.name === project.handle);
+	const carouselItems = projectsList.map((project, index) => {
+		const projectImage = imagesData.filter((image) => image.name === project.featuredImage);
+		const placeholderImage = imagesData.filter((image) => image.name === 'placeholder');
 
-		if (projectImage.length === 0) return <></>;
-
-		const bgImage = getImage(projectImage[0].childImageSharp.gatsbyImageData);
+		const bgImage =
+			projectImage.length === 0
+				? getImage(placeholderImage[0].childImageSharp.gatsbyImageData)
+				: getImage(projectImage[0].childImageSharp.gatsbyImageData);
 
 		return (
 			<SplideSlide key={index}>
-				<Link to={`/case-study/${project.handle}`}>
-					<BgImage className="case-study-item" image={bgImage}>
+				<Link to={project.internalUrl}>
+					<BgImage className="portfolio-item" image={bgImage}>
 						<div className="ml-5 mb-5">
 							<p className="pb-3">{project.name}</p>
 							<span className="is-flex is-align-items-center">
-								View Case Study
+								Read More
 								<FontAwesomeIcon icon={faArrowRight} />
 							</span>
 						</div>
@@ -75,7 +63,7 @@ export default function CaseStudiesCarousel({ backgroundWhite }) {
 	});
 
 	return (
-		<div className={`case-studies-carousel vm-section case-studies-carousel--${backgroundModifier}`}>
+		<VevolSection className={`portfolio-carousel portfolio-carousel--${backgroundModifier}`}>
 			<Container>
 				<HeadingBlock
 					title={'Our previously successful projects'}
@@ -84,6 +72,6 @@ export default function CaseStudiesCarousel({ backgroundWhite }) {
 				/>
 				<Splide options={splideSettings}>{carouselItems}</Splide>
 			</Container>
-		</div>
+		</VevolSection>
 	);
 }

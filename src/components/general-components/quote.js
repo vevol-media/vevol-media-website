@@ -3,10 +3,11 @@ import { Title, Container } from 'bloomer';
 import { Fade } from 'react-reveal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import VevolSection from './vm-section';
 
 export default function Quote({ firstPart, secondPart, authorName, authorRole }) {
 	return (
-		<div className="client-quote vm-section">
+		<VevolSection className={'client-quote'}>
 			<Container className="client-quote__content">
 				<Fade top cascade>
 					<FontAwesomeIcon icon={faQuoteLeft} />
@@ -23,6 +24,6 @@ export default function Quote({ firstPart, secondPart, authorName, authorRole })
 					</p>
 				</Fade>
 			</Container>
-		</div>
+		</VevolSection>
 	);
 }

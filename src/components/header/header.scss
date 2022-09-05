@@ -41,6 +41,10 @@
             padding: 15px 20px;
             display: inline-block;
             transition: 0.3s ease all;
+
+            &:hover {
+                color: $green;
+            }
         }
     }
 

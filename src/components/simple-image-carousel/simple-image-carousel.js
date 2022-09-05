@@ -4,6 +4,7 @@ import { Container } from 'bloomer';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import '@splidejs/splide/dist/css/splide.min.css';
 import './simple-image-carousel.scss';
+import VevolSection from '../general-components/vm-section';
 
 export default function SimpleImageCarousel({ imagesArray, backgroundWhite }) {
 	const splideSettings = {
@@ -36,12 +37,10 @@ export default function SimpleImageCarousel({ imagesArray, backgroundWhite }) {
 	});
 
 	return (
-		<div className="simple-image-carousel">
-			<div className={`vm-section vm-bg--${backgroundWhite ? 'white' : 'black'}`}>
-				<Container>
-					<Splide options={splideSettings}>{carouselImages}</Splide>
-				</Container>
-			</div>
-		</div>
+		<VevolSection className={'simple-image-carousel'} whiteBackground={backgroundWhite}>
+			<Container>
+				<Splide options={splideSettings}>{carouselImages}</Splide>
+			</Container>
+		</VevolSection>
 	);
 }

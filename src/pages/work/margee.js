@@ -1,19 +1,20 @@
 import React from 'react';
 import { CardImage } from 'bloomer';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
 import SlimHero from '../../components/slim-hero/slim-hero';
 import InformationalContent from '../../components/general-components/informational-content';
 import SidebarInfoText from '../../components/general-components/sidebar-info-text';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
-import CaseStudiesCarousel from '../../components/case-studies-carousel/case-studies-carousel';
+import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
 import { getImageByName } from '../../helpers/helpers';
 import Quote from '../../components/general-components/quote';
+import portfolio from '../../enums/portfolio';
 
-const projectsImagesQuery = graphql`
+export const data = graphql`
 	query {
-		allFile(filter: { relativeDirectory: { eq: "case-studies/margee" } }) {
+		currentProject: allFile(filter: { relativeDirectory: { eq: "case-studies/margee" } }) {
 			nodes {
 				name
 				childImageSharp {
@@ -21,12 +22,21 @@ const projectsImagesQuery = graphql`
 				}
 			}
 		}
+		allPortfolio: allFile(filter: { relativeDirectory: { eq: "portfolio-featured-images" } }) {
+			nodes {
+				name
+				childImageSharp {
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 750)
+				}
+			}
+		}
 	}
 `;
 
-export default function MargeeCaseStudy() {
-	const projectsImages = useStaticQuery(projectsImagesQuery).allFile.nodes;
-	const projectCarouselImages = projectsImages.filter((image) => image.name.includes('carousel'));
+export default function MargeeCaseStudy({ data }) {
+	const { currentProject, allPortfolio } = data;
+	const projectCarouselImages = currentProject.nodes.filter((image) => image.name.includes('carousel'));
+	const otherProjects = portfolio.filter((item) => item.name !== 'Margee');
 
 	return (
 		<Layout headerBg="white">
@@ -37,7 +47,10 @@ export default function MargeeCaseStudy() {
 				hideBlob
 			/>
 			<CardImage>
-				<GatsbyImage image={getImageByName(projectsImages, 'hero')} alt={'Margee Case Study - Vevol Media'} />
+				<GatsbyImage
+					image={getImageByName(currentProject.nodes, 'hero')}
+					alt={'Margee Case Study - Vevol Media'}
+				/>
 			</CardImage>
 			<SidebarInfoText
 				backgroundWhite
@@ -90,7 +103,7 @@ export default function MargeeCaseStudy() {
 				featuredImage={
 					<GatsbyImage
 						width={`500px`}
-						image={getImageByName(projectsImages, 'bottom')}
+						image={getImageByName(currentProject.nodes, 'bottom')}
 						alt={'Margee Case Study - Results &amp; Impact'}
 					/>
 				}
@@ -113,7 +126,7 @@ export default function MargeeCaseStudy() {
 					},
 				]}
 			/>
-			<CaseStudiesCarousel backgroundWhite />
+			<PortfolioCarousel projectsList={otherProjects} imagesData={allPortfolio.nodes} backgroundWhite />
 		</Layout>
 	);
 }

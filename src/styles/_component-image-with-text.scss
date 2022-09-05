@@ -7,6 +7,10 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 9px 9px 0 0 $black;
+
+            .gatsby-image-wrapper {
+                width: 100%;
+            }
         }
 
         .iwt__right {
