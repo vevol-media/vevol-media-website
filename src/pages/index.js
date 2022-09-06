@@ -12,6 +12,7 @@ import { Container } from 'bloomer/lib/layout/Container';
 import HeadingBlock from '../components/heading-block/heading-block';
 import PortfolioCarousel from '../components/portfolio-carousel/portfolio-carousel';
 import portfolio from '../enums/portfolio';
+import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
 import PagespeedChecker from '../components/forms/pagespeed-checker';
 import BottomCTA from '../components/bottom-cta/bottom-cta';
 
@@ -30,11 +31,19 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 })
 			}
 		}
+		partnersImages: allFile(filter: { relativeDirectory: { eq: "partners" } }) {
+			nodes {
+				name
+				childImageSharp {
+					gatsbyImageData(placeholder: TRACED_SVG)
+				}
+			}
+		}
 	}
 `;
 
 export default function Homepage({ data }) {
-	const { bottomBannerImageQuery, portfolioFeaturedImagesQuery } = data;
+	const { bottomBannerImageQuery, portfolioFeaturedImagesQuery, partnersImages } = data;
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
@@ -70,6 +79,7 @@ export default function Homepage({ data }) {
 				url="/"
 				gradientColour="black"
 			/> */}
+			<ImagesMiniBanner images={partnersImages.nodes}/>
 		</Layout>
 	);
 }
