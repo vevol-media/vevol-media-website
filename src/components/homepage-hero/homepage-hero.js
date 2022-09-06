@@ -29,7 +29,7 @@ export default function HomepageHero() {
 						</p>
 					</Fade>
 					<Fade bottom delay={600}>
-						<Link to="/" className="vm-button vm-button--white vm-button--big">
+						<Link to="/contact" className="vm-button vm-button--white vm-button--big">
 							Let's work together
 						</Link>
 					</Fade>

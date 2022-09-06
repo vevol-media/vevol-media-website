@@ -1,18 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { Container } from 'bloomer';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
+import './portfolio-carousel.scss';
 import { getImage } from 'gatsby-plugin-image';
+import { SplideSlide, Splide } from '@splidejs/react-splide';
+import { Link } from 'gatsby';
 import { BgImage } from 'gbimage-bridge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import './portfolio-carousel.scss';
-import '@splidejs/splide/dist/css/splide.min.css';
-import HeadingBlock from '../heading-block/heading-block';
-import VevolSection from '../general-components/vm-section';
 
-export default function PortfolioCarousel({ projectsList, imagesData, backgroundWhite }) {
-	const backgroundModifier = backgroundWhite ? 'white' : 'black';
+export default function PortfolioCarousel({ projectsList, imagesData, cutBottomPadding }) {
 	const splideSettings = {
 		rewind: true,
 		perPage: 4,
@@ -32,6 +28,7 @@ export default function PortfolioCarousel({ projectsList, imagesData, background
 				perPage: 1,
 				wheel: false,
 				gap: 0,
+				pagination: false,
 			},
 		},
 	};
@@ -63,15 +60,8 @@ export default function PortfolioCarousel({ projectsList, imagesData, background
 	});
 
 	return (
-		<VevolSection className={`portfolio-carousel portfolio-carousel--${backgroundModifier}`}>
-			<Container>
-				<HeadingBlock
-					title={'Our previously successful projects'}
-					highlightedWord={'successful'}
-					subtitle={'Proven track record of our hard work.'}
-				/>
-				<Splide options={splideSettings}>{carouselItems}</Splide>
-			</Container>
-		</VevolSection>
+		<div className={`portfolio-carousel ${cutBottomPadding ? 'portfolio-carousel--cut-bottom-padding' : ''}`}>
+			<Splide options={splideSettings}>{carouselItems}</Splide>
+		</div>
 	);
 }

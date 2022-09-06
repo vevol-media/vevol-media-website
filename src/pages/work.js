@@ -8,8 +8,6 @@ import VevolSection from '../components/general-components/vm-section';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
-import MainForm from '../components/forms/main-form';
-import PortfolioCarousel from '../components/portfolio-carousel/portfolio-carousel';
 import portfolio from '../enums/portfolio';
 import GridList from '../components/grid-list/grid-list';
 
@@ -61,12 +59,6 @@ export default function WorkPage({ data }) {
 					<GridList items={withoutCaseStudy} imagesData={portfolioImages} />
 				</Container>
 			</VevolSection>
-			<MainForm
-				title={"Let's Talk About Your Business"}
-				subtitle={
-					'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
-				}
-			/>
 		</Layout>
 	);
 }

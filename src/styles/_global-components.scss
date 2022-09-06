@@ -20,12 +20,20 @@
     }
 }
 
+.mb-4em {
+    margin-bottom: 4em !important;
+}
+
 .vm-section {
     padding: 6em 0;
 
     &--background-white {
         background-color: $white;
         color: $black;
+
+        .splide__pagination__page.is-active {
+            background: $black;
+        }
     }
 
     @include screen-small {
@@ -47,4 +55,12 @@
 .textarea,
 .input {
     font-size: 1.1em;
+}
+
+a {
+    color: $pink;
+
+    &:hover {
+        color: $green;
+    }
 }

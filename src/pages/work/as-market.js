@@ -1,16 +1,18 @@
 import React from 'react';
-import { CardImage } from 'bloomer';
 import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import portfolio from '../../enums/portfolio';
 import Layout from '../../components/layout/layout';
 import SlimHero from '../../components/slim-hero/slim-hero';
-import InformationalContent from '../../components/general-components/informational-content';
-import SidebarInfoText from '../../components/general-components/sidebar-info-text';
-import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
-import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
+import { CardImage, Container } from 'bloomer';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImageByName } from '../../helpers/helpers';
+import VevolSection from '../../components/general-components/vm-section';
+import SidebarInfoText from '../../components/general-components/sidebar-info-text';
 import Quote from '../../components/general-components/quote';
-import portfolio from '../../enums/portfolio';
+import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
+import InformationalContent from '../../components/general-components/informational-content';
+import HeadingBlock from '../../components/heading-block/heading-block';
+import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
 
 export const data = graphql`
 	query {
@@ -52,81 +54,103 @@ export default function AsMarketCaseStudy({ data }) {
 					alt={'Margee Case Study - Vevol Media'}
 				/>
 			</CardImage>
-			<SidebarInfoText
-				backgroundWhite
-				sidebarContent={[
-					{
-						title: 'Services',
-						text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
-					},
-					{
-						title: 'Industry',
-						text: 'Micromobility',
-					},
-				]}
-				mainContent={[
-					{
-						title: 'Overview',
-						text: 'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
-					},
-					{
-						text: 'Contrary to popular belief, Lorem Ipsum is not simply random. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
-					},
-				]}
-			/>
+			<VevolSection whiteBackground>
+				<Container>
+					<SidebarInfoText
+						sidebarContent={[
+							{
+								title: 'Services',
+								text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+							},
+							{
+								title: 'Industry',
+								text: 'Micromobility',
+							},
+						]}
+						mainContent={[
+							{
+								title: 'Overview',
+								text: 'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+							},
+							{
+								text: 'Contrary to popular belief, Lorem Ipsum is not simply random. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+							},
+						]}
+					/>
+				</Container>
+			</VevolSection>
 			<Quote
 				firstPart={`Vevol Media were amazing!`}
 				secondPart={`Not only they took care of the project A to Z but they continue offering monthly quality maintenance.`}
 				authorName={`Richard Gere`}
 				authorRole={`CEO, Margee`}
 			/>
-			<SimpleImageCarousel imagesArray={projectCarouselImages} />
-			<SidebarInfoText
-				backgroundWhite
-				sidebarContent={[
-					{
-						title: 'Tools',
-						text: 'Facebook Ads, Google Adds, Figma, Instagram',
-					},
-				]}
-				mainContent={[
-					{
-						title: 'Goals',
-						text: 'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
-					},
-					{
-						text: 'Contrary to popular belief, Lorem Ipsum is not simply random. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
-					},
-				]}
-			/>
-			<InformationalContent
-				featuredImage={
-					<GatsbyImage
-						width={`500px`}
-						image={getImageByName(currentProject.nodes, 'bottom')}
-						alt={'Margee Case Study - Results &amp; Impact'}
+			<VevolSection>
+				<Container>
+					<SimpleImageCarousel imagesArray={projectCarouselImages} />
+				</Container>
+			</VevolSection>
+			<Container>
+				<SidebarInfoText
+					sidebarContent={[
+						{
+							title: 'Tools',
+							text: 'Facebook Ads, Google Adds, Figma, Instagram',
+						},
+					]}
+					mainContent={[
+						{
+							title: 'Goals',
+							text: 'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+						},
+						{
+							text: 'Contrary to popular belief, Lorem Ipsum is not simply random. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
+						},
+					]}
+				/>
+			</Container>
+			<VevolSection>
+				<Container>
+					<InformationalContent
+						featuredImage={
+							<GatsbyImage
+								width={`500px`}
+								image={getImageByName(currentProject.nodes, 'bottom')}
+								alt={'Margee Case Study - Results &amp; Impact'}
+							/>
+						}
+						title={'Results & Impact'}
+						description={
+							'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout'
+						}
+						blocks={[
+							{
+								title: 'Increase rate',
+								text: '4.00%',
+							},
+							{
+								title: 'Increase rate',
+								text: '4.00%',
+							},
+							{
+								title: 'Increase rate',
+								text: '4.00%',
+							},
+						]}
 					/>
-				}
-				title={'Results & Impact'}
-				description={
-					'Is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout'
-				}
-				blocks={[
-					{
-						title: 'Increase rate',
-						text: '4.00%',
-					},
-					{
-						title: 'Increase rate',
-						text: '4.00%',
-					},
-					{
-						title: 'Increase rate',
-						text: '4.00%',
-					},
-				]}
-			/>
-			<PortfolioCarousel projectsList={otherProjects} imagesData={allPortfolio.nodes} backgroundWhite />
+				</Container>
+			</VevolSection>
+			<VevolSection whiteBackground>
+				<Container>
+					<HeadingBlock
+						title={'Our previously successful projects'}
+						highlightedWord={'successful'}
+						subtitle={'Proven track record of our hard work.'}
+						className="mb-4em"
+					/>
+					<PortfolioCarousel projectsList={otherProjects} imagesData={allPortfolio.nodes} cutBottomPadding />
+				</Container>
+			</VevolSection>
 		</Layout>
 	);
 }

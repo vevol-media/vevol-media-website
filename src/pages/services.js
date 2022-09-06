@@ -6,7 +6,6 @@ import SidewayText from '../components/sideways-text-banner/sideway-text-banner'
 import { graphql } from 'gatsby';
 import services from '../enums/services';
 import { Container } from 'bloomer';
-import MainForm from '../components/forms/main-form';
 import HeadingBlock from '../components/heading-block/heading-block';
 
 export const data = graphql`
@@ -66,12 +65,6 @@ export default function ServicesPage({ data }) {
 					/>
 				</Container>
 			</div>
-			<MainForm
-				title={"Let's Talk About Your Business"}
-				subtitle={
-					'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
-				}
-			/>
 		</Layout>
 	);
 }

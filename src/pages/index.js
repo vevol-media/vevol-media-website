@@ -1,17 +1,20 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { getImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
-import MainForm from '../components/forms/main-form';
-import PagespeedChecker from '../components/forms/pagespeed-checker';
-import HomepageHero from '../components/homepage-hero/homepage-hero';
-import HomepageServices from '../components/homepage-services/homepage-services';
+import { getImage } from 'gatsby-plugin-image';
+import { Helmet } from 'react-helmet';
 import Layout from '../components/layout/layout';
-import ReviewsSection from '../components/reviews-section/reviews-section';
+import HomepageHero from '../components/homepage-hero/homepage-hero';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
-import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
+import HomepageServices from '../components/homepage-services/homepage-services';
+import ReviewsSection from '../components/reviews-section/reviews-section';
+import VevolSection from '../components/general-components/vm-section';
+import { Container } from 'bloomer/lib/layout/Container';
+import HeadingBlock from '../components/heading-block/heading-block';
 import PortfolioCarousel from '../components/portfolio-carousel/portfolio-carousel';
 import portfolio from '../enums/portfolio';
+import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
+import PagespeedChecker from '../components/forms/pagespeed-checker';
+import BottomCTA from '../components/bottom-cta/bottom-cta';
 
 export const data = graphql`
 	query {
@@ -53,19 +56,22 @@ export default function Homepage({ data }) {
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
 			<HomepageServices />
 			<ReviewsSection />
-			<PortfolioCarousel
-				projectsList={portfolio}
-				imagesData={portfolioFeaturedImagesQuery.nodes}
-				backgroundWhite
-			/>
+			<VevolSection whiteBackground>
+				<Container>
+					<HeadingBlock
+						title={'Our previously successful projects'}
+						highlightedWord={'successful'}
+						subtitle={'Proven track record of our hard work.'}
+						className="mb-4em"
+					/>
+					<PortfolioCarousel
+						projectsList={portfolio}
+						imagesData={portfolioFeaturedImagesQuery.nodes}
+						backgroundWhite
+					/>
+				</Container>
+			</VevolSection>
 			{/* <PagespeedChecker /> */}
-			<MainForm
-				title={"Let's Talk About Your Business"}
-				subtitle={
-					'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
-				}
-			/>
-			<ImagesMiniBanner images={partnersImages.nodes}/>
 			{/* <BottomCTA
 				bgImage={bottomBannerImage}
 				title="Let's Work Together"
@@ -73,6 +79,7 @@ export default function Homepage({ data }) {
 				url="/"
 				gradientColour="black"
 			/> */}
+			<ImagesMiniBanner images={partnersImages.nodes}/>
 		</Layout>
 	);
 }

@@ -2,7 +2,15 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import './sideway-text-banner.scss';
 
-export default function SidewayText({ lineOne, lineTwo, lineThree, backgroundWhite }) {
+export default function SidewayText({
+	lineOne,
+	lineTwo,
+	lineThree,
+	backgroundWhite,
+	lineOneRepeat = 10,
+	lineTwoRepeat = 10,
+	lineThreeRepeat = 10,
+}) {
 	return (
 		<div className={`sideway-text ${backgroundWhite ? 'vm-bg--white' : ''}`}>
 			<div className="sideway-text__blocks">
@@ -16,7 +24,7 @@ export default function SidewayText({ lineOne, lineTwo, lineThree, backgroundWhi
 										left: -200 + percentage * 150,
 									}}
 								>
-									{[...Array(10)].map((x, i) => (
+									{[...Array(lineOneRepeat)].map((x, i) => (
 										<span key={i}>{lineOne}</span>
 									))}
 								</p>
@@ -27,7 +35,7 @@ export default function SidewayText({ lineOne, lineTwo, lineThree, backgroundWhi
 										left: -800 + percentage * 400,
 									}}
 								>
-									{[...Array(10)].map((x, i) => (
+									{[...Array(lineTwoRepeat)].map((x, i) => (
 										<span key={i}>{lineTwo}</span>
 									))}
 								</p>
@@ -38,7 +46,7 @@ export default function SidewayText({ lineOne, lineTwo, lineThree, backgroundWhi
 										right: percentage * 200,
 									}}
 								>
-									{[...Array(10)].map((x, i) => (
+									{[...Array(lineThreeRepeat)].map((x, i) => (
 										<span key={i}>{lineThree}</span>
 									))}
 								</p>

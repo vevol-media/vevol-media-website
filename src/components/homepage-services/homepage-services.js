@@ -27,13 +27,13 @@ export default function HomepageServices() {
 				/>
 				<ul className="homepage-services__list">
 					{services.map((service, index) => {
-						return <ServicePanel key={index} {...service} delayTime={index * 250} />;
+						return <ServicePanel key={index} {...service} delayTime={index * 100} />;
 					})}
 				</ul>
-				<Fade delay={1250}>
+				<Fade delay={500}>
 					<div className="has-text-centered homepage-sevices__actions">
 						<p>We can do much more than that</p>
-						<Link to="/" className="vm-button vm-button--green">
+						<Link to="/services" className="vm-button vm-button--green">
 							Find out more
 						</Link>
 					</div>

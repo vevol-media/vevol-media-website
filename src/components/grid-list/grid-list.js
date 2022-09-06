@@ -1,6 +1,5 @@
 import React from 'react';
 import './grid-list.scss';
-import { getImageByName } from '../../helpers/helpers';
 import { Link } from 'gatsby';
 import { Title } from 'bloomer/lib/elements/Title';
 import { BgImage } from 'gbimage-bridge';
