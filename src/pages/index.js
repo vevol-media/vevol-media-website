@@ -11,6 +11,7 @@ import { Container } from 'bloomer/lib/layout/Container';
 import HeadingBlock from '../components/heading-block/heading-block';
 import PortfolioCarousel from '../components/portfolio-carousel/portfolio-carousel';
 import portfolio from '../enums/portfolio';
+import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
 
 export const data = graphql`
 	query {
@@ -22,11 +23,19 @@ export const data = graphql`
 				}
 			}
 		}
+		partnersImages: allFile(filter: { relativeDirectory: { eq: "partners" } }) {
+			nodes {
+				name
+				childImageSharp {
+					gatsbyImageData(placeholder: TRACED_SVG)
+				}
+			}
+		}
 	}
 `;
 
 export default function Homepage({ data }) {
-	const { portfolioFeaturedImagesQuery } = data;
+	const { portfolioFeaturedImagesQuery, partnersImages } = data;
 
 	return (
 		<Layout>
@@ -52,6 +61,7 @@ export default function Homepage({ data }) {
 					/>
 				</Container>
 			</VevolSection>
+			<ImagesMiniBanner images={partnersImages.nodes} />
 		</Layout>
 	);
 }
