@@ -19,15 +19,15 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 750)
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 750, quality: 100)
 				}
 			}
 		}
-		partnersImages: allFile(filter: { relativeDirectory: { eq: "partners" } }) {
+		partnersImages: allFile(filter: { relativeDirectory: { eq: "platforms" } }) {
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: TRACED_SVG)
+					gatsbyImageData(placeholder: BLURRED, height: 60, quality: 100)
 				}
 			}
 		}
@@ -45,6 +45,7 @@ export default function Homepage({ data }) {
 			<HomepageHero />
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
 			<HomepageServices />
+			<ImagesMiniBanner images={partnersImages.nodes} />
 			<ReviewsSection />
 			<VevolSection whiteBackground>
 				<Container>
@@ -58,10 +59,10 @@ export default function Homepage({ data }) {
 						projectsList={portfolio}
 						imagesData={portfolioFeaturedImagesQuery.nodes}
 						backgroundWhite
+						cutBottomPadding
 					/>
 				</Container>
 			</VevolSection>
-			<ImagesMiniBanner images={partnersImages.nodes} />
 		</Layout>
 	);
 }

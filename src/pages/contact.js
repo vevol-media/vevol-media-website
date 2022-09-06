@@ -11,7 +11,7 @@ export const data = graphql`
 	query {
 		danNistorQuery: file(name: { eq: "dan-nistor-phone" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 })
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
 		}
 	}

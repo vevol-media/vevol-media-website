@@ -18,13 +18,13 @@ export const data = graphql`
 		imageOneQuery: allFile(filter: { name: { eq: "web-development-services" } }) {
 			nodes {
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, width: 1000)
+					gatsbyImageData(placeholder: BLURRED, width: 1000, quality: 100)
 				}
 			}
 		}
 		bottomBannerImageQuery: file(name: { eq: "bottom-banner" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 })
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
 		}
 	}

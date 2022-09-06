@@ -12,17 +12,17 @@ export const data = graphql`
 	query {
 		imageOneQuery: file(name: { eq: "opportunity" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 })
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
 		}
 		imageTwoQuery: file(name: { eq: "partnership" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 })
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
 		}
 		bottomBannerImageQuery: file(name: { eq: "bottom-banner" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 })
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
 		}
 	}

@@ -14,7 +14,7 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 20 }, width: 40)
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 20 }, width: 40, quality: 100)
 				}
 			}
 		}
@@ -22,7 +22,7 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 20 }, width: 150)
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 20 }, width: 150, quality: 100)
 				}
 			}
 		}

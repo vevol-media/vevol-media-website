@@ -16,14 +16,14 @@ export const data = graphql`
 		location: allFile(filter: { name: { eq: "vevol-media-locations" } }) {
 			nodes {
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, width: 800)
+					gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
 				}
 			}
 		}
 		brasov: allFile(filter: { name: { eq: "vevol-team-brasov" } }) {
 			nodes {
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, width: 800)
+					gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
 				}
 			}
 		}

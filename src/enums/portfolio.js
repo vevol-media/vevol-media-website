@@ -1,5 +1,20 @@
 const portfolio = [
 	{
+		name: 'Fyne Jewellery',
+		description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+		internalUrl: '/work/fyne-jewellery',
+		externalUrl: 'https://fynejewellery.com',
+		featuredImage: 'fyne-jewellery',
+		hasCaseStudy: true,
+	},
+	{
+		name: 'Lovyt',
+		description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+		internalUrl: '/work/lovyt',
+		externalUrl: 'https://lovyt.com',
+		hasCaseStudy: false,
+	},
+	{
 		name: 'Margee',
 		description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
 		internalUrl: '/work/margee',
