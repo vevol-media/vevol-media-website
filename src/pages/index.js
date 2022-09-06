@@ -12,6 +12,8 @@ import HeadingBlock from '../components/heading-block/heading-block';
 import PortfolioCarousel from '../components/portfolio-carousel/portfolio-carousel';
 import portfolio from '../enums/portfolio';
 import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
+import BottomCTA from '../components/bottom-cta/bottom-cta';
+import { getImage } from 'gatsby-plugin-image';
 
 export const data = graphql`
 	query {
@@ -31,11 +33,17 @@ export const data = graphql`
 				}
 			}
 		}
+		midBannerImageQuery: file(name: { eq: "reviews-banner" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
+			}
+		}
 	}
 `;
 
 export default function Homepage({ data }) {
-	const { portfolioFeaturedImagesQuery, partnersImages } = data;
+	const { portfolioFeaturedImagesQuery, partnersImages, midBannerImageQuery } = data;
+	const midBannerImage = getImage(midBannerImageQuery);
 
 	return (
 		<Layout>
@@ -46,7 +54,25 @@ export default function Homepage({ data }) {
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
 			<HomepageServices />
 			<ImagesMiniBanner images={partnersImages.nodes} />
-			<ReviewsSection />
+			<VevolSection whiteBackground>
+				<Container>
+					<HeadingBlock
+						title={'We work hard to deliver quality'}
+						highlightedWord={'quality'}
+						subtitle={'And our clients appreciate us.'}
+						className="mb-4em"
+					/>
+					<ReviewsSection whiteBackground />
+				</Container>
+			</VevolSection>
+			<BottomCTA
+				bgImage={midBannerImage}
+				title="Let's Work Together"
+				text="Book a free consultation with one of out team members now"
+				url="/"
+				ctaText={'Get in touch'}
+				gradientColour="black"
+			/>
 			<VevolSection whiteBackground>
 				<Container>
 					<HeadingBlock

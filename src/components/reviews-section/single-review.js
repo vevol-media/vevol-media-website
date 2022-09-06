@@ -1,9 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faQuoteLeft, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import Fade from 'react-reveal/Fade';
+import { Link } from 'gatsby';
 
-export default function SingleReview({ name, role, text, delayTime }) {
+export default function SingleReview({ name, role, text, clutchUrl, projectUrl, delayTime }) {
 	return (
 		<Fade bottom delay={delayTime}>
 			<li>
@@ -24,6 +25,14 @@ export default function SingleReview({ name, role, text, delayTime }) {
 					<div className="review__text">
 						<FontAwesomeIcon icon={faQuoteLeft} />
 						{text}
+					</div>
+					<div className="review__actions">
+						<Link to={projectUrl}>
+							<strong>See Project</strong>
+						</Link>
+						<a href={clutchUrl} target={'_blank'} rel="noreferrer">
+							Read Full Review <FontAwesomeIcon icon={faExternalLinkAlt} />
+						</a>
 					</div>
 				</div>
 			</li>

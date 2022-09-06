@@ -42,7 +42,7 @@ export default function Header({ background }) {
 					<Link to="/services">Services</Link>
 					<Link to="/work">Work</Link>
 					<Link to="/about">About Us</Link>
-					<Link to="/frequently-asked-questions">FAQ</Link>
+					<Link to="/faqs">FAQ</Link>
 					<Link to="/contact">Contact Us</Link>
 					<Link to="/strategic-partnerships">Strategic Partnerships</Link>
 

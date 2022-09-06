@@ -24,11 +24,11 @@ export default function ImagesMiniBanner({ images }) {
 		<div className="images-mini-banner">
 			<div className="images-mini-banner__wrapper">
 				<StyledList>
-					{images.map((imgData) => {
+					{images.map((imgData, index) => {
 						const image = getImage(imgData.childImageSharp.gatsbyImageData);
 
 						return (
-							<li>
+							<li key={index}>
 								<GatsbyImage
 									image={image}
 									alt="Vevol Media Partner"
@@ -38,11 +38,11 @@ export default function ImagesMiniBanner({ images }) {
 							</li>
 						);
 					})}
-					{images.map((imgData) => {
+					{images.map((imgData, index) => {
 						const image = getImage(imgData.childImageSharp.gatsbyImageData);
 
 						return (
-							<li>
+							<li key={index}>
 								<GatsbyImage
 									image={image}
 									alt="Vevol Media Partner"

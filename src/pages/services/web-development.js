@@ -76,6 +76,7 @@ export default function PageWebDevelopment({ data }) {
 				title="Let's Work Together"
 				text="Book a free consultation with one of out team members now"
 				url="/"
+				ctaText={'Get in touch'}
 				gradientColour="black"
 			/>
 			<VevolSection whiteBackground>

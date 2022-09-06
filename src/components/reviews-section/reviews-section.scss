@@ -2,15 +2,44 @@
 @import "/src/styles/mixins";
 
 .reviews-section {
-    .reviews__list {
-        padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+    &:hover li .review {
+        opacity: 0.3;
+    }
+
+    li {
+        width: calc(100% - 280px);
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
 
         .review {
             padding: 40px;
-            border: 1px solid rgba($white, 0.1);
-            margin-top: 30px;
-            transition: 0.3s linear all;
             display: flex;
+            align-items: center;
+            border: 1px solid $black;
+            box-shadow: 9px 9px 0 0 $green;
+            transition: 0.3s linear all;
+            position: relative;
+
+            .review__actions {
+                position: absolute;
+                left: calc(100% - 30px);
+                width: 250px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                gap: 10px;
+                transition: 0.3s linear all;
+                opacity: 0;
+                visibility: hidden;
+            }
 
             .review__left {
                 width: 200px;
@@ -20,8 +49,11 @@
 
                 .review__stars {
                     margin-bottom: 20px;
-                    padding-bottom: 20px;
                     border-bottom: 1px solid rgba($white, 0.4);
+
+                    svg {
+                        color: $yellow;
+                    }
                 }
 
                 .review__name {
@@ -35,11 +67,10 @@
 
             .review__text {
                 padding-left: 50px;
-                font-size: 1.25em;
                 line-height: 1.5;
                 text-align: right;
                 position: relative;
-                font-weight: 300;
+                font-weight: 500;
 
                 @include screen-medium {
                     font-size: 1.1em;
@@ -53,23 +84,50 @@
                     opacity: 0.1;
                 }
             }
+        }
 
-            &:hover {
-                opacity: 1 !important;
-                border-color: rgba($white, 0.4);
+        &:nth-child(2n) {
+            align-self: flex-end;
+
+            .review .review__actions {
+                left: auto !important;
+                right: calc(100% - 30px);
             }
         }
 
-        &:hover .review {
-            opacity: 0.3;
+        &:hover {
+            .review {
+                opacity: 1 !important;
+                box-shadow: 4px 4px 0 0 $green;
+
+                .review__actions {
+                    left: calc(100% + 30px);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            &:nth-child(2n) .review .review__actions {
+                left: auto;
+                right: calc(100% + 30px);
+            }
+        }
+
+        @include screen-medium {
+            width: 100%;
+
+            .review {
+                opacity: 1 !important;
+
+                .review__actions {
+                    display: none !important;
+                }
+            }
         }
 
         @include screen-small {
-            padding-top: 30px;
-
             .review {
                 flex-direction: column-reverse;
-                margin-top: 20px;
                 align-items: center;
 
                 .review__left {
