@@ -38,35 +38,33 @@ export default function PageAbout({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>About Vevol Media</title>
+				<title>Meet Vevol Media and our Team of Shopify Experts</title>
+				<meta
+					name="description"
+					content="Ireland Based Shopify & Bespoke Development Company. We specialise in bringing success to eCommerce businesses internationally."
+				/>
 			</Helmet>
 			<SlimHero
 				heading="About Vevol Media"
-				subheading="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+				subheading="We are a passionate and dedicated team specialising in eCommerce and development. Quality is what drives us and we uphold this promise to all our clients."
 			/>
-			<VevolSection whiteBackground>
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<ImageWithText
-						image={
-							<GatsbyImage
-								image={locationImage}
-								alt={'Margee Case Study - Results &amp; Impact'}
-								layout="fullWidth"
-							/>
-						}
+						image={<GatsbyImage image={locationImage} alt={'Vevol Media locations'} />}
 						title={'Based in Europe'}
 						textContent={[
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								Vevol Media is an Ireland based and fully remote company, our members working from their
+								own locations. You can always meet us face to face in Ireland, UK or Romania.
 							</p>,
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								Our mission is to help businesses grow by leveraging our skills and expertise in web
+								design & development, search engine and conversion rate optimisation.
 							</p>,
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								eCommerce and Shopify are at the core of our services, our team having extensive
+								knowledge on how your business can take advantage of everything on the market.
 							</p>,
 						]}
 					/>
@@ -81,32 +79,35 @@ export default function PageAbout({ data }) {
 					/>
 					<Fade bottom>
 						<p className="py-6">
-							There are many variations of passages of Lorem Ipsum available, but the majority have
-							suffered alteration in some form, by injected humour, or randomised words which don't look
-							even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
-							sure there isn't anything embarrassing hidden in the middle of text.
+							Our team is always ready to give 100% for your project. We do it with pride and we value
+							your success as much as we value ours. Whether it comes to development, design, strategies
+							or business in general, everyone is fully invested in all projects we take on. Let's work
+							together and prove these are not just words.
 						</p>
 					</Fade>
 					<TeamMembers />
 				</Container>
 			</VevolSection>
-			<VevolSection whiteBackground>
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<ImageWithText
-						image={<GatsbyImage image={brasovImage} alt={'Margee Case Study - Results &amp; Impact'} />}
+						image={<GatsbyImage image={brasovImage} alt={'Vevol Media team'} />}
 						title={'A Little Background'}
 						textContent={[
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								Vevol Media has started in 2018 and initially offerred Shopify Store Setup services. As
+								we continued to grow, the services expanded to custom theme development, SEO, CRO and
+								bespoke design.
 							</p>,
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								We have a remote-first work approach therefore we offer our services internationally.
+								Our team meets regularly in person to work and have fun together. We share common goals
+								and we strive to achieve them as a group.
 							</p>,
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								We can also facilitate face to face client meetings with our co-founders or managers in
+								Ireland, UK or Romania. You will also find us at relevant conferences or meet-ups like
+								Shopify Unite, eCommerce Expo, GPEC and many others.
 							</p>,
 						]}
 					/>

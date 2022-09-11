@@ -7,6 +7,7 @@ import BottomCTA from '../components/bottom-cta/bottom-cta';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -36,34 +37,32 @@ export default function StrategicPartnershipsPage({ data }) {
 
 	return (
 		<Layout>
+			<Helmet>
+				<title>Succesful Partnerships Opportunities - Vevol Media</title>
+				<meta
+					name="description"
+					content="Grow your partners network with eCommerce experts and developers. Let's build success stories together. Get in touch today!"
+				/>
+			</Helmet>
 			<SlimHero
 				heading="Strategic Partnerships"
-				subheading="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+				subheading="Opportunities for similar thinking business to link up with Vevol Media and offer better, more customer-centric services packages."
 			/>
-			<VevolSection whiteBackground>
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<ImageWithText
 						alignRight
-						image={
-							<GatsbyImage
-								image={imageOne}
-								alt={'Margee Case Study - Results &amp; Impact'}
-								layout="fullWidth"
-							/>
-						}
-						title={'A Little Background'}
+						image={<GatsbyImage image={imageOne} alt={'Opportunities for strategic partnerships'} />}
+						title={'Always looking to connect'}
 						textContent={[
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								Here at Vevol Media, we are willing to do whatever it takes to deliver the best possible
+								services for our customers.
 							</p>,
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
-							</p>,
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								Our Strategic Partnerships Program has this ideal in mind, as we are open to
+								collaboration with other service providers if it is in the best interest of your
+								project.
 							</p>,
 						]}
 					/>
@@ -72,34 +71,26 @@ export default function StrategicPartnershipsPage({ data }) {
 			<BottomCTA
 				bgImage={bottomBannerImage}
 				title="Let's Work Together"
-				text="Book a free consultation with one of out team members now"
-				url="/"
+				text="Reach out to us and let's talk about getting all customers the best services they deserve."
+				url="/contact"
 				ctaText={'Get in touch'}
 				gradientColour="black"
 			/>
-			<VevolSection whiteBackground>
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<ImageWithText
-						image={
-							<GatsbyImage
-								image={imageTwo}
-								alt={'Margee Case Study - Results &amp; Impact'}
-								layout="fullWidth"
-							/>
-						}
-						title={'A Little Background'}
+						image={<GatsbyImage image={imageTwo} alt={'Strategic partnerships at Vevol Media'} />}
+						title={'Partner up with us'}
 						textContent={[
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								Our Strategic Partnerships Program has this ideal in mind, as we are open to
+								collaboration with other service providers if it is in the best interest of your
+								project.
 							</p>,
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
-							</p>,
-							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s
+							<p className="mt-5">
+								Our priority is helping our clients achieve their goals. We believe in the power of
+								many. If your company is better suited for our clients's requirements, we will happily
+								reccommend you.
 							</p>,
 						]}
 					/>

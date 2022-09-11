@@ -21,8 +21,8 @@ export default function HomepageHero() {
 					</Fade>
 					<Fade bottom delay={300}>
 						<p>
-							As Shopify partners and experienced developers, we can become a pillar of your success
-							story.
+							We are Shopify partners and experienced developers, so you can be sure you are in great
+							hands!
 						</p>
 					</Fade>
 					<Fade bottom delay={600}>

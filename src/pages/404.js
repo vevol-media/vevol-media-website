@@ -1,56 +1,49 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Layout from '../components/layout/layout';
+import { Helmet } from 'react-helmet';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { graphql, Link } from 'gatsby';
+import { CardImage } from 'bloomer/lib/components/Card/CardImage';
+import VevolSection from '../components/general-components/vm-section';
+import { Container } from 'bloomer/lib/layout/Container';
+import { Title } from 'bloomer/lib/elements/Title';
 
-// styles
-const pageStyles = {
-	color: '#232129',
-	padding: '96px',
-	fontFamily: '-apple-system, Roboto, sans-serif, serif',
-};
+export const data = graphql`
+	query {
+		errorImageQuery: file(name: { eq: "404-error" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 800, quality: 100)
+			}
+		}
+	}
+`;
 
-const headingStyles = {
-	marginTop: 0,
-	marginBottom: 64,
-	maxWidth: 320,
-};
+export default function Page404({ data }) {
+	const { errorImageQuery } = data;
+	const errorImage = getImage(errorImageQuery);
 
-const paragraphStyles = {
-	marginBottom: 48,
-};
-
-const codeStyles = {
-	color: '#8A6534',
-	padding: 4,
-	backgroundColor: '#FFF4DB',
-	fontSize: '1.25rem',
-	borderRadius: 4,
-};
-
-// markup
-const NotFoundPage = () => {
 	return (
-		<main style={pageStyles}>
-			<title>Not found</title>
-			<h1 style={headingStyles}>Page not found</h1>
-			<p style={paragraphStyles}>
-				Sorry{' '}
-				<span role="img" aria-label="Pensive emoji">
-					😔
-				</span>{' '}
-				we couldn’t find what you were looking for.
-				<br />
-				{process.env.NODE_ENV === 'development' ? (
-					<>
-						<br />
-						Try creating a page in <code style={codeStyles}>src/pages/</code>.
-						<br />
-					</>
-				) : null}
-				<br />
-				<Link to="/">Go home</Link>.
-			</p>
-		</main>
+		<Layout>
+			<Helmet>
+				<title>404 Error - Page Not Found</title>
+				<meta
+					name="description"
+					content="We get it, you're an explorer. Unfortunately there is nothing but 404 empty atoms here."
+				/>
+			</Helmet>
+			<CardImage>
+				<GatsbyImage image={errorImage} alt={'404 Error - Vevol Media'} objectFit="contain" />
+			</CardImage>
+			<VevolSection backgroundColour={'white'}>
+				<Container className="has-text-centered">
+					<Title tag="h1" isSize={3} className="mb-6">
+						The Internet is vast. But it seems like you reached the end of it.
+					</Title>
+					<Link to={'/'}>
+						<span className="vm-button vm-button--black">Go Home Alien</span>
+					</Link>
+				</Container>
+			</VevolSection>
+		</Layout>
 	);
-};
-
-export default NotFoundPage;
+}

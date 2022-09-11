@@ -13,7 +13,7 @@ import GridList from '../components/grid-list/grid-list';
 
 export const data = graphql`
 	query {
-		images: allFile(filter: { relativeDirectory: { eq: "portfolio-featured-images" } }) {
+		simpleImagesQuery: allFile(filter: { relativeDirectory: { eq: "portfolio-featured-images" } }) {
 			nodes {
 				name
 				childImageSharp {
@@ -21,42 +21,54 @@ export const data = graphql`
 				}
 			}
 		}
+		featuredImagesQuery: allFile(filter: { relativeDirectory: { eq: "case-studies-featured-images" } }) {
+			nodes {
+				name
+				childImageSharp {
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
+				}
+			}
+		}
 	}
 `;
 
 export default function WorkPage({ data }) {
-	const portfolioImages = data.images.nodes;
+	const { simpleImagesQuery, featuredImagesQuery } = data;
 	const withCaseStudy = portfolio.filter((item) => item.hasCaseStudy);
 	const withoutCaseStudy = portfolio.filter((item) => !item.hasCaseStudy);
 
 	return (
 		<Layout>
 			<Helmet>
-				<title>A list of our succesful projects - Vevol Media - Shopify Experts</title>
+				<title>Success Stories in our Portfolio - Vevol Media - Shopify Experts</title>
+				<meta
+					name="description"
+					content="We love building quality, conversion-oriented websites. See our work and let's build a success story for your business."
+				/>
 			</Helmet>
 			<SlimHero
 				heading="Check out our work"
 				subheading="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
 			/>
-			<VevolSection whiteBackground>
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
 						title={'Check out our featured work'}
 						highlightedWord={'featured'}
 						subtitle={'Read more about the context, the process and the results'}
 					/>
-					<FeaturedWork projectsList={withCaseStudy} images={portfolioImages} />
+					<FeaturedWork projectsList={withCaseStudy} images={featuredImagesQuery.nodes} />
 				</Container>
 			</VevolSection>
 			<SidewayText lineOne={`building`} lineTwo={'ecommerce'} />
-			<VevolSection whiteBackground>
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
 						title={'Check out our featured work'}
 						highlightedWord={'featured'}
 						subtitle={'Read more about the context, the process and the results'}
 					/>
-					<GridList items={withoutCaseStudy} imagesData={portfolioImages} />
+					<GridList items={withoutCaseStudy} imagesData={simpleImagesQuery.nodes} />
 				</Container>
 			</VevolSection>
 		</Layout>

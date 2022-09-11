@@ -9,6 +9,8 @@
 
     li {
         width: calc(33.33% - 20px);
+        box-shadow: 9px 9px 0 0 $green;
+        overflow: hidden;
 
         .grid-list-item__content {
             height: 400px;
@@ -16,8 +18,8 @@
             justify-content: flex-end;
             flex-direction: column;
             padding: 20px;
-            box-shadow: 9px 9px 0 0 $green;
             transition: 0.3s ease all;
+            position: relative;
 
             h4,
             span {
@@ -29,14 +31,32 @@
                 margin-bottom: 15px;
             }
 
+            span {
+                line-height: 24px;
+            }
+
             svg {
                 fill: $black;
                 transition: 0.3s ease all;
                 margin-left: 10px;
             }
 
-            &:hover {
-                box-shadow: 4px 4px 0 0 $green;
+            &--active {
+                h4,
+                span {
+                    transition: 0.3s ease all;
+                    top: 42px;
+                    position: relative;
+                }
+            }
+
+            &--active:hover {
+                background: rgba($white, 0.65);
+
+                h4,
+                span {
+                    top: 0;
+                }
 
                 svg {
                     transform: rotate(-45deg);
@@ -60,6 +80,13 @@
             .grid-list-item__content {
                 height: 250px;
                 background: rgba($white, 0.65);
+
+                &--active {
+                    h4,
+                    span {
+                        top: 0;
+                    }
+                }
             }
         }
     }

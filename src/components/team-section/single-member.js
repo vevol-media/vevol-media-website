@@ -7,7 +7,7 @@ export default function SingleMember({ role, name, image }) {
 	return (
 		<div className="card-team hs-list__block--shadow">
 			<CardImage className="card-img-team">
-				<GatsbyImage image={image} alt="vevol media member" layout="fullWidth" />
+				<GatsbyImage image={image} alt={`Vevol Media Team - ${name}`} aspectratio={1 / 1.23} />
 			</CardImage>
 			<CardContent className="card-content">
 				<Media>

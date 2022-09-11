@@ -11,22 +11,16 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function PortfolioCarousel({ projectsList, imagesData, cutBottomPadding }) {
 	const splideSettings = {
 		rewind: true,
-		perPage: 4,
-		gap: '1.5rem',
-		height: 400,
-
+		perPage: 3,
+		gap: '30px',
+		height: 420,
+		wheel: false,
 		breakpoints: {
-			1600: {
-				perPage: 3,
-				wheel: false,
-			},
 			1024: {
 				perPage: 2,
-				wheel: false,
 			},
 			480: {
 				perPage: 1,
-				wheel: false,
 				gap: 0,
 				pagination: false,
 			},
@@ -44,17 +38,26 @@ export default function PortfolioCarousel({ projectsList, imagesData, cutBottomP
 
 		return (
 			<SplideSlide key={index}>
-				<Link to={project.internalUrl}>
+				{project.hasPage && (
+					<Link to={project.internalUrl}>
+						<BgImage className="portfolio-item" image={bgImage}>
+							<div className="portfolio-item__actions">
+								<p className="pb-3">{project.name}</p>
+								<span className="is-flex is-align-items-center">
+									Read More
+									<FontAwesomeIcon icon={faArrowRight} />
+								</span>
+							</div>
+						</BgImage>
+					</Link>
+				)}
+				{!project.hasPage && (
 					<BgImage className="portfolio-item" image={bgImage}>
-						<div className="ml-5 mb-5">
+						<div className="portfolio-item__actions portfolio-item__actions--no-link">
 							<p className="pb-3">{project.name}</p>
-							<span className="is-flex is-align-items-center">
-								Read More
-								<FontAwesomeIcon icon={faArrowRight} />
-							</span>
 						</div>
 					</BgImage>
-				</Link>
+				)}
 			</SplideSlide>
 		);
 	});

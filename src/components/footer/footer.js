@@ -20,11 +20,11 @@ export default function WebsiteFooter() {
 						<Title tag="h4" isSize={4}>
 							Services
 						</Title>
-						<Link to="/services/web-development">Website Development</Link>
 						<Link to="/services/shopify-development">Shopify Development</Link>
+						<Link to="/services/bespoke-development">Bespoke Development</Link>
 						<Link to="/services/shopify-migration">Shopify Migration</Link>
 						<Link to="/services/seo-services">SEO Services</Link>
-						<Link to="/services/branding-and-creative">Branding &amp; Creative</Link>
+						<Link to="/services/ui-ux-web-design">UI/UX Web Design</Link>
 					</Column>
 					<Column>
 						<Title tag="h4" isSize={4}>

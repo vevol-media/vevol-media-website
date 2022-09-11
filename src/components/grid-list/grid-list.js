@@ -22,19 +22,30 @@ export default function GridList({ items, imagesData, className }) {
 
 				return (
 					<li key={index} className="grid-list__item">
-						<Link to={item.internalUrl}>
+						{item.hasPage && (
+							<Link to={item.internalUrl}>
+								<BgImage image={projectImage}>
+									<div className="grid-list-item__content grid-list-item__content--active">
+										<Title tag="h4" isSize={4}>
+											{item.name}
+										</Title>
+										<span className="is-flex is-align-items-center">
+											Read More
+											<FontAwesomeIcon icon={faArrowRight} />
+										</span>
+									</div>
+								</BgImage>
+							</Link>
+						)}
+						{!item.hasPage && (
 							<BgImage image={projectImage}>
 								<div className="grid-list-item__content">
-									<Title tag="h4" isSize={4}>
+									<Title tag="h4" isSize={4} className="mb-0">
 										{item.name}
 									</Title>
-									<span className="is-flex is-align-items-center">
-										Read More
-										<FontAwesomeIcon icon={faArrowRight} />
-									</span>
 								</div>
 							</BgImage>
-						</Link>
+						)}
 					</li>
 				);
 			})}

@@ -17,7 +17,7 @@ export default function ServicesList({ imageData, services, backgroundWhite, top
 							<div className="service__icon">
 								<GatsbyImage
 									image={getImageByName(imageData, service.image)}
-									alt={'Margee Case Study - Vevol Media'}
+									alt={`${service.title} - Vevol Media`}
 								/>
 							</div>
 							<Title tag="h3" isSize={3}>

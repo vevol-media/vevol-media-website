@@ -7,6 +7,7 @@ import { graphql } from 'gatsby';
 import services from '../enums/services';
 import { Container } from 'bloomer';
 import HeadingBlock from '../components/heading-block/heading-block';
+import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -34,15 +35,22 @@ export default function ServicesPage({ data }) {
 
 	return (
 		<Layout>
+			<Helmet>
+				<title>eCommerce Focused Services - Development & Growth - Vevol Media</title>
+				<meta
+					name="description"
+					content="Increase your online revenue with our effective eCommerce services. ✔️ Ireland based B2B Company. ☝ Get in touch with our specialists!"
+				/>
+			</Helmet>
 			<SlimHero
-				heading="What can we do"
-				subheading="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+				heading="What We Can Do For You"
+				subheading="Let us help you take your brand to new heights with our variety of cutting-edge eCommerce services. From Bespoke and Shopify Development to SEO Services and UX/UI Design - Vevol Media is your go-to destination if you want to take your business to the next level."
 			/>
 			<div className="vm-section vm-bg--white">
 				<Container>
 					<HeadingBlock
-						title={'We love beautiful code'}
-						highlightedWord={'code'}
+						title={'We Love Beautiful Code'}
+						highlightedWord={'Code'}
 						subtitle={"Clean, scalable, flexible and re-usable. That's our way of writing code."}
 					/>
 					<ServicesList imageData={servicesIcons.nodes} services={services.dev} backgroundWhite topMargin />

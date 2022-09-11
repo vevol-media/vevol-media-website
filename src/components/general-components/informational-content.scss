@@ -29,7 +29,8 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				width: calc(33.33% - 16.66px);
+				flex: 1;
+				min-width: calc(33.33% - 16.66px);
 				padding: 40px 20px;
 				user-select: none;
 

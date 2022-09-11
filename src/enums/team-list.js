@@ -23,6 +23,10 @@ const teamList = [
 		name: 'Miruna Andriesei',
 		role: 'Front End Developer',
 	},
+	{
+		name: 'Victoria Gurghis',
+		role: 'UX/UI Design',
+	},
 ];
 
 export default teamList;

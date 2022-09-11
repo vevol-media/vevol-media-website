@@ -6,6 +6,7 @@ import VevolSection from '../components/general-components/vm-section';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -23,33 +24,40 @@ export default function ContactPage({ data }) {
 
 	return (
 		<Layout>
+			<Helmet>
+				<title>Contact us for Shopify & Bespoke Development services</title>
+				<meta
+					name="description"
+					content="Let's connect and discuss about how Vevol Media can help your business. Innovative Shopify Partners and expert developers - just one click away. Get in touch today!"
+				/>
+			</Helmet>
 			<SlimHero
-				heading="Get in touch"
-				subheading="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+				heading="Talk To Us!"
+				subheading="Let us know how we can help and we'll get back to you within 24h."
 			/>
-			<VevolSection whiteBackground>
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<ImageWithText
+						className="mb-4em"
 						greenLine
 						alignRight
 						image={
 							<GatsbyImage
 								image={danNistorImage}
-								alt={'Margee Case Study - Results &amp; Impact'}
-								layout="fullWidth"
+								alt={'Dan Nistor - Vevol Media Co-Founder'}
 							/>
 						}
 						title={"Let's connect"}
 						textContent={[
 							<p className="mt-6">
-								<strong>Person of Contact: </strong>
+								<strong>Co-founder: </strong>
 								<span>Dan Nistor</span>
 							</p>,
-							<p className="mt-3">
+							<p className="mt-5">
 								<strong>Phone Number: </strong>
 								<a href="tel:+353892052402">+353 89 205 2402</a>
 							</p>,
-							<p className="mt-3">
+							<p className="mt-5">
 								<strong>Email Address: </strong>
 								<a href="mailto:hello@vevolmedia.com">hello@vevolmedia.com</a>
 							</p>,
@@ -63,6 +71,11 @@ export default function ContactPage({ data }) {
 							</p>,
 						]}
 					/>
+					<p>
+						Here at Vevol Media, we believe communication is key. If you have any queries, comments or
+						concerns, please do not hesitate to reach out to us, and our friendly team will get back to you
+						as soon as possible.
+					</p>
 				</Container>
 			</VevolSection>
 		</Layout>

@@ -27,6 +27,15 @@
 .vm-section {
     padding: 6em 0;
 
+    &--background-grey {
+        background-color: $grey;
+        color: $black;
+
+        .splide__pagination__page.is-active {
+            background: $black;
+        }
+    }
+
     &--background-white {
         background-color: $white;
         color: $black;

@@ -15,8 +15,7 @@ export default function FeaturedWork({ projectsList, images }) {
 						<Link to={item.internalUrl}>
 							<GatsbyImage
 								image={getImageByName(images, item.featuredImage)}
-								alt={'Margee Case Study - Vevol Media'}
-								layout="fullWidth"
+								alt={`${item.name} Case Study`}
 							/>
 							<div className="featured-work__item-hover">
 								<IconTopo className="item-hover__pattern" />

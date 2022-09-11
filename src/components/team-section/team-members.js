@@ -12,7 +12,7 @@ export default function TeamMembers() {
 				nodes {
 					name
 					childImageSharp {
-						gatsbyImageData(placeholder: TRACED_SVG, quality: 100)
+						gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100)
 					}
 				}
 			}
@@ -31,7 +31,7 @@ export default function TeamMembers() {
 
 					return <SingleMember role={member.role} name={member.name} key={index} image={memberImageObject} />;
 				} else {
-					return <></>;
+					return <React.Fragment key={index}></React.Fragment>;
 				}
 			})}
 		</div>

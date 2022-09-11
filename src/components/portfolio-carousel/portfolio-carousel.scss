@@ -8,12 +8,30 @@
 		.portfolio-item {
 			height: 100%;
 			display: flex;
-			align-items: flex-end;
-			color: $black;
 
-			p {
-				font-weight: bold;
-				font-size: 1.3em;
+			.portfolio-item__actions {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				padding: 30px;
+				position: relative;
+				transition: 0.3s ease all;
+				width: 100%;
+				top: 52px;
+				color: $black;
+
+				&--no-link {
+					top: 25px;
+				}
+
+				p {
+					font-weight: bold;
+					font-size: 1.3em;
+				}
+
+				span {
+					line-height: 25px;
+				}
 			}
 
 			svg {
@@ -22,8 +40,15 @@
 				margin-left: 10px;
 			}
 
-			&:hover svg {
-				transform: rotate(-45deg);
+			&:hover {
+				.portfolio-item__actions {
+					background: rgba($white, 0.65);
+					top: 0;
+				}
+
+				svg {
+					transform: rotate(-45deg);
+				}
 			}
 		}
 	}
@@ -39,6 +64,15 @@
 
 		.splide {
 			margin: 0 -20px;
+
+			.portfolio-item .portfolio-item__actions {
+				top: 0;
+				padding: 15px 20px;
+
+				p {
+					padding-bottom: 3px !important;
+				}
+			}
 		}
 	}
 }

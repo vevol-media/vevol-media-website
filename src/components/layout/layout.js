@@ -6,6 +6,7 @@ import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
 import MainForm from '../forms/main-form';
 import { Helmet } from 'react-helmet';
+import ogImage from '../../images/vevol-media-og-image.jpg';
 import favicon from '../../images/icon.png';
 
 export default function Layout({ children, headerBg, showBlob }) {
@@ -18,6 +19,10 @@ export default function Layout({ children, headerBg, showBlob }) {
 			transform: `translate3d(${event.clientX}px, ${event.clientY}px, 0)`,
 		});
 	};
+
+	const metaTitle = 'Innovative Shopify Experts & Developers - Vevol Media';
+	const metaDescription =
+		'Shopify Experts based in Ireland that provide bespoke eCommerce complete services. ✔️ From Shopify setup to theme development. ☝ Get in touch with us today!';
 
 	const handleScroll = (event) => {
 		if (window.scrollY > 100) {
@@ -43,14 +48,27 @@ export default function Layout({ children, headerBg, showBlob }) {
 				)}
 				<Helmet>
 					<link rel="icon" href={favicon} />
-					<title>Shopify Experts - Web Development - Vevol Media</title>
+					<title>{metaTitle}</title>
+
+					<meta property="og:url" content="https://www.vevolmedia.com" />
+					<meta property="og:type" content="website" />
+					<meta property="og:title" content={metaTitle} />
+					<meta property="og:description" content={metaDescription} />
+					<meta property="og:image" content={ogImage} />
+
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta property="twitter:domain" content="vevolmedia.com" />
+					<meta property="twitter:url" content="https://www.vevolmedia.com" />
+					<meta name="twitter:title" content={metaTitle} />
+					<meta name="twitter:description" content={metaDescription} />
+					<meta name="twitter:image" content={ogImage} />
 				</Helmet>
 				<Header background={headerBg} />
 				<main>{children}</main>
 				<MainForm
 					title={"Let's Talk About Your Business"}
 					subtitle={
-						'Get in touch with us if you want to get a quote for your project or if you simply want to say hello! We are friendly!'
+						"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
 					}
 				/>
 				<WebsiteFooter />

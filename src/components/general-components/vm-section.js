@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function VevolSection({ children, whiteBackground, className }) {
+export default function VevolSection({ children, backgroundColour, className }) {
 	return (
 		<div
-			className={`vm-section ${whiteBackground ? 'vm-section--background-white' : ''} ${
+			className={`vm-section vm-section--background-${backgroundColour ? backgroundColour : 'black'} ${
 				className ? className : ''
 			}`}
 		>

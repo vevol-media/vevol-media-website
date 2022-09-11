@@ -12,7 +12,7 @@ export default function FaqPage() {
 				heading="Frequently Asked Questions"
 				subheading="We want to be as transparent as possible so here you will find a list of questions you might have before you decide to work with us."
 			/>
-			<VevolSection whiteBackground>
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<FaqQuestions />
 				</Container>

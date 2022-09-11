@@ -19,10 +19,10 @@ export default function HomepageServices() {
 		<VevolSection className={'homepage-services'}>
 			<Container>
 				<HeadingBlock
-					title={'Experience the right way'}
-					highlightedWord={'right'}
+					title={'Experience The Right Way'}
+					highlightedWord={'Right'}
 					subtitle={
-						"You deserve quality digital services from people who know their stuff. We do that. That's our promise."
+						"You deserve high quality services from people who know their stuff. We know our stuff - that's a promise!"
 					}
 				/>
 				<ul className="homepage-services__list">
@@ -32,7 +32,7 @@ export default function HomepageServices() {
 				</ul>
 				<Fade delay={500}>
 					<div className="has-text-centered homepage-sevices__actions">
-						<p>We can do much more than that</p>
+						<p>Oh, and we can do much more than that!</p>
 						<Link to="/services" className="vm-button vm-button--green">
 							Find out more
 						</Link>

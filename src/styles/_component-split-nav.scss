@@ -1,6 +1,6 @@
 .split-nav {
     display: flex;
-    background: $grey;
+    background: $border;
 
     .split-nav__link {
         flex: 1;
@@ -33,11 +33,17 @@
                 padding: 2em 20px;
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 10px;
+
+                h5 {
+                    font-size: 18px;
+                }
             }
 
             &--right a {
                 text-align: right;
                 align-items: flex-end;
+                flex-direction: column-reverse;
             }
         }
     }
