@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import Header from '../header/header';
 import WebsiteFooter from '../footer/footer';
-import Fade from 'react-reveal/Fade';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
 import MainForm from '../forms/main-form';
 import { Helmet } from 'react-helmet';
 import ogImage from '../../images/vevol-media-og-image.jpg';
 import favicon from '../../images/icon.png';
+import config from 'react-reveal/globals';
 
 export default function Layout({ children, headerBg, showBlob }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -32,47 +32,47 @@ export default function Layout({ children, headerBg, showBlob }) {
 		}
 	};
 
+	config({ ssrFadeout: true });
+
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
 	});
 
 	return (
-		<Fade ssrReveal>
-			<div onMouseMove={handleMouseMove} role="presentation">
-				{showBlob && (
-					<div className="cursor-container">
-						<animated.div style={animatedProps} className="cursor-wrapper">
-							<Cursor />
-						</animated.div>
-					</div>
-				)}
-				<Helmet>
-					<link rel="icon" href={favicon} />
-					<title>{metaTitle}</title>
+		<div onMouseMove={handleMouseMove} role="presentation">
+			{showBlob && (
+				<div className="cursor-container">
+					<animated.div style={animatedProps} className="cursor-wrapper">
+						<Cursor />
+					</animated.div>
+				</div>
+			)}
+			<Helmet>
+				<link rel="icon" href={favicon} />
+				<title>{metaTitle}</title>
 
-					<meta property="og:url" content="https://www.vevolmedia.com" />
-					<meta property="og:type" content="website" />
-					<meta property="og:title" content={metaTitle} />
-					<meta property="og:description" content={metaDescription} />
-					<meta property="og:image" content={ogImage} />
+				<meta property="og:url" content="https://www.vevolmedia.com" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content={metaTitle} />
+				<meta property="og:description" content={metaDescription} />
+				<meta property="og:image" content={ogImage} />
 
-					<meta name="twitter:card" content="summary_large_image" />
-					<meta property="twitter:domain" content="vevolmedia.com" />
-					<meta property="twitter:url" content="https://www.vevolmedia.com" />
-					<meta name="twitter:title" content={metaTitle} />
-					<meta name="twitter:description" content={metaDescription} />
-					<meta name="twitter:image" content={ogImage} />
-				</Helmet>
-				<Header background={headerBg} />
-				<main>{children}</main>
-				<MainForm
-					title={"Let's Talk About Your Business"}
-					subtitle={
-						"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
-					}
-				/>
-				<WebsiteFooter />
-			</div>
-		</Fade>
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta property="twitter:domain" content="vevolmedia.com" />
+				<meta property="twitter:url" content="https://www.vevolmedia.com" />
+				<meta name="twitter:title" content={metaTitle} />
+				<meta name="twitter:description" content={metaDescription} />
+				<meta name="twitter:image" content={ogImage} />
+			</Helmet>
+			<Header background={headerBg} />
+			<main>{children}</main>
+			<MainForm
+				title={"Let's Talk About Your Business"}
+				subtitle={
+					"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
+				}
+			/>
+			<WebsiteFooter />
+		</div>
 	);
 }

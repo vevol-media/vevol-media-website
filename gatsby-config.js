@@ -27,14 +27,6 @@ module.exports = {
 			},
 		},
 		{
-			resolve: 'gatsby-plugin-minify-html',
-			options: {
-				minifyJS: true,
-				minifyCSS: true,
-				collapseWhitespace: true,
-			},
-		},
-		{
 			resolve: `gatsby-plugin-sitemap`,
 			options: {
 				excludes: [`/__generated/*`],

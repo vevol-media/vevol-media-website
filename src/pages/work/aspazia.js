@@ -103,7 +103,7 @@ export default function PortfolioPage({ data }) {
 						mainContent={[
 							{
 								title: 'Goals & Results',
-								text: 'The main objective was to get to market fast and collect continous data for future development. With a fresh UX and out of the box product design, we managed to reach our goals within 3 months.',
+								text: 'The main objective was to get to market fast and collect continuous data for future development. With a fresh UX and out of the box product design, we managed to reach our goals within 3 months.',
 							},
 						]}
 					/>
