@@ -37,7 +37,7 @@ export default function Layout({ children, headerBg, showBlob }) {
 	});
 
 	return (
-		<Fade>
+		<Fade ssrReveal>
 			<div onMouseMove={handleMouseMove} role="presentation">
 				{showBlob && (
 					<div className="cursor-container">

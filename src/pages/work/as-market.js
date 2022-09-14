@@ -25,7 +25,6 @@ export const data = graphql`
 					gatsbyImageData(
 						placeholder: BLURRED
 						blurredOptions: { width: 125 }
-						width: 1400
 						quality: 100
 						layout: FULL_WIDTH
 					)
@@ -133,6 +132,7 @@ export default function PortfolioPage({ data }) {
 				width={`500px`}
 				image={getImageByName(currentProject.nodes, 'bottom')}
 				alt={'A&S Market Case Study - Results &amp; Impact'}
+				loading="lazy"
 			/>
 			<VevolSection backgroundColour={'grey'}>
 				<Container>

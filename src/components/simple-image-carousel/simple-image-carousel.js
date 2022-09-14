@@ -29,7 +29,12 @@ export default function SimpleImageCarousel({ imagesArray, className }) {
 
 		return (
 			<SplideSlide key={index}>
-				<GatsbyImage className="image-carousel" alt={`Vevol Media Image - ${index}`} image={image} />
+				<GatsbyImage
+					className="image-carousel"
+					alt={`Vevol Media Carousel Image - ${index}`}
+					image={image}
+					loading="lazy"
+				/>
 			</SplideSlide>
 		);
 	});

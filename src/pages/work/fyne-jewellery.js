@@ -26,7 +26,6 @@ export const data = graphql`
 					gatsbyImageData(
 						placeholder: BLURRED
 						blurredOptions: { width: 125 }
-						width: 1400
 						quality: 100
 						layout: FULL_WIDTH
 					)

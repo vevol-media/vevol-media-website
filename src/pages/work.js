@@ -48,13 +48,13 @@ export default function WorkPage({ data }) {
 			</Helmet>
 			<SlimHero
 				heading="Check out our work"
-				subheading="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+				subheading="We build eCommerce and brochure websites with passion and we are proud of the results. Have a look at our latest projects."
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Check out our featured work'}
-						highlightedWord={'featured'}
+						title={'Check Out Our Featured Work'}
+						highlightedWord={'Featured'}
 						subtitle={'Read more about the context, the process and the results'}
 					/>
 					<FeaturedWork projectsList={withCaseStudy} images={featuredImagesQuery.nodes} />
@@ -64,9 +64,9 @@ export default function WorkPage({ data }) {
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Check out our featured work'}
-						highlightedWord={'featured'}
-						subtitle={'Read more about the context, the process and the results'}
+						title={'See More Awesomness'}
+						highlightedWord={'Awesomness'}
+						subtitle={'We love showcasing what we can do. Click away and see for yourself.'}
 					/>
 					<GridList items={withoutCaseStudy} imagesData={simpleImagesQuery.nodes} />
 				</Container>
