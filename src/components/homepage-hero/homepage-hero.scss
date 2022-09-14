@@ -95,7 +95,7 @@
     }
 
     @include screen-small {
-        padding-top: 30px;
+        padding: 4em 0;
 
         .homepage-hero__blob {
             right: -325px;
@@ -136,6 +136,23 @@
                     position: relative;
                     left: 58px;
                 }
+            }
+        }
+    }
+
+    @include screen-mobile {
+        .homepage-hero__content {
+            h1 {
+                font-size: 2em;
+                margin-top: 10px;
+            }
+
+            p:last-of-type {
+                font-size: 1em;
+            }
+
+            .vm-button {
+                margin-top: 30px;
             }
         }
     }
