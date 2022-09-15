@@ -15,6 +15,7 @@ module.exports = {
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-robots-txt',
+		'gatsby-plugin-gatsby-cloud',
 		{
 			resolve: `gatsby-plugin-minify`,
 			options: {
