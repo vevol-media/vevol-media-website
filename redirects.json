@@ -1,6 +1,6 @@
 [
   {
-    "from": "/our-portfolio/",
-    "to": "/work/"
+    "fromPath": "/our-portfolio",
+    "toPath": "/work"
   }
 ]
