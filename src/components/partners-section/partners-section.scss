@@ -1,0 +1,111 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.trusted-partners {
+    .trusted-partners__filters {
+        margin-bottom: 2em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        li {
+            padding: 7px 15px;
+            border: 1px solid $black;
+            user-select: none;
+            cursor: pointer;
+            transition: 0.3s ease all;
+            text-transform: capitalize;
+
+            &:hover,
+            &.active {
+                background: $black;
+                color: $white;
+            }
+        }
+    }
+
+    .trusted-partners__info {
+        margin-bottom: 2em;
+
+        p {
+            display: flex;
+            align-items: center;
+            font-size: 0.85em;
+
+            svg {
+                color: $pink;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .trusted-partners__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        a {
+            border: 1px solid $black;
+            padding: 30px;
+            box-shadow: 9px 9px 0 0 $green;
+            transition: 0.3s ease all;
+            width: calc(25% - 22.5px);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                margin: 20px 0;
+                color: $black !important;
+            }
+
+            p {
+                color: $black !important;
+                font-size: 0.85em;
+                margin-top: auto;
+                padding: 20px 0;
+            }
+
+            .trusted-partners__badges {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    color: $lightGrey;
+
+                    &.active {
+                        color: $pink;
+                    }
+                }
+            }
+
+            .vm-button {
+                margin-top: auto;
+            }
+
+            &:hover {
+                box-shadow: 4px 4px 0 0 $green;
+            }
+
+            @include screen-general {
+                width: calc(33.33% - 20px);
+            }
+
+            @include screen-medium {
+                width: calc(50% - 15px);
+
+                h3 {
+                    font-size: 1.2em;
+                }
+            }
+
+            @include screen-mobile {
+                width: 100%;
+            }
+        }
+    }
+}

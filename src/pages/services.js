@@ -8,6 +8,8 @@ import services from '../enums/services';
 import { Container } from 'bloomer';
 import HeadingBlock from '../components/heading-block/heading-block';
 import { Helmet } from 'react-helmet';
+import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
+import VevolSection from '../components/general-components/vm-section';
 
 export const data = graphql`
 	query {
@@ -19,11 +21,11 @@ export const data = graphql`
 				}
 			}
 		}
-		devFrameworks: allFile(filter: { relativeDirectory: { eq: "dev-frameworks" } }) {
+		technologies: allFile(filter: { relativeDirectory: { eq: "technologies" } }) {
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 20 }, width: 150, quality: 100)
+					gatsbyImageData(placeholder: TRACED_SVG, blurredOptions: { width: 20 }, height: 60, quality: 100)
 				}
 			}
 		}
@@ -31,7 +33,7 @@ export const data = graphql`
 `;
 
 export default function ServicesPage({ data }) {
-	const { servicesIcons, devFrameworks } = data;
+	const { servicesIcons, technologies } = data;
 
 	return (
 		<Layout>
@@ -46,7 +48,7 @@ export default function ServicesPage({ data }) {
 				heading="What We Can Do For You"
 				subheading="Let us help you take your brand to new heights with our variety of cutting-edge eCommerce services. From Bespoke and Shopify Development to SEO Services and UX/UI Design - Vevol Media is your go-to destination if you want to take your business to the next level."
 			/>
-			<div className="vm-section vm-bg--white">
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
 						title={'We Love Beautiful Code'}
@@ -55,9 +57,9 @@ export default function ServicesPage({ data }) {
 					/>
 					<ServicesList imageData={servicesIcons.nodes} services={services.dev} backgroundWhite topMargin />
 				</Container>
-			</div>
+			</VevolSection>
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
-			<div className="vm-section vm-bg--white">
+			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
 						title={'We speak eCommerce'}
@@ -72,7 +74,8 @@ export default function ServicesPage({ data }) {
 						topMargin
 					/>
 				</Container>
-			</div>
+			</VevolSection>
+			<ImagesMiniBanner images={technologies.nodes} />
 		</Layout>
 	);
 }

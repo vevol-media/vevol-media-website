@@ -1,35 +1,30 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import Fade from "react-reveal/Fade";
-import "./faq-accordion.scss";
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import Fade from 'react-reveal/Fade';
+import './faq-accordion.scss';
 
 export default function FaqAccordion({ title, text }) {
-    const [showInfo, setShowInfo] = useState(false);
+	const [showInfo, setShowInfo] = useState(false);
 
-    return (
-        <div className="question">
-            <div
-                onClick={() => setShowInfo(!showInfo)}
-                onKeyPress={() => setShowInfo(!showInfo)}
-                role="button"
-                tabIndex="0"
-                className="question__heading"
-            >
-                <h3 className="question__title">{title}</h3>
-                <FontAwesomeIcon
-                    icon={faPlus}
-                    className={`question__icon ${
-                        showInfo ? "question__icon--open" : ""
-                    }`}
-                />
-            </div>
+	return (
+		<div className="question">
+			<div
+				onClick={() => setShowInfo(!showInfo)}
+				onKeyPress={() => setShowInfo(!showInfo)}
+				role="button"
+				tabIndex="0"
+				className="question__heading"
+			>
+				<h3 className="question__title">{title}</h3>
+				<FontAwesomeIcon icon={faPlus} className={`question__icon ${showInfo ? 'question__icon--open' : ''}`} />
+			</div>
 
-            {showInfo && (
-                <Fade>
-                    <p className="question__text">{text}</p>
-                </Fade>
-            )}
-        </div>
-    );
+			{showInfo && (
+				<Fade>
+					<p className="question__text">{text}</p>
+				</Fade>
+			)}
+		</div>
+	);
 }

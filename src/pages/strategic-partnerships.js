@@ -46,14 +46,14 @@ export default function StrategicPartnershipsPage({ data }) {
 			</Helmet>
 			<SlimHero
 				heading="Strategic Partnerships"
-				subheading="Opportunities for similar thinking business to link up with Vevol Media and offer better, more customer-centric services packages."
+				subheading="We offer opportunities for like-minded businesses to link up with Vevol Media to provide better, more customer-centric service packages."
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<ImageWithText
 						alignRight
 						image={<GatsbyImage image={imageOne} alt={'Opportunities for strategic partnerships'} />}
-						title={'Always looking to connect'}
+						title={'Always Looking To Connect'}
 						textContent={[
 							<p className="mt-5">
 								Here at Vevol Media, we are willing to do whatever it takes to deliver the best possible
@@ -80,7 +80,7 @@ export default function StrategicPartnershipsPage({ data }) {
 				<Container>
 					<ImageWithText
 						image={<GatsbyImage image={imageTwo} alt={'Strategic partnerships at Vevol Media'} />}
-						title={'Partner up with us'}
+						title={'Partner Up With Us'}
 						textContent={[
 							<p className="mt-5">
 								Our Strategic Partnerships Program has this ideal in mind, as we are open to
@@ -89,8 +89,8 @@ export default function StrategicPartnershipsPage({ data }) {
 							</p>,
 							<p className="mt-5">
 								Our priority is helping our clients achieve their goals. We believe in the power of
-								many. If your company is better suited for our clients's requirements, we will happily
-								reccommend you.
+								many. If your company is better suited for our client's requirements, we will happily
+								recommend you.
 							</p>,
 						]}
 					/>

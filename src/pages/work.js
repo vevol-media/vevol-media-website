@@ -47,7 +47,7 @@ export default function WorkPage({ data }) {
 				/>
 			</Helmet>
 			<SlimHero
-				heading="Check out our work"
+				heading="Check Out Our Work"
 				subheading="We build eCommerce and brochure websites with passion and we are proud of the results. Have a look at our latest projects."
 			/>
 			<VevolSection backgroundColour={'white'}>

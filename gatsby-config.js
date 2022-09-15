@@ -16,6 +16,15 @@ module.exports = {
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-robots-txt',
 		{
+			resolve: `gatsby-plugin-minify`,
+			options: {
+				removeAttributeQuotes: true,
+				minifyJS: true,
+				removeEmptyAttributes: true,
+				removeComments: true,
+			},
+		},
+		{
 			resolve: `gatsby-plugin-gtag`,
 			options: {
 				// your google analytics tracking id

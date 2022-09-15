@@ -34,6 +34,17 @@
         }
     }
 
+    &.vm-button--black-transparent {
+        background: none;
+        border: 1px solid $black;
+        color: $black;
+
+        &:hover {
+            background: $black;
+            color: $white;
+        }
+    }
+
     &.vm-button--white {
         background: $white;
         color: $black;
@@ -79,5 +90,9 @@
         @include screen-small {
             padding: 20px 30px;
         }
+    }
+
+    &.vm-button--small {
+        font-size: 0.85em;
     }
 }

@@ -1,48 +1,10 @@
-@keyframes slideAnimation {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
 .images-mini-banner {
+    padding: 2em 0;
     background: $darkGrey;
-    padding: 40px 0;
-    overflow: hidden;
-    height: 140px;
-    position: relative;
 
-    ul {
+    li {
         display: flex;
-        flex-wrap: nowrap;
-        animation: slideAnimation linear infinite;
-        position: absolute;
-        left: 0;
-        top: 40px;
-
-        li {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 350px;
-            max-width: 350px;
-            padding: 0 20px;
-        }
-    }
-
-    @include screen-small {
-        padding: 30px 0;
-        height: 90px;
-
-        ul {
-            top: 30px;
-
-            li {
-                min-width: 150px;
-                max-width: 150px;
-            }
-        }
+        align-items: center;
+        justify-content: center;
     }
 }

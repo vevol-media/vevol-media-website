@@ -1,7 +1,6 @@
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
-import '@splidejs/splide/dist/css/splide.min.css';
 import './simple-image-carousel.scss';
 
 export default function SimpleImageCarousel({ imagesArray, className }) {

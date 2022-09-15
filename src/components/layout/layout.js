@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import ogImage from '../../images/vevol-media-og-image.jpg';
 import favicon from '../../images/icon.png';
 import config from 'react-reveal/globals';
+import '@splidejs/splide/dist/css/splide.min.css';
 
 export default function Layout({ children, headerBg, showBlob }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -47,9 +48,14 @@ export default function Layout({ children, headerBg, showBlob }) {
 					</animated.div>
 				</div>
 			)}
-			<Helmet>
+			<Helmet
+				htmlAttributes={{
+					lang: 'en',
+				}}
+			>
 				<link rel="icon" href={favicon} />
 				<title>{metaTitle}</title>
+				<meta name="description" content={metaDescription} />
 
 				<meta property="og:url" content="https://www.vevolmedia.com" />
 				<meta property="og:type" content="website" />

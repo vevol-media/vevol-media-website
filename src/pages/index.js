@@ -29,7 +29,7 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, height: 60, quality: 100)
+					gatsbyImageData(placeholder: TRACED_SVG, height: 60, quality: 100)
 				}
 			}
 		}
@@ -66,29 +66,29 @@ export default function Homepage({ data }) {
 						title={'Your Success Is Our Success'}
 						textContent={[
 							<p className="mt-5">
-								We love working with beautiful brands and we are fully invested in all projects.
+								We love working with amazing brands and we are fully invested in all of our projects.
 							</p>,
 							<p className="mt-5">
-								Our ethos is to provide quality above else and we uphold our beliefs when offering our
-								services to all clients.
+								Our ethos is to provide quality above all else and we uphold our beliefs when offering
+								our services to our clients.
 							</p>,
 							<p className="mt-5">
-								We've been part of many success stories and we can't wait to join your journey to the
+								We’ve been a part of many success stories and we can’t wait to join your journey to the
 								top!
 							</p>,
 						]}
 						numbersContent={[
 							{
-								title: '22+',
-								subtitle: 'Success Stories',
+								title: '20+',
+								subtitle: 'Successful Launches',
 							},
 							{
 								title: '35+',
-								subtitle: 'Projects Finished',
+								subtitle: 'Ongoing Customers',
 							},
 							{
 								title: '100+',
-								subtitle: 'Ideas Generated',
+								subtitle: 'Ideas Implemented',
 							},
 						]}
 					/>
@@ -99,7 +99,7 @@ export default function Homepage({ data }) {
 					<HeadingBlock
 						title={'We Work Hard To Ensure Quality'}
 						highlightedWord={'Quality'}
-						subtitle={'And our clients appreciate us.'}
+						subtitle={'And our clients appreciate it.'}
 						className="mb-4em"
 					/>
 					<ReviewsSection whiteBackground />

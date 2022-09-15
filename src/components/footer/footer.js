@@ -34,6 +34,7 @@ export default function WebsiteFooter() {
 						<Link to="/work">Work</Link>
 						<Link to="/contact">Contact Us</Link>
 						<Link to="/strategic-partnerships">Strategic Partnerships</Link>
+						<Link to="/partners">Trusted Partners</Link>
 						<Link to="/faqs">FAQ</Link>
 					</Column>
 					<Column className="footer__social">

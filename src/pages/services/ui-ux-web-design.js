@@ -95,7 +95,7 @@ export default function PageSingleService({ data }) {
 				<Container>
 					<ImageWithText
 						alignRight
-						image={<GatsbyImage image={imageTwoData} alt={''} />}
+						image={<GatsbyImage image={imageTwoData} alt={'UI/UX Design Package'} />}
 						title={'The whole package'}
 						textContent={[
 							<p className="mt-5">

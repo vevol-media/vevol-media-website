@@ -1,5 +1,4 @@
 import React from 'react';
-import '@splidejs/splide/dist/css/splide.min.css';
 import './portfolio-carousel.scss';
 import { getImage } from 'gatsby-plugin-image';
 import { SplideSlide, Splide } from '@splidejs/react-splide';

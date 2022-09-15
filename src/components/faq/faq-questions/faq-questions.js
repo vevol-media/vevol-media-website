@@ -14,7 +14,7 @@ export default function FaqQuestions() {
 	return (
 		<div className={'faq-list'}>
 			<Title tag="h2" className="faq-list__heading">
-				Our clients have asked
+				Our Clients Have Asked
 			</Title>
 			<div className="faq-list__block">
 				{questions.map((question, index) => {
