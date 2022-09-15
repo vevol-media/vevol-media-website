@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImageByName } from '../../helpers/helpers';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import './partners-section.scss';
 import { Title } from 'bloomer/lib/elements/Title';
 
@@ -52,16 +50,6 @@ export default function PartnersSection({ logos, partnersList }) {
 					</li>
 				))}
 			</ul>
-			<div className="trusted-partners__info">
-				<p>
-					<FontAwesomeIcon icon={faCheckCircle} />
-					<span>- Our clients use this partner's service or software</span>
-				</p>
-				<p>
-					<FontAwesomeIcon icon={faThumbsUp} />
-					<span>- We have worked directly with and we recommended this partner's services or software</span>
-				</p>
-			</div>
 			<div className="trusted-partners__list">
 				{partners.map((partner, index) => (
 					<a key={index} href={partner.website} target={'_blank'} rel="noreferrer">
@@ -73,10 +61,6 @@ export default function PartnersSection({ logos, partnersList }) {
 						<Title tag="h3" isSize={4}>
 							{partner.name}
 						</Title>
-						<div className="trusted-partners__badges">
-							<FontAwesomeIcon icon={faCheckCircle} className={`${partner.isUsed ? 'active' : ''}`} />
-							<FontAwesomeIcon icon={faThumbsUp} className={`${partner.isTrusted ? 'active' : ''}`} />
-						</div>
 						<p>{partner.intro}</p>
 						<span className="vm-button vm-button--black-transparent vm-button--small">Visit Partner</span>
 					</a>

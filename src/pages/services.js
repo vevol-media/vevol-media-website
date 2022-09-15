@@ -41,7 +41,7 @@ export default function ServicesPage({ data }) {
 				<title>eCommerce Focused Services - Development & Growth - Vevol Media</title>
 				<meta
 					name="description"
-					content="Increase your online revenue with our effective eCommerce services. ✔️ Ireland based B2B Company. ☝ Get in touch with our specialists!"
+					content="Increase your online revenue with our effective eCommerce services. Ireland based B2B Company. Get in touch with our specialists!"
 				/>
 			</Helmet>
 			<SlimHero

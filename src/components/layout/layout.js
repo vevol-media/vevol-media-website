@@ -23,7 +23,7 @@ export default function Layout({ children, headerBg, showBlob }) {
 
 	const metaTitle = 'Innovative Shopify Experts & Developers - Vevol Media';
 	const metaDescription =
-		'Shopify Experts based in Ireland that provide bespoke eCommerce complete services. ✔️ From Shopify setup to theme development. ☝ Get in touch with us today!';
+		'Shopify Experts based in Ireland that provide bespoke eCommerce complete services. From Shopify setup to theme development. Get in touch with us today!';
 
 	const handleScroll = (event) => {
 		if (window.scrollY > 100) {
