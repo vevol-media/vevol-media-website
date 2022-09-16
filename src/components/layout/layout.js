@@ -64,6 +64,7 @@ export default function Layout({ children, headerBg, showBlob }) {
 				<meta property="og:image" content={ogImage} />
 
 				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:creator" content="@VevolMedia" />
 				<meta property="twitter:domain" content="vevolmedia.com" />
 				<meta property="twitter:url" content="https://www.vevolmedia.com" />
 				<meta name="twitter:title" content={metaTitle} />
