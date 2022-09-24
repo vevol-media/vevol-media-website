@@ -7,11 +7,13 @@ import logoWhite from '../../images/logo-vevol-media.svg';
 import logoBlack from '../../images/logo-vevol-media-black.svg';
 import './header.scss';
 
-export default function Header({ background }) {
+export default function Header({ background, isStatic }) {
 	const [isNavVisible, setIsNavVisible] = useState(false);
 
 	return (
-		<div className={`vm-header vm-header--${background ? 'white' : 'black'}`}>
+		<div
+			className={`vm-header vm-header--${background ? 'white' : 'black'} vm-header--${isStatic ? 'static' : ''}`}
+		>
 			<Container>
 				<Link to="/" className="vm-header__logo">
 					<img src={background === 'white' ? logoBlack : logoWhite} alt="Vevol Media Logo" />
@@ -42,8 +44,9 @@ export default function Header({ background }) {
 					<Link to="/services">Services</Link>
 					<Link to="/work">Work</Link>
 					<Link to="/about">About Us</Link>
-					<Link to="/faqs">FAQ</Link>
 					<Link to="/contact">Contact Us</Link>
+					<Link to="/blog">Blog</Link>
+					<Link to="/faqs">FAQ</Link>
 					<Link to="/strategic-partnerships">Strategic Partnerships</Link>
 
 					<div

@@ -1,0 +1,106 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.blog-content {
+    max-width: 1000px !important;
+    padding: 0 20px;
+
+    .blog-content__breadcrumbs {
+        background: $grey;
+        border: 1px solid $lightGrey;
+        padding: 5px 10px;
+        margin-bottom: 1.5em;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow: scroll;
+
+        a,
+        small {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    code {
+        background: $black;
+        color: $green2;
+        padding: 0.25em 0.5em 0.25em !important;
+    }
+
+    .rte-image {
+        display: block;
+        box-shadow: 9px 9px 0 0 $black;
+        margin-bottom: 2em;
+    }
+
+    ul,
+    ol {
+        background: $lightYellow;
+        padding: 20px 20px 0 40px;
+        margin-bottom: 1.5em;
+
+        p {
+            margin-bottom: 0 !important;
+            padding-bottom: 20px;
+        }
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: auto;
+    }
+
+    .rte-block-entry {
+        display: block;
+        box-shadow: 9px 9px 0 0 $black;
+        margin-bottom: 2rem;
+
+        .rte-block-entry__text {
+            padding: 20px;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background: $black;
+                background: linear-gradient(0deg, rgba($black, 0.3) 0%, rgba($black, 0.85) 100%);
+                z-index: 2;
+            }
+
+            h3 {
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $white !important;
+                position: relative;
+                z-index: 3;
+                margin-bottom: 0;
+            }
+
+            span,
+            p {
+                position: relative;
+                z-index: 3;
+            }
+
+            p {
+                color: $white;
+                margin: 20px 0;
+                font-size: 0.85em;
+            }
+        }
+    }
+}

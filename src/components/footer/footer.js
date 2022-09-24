@@ -34,48 +34,54 @@ export default function WebsiteFooter() {
 						<Link to="/work">Work</Link>
 						<Link to="/contact">Contact Us</Link>
 						<Link to="/strategic-partnerships">Strategic Partnerships</Link>
-						<Link to="/partners">Trusted Partners</Link>
 						<Link to="/faqs">FAQ</Link>
 					</Column>
 					<Column className="footer__social">
 						<Title tag="h4" isSize={4}>
 							Social
 						</Title>
-						<a
-							className="mr-5"
-							href="https://www.linkedin.com/company/vevolmedia/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FontAwesomeIcon icon={faLinkedinIn} />
-						</a>
-						<a
-							className="mr-5"
-							href="https://facebook.com/vevolmediaweb"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FontAwesomeIcon icon={faFacebookF} />
-						</a>
-						<a
-							className="mr-5"
-							href="https://www.instagram.com/vevolmedia"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FontAwesomeIcon icon={faInstagram} />
-						</a>
-						<a
-							className="mr-5"
-							href="https://twitter.com/vevolmedia"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FontAwesomeIcon icon={faTwitter} />
-						</a>
-						<a href="https://www.tiktok.com/@vevolmedia" target="_blank" rel="noopener noreferrer">
-							<FontAwesomeIcon icon={faTiktok} />
-						</a>
+						<div className="footer-social__links">
+							<a
+								className="mr-5"
+								href="https://www.linkedin.com/company/vevolmedia/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon icon={faLinkedinIn} />
+							</a>
+							<a
+								className="mr-5"
+								href="https://facebook.com/vevolmediaweb"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon icon={faFacebookF} />
+							</a>
+							<a
+								className="mr-5"
+								href="https://www.instagram.com/vevolmedia"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon icon={faInstagram} />
+							</a>
+							<a
+								className="mr-5"
+								href="https://twitter.com/vevolmedia"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon icon={faTwitter} />
+							</a>
+							<a href="https://www.tiktok.com/@vevolmedia" target="_blank" rel="noopener noreferrer">
+								<FontAwesomeIcon icon={faTiktok} />
+							</a>
+						</div>
+						<Title tag="h4" isSize={4} className="mt-5">
+							Latest
+						</Title>
+						<Link to="/blog">Read Blog</Link>
+						<Link to="/partners">Trusted Partners</Link>
 					</Column>
 				</Columns>
 			</Container>

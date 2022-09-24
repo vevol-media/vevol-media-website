@@ -1,3 +1,7 @@
+require('dotenv').config({
+	path: `.env`,
+});
+
 module.exports = {
 	siteMetadata: {
 		siteUrl: 'https://www.vevolmedia.com',
@@ -16,6 +20,14 @@ module.exports = {
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-robots-txt',
 		'gatsby-plugin-gatsby-cloud',
+		{
+			resolve: `gatsby-source-contentful`,
+			options: {
+				spaceId: `yojwlxn4kmqi`,
+				// Learn about environment variables: https://gatsby.dev/env-vars
+				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+			},
+		},
 		{
 			resolve: `gatsby-plugin-minify`,
 			options: {

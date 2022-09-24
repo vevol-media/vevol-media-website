@@ -10,7 +10,7 @@ import favicon from '../../images/icon.png';
 import config from 'react-reveal/globals';
 import '@splidejs/splide/dist/css/splide.min.css';
 
-export default function Layout({ children, headerBg, showBlob }) {
+export default function Layout({ children, headerBg, headerIsStatic, showBlob }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
 	}));
@@ -70,8 +70,30 @@ export default function Layout({ children, headerBg, showBlob }) {
 				<meta name="twitter:title" content={metaTitle} />
 				<meta name="twitter:description" content={metaDescription} />
 				<meta name="twitter:image" content={ogImage} />
+
+				<script type="application/ld+json">
+					{`
+						{
+							"@context": "https://schema.org",
+							"@type": "Organization",
+							"address": {
+								"@type": "PostalAddress",
+								"addressLocality": "Dublin",
+								"addressRegion": "Leinster",
+								"postalCode": "D02 P593",
+								"streetAddress": "Ground Floor, 71 Lower Baggot Street"
+							},
+							"email": "mailto:hello@vevolmedia.com",
+							"aggregateRating": {
+								"@type": "AggregateRating",
+								"ratingValue": "4.9",
+								"reviewCount": "13"
+							}
+						}
+					`}
+				</script>
 			</Helmet>
-			<Header background={headerBg} />
+			<Header background={headerBg} isStatic={headerIsStatic} />
 			<main>{children}</main>
 			<MainForm
 				title={"Let's Talk About Your Business"}

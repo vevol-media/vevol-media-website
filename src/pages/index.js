@@ -14,6 +14,7 @@ import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banne
 import BottomCTA from '../components/bottom-cta/bottom-cta';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
+import HomepageArticles from '../components/blog/homepage-articles';
 
 export const data = graphql`
 	query {
@@ -43,11 +44,27 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 800, quality: 100)
 			}
 		}
+		blogPosts: allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }, limit: 4) {
+			nodes {
+				title
+				publishedDate(formatString: "DD MMM YYYY")
+				type {
+					title
+				}
+				intro {
+					intro
+				}
+				slug
+				featuredImage {
+					gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100, layout: FULL_WIDTH)
+				}
+			}
+		}
 	}
 `;
 
 export default function Homepage({ data }) {
-	const { portfolioFeaturedImagesQuery, partnersImages, midBannerImageQuery, collageImageQuery } = data;
+	const { portfolioFeaturedImagesQuery, partnersImages, midBannerImageQuery, collageImageQuery, blogPosts } = data;
 	const midBannerImage = getImage(midBannerImageQuery);
 	const collageImage = getImage(collageImageQuery);
 
@@ -129,6 +146,21 @@ export default function Homepage({ data }) {
 					/>
 				</Container>
 			</VevolSection>
+			{blogPosts.nodes.length > 0 && (
+				<VevolSection backgroundColour={'grey'}>
+					<Container>
+						<HeadingBlock
+							title={'Read More From Us'}
+							highlightedWord={'More'}
+							subtitle={
+								'Partnership announcements, news about the company or insightful articles from our team.'
+							}
+							className="mb-4em"
+						/>
+						<HomepageArticles blogPosts={blogPosts.nodes} />
+					</Container>
+				</VevolSection>
+			)}
 		</Layout>
 	);
 }

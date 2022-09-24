@@ -6,7 +6,7 @@ import VevolSection from '../components/general-components/vm-section';
 import BottomCTA from '../components/bottom-cta/bottom-cta';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 export const data = graphql`
@@ -64,6 +64,9 @@ export default function StrategicPartnershipsPage({ data }) {
 								collaboration with other service providers if it is in the best interest of your
 								project.
 							</p>,
+							<Link to="/partners" className="mt-5 vm-button vm-button--black">
+								See Our Trusted Partners
+							</Link>,
 						]}
 					/>
 				</Container>
