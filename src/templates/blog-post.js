@@ -36,33 +36,19 @@ export const query = graphql`
 			content {
 				raw
 				references {
-					... on ContentfulAsset {
-						contentful_id
-						__typename
-						gatsbyImageData(placeholder: BLURRED, width: 1000, quality: 100)
-						title
-						description
-						file {
-							contentType
-						}
-						fixed(width: 1600) {
-							width
-							height
-							src
-							srcSet
-						}
+					contentful_id
+					__typename
+					gatsbyImageData(placeholder: BLURRED, width: 1000, quality: 100)
+					title
+					description
+					file {
+						contentType
 					}
-					... on ContentfulBlogPost {
-						contentful_id
-						__typename
-						title
-						slug
-						intro {
-							intro
-						}
-						featuredImage {
-							gatsbyImageData(placeholder: BLURRED, width: 1000, quality: 100)
-						}
+					fixed(width: 1600) {
+						width
+						height
+						src
+						srcSet
 					}
 				}
 			}
