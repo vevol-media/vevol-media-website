@@ -41,12 +41,7 @@ export default function ContactPage({ data }) {
 						className="mb-4em"
 						greenLine
 						alignRight
-						image={
-							<GatsbyImage
-								image={danNistorImage}
-								alt={'Dan Nistor - Vevol Media Co-Founder'}
-							/>
-						}
+						image={<GatsbyImage image={danNistorImage} alt={'Dan Nistor - Vevol Media Co-Founder'} />}
 						title={"Let's connect"}
 						textContent={[
 							<p className="mt-6">
@@ -66,8 +61,12 @@ export default function ContactPage({ data }) {
 							</p>,
 							<p className="mt-2">Registration No: 705441</p>,
 							<p className="mt-2">VAT No: IE3919679TH</p>,
+							<p className="mt-5">
+								<strong>Corporate Office:</strong> Kildare Town, Co. Kildare, Ireland.
+							</p>,
 							<p className="mt-2">
-								Registered Office: Ground Floor, 71 Lower Baggot Street, Dublin, D02 P593, Ireland.
+								<strong>Registered Office:</strong> Ground Floor, 71 Lower Baggot Street, Dublin, D02
+								P593, Ireland.
 							</p>,
 						]}
 					/>
