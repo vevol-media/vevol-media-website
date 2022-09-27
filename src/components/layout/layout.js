@@ -76,6 +76,7 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob })
 						{
 							"@context": "https://schema.org",
 							"@type": "Organization",
+							"name": "Vevol Media",
 							"address": {
 								"@type": "PostalAddress",
 								"addressLocality": "Dublin",
