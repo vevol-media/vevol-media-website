@@ -20,7 +20,7 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}
 		}
-		imageTwoQuery: file(name: { eq: "service-technical-seo" }) {
+		imageTwoQuery: file(name: { eq: "vevol-media-team-image-5" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}

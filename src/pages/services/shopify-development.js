@@ -14,12 +14,12 @@ import SplitNav from '../../components/general-components/split-nav';
 
 export const data = graphql`
 	query {
-		imageOneQuery: file(name: { eq: "shopify-store-example" }) {
+		imageOneQuery: file(name: { eq: "vevol-media-team-image-2" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}
 		}
-		imageTwoQuery: file(name: { eq: "service-development-promise" }) {
+		imageTwoQuery: file(name: { eq: "shopify-store-example" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}
@@ -157,6 +157,7 @@ export default function PageSingleService({ data }) {
 						alignRight
 						image={<GatsbyImage image={imageTwoData} alt={'Shopify Development Promise Vevol Media'} />}
 						title={'Our Promise'}
+						greenLine
 						textContent={[
 							<p className="mt-5">
 								<strong>Create quality.</strong> We build Shopify stores as you should: completely

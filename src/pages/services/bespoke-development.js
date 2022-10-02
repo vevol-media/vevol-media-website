@@ -15,12 +15,12 @@ import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
-		imageOneQuery: file(name: { eq: "web-development-services" }) {
+		imageOneQuery: file(name: { eq: "vevol-media-team-image-3" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
 		}
-		imageTwoQuery: file(name: { eq: "service-outsource-development" }) {
+		imageTwoQuery: file(name: { eq: "vevol-media-team-image-4" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
@@ -148,6 +148,7 @@ export default function PageSingleService({ data }) {
 						alignRight
 						image={<GatsbyImage image={imageTwoData} alt={'Why Vevol Media'} />}
 						title={'Why Vevol Media?'}
+						greenLine
 						textContent={[
 							<p className="mt-5">
 								<strong>Because we love writing beautiful code.</strong> We understand working as a team

@@ -21,7 +21,7 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}
 		}
-		imageTwoQuery: file(name: { eq: "shopify-migration-image-two" }) {
+		imageTwoQuery: file(name: { eq: "vevol-media-team-shopify" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}
@@ -89,7 +89,6 @@ export default function PageSingleService({ data }) {
 								expertise to help you make the switch with a minimum of fuss.
 							</p>,
 						]}
-						greenLine
 					/>
 				</Container>
 			</VevolSection>
@@ -148,6 +147,7 @@ export default function PageSingleService({ data }) {
 						alignRight
 						image={<GatsbyImage image={imageTwoData} alt={'Why should you choose Shopify eCommerce'} />}
 						title={'Why Shopify?'}
+						greenLine
 						textContent={[
 							<p className="mt-5">
 								As Shopify partners, we believe that Shopify is the optimal platform for your online

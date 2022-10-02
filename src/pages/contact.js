@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
-		danNistorQuery: file(name: { eq: "dan-nistor-phone" }) {
+		contactImageQuery: file(name: { eq: "team-vevol-image-1" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
@@ -19,8 +19,8 @@ export const data = graphql`
 `;
 
 export default function ContactPage({ data }) {
-	const { danNistorQuery } = data;
-	const danNistorImage = getImage(danNistorQuery);
+	const { contactImageQuery } = data;
+	const contactImageData = getImage(contactImageQuery);
 
 	return (
 		<Layout>
@@ -41,7 +41,7 @@ export default function ContactPage({ data }) {
 						className="mb-4em"
 						greenLine
 						alignRight
-						image={<GatsbyImage image={danNistorImage} alt={'Dan Nistor - Vevol Media Co-Founder'} />}
+						image={<GatsbyImage image={contactImageData} alt={'Vevol Media Team'} />}
 						title={"Let's connect"}
 						textContent={[
 							<p className="mt-6">

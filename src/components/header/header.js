@@ -20,8 +20,27 @@ export default function Header({ background, isStatic }) {
 				</Link>
 
 				<div className="vm-header__navigation">
-					<Link to="/services">Our Services</Link>
-					<Link to="/work">Our Work</Link>
+					<div className="navigation__item">
+						<Link to="/services">
+							Services <span className="navigation__notification">1</span>
+						</Link>
+						<div className="navigation__subnav">
+							<Link to="/services/shopify-development">Shopify Development</Link>
+							<Link to="/services/shopify-migration">Shopify Migration</Link>
+							<Link to="/services/bespoke-development">Bespoke Development</Link>
+							<Link to="/services/seo-services">SEO Services</Link>
+							<Link to="/services/ui-ux-web-design">UI/UX Web Design</Link>
+							<Link className="navigation__service-plans" to="/service-plans">
+								<span>New</span>
+								<p>Service Plans</p>
+								<p>
+									Choose a monthly, quaterly or yearly recurring payment and get discounted quality
+									services
+								</p>
+							</Link>
+						</div>
+					</div>
+					<Link to="/work">Work</Link>
 				</div>
 				<div
 					className="vm-header__burger"
@@ -42,6 +61,7 @@ export default function Header({ background, isStatic }) {
 				</div>
 				<div className={`vm-header__extra-nav ${isNavVisible ? 'show-nav' : ''}`}>
 					<Link to="/services">Services</Link>
+					<Link to="/service-plans">Service Plans</Link>
 					<Link to="/work">Work</Link>
 					<Link to="/about">About Us</Link>
 					<Link to="/contact">Contact Us</Link>
