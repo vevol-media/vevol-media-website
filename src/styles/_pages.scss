@@ -1,3 +1,11 @@
 .card-image .gatsby-image-wrapper {
     width: 100%;
 }
+
+.vevol-memberships {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}

@@ -132,6 +132,9 @@ export default function ServicePlans({ scrollToFeatures }) {
 								<p>Commited Number of Hours per Month:</p>
 								<span>{plan.hours}</span>
 							</div>
+							{index === 2 && (
+								<div className="service-plan__popular">Feature Packed - Most Effective</div>
+							)}
 							<div className="service-plan__actions">
 								<div className="plan-actions__pricing">
 									<p>€{planPrice}</p>
@@ -203,6 +206,12 @@ export default function ServicePlans({ scrollToFeatures }) {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className="service-plans__notice">
+				<p>
+					Our base rate is €90/hour. Choosing one of our service plans will reduce costs with up to{' '}
+					<strong>34%</strong>.
+				</p>
 			</div>
 		</div>
 	);

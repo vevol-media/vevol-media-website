@@ -16,6 +16,20 @@ export function IconAngleRight() {
 	);
 }
 
+export function IconHeart({ className }) {
+	return (
+		<svg
+			className={`vm-icon vm-icon--topo ${className}`}
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+		>
+			<path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z" />
+		</svg>
+	);
+}
+
 export function IconTopo({ className }) {
 	return (
 		<div className={`vm-icon vm-icon--topo ${className}`}>

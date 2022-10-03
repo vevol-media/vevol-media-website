@@ -26,6 +26,12 @@
 		justify-content: center;
 		overflow: hidden;
 
+		img {
+			border-radius: 0;
+			border: 1px solid $black;
+			border-width: 1px 0 1px;
+		}
+
 		.gatsby-image-wrapper {
 			filter: grayscale(1);
 			transition: 0.3s ease all;

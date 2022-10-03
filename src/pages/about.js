@@ -1,39 +1,45 @@
 import Layout from '../components/layout/layout';
 import React from 'react';
 import SlimHero from '../components/slim-hero/slim-hero';
-import { Container } from 'bloomer';
+import { Container, Title } from 'bloomer';
 import TeamMembers from '../components/team-section/team-members';
 import HeadingBlock from '../components/heading-block/heading-block';
 import { Helmet } from 'react-helmet';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Fade } from 'react-reveal';
 import VevolSection from '../components/general-components/vm-section';
 
 export const data = graphql`
 	query {
-		location: allFile(filter: { name: { eq: "vevol-media-locations" } }) {
-			nodes {
-				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
-				}
+		locationImageQuery: file(name: { eq: "vevol-media-locations" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
 			}
 		}
-		brasov: allFile(filter: { name: { eq: "vevol-team-brasov" } }) {
-			nodes {
-				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
-				}
+		brasovImageQuery: file(name: { eq: "vevol-team-brasov" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
+			}
+		}
+		dbiBadgeQuery: file(name: { eq: "dbi-2022-badge" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, height: 100, quality: 100)
+			}
+		}
+		techiesGoGreenQuery: file(name: { eq: "techies-go-green-badge" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, height: 100, quality: 100)
 			}
 		}
 	}
 `;
 
 export default function PageAbout({ data }) {
-	const { brasov, location } = data;
-	const locationImage = getImage(location.nodes[0].childImageSharp.gatsbyImageData);
-	const brasovImage = getImage(brasov.nodes[0].childImageSharp.gatsbyImageData);
+	const { locationImageQuery, brasovImageQuery, dbiBadgeQuery, techiesGoGreenQuery } = data;
+	const locationImage = getImage(locationImageQuery);
+	const brasovImage = getImage(brasovImageQuery);
 
 	return (
 		<Layout>
@@ -67,6 +73,9 @@ export default function PageAbout({ data }) {
 								eeCommerce and Shopify are at the core of our services, and our team has extensive
 								knowledge of how your business can take advantage of everything in the market.
 							</p>,
+							<Link to="/contact" className="vm-button vm-button--black mt-5">
+								Get in touch
+							</Link>,
 						]}
 					/>
 				</Container>
@@ -112,8 +121,30 @@ export default function PageAbout({ data }) {
 								Ireland, UK or Romania. You will also find us at relevant conferences or meet-ups like
 								Shopify Unite, eCommerce Expo, GPEC and many others.
 							</p>,
+							<Link to="/contact" className="vm-button vm-button--green mt-5">
+								Contact us now
+							</Link>,
 						]}
 					/>
+				</Container>
+			</VevolSection>
+			<VevolSection backgroundColour={'grey'}>
+				<Container>
+					<Title tag="h2" isSize={3} className="has-text-centered">
+						Memberships
+					</Title>
+					<div className="vevol-memberships">
+						<a
+							href="https://www.digitalbusinessireland.ie/partner-directory/"
+							target={'_blank'}
+							rel="noreferrer"
+						>
+							<GatsbyImage image={getImage(dbiBadgeQuery)} alt={'Vevol Media DBI 2022'} />
+						</a>
+						<a href="https://www.techiesgogreen.com/signatories" target={'_blank'} rel="noreferrer">
+							<GatsbyImage image={getImage(techiesGoGreenQuery)} alt={'Vevol Media Techies Go Green'} />
+						</a>
+					</div>
 				</Container>
 			</VevolSection>
 		</Layout>
