@@ -71,6 +71,7 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob })
 				<meta name="twitter:description" content={metaDescription} />
 				<meta name="twitter:image" content={ogImage} />
 
+				<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
 				<script type="application/ld+json">
 					{`
 						{

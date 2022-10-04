@@ -40,7 +40,7 @@ export default function Header({ background, isStatic }) {
 							</Link>
 						</div>
 					</div>
-					<Link to="/work">Work</Link>
+					<Link to="/work">Our Work</Link>
 				</div>
 				<div
 					className="vm-header__burger"
@@ -62,7 +62,7 @@ export default function Header({ background, isStatic }) {
 				<div className={`vm-header__extra-nav ${isNavVisible ? 'show-nav' : ''}`}>
 					<Link to="/services">Services</Link>
 					<Link to="/service-plans">Service Plans</Link>
-					<Link to="/work">Work</Link>
+					<Link to="/work">Our Work</Link>
 					<Link to="/about">About Us</Link>
 					<Link to="/contact">Contact Us</Link>
 					<Link to="/blog">Blog</Link>
