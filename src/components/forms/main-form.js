@@ -33,6 +33,10 @@ export default function MainForm({ title, subtitle }) {
 			.finally(() => {
 				setIsSending(false);
 				setIsSent(true);
+
+				if (typeof window !== 'undefined') {
+					window.location.pathname = '/nicely-done';
+				}
 			});
 	};
 

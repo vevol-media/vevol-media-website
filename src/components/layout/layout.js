@@ -10,7 +10,7 @@ import favicon from '../../images/icon.png';
 import config from 'react-reveal/globals';
 import '@splidejs/splide/dist/css/splide.min.css';
 
-export default function Layout({ children, headerBg, headerIsStatic, showBlob }) {
+export default function Layout({ children, headerBg, headerIsStatic, showBlob, hasMainForm = true }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
 	}));
@@ -97,12 +97,14 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob })
 			</Helmet>
 			<Header background={headerBg} isStatic={headerIsStatic} />
 			<main>{children}</main>
-			<MainForm
-				title={"Let's Talk About Your Business"}
-				subtitle={
-					"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
-				}
-			/>
+			{hasMainForm && (
+				<MainForm
+					title={"Let's Talk About Your Business"}
+					subtitle={
+						"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
+					}
+				/>
+			)}
 			<WebsiteFooter />
 		</div>
 	);
