@@ -198,7 +198,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 						<div className="service-plan__actions">
 							<div className="plan-actions__pricing">
 								<p>Custom Pricing</p>
-								<span>Starting at €420/day</span>
+								{/* <span>Starting at €420/day</span> */}
 							</div>
 							<Link to="/contact" className="vm-button vm-button--black">
 								Contact Us Now

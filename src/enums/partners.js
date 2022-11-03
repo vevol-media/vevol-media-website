@@ -21,7 +21,7 @@ const partnersList = [
 		name: 'Rebuy',
 		logo: 'rebuy',
 		intro: 'The world’s top brands use Rebuy’s personalization platform to fuel data-driven shopping experiences, win and keep more customers, and accelerate growth.',
-		website: 'https://www.rebuyengine.com/',
+		website: 'https://rebuyengine.com/app-store/shopify?ref=744',
 		tags: ['upselling', 'shopify'],
 		isUsed: false,
 		isTrusted: false,
