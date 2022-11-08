@@ -28,7 +28,7 @@ const portfolio = [
 	},
 	{
 		name: 'TOPL Cup',
-		description: 'Design & Custom Theme Development, Personalisation Tool and Hubstaff Integration.',
+		description: 'Design & Custom Theme Development, Personalisation Tool and Hubspot Integration.',
 		internalUrl: '/work/topl-cup',
 		externalUrl: 'https://toplcup.com',
 		featuredImage: 'topl-cup',
