@@ -1,6 +1,8 @@
 .blog-content {
   max-width: 1000px !important;
   padding: 0 20px;
+}
+.blog-content h2 {
   margin-top: 2rem;
 }
 .blog-content .blog-content__breadcrumbs {
