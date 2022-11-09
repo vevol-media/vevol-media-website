@@ -1,0 +1,30 @@
+.simple-image-carousel .splide__list li {
+  background: #ffffff;
+}
+.simple-image-carousel .splide__list li .image-carousel {
+  height: 100%;
+}
+.simple-image-carousel .simple-image-carousel-content {
+  padding-block: 40px;
+}
+.simple-image-carousel .simple-image-carousel-content .simple-image-carousel-tools {
+  list-style: none;
+  flex: 1;
+  margin-top: 0;
+  margin-right: 100px;
+}
+@media only screen and (max-width: 767px) {
+  .simple-image-carousel .simple-image-carousel-content .simple-image-carousel-tools {
+    margin-right: 40px;
+  }
+}
+.simple-image-carousel .simple-image-carousel-content .simple-image-carousel-tools li {
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+}
+.simple-image-carousel .simple-image-carousel-content .simple-image-carousel-goals {
+  flex: 3;
+}
+.simple-image-carousel .simple-image-carousel-content p {
+  max-width: 75ch;
+}

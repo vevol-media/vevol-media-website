@@ -1,0 +1,281 @@
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.service-plans .service-plans__notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.service-plans .service-plans__notice p {
+  background: #fafafa;
+  border: 1px solid #dddddd;
+  padding: 10px;
+  text-align: center;
+}
+.service-plans .service-plans__segments {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.service-plans .service-plans__segments p {
+  margin-right: 10px;
+  font-weight: 500;
+}
+.service-plans .service-plans__segments .segments__types {
+  display: flex;
+  padding: 5px;
+  border: 1px solid #131517;
+  flex-wrap: nowrap;
+  transition: 0.3s ease all;
+}
+.service-plans .service-plans__segments .segments__types span {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.service-plans .service-plans__segments .segments__types span:hover {
+  background: #fafafa;
+}
+.service-plans .service-plans__segments .segments__types span.segment-active {
+  background: #131517;
+  color: #ffffff;
+}
+.service-plans .service-plans__segments--fixed {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #ffffff;
+  font-size: 0.85em;
+  padding: 10px 20px;
+  border-top: 1px solid #dddddd;
+  align-items: center;
+  margin: 0;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease all;
+}
+.service-plans .service-plans__segments--fixed p {
+  display: none;
+}
+.service-plans .service-plans__segments--visible {
+  visibility: visible;
+  opacity: 1;
+}
+@media only screen and (max-width: 767px) {
+  .service-plans .service-plans__segments {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .service-plans .service-plans__segments--fixed {
+    display: flex;
+    align-items: center;
+  }
+  .service-plans .service-plans__segments p {
+    margin: 0 0 10px 0;
+  }
+}
+.service-plans .service-plans__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.service-plans .service-plans__list .service-plans__plan {
+  box-shadow: 9px 9px 0 0 #131517;
+  border: 1px solid #131517;
+  width: calc(33.33% - 20px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__popular {
+  padding: 10px 20px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(-45deg, #ee7752, #dd0047, #3f5efb, #22ffb8);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__description {
+  background: #fafafa;
+  border-bottom: 1px solid #dddddd;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__description h2 {
+  margin-bottom: 15px;
+  position: relative;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__description h2:after {
+  content: "";
+  display: inline-block;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #22ffb8;
+  mix-blend-mode: multiply;
+  background: linear-gradient(90deg, #22ffb8 0%, #dd0047 100%);
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__description p {
+  font-size: 0.85em;
+  font-weight: 500;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__hours {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__hours p {
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__hours span {
+  display: inline-block;
+  padding: 7px;
+  border: 1px solid #131517;
+  line-height: 1;
+  font-weight: 500;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__features {
+  padding: 20px;
+  margin-bottom: auto;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__features h3 {
+  margin-bottom: 15px;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__features ul li {
+  margin-bottom: 7px;
+  font-size: 0.85em;
+  display: flex;
+  align-items: flex-start;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__features ul li span {
+  display: inline-flex;
+  background: #22ffb8;
+  min-width: 20px;
+  min-height: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__features .plan-features__link {
+  display: block;
+  color: #dd0047;
+  font-size: 0.85em;
+  text-decoration: underline;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__features .plan-features__link:hover {
+  text-decoration: none;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__actions {
+  padding: 20px;
+  text-align: center;
+  background: #fafafa;
+  border-top: 1px solid #dddddd;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__actions .plan-actions__pricing {
+  margin-bottom: 10px;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__actions .plan-actions__pricing p {
+  display: block;
+  font-size: 1.3em;
+  color: #dd0047;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.service-plans .service-plans__list .service-plans__plan .service-plan__actions .plan-actions__pricing span {
+  font-size: 0.75em;
+  font-weight: 500;
+}
+.service-plans .service-plans__list .service-plans__plan.enterprise-plan {
+  width: 100%;
+}
+.service-plans .service-plans__list .service-plans__plan.enterprise-plan .enterprise-plan__bottom {
+  display: flex;
+}
+.service-plans .service-plans__list .service-plans__plan.enterprise-plan .enterprise-plan__bottom .service-plan__features {
+  flex: 1;
+}
+.service-plans .service-plans__list .service-plans__plan.enterprise-plan .enterprise-plan__bottom .service-plan__features .service-plan__hours {
+  padding: 10px 0 0 0;
+  display: block;
+  text-align: left;
+}
+.service-plans .service-plans__list .service-plans__plan.enterprise-plan .enterprise-plan__bottom .service-plan__actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #dddddd;
+  border-width: 0 0 0 1px;
+}
+@media only screen and (max-width: 1023px) {
+  .service-plans .service-plans__list .service-plans__plan:first-child, .service-plans .service-plans__list .service-plans__plan:nth-child(2) {
+    width: calc(50% - 15px);
+  }
+  .service-plans .service-plans__list .service-plans__plan:nth-child(3) {
+    width: 100%;
+  }
+  .service-plans .service-plans__list .service-plans__plan:nth-child(3) .service-plan__features ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .service-plans .service-plans__list .service-plans__plan:nth-child(3) .service-plan__features ul li {
+    width: calc(50% - 5px);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .service-plans .service-plans__list .service-plans__plan:first-child, .service-plans .service-plans__list .service-plans__plan:nth-child(2) {
+    width: 100%;
+  }
+  .service-plans .service-plans__list .service-plans__plan:nth-child(3) .service-plan__features ul li {
+    width: 100%;
+  }
+  .service-plans .service-plans__list .service-plans__plan.enterprise-plan .enterprise-plan__bottom {
+    display: block;
+  }
+  .service-plans .service-plans__list .service-plans__plan.enterprise-plan .enterprise-plan__bottom .service-plan__features .service-plan__hours {
+    text-align: center;
+  }
+  .service-plans .service-plans__list .service-plans__plan.enterprise-plan .enterprise-plan__bottom .service-plan__actions {
+    border-width: 1px 0 0 0;
+  }
+}

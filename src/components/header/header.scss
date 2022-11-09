@@ -12,11 +12,6 @@
     &--full {
         background: $black;
     }
-
-    &--static {
-        position: static;
-    }
-
     .container {
         height: 100px;
         display: flex;
@@ -217,7 +212,22 @@
         .vm-header__burger span {
             background: $black;
         }
+
+        &.vm-header--relative {
+            position: relative;
+            z-index: 99;
+    
+            .vm-header__navigation {
+                .navigation__subnav {
+                    &::before{
+                        border-bottom: 0 solid $lightGrey;
+                    }
+                }
+            }
+        }
     }
+
+    
 
     @include screen-medium {
         .vm-header__navigation {

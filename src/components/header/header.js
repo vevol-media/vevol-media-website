@@ -12,7 +12,7 @@ export default function Header({ background, isStatic }) {
 
 	return (
 		<div
-			className={`vm-header vm-header--${background ? 'white' : 'black'} vm-header--${isStatic ? 'static' : ''}`}
+			className={`vm-header vm-header--${background ? 'white' : 'black'} vm-header--${isStatic ? 'relative' : ''}`}
 		>
 			<Container>
 				<Link to="/" className="vm-header__logo">
