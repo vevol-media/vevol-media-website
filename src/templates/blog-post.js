@@ -85,12 +85,12 @@ export default function BlogPost({ data }) {
 				</Title>
 			),
 			[BLOCKS.HEADING_3]: (node, children) => (
-				<Title tag="h3" isSize={3}>
+				<Title tag="h3" isSize={4}>
 					{children}
 				</Title>
 			),
 			[BLOCKS.HEADING_4]: (node, children) => (
-				<Title tag="h4" isSize={4}>
+				<Title tag="h4" isSize={5}>
 					{children}
 				</Title>
 			),
@@ -245,9 +245,9 @@ export default function BlogPost({ data }) {
 				<Container className="blog-content">
 					<div className="blog-content__breadcrumbs">
 						<Link to="/">Home</Link>
-						<small>></small>
+						<small>/</small>
 						<Link to="/blog">Blog</Link>
-						<small>></small>
+						<small>/</small>
 						<span>{title}</span>
 					</div>
 					<>{blogContent}</>
