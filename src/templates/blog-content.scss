@@ -4,7 +4,7 @@
 .blog-content {
     max-width: 1000px !important;
     padding: 0 20px;
-    
+
     h2 {
         margin-top: 2em;
     }
@@ -55,7 +55,7 @@
     ul,
     ol {
         background: $lightYellow;
-        padding: 20px 20px 0 40px;
+        padding: 20px 20px 20px 40px;
         margin-bottom: 1.5em;
         box-shadow: 4px 4px 0 0 $black;
         border: 1px solid $black;
@@ -63,6 +63,10 @@
         p {
             margin-bottom: 0 !important;
             padding-bottom: 20px;
+        }
+
+        li:last-child p:last-of-type {
+            padding-bottom: 0;
         }
     }
 
