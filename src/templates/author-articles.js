@@ -28,8 +28,9 @@ export const data = graphql`
 	}
 `;
 
-export default function AuthorArticles({ data }) {
-	const { blogPosts } = data;
+export default function AuthorArticles(props) {
+	const { blogPosts } = props.data;
+	const author = props.pageContext.authorName;
 
 	return (
 		<Layout>
@@ -41,7 +42,7 @@ export default function AuthorArticles({ data }) {
 				/>
 			</Helmet>
 			<SlimHero
-				heading="The Vevol Media Blog"
+				heading={'Read all articles written by ' + author}
 				subheading="Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community."
 			/>
 			<VevolSection backgroundColour={'white'}>
