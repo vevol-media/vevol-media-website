@@ -10,6 +10,11 @@ exports.createPages = async ({ graphql, actions }) => {
 					slug
 				}
 			}
+			allContentfulAuthor {
+				nodes {
+					name
+				}
+			}
 		}
 	`);
 
@@ -19,6 +24,18 @@ exports.createPages = async ({ graphql, actions }) => {
 			component: path.resolve(`./src/templates/blog-post.js`),
 			context: {
 				slug: node.slug,
+			},
+		});
+	});
+
+	response.data.allContentfulAuthor.nodes.forEach((node) => {
+		const authorUrl = node.name.toLowerCase().replace(' ', '-');
+
+		createPage({
+			path: `/blog/author/${authorUrl}`,
+			component: path.resolve(`./src/templates/author-articles.js`),
+			context: {
+				authorName: node.name,
 			},
 		});
 	});

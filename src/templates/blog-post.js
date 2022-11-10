@@ -8,6 +8,7 @@ import VevolSection from '../components/general-components/vm-section';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import BlogIntro from '../components/blog/blog-intro';
+import AboutAuthor from '../components/blog/about-author';
 import { Title } from 'bloomer/lib/elements/Title';
 import './blog-content.scss';
 import { BgImage } from 'gbimage-bridge';
@@ -56,6 +57,9 @@ export const query = graphql`
 				name
 				avatar {
 					gatsbyImageData(placeholder: BLURRED, width: 60, quality: 100)
+				}
+				description {
+					description
 				}
 			}
 		}
@@ -253,6 +257,7 @@ export default function BlogPost({ data }) {
 					<>{blogContent}</>
 				</Container>
 			</VevolSection>
+			<AboutAuthor title={'About the author'} author={author} />
 		</Layout>
 	);
 }
