@@ -12,6 +12,7 @@ import AboutAuthor from '../components/blog/about-author';
 import { Title } from 'bloomer/lib/elements/Title';
 import './blog-content.scss';
 import { BgImage } from 'gbimage-bridge';
+import SplitNav from '../components/general-components/split-nav';
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -66,7 +67,9 @@ export const query = graphql`
 	}
 `;
 
-export default function BlogPost({ data }) {
+export default function BlogPost(props) {
+	const data = props.data;
+	console.log(props);
 	const { title, publishedDate, featuredImage, content, author, intro, type, slug } = data.pageData;
 	const { publicURL } = data.logo;
 	const featuredImageData = getImage(featuredImage);
@@ -148,6 +151,26 @@ export default function BlogPost({ data }) {
 	};
 
 	const blogContent = documentToReactComponents(JSON.parse(content.raw), renderOptions);
+
+	const returnTitle = (slug) => {
+		if (slug) {
+			for (let i = 0; i < slug.length; i++) {
+				slug = slug.replace('-', ' ');
+			}
+			const slugCapitalize = slug.charAt(0).toUpperCase() + slug.slice(1);
+			return slugCapitalize;
+		} else {
+			return 'See all';
+		}
+	};
+
+	const returnLink = (slug) => {
+		if (slug) {
+			return `/blog/${slug}`;
+		} else {
+			return '/blog';
+		}
+	};
 
 	// A very very very hacky way of calculating reading time from the raw input.
 	// Do not take it for granted, it's just my estimation (Bogdan)
@@ -257,7 +280,19 @@ export default function BlogPost({ data }) {
 					<>{blogContent}</>
 				</Container>
 			</VevolSection>
-			<AboutAuthor title={'About the author'} author={author} />
+			<div className="about-author">
+				<Container>
+					<AboutAuthor title={'About the author'} author={author} />
+				</Container>
+			</div>
+			<SplitNav
+				leftTitle={
+					props.pageContext.edge.previous ? returnTitle(props.pageContext.edge.previous.slug) : 'See all'
+				}
+				leftUrl={props.pageContext.edge.previous ? returnLink(props.pageContext.edge.previous.slug) : '/blog'}
+				rightTitle={props.pageContext.edge.next ? returnTitle(props.pageContext.edge.next.slug) : 'See all'}
+				rightUrl={props.pageContext.edge.next ? returnLink(props.pageContext.edge.next.slug) : '/blog'}
+			/>
 		</Layout>
 	);
 }

@@ -5,9 +5,17 @@ exports.createPages = async ({ graphql, actions }) => {
 	const { createRedirect, createPage } = actions;
 	const response = await graphql(`
 		query {
-			allContentfulBlogPost {
-				nodes {
-					slug
+			allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }) {
+				edges {
+					previous {
+						slug
+					}
+					node {
+						slug
+					}
+					next {
+						slug
+					}
 				}
 			}
 			allContentfulAuthor {
@@ -18,12 +26,13 @@ exports.createPages = async ({ graphql, actions }) => {
 		}
 	`);
 
-	response.data.allContentfulBlogPost.nodes.forEach((node) => {
+	response.data.allContentfulBlogPost.edges.forEach((edge) => {
 		createPage({
-			path: `/blog/${node.slug}`,
+			path: `/blog/${edge.node.slug}`,
 			component: path.resolve(`./src/templates/blog-post.js`),
 			context: {
-				slug: node.slug,
+				slug: edge.node.slug,
+				edge: edge,
 			},
 		});
 	});
