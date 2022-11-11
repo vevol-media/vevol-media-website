@@ -69,7 +69,6 @@ export const query = graphql`
 
 export default function BlogPost(props) {
 	const data = props.data;
-	console.log(props);
 	const { title, publishedDate, featuredImage, content, author, intro, type, slug } = data.pageData;
 	const { publicURL } = data.logo;
 	const featuredImageData = getImage(featuredImage);

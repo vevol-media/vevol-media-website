@@ -37,7 +37,6 @@ export const data = graphql`
 `;
 
 export default function Page({ data }) {
-	console.log(data);
 	const { blogPosts } = data;
 
 	return (
