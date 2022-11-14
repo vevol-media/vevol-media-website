@@ -7,13 +7,13 @@ exports.createPages = async ({ graphql, actions }) => {
 		query {
 			allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }) {
 				edges {
-					previous {
+					next {
 						slug
 					}
 					node {
 						slug
 					}
-					next {
+					previous {
 						slug
 					}
 				}
@@ -39,7 +39,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
 	response.data.allContentfulAuthor.nodes.forEach((node) => {
 		const authorUrl = node.name.toLowerCase().replace(' ', '-');
-
 		createPage({
 			path: `/blog/author/${authorUrl}`,
 			component: path.resolve(`./src/templates/author-articles.js`),

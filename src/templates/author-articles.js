@@ -6,22 +6,31 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import VevolSection from '../components/general-components/vm-section';
 import BlogListings from '../components/blog/blog-listings';
+import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
 export const data = graphql`
 	query ($authorName: String!) {
 		blogPosts: allContentfulBlogPost(filter: { author: { name: { eq: $authorName } } }) {
-			nodes {
-				title
-				publishedDate(formatString: "DD MMM YYYY")
-				intro {
-					intro
-				}
-				type {
+			edges {
+				node {
 					title
+					publishedDate(formatString: "DD MMM YYYY")
+					intro {
+						intro
+					}
+					type {
+						title
+					}
+					slug
+					featuredImage {
+						gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100, layout: FULL_WIDTH)
+					}
 				}
-				slug
-				featuredImage {
-					gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100, layout: FULL_WIDTH)
+				previous {
+					slug
+				}
+				next {
+					slug
 				}
 			}
 		}
@@ -47,8 +56,8 @@ export default function AuthorArticles(props) {
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
-					{blogPosts.nodes.length === 0 && <p>No blog posts yet. Watch this space!</p>}
-					{blogPosts.nodes.length > 0 && <BlogListings listings={blogPosts.nodes} />}
+					{blogPosts.edges.length === 0 && <p>No blog posts yet. Watch this space!</p>}
+					{blogPosts.edges.length > 0 && <BlogListings listings={blogPosts.edges} />}
 				</Container>
 			</VevolSection>
 		</Layout>
