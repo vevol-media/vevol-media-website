@@ -47,11 +47,11 @@ export default function AuthorArticles(props) {
 				<title>Read More in the Vevol Media Blog</title>
 				<meta
 					name="description"
-					content="Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community."
+					content={`Articles written by ${author}. Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community.`}
 				/>
 			</Helmet>
 			<SlimHero
-				heading={'Read all articles written by ' + author}
+				heading={`Read all articles written by ${author}`}
 				subheading="Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community."
 			/>
 			<VevolSection backgroundColour={'white'}>

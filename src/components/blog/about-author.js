@@ -6,7 +6,7 @@ import { graphql, Link } from 'gatsby';
 
 export default function AboutAuthor({ title, author }) {
 	return (
-		<>
+		<div className="about-author">
 			<div className="about-author__title">
 				<h3 className="title is-3">{title}</h3>
 			</div>
@@ -31,6 +31,6 @@ export default function AboutAuthor({ title, author }) {
 					</Link>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

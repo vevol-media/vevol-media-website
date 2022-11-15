@@ -71,6 +71,7 @@ export default function BlogPost(props) {
 	const data = props.data;
 	const { title, publishedDate, featuredImage, content, author, intro, type, slug } = data.pageData;
 	const { publicURL } = data.logo;
+	const { previous, next } = props.pageContext.edge;
 	const featuredImageData = getImage(featuredImage);
 	const authorSlug = author.name.toLocaleLowerCase().replace(' ', '-');
 	const dateISO = new Date(publishedDate).toISOString();
@@ -150,26 +151,6 @@ export default function BlogPost(props) {
 	};
 
 	const blogContent = documentToReactComponents(JSON.parse(content.raw), renderOptions);
-
-	const returnTitle = (slug) => {
-		if (slug) {
-			for (let i = 0; i < slug.length; i++) {
-				slug = slug.replace('-', ' ');
-			}
-			const slugCapitalize = slug.charAt(0).toUpperCase() + slug.slice(1);
-			return slugCapitalize;
-		} else {
-			return 'See all';
-		}
-	};
-
-	const returnLink = (slug) => {
-		if (slug) {
-			return `/blog/${slug}`;
-		} else {
-			return '/blog';
-		}
-	};
 
 	// A very very very hacky way of calculating reading time from the raw input.
 	// Do not take it for granted, it's just my estimation (Bogdan)
@@ -278,19 +259,16 @@ export default function BlogPost(props) {
 					</div>
 					<>{blogContent}</>
 				</Container>
-			</VevolSection>
-			<div className="about-author">
-				<Container>
+
+				<Container className={'mt-3'}>
 					<AboutAuthor title={'About the author'} author={author} />
 				</Container>
-			</div>
+			</VevolSection>
 			<SplitNav
-				leftTitle={
-					props.pageContext.edge.previous ? returnTitle(props.pageContext.edge.previous.slug) : 'See all'
-				}
-				leftUrl={props.pageContext.edge.previous ? returnLink(props.pageContext.edge.previous.slug) : '/blog'}
-				rightTitle={props.pageContext.edge.next ? returnTitle(props.pageContext.edge.next.slug) : 'See all'}
-				rightUrl={props.pageContext.edge.next ? returnLink(props.pageContext.edge.next.slug) : '/blog'}
+				leftTitle={previous ? previous.slug.split('-').join(' ') : 'See all articles'}
+				leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
+				rightTitle={next ? next.slug.split('-').join(' ') : 'See all articles'}
+				rightUrl={next ? `/blog/${next.slug}` : '/blog'}
 			/>
 		</Layout>
 	);

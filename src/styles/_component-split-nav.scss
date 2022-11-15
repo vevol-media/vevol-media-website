@@ -18,6 +18,10 @@
             h5 {
                 margin: 0;
                 color: $black;
+
+                &:first-letter {
+                    text-transform: capitalize;
+                }
             }
 
             svg {
