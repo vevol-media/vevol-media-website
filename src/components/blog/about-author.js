@@ -21,10 +21,7 @@ export default function AboutAuthor({ title, author }) {
 				<div className="about-author__text">
 					<p>{author.name}</p>
 					<p>{author.description.description}</p>
-					<Link
-						to={`/blog/author/${author.name.toLowerCase().replace(' ', '-')}`}
-						className="rte-block-entry"
-					>
+					<Link to={`/blog/author/${author.name.toLowerCase().replace(' ', '-')}`}>
 						<span className="vm-button vm-button--black-transparent vm-button--small">
 							See all articles
 						</span>
