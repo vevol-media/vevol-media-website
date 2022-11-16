@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.about-author {
+    color: $black;
+    border: 1px solid $black;
+    box-shadow: 9px 9px 0 0 $green;
+    background: $white;
+    padding: 30px;
+    line-height: 1.5;
+
+    .about-author__content {
+        margin-top: 2em;
+        display: flex;
+        gap: 20px;
+
+        .about-author__image {
+            .author__avatar {
+                border-radius: 100%;
+                border: 3px solid $green;
+                background: $blue;
+                background: linear-gradient($blue 0%, $pink 100%);
+                margin-right: 20px;
+            }
+        }
+
+        .about-author__text {
+            flex: 1;
+
+            p {
+                margin-bottom: 1em;
+
+                &:first-child {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        @include screen-mobile {
+            flex-direction: column;
+        }
+    }
+
+    @include screen-medium {
+        padding: 20px;
+        font-size: 0.85em;
+    }
+}

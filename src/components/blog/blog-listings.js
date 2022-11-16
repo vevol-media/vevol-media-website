@@ -7,8 +7,7 @@ import './blog-listings.scss';
 export default function BlogListings({ listings }) {
 	const [articles, setArticles] = useState(listings);
 	const [activeFilter, setActiveFilter] = useState('all');
-	const filtersList = [...new Set(listings.map((article) => article.type.title))].sort();
-
+	const filtersList = [...new Set(listings.map((article) => article.node.type.title))].sort();
 	return (
 		<>
 			<ul className="blog-listings-filters">
@@ -34,12 +33,12 @@ export default function BlogListings({ listings }) {
 						className={filter === activeFilter ? 'active' : ''}
 						onClick={(e) => {
 							setActiveFilter(filter);
-							setArticles(listings.filter((article) => article.type.title === filter));
+							setArticles(listings.filter((article) => article.node.type.title === filter));
 						}}
 						onKeyUp={(e) => {
 							if (e.keyCode === 32) {
 								setActiveFilter(filter);
-								setArticles(listings.filter((article) => article.type.title === filter));
+								setArticles(listings.filter((article) => article.node.type.title === filter));
 							}
 						}}
 						role="presentation"
@@ -50,17 +49,17 @@ export default function BlogListings({ listings }) {
 			</ul>
 			<div className="blog-listings">
 				{articles.map((article, index) => (
-					<Link to={`/blog/${article.slug}`} key={index}>
-						<BgImage image={article.featuredImage.gatsbyImageData} className="blog-listing__image">
-							<p className="blog-listing__type">{article.type.title}</p>
-							<p className="blog-listing__date">{article.publishedDate}</p>
+					<Link to={`/blog/${article.node.slug}`} key={index}>
+						<BgImage image={article.node.featuredImage.gatsbyImageData} className="blog-listing__image">
+							<p className="blog-listing__type">{article.node.type.title}</p>
+							<p className="blog-listing__date">{article.node.publishedDate}</p>
 						</BgImage>
 
 						<div className="blog-listing__info">
 							<Title tag="h2" isSize={5}>
-								{article.title}
+								{article.node.title}
 							</Title>
-							<p className="blog-listing__intro">{article.intro.intro}</p>
+							<p className="blog-listing__intro">{article.node.intro.intro}</p>
 							<span className="vm-button vm-button--black-transparent vm-button--small">Read More</span>
 						</div>
 					</Link>

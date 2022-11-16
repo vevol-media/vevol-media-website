@@ -10,18 +10,26 @@ import BlogListings from '../components/blog/blog-listings';
 export const data = graphql`
 	query {
 		blogPosts: allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }) {
-			nodes {
-				title
-				publishedDate(formatString: "DD MMM YYYY")
-				intro {
-					intro
-				}
-				type {
+			edges {
+				node {
 					title
+					publishedDate(formatString: "DD MMM YYYY")
+					intro {
+						intro
+					}
+					type {
+						title
+					}
+					slug
+					featuredImage {
+						gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100, layout: FULL_WIDTH)
+					}
 				}
-				slug
-				featuredImage {
-					gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100, layout: FULL_WIDTH)
+				previous {
+					slug
+				}
+				next {
+					slug
 				}
 			}
 		}
@@ -46,8 +54,8 @@ export default function Page({ data }) {
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
-					{blogPosts.nodes.length === 0 && <p>No blog posts yet. Watch this space!</p>}
-					{blogPosts.nodes.length > 0 && <BlogListings listings={blogPosts.nodes} />}
+					{blogPosts.edges.length === 0 && <p>No blog posts yet. Watch this space!</p>}
+					{blogPosts.edges.length > 0 && <BlogListings listings={blogPosts.edges} />}
 				</Container>
 			</VevolSection>
 		</Layout>

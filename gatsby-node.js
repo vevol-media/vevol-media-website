@@ -5,20 +5,45 @@ exports.createPages = async ({ graphql, actions }) => {
 	const { createRedirect, createPage } = actions;
 	const response = await graphql(`
 		query {
-			allContentfulBlogPost {
+			allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }) {
+				edges {
+					next {
+						slug
+					}
+					node {
+						slug
+					}
+					previous {
+						slug
+					}
+				}
+			}
+			allContentfulAuthor {
 				nodes {
-					slug
+					name
 				}
 			}
 		}
 	`);
 
-	response.data.allContentfulBlogPost.nodes.forEach((node) => {
+	response.data.allContentfulBlogPost.edges.forEach((edge) => {
 		createPage({
-			path: `/blog/${node.slug}`,
+			path: `/blog/${edge.node.slug}`,
 			component: path.resolve(`./src/templates/blog-post.js`),
 			context: {
-				slug: node.slug,
+				slug: edge.node.slug,
+				edge: edge,
+			},
+		});
+	});
+
+	response.data.allContentfulAuthor.nodes.forEach((node) => {
+		const authorUrl = node.name.toLowerCase().replaceAll(' ', '-');
+		createPage({
+			path: `/blog/author/${authorUrl}`,
+			component: path.resolve(`./src/templates/author-articles.js`),
+			context: {
+				authorName: node.name,
 			},
 		});
 	});

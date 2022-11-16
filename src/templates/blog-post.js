@@ -8,9 +8,11 @@ import VevolSection from '../components/general-components/vm-section';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import BlogIntro from '../components/blog/blog-intro';
+import AboutAuthor from '../components/blog/about-author';
 import { Title } from 'bloomer/lib/elements/Title';
 import './blog-content.scss';
 import { BgImage } from 'gbimage-bridge';
+import SplitNav from '../components/general-components/split-nav';
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -57,14 +59,19 @@ export const query = graphql`
 				avatar {
 					gatsbyImageData(placeholder: BLURRED, width: 60, quality: 100)
 				}
+				description {
+					description
+				}
 			}
 		}
 	}
 `;
 
-export default function BlogPost({ data }) {
+export default function BlogPost(props) {
+	const data = props.data;
 	const { title, publishedDate, featuredImage, content, author, intro, type, slug } = data.pageData;
 	const { publicURL } = data.logo;
+	const { previous, next } = props.pageContext.edge;
 	const featuredImageData = getImage(featuredImage);
 	const authorSlug = author.name.toLocaleLowerCase().replace(' ', '-');
 	const dateISO = new Date(publishedDate).toISOString();
@@ -252,7 +259,17 @@ export default function BlogPost({ data }) {
 					</div>
 					<>{blogContent}</>
 				</Container>
+
+				<Container className={'mt-4em'}>
+					<AboutAuthor title={'About the author'} author={author} />
+				</Container>
 			</VevolSection>
+			<SplitNav
+				leftTitle={previous ? previous.slug.replaceAll('-', ' ') : 'See all articles'}
+				leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
+				rightTitle={next ? next.slug.replaceAll('-', ' ') : 'See all articles'}
+				rightUrl={next ? `/blog/${next.slug}` : '/blog'}
+			/>
 		</Layout>
 	);
 }
