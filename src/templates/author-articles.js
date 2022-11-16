@@ -43,7 +43,7 @@ export default function AuthorArticles(props) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Read More in the Vevol Media Blog</title>
+				<title>{`Read all articles written by ${author}`}</title>
 				<meta
 					name="description"
 					content={`Articles written by ${author}. Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community.`}
