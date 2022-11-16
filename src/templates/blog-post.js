@@ -260,14 +260,14 @@ export default function BlogPost(props) {
 					<>{blogContent}</>
 				</Container>
 
-				<Container className={'mt-3'}>
+				<Container className={'mt-4em'}>
 					<AboutAuthor title={'About the author'} author={author} />
 				</Container>
 			</VevolSection>
 			<SplitNav
-				leftTitle={previous ? previous.slug.split('-').join(' ') : 'See all articles'}
+				leftTitle={previous ? previous.slug.replaceAll('-', ' ') : 'See all articles'}
 				leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
-				rightTitle={next ? next.slug.split('-').join(' ') : 'See all articles'}
+				rightTitle={next ? next.slug.replaceAll('-', ' ') : 'See all articles'}
 				rightUrl={next ? `/blog/${next.slug}` : '/blog'}
 			/>
 		</Layout>

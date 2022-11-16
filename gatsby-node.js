@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
 	});
 
 	response.data.allContentfulAuthor.nodes.forEach((node) => {
-		const authorUrl = node.name.toLowerCase().replace(' ', '-');
+		const authorUrl = node.name.toLowerCase().replaceAll(' ', '-');
 		createPage({
 			path: `/blog/author/${authorUrl}`,
 			component: path.resolve(`./src/templates/author-articles.js`),

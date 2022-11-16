@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import VevolSection from '../components/general-components/vm-section';
 import BlogListings from '../components/blog/blog-listings';
-import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
 export const data = graphql`
 	query ($authorName: String!) {
