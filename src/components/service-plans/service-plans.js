@@ -8,7 +8,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 	const statigSegments = useRef();
 	const fixedSegments = useRef();
 	const plansList = useRef();
-	const [activeSegment, setActiveSegment] = useState('Monthly');
+	const [activeSegment, setActiveSegment] = useState('Quaterly');
 	const useIsInViewport = (ref) => {
 		const [isIntersecting, setIsIntersecting] = useState(false);
 
@@ -39,7 +39,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 			<div className="service-plans__segments" ref={statigSegments}>
 				<p>Payment Plan:</p>
 				<div className="segments__types">
-					{['Monthly', 'Quaterly', 'Yearly'].map((segment, index) => (
+					{['Quaterly', 'Yearly'].map((segment, index) => (
 						<span
 							key={index}
 							onClick={() => {
@@ -66,7 +66,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 			>
 				<p>Payment Plan:</p>
 				<div className="segments__types">
-					{['Monthly', 'Quaterly', 'Yearly'].map((segment, index) => (
+					{['Quaterly', 'Yearly'].map((segment, index) => (
 						<span
 							key={index}
 							onClick={() => {
@@ -209,7 +209,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 			</div>
 			<div className="service-plans__notice">
 				<p>
-					Our base rate is €90/hour. Choosing one of our service plans will reduce costs with up to{' '}
+					Our base rate is €90/hour. Choosing one of our service plans will reduce costs by up to{' '}
 					<strong>34%</strong>.
 				</p>
 			</div>

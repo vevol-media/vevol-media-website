@@ -1,8 +1,7 @@
 import React from 'react';
-import { Container } from 'bloomer/lib/layout/Container';
 import './about-author.scss';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 export default function AboutAuthor({ title, author }) {
 	return (
