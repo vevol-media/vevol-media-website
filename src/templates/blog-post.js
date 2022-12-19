@@ -166,9 +166,7 @@ export default function BlogPost(props) {
 		<Layout headerBg={'white'} headerIsStatic>
 			<Helmet>
 				<title>{title} - Vevol Media</title>
-				
 				<meta name="description" content={metaDescription.metaDescription || intro.intro}/>
-				
 				<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
 				<meta property="og:type" content="website" />
 				<meta property="og:title" content={title} />
