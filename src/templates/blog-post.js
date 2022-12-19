@@ -161,16 +161,15 @@ export default function BlogPost(props) {
 	// 15% - estimation of words per number of characters
 	// 200 words per minute
 	const readingTime = Math.ceil((content.raw.length * 0.53 * 0.15) / 200);
-	console.log(props);
 	return (
 		<Layout headerBg={'white'} headerIsStatic>
 			<Helmet>
 				<title>{title} - Vevol Media</title>
-				<meta name="description" content={metaDescription.metaDescription || intro.intro}/>
+				<meta name="description" content={(metaDescription) ? metaDescription.metaDescription : intro.intro} />
 				<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
 				<meta property="og:type" content="website" />
 				<meta property="og:title" content={title} />
-				<meta property="og:description" content={metaDescription.metaDescription || intro.intro} />
+				<meta property="og:description" content={(metaDescription) ? metaDescription.metaDescription : intro.intro} />
 				<meta property="og:image" content={featuredImage.file.url} />
 
 				<meta name="twitter:card" content="summary_large_image" />
