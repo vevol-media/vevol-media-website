@@ -26,12 +26,12 @@ export default function Page() {
 		if (e) {
 			if (
 				e.target.classList.contains('side-drawer--open') ||
-				e.target.classList.contains('side-drawer__close')
+				e.target.classList.contains('side-drawer__close') ||
+				e.target.classList.contains('side-drawer__close-image')
 			) {
 				setToggleModalContact(false);
-
-				return;
 			}
+			return;
 		}
 		toggleModalContact === true
 			? setToggleModalContact(false)
