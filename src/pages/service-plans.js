@@ -7,6 +7,9 @@ import { Helmet } from 'react-helmet';
 import ServicePlans from '../components/service-plans/service-plans';
 import HeadingBlock from '../components/heading-block/heading-block';
 import FeaturesIndex from '../components/features-index/features-index';
+import SideDrawerModal from '../components/side-drawer-modal/side-drawer-modal';
+import MainForm from '../components/forms/main-form';
+import { useState } from 'react';
 
 export default function Page() {
 	const featuresIndexRef = useRef();
@@ -17,6 +20,23 @@ export default function Page() {
 		});
 	};
 
+	const [toggleModalContact, setToggleModalContact] = useState(false);
+
+	const handleToggleModalContact = (e) => {
+		if (e) {
+			if (
+				e.target.classList.contains('side-drawer--open') ||
+				e.target.classList.contains('side-drawer__close')
+			) {
+				setToggleModalContact(false);
+
+				return;
+			}
+		}
+		toggleModalContact === true
+			? setToggleModalContact(false)
+			: setToggleModalContact(true);
+	};
 	return (
 		<Layout>
 			<Helmet>
@@ -40,7 +60,10 @@ export default function Page() {
 							'Enable your business to grow faster and bigger with our feature packed service plans.'
 						}
 					/>
-					<ServicePlans scrollToFeatures={scrollToFeatures} />
+					<ServicePlans
+						scrollToFeatures={scrollToFeatures}
+						toggleModalContact={handleToggleModalContact}
+					/>
 				</Container>
 			</VevolSection>
 			<VevolSection backgroundColour={'grey'}>
@@ -49,11 +72,25 @@ export default function Page() {
 						title={'Features Index'}
 						highlightedWord={'Features'}
 						className="mb-4em"
-						subtitle={'Learn more about each feature included in our plans'}
+						subtitle={
+							'Learn more about each feature included in our plans'
+						}
 					/>
 					<FeaturesIndex featuresIndexRef={featuresIndexRef} />
 				</Container>
 			</VevolSection>
+
+			<SideDrawerModal
+				toggleModalContact={handleToggleModalContact}
+				valueToggleModalContact={toggleModalContact}
+			>
+				<MainForm
+					title={"Let's Talk About Your Business"}
+					subtitle={
+						"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
+					}
+				></MainForm>
+			</SideDrawerModal>
 		</Layout>
 	);
 }

@@ -4,7 +4,7 @@ import './service-plans.scss';
 import servicePlans from '../../enums/service-plans';
 import { Link } from 'gatsby';
 
-export default function ServicePlans({ scrollToFeatures }) {
+export default function ServicePlans({ scrollToFeatures, toggleModalContact }) {
 	const statigSegments = useRef();
 	const fixedSegments = useRef();
 	const plansList = useRef();
@@ -30,7 +30,6 @@ export default function ServicePlans({ scrollToFeatures }) {
 
 		return isIntersecting;
 	};
-
 	const plansInViewport = useIsInViewport(plansList);
 	const staticSegmentsInViewport = useIsInViewport(statigSegments);
 
@@ -200,9 +199,12 @@ export default function ServicePlans({ scrollToFeatures }) {
 								<p>Custom Pricing</p>
 								{/* <span>Starting at €420/day</span> */}
 							</div>
-							<Link to="/contact" className="vm-button vm-button--black">
+							<div
+								onClick={() => toggleModalContact()}
+								className="vm-button vm-button--black"
+							>
 								Contact Us Now
-							</Link>
+							</div>
 						</div>
 					</div>
 				</div>
