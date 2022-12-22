@@ -9,6 +9,7 @@ import ogImage from '../../images/vevol-media-og-image.jpg';
 import favicon from '../../images/icon.png';
 import config from 'react-reveal/globals';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { AppProvider } from '../../context/app-context';
 
 export default function Layout({ children, headerBg, headerIsStatic, showBlob, hasMainForm = true }) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -40,40 +41,41 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 	});
 
 	return (
-		<div onMouseMove={handleMouseMove} role="presentation">
-			{showBlob && (
-				<div className="cursor-container">
-					<animated.div style={animatedProps} className="cursor-wrapper">
-						<Cursor />
-					</animated.div>
-				</div>
-			)}
-			<Helmet
-				htmlAttributes={{
-					lang: 'en',
-				}}
-			>
-				<link rel="icon" href={favicon} />
-				<title>{metaTitle}</title>
-				<meta name="description" content={metaDescription} />
+		<AppProvider>
+			<div onMouseMove={handleMouseMove} role="presentation">
+				{showBlob && (
+					<div className="cursor-container">
+						<animated.div style={animatedProps} className="cursor-wrapper">
+							<Cursor />
+						</animated.div>
+					</div>
+				)}
+				<Helmet
+					htmlAttributes={{
+						lang: 'en',
+					}}
+				>
+					<link rel="icon" href={favicon} />
+					<title>{metaTitle}</title>
+					<meta name="description" content={metaDescription} />
 
-				<meta property="og:url" content="https://www.vevolmedia.com" />
-				<meta property="og:type" content="website" />
-				<meta property="og:title" content={metaTitle} />
-				<meta property="og:description" content={metaDescription} />
-				<meta property="og:image" content={ogImage} />
+					<meta property="og:url" content="https://www.vevolmedia.com" />
+					<meta property="og:type" content="website" />
+					<meta property="og:title" content={metaTitle} />
+					<meta property="og:description" content={metaDescription} />
+					<meta property="og:image" content={ogImage} />
 
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:creator" content="@VevolMedia" />
-				<meta property="twitter:domain" content="vevolmedia.com" />
-				<meta property="twitter:url" content="https://www.vevolmedia.com" />
-				<meta name="twitter:title" content={metaTitle} />
-				<meta name="twitter:description" content={metaDescription} />
-				<meta name="twitter:image" content={ogImage} />
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:creator" content="@VevolMedia" />
+					<meta property="twitter:domain" content="vevolmedia.com" />
+					<meta property="twitter:url" content="https://www.vevolmedia.com" />
+					<meta name="twitter:title" content={metaTitle} />
+					<meta name="twitter:description" content={metaDescription} />
+					<meta name="twitter:image" content={ogImage} />
 
-				<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
-				<script type="application/ld+json">
-					{`
+					<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
+					<script type="application/ld+json">
+						{`
 						{
 							"@context": "https://schema.org",
 							"@type": "Organization",
@@ -93,19 +95,20 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 							}
 						}
 					`}
-				</script>
-			</Helmet>
-			<Header background={headerBg} isStatic={headerIsStatic} />
-			<main>{children}</main>
-			{hasMainForm && (
-				<MainForm
-					title={"Let's Talk About Your Business"}
-					subtitle={
-						"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
-					}
-				/>
-			)}
-			<WebsiteFooter />
-		</div>
+					</script>
+				</Helmet>
+				<Header background={headerBg} isStatic={headerIsStatic} />
+				<main>{children}</main>
+				{hasMainForm && (
+					<MainForm
+						title={"Let's Talk About Your Business"}
+						subtitle={
+							"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
+						}
+					/>
+				)}
+				<WebsiteFooter />
+			</div>
+		</AppProvider>
 	);
 }

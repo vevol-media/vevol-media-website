@@ -7,6 +7,8 @@ import { Helmet } from 'react-helmet';
 import ServicePlans from '../components/service-plans/service-plans';
 import HeadingBlock from '../components/heading-block/heading-block';
 import FeaturesIndex from '../components/features-index/features-index';
+import SideDrawer from '../components/side-drawer/side-drawer';
+import MainForm from '../components/forms/main-form';
 
 export default function Page() {
 	const featuresIndexRef = useRef();
@@ -54,6 +56,9 @@ export default function Page() {
 					<FeaturesIndex featuresIndexRef={featuresIndexRef} />
 				</Container>
 			</VevolSection>
+			<SideDrawer>
+				<MainForm standalone />
+			</SideDrawer>
 		</Layout>
 	);
 }

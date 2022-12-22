@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.side-drawer {
+    &__content {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 300px;
+        display: block;
+        transition: 0.3s ease all;
+        background: $black;
+        right: -300px;
+        padding: 20px;
+        z-index: 9999;
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9998;
+        background: rgba($black, 0.9);
+        transition: 0.3s ease all;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &--open {
+        .side-drawer__content {
+            right: 0;
+        }
+
+        .side-drawer__overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .main-contact__form {
+    }
+}
