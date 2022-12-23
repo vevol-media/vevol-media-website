@@ -202,8 +202,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 								{/* <span>Starting at €420/day</span> */}
 							</div>
 							<AppContext.Consumer>
-								{({ isSideDrawerOpen, handleSideDrawer }) => {
-									console.log(isSideDrawerOpen);
+								{({ handleSideDrawer }) => {
 									return (
 										<div
 											className="vm-button vm-button--black"
