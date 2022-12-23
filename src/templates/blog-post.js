@@ -150,6 +150,28 @@ export default function BlogPost(props) {
 
 				return <a href={`/blog/${assetItem.slug}`}>{title}</a>;
 			},
+			[INLINES.HYPERLINK]: (node) => {
+				console.log(node);
+				const isYoutubeVideo = node.data.uri.includes('youtube');
+
+				if (isYoutubeVideo) {
+					return (
+						<span className="rte-youtube">
+							<iframe
+								width="560"
+								height="315"
+								src={node.data.uri}
+								title="YouTube video player"
+								frameBorder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							></iframe>
+						</span>
+					);
+				} else {
+					return <a href={node.data.uri}>{node.content[0].value}</a>;
+				}
+			},
 		},
 	};
 
@@ -170,7 +192,10 @@ export default function BlogPost(props) {
 				<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
 				<meta property="og:type" content="website" />
 				<meta property="og:title" content={title} />
-				<meta property="og:description" content={metaDescription ? metaDescription.metaDescription : intro.intro} />
+				<meta
+					property="og:description"
+					content={metaDescription ? metaDescription.metaDescription : intro.intro}
+				/>
 				<meta property="og:image" content={featuredImage.file.url} />
 
 				<meta name="twitter:card" content="summary_large_image" />

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Title } from 'bloomer/lib/elements/Title';
 import './service-plans.scss';
 import servicePlans from '../../enums/service-plans';
-import { Link } from 'gatsby';
 import { AppContext } from '../../context/app-context';
 
 export default function ServicePlans({ scrollToFeatures }) {
