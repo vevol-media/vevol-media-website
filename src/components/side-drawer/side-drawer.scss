@@ -6,12 +6,12 @@
         position: fixed;
         top: 0;
         bottom: 0;
-        width: 300px;
+        width: 500px;
         display: block;
         transition: 0.3s ease all;
         background: $black;
-        right: -300px;
-        padding: 20px;
+        right: -500px;
+        padding: 40px;
         z-index: 9999;
 
         .side-drawer__header{
@@ -40,6 +40,12 @@
                 }
             }
         } 
+
+        @include screen-small {
+            width: 300px;
+            padding: 20px;
+            right: -300px;
+        }
     }
 
     &__overlay {

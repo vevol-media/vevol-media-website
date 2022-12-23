@@ -141,9 +141,25 @@ export default function ServicePlans({ scrollToFeatures }) {
 									<p>€{planPrice}</p>
 									<span>(€{perHour.toFixed(2)}/hour)</span>
 								</div>
-								<Link to="/contact" className="vm-button vm-button--black">
-									Get Started
-								</Link>
+								<AppContext.Consumer>
+								{({ handleSideDrawer }) => {
+									return (
+										<div
+											className="vm-button vm-button--black"
+											onClick={() => {
+												handleSideDrawer(true);
+											}}
+											onKeyDown={() => {
+												handleSideDrawer(true);
+											}}
+											role="button"
+											tabIndex={0} 
+										>
+											Get Started
+										</div>
+									);
+								}}
+							</AppContext.Consumer>
 							</div>
 						</div>
 					);
