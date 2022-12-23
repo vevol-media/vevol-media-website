@@ -24,6 +24,9 @@ export const query = graphql`
 			intro {
 				intro
 			}
+			metaDescription {
+				metaDescription
+			}
 			type {
 				title
 			}
@@ -69,7 +72,7 @@ export const query = graphql`
 
 export default function BlogPost(props) {
 	const data = props.data;
-	const { title, publishedDate, featuredImage, content, author, intro, type, slug } = data.pageData;
+	const { title, publishedDate, featuredImage, content, author, intro, metaDescription, type, slug } = data.pageData;
 	const { publicURL } = data.logo;
 	const { previous, next } = props.pageContext.edge;
 	const featuredImageData = getImage(featuredImage);
@@ -163,11 +166,11 @@ export default function BlogPost(props) {
 		<Layout headerBg={'white'} headerIsStatic>
 			<Helmet>
 				<title>{title} - Vevol Media</title>
-				<meta name="description" content={intro.intro} />
+				<meta name="description" content={metaDescription ? metaDescription.metaDescription : intro.intro} />
 				<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
 				<meta property="og:type" content="website" />
 				<meta property="og:title" content={title} />
-				<meta property="og:description" content={intro.intro} />
+				<meta property="og:description" content={metaDescription ? metaDescription.metaDescription : intro.intro} />
 				<meta property="og:image" content={featuredImage.file.url} />
 
 				<meta name="twitter:card" content="summary_large_image" />

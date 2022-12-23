@@ -53,6 +53,10 @@
             background: $blue;
             background: linear-gradient($blue 0%, $pink 100%);
             margin-right: 20px;
+
+            img {
+                border-radius: 100%;
+            }
         }
 
         .author__details {
