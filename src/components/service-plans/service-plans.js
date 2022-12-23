@@ -209,6 +209,11 @@ export default function ServicePlans({ scrollToFeatures }) {
 											onClick={() => {
 												handleSideDrawer(true);
 											}}
+											onKeyDown={() => {
+												handleSideDrawer(true);
+											}}
+											role="button"
+											tabIndex={0} 
 										>
 											Contact Us Now
 										</div>
