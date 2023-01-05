@@ -216,22 +216,7 @@ export default function BlogPost(props) {
 
 	return (
 		<>
-			<ProgressBar />
-			<Layout headerBg={'white'} headerIsStatic>
-				<Helmet>
-					<title>{title} - Vevol Media</title>
-					<meta name="description" content={intro.intro} />
-					<meta
-						property="og:url"
-						content={`https://www.vevolmedia.com/blog/${slug}`}
-					/>
-					<meta property="og:type" content="website" />
-					<meta property="og:title" content={title} />
-					<meta property="og:description" content={intro.intro} />
-					<meta
-						property="og:image"
-						content={featuredImage.file.url}
-					/>
+		<ProgressBar />
 		<Layout headerBg={'white'} headerIsStatic>
 			<Helmet>
 				<title>{title} - Vevol Media</title>
