@@ -21,10 +21,10 @@ function TableOfContents({ content }) {
 					.replaceAll(' ', '-')
 					.replaceAll('/n', '');
 				const currentChapter = document.querySelector(
-					`.table-of-contents__content a[href="#${id}"]`
+					`.table-of-contents__chapter[data-id="${id}"]`
 				);
 				const allChapters = document.querySelectorAll(
-					`.table-of-contents__content a`
+					`.table-of-contents__chapter`
 				);
 				if (entry.isIntersecting && currentChapter && allChapters) {
 					currentChapter.classList.add('active');
@@ -62,20 +62,48 @@ function TableOfContents({ content }) {
 		});
 	}, []);
 
+	const scrolltoId = (event, id) => {
+		event.stopPropagation();
+		const title = document.getElementById(id);
+		title.scrollIntoView();
+	};
+
 	const contentRender = content
 		.filter((content) => content.children !== null)
 		.map((item) => {
+			let id = `${item.children
+				.toString()
+				.replaceAll(' ', '-')
+				.replaceAll('/n', '')}`;
 			return (
-				<a
-					href={`#${item.children
-						.toString()
-						.replaceAll(' ', '-')
-						.replaceAll('/n', '')}`}
+				<div
+					className="table-of-contents__chapter"
+					data-id={id}
+					onClick={(event) =>
+						scrolltoId(
+							event,
+							`${item.children
+								.toString()
+								.replaceAll(' ', '-')
+								.replaceAll('/n', '')}`
+						)
+					}
+					onKeyPress={(event) =>
+						scrolltoId(
+							event,
+							`${item.children
+								.toString()
+								.replaceAll(' ', '-')
+								.replaceAll('/n', '')}`
+						)
+					}
+					role="button"
+					tabIndex="0"
 				>
 					<span className={`table-of-contents__${item.tag}`}>
 						{item.children}
 					</span>
-				</a>
+				</div>
 			);
 		});
 

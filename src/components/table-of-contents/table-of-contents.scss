@@ -33,7 +33,7 @@
     .table-of-contents__content {
         padding: 20px 0;
 
-        a {
+        .table-of-contents__chapter {
             &.active {
                 span {
                     color: $black;
@@ -68,7 +68,7 @@
             margin-left: 15px;
         }
 
-        a {
+        .table-of-contents__chapter {
             width: 100%;
             display: block;
         }
@@ -94,7 +94,7 @@
         .table-of-contents__content {
             padding: 0;
 
-            a {
+            .table-of-contents__chapter {
                 display: none;
 
                 span.table-of-contents__h4 {
@@ -142,7 +142,7 @@
                 }
             }
             .table-of-contents__content {
-                a {
+                .table-of-contents__chapter {
                     display: block;
                     padding: 5px;
 
