@@ -5,11 +5,19 @@ import iconClose from '../../images/icon-close.svg';
 
 function TableOfContents({ content }) {
 	const [isTableOfContentsOpen, setIsTableOfContentsOpen] = useState(false);
-
 	const handleToggleOpen = () => {
 		isTableOfContentsOpen
 			? setIsTableOfContentsOpen(false)
 			: setIsTableOfContentsOpen(true);
+	};
+
+	const scrolltoId = (event, id) => {
+		event.stopPropagation();
+
+		const title = document.getElementById(id);
+
+		title.scrollIntoView();
+		setIsTableOfContentsOpen(false);
 	};
 
 	useEffect(() => {
@@ -63,17 +71,8 @@ function TableOfContents({ content }) {
 		});
 	}, []);
 
-	const scrolltoId = (event, id) => {
-		event.stopPropagation();
-
-		const title = document.getElementById(id);
-
-		title.scrollIntoView();
-		setIsTableOfContentsOpen(false);
-	};
-
 	const contentRender = content
-		.filter((content) => content.children !== null)
+		.filter((item) => item.children || item.children.length !== 0)
 		.map((item) => {
 			let id = `${item.children
 				.toString()

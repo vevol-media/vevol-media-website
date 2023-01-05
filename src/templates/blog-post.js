@@ -181,7 +181,6 @@ export default function BlogPost(props) {
 				return <a href={`/blog/${assetItem.slug}`}>{title}</a>;
 			},
 			[INLINES.HYPERLINK]: (node) => {
-				console.log(node);
 				const isYoutubeVideo = node.data.uri.includes('youtube');
 
 				if (isYoutubeVideo) {
