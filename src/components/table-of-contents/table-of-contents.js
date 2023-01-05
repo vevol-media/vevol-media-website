@@ -5,6 +5,7 @@ import iconClose from '../../images/icon-close.svg';
 
 function TableOfContents({ content }) {
 	const [isTableOfContentsOpen, setIsTableOfContentsOpen] = useState(false);
+	
 	const handleToggleOpen = () => {
 		isTableOfContentsOpen
 			? setIsTableOfContentsOpen(false)
@@ -34,6 +35,7 @@ function TableOfContents({ content }) {
 				const allChapters = document.querySelectorAll(
 					`.table-of-contents__chapter`
 				);
+
 				if (entry.isIntersecting && currentChapter && allChapters) {
 					currentChapter.classList.add('active');
 					if (currentChapter.nextElementSibling) {
