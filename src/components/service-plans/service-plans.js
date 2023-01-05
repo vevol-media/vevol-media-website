@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Title } from 'bloomer/lib/elements/Title';
 import './service-plans.scss';
 import servicePlans from '../../enums/service-plans';
-import { Link } from 'gatsby';
+import { AppContext } from '../../context/app-context';
 
 export default function ServicePlans({ scrollToFeatures }) {
 	const statigSegments = useRef();
@@ -140,9 +140,25 @@ export default function ServicePlans({ scrollToFeatures }) {
 									<p>€{planPrice}</p>
 									<span>(€{perHour.toFixed(2)}/hour)</span>
 								</div>
-								<Link to="/contact" className="vm-button vm-button--black">
-									Get Started
-								</Link>
+								<AppContext.Consumer>
+								{({ handleSideDrawer }) => {
+									return (
+										<div
+											className="vm-button vm-button--black"
+											onClick={() => {
+												handleSideDrawer(true);
+											}}
+											onKeyDown={() => {
+												handleSideDrawer(true);
+											}}
+											role="button"
+											tabIndex={0} 
+										>
+											Get Started
+										</div>
+									);
+								}}
+							</AppContext.Consumer>
 							</div>
 						</div>
 					);
@@ -200,9 +216,25 @@ export default function ServicePlans({ scrollToFeatures }) {
 								<p>Custom Pricing</p>
 								{/* <span>Starting at €420/day</span> */}
 							</div>
-							<Link to="/contact" className="vm-button vm-button--black">
-								Contact Us Now
-							</Link>
+							<AppContext.Consumer>
+								{({ handleSideDrawer }) => {
+									return (
+										<div
+											className="vm-button vm-button--black"
+											onClick={() => {
+												handleSideDrawer(true);
+											}}
+											onKeyDown={() => {
+												handleSideDrawer(true);
+											}}
+											role="button"
+											tabIndex={0} 
+										>
+											Contact Us Now
+										</div>
+									);
+								}}
+							</AppContext.Consumer>
 						</div>
 					</div>
 				</div>
