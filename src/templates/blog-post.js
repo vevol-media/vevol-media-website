@@ -87,7 +87,9 @@ export default function BlogPost(props) {
 			[MARKS.BOLD]: (text) => <strong>{text}</strong>,
 		},
 		renderNode: {
-			[BLOCKS.PARAGRAPH]: (node, children) => <p className={`mb-5`}>{children}</p>,
+			[BLOCKS.PARAGRAPH]: (node, children) => (
+				<p className={`mb-5`}>{children}</p>
+			),
 			[BLOCKS.HEADING_1]: (node, children) => (
 				<Title tag="h2" isSize={3} id={editStringId(children)}>
 					{children}
@@ -104,7 +106,7 @@ export default function BlogPost(props) {
 				</Title>
 			),
 			[BLOCKS.HEADING_4]: (node, children) => (
-				<Title tag="h4" isSize={5} id={children}>
+				<Title tag="h4" isSize={5} id={editStringId(children)}>
 					{children}
 				</Title>
 			),
@@ -119,11 +121,23 @@ export default function BlogPost(props) {
 				)[0];
 
 				if (assetItem.file.contentType === 'image/gif') {
-					return <img className="rte-image" src={assetItem.fixed.src} alt={assetItem.title} />;
+					return (
+						<img
+							className="rte-image"
+							src={assetItem.fixed.src}
+							alt={assetItem.title}
+						/>
+					);
 				} else {
 					const image = getImage(assetItem.gatsbyImageData);
 
-					return <GatsbyImage className="rte-image" alt={assetItem.title} image={image} />;
+					return (
+						<GatsbyImage
+							className="rte-image"
+							alt={assetItem.title}
+							image={image}
+						/>
+					);
 				}
 			},
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
@@ -131,17 +145,26 @@ export default function BlogPost(props) {
 					(item) => item.contentful_id === node.data.target.sys.id
 				)[0];
 
-				const featuredImage = getImage(assetItem.featuredImage.gatsbyImageData);
+				const featuredImage = getImage(
+					assetItem.featuredImage.gatsbyImageData
+				);
 
 				return (
-					<Link to={`/blog/${assetItem.slug}`} className="rte-block-entry">
+					<Link
+						to={`/blog/${assetItem.slug}`}
+						className="rte-block-entry"
+					>
 						<BgImage image={featuredImage}>
 							<div className="rte-block-entry__text">
 								<Title tag="h3" isSize={4}>
 									{assetItem.title}
 								</Title>
-								<p>{assetItem.intro.intro.substring(0, 300)}..</p>
-								<span className="vm-button vm-button--green vm-button--small">Read more</span>
+								<p>
+									{assetItem.intro.intro.substring(0, 300)}..
+								</p>
+								<span className="vm-button vm-button--green vm-button--small">
+									Read more
+								</span>
 							</div>
 						</BgImage>
 					</Link>
