@@ -6,7 +6,7 @@ import iconClose from '../../images/icon-close.svg';
 function TableOfContents({ content }) {
 	const [isTableOfContentsOpen, setIsTableOfContentsOpen] = useState(false);
 
-	const handleToggleOpen = (e) => {
+	const handleToggleOpen = () => {
 		isTableOfContentsOpen
 			? setIsTableOfContentsOpen(false)
 			: setIsTableOfContentsOpen(true);
@@ -62,20 +62,22 @@ function TableOfContents({ content }) {
 		});
 	}, []);
 
-	const contentRender = content.map((item) => {
-		return (
-			<a
-				href={`#${item.children
-					.toString()
-					.replaceAll(' ', '-')
-					.replaceAll('/n', '')}`}
-			>
-				<span className={`table-of-contents__${item.tag}`}>
-					{item.children}
-				</span>
-			</a>
-		);
-	});
+	const contentRender = content
+		.filter((content) => content.children !== null)
+		.map((item) => {
+			return (
+				<a
+					href={`#${item.children
+						.toString()
+						.replaceAll(' ', '-')
+						.replaceAll('/n', '')}`}
+				>
+					<span className={`table-of-contents__${item.tag}`}>
+						{item.children}
+					</span>
+				</a>
+			);
+		});
 
 	if (content.length < 2) {
 		return '';
