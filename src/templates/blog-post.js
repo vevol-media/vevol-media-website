@@ -312,17 +312,9 @@ export default function BlogPost(props) {
 				</Container>
 			</VevolSection>
 			<SplitNav
-				leftTitle={
-					previous
-						? previous.slug.replaceAll('-', ' ')
-						: 'See all articles'
-				}
+				leftTitle={previous ? previous.slug.replaceAll('-', ' ') : 'See all articles'}
 				leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
-				rightTitle={
-					next
-						? next.slug.replaceAll('-', ' ')
-						: 'See all articles'
-				}
+				rightTitle={next ? next.slug.replaceAll('-', ' ') : 'See all articles'}
 				rightUrl={next ? `/blog/${next.slug}` : '/blog'}
 			/>
 			</Layout>
