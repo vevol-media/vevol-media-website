@@ -26,7 +26,7 @@ function TableOfContents({ content }) {
 				const allChapters = document.querySelectorAll(
 					`.table-of-contents__content a`
 				);
-				if (entry.isIntersecting) {
+				if (entry.isIntersecting && currentChapter && allChapters) {
 					currentChapter.classList.add('active');
 					if (currentChapter.nextElementSibling) {
 						currentChapter.nextElementSibling.classList.add(
@@ -84,9 +84,14 @@ function TableOfContents({ content }) {
 	return (
 		<div
 			className={`table-of-contents ${
-				isTableOfContentsOpen == true ? 'table-of-contents__open' : ''
+				isTableOfContentsOpen === true ? 'table-of-contents__open' : ''
 			}`}
 			onClick={() => handleToggleOpen()}
+			role="button"
+			tabIndex={0}
+			onKeyDown={() => {
+				handleToggleOpen();
+			}}
 		>
 			<div className="table-of-contents__title">
 				<h5>Table of contents</h5>
