@@ -213,7 +213,6 @@ export default function BlogPost(props) {
 	// 15% - estimation of words per number of characters
 	// 200 words per minute
 	const readingTime = Math.ceil((content.raw.length * 0.53 * 0.15) / 200);
-
 	return (
 		<>
 		<ProgressBar />
@@ -329,7 +328,7 @@ export default function BlogPost(props) {
 						<TableOfContents
 							content={blogContent
 								.filter(
-									(content) => content.type.name === 'Title'
+									(content) => content.props.tag === 'h2' || content.props.tag === 'h4' 
 								)
 								.map((content) => {
 									return content.props;

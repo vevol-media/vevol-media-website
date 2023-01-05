@@ -57,6 +57,7 @@ function TableOfContents({ content }) {
 		const headings = document.querySelectorAll(
 			'.blog-content__container h2, .blog-content__container h4'
 		);
+
 		headings.forEach((heading) => {
 			observer.observe(heading);
 		});
@@ -64,8 +65,11 @@ function TableOfContents({ content }) {
 
 	const scrolltoId = (event, id) => {
 		event.stopPropagation();
+
 		const title = document.getElementById(id);
+
 		title.scrollIntoView();
+		setIsTableOfContentsOpen(false);
 	};
 
 	const contentRender = content
