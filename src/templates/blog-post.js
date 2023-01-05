@@ -80,9 +80,7 @@ export default function BlogPost(props) {
 	const featuredImageData = getImage(featuredImage);
 	const authorSlug = author.name.toLocaleLowerCase().replace(' ', '-');
 	const dateISO = new Date(publishedDate).toISOString();
-
-	const editStringId = (string) => {
-		return string.toString().replaceAll(' ', '-').replaceAll('/n', '');
+	const editStringId = (string) => {return string.toString().replaceAll(' ', '-').replaceAll('/n', '');
 	}
 
 	const renderOptions = {
@@ -90,9 +88,7 @@ export default function BlogPost(props) {
 			[MARKS.BOLD]: (text) => <strong>{text}</strong>,
 		},
 		renderNode: {
-			[BLOCKS.PARAGRAPH]: (node, children) => (
-				<p className={`mb-5`}>{children}</p>
-			),
+			[BLOCKS.PARAGRAPH]: (node, children) => <p className={`mb-5`}>{children}</p>,
 			[BLOCKS.HEADING_1]: (node, children) => (
 				<Title tag="h2" isSize={3} id={editStringId(children)}>
 					{children}
@@ -124,23 +120,11 @@ export default function BlogPost(props) {
 				)[0];
 
 				if (assetItem.file.contentType === 'image/gif') {
-					return (
-						<img
-							className="rte-image"
-							src={assetItem.fixed.src}
-							alt={assetItem.title}
-						/>
-					);
+					return <img className="rte-image" src={assetItem.fixed.src} alt={assetItem.title} />;
 				} else {
 					const image = getImage(assetItem.gatsbyImageData);
 
-					return (
-						<GatsbyImage
-							className="rte-image"
-							alt={assetItem.title}
-							image={image}
-						/>
-					);
+					return <GatsbyImage className="rte-image" alt={assetItem.title} image={image} />;
 				}
 			},
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
@@ -148,26 +132,17 @@ export default function BlogPost(props) {
 					(item) => item.contentful_id === node.data.target.sys.id
 				)[0];
 
-				const featuredImage = getImage(
-					assetItem.featuredImage.gatsbyImageData
-				);
+				const featuredImage = getImage(assetItem.featuredImage.gatsbyImageData);
 
 				return (
-					<Link
-						to={`/blog/${assetItem.slug}`}
-						className="rte-block-entry"
-					>
+					<Link to={`/blog/${assetItem.slug}`} className="rte-block-entry">
 						<BgImage image={featuredImage}>
 							<div className="rte-block-entry__text">
 								<Title tag="h3" isSize={4}>
 									{assetItem.title}
 								</Title>
-								<p>
-									{assetItem.intro.intro.substring(0, 300)}..
-								</p>
-								<span className="vm-button vm-button--green vm-button--small">
-									Read more
-								</span>
+								<p>{assetItem.intro.intro.substring(0, 300)}..</p>
+								<span className="vm-button vm-button--green vm-button--small">Read more</span>
 							</div>
 						</BgImage>
 					</Link>
@@ -212,6 +187,7 @@ export default function BlogPost(props) {
 	// 15% - estimation of words per number of characters
 	// 200 words per minute
 	const readingTime = Math.ceil((content.raw.length * 0.53 * 0.15) / 200);
+
 	return (
 		<>
 		<ProgressBar />
@@ -228,21 +204,15 @@ export default function BlogPost(props) {
 				/>
 				<meta property="og:image" content={featuredImage.file.url} />
 
-					<meta name="twitter:card" content="summary_large_image" />
-					<meta name="twitter:creator" content="@VevolMedia" />
-					<meta property="twitter:domain" content="vevolmedia.com" />
-					<meta
-						property="twitter:url"
-						content={`https://www.vevolmedia.com/blog/${slug}`}
-					/>
-					<meta name="twitter:title" content={title} />
-					<meta name="twitter:description" content={intro.intro} />
-					<meta
-						name="twitter:image"
-						content={featuredImage.file.url}
-					/>
-					<script type="application/ld+json">
-						{`
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:creator" content="@VevolMedia" />
+				<meta property="twitter:domain" content="vevolmedia.com" />
+				<meta property="twitter:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
+				<meta name="twitter:title" content={title} />
+				<meta name="twitter:description" content={intro.intro} />
+				<meta name="twitter:image" content={featuredImage.file.url} />
+				<script type="application/ld+json">
+					{`
 						{
 							"@context": "https://schema.org",
 							"@type": "BreadcrumbList",
@@ -266,9 +236,9 @@ export default function BlogPost(props) {
                             ]
 						}
 					`}
-					</script>
-					<script type="application/ld+json">
-						{`
+				</script>
+				<script type="application/ld+json">
+					{`
 						{
 							"@context": "https://schema.org",
 							"@type": "BlogPosting",
@@ -301,9 +271,9 @@ export default function BlogPost(props) {
 							}
 						}
 					`}
-					</script>
-				</Helmet>
-				<BlogIntro
+				</script>
+			</Helmet>
+			<BlogIntro
 					title={title}
 					image={featuredImageData}
 					author={author}
@@ -311,50 +281,50 @@ export default function BlogPost(props) {
 					intro={intro.intro}
 					readingTime={readingTime}
 					type={type.title}
-				/>
-				<VevolSection backgroundColour={'white'}>
-					<Container className="blog-content">
-						<div className="blog-content__container">
-							<div className="blog-content__breadcrumbs">
-								<Link to="/">Home</Link>
-								<small>/</small>
-								<Link to="/blog">Blog</Link>
-								<small>/</small>
-								<span>{title}</span>
-							</div>
-							<>{blogContent}</>
+			/>
+			<VevolSection backgroundColour={'white'}>
+				<Container className="blog-content">
+					<div className="blog-content__container">
+						<div className="blog-content__breadcrumbs">
+							<Link to="/">Home</Link>
+							<small>/</small>
+							<Link to="/blog">Blog</Link>
+							<small>/</small>
+							<span>{title}</span>
 						</div>
-						<TableOfContents
-							content={blogContent
-								.filter(
-									(content) => content.props.tag === 'h2' || content.props.tag === 'h4' 
-								)
-								.map((content) => {
-									return content.props;
-								})}
-						></TableOfContents>
-					</Container>
-					<Container className={'mt-4em'}>
-						<AboutAuthor
-							title={'About the author'}
-							author={author}
-						/>
-					</Container>
-				</VevolSection>
-				<SplitNav
-					leftTitle={
-						previous
-							? previous.slug.replaceAll('-', ' ')
-							: 'See all articles'
-					}
-					leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
-					rightTitle={
-						next
-							? next.slug.replaceAll('-', ' ')
-							: 'See all articles'
-					}
-					rightUrl={next ? `/blog/${next.slug}` : '/blog'}
-				/>
+						<>{blogContent}</>
+					</div>
+					<TableOfContents
+						content={blogContent
+							.filter(
+								(content) => content.props.tag === 'h2' || content.props.tag === 'h4' 
+							)
+							.map((content) => {
+								return content.props;
+							})}
+					></TableOfContents>
+				</Container>
+				<Container className={'mt-4em'}>
+					<AboutAuthor
+						title={'About the author'}
+						author={author}
+					/>
+				</Container>
+			</VevolSection>
+			<SplitNav
+				leftTitle={
+					previous
+						? previous.slug.replaceAll('-', ' ')
+						: 'See all articles'
+				}
+				leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
+				rightTitle={
+					next
+						? next.slug.replaceAll('-', ' ')
+						: 'See all articles'
+				}
+				rightUrl={next ? `/blog/${next.slug}` : '/blog'}
+			/>
 			</Layout>
 		</>
 	);
