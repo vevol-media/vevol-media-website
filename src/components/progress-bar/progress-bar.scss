@@ -1,0 +1,33 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.progres-bar__container {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+    background-color: $black;
+
+    .progres-bar__line {
+        height: 5px;
+        background-color: $pink;
+        background: linear-gradient(-45deg, $orange, $pink, $blue, $green);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+    }
+}
+
