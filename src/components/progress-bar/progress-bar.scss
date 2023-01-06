@@ -23,11 +23,10 @@
     background-color: $black;
 
     .progres-bar__line {
-        height: 5px;
+        height: 10px;
         background-color: $pink;
         background: linear-gradient(-45deg, $orange, $pink, $blue, $green);
-                background-size: 400% 400%;
-                animation: gradient 15s ease infinite;
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
     }
 }
-
