@@ -6,7 +6,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function SplitNav({ leftTitle, leftUrl, rightTitle, rightUrl }) {
 	return (
-		<div className={'split-nav'}>
+		<div className={'split-nav'} id="split-nav">
 			<div className="split-nav__link">
 				<Link to={leftUrl}>
 					<FontAwesomeIcon icon={faArrowLeft} />

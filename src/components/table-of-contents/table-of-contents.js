@@ -5,7 +5,7 @@ import iconClose from '../../images/icon-close.svg';
 
 function TableOfContents({ content }) {
 	const [isTableOfContentsOpen, setIsTableOfContentsOpen] = useState(false);
-	
+
 	const handleToggleOpen = () => {
 		isTableOfContentsOpen
 			? setIsTableOfContentsOpen(false)
@@ -22,55 +22,80 @@ function TableOfContents({ content }) {
 	};
 
 	useEffect(() => {
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				const id = entry.target
-					.getAttribute('id')
-					.toString()
-					.replaceAll(' ', '-')
-					.replaceAll('/n', '');
-				const currentChapter = document.querySelector(
-					`.table-of-contents__chapter[data-id="${id}"]`
-				);
-				const allChapters = document.querySelectorAll(
-					`.table-of-contents__chapter`
-				);
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					const id = entry.target
+						.getAttribute('id')
+						.toString()
+						.replaceAll(' ', '-')
+						.replaceAll('/n', '');
+					const currentChapter = document.querySelector(
+						`.table-of-contents__chapter[data-id="${id}"]`
+					);
+					const allChapters = document.querySelectorAll(
+						`.table-of-contents__chapter`
+					);
+					if (id !== 'split-nav') {
+						if (
+							entry.isIntersecting &&
+							currentChapter &&
+							allChapters
+						) {
+							currentChapter.classList.add('active');
+							if (currentChapter.nextElementSibling) {
+								currentChapter.nextElementSibling.classList.add(
+									'active-next'
+								);
+							}
+							if (currentChapter.previousElementSibling) {
+								currentChapter.previousElementSibling.classList.add(
+									'active-previous'
+								);
+							}
 
-				if (entry.isIntersecting && currentChapter && allChapters) {
-					currentChapter.classList.add('active');
-					if (currentChapter.nextElementSibling) {
-						currentChapter.nextElementSibling.classList.add(
-							'active-next'
-						);
+							allChapters.forEach((chapter) => {
+								if (chapter !== currentChapter) {
+									chapter.classList.remove('active');
+								}
+								if (
+									chapter !==
+									currentChapter.nextElementSibling
+								) {
+									chapter.classList.remove('active-next');
+								}
+								if (
+									chapter !==
+									currentChapter.previousElementSibling
+								) {
+									chapter.classList.remove('active-previous');
+								}
+							});
+						}
+					} else {
+						allChapters.forEach((chapter) => {
+							chapter.classList.remove(
+								'active',
+								'active-previous',
+								'active-next'
+							);
+						});
 					}
-					if (currentChapter.previousElementSibling) {
-						currentChapter.previousElementSibling.classList.add(
-							'active-previous'
-						);
-					}
-
-					allChapters.forEach((chapter) => {
-						if (chapter !== currentChapter) {
-							chapter.classList.remove('active');
-						}
-						if (chapter !== currentChapter.nextElementSibling) {
-							chapter.classList.remove('active-next');
-						}
-						if (chapter !== currentChapter.previousElementSibling) {
-							chapter.classList.remove('active-previous');
-						}
-					});
-				}
-			});
-		});
+				});
+			},
+			{ rootMargin: '0px 0px -40% 0px' }
+		);
 
 		const headings = document.querySelectorAll(
 			'.blog-content__container h2, .blog-content__container h4'
 		);
 
+		const footer = document.querySelector('.split-nav');
+
 		headings.forEach((heading) => {
 			observer.observe(heading);
 		});
+		observer.observe(footer);
 	}, []);
 
 	const contentRender = content
