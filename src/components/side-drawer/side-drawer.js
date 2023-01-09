@@ -26,7 +26,7 @@ export default function SideDrawer({ children }) {
 							aria-label="Close side drawer"
 						></div>
 						<div className="side-drawer__content">
-							<div class="side-drawer__header">
+							<div className="side-drawer__header">
 								<div
 									className="extra-nav__close"
 									role="button"

@@ -31,8 +31,6 @@
     }
 
     .table-of-contents__content {
-        padding: 20px 0;
-
         .table-of-contents__chapter {
             &.active {
                 span {
@@ -75,16 +73,13 @@
     }
 
     @include screen-large {
-        position: fixed;
-        z-index: 999999;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: relative;
         top: inherit;
         min-height: inherit;
         padding: 0px;
         margin: 0;
         display: flex;
+        border: none;
         flex-direction: column;
 
         .table-of-contents__title {
@@ -92,23 +87,37 @@
         }
 
         .table-of-contents__content {
-            padding: 0;
+            height: 110px;
+            overflow-x: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             .table-of-contents__chapter {
-                display: none;
+                margin: 0;
+                padding: 5px 30px;
 
-                span.table-of-contents__h4 {
+                span.table-of-contents__h4,
+                .table-of-contents__h2,
+                span {
                     margin-left: 0;
+                    font-size: 14px;
+                    color: $darkGrey;
+                    opacity: 0.5;
+                    font-size: 14px;
                 }
 
                 &.active {
-                    margin: 0;
-                    width: fit-content;
                     padding: 5px 30px;
 
                     span {
-                        font-size: 14px;
                         margin-left: -15px;
+                        color: $black;
+                        opacity: 1;
                     }
                 }
 
@@ -118,27 +127,11 @@
                     display: block;
                     width: fit-content;
                 }
-
-                &.active-next,
-                &.active-previous {
-                    span {
-                        color: $darkGrey;
-                        opacity: 0.5;
-                        font-size: 14px;
-                    }
-                }
-                &.active-previous {
-                    padding: 10px 30px 0px 30px;
-                }
-
-                &.active-next {
-                    padding: 0px 30px 10px 30px;
-                }
             }
         }
 
         &.table-of-contents__open {
-            height: 100%;
+            height: 100vh;
             top: 0;
             padding: 20px 30px;
 
@@ -151,12 +144,15 @@
                 }
             }
             .table-of-contents__content {
+                height: auto;
                 .table-of-contents__chapter {
                     display: block;
                     padding: 5px;
 
                     span {
                         margin: 0;
+                        color: $black;
+                        opacity: 1;
 
                         &::before {
                             content: "";
