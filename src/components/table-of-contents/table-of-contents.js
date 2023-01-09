@@ -5,10 +5,27 @@ import iconClose from '../../images/icon-close.svg';
 
 function TableOfContents({ content, isTableOfContentsHidden }) {
 	const [isTableOfContentsOpen, setIsTableOfContentsOpen] = useState(false);
+
 	const handleToggleOpen = () => {
-		isTableOfContentsOpen
-			? setIsTableOfContentsOpen(false)
-			: setIsTableOfContentsOpen(true);
+		if (isTableOfContentsOpen) {
+			console.log('close');
+			console.log(
+				document.querySelector('.table-of-contents__chapter.active')
+			);
+			const currentChapter = document.querySelector(
+				'.table-of-contents__chapter.active'
+			);
+			const divContentScroll = document.querySelector(
+				'.table-of-contents__content'
+			);
+			divContentScroll.style.overflow = 'scroll';
+
+			currentChapter.scrollIntoView();
+			setIsTableOfContentsOpen(false);
+		} else {
+			console.log('open');
+			setIsTableOfContentsOpen(true);
+		}
 	};
 
 	const hideScroll = () => {
@@ -16,6 +33,13 @@ function TableOfContents({ content, isTableOfContentsHidden }) {
 			'.table-of-contents__content'
 		);
 		divContentScroll.style.overflow = 'hidden';
+	};
+
+	const unhideScroll = () => {
+		const divContentScroll = document.querySelector(
+			'.table-of-contents__content'
+		);
+		divContentScroll.style.overflow = 'scroll';
 	};
 
 	const scrolltoId = (event, id) => {
@@ -43,6 +67,7 @@ function TableOfContents({ content, isTableOfContentsHidden }) {
 					const allChapters = document.querySelectorAll(
 						`.table-of-contents__chapter`
 					);
+
 					if (id !== 'about-author' && id !== 'header') {
 						isTableOfContentsHidden(false);
 						if (
@@ -78,7 +103,6 @@ function TableOfContents({ content, isTableOfContentsHidden }) {
 								) {
 									chapter.classList.remove('active-previous');
 								}
-
 								if (currentChapter.previousElementSibling) {
 									currentChapter.previousElementSibling.scrollIntoView();
 								} else {
