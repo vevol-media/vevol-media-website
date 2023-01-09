@@ -21,7 +21,7 @@ export default function MainForm({ title, subtitle, standalone }) {
 		setIsSending(true);
 
 		emailjs
-			.sendForm('service_jjvtsbx', 'template_gml6ymr', form.current, 'FztBENgS0iLGuoF_F')
+			.sendForm('service_44yxlog', 'template_89gd8zq', form.current, 'user_T4zJ3f0qyPDW9VIB6ajRT')
 			.then(
 				(result) => {
 					console.log(result.text);
