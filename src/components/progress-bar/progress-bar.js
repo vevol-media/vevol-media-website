@@ -13,9 +13,6 @@ function ProgressBar() {
 		const contentHeight =
 			document.querySelector('.blog-content').offsetHeight;
 		const scrollTop = document.documentElement.scrollTop;
-		const height =
-			document.documentElement.scrollHeight -
-			document.documentElement.clientHeight;
 
 		const value = (scrollTop / contentHeight) * 100;
 		setScroll(value);

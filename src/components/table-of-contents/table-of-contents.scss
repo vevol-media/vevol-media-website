@@ -25,7 +25,7 @@
         font-size: 22px;
         margin-bottom: 20px;
 
-        .extra-nav__close {
+        .table-of-contents__toggle {
             display: none;
         }
     }
@@ -83,51 +83,18 @@
         flex-direction: column;
 
         .table-of-contents__title {
-            display: none;
+            padding: 10px 20px;
+            margin: 0;
+
+            .table-of-contents__toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
 
         .table-of-contents__content {
-            height: 110px;
-            overflow-x: hidden;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-            scroll-behavior: smooth;
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
-
-            .table-of-contents__chapter {
-                margin: 0;
-                padding: 5px 30px;
-
-                span.table-of-contents__h4,
-                .table-of-contents__h2,
-                span {
-                    margin-left: 0;
-                    font-size: 14px;
-                    color: $darkGrey;
-                    opacity: 0.5;
-                    font-size: 14px;
-                }
-
-                &.active {
-                    padding: 5px 30px;
-
-                    span {
-                        margin-left: -15px;
-                        color: $black;
-                        opacity: 1;
-                    }
-                }
-
-                &.active,
-                &.active-next,
-                &.active-previous {
-                    display: block;
-                    width: fit-content;
-                }
-            }
+            display: none;
         }
 
         &.table-of-contents__open {
@@ -136,80 +103,16 @@
             padding: 20px 30px;
 
             .table-of-contents__title {
-                display: flex;
-                .extra-nav__close {
-                    display: block;
-                    transform: rotate(0deg);
-                    transition: all 0.3s ease;
+                padding: 0;
+
+                .table-of-contents__toggle {
+                    transform: rotate(180deg);
                 }
             }
+
             .table-of-contents__content {
-                height: auto;
-                .table-of-contents__chapter {
-                    display: block;
-                    padding: 5px;
-
-                    span {
-                        margin: 0;
-                        color: $black;
-                        opacity: 1;
-
-                        &::before {
-                            content: "";
-                            width: 0;
-                            height: 0;
-                            margin: 0;
-                        }
-
-                        &.table-of-contents__h2 {
-                            font-size: 16px !important;
-                        }
-
-                        &.table-of-contents__h4 {
-                            font-size: 14px !important;
-                        }
-                    }
-
-                    &.active-next,
-                    &.active-previous {
-                        span {
-                            color: $black;
-                            opacity: 1;
-
-                            &.table-of-contents__h2 {
-                                font-size: 16px !important;
-                                font-weight: 500;
-                            }
-
-                            &.table-of-contents__h4 {
-                                font-size: 14px !important;
-                                font-weight: 400;
-                            }
-                        }
-                    }
-
-                    &.active {
-                        margin: 0;
-
-                        .table-of-contents__h2 {
-                            font-size: 16px !important;
-                            font-weight: 500;
-                        }
-
-                        .table-of-contents__h4 {
-                            font-size: 14px !important;
-                            font-weight: 500;
-                        }
-                    }
-
-                    span.table-of-contents__h4 {
-                        margin-left: 20px;
-                    }
-
-                    span.table-of-contents__h2 {
-                        font-size: 16px;
-                    }
-                }
+                display: block;
+                margin-top: 10px;
             }
         }
     }
