@@ -1,7 +1,8 @@
 import React from 'react';
 import './table-of-contents.scss';
 import { useEffect, useState } from 'react';
-import arrowDown from '../../images/arrow-down.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 function TableOfContents({ content, isTableOfContentsHidden }) {
 	const [isTableOfContentsOpen, setIsTableOfContentsOpen] = useState(false);
@@ -112,7 +113,7 @@ function TableOfContents({ content, isTableOfContentsHidden }) {
 						handleToggleOpen();
 					}}
 				>
-					<img src={arrowDown} alt="Toggle table of contents" />
+					<FontAwesomeIcon icon={faChevronDown} />
 				</div>
 			</div>
 			<div className="table-of-contents__content" role="button" tabIndex="0">
