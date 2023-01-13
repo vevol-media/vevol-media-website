@@ -189,7 +189,7 @@ export default function BlogPost(props) {
 	// 15% - estimation of words per number of characters
 	// 200 words per minute
 	const readingTime = Math.ceil((content.raw.length * 0.53 * 0.15) / 200);
-
+	console.log(title);
 	return (
 		<>
 			<Layout headerBg={'white'} headerIsStatic>
@@ -311,6 +311,9 @@ export default function BlogPost(props) {
 							></TableOfContents>
 						</div>
 					</Container>
+					{	title ==='The Complete Shopify Checklist for an easy Shopify Store setup' &&
+						<div class="klaviyo-form-YAaFdq"></div>
+					}
 					<Container className={'mt-4em'}>
 						<AboutAuthor
 							title={'About the author'}
