@@ -189,29 +189,29 @@ export default function BlogPost(props) {
 	// 15% - estimation of words per number of characters
 	// 200 words per minute
 	const readingTime = Math.ceil((content.raw.length * 0.53 * 0.15) / 200);
-
+	console.log(title);
 	return (
 		<>
 			<Layout headerBg={'white'} headerIsStatic>
 				<Helmet>
 					<title>{title} - Vevol Media</title>
 				<meta name="description" content={metaDescription ? metaDescription.metaDescription : intro.intro} />
-				<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
+					<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
 					<meta property="og:type" content="website" />
 					<meta property="og:title" content={title} />
 					<meta
 						property="og:description"
-					content={metaDescription ? metaDescription.metaDescription : intro.intro}
+						content={metaDescription ? metaDescription.metaDescription : intro.intro}
 					/>
-				<meta property="og:image" content={featuredImage.file.url} />
+					<meta property="og:image" content={featuredImage.file.url} />
 
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="twitter:creator" content="@VevolMedia" />
 					<meta property="twitter:domain" content="vevolmedia.com" />
-				<meta property="twitter:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
+					<meta property="twitter:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
 					<meta name="twitter:title" content={title} />
 					<meta name="twitter:description" content={intro.intro} />
-				<meta name="twitter:image" content={featuredImage.file.url} />
+					<meta name="twitter:image" content={featuredImage.file.url} />
 					<script type="application/ld+json">
 						{`
 						{
@@ -294,6 +294,9 @@ export default function BlogPost(props) {
 								<span>{title}</span>
 							</div>
 							<>{blogContent}</>
+							{title === 'The Complete Shopify Checklist for an easy Shopify Store setup' && (
+								<div class="klaviyo-form-YAaFdq"></div>
+							)}
 						</div>
 						<div className={`table-of-contents__progress-bar ${isTableOfContentsHidden ? "table-of-contents__progress-bar--hidden" :""}`}>
 							<ProgressBar />
@@ -319,9 +322,9 @@ export default function BlogPost(props) {
 					</Container>
 				</VevolSection>
 				<SplitNav
-				leftTitle={previous ? previous.slug.replaceAll('-', ' ') : 'See all articles'}
+					leftTitle={previous ? previous.slug.replaceAll('-', ' ') : 'See all articles'}
 					leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
-				rightTitle={next ? next.slug.replaceAll('-', ' ') : 'See all articles'}
+					rightTitle={next ? next.slug.replaceAll('-', ' ') : 'See all articles'}
 					rightUrl={next ? `/blog/${next.slug}` : '/blog'}
 				/>
 			</Layout>
