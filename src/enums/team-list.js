@@ -16,16 +16,20 @@ const teamList = [
 		role: 'Front End Developer',
 	},
 	{
-		name: 'Laurentiu Popa',
-		role: 'Front End Developer',
-	},
-	{
 		name: 'Miruna Andriesei',
 		role: 'Front End Developer',
 	},
 	{
 		name: 'Victoria Gurghis',
 		role: 'UX/UI Design',
+	},
+	{
+		name: 'Ema Crisan',
+		role: 'eCommerce Assistant',
+	},
+	{
+		name: 'Denis Nicolescu',
+		role: 'Front End Developer',
 	},
 ];
 

@@ -17,6 +17,8 @@
     margin-right: -20px;
     cursor: pointer;
     background-color: $white;
+    min-width: 425px;
+    max-width: 425px;
 
     .table-of-contents__title {
         display: flex;
@@ -32,43 +34,50 @@
 
     .table-of-contents__content {
         .table-of-contents__chapter {
+            margin-bottom: 10px;
+            width: 100%;
+            display: block;
+
+            &:hover span {
+                text-decoration: underline;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            span {
+                color: $black;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
             &.active {
                 span {
                     color: $black;
-                    margin-left: 10px;
-                    transition: all 0.3s ease;
-                    font-weight: 500;
+                    font-weight: 600;
+                    position: relative;
+                    display: block;
 
                     &::before {
-                        content: "•";
+                        position: absolute;
+                        left: -10px;
+                        top: 12px;
+                        content: "";
                         display: inline-block;
-                        width: 10px;
-                        height: 10px;
-                        margin-right: 5px;
-                        color: $pink;
-                        transition: all 0.3s ease;
+                        border-radius: 100%;
+                        width: 4px;
+                        height: 4px;
+                        background: $pink;
                     }
                 }
             }
         }
 
-        span {
-            color: $black;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .table-of-contents__h2 {
-            font-weight: 500;
-        }
-
         .table-of-contents__h4 {
             margin-left: 15px;
-        }
-
-        .table-of-contents__chapter {
-            width: 100%;
-            display: block;
+            font-size: 16px;
+            line-height: 28px;
         }
     }
 
@@ -81,6 +90,8 @@
         display: flex;
         border: none;
         flex-direction: column;
+        min-width: 0;
+        max-width: 100%;
 
         .table-of-contents__title {
             padding: 10px 20px;
