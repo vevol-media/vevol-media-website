@@ -11,7 +11,7 @@ export default function Header({ background, isStatic }) {
 	const [isNavVisible, setIsNavVisible] = useState(false);
 
 	return (
-		<div
+		<div id="header"
 			className={`vm-header vm-header--${background ? 'white' : 'black'} vm-header--${isStatic ? 'relative' : ''}`}
 		>
 			<Container>

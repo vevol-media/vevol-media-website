@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 export default function AboutAuthor({ title, author }) {
 	return (
-		<div className="about-author">
+		<div className="about-author" id="about-author">
 			<div className="about-author__title">
 				<h3 className="title is-3">{title}</h3>
 			</div>

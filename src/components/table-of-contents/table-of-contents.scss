@@ -1,0 +1,126 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.table-of-contents {
+    height: fit-content;
+    min-height: 200px;
+    flex: 1;
+    position: sticky;
+    top: 40px;
+    color: $black;
+    border: 1px solid $black;
+    box-shadow: 9px 9px 0 0 $black;
+    padding: 30px;
+    margin-bottom: -2em;
+    line-height: 1.5;
+    margin-top: 0px;
+    margin-right: -20px;
+    cursor: pointer;
+    background-color: $white;
+
+    .table-of-contents__title {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        font-size: 22px;
+        margin-bottom: 20px;
+
+        .table-of-contents__toggle {
+            display: none;
+        }
+    }
+
+    .table-of-contents__content {
+        .table-of-contents__chapter {
+            &.active {
+                span {
+                    color: $black;
+                    margin-left: 10px;
+                    transition: all 0.3s ease;
+                    font-weight: 500;
+
+                    &::before {
+                        content: "•";
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 5px;
+                        color: $pink;
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+        }
+
+        span {
+            color: $black;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .table-of-contents__h2 {
+            font-weight: 500;
+        }
+
+        .table-of-contents__h4 {
+            margin-left: 15px;
+        }
+
+        .table-of-contents__chapter {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    @include screen-large {
+        position: relative;
+        top: inherit;
+        min-height: inherit;
+        padding: 0px;
+        margin: 0;
+        display: flex;
+        border: none;
+        flex-direction: column;
+
+        .table-of-contents__title {
+            padding: 10px 20px;
+            margin: 0;
+            font-size: 18px;
+
+            .table-of-contents__toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: rotate(180deg);
+            }
+        }
+
+        .table-of-contents__content {
+            display: none;
+        }
+
+        &.table-of-contents__open {
+            height: 100vh;
+            top: 0;
+            padding: 20px 30px;
+
+            .table-of-contents__title {
+                padding: 0;
+                font-size: 22px;
+
+                .table-of-contents__toggle {
+                    transform: rotate(0deg);
+                }
+            }
+
+            .table-of-contents__content {
+                display: block;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

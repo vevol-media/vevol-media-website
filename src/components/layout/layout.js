@@ -58,13 +58,11 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 					<link rel="icon" href={favicon} />
 					<title>{metaTitle}</title>
 					<meta name="description" content={metaDescription} />
-
 					<meta property="og:url" content="https://www.vevolmedia.com" />
 					<meta property="og:type" content="website" />
 					<meta property="og:title" content={metaTitle} />
 					<meta property="og:description" content={metaDescription} />
 					<meta property="og:image" content={ogImage} />
-
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="twitter:creator" content="@VevolMedia" />
 					<meta property="twitter:domain" content="vevolmedia.com" />
@@ -72,8 +70,9 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 					<meta name="twitter:title" content={metaTitle} />
 					<meta name="twitter:description" content={metaDescription} />
 					<meta name="twitter:image" content={ogImage} />
-
+					
 					<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
+					<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>
 					<script type="application/ld+json">
 						{`
 						{

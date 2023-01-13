@@ -1,5 +1,5 @@
 import Layout from '../components/layout/layout';
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'bloomer';
 import { Helmet } from 'react-helmet';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
@@ -13,6 +13,8 @@ import { Title } from 'bloomer/lib/elements/Title';
 import './blog-content.scss';
 import { BgImage } from 'gbimage-bridge';
 import SplitNav from '../components/general-components/split-nav';
+import TableOfContents from '../components/table-of-contents/table-of-contents';
+import ProgressBar from '../components/progress-bar/progress-bar';
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -78,6 +80,11 @@ export default function BlogPost(props) {
 	const featuredImageData = getImage(featuredImage);
 	const authorSlug = author.name.toLocaleLowerCase().replace(' ', '-');
 	const dateISO = new Date(publishedDate).toISOString();
+	const editStringId = (string) => {
+		return string.toString().replaceAll(' ', '-').replaceAll('/n', '');
+	};
+	const [isTableOfContentsHidden, setIsTableOfContentsHidden] = useState(true);
+
 	const renderOptions = {
 		renderMark: {
 			[MARKS.BOLD]: (text) => <strong>{text}</strong>,
@@ -85,12 +92,12 @@ export default function BlogPost(props) {
 		renderNode: {
 			[BLOCKS.PARAGRAPH]: (node, children) => <p className={`mb-5`}>{children}</p>,
 			[BLOCKS.HEADING_1]: (node, children) => (
-				<Title tag="h2" isSize={3}>
+				<Title tag="h2" isSize={3} id={editStringId(children)}>
 					{children}
 				</Title>
 			),
 			[BLOCKS.HEADING_2]: (node, children) => (
-				<Title tag="h2" isSize={3}>
+				<Title tag="h2" isSize={3} id={editStringId(children)}>
 					{children}
 				</Title>
 			),
@@ -100,7 +107,7 @@ export default function BlogPost(props) {
 				</Title>
 			),
 			[BLOCKS.HEADING_4]: (node, children) => (
-				<Title tag="h4" isSize={5}>
+				<Title tag="h4" isSize={5} id={editStringId(children)}>
 					{children}
 				</Title>
 			),
@@ -151,7 +158,6 @@ export default function BlogPost(props) {
 				return <a href={`/blog/${assetItem.slug}`}>{title}</a>;
 			},
 			[INLINES.HYPERLINK]: (node) => {
-				console.log(node);
 				const isYoutubeVideo = node.data.uri.includes('youtube');
 
 				if (isYoutubeVideo) {
@@ -185,28 +191,29 @@ export default function BlogPost(props) {
 	const readingTime = Math.ceil((content.raw.length * 0.53 * 0.15) / 200);
 
 	return (
-		<Layout headerBg={'white'} headerIsStatic>
-			<Helmet>
-				<title>{title} - Vevol Media</title>
+		<>
+			<Layout headerBg={'white'} headerIsStatic>
+				<Helmet>
+					<title>{title} - Vevol Media</title>
 				<meta name="description" content={metaDescription ? metaDescription.metaDescription : intro.intro} />
 				<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
-				<meta property="og:type" content="website" />
-				<meta property="og:title" content={title} />
-				<meta
-					property="og:description"
+					<meta property="og:type" content="website" />
+					<meta property="og:title" content={title} />
+					<meta
+						property="og:description"
 					content={metaDescription ? metaDescription.metaDescription : intro.intro}
-				/>
+					/>
 				<meta property="og:image" content={featuredImage.file.url} />
 
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:creator" content="@VevolMedia" />
-				<meta property="twitter:domain" content="vevolmedia.com" />
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:creator" content="@VevolMedia" />
+					<meta property="twitter:domain" content="vevolmedia.com" />
 				<meta property="twitter:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
-				<meta name="twitter:title" content={title} />
-				<meta name="twitter:description" content={intro.intro} />
+					<meta name="twitter:title" content={title} />
+					<meta name="twitter:description" content={intro.intro} />
 				<meta name="twitter:image" content={featuredImage.file.url} />
-				<script type="application/ld+json">
-					{`
+					<script type="application/ld+json">
+						{`
 						{
 							"@context": "https://schema.org",
 							"@type": "BreadcrumbList",
@@ -230,9 +237,9 @@ export default function BlogPost(props) {
                             ]
 						}
 					`}
-				</script>
-				<script type="application/ld+json">
-					{`
+					</script>
+					<script type="application/ld+json">
+						{`
 						{
 							"@context": "https://schema.org",
 							"@type": "BlogPosting",
@@ -265,39 +272,59 @@ export default function BlogPost(props) {
 							}
 						}
 					`}
-				</script>
-			</Helmet>
-			<BlogIntro
-				title={title}
-				image={featuredImageData}
-				author={author}
-				date={publishedDate}
-				intro={intro.intro}
-				readingTime={readingTime}
-				type={type.title}
-			/>
-			<VevolSection backgroundColour={'white'}>
-				<Container className="blog-content">
-					<div className="blog-content__breadcrumbs">
-						<Link to="/">Home</Link>
-						<small>/</small>
-						<Link to="/blog">Blog</Link>
-						<small>/</small>
-						<span>{title}</span>
-					</div>
-					<>{blogContent}</>
-				</Container>
-
-				<Container className={'mt-4em'}>
-					<AboutAuthor title={'About the author'} author={author} />
-				</Container>
-			</VevolSection>
-			<SplitNav
+					</script>
+				</Helmet>
+				<BlogIntro
+					title={title}
+					image={featuredImageData}
+					author={author}
+					date={publishedDate}
+					intro={intro.intro}
+					readingTime={readingTime}
+					type={type.title}
+				/>
+				<VevolSection backgroundColour={'white'}>
+					<Container className="blog-content">
+						<div className="blog-content__container">
+							<div className="blog-content__breadcrumbs">
+								<Link to="/">Home</Link>
+								<small>/</small>
+								<Link to="/blog">Blog</Link>
+								<small>/</small>
+								<span>{title}</span>
+							</div>
+							<>{blogContent}</>
+						</div>
+						<div className={`table-of-contents__progress-bar ${isTableOfContentsHidden ? "table-of-contents__progress-bar--hidden" :""}`}>
+							<ProgressBar />
+							<TableOfContents
+								isTableOfContentsHidden={setIsTableOfContentsHidden}
+								content={blogContent
+									.filter(
+										(content) =>
+											content.props.tag === 'h2' ||
+											content.props.tag === 'h4'
+									)
+									.map((content) => {
+										return content.props;
+									})}
+							></TableOfContents>
+						</div>
+					</Container>
+					<Container className={'mt-4em'}>
+						<AboutAuthor
+							title={'About the author'}
+							author={author}
+						/>
+					</Container>
+				</VevolSection>
+				<SplitNav
 				leftTitle={previous ? previous.slug.replaceAll('-', ' ') : 'See all articles'}
-				leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
+					leftUrl={previous ? `/blog/${previous.slug}` : '/blog'}
 				rightTitle={next ? next.slug.replaceAll('-', ' ') : 'See all articles'}
-				rightUrl={next ? `/blog/${next.slug}` : '/blog'}
-			/>
-		</Layout>
+					rightUrl={next ? `/blog/${next.slug}` : '/blog'}
+				/>
+			</Layout>
+		</>
 	);
 }

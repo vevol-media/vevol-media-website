@@ -70,7 +70,7 @@ export default function PageAbout({ data }) {
 								design & development, search engine and conversion rate optimisation.
 							</p>,
 							<p className="mt-5">
-								eeCommerce and Shopify are at the core of our services, and our team has extensive
+								eCommerce and Shopify are at the core of our services, and our team has extensive
 								knowledge of how your business can take advantage of everything in the market.
 							</p>,
 							<Link to="/contact" className="vm-button vm-button--black mt-5">

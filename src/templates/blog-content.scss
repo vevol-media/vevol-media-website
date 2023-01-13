@@ -2,11 +2,27 @@
 @import "../styles/mixins";
 
 .blog-content {
-    max-width: 1000px !important;
     padding: 0 20px;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+
+    .blog-content__container {
+        max-width: 1000px !important;
+        width: 100%;
+    }
+
+    
 
     h2 {
         margin-top: 2em;
+    }
+
+    h2,
+    h4 {
+        scroll-margin-top: 1em;
+        padding-top: 1em;
+        margin-top: -1em;
     }
 
     h3 {
@@ -23,6 +39,12 @@
         flex-wrap: nowrap;
         white-space: nowrap;
         overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         a,
         small {
@@ -139,6 +161,25 @@
                 color: $white;
                 margin: 20px 0;
                 font-size: 0.85em;
+            }
+        }
+    }
+
+    @include screen-large {
+        .table-of-contents__progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999999;
+            transform: translateY(0%);
+            opacity: 1;
+            transition: all 0.3s ease;
+
+            &--hidden {
+                transform: translateY(100%);
+                opacity: 0;
+                transition: all 0.3s ease;
             }
         }
     }
