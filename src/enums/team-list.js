@@ -1,7 +1,7 @@
 const teamList = [
 	{
 		name: 'Alexia Chirita',
-		role: 'Account Manager',
+		role: 'Account Executive',
 	},
 	{
 		name: 'Bogdan Dogaru',
@@ -10,6 +10,14 @@ const teamList = [
 	{
 		name: 'Dan Nistor',
 		role: 'Head of Business Development',
+	},
+	{
+		name: 'Denis Nicolescu',
+		role: 'Front End Developer',
+	},
+	{
+		name: 'Ema Crisan',
+		role: 'eCommerce Assistant',
 	},
 	{
 		name: 'Laura Hirtop',
@@ -22,14 +30,6 @@ const teamList = [
 	{
 		name: 'Victoria Gurghis',
 		role: 'UX/UI Design',
-	},
-	{
-		name: 'Ema Crisan',
-		role: 'eCommerce Assistant',
-	},
-	{
-		name: 'Denis Nicolescu',
-		role: 'Front End Developer',
 	},
 ];
 
