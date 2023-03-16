@@ -47,7 +47,7 @@ export default function SidebarInfoText({
 						) : (
 							<></>
 						)}
-						{item.text && <p>{item.text}</p>}
+						{item.text && (Array.isArray(item.text) ? <div>{item.text}</div> : <p>{item.text}</p>)}
 					</React.Fragment>
 				))}
 			</div>

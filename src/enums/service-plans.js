@@ -11,9 +11,9 @@ const servicePlans = [
 		},
 		features: ['Website QA & Testing', 'Custom Development', 'Bug Fixing', 'Support & Maintenance'],
 		prices: {
-			monthly: 595,
-			quaterly: 1722,
-			yearly: 6636,
+			monthly: 651,
+			quaterly: 1890,
+			yearly: 7308,
 		},
 	},
 	{
@@ -35,9 +35,9 @@ const servicePlans = [
 			'Strategic Consulting',
 		],
 		prices: {
-			monthly: 1200,
-			quaterly: 3465,
-			yearly: 13320,
+			monthly: 1320,
+			quaterly: 3825,
+			yearly: 14760,
 		},
 	},
 	{
@@ -64,9 +64,9 @@ const servicePlans = [
 			'Technical Architecture Consulting',
 		],
 		prices: {
-			monthly: 2625,
-			quaterly: 7560,
-			yearly: 28980,
+			monthly: 2905,
+			quaterly: 8400,
+			yearly: 32340,
 		},
 	},
 ];

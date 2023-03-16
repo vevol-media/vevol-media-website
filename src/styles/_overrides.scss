@@ -27,3 +27,13 @@
 p {
     line-height: 1.5;
 }
+
+.file-label {
+    .file-icon {
+        margin-right: 0;
+    }
+
+    .file-name {
+        line-height: 2em;
+    }
+}

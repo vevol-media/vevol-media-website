@@ -189,13 +189,16 @@ export default function BlogPost(props) {
 	// 15% - estimation of words per number of characters
 	// 200 words per minute
 	const readingTime = Math.ceil((content.raw.length * 0.53 * 0.15) / 200);
-	console.log(title);
+
 	return (
 		<>
 			<Layout headerBg={'white'} headerIsStatic>
 				<Helmet>
 					<title>{title} - Vevol Media</title>
-				<meta name="description" content={metaDescription ? metaDescription.metaDescription : intro.intro} />
+					<meta
+						name="description"
+						content={metaDescription ? metaDescription.metaDescription : intro.intro}
+					/>
 					<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
 					<meta property="og:type" content="website" />
 					<meta property="og:title" content={title} />
@@ -298,16 +301,16 @@ export default function BlogPost(props) {
 								<div class="klaviyo-form-YAaFdq"></div>
 							)}
 						</div>
-						<div className={`table-of-contents__progress-bar ${isTableOfContentsHidden ? "table-of-contents__progress-bar--hidden" :""}`}>
+						<div
+							className={`table-of-contents__progress-bar ${
+								isTableOfContentsHidden ? 'table-of-contents__progress-bar--hidden' : ''
+							}`}
+						>
 							<ProgressBar />
 							<TableOfContents
 								isTableOfContentsHidden={setIsTableOfContentsHidden}
 								content={blogContent
-									.filter(
-										(content) =>
-											content.props.tag === 'h2' ||
-											content.props.tag === 'h4'
-									)
+									.filter((content) => content.props.tag === 'h2' || content.props.tag === 'h4')
 									.map((content) => {
 										return content.props;
 									})}
@@ -315,10 +318,7 @@ export default function BlogPost(props) {
 						</div>
 					</Container>
 					<Container className={'mt-4em'}>
-						<AboutAuthor
-							title={'About the author'}
-							author={author}
-						/>
+						<AboutAuthor title={'About the author'} author={author} />
 					</Container>
 				</VevolSection>
 				<SplitNav

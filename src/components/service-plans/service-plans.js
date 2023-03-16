@@ -141,24 +141,24 @@ export default function ServicePlans({ scrollToFeatures }) {
 									<span>(€{perHour.toFixed(2)}/hour)</span>
 								</div>
 								<AppContext.Consumer>
-								{({ handleSideDrawer }) => {
-									return (
-										<div
-											className="vm-button vm-button--black"
-											onClick={() => {
-												handleSideDrawer(true);
-											}}
-											onKeyDown={() => {
-												handleSideDrawer(true);
-											}}
-											role="button"
-											tabIndex={0} 
-										>
-											Get Started
-										</div>
-									);
-								}}
-							</AppContext.Consumer>
+									{({ handleSideDrawer }) => {
+										return (
+											<div
+												className="vm-button vm-button--black"
+												onClick={() => {
+													handleSideDrawer(true);
+												}}
+												onKeyDown={() => {
+													handleSideDrawer(true);
+												}}
+												role="button"
+												tabIndex={0}
+											>
+												Get Started
+											</div>
+										);
+									}}
+								</AppContext.Consumer>
 							</div>
 						</div>
 					);
@@ -228,7 +228,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 												handleSideDrawer(true);
 											}}
 											role="button"
-											tabIndex={0} 
+											tabIndex={0}
 										>
 											Contact Us Now
 										</div>

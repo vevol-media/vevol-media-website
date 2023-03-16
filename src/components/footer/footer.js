@@ -31,8 +31,9 @@ export default function WebsiteFooter() {
 							Company
 						</Title>
 						<Link to="/about">About</Link>
-						<Link to="/work">Work</Link>
+						<Link to="/work">Our work</Link>
 						<Link to="/contact">Contact Us</Link>
+						<Link to="/careers">Careers</Link>
 						<Link to="/strategic-partnerships">Strategic Partnerships</Link>
 						<Link to="/faqs">FAQ</Link>
 					</Column>

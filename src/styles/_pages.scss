@@ -9,3 +9,63 @@
     justify-content: center;
     align-items: center;
 }
+
+.job-listing-info {
+    .list-of-cards {
+        margin-bottom: 3em;
+
+        @include screen-small {
+            .simple-card {
+                width: 100%;
+            }
+        }
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin-bottom: 0;
+
+        li {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            p {
+                margin: 0 !important;
+            }
+        }
+    }
+}
+
+.careers__job-list {
+    display: flex;
+    gap: 45px;
+
+    .medium-card {
+        width: calc(33.33% - 30px);
+    }
+
+    @include screen-general {
+        gap: 40px;
+
+        .medium-card {
+            width: calc(50% - 20px);
+        }
+    }
+
+    @include screen-small {
+        display: block;
+
+        .medium-card {
+            width: 100%;
+            margin-bottom: 25px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
