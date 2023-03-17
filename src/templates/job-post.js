@@ -12,8 +12,6 @@ import SimpleCard from '../components/general-components/simple-card';
 import SideDrawer from '../components/side-drawer/side-drawer';
 import { AppContext } from '../context/app-context';
 import JobForm from '../components/forms/job-form';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -178,8 +176,7 @@ export default function JobPost(props) {
 				<VevolSection backgroundColour={'white'}>
 					<Container className="job-listing-info">
 						<Link to="/careers">
-							<FontAwesomeIcon icon={faArrowLeft} />
-							<span className="ml-2">Back to Careers</span>
+							<span className="ml-2">← Back to Careers</span>
 						</Link>
 						<div className="list-of-cards mt-3">
 							<SimpleCard pinkBorder alternativeBackground>
