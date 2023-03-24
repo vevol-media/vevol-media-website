@@ -56,32 +56,6 @@ export default function PageAbout({ data }) {
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
-					<ImageWithText
-						image={<GatsbyImage image={locationImage} alt={'Vevol Media locations'} />}
-						title={'Based in Europe'}
-						textContent={[
-							<p className="mt-5">
-								Vevol Media is an Ireland-based and fully remote company, with our members working
-								independently from their own locations. So you can always meet us face to face in
-								Ireland, UK or Romania.
-							</p>,
-							<p className="mt-5">
-								Our mission is to help businesses grow by leveraging our skills and expertise in web
-								design & development, search engine and conversion rate optimisation.
-							</p>,
-							<p className="mt-5">
-								eCommerce and Shopify are at the core of our services, and our team has extensive
-								knowledge of how your business can take advantage of everything in the market.
-							</p>,
-							<Link to="/contact" className="vm-button vm-button--black mt-5">
-								Get in touch
-							</Link>,
-						]}
-					/>
-				</Container>
-			</VevolSection>
-			<VevolSection>
-				<Container>
 					<HeadingBlock
 						title={'A Team Of Superstars'}
 						highlightedWord={'Team'}
@@ -100,7 +74,7 @@ export default function PageAbout({ data }) {
 					<TeamMembers />
 				</Container>
 			</VevolSection>
-			<VevolSection backgroundColour={'white'}>
+			<VevolSection>
 				<Container>
 					<ImageWithText
 						image={<GatsbyImage image={brasovImage} alt={'Vevol Media team'} />}
@@ -123,6 +97,33 @@ export default function PageAbout({ data }) {
 							</p>,
 							<Link to="/contact" className="vm-button vm-button--green mt-5">
 								Contact us now
+							</Link>,
+						]}
+					/>
+				</Container>
+			</VevolSection>
+			<VevolSection backgroundColour={'white'}>
+				<Container>
+					<ImageWithText
+						image={<GatsbyImage image={locationImage} alt={'Vevol Media locations'} />}
+						title={'Based in Europe'}
+						alignRight
+						textContent={[
+							<p className="mt-5">
+								Vevol Media is an Ireland-based and fully remote company, with our members working
+								independently from their own locations. So you can always meet us face to face in
+								Ireland, UK or Romania.
+							</p>,
+							<p className="mt-5">
+								Our mission is to help businesses grow by leveraging our skills and expertise in web
+								design & development, search engine and conversion rate optimisation.
+							</p>,
+							<p className="mt-5">
+								eCommerce and Shopify are at the core of our services, and our team has extensive
+								knowledge of how your business can take advantage of everything in the market.
+							</p>,
+							<Link to="/contact" className="vm-button vm-button--black mt-5">
+								Get in touch
 							</Link>,
 						]}
 					/>
