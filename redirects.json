@@ -74,5 +74,9 @@
   {
     "fromPath": "/ecommerce-news/the-main-differences-between-shopify-and-woocommerce-which-is-the-best-ecommerce-store-builder-for-you",
     "toPath": "/services/shopify-development"
+  },
+  {
+    "fromPath": "/checklist",
+    "toPath": "/blog/the-complete-shopify-checklist-for-an-easy-shopify-store-setup"
   }
 ]
