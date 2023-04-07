@@ -54,12 +54,12 @@ export default function PortfolioPage({ data }) {
 				<title>Case Study: Fyne Jewellery - Custom Shopify</title>
 				<meta
 					name="description"
-					content="Design revamp, custom Shopify components, including currench exchange, wishlist and ring size finder functionalities."
+					content="Design revamp, custom Shopify components, including currency exchange, wishlist and ring size finder functionalities."
 				/>
 			</Helmet>
 			<SlimHero
 				heading="Fyne Jewellery - Ultra Fine Shopify"
-				subheading="Design revamp, custom Shopify components, including currench exchange, wishlist and ring size finder functionalities."
+				subheading="Design revamp, custom Shopify components, including currency exchange, wishlist and ring size finder functionalities."
 				backgroundWhite
 				hideBlob
 			/>
