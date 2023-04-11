@@ -101,6 +101,9 @@ export default function ServicePlans({ scrollToFeatures }) {
 								</Title>
 								<p>{plan.description}</p>
 							</div>
+							{index === 0 && (
+								<div className="service-plan__popular">Feature Packed - Most Effective</div>
+							)}
 							<div className="service-plan__features">
 								<Title tag="h3" isSize={5}>
 									Features
@@ -132,9 +135,6 @@ export default function ServicePlans({ scrollToFeatures }) {
 								<p>Commited Number of Hours per Month:</p>
 								<span>{plan.hours}</span>
 							</div>
-							{index === 2 && (
-								<div className="service-plan__popular">Feature Packed - Most Effective</div>
-							)}
 							<div className="service-plan__actions">
 								<div className="plan-actions__pricing">
 									<p>€{planPrice}</p>
