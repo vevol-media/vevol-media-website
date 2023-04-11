@@ -18,15 +18,18 @@
 .service-plans {
     .service-plans__notice {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-top: 40px;
+        background: $grey;
+        border: 1px solid $border;
+        padding: 10px;
+        text-align: center;
+        gap: 10px;
 
         p {
-            background: $grey;
-            border: 1px solid $border;
-            padding: 10px;
-            text-align: center;
+            font-size: 0.875em;
         }
     }
 

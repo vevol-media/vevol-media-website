@@ -91,7 +91,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 					let planPrice = plan.prices[currentSegment];
 					const perHour = planPrice / plan.totalHours[currentSegment];
 					const yearlyPrice = (planPrice / 1000).toFixed(1);
-					planPrice = currentSegment === 'yearly' ? `${yearlyPrice}k` : planPrice;
+					planPrice = `${yearlyPrice}k`;
 
 					return (
 						<div className="service-plans__plan" key={index}>
@@ -241,9 +241,14 @@ export default function ServicePlans({ scrollToFeatures }) {
 			</div>
 			<div className="service-plans__notice">
 				<p>
-					Our base rate is €90/hour. Choosing one of our service plans will reduce costs by up to{' '}
-					<strong>34%</strong>.
+					Our base rate is €120 per hour. By selecting one of our service plans, you can reduce costs by up to{' '}
+					<strong>32%</strong>.
 				</p>
+				<p>
+					The figures have been rounded. For example, €2,328 has been rounded to €2.3k. Precise prices are
+					available upon request.
+				</p>
+				<p>All prices are exclusive of VAT.</p>
 			</div>
 		</div>
 	);
