@@ -1,0 +1,57 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.pros-cons {
+    display: flex;
+    gap: 40px 80px;
+    flex-wrap: wrap;
+
+    @include screen-small {
+        flex-direction: column;
+    }
+
+    .pc-group__col {
+        flex: 1 1;
+    }
+
+    .title {
+        margin-bottom: 2.5rem;
+    }
+
+    .pc-group__col--list {
+        li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+    }
+
+    .pc-group__col--0 {
+        
+        .title {
+            color: $green;
+        }
+
+        .icon {
+            border-color: $green;
+
+            svg {
+                color: $green;
+            }
+        }
+    }
+
+    .icon {
+        display: inline-flex;
+        border-radius: 50%;
+        border: 1px solid;
+        margin-right: 15px;
+        flex-shrink: 0;
+        height: 20px;
+        width: 20px;
+
+        svg {
+            width: 10px;
+            height: 10px
+        }
+    }
+}
