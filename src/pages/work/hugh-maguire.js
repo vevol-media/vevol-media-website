@@ -133,7 +133,7 @@ export default function PortfolioPage({ data }) {
             ]}
             mainContent={[
               {
-                title: "Goals & Results",
+                title: "Goals and outcomes",
                 text: "Improve the user experience on the website",
               },
               {
