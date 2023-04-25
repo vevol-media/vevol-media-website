@@ -9,6 +9,15 @@ const portfolio = [
 		hasPage: true,
 	},
 	{
+		name: 'Hugh Maguire',
+		description: 'Bespoke Shopify Theme Design, WooCommerce Migration and CRO.',
+		internalUrl: '/work/hugh-maguire',
+		externalUrl: 'https://hughmaguirebutchers.com',
+		featuredImage: 'hugh-maguire',
+		hasCaseStudy: true,
+		hasPage: true,
+	},
+	{
 		name: 'Lumired',
 		description: 'Custom Store Build with Design extended from official Shopify Theme.',
 		internalUrl: '/work/lumired',
