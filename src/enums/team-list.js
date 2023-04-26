@@ -1,5 +1,9 @@
 const teamList = [
 	{
+		name: 'Alexandra Cordos',
+		role: 'Project Manager',
+	},
+	{
 		name: 'Alexia Chirita',
 		role: 'Account Executive',
 	},
