@@ -36,14 +36,14 @@ const partnersList = [
 		isTrusted: true,
 	},
 	{
-		name: 'Omniconvert',
-		logo: 'omniconvert',
-		intro: 'Omniconvert is an award-winning conversion rate optimization (CRO) software that can be used for A/B testing, online surveys, traffic segmentation, web personalization and more',
-		website: 'https://www.omniconvert.com/',
-		tags: ['agency', 'data analysis'],
+		name: 'Segmentify',
+		logo: 'segmentify',
+		intro: 'Segmentify is a Customer Engagement Platform, their focus is creating omnichannel personalised experiences for each customer throughout the entire eCommerce journey to increase conversions, engagement, revenue and customer lifetime value.',
+		website: 'https://segmentify.com/',
+		tags: ['omnichannel', 'conversions'],
 		isUsed: true,
 		isTrusted: true,
-	},
+	}
 ];
 
 export default partnersList;
