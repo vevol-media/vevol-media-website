@@ -64,8 +64,9 @@ function TableOfContents({ content, isTableOfContentsHidden }) {
 
 	const contentRender = content
 		.filter((item) => item.children || item.children.length !== 0)
-		.map((item) => {
+		.map((item, key) => {
 			let id = `${item.children.toString().replaceAll(' ', '-').replaceAll('/n', '')}`;
+
 			return (
 				<div
 					className="table-of-contents__chapter"
@@ -78,6 +79,7 @@ function TableOfContents({ content, isTableOfContentsHidden }) {
 					}
 					role="button"
 					tabIndex="0"
+					key={key}
 				>
 					<span className={`table-of-contents__${item.tag}`}>{item.children}</span>
 				</div>
