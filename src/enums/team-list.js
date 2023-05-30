@@ -1,7 +1,15 @@
 const teamList = [
 	{
+		name: 'Alexandra Cordos',
+		role: 'Project Manager',
+	},
+	{
 		name: 'Alexia Chirita',
 		role: 'Account Executive',
+	},
+	{
+		name: 'Bogdan Dobrota',
+		role: 'Front End Developer',
 	},
 	{
 		name: 'Bogdan Dogaru',
@@ -22,6 +30,14 @@ const teamList = [
 	{
 		name: 'Laura Hirtop',
 		role: 'Front End Developer',
+	},
+	{
+		name: 'Lavinia Adam',
+		role: 'Project Manager',
+	},
+	{
+		name: 'Michaela Ries',
+		role: 'Copywriter',
 	},
 	{
 		name: 'Miruna Andriesei',
