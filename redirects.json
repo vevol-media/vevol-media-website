@@ -78,9 +78,5 @@
   {
     "fromPath": "/checklist",
     "toPath": "/blog/the-complete-shopify-checklist-for-an-easy-shopify-store-setup"
-  },
-  {
-    "fromPath": "/partners",
-    "toPath": "/strategic-partnerships"
   }
 ]
