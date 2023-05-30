@@ -19,7 +19,7 @@ export default function HomepageServices() {
 		<VevolSection className={'homepage-services'}>
 			<Container>
 				<HeadingBlock
-					title={'Experience The Right Way'}
+					title={'Take your store to the next level'}
 					highlightedWord={'Right'}
 					subtitle={
 						"You deserve high quality services from people who know their stuff. We know our stuff - that's a promise!"
