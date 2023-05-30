@@ -89,11 +89,5 @@ const partnersList = [
 		isUsed: true,
 		isTrusted: true,
 	}
-
 ];
-
-if (window.location.href.indexOf('/partners') !== -1) {
-	window.location.href = window.location.href.replace('/partners', '/strategic-partnerships');
-}
-
 export default partnersList;
