@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './pros-cons.scss';
 
-export default function ProsCons({ title, pros, cons }) {
+export default function ProsCons({ prosTitle, pros, consTitle, cons }) {
 	return (
 		<div className="pros-cons">
 			<div className="pros-cons__col pros-cons__col--left">
 				<Title tag="h5" isSize={4}>
-					Pros
+					{prosTitle}
 				</Title>
 				<ul className="pc-col__list">
 					{pros.map((item, itemIndex) => (
@@ -24,7 +24,7 @@ export default function ProsCons({ title, pros, cons }) {
 			</div>
 			<div className="pros-cons__col">
 				<Title tag="h5" isSize={4}>
-					Cons
+					{consTitle}
 				</Title>
 				<ul className="pc-col__list">
 					{cons.map((item, itemIndex) => (

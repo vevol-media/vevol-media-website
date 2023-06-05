@@ -62,9 +62,10 @@ export const query = graphql`
 					}
 					... on ContentfulProsCons {
 						contentful_id
-						cons
+						prosTitle
 						pros
-						title
+						consTitle
+						cons
 					}
 				}
 			}
@@ -144,7 +145,14 @@ export default function BlogPost(props) {
 
 				switch (assetItem.__typename) {
 					case 'ContentfulProsCons':
-						return <ProsCons pros={assetItem.pros} cons={assetItem.cons} title={assetItem.title} />;
+						return (
+							<ProsCons
+								pros={assetItem.pros}
+								cons={assetItem.cons}
+								prosTitle={assetItem.prosTitle}
+								consTitle={assetItem.consTitle}
+							/>
+						);
 					default:
 						const featuredImage = getImage(assetItem.featuredImage.gatsbyImageData);
 
