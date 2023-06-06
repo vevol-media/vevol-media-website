@@ -71,12 +71,5 @@ module.exports = {
 			},
 			__key: 'pages',
 		},
-		{
-			resolve: '@mkitio/gatsby-theme-password-protect',
-			options: {
-				password: 'nuintranimeni!', // delete or `undefined` to disable password protection
-				pagePaths: ['/internal/preceden'],
-			},
-		},
 	],
 };
