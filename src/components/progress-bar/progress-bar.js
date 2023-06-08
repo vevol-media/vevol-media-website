@@ -9,11 +9,16 @@ function ProgressBar() {
 	}, []);
 
 	const showProgressBar = () => {
-		const contentHeight = document.querySelector('.blog-content').offsetHeight;
-		const scrollTop = document.documentElement.scrollTop;
+		const content = document.querySelector('.blog-content');
 
-		const value = (scrollTop / contentHeight) * 100;
-		setScroll(value);
+		if (content) {
+			const contentHeight = content.offsetHeight;
+			const scrollTop = document.documentElement.scrollTop;
+
+			const value = (scrollTop / contentHeight) * 100;
+			setScroll(value);
+		}
+
 	};
 	return (
 		<div className={`progres-bar__container ${scroll === 0 ? 'progres-bar__line--hidden' : ''}`}>
