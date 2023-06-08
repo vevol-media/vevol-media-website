@@ -26,18 +26,22 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 	const metaDescription =
 		'Shopify Experts based in Ireland that provide bespoke eCommerce complete services. From Shopify setup to theme development. Get in touch with us today!';
 
-	const handleScroll = (event) => {
-		if (window.scrollY > 100) {
-			document.querySelector('.vm-header').classList.add('vm-header--full');
-		} else {
-			document.querySelector('.vm-header').classList.remove('vm-header--full');
-		}
-	};
-
 	config({ ssrFadeout: true });
 
 	useEffect(() => {
+		const handleScroll = (event) => {
+			if (window.scrollY > 100) {
+				document.querySelector('.vm-header').classList.add('vm-header--full');
+			} else {
+				document.querySelector('.vm-header').classList.remove('vm-header--full');
+			}
+		};
+
 		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
 	}, []);
 
 	return (
