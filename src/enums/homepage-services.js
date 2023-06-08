@@ -4,8 +4,8 @@ const homepageServices = [
 		heading: 'Shopify Services',
 		intro: "From Shopify store setup to custom themes and apps - we've got your back. We understand how Shopify works and we know how to make it work for your business!",
 		sublist: [
-			'Free Consultation',
-			'Fast Delivery',
+			'Free Audit',
+			'Quick Turnarounds',
 			'Focused on Reusability and Flexibility',
 			'Affordable MVP',
 			'Custom Solutions',
