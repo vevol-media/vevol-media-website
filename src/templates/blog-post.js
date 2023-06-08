@@ -15,6 +15,7 @@ import { BgImage } from 'gbimage-bridge';
 import SplitNav from '../components/general-components/split-nav';
 import TableOfContents from '../components/table-of-contents/table-of-contents';
 import ProgressBar from '../components/progress-bar/progress-bar';
+import ProsCons from '../components/pros-cons/pros-cons';
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -43,19 +44,28 @@ export const query = graphql`
 			content {
 				raw
 				references {
-					contentful_id
 					__typename
-					gatsbyImageData(placeholder: BLURRED, width: 1000, quality: 100)
-					title
-					description
-					file {
-						contentType
+					... on ContentfulAsset {
+						gatsbyImageData(placeholder: BLURRED, width: 1000, quality: 100)
+						title
+						description
+						contentful_id
+						file {
+							contentType
+						}
+						fixed(width: 1600) {
+							width
+							height
+							src
+							srcSet
+						}
 					}
-					fixed(width: 1600) {
-						width
-						height
-						src
-						srcSet
+					... on ContentfulProsCons {
+						contentful_id
+						prosTitle
+						pros
+						consTitle
+						cons
 					}
 				}
 			}
@@ -84,7 +94,6 @@ export default function BlogPost(props) {
 		return string.toString().replaceAll(' ', '-').replaceAll('/n', '');
 	};
 	const [isTableOfContentsHidden, setIsTableOfContentsHidden] = useState(true);
-
 	const renderOptions = {
 		renderMark: {
 			[MARKS.BOLD]: (text) => <strong>{text}</strong>,
@@ -134,21 +143,33 @@ export default function BlogPost(props) {
 					(item) => item.contentful_id === node.data.target.sys.id
 				)[0];
 
-				const featuredImage = getImage(assetItem.featuredImage.gatsbyImageData);
+				switch (assetItem.__typename) {
+					case 'ContentfulProsCons':
+						return (
+							<ProsCons
+								pros={assetItem.pros}
+								cons={assetItem.cons}
+								prosTitle={assetItem.prosTitle}
+								consTitle={assetItem.consTitle}
+							/>
+						);
+					default:
+						const featuredImage = getImage(assetItem.featuredImage.gatsbyImageData);
 
-				return (
-					<Link to={`/blog/${assetItem.slug}`} className="rte-block-entry">
-						<BgImage image={featuredImage}>
-							<div className="rte-block-entry__text">
-								<Title tag="h3" isSize={4}>
-									{assetItem.title}
-								</Title>
-								<p>{assetItem.intro.intro.substring(0, 300)}..</p>
-								<span className="vm-button vm-button--green vm-button--small">Read more</span>
-							</div>
-						</BgImage>
-					</Link>
-				);
+						return (
+							<Link to={`/blog/${assetItem.slug}`} className="rte-block-entry">
+								<BgImage image={featuredImage}>
+									<div className="rte-block-entry__text">
+										<Title tag="h3" isSize={4}>
+											{assetItem.title}
+										</Title>
+										<p>{assetItem.intro.intro.substring(0, 300)}..</p>
+										<span className="vm-button vm-button--green vm-button--small">Read more</span>
+									</div>
+								</BgImage>
+							</Link>
+						);
+				}
 			},
 			[INLINES.EMBEDDED_ENTRY]: (node) => {
 				const assetItem = content.references.filter(
