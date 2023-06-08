@@ -22,7 +22,7 @@ export const data = graphql`
 					}
 					slug
 					featuredImage {
-						gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100, layout: FULL_WIDTH)
+						gatsbyImageData(placeholder: DOMINANT_COLOR, width: 500, quality: 100, layout: FULL_WIDTH)
 					}
 				}
 				previous {

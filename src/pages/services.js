@@ -25,7 +25,7 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: TRACED_SVG, blurredOptions: { width: 20 }, height: 60, quality: 100)
+					gatsbyImageData(placeholder: DOMINANT_COLOR, blurredOptions: { width: 20 }, height: 60, quality: 100)
 				}
 			}
 		}
