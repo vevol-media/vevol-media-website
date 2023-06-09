@@ -1,6 +1,7 @@
 const redirects = require('./redirects.json');
 const path = require('path');
 const { EventEmitter } = require('events');
+
 EventEmitter.defaultMaxListeners = 15;
 
 exports.createPages = async ({ graphql, actions }) => {
