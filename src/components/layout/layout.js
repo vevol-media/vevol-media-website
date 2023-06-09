@@ -38,7 +38,7 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
-	});
+	}, []);
 
 	return (
 		<AppProvider>
@@ -70,7 +70,7 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 					<meta name="twitter:title" content={metaTitle} />
 					<meta name="twitter:description" content={metaDescription} />
 					<meta name="twitter:image" content={ogImage} />
-					
+
 					<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
 					<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>
 					<script type="application/ld+json">
