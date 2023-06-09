@@ -30,7 +30,7 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: DOMINANT_COLOR, height: 60, quality: 100)
+					gatsbyImageData(placeholder: TRACED_SVG, height: 60, quality: 100)
 				}
 			}
 		}
@@ -56,7 +56,7 @@ export const data = graphql`
 				}
 				slug
 				featuredImage {
-					gatsbyImageData(placeholder: DOMINANT_COLOR, width: 500, quality: 100, layout: FULL_WIDTH)
+					gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100, layout: FULL_WIDTH)
 				}
 			}
 		}

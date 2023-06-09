@@ -38,7 +38,7 @@ export const query = graphql`
 				file {
 					url
 				}
-				gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 100, layout: FULL_WIDTH)
+				gatsbyImageData(placeholder: TRACED_SVG, quality: 100, layout: FULL_WIDTH)
 			}
 			slug
 			content {
@@ -323,8 +323,9 @@ export default function BlogPost(props) {
 							)}
 						</div>
 						<div
-							className={`table-of-contents__progress-bar ${isTableOfContentsHidden ? 'table-of-contents__progress-bar--hidden' : ''
-								}`}
+							className={`table-of-contents__progress-bar ${
+								isTableOfContentsHidden ? 'table-of-contents__progress-bar--hidden' : ''
+							}`}
 						>
 							<ProgressBar />
 							<TableOfContents

@@ -26,6 +26,7 @@ module.exports = {
 				spaceId: `yojwlxn4kmqi`,
 				// Learn about environment variables: https://gatsby.dev/env-vars
 				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+				localesToGenerate: ['en-US'],
 			},
 		},
 		{

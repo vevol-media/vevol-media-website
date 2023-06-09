@@ -12,7 +12,7 @@ export default function TeamMembers() {
 				nodes {
 					name
 					childImageSharp {
-						gatsbyImageData(placeholder: DOMINANT_COLOR, width: 500, quality: 100)
+						gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100)
 					}
 				}
 			}
