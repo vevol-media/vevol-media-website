@@ -30,6 +30,10 @@
 
     .vm-section {
         width: 100%;
+
+        &:first-of-type {
+            padding: 0;
+        }
     }
 
     .blog-listings__popular-section {

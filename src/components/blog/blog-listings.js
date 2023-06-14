@@ -14,61 +14,59 @@ export default function BlogListings({ listings, popular }) {
 
 	return (
 		<>
-			<VevolSection backgroundColour={'white'}>
-				<Container>
-					<ul className="blog-listings-filters">
-						<li
-							className={activeFilter === 'all' ? 'active' : ''}
-							onClick={(e) => {
+			<Container>
+				<ul className="blog-listings-filters">
+					<li
+						className={activeFilter === 'all' ? 'active' : ''}
+						onClick={(e) => {
+							setActiveFilter('all');
+							setArticles(listings);
+							setPopularArticles(popular);
+						}}
+						onKeyUp={(e) => {
+							if (e.keyCode === 32) {
 								setActiveFilter('all');
 								setArticles(listings);
 								setPopularArticles(popular);
+							}
+						}}
+						role="presentation"
+					>
+						{'All'}
+					</li>
+					{filtersList.map((filter, index) => (
+						<li
+							key={index}
+							className={filter === activeFilter ? 'active' : ''}
+							onClick={(e) => {
+								setActiveFilter(filter);
+								setArticles(listings.filter((article) => article.node.type.title === filter));
+								setPopularArticles(popular.filter((article) => article.node.type.title === filter));
 							}}
 							onKeyUp={(e) => {
 								if (e.keyCode === 32) {
-									setActiveFilter('all');
-									setArticles(listings);
-									setPopularArticles(popular);
+									setActiveFilter(filter);
+									setArticles(listings.filter((article) => article.node.type.title === filter));
+									setPopularArticles(popular.filter((article) => article.node.type.title === filter));
 								}
 							}}
 							role="presentation"
 						>
-							{'All'}
+							{filter}
 						</li>
-						{filtersList.map((filter, index) => (
-							<li
-								key={index}
-								className={filter === activeFilter ? 'active' : ''}
-								onClick={(e) => {
-									setActiveFilter(filter);
-									setArticles(listings.filter((article) => article.node.type.title === filter));
-									setPopularArticles(popular.filter((article) => article.node.type.title === filter));
-								}}
-								onKeyUp={(e) => {
-									if (e.keyCode === 32) {
-										setActiveFilter(filter);
-										setArticles(listings.filter((article) => article.node.type.title === filter));
-										setPopularArticles(popular.filter((article) => article.node.type.title === filter));
-									}
-								}}
-								role="presentation"
-							>
-								{filter}
-							</li>
-						))}
-					</ul>
-				</Container>
-			</VevolSection>
+					))}
+				</ul>
+			</Container>
 			<div className="blog-listings">
 				{articles.length > 4 ? (
 					<>
-						<VevolSection backgroundColour={'white'}>
+						<VevolSection backgroundColour={'white'} className="p-0">
 							<Container>
 								<BlogListingsFeatured articles={articles.slice(0, 5)} />
 							</Container>
 						</VevolSection>
 						{popularArticles.length > 0 && <BlogListingsPopular articles={popularArticles} />}
-						<VevolSection backgroundColour={'white'}>
+						<VevolSection backgroundColour={'white'} className="p-0">
 							<Container>
 								<BlogListingsNormalDisplay articles={articles.slice(5)} />
 							</Container>
