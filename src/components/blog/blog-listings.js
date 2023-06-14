@@ -67,7 +67,7 @@ export default function BlogListings({ listings, popular }) {
 								<BlogListingsFeatured articles={articles.slice(0, 5)} />
 							</Container>
 						</VevolSection>
-						{popularArticles.length > 1 && <BlogListingsPopular articles={popularArticles} />}
+						{popularArticles.length > 0 && <BlogListingsPopular articles={popularArticles} />}
 						<VevolSection backgroundColour={'white'}>
 							<Container>
 								<BlogListingsNormalDisplay articles={articles.slice(5)} />
@@ -77,7 +77,7 @@ export default function BlogListings({ listings, popular }) {
 
 				) : (
 					<>
-						{popularArticles.length > 1 && <BlogListingsPopular articles={popularArticles} />}
+						{popularArticles.length > 0 && <BlogListingsPopular articles={popularArticles} />}
 						<VevolSection backgroundColour={'white'}>
 							<Container>
 								<BlogListingsNormalDisplay articles={articles} />
