@@ -24,6 +24,10 @@
     margin-bottom: 4em !important;
 }
 
+.mb-2em {
+    margin-bottom: 2em !important;
+}
+
 .mt-4em {
     margin-top: 4em !important;
 }
@@ -46,6 +50,19 @@
 
         .splide__pagination__page.is-active {
             background: $white;
+        }
+    }
+
+    &--background-black {
+        background-color: $black;
+        color: $white;
+
+        .splide__pagination__page.is-active {
+            background: $white;
+        }
+
+        .title {
+            color: $white;
         }
     }
 

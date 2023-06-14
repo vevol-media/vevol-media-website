@@ -101,6 +101,7 @@
         padding: 15px 0;
         position: relative;
         text-decoration: none;
+        width: max-content;
 
         &::after {
             content: "";

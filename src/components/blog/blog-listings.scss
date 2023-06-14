@@ -28,105 +28,44 @@
     gap: 40px;
     flex-wrap: wrap;
 
-    a {
-        width: calc(50% - 20px);
-        display: flex;
-        flex-direction: column;
+    .vm-section {
+        width: 100%;
+    }
 
-        .blog-listing__image {
-            height: 300px;
-            position: relative;
-            overflow: hidden;
+    .blog-listings__popular-section {
+        flex: 1;
 
-            &::before,
-            &::after {
-                transition: 0.3s ease all;
-            }
+        .blog-listings__popular-flex {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
 
-            .blog-listing__type {
-                position: absolute;
-                top: 20px;
-                left: 0;
-                background: $white;
-                color: $pink;
-                padding: 7px 15px;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-
-            .blog-listing__date {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                background: $black;
-                padding: 7px 15px;
-                color: $green;
-                font-weight: bold;
+            @include screen-large {
+                gap: 50px;
             }
         }
+    }
 
-        .blog-listing__info {
-            padding: 20px;
-            flex: 1;
-            padding: 20px;
+    .blog-listings__featured {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 2fr);
+        grid-column-gap: 80px;
+        grid-row-gap: 20px;
+        padding-bottom: 50px;
+
+        @include screen-large {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-
-            h2 {
-                color: $black;
-                text-transform: uppercase;
-            }
-
-            .blog-listing__intro {
-                color: $black;
-                margin-bottom: 20px;
-            }
-
-            .vm-button {
-                margin-top: auto;
-            }
+            padding-bottom: 0;
         }
+    }
 
-        &:nth-child(n + 3) {
-            width: calc(33% - 26.66px);
-
-            .blog-listing__image {
-                height: 200px;
-            }
-
-            .blog-listing__info {
-                .blog-listing__intro {
-                    font-size: 0.85em;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    text-overflow: -o-ellipsis-lastline;
-                    overflow: hidden;
-                }
-            }
-        }
-
-        &:hover .blog-listing__image {
-            &::before,
-            &::after {
-                filter: blur(2px);
-                transform: scale(1.1);
-            }
-        }
-
-        @include screen-general {
-            width: 100%;
-
-            &:nth-child(n + 3) {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @include screen-small {
-            &:nth-child(n + 3) {
-                width: 100%;
-            }
-        }
+    .blog-listings__normal {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-top: 50px;
     }
 }

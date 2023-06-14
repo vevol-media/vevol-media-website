@@ -38,6 +38,7 @@ export const data = graphql`
 
 export default function AuthorArticles(props) {
 	const { blogPosts } = props.data;
+	const listings = blogPosts.edges;
 	const author = props.pageContext.authorName;
 
 	return (
@@ -56,7 +57,7 @@ export default function AuthorArticles(props) {
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					{blogPosts.edges.length === 0 && <p>No blog posts yet. Watch this space!</p>}
-					{blogPosts.edges.length > 0 && <BlogListings listings={blogPosts.edges} />}
+					{blogPosts.edges.length > 0 && <BlogListings listings={listings} />}
 				</Container>
 			</VevolSection>
 		</Layout>
