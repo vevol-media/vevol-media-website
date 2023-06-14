@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Button } from 'bloomer/lib/elements/Button';
-import { Container } from 'bloomer';
 import './blog-listing.scss';
 import Label from '../label/label';
 
