@@ -116,6 +116,15 @@
             transition: transform 0.25s ease-out;
         }
 
+        &-white {
+            background-color: transparent;
+            color: $white;
+
+            &::after {
+                background-color: $white;
+            }
+        }
+
         &:hover::after {
             transform: scaleX(1);
             transform-origin: bottom left;

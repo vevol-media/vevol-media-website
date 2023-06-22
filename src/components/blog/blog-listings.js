@@ -12,6 +12,12 @@ export default function BlogListings({ listings, popular }) {
 	const [activeFilter, setActiveFilter] = useState('all');
 	const filtersList = [...new Set(listings.map((article) => article.node.type.title))].sort();
 
+	const handleFilter = (filter) => {
+		setActiveFilter(filter);
+		setArticles(listings.filter((article) => article.node.type.title === filter));
+		setPopularArticles(popular.filter((article) => article.node.type.title === filter));
+	};
+
 	return (
 		<>
 			<Container>
@@ -38,16 +44,10 @@ export default function BlogListings({ listings, popular }) {
 						<li
 							key={index}
 							className={filter === activeFilter ? 'active' : ''}
-							onClick={(e) => {
-								setActiveFilter(filter);
-								setArticles(listings.filter((article) => article.node.type.title === filter));
-								setPopularArticles(popular.filter((article) => article.node.type.title === filter));
-							}}
+							onClick={(e) => handleFilter(filter)}
 							onKeyUp={(e) => {
 								if (e.keyCode === 32) {
-									setActiveFilter(filter);
-									setArticles(listings.filter((article) => article.node.type.title === filter));
-									setPopularArticles(popular.filter((article) => article.node.type.title === filter));
+									handleFilter(filter);
 								}
 							}}
 							role="presentation"
@@ -72,7 +72,6 @@ export default function BlogListings({ listings, popular }) {
 							</Container>
 						</VevolSection>
 					</>
-
 				) : (
 					<>
 						{popularArticles.length > 0 && <BlogListingsPopular articles={popularArticles} />}
