@@ -122,6 +122,14 @@
             }
         }
 
+        &--horizontal {
+            .blog-listing__image {
+                height: 200px;
+                width: 100%;
+                flex: 1;
+            }
+        }
+
         &--vertical {
             flex-direction: column;
 
@@ -153,11 +161,6 @@
         }
 
         &--popular {
-            .blog-listing__image {
-                width: 100px;
-                height: 100px;
-            }
-
             .blog-listing__content {
                 padding: 0;
 
