@@ -37,8 +37,8 @@ export default function ServicePlans({ scrollToFeatures }) {
 	return (
 		<div className="service-plans">
 			<div className="service-plans__segments" ref={statigSegments}>
-				<p>Payment Plan:</p>
-				<div className="segments__types">
+				{/* <p>Payment Plan:</p> */}
+				{/* <div className="segments__types">
 					{['Quaterly', 'Yearly'].map((segment, index) => (
 						<span
 							key={index}
@@ -56,7 +56,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 							{segment}
 						</span>
 					))}
-				</div>
+				</div> */}
 			</div>
 			<div
 				className={`service-plans__segments service-plans__segments--fixed ${
@@ -136,10 +136,10 @@ export default function ServicePlans({ scrollToFeatures }) {
 								<span>{plan.hours}</span>
 							</div>
 							<div className="service-plan__actions">
-								<div className="plan-actions__pricing">
+								{/* <div className="plan-actions__pricing">
 									<p>€{planPrice}</p>
 									<span>(€{perHour.toFixed(2)}/hour)</span>
-								</div>
+								</div> */}
 								<AppContext.Consumer>
 									{({ handleSideDrawer }) => {
 										return (
@@ -239,9 +239,9 @@ export default function ServicePlans({ scrollToFeatures }) {
 					</div>
 				</div>
 			</div>
-			<div className="service-plans__notice">
+			{/* <div className="service-plans__notice">
 				<p>
-					Our base rate is €120 per hour. By selecting one of our service plans, you can reduce costs by up to{' '}
+					By selecting one of our service plans, you can reduce costs by up to{' '}
 					<strong>32%</strong>.
 				</p>
 				<p>
@@ -249,7 +249,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 					available upon request.
 				</p>
 				<p>All prices are exclusive of VAT.</p>
-			</div>
+			</div> */}
 		</div>
 	);
 }
