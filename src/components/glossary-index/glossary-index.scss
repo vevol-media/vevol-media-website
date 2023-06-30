@@ -1,0 +1,120 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.glossary-index {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+
+    .glossary-index__keys {
+        li {
+            margin-bottom: 1.5rem;
+            display: flex;
+
+            @include screen-mobile {
+                display: none;
+            }
+        }
+    }
+
+    .glossary-index__title {
+        padding: .35rem;
+        border: 1px solid $black;
+        border-right: 0;
+        margin: 0;
+        flex: .1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .glossary-index__list {
+        background: $white;
+        border: 1px solid $black;
+        flex: 1;
+
+        li {
+            margin: 0;
+            cursor: pointer;
+            padding: 10px 15px;
+            display: block;
+            border-bottom: 1px solid $black;
+            user-select: none;
+            transition: 0.3s ease all;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background: $grey;
+            }
+
+            &.glossary-index__feature--active {
+                background: $green;
+            }
+        }
+
+        @include screen-medium {
+            max-width: 225px;
+            font-size: 0.85em;
+        }
+
+        @include screen-small {
+            top: 80px;
+            max-width: 185px;
+        }
+
+        @include screen-mobile {
+            border: none;
+
+            li {
+                display: none;
+            }
+        }
+    }
+
+    .glossary-index__info {
+        flex: 1;
+        padding-left: 40px;
+
+        .glossary-index__info-block {
+            background: $white;
+            border: 1px solid $black;
+            box-shadow: 4px 4px 0 0 $green;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: 0.3s ease all;
+
+            p {
+                font-size: 0.85em;
+            }
+
+            &--active {
+                box-shadow: 4px 4px 0 0 $pink;
+                border-width: 2px;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        @include screen-small {
+            padding-left: 20px;
+
+            .glossary-index__info-block h2 {
+                font-size: 1.2em;
+            }
+        }
+
+        @include screen-mobile {
+            padding-left: 0;
+
+            .glossary-index__info-block {
+                border-width: 1px !important;
+                box-shadow: 4px 4px 0 0 $green !important;
+            }
+        }
+    }
+}
