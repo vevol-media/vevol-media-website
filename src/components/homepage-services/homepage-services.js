@@ -18,13 +18,7 @@ export default function HomepageServices() {
 	return (
 		<VevolSection className={'homepage-services'}>
 			<Container>
-				<HeadingBlock
-					title={'Take your store to the next level'}
-					highlightedWord={'Right'}
-					subtitle={
-						"You deserve high quality services from people who know their stuff. We know our stuff - that's a promise!"
-					}
-				/>
+				<HeadingBlock title={'Take your store to the next level'} highlightedWord={'Right'} subtitle={"You deserve high quality services from people who know their stuff. We know our stuff - that's a promise!"} />
 				<ul className="homepage-services__list">
 					{services.map((service, index) => {
 						return <ServicePanel key={index} {...service} delayTime={index * 100} />;

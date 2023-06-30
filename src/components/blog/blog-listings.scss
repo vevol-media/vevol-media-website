@@ -40,6 +40,10 @@
         flex: 1;
         margin-bottom: 50px;
 
+        .title {
+            color: $white;
+        }
+
         .blog-listings__popular-flex {
             display: flex;
             gap: 50px;
