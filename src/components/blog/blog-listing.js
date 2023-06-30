@@ -9,8 +9,8 @@ export default function BlogListing({ article, index, display, popular }) {
 	const className = `blog-listing blog-listing--${display} ${popular ? 'blog-listing--popular' : ''} ${display === 'vertical' ? `blog-listing__${index + 1}` : ''}`;
 	return (
 		<>
-			<Link to={`/blog/${article.slug}`} key={index} className={className}>
-				<div className="blog-listing__wrapper">
+			<div className={`${className}`}>
+				<Link to={`/blog/${article.slug}`} key={index} className="blog-listing__link">
 					<div className="blog-listing__image">
 						<GatsbyImage alt={`${article.type.title}`} image={article.featuredImage.gatsbyImageData} className="blog-listing__image" />
 						{display === 'vertical' && <Label text={article.type.title} colorScheme="green" />}
@@ -22,8 +22,8 @@ export default function BlogListing({ article, index, display, popular }) {
 						{!popular && <p className="blog-listing__intro">{article.intro.intro}</p>}
 						<Button className={`vm-button vm-button--small vm-button--underline ${popular && 'vm-button--underline-white'}`}>Read more</Button>
 					</div>
-				</div>
-			</Link>
+				</Link>
+			</div>
 		</>
 	);
 }
