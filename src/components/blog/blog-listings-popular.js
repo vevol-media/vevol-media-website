@@ -10,7 +10,7 @@ export default function BlogListingsPopular({ articles }) {
 				<h2 className="title is-3 mb-2em">MOST POPULAR POSTS</h2>
 				<div className="blog-listings__popular-flex">
 					{articles.map((article, index) => (
-						<BlogListing article={article.node} display="horizontal" index={index} popular="true" />
+						<BlogListing key={index} article={article.node} display="horizontal" index={index} popular="true" />
 					))}
 				</div>
 			</Container>

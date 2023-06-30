@@ -54,15 +54,22 @@
     .blog-listings__featured {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(7, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 40px;
+        grid-column-gap: 30px;
         grid-row-gap: 20px;
 
         @include screen-large {
             display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        @include screen-small {
+            display: flex;
             flex-direction: column;
             padding-bottom: 0;
+            gap: 20px;
         }
     }
 

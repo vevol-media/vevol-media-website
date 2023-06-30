@@ -29,6 +29,7 @@
 
     &--vertical {
         flex-direction: column;
+        padding: 20px 0 0 0;
 
         .blog-listing__image {
             position: relative;
@@ -36,7 +37,6 @@
             flex: initial;
 
             img {
-                height: 200px;
                 overflow: hidden;
                 width: 100%;
             }
@@ -51,37 +51,41 @@
 
         .blog-listing__content {
             flex: inherit;
+            padding: 20px 0 0 0;
             width: 100%;
         }
 
         &.blog-listing__1 {
-            grid-area: 1 / 1 / 2 / 2;
+            grid-area: 1 / 1 / 2 / 3;
         }
 
         &.blog-listing__2 {
-            grid-area: 1 / 2 / 3 / 4;
-            padding: 0 0 30% 0;
-
-            .blog-listing__image {
-                padding: 0;
-                height: 100%;
-
-                img {
-                    height: 100%;
-                }
-            }
+            grid-area: 2 / 1 / 3 / 3;
         }
 
         &.blog-listing__3 {
-            grid-area: 1 / 4 / 2 / 5;
+            grid-area: 1 / 3 / 3 / 6;
+
+            .blog-listing__wrapper {
+                position: sticky;
+                top: 130px;
+            }
         }
 
         &.blog-listing__4 {
-            grid-area: 2 / 1 / 3 / 2;
+            grid-area: 1 / 6 / 2 / 8;
         }
 
         &.blog-listing__5 {
-            grid-area: 2 / 4 / 3 / 5;
+            grid-area: 2 / 6 / 3 / 8;
+        }
+    }
+
+    &--horizontal {
+        .blog-listing__wrapper {
+            display: flex;
+            gap: 20px;
+            width: 100%;
         }
     }
 
@@ -111,10 +115,9 @@
     }
 
     @include screen-large {
-        flex-direction: column;
-
-        &--popular {
+        &--popular .blog-listing__wrapper {
             gap: 40px;
+            flex-direction: column;
 
             .blog-listing__image {
                 width: 100%;
@@ -122,56 +125,69 @@
             }
         }
 
-        &--horizontal {
+        &--horizontal .blog-listing__wrapper {
+            flex-direction: column;
             .blog-listing__image {
-                height: 200px;
                 width: 100%;
                 flex: 1;
             }
         }
 
         &--vertical {
-            flex-direction: column;
-
-            .blog-listing__image {
-                height: 200px;
-                width: 100%;
-                flex: 1;
+            &.blog-listing__1,
+            &.blog-listing__2,
+            &.blog-listing__4,
+            &.blog-listing__5 {
+                width: calc(50% - 15px);
             }
 
-            &.blog-listing__2 {
-                padding: 0;
+            &.blog-listing__3 {
+                width: 100%;
 
-                .blog-listing__image {
-                    height: 200px;
+                .blog-listing__wrapper {
+                    position: inherit;
+                    top: inherit;
                 }
             }
+        }
+    }
 
-            .blog-listing__content {
-                padding: 20px 0 0 0;
+    @include screen-small {
+        &--vertical {
+            &.blog-listing__1,
+            &.blog-listing__2,
+            &.blog-listing__4,
+            &.blog-listing__5 {
+                width: 100%;
             }
         }
     }
 
     @include screen-mobile {
         &--vertical {
-            .blog-listing__image {
-                height: auto;
+            padding: 0;
+
+            .blog-listing__content {
+                padding: 20px 0 20px 0;
             }
         }
 
         &--popular {
-            .blog-listing__content {
-                padding: 0;
+            .blog-listing__wrapper {
+                gap: 20px;
 
-                .label__box {
-                    .title {
-                        font-size: 0.8rem;
+                .blog-listing__content {
+                    padding: 0;
+
+                    .label__box {
+                        .title {
+                            font-size: 0.8rem;
+                        }
                     }
-                }
 
-                .title {
-                    font-size: 0.9rem;
+                    .title {
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }

@@ -5,7 +5,7 @@ export default function BlogListingsFeatured({ articles }) {
 	return (
 		<div className="blog-listings__featured">
 			{articles.map((article, index) => (
-				<BlogListing article={article.node} display="vertical" index={index} />
+				<BlogListing key={index} article={article.node} display="vertical" index={index} />
 			))}
 		</div>
 	);
