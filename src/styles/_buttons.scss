@@ -95,4 +95,39 @@
     &.vm-button--small {
         font-size: 0.85em;
     }
+
+    &.vm-button--underline {
+        border: none;
+        padding: 15px 0;
+        position: relative;
+        text-decoration: none;
+        width: max-content;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $black;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        &-white {
+            background-color: transparent;
+            color: $white;
+
+            &::after {
+                background-color: $white;
+            }
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
 }

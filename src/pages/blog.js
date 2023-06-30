@@ -22,8 +22,9 @@ export const data = graphql`
 					}
 					slug
 					featuredImage {
-						gatsbyImageData(placeholder: TRACED_SVG, width: 500, quality: 100, layout: FULL_WIDTH)
+						gatsbyImageData(placeholder: DOMINANT_COLOR, width: 500, quality: 100, layout: FULL_WIDTH)
 					}
+					popularArticle
 				}
 				previous {
 					slug
@@ -38,25 +39,23 @@ export const data = graphql`
 
 export default function Page({ data }) {
 	const { blogPosts } = data;
+	const first3PopularArticles = blogPosts.edges.filter((post) => post.node.popularArticle === true).slice(0, 3);
+	const otherArticles = blogPosts.edges.filter((post) => !first3PopularArticles.includes(post));
 
 	return (
 		<Layout>
 			<Helmet>
 				<title>Read More in the Vevol Media Blog</title>
-				<meta
-					name="description"
-					content="Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community."
-				/>
+				<meta name="description" content="Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community." />
 			</Helmet>
-			<SlimHero
-				heading="The Vevol Media Blog"
-				subheading="Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community."
-			/>
+			<SlimHero heading="The Vevol Media Blog" subheading="Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community." />
 			<VevolSection backgroundColour={'white'}>
-				<Container>
-					{blogPosts.edges.length === 0 && <p>No blog posts yet. Watch this space!</p>}
-					{blogPosts.edges.length > 0 && <BlogListings listings={blogPosts.edges} />}
-				</Container>
+				{blogPosts.edges.length === 0 && (
+					<Container>
+						<p>No blog posts yet. Watch this space!</p>
+					</Container>
+				)}
+				{blogPosts.edges.length > 0 && <BlogListings listings={otherArticles} popular={first3PopularArticles} />}
 			</VevolSection>
 		</Layout>
 	);

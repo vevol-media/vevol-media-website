@@ -82,7 +82,6 @@ export default function WebsiteFooter() {
 							Latest
 						</Title>
 						<Link to="/blog">Read Blog</Link>
-						<Link to="/partners">Trusted Partners</Link>
 					</Column>
 				</Columns>
 			</Container>

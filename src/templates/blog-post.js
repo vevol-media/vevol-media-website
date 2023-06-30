@@ -38,7 +38,7 @@ export const query = graphql`
 				file {
 					url
 				}
-				gatsbyImageData(placeholder: TRACED_SVG, quality: 100, layout: FULL_WIDTH)
+				gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 100, layout: FULL_WIDTH)
 			}
 			slug
 			content {
@@ -126,9 +126,7 @@ export default function BlogPost(props) {
 				</Title>
 			),
 			[BLOCKS.EMBEDDED_ASSET]: (node) => {
-				const assetItem = content.references.filter(
-					(item) => item.contentful_id === node.data.target.sys.id
-				)[0];
+				const assetItem = content.references.filter((item) => item.contentful_id === node.data.target.sys.id)[0];
 
 				if (assetItem.file.contentType === 'image/gif') {
 					return <img className="rte-image" src={assetItem.fixed.src} alt={assetItem.title} />;
@@ -139,20 +137,11 @@ export default function BlogPost(props) {
 				}
 			},
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
-				const assetItem = content.references.filter(
-					(item) => item.contentful_id === node.data.target.sys.id
-				)[0];
+				const assetItem = content.references.filter((item) => item.contentful_id === node.data.target.sys.id)[0];
 
 				switch (assetItem.__typename) {
 					case 'ContentfulProsCons':
-						return (
-							<ProsCons
-								pros={assetItem.pros}
-								cons={assetItem.cons}
-								prosTitle={assetItem.prosTitle}
-								consTitle={assetItem.consTitle}
-							/>
-						);
+						return <ProsCons pros={assetItem.pros} cons={assetItem.cons} prosTitle={assetItem.prosTitle} consTitle={assetItem.consTitle} />;
 					default:
 						const featuredImage = getImage(assetItem.featuredImage.gatsbyImageData);
 
@@ -172,9 +161,7 @@ export default function BlogPost(props) {
 				}
 			},
 			[INLINES.EMBEDDED_ENTRY]: (node) => {
-				const assetItem = content.references.filter(
-					(item) => item.contentful_id === node.data.target.sys.id
-				)[0];
+				const assetItem = content.references.filter((item) => item.contentful_id === node.data.target.sys.id)[0];
 
 				return <a href={`/blog/${assetItem.slug}`}>{title}</a>;
 			},
@@ -184,15 +171,7 @@ export default function BlogPost(props) {
 				if (isYoutubeVideo) {
 					return (
 						<span className="rte-youtube">
-							<iframe
-								width="560"
-								height="315"
-								src={node.data.uri}
-								title="YouTube video player"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							></iframe>
+							<iframe width="560" height="315" src={node.data.uri} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 						</span>
 					);
 				} else {
@@ -216,17 +195,11 @@ export default function BlogPost(props) {
 			<Layout headerBg={'white'} headerIsStatic>
 				<Helmet>
 					<title>{title} - Vevol Media</title>
-					<meta
-						name="description"
-						content={metaDescription ? metaDescription.metaDescription : intro.intro}
-					/>
+					<meta name="description" content={metaDescription ? metaDescription.metaDescription : intro.intro} />
 					<meta property="og:url" content={`https://www.vevolmedia.com/blog/${slug}`} />
 					<meta property="og:type" content="website" />
 					<meta property="og:title" content={title} />
-					<meta
-						property="og:description"
-						content={metaDescription ? metaDescription.metaDescription : intro.intro}
-					/>
+					<meta property="og:description" content={metaDescription ? metaDescription.metaDescription : intro.intro} />
 					<meta property="og:image" content={featuredImage.file.url} />
 
 					<meta name="twitter:card" content="summary_large_image" />
@@ -298,15 +271,7 @@ export default function BlogPost(props) {
 					`}
 					</script>
 				</Helmet>
-				<BlogIntro
-					title={title}
-					image={featuredImageData}
-					author={author}
-					date={publishedDate}
-					intro={intro.intro}
-					readingTime={readingTime}
-					type={type.title}
-				/>
+				<BlogIntro title={title} image={featuredImageData} author={author} date={publishedDate} intro={intro.intro} readingTime={readingTime} type={type.title} />
 				<VevolSection backgroundColour={'white'}>
 					<Container className="blog-content">
 						<div className="blog-content__container">
@@ -318,15 +283,9 @@ export default function BlogPost(props) {
 								<span>{title}</span>
 							</div>
 							<>{blogContent}</>
-							{title === 'The Complete Shopify Checklist for an easy Shopify Store setup' && (
-								<div class="klaviyo-form-YAaFdq"></div>
-							)}
+							{title === 'The Complete Shopify Checklist for an easy Shopify Store setup' && <div className="klaviyo-form-YAaFdq"></div>}
 						</div>
-						<div
-							className={`table-of-contents__progress-bar ${
-								isTableOfContentsHidden ? 'table-of-contents__progress-bar--hidden' : ''
-							}`}
-						>
+						<div className={`table-of-contents__progress-bar ${isTableOfContentsHidden ? 'table-of-contents__progress-bar--hidden' : ''}`}>
 							<ProgressBar />
 							<TableOfContents
 								isTableOfContentsHidden={setIsTableOfContentsHidden}

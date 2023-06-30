@@ -1,0 +1,32 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.label__box {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    color: $black;
+    text-transform: uppercase;
+    width: max-content;
+
+    &--black {
+        box-shadow: 5px 5px 0 0 $black;
+        border: 1px solid $black;
+        color: $black;
+        background-color: $white;
+    }
+
+    &--green {
+        box-shadow: 5px 5px 0 0 $green;
+        border: 1px solid $black;
+        color: $black;
+        background-color: $white;
+    }
+
+    &--white {
+        box-shadow: 5px 5px 0 0 $green;
+        border: 1px solid $white;
+        color: $black;
+    }
+}
