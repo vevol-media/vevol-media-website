@@ -12,9 +12,6 @@ export default function BlogListings({ listings, popular }) {
 	const [activeFilter, setActiveFilter] = useState('all');
 	const filtersList = [...new Set(listings.map((article) => article.node.type.title))].sort();
 
-	for (let i = 0; i < listings.length; i++) {
-		console.log(listings[i].node.publishedDate);
-	}
 	const handleFilter = (filter) => {
 		setActiveFilter(filter);
 		setArticles(listings.filter((article) => article.node.type.title === filter));
