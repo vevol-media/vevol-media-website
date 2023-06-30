@@ -1,69 +1,87 @@
 import React, { useState } from 'react';
-import { BgImage } from 'gbimage-bridge';
-import { Title } from 'bloomer/lib/elements/Title';
-import { Link } from 'gatsby';
 import './blog-listings.scss';
+import BlogListingsFeatured from './blog-listings-featured';
+import BlogListingsPopular from './blog-listings-popular';
+import BlogListingsNormalDisplay from './blog-listings-normal-display';
+import { Container } from 'bloomer';
+import VevolSection from '../general-components/vm-section';
 
-export default function BlogListings({ listings }) {
+export default function BlogListings({ listings, popular }) {
 	const [articles, setArticles] = useState(listings);
+	const [popularArticles, setPopularArticles] = useState(popular || []);
 	const [activeFilter, setActiveFilter] = useState('all');
 	const filtersList = [...new Set(listings.map((article) => article.node.type.title))].sort();
+
+	const handleFilter = (filter) => {
+		setActiveFilter(filter);
+		setArticles(listings.filter((article) => article.node.type.title === filter));
+		setPopularArticles(popular.filter((article) => article.node.type.title === filter));
+	};
+
 	return (
 		<>
-			<ul className="blog-listings-filters">
-				<li
-					className={activeFilter === 'all' ? 'active' : ''}
-					onClick={(e) => {
-						setActiveFilter('all');
-						setArticles(listings);
-					}}
-					onKeyUp={(e) => {
-						if (e.keyCode === 32) {
+			<Container>
+				<ul className="blog-listings-filters">
+					<li
+						className={activeFilter === 'all' ? 'active' : ''}
+						onClick={(e) => {
 							setActiveFilter('all');
 							setArticles(listings);
-						}
-					}}
-					role="presentation"
-				>
-					{'All'}
-				</li>
-				{filtersList.map((filter, index) => (
-					<li
-						key={index}
-						className={filter === activeFilter ? 'active' : ''}
-						onClick={(e) => {
-							setActiveFilter(filter);
-							setArticles(listings.filter((article) => article.node.type.title === filter));
+							setPopularArticles(popular);
 						}}
 						onKeyUp={(e) => {
 							if (e.keyCode === 32) {
-								setActiveFilter(filter);
-								setArticles(listings.filter((article) => article.node.type.title === filter));
+								setActiveFilter('all');
+								setArticles(listings);
+								setPopularArticles(popular);
 							}
 						}}
 						role="presentation"
 					>
-						{filter}
+						{'All'}
 					</li>
-				))}
-			</ul>
+					{filtersList.map((filter, index) => (
+						<li
+							key={index}
+							className={filter === activeFilter ? 'active' : ''}
+							onClick={(e) => handleFilter(filter)}
+							onKeyUp={(e) => {
+								if (e.keyCode === 32) {
+									handleFilter(filter);
+								}
+							}}
+							role="presentation"
+						>
+							{filter}
+						</li>
+					))}
+				</ul>
+			</Container>
 			<div className="blog-listings">
-				{articles.map((article, index) => (
-					<Link to={`/blog/${article.node.slug}`} key={index}>
-						<BgImage image={article.node.featuredImage.gatsbyImageData} className="blog-listing__image">
-							<p className="blog-listing__type">{article.node.type.title}</p>
-							<p className="blog-listing__date">{article.node.publishedDate}</p>
-						</BgImage>
-
-						<div className="blog-listing__info">
-							<Title tag="h2" isSize={5}>
-								{article.node.title}
-							</Title>
-							<p className="blog-listing__intro">{article.node.intro.intro}</p>
-							<span className="vm-button vm-button--black-transparent vm-button--small">Read More</span>
-						</div>
-					</Link>
-				))}
+				{articles.length > 4 ? (
+					<>
+						<VevolSection backgroundColour={'white'} className="p-0">
+							<Container>
+								<BlogListingsFeatured articles={articles.slice(0, 5)} />
+							</Container>
+						</VevolSection>
+						{popularArticles.length > 0 && <BlogListingsPopular articles={popularArticles} />}
+						<VevolSection backgroundColour={'white'} className="p-0">
+							<Container>
+								<BlogListingsNormalDisplay articles={articles.slice(5)} />
+							</Container>
+						</VevolSection>
+					</>
+				) : (
+					<>
+						{popularArticles.length > 0 && <BlogListingsPopular articles={popularArticles} />}
+						<VevolSection backgroundColour={'white'}>
+							<Container>
+								<BlogListingsNormalDisplay articles={articles} />
+							</Container>
+						</VevolSection>
+					</>
+				)}
 			</div>
 		</>
 	);

@@ -3,11 +3,12 @@ import React from 'react';
 import SlimHero from '../components/slim-hero/slim-hero';
 import { Container } from 'bloomer';
 import VevolSection from '../components/general-components/vm-section';
-import BottomCTA from '../components/bottom-cta/bottom-cta';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import PartnersSection from '../components/partners-section/partners-section';
+import partnersList from '../enums/partners';
 
 export const data = graphql`
 	query {
@@ -16,24 +17,21 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
 		}
-		imageTwoQuery: file(name: { eq: "partnership" }) {
-			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
-			}
-		}
-		bottomBannerImageQuery: file(name: { eq: "bottom-banner" }) {
-			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
+		partnersQuery: allFile(filter: { relativeDirectory: { eq: "partners-network" } }) {
+			nodes {
+				name
+				childImageSharp {
+					gatsbyImageData(placeholder: DOMINANT_COLOR, height: 60, quality: 100)
+				}
 			}
 		}
 	}
 `;
 
 export default function StrategicPartnershipsPage({ data }) {
-	const { imageOneQuery, imageTwoQuery, bottomBannerImageQuery } = data;
+	const { imageOneQuery, partnersQuery } = data;
 	const imageOne = getImage(imageOneQuery);
-	const imageTwo = getImage(imageTwoQuery);
-	const bottomBannerImage = getImage(bottomBannerImageQuery);
+	const partnersLogos = partnersQuery.nodes;
 
 	return (
 		<Layout>
@@ -56,46 +54,23 @@ export default function StrategicPartnershipsPage({ data }) {
 						title={'Always Looking To Connect'}
 						textContent={[
 							<p className="mt-5">
-								Here at Vevol Media, we are willing to do whatever it takes to deliver the best possible
-								services for our customers.
+								Here at Vevol Media, we are willing to do whatever it takes to deliver the best possible services for our customers.
 							</p>,
 							<p className="mt-5">
-								Our Strategic Partnerships Program has this ideal in mind, as we are open to
-								collaboration with other service providers if it is in the best interest of your
-								project.
+								Our Strategic Partnerships Program has this ideal in mind, as we are open to collaboration with other service providers if it is in the best interest of your project.
 							</p>,
-							<Link to="/partners" className="mt-5 vm-button vm-button--black">
-								See Our Trusted Partners
-							</Link>,
+							<p className="mt-5">
+								Our priority is helping our clients achieve their goals. We believe in the power of many. If your company is better suited for our client's requirements, we will happily recommend you!
+							</p>,
 						]}
 					/>
 				</Container>
 			</VevolSection>
-			<BottomCTA
-				bgImage={bottomBannerImage}
-				title="Let's Work Together"
-				text="Reach out to us and let's talk about getting all customers the best services they deserve."
-				url="/contact"
-				ctaText={'Get in touch'}
-				gradientColour="black"
-			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
-					<ImageWithText
-						image={<GatsbyImage image={imageTwo} alt={'Strategic partnerships at Vevol Media'} />}
-						title={'Partner Up With Us'}
-						textContent={[
-							<p className="mt-5">
-								Our Strategic Partnerships Program has this ideal in mind, as we are open to
-								collaboration with other service providers if it is in the best interest of your
-								project.
-							</p>,
-							<p className="mt-5">
-								Our priority is helping our clients achieve their goals. We believe in the power of
-								many. If your company is better suited for our client's requirements, we will happily
-								recommend you.
-							</p>,
-						]}
+					<PartnersSection
+						logos={partnersLogos}
+						partnersList={partnersList.sort((a, b) => a.name.localeCompare(b.name))}
 					/>
 				</Container>
 			</VevolSection>
