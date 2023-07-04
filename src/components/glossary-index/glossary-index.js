@@ -2,24 +2,24 @@ import React, { useState, useRef } from 'react';
 import { Title } from 'bloomer/lib/elements/Title';
 import glossaryIndex from '../../enums/glossary-index';
 import './glossary-index.scss';
-import { Link } from 'gatsby';
+import { debounce } from 'lodash';
 
 export default function GlossaryIndex({ glossaryIndexRef }) {
 	const [activeItem, setActiveItem] = useState(0);
 	const blocksRef = useRef();
 
-	const scrollToFeature = (keyIndex) => {
+	const debouncedScrollToFeature = debounce((keyIndex) => {
 		if (blocksRef.current.children[keyIndex]) {
-			blocksRef.current.children[keyIndex].scrollIntoView({
-				behavior: 'smooth',
-				block: 'center',
-			});
+		  blocksRef.current.children[keyIndex].scrollIntoView({
+			behavior: 'smooth',
+			block: 'center',
+		  });
 		}
-	};
+	}, 350);
 
 	const handleFeatureClick = (keyIndex) => {
 		setActiveItem(keyIndex);
-		scrollToFeature(keyIndex);
+		debouncedScrollToFeature(keyIndex);
 	};
 
 	return (
@@ -79,7 +79,7 @@ export default function GlossaryIndex({ glossaryIndexRef }) {
 												<React.Fragment key={index}>
 													{part}
 													{index !== array.length - 1 && (
-														<Link to={item.link.url}>{item.link.name}</Link>
+														<a href={item.link.url}>{item.link.name}</a>
 													)}
 												</React.Fragment>
 											))}

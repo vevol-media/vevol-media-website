@@ -8,17 +8,23 @@
 
     .glossary-index__keys {
         position: sticky;
-        top: 120px;
-        
-        height: calc(100vh - 140px);
-        overflow-y: auto;
-        -webkit-scroll-snap-type: y mandatory;
-        -ms-scroll-snap-type: y mandatory;
-        scroll-snap-type: y mandatory;
 
-        > li {
-            scroll-snap-align: start;
+        top: 120px;
+        height: calc(100vh - 140px);
+
+        @include screen-small {
+            top: 80px;
+            height: calc(100vh - 100px);
         }
+
+        overflow-y: auto;
+        // -webkit-scroll-snap-type: y mandatory;
+        // -ms-scroll-snap-type: y mandatory;
+        // scroll-snap-type: y mandatory;
+
+        // > li {
+        //     scroll-snap-align: start;
+        // }
 
         padding-right: 8px;
 
