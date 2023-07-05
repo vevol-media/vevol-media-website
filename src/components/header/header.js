@@ -11,8 +11,11 @@ export default function Header({ background, isStatic }) {
 	const [isNavVisible, setIsNavVisible] = useState(false);
 
 	return (
-		<div id="header"
-			className={`vm-header vm-header--${background ? 'white' : 'black'} vm-header--${isStatic ? 'relative' : ''}`}
+		<div
+			id="header"
+			className={`vm-header vm-header--${background ? 'white' : 'black'} vm-header--${
+				isStatic ? 'relative' : ''
+			}`}
 		>
 			<Container>
 				<Link to="/" className="vm-header__logo">
@@ -63,6 +66,7 @@ export default function Header({ background, isStatic }) {
 					<Link to="/services">Services</Link>
 					<Link to="/service-plans">Service Plans</Link>
 					<Link to="/work">Our Work</Link>
+					<Link to="/learn">Learn</Link>
 					<Link to="/about">About Us</Link>
 					<Link to="/contact">Contact Us</Link>
 					<Link to="/blog">Blog</Link>

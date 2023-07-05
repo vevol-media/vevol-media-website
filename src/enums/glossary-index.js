@@ -180,6 +180,14 @@ const glossaryIndex = {
 			title: 'Customer Support',
 			info: 'Services and resources provided to customers to assist them with inquiries, issues, or concerns related to a product or service.',
 		},
+		{
+			title: 'Customs Duties',
+			info: 'Customs duties are taxes or fees imposed on goods imported into a country. The amount is usually based on factors such as the value of the goods and the country of origin.',
+		},
+		{
+			title: 'Customer Retention',
+			info: 'The strategies and activities employed to keep existing customers engaged and loyal to your brand.',
+		},
 	],
 	D: [
 		{
@@ -192,7 +200,19 @@ const glossaryIndex = {
 		},
 		{
 			title: 'Dropshipping',
-			info: 'A fulfilment method where a retailer does not keep products in stock but instead transfers customer orders and shipment details to a third party supplier who directly ships the products to the customer.',
+			info: 'A fulfilment method where a retailer does not keep products in stock but instead transfers customer orders and shipment details to a third-party supplier who directly ships the products to the customer.',
+		},
+		{
+			title: 'Dynamic Pricing',
+			info: 'Dynamic pricing is a pricing strategy that involves adjusting product prices in real-time based on various factors, such as demand, competition, and customer segments.',
+		},
+		{
+			title: 'Drop-off Rate',
+			info: 'The percentage of users who leave a website or abandon a process, such as checkout, without completing the desired action.',
+		},
+		{
+			title: 'Digital Wallet',
+			info: 'A secure online application or service that allows users to store payment information and make transactions.',
 		},
 	],
 	E: [
@@ -208,274 +228,415 @@ const glossaryIndex = {
 				url: 'https://www.klaviyo.com/',
 			},
 		},
+		{
+			title: 'ERP (Enterprise Resource Planning)',
+			info: 'An integrated software system that combines various business functions, such as accounting, inventory management, and customer relationship management (CRM), into a unified platform.',
+		},
+		{
+			title: 'Exit Intent Popup',
+			info: 'An overlay or popup that appears when a user is about to leave a website, typically used to capture their attention, prevent them from leaving, and encourage them to take a specific action.',
+		},
+		{
+			title: 'Expanding Collection',
+			info: 'An expanding collection is a feature in Shopify that allows you to showcase a large number of products within a single collection, with the option to load more products as the user scrolls down.',
+		},
 	],
 	F: [
 		{
-			title: 'Front-End Developer',
-			info: 'A person who utilises HTML, CSS, and Javascript to transform designs into practical and user-friendly web experiences.',
+			title: 'Favicon',
+			info: 'A small icon that represents a website or brand and appears in the browser tab or bookmark bar.',
 		},
 		{
-			title: 'Fulfilment',
-			info: 'The process of preparing, packaging, and shipping orders to customers.',
+			title: 'Fulfillment',
+			info: 'The process of receiving, packaging, and delivering orders to customers.',
+		},
+		{
+			title: 'Fulfillment Center',
+			info: 'A dedicated facility or warehouse where products are stored, processed, and shipped to customers.',
+		},
+		{
+			title: 'Fulfillment by Amazon (FBA)',
+			info: 'A service provided by Amazon where sellers can store their products in Amazon fulfillment centers. Amazon then handles the packaging, shipping, and customer service on behalf of the seller.',
+		},
+		{
+			title: 'Fulfillment Center',
+			info: 'A warehouse or distribution center where products are stored, processed, and shipped to customers.',
 		},
 	],
 	G: [
 		{
 			title: 'Gateway',
-			info: 'A payment gateway is a service that securely authorises and processes online payments made by customers.',
+			info: 'A payment gateway is a service that authorizes credit card payments and processes transactions securely between the customer and the merchant.',
+		},
+		{
+			title: 'Google Analytics',
+			info: 'A web analytics tool by Google that provides detailed statistics about website traffic, user behavior, and conversion rates.',
+		},
+		{
+			title: 'Google Shopping',
+			info: 'Google Shopping is a platform where retailers can list and advertise their products, making them visible to users searching for related items on Google.',
+		},
+		{
+			title: 'Gross Merchandise Value (GMV)',
+			info: 'The total value of all products sold through an eCommerce platform within a specific time frame, excluding discounts and returns.',
 		},
 	],
 	H: [
 		{
-			title: 'Handle',
-			info: 'This is a useful identifier for creating shortened URLs.',
+			title: 'Heatmap',
+			info: 'A visual representation of data where values are depicted using different colors, often used to show user engagement and interaction patterns on a website or webpage.',
 		},
 		{
-			title: 'Home Page',
-			info: 'Frequently the initial page visitors see on a website. It serves as a reflection of your business, playing a crucial role in establishing or strengthening your brand and fostering trust among your audience, ultimately leading to conversions.',
-		},
-		{
-			title: 'HTML (Hypertext Markup Language)',
-			info: 'HTML, short for Hypertext Markup Language, is the code that builds web pages. It uses tags to define content and page layout, including hyperlinks.',
+			title: 'Hosting',
+			info: 'The service of providing server space and resources for websites to be accessible on the internet.',
 		},
 	],
 	I: [
 		{
 			title: 'Inventory Management',
-			info: 'The process of overseeing and controlling the flow of products from suppliers to warehouses, and ultimately to customers, to ensure optimal stock levels and minimise stockouts.',
+			info: 'The process of overseeing and controlling the stock levels, storage, and availability of products in a retail or eCommerce business.',
+		},
+		{
+			title: 'Influencer Marketing',
+			info: 'A marketing strategy that involves collaborating with influential individuals or personalities, typically on social media platforms, to promote products or brands to their audience.',
+		},
+		{
+			title: 'Invoice',
+			info: 'A document sent to customers detailing the products or services purchased, including the quantity, price, and payment terms.',
+		},
+		{
+			title: 'Inventory Turnover',
+			info: 'A measure of how quickly a company sells its inventory within a specific period, indicating its efficiency in managing inventory levels.',
 		},
 	],
 	J: [
 		{
 			title: 'JavaScript',
-			info: 'JavaScript is a programming language interpreted by web browsers, enabling manipulation of the browser window. It facilitates various effects like modal windows and dropdown menus, as well as advanced operations like making server requests without page refresh.',
+			info: 'A programming language commonly used to create interactive and dynamic elements on websites, such as forms, animations, and user interface components.',
 		},
 	],
 	K: [
 		{
-			title: 'Keyword',
-			info: 'A specific word or phrase that summarises the main theme or topic of a piece of content, used to optimise search engine rankings and attract relevant traffic.',
+			title: 'Keywords',
+			info: 'Words or phrases that represent the main topics or themes of a webpage or content and are used by search engines to match relevant queries.',
 		},
 		{
 			title: 'KPI (Key Performance Indicator)',
-			info: 'KPI stands for Key Performance Indicator, a measurable value used to evaluate success in meeting specific goals. In eCommerce, KPIs could include monthly online sales targets or website visitor numbers.',
+			info: 'A measurable value that demonstrates how effectively a business or individual is achieving key objectives or goals.',
 		},
 	],
 	L: [
 		{
 			title: 'Landing Page',
-			info: 'A web page designed specifically to receive traffic from a marketing or advertising campaign, with the goal of capturing leads or driving conversions.',
+			info: 'A standalone web page created specifically for a marketing or advertising campaign, with the goal of capturing visitor information or driving them towards a specific action.',
 		},
 		{
 			title: 'Lead',
-			info: 'A lead refers to a potential customer who has shown interest in a product or service. In online or eCommerce settings, leads are often obtained through mailing list signup forms.',
+			info: 'A potential customer who has shown interest in a product or service and provided their contact information, typically through a form or subscription.',
 		},
 		{
-			title: 'Logistics',
-			info: 'The management of the movement, storage, and flow of products from point of origin to point of consumption, including transportation, warehousing, and inventory management.',
+			title: 'Lead Generation',
+			info: 'The process of attracting and capturing potential customers, known as leads, and converting them into prospects or sales opportunities.',
+		},
+		{
+			title: 'Lifetime Value (LTV)',
+			info: 'Lifetime value (LTV) is the predicted revenue that a customer will generate throughout their entire relationship with a business.',
+		},
+		{
+			title: 'Live Chat',
+			info: 'A real-time messaging feature that allows customers to communicate with support representatives or sales agents directly on a website.',
 		},
 	],
 	M: [
 		{
 			title: 'Marketplace',
-			info: 'An online platform where multiple sellers can list and sell their products or services, often providing a centralised shopping experience for consumers.',
+			info: 'An online platform or website where multiple sellers can list and sell their products or services to a larger customer base.',
 		},
 		{
-			title: 'Multichannel Selling',
-			info: 'The strategy of selling products or services through multiple online and offline channels, such as an online store, social media platforms, marketplaces, and physical retail locations.',
+			title: 'Merchant',
+			info: 'A person or business that sells products or services to customers.',
+		},
+		{
+			title: 'Mobile Commerce (mCommerce)',
+			info: 'The buying and selling of goods and services through mobile devices, such as smartphones and tablets.',
+		},
+		{
+			title: 'Multi-Channel',
+			info: 'The practice of selling products or services through multiple online and offline channels, such as a website, social media, marketplaces, and physical stores.',
+		},
+		{
+			title: 'Multilingual',
+			info: 'The ability of a website or platform to support multiple languages, allowing users from different regions or language backgrounds to access and navigate the content.',
+		},
+		{
+			title: 'Mobile Commerce',
+			info: 'The process of conducting commercial transactions through mobile devices, such as smartphones and tablets.',
+		},
+	],
+	N: [
+		{
+			title: 'Navigation',
+			info: 'The menu or system that allows users to navigate and browse different sections and pages of a website.',
+		},
+		{
+			title: 'Niche',
+			info: 'A specialized segment or market within a larger industry, focusing on specific products, services, or customer demographics.',
+		},
+		{
+			title: 'Notifications',
+			info: 'Messages or alerts that inform users about important updates, events, or actions related to their interactions with a website or application.',
 		},
 	],
 	O: [
 		{
 			title: 'Omnichannel',
-			info: 'A seamless and integrated approach to customer experience across multiple channels and touchpoints, providing a consistent and cohesive brand experience.',
-		},
-		{
-			title: 'Online Store Builder',
-			info: 'An online store builder is a web-based application that enables you to create and manage your own eCommerce store where you can list and sell products. [LINK] is a well-known example of an online store builder.',
-			link: {
-				name: 'Shopify',
-				url: 'https://www.shopify.com/',
-			},
+			info: 'An approach to sales and marketing that provides a seamless and integrated customer experience across multiple channels, both online and offline.',
 		},
 		{
 			title: 'Order Management System (OMS)',
-			info: 'A software application that facilitates and automates the management of orders, including order processing, inventory management, and fulfilment.',
+			info: 'A software or platform that helps businesses manage and track customer orders, inventory levels, and order fulfilment processes.',
 		},
 		{
-			title: 'Organic Traffic',
-			info: 'Organic traffic is the term used to describe website visits that come from unpaid search results, rather than paid advertisements. To attract organic traffic, it is essential to focus on search engine optimization (SEO).',
+			title: 'Out-of-Stock',
+			info: 'When a product or item is not available for immediate purchase or is temporarily unavailable due to inventory depletion.',
+		},
+		{
+			title: 'Order Tracking',
+			info: "The process of monitoring and providing updates on the status and location of a customer's order from fulfillment to delivery.",
 		},
 	],
 	P: [
 		{
-			title: 'Partner Dashboard',
-			info: 'The Partner Dashboard is your central hub for managing apps, themes, and stores on Shopify.',
-		},
-		{
 			title: 'Payment Gateway',
-			info: 'A service that securely authorises and processes online payments made by customers.',
+			info: 'A service that authorizes credit card payments and facilitates secure transactions between customers and merchants.',
 		},
 		{
-			title: 'Personalisation',
-			info: 'The process of tailoring and customising the shopping experience, product recommendations, and marketing messages to individual customers based on their preferences, behaviour, and data.',
+			title: 'PCI DSS (Payment Card Industry Data Security Standard)',
+			info: 'A set of security standards and requirements designed to ensure the safe handling of credit card information during online transactions.',
+		},
+		{
+			title: 'Personalization',
+			info: 'The process of tailoring content, recommendations, and experiences to individual users based on their preferences, behaviour, and demographic information.',
 		},
 		{
 			title: 'Platform',
-			info: 'A digital infrastructure or software that provides a foundation for building and managing online businesses, typically offering a range of features and tools.',
+			info: 'A software or technology infrastructure that provides a foundation and tools for building and operating websites, online stores, or applications.',
 		},
 		{
-			title: 'Plugin',
-			info: 'A software component that adds specific functionality or features to an existing application or platform, extending its capabilities.',
+			title: 'Plug-in',
+			info: 'A software component or module that adds specific features, functionality, or integrations to an existing system or application.',
 		},
 		{
-			title: 'PPC (Pay-per-Click)',
-			info: "PPC stands for 'pay per click' and is an advertising model where advertisers pay a fee for each click on their ads. Search engine advertising is a common form of PPC, where advertisers bid on search phrases and display ads above the search results for those phrases.",
+			title: 'POS (Point of Sale)',
+			info: 'The physical location or system where a customer completes a purchase transaction, such as a cash register or a payment terminal.',
 		},
 		{
-			title: 'Product Listing',
-			info: 'A digital representation of a product that includes its title, description, images, pricing, and other relevant information to showcase and promote the product to potential buyers.',
+			title: 'Product Feed',
+			info: "A file or data format that contains information about a retailer's products, including attributes, prices, and availability, which can be used for listing and advertising on various platforms and marketplaces.",
 		},
 		{
-			title: 'Profit Margin',
-			info: 'The percentage of revenue that remains as profit after deducting the costs associated with producing and selling a product or service.',
+			title: 'Product Recommendation',
+			info: "A personalized suggestion or recommendation of products or services based on a user's browsing or purchase history, preferences, or similarities to other customers.",
 		},
 		{
-			title: 'Product Option',
-			info: 'A product option is a characteristic of a product, such as size, colour, or material.',
+			title: 'PWA (Progressive Web App)',
+			info: 'A web application that leverages modern web technologies to provide an app-like experience, such as offline access, push notifications, and home screen installation.',
 		},
 		{
-			title: 'Product Page',
-			info: 'A product page is crucial for making purchases. It should prioritise customer experience and include essential elements like calls to action, trust signals, engaging visuals, and authentic product information.',
+			title: 'Personalization Engine',
+			info: 'A software tool or algorithm that utilizes customer data and behavior to deliver tailored experiences, recommendations, and content.',
 		},
 		{
-			title: 'Purchase Funnel',
-			info: 'A visual representation of the customer journey from awareness to purchase, typically divided into stages such as awareness, consideration, and decision.',
+			title: 'Payment Processor',
+			info: 'A service provider that handles the processing and authorization of online payment transactions.',
+		},
+		{
+			title: 'Return Policy',
+			info: 'The guidelines and procedures governing the return and refund process for products or services.',
+		},
+	],
+	Q: [
+		{
+			title: 'QR Code',
+			info: 'A two-dimensional barcode that can be scanned using a smartphone or QR code reader to quickly access information, websites, or promotions.',
 		},
 	],
 	R: [
 		{
-			title: 'Responsive Design',
-			info: "A web design approach that ensures a website's layout and content adapts and displays appropriately across different devices and screen sizes.",
+			title: 'Referral Program',
+			info: 'A marketing strategy that incentivizes existing customers to refer new customers to a business in exchange for rewards, discounts, or other benefits.',
 		},
 		{
 			title: 'Return on Investment (ROI)',
-			info: 'A measure of the profitability of an investment, calculated by dividing the net profit generated by the investment by the cost of the investment and expressing it as a percentage.',
+			info: 'A measure of the profitability of an investment, calculated by dividing the net profit or benefit by the cost of the investment and expressed as a percentage.',
 		},
 		{
-			title: 'Reviews and Ratings',
-			info: 'Customer feedback and opinions expressed in the form of ratings and written reviews, providing social proof and influencing purchasing decisions.',
+			title: 'Reviews',
+			info: 'Written assessments, opinions, or ratings provided by customers about products, services, or businesses, often used to inform purchase decisions.',
+		},
+		{
+			title: 'Rich Snippets',
+			info: 'Structured data markup that allows search engines to display additional information, such as ratings, reviews, prices, and stock availability, directly in search results.',
 		},
 	],
 	S: [
 		{
-			title: 'Sales Funnel',
-			info: 'The step-by-step process that prospects go through to become customers, typically represented as a funnel-shaped diagram.',
-		},
-		{
-			title: 'Sales Tax',
-			info: 'A percentage-based tax imposed on the sale of goods and services, collected by businesses on behalf of the government.',
-		},
-		{
-			title: 'Scalability',
-			info: 'The ability of a system, platform, or business to handle increasing workload, traffic, or demand without sacrificing performance or user experience.',
-		},
-		{
 			title: 'Search Engine Optimization (SEO)',
-			info: 'The practice of optimising a website and its content to improve visibility and rankings in organic search engine results.',
+			info: "The process of improving a website's visibility and ranking in search engine results pages, with the goal of driving organic (non-paid) traffic.",
 		},
 		{
 			title: 'Security',
-			info: 'Measures and protocols implemented to protect sensitive data, customer information, and financial transactions from unauthorised access, fraud, and data breaches.',
+			info: 'Measures and practices implemented to protect websites, applications, and user data from unauthorized access, data breaches, and other security threats.',
+		},
+		{
+			title: 'Segmentation',
+			info: 'The practice of dividing a target audience into smaller, more specific groups based on shared characteristics, preferences, or behaviours for more targeted marketing and personalization.',
 		},
 		{
 			title: 'Shipping',
-			info: 'The process of preparing and sending products to customers, including selecting shipping carriers, calculating shipping rates, and generating shipping labels.',
+			info: 'The process of preparing and delivering products to customers, including packaging, carrier selection, and shipment tracking.',
 		},
 		{
-			title: 'Shopify Partner',
-			info: "Anyone who signs up for the free Shopify Partner Program, which gives freelancers and agencies access to unlimited trial stores, in-depth documentation, and multiple revenue streams. Gain insider information on our product roadmap and upcoming feature releases, and leverage Partner Support. You'll receive free training and resources to learn Shopify and grow your business (Source: Shopify).",
+			title: 'Shopify',
+			info: 'A popular eCommerce platform that provides tools and services for creating and managing online stores, including website design, product management, and payment processing.',
+		},
+		{
+			title: 'Shopify App Store',
+			info: 'An online marketplace where merchants can find and install applications (apps) to add functionality and features to their Shopify stores.',
 		},
 		{
 			title: 'Shopping Cart',
-			info: 'A virtual cart or basket that allows users to accumulate and manage selected products before proceeding to checkout.',
-		},
-		{
-			title: 'SKU (Stock Keeping Unit)',
-			info: 'A unique alphanumeric code or identifier assigned to each product to track inventory, manage stock levels, and facilitate efficient order management.',
+			info: 'A virtual cart or basket that allows users to add and manage products they intend to purchase.',
 		},
 		{
 			title: 'Social Media Marketing',
-			info: 'The use of social media platforms to promote products, engage with customers, and drive traffic and sales.',
+			info: 'Promoting products, services, or brands on social media platforms, such as Facebook, Instagram, Twitter, or LinkedIn, to drive engagement, traffic, and sales.',
 		},
 		{
 			title: 'SSL (Secure Sockets Layer)',
-			info: 'A security protocol that ensures secure and encrypted communication between a web browser and a web server, particularly important for transmitting sensitive data like payment information.',
+			info: 'A standard security protocol that establishes an encrypted link between a web server and a browser, ensuring that data transmitted between them remains secure and private.',
 		},
 		{
-			title: 'Storefront',
-			info: 'The front-facing interface of an online store where customers browse and select products for purchase.',
+			title: 'Stock Keeping Unit (SKU)',
+			info: 'A unique alphanumeric code or identifier assigned to each product to track and manage inventory.',
 		},
 		{
 			title: 'Subscription',
-			info: 'A payment model where customers pay a recurring fee at regular intervals in exchange for access to products or services.',
+			info: 'A recurring payment arrangement where customers agree to pay a specified amount at regular intervals to access products, services, or content.',
 		},
 		{
-			title: 'Supply Chain Management',
-			info: 'The oversight and coordination of all activities involved in the production, distribution, and fulfilment of products, from sourcing raw materials to delivering the final product to the customer.',
+			title: 'Sales Funnel',
+			info: 'A visual representation of the customer journey, illustrating the stages from initial awareness to making a purchase, typically divided into steps like awareness, consideration, and conversion.',
+		},
+		{
+			title: 'Social Proof',
+			info: 'The influence created by showcasing positive feedback, reviews, ratings, or endorsements from other customers to build trust and credibility.',
+		},
+		{
+			title: 'Subscription Box',
+			info: 'A recurring delivery service that offers customers a curated selection of products or samples on a subscription basis.',
 		},
 	],
 	T: [
 		{
-			title: 'Tax Calculation',
-			info: 'The process of determining and calculating the appropriate amount of taxes to be collected from customers based on factors such as location, product type, and applicable tax laws.',
+			title: 'Target Audience',
+			info: 'The specific group of people or customers that a business aims to reach and engage with through its marketing and advertising efforts.',
+		},
+		{
+			title: 'Taxation',
+			info: 'The process of imposing and collecting taxes on goods, services, or income, typically regulated and enforced by government authorities.',
 		},
 		{
 			title: 'Theme',
-			info: 'A pre-designed template or layout that determines the visual appearance and layout of an eCommerce website, providing a consistent design and user experience.',
+			info: 'A collection of design elements, templates, and styles that determine the visual appearance and layout of a website or online store.',
 		},
 		{
 			title: 'Tracking',
-			info: 'The monitoring and recording of data and information related to customer behaviour, interactions, and transactions, often through the use of cookies and tracking codes.',
+			info: 'The process of monitoring and recording user interactions, behaviors, or events on a website or application, often used for analytics, personalization, or marketing purposes.',
+		},
+		{
+			title: 'Transactional Email',
+			info: 'Automated emails triggered by specific user actions or events, such as order confirmation, shipping notifications, or password resets.',
 		},
 	],
 	U: [
 		{
 			title: 'Upselling',
-			info: 'A sales technique where customers are encouraged to purchase a more expensive or upgraded version of a product or add complementary products or services to their order.',
+			info: 'A sales technique where customers are encouraged to purchase a higher-priced or upgraded version of a product or service to increase the average order value.',
+		},
+		{
+			title: 'URL (Uniform Resource Locator)',
+			info: 'The address or location that identifies a webpage or resource on the internet, typically starting with "http://" or "https://".',
 		},
 		{
 			title: 'User Experience (UX)',
-			info: 'The overall experience and satisfaction of users when interacting with a website, application, or digital product, encompassing design, usability, and functionality.',
+			info: 'The overall experience and satisfaction that users have when interacting with a website, application, or product, including factors like usability, accessibility, and design.',
 		},
 		{
-			title: 'User Interface (UI)',
-			info: 'The visual and interactive elements of a website or application that users interact with to perform tasks and navigate the interface.',
+			title: 'User-generated Reviews',
+			info: 'Reviews and feedback provided by customers based on their experiences with products or services, often shared on review platforms or directly on eCommerce websites.',
+		},
+		{
+			title: 'User-generated Content (UGC)',
+			info: 'Content created and shared by users, such as reviews, testimonials, and social media posts, which can be leveraged for marketing and brand promotion.',
+		},
+		{
+			title: 'User-generated Content (UGC)',
+			info: 'Content created and shared by users, such as reviews, testimonials, and social media posts, which can be leveraged for marketing and brand promotion.',
 		},
 	],
 	V: [
 		{
-			title: 'Virtual Assistant',
-			info: 'An artificial intelligence-powered software or application that can perform tasks, provide information, and assist users through natural language conversations.',
+			title: 'Value Proposition',
+			info: 'The unique combination of benefits, solutions, or value that a product, service, or brand offers to customers, differentiating it from competitors and influencing purchase decisions.',
+		},
+		{
+			title: 'Vendor',
+			info: 'A person or company that supplies products or services to customers.',
+		},
+		{
+			title: 'Virtual Reality (VR)',
+			info: 'An immersive technology that creates a simulated, computer-generated environment or experience, often involving the use of headsets or other devices.',
+		},
+		{
+			title: 'Visibility',
+			info: 'The extent to which a website, brand, or product is easily discoverable and accessible to potential customers through search engines, advertising, or other channels.',
+		},
+		{
+			title: 'Virtual Reality (VR) Shopping',
+			info: 'An immersive technology that allows users to experience shopping in a simulated or virtual environment, providing a unique and interactive browsing and purchasing experience.',
 		},
 	],
 	W: [
 		{
-			title: 'Web Hosting',
-			info: 'The service of providing storage space and access for websites and web pages on servers connected to the internet.',
+			title: 'Web Design',
+			info: 'The process of creating and arranging the visual layout, user interface, and overall look and feel of a website.',
 		},
 		{
-			title: 'Webinar',
-			info: 'An online seminar or presentation conducted over the internet, allowing participants to view and interact with the presenter in real time.',
+			title: 'Web Hosting',
+			info: 'A service that provides server space and resources for hosting websites, making them accessible on the internet.',
+		},
+		{
+			title: 'Website',
+			info: 'A collection of web pages, digital content, and multimedia that is accessible through a unique domain name and hosted on a web server.',
 		},
 		{
 			title: 'Wholesale',
-			info: 'The sale of products in large quantities to retailers or businesses at a discounted price for resale purposes.',
+			info: 'The sale of goods or products in large quantities at lower prices, typically to retailers or other businesses for resale.',
 		},
+	],
+	X: [
 		{
-			title: 'Wishlist',
-			info: 'A feature that allows users to save products they are interested in for future reference or purchase.',
+			title: 'XML Sitemap',
+			info: "An XML file that lists the URLs and metadata of a website's pages, helping search engines understand and index the site more effectively.",
+		},
+	],
+	Z: [
+		{
+			title: 'Zero-Day',
+			info: 'A zero-day refers to a vulnerability or software flaw that is discovered by hackers before the software developer becomes aware of it. This gives developers zero days to address and patch the issue, making it a high-risk security threat.',
 		},
 	],
 };
+
 export default glossaryIndex;

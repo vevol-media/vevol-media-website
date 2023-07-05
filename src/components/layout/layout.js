@@ -100,7 +100,7 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 				<main>{children}</main>
 				{hasMainForm && (
 					<MainForm
-						title={"Talk to a Strategist"}
+						title={'Talk to a Strategist'}
 						subtitle={
 							"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
 						}

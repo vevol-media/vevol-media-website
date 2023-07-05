@@ -89,8 +89,8 @@ export default function ServicePlans({ scrollToFeatures }) {
 				{servicePlans.map((plan, index) => {
 					const currentSegment = activeSegment.toLocaleLowerCase();
 					let planPrice = plan.prices[currentSegment];
-					const perHour = planPrice / plan.totalHours[currentSegment];
 					const yearlyPrice = (planPrice / 1000).toFixed(1);
+
 					planPrice = `${yearlyPrice}k`;
 
 					return (

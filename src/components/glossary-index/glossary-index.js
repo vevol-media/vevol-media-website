@@ -10,10 +10,10 @@ export default function GlossaryIndex({ glossaryIndexRef }) {
 
 	const debouncedScrollToFeature = debounce((keyIndex) => {
 		if (blocksRef.current.children[keyIndex]) {
-		  blocksRef.current.children[keyIndex].scrollIntoView({
-			behavior: 'smooth',
-			block: 'center',
-		  });
+			blocksRef.current.children[keyIndex].scrollIntoView({
+				behavior: 'smooth',
+				block: 'center',
+			});
 		}
 	}, 350);
 
@@ -22,19 +22,39 @@ export default function GlossaryIndex({ glossaryIndexRef }) {
 		debouncedScrollToFeature(keyIndex);
 	};
 
+	const handleIndexClickMobile = (elem) => {
+		if (window?.innerWidth < 768) {
+			elem.nextSibling.firstChild.click();
+		}
+	};
+
 	return (
 		<div className="glossary-index">
 			<ul className="glossary-index__keys">
 				{Object.keys(glossaryIndex).map((key) => (
 					<li key={key}>
-						<div className="glossary-index__title title is-5">{key}</div>
+						<div
+							className="glossary-index__title title is-5"
+							role="presentation"
+							onClick={(e) => {
+								handleIndexClickMobile(e.currentTarget);
+							}}
+							onKeyUp={(e) => {
+								if (e.keyCode === 32) {
+									handleIndexClickMobile(e.currentTarget);
+								}
+							}}
+						>
+							{key}
+						</div>
 						<ul className="glossary-index__list" ref={glossaryIndexRef}>
 							{glossaryIndex[key].map((glossary, index) => {
 								const keyIndex = key + index;
+
 								return (
 									glossary && (
 										<li
-											key={keyIndex}
+											key={index}
 											onClick={() => {
 												handleFeatureClick(keyIndex);
 											}}

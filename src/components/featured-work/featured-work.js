@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import { Title } from 'bloomer/lib/elements/Title';
 import { IconTopo } from '../../helpers/icons';
 
-export default function FeaturedWork({ projectsList, images }) {
+export default function FeaturedWork({ projectsList, images, ctaText = 'Read Case Study' }) {
 	return (
 		<ul className="featured-work">
 			{projectsList.map((item, index) => {
@@ -26,7 +26,7 @@ export default function FeaturedWork({ projectsList, images }) {
 										{item.name}
 									</Title>
 									<p>{item.description}</p>
-									<span className="vm-button vm-button--white">Read Case Study</span>
+									<span className="vm-button vm-button--white">{ctaText}</span>
 								</div>
 							</div>
 						</Link>

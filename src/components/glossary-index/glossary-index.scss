@@ -8,24 +8,9 @@
 
     .glossary-index__keys {
         position: sticky;
-
         top: 120px;
         height: calc(100vh - 140px);
-
-        @include screen-small {
-            top: 80px;
-            height: calc(100vh - 100px);
-        }
-
         overflow-y: auto;
-        // -webkit-scroll-snap-type: y mandatory;
-        // -ms-scroll-snap-type: y mandatory;
-        // scroll-snap-type: y mandatory;
-
-        // > li {
-        //     scroll-snap-align: start;
-        // }
-
         padding-right: 8px;
 
         &::-webkit-scrollbar {
@@ -36,7 +21,7 @@
             background-color: $lightGrey;
         }
 
-        &::-webkit-scrollbar-thumb { 
+        &::-webkit-scrollbar-thumb {
             background-color: $green;
         }
 
@@ -47,25 +32,38 @@
             &:last-child {
                 margin-bottom: 0;
             }
+        }
 
-            @include screen-mobile {
-                display: none;
+        @include screen-small {
+            top: 80px;
+            height: calc(100vh - 100px);
+            padding-right: 0;
+            margin-right: 10px;
+            border-right: 1px solid $black;
+
+            li {
+                margin-bottom: 0.5rem;
+                width: 100%;
+
+                .glossary-index__title {
+                    flex: 1;
+                }
             }
         }
     }
 
     .glossary-index__title {
-        padding: .35rem;
+        padding: 0.35rem;
         background-color: $grey;
         border: 1px solid $black;
         border-right: 0;
         margin: 0;
-        flex: .1;
+        flex: 0.1;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    
+
     .glossary-index__list {
         background: $white;
         border: 1px solid $black;
@@ -104,11 +102,7 @@
         }
 
         @include screen-mobile {
-            border: none;
-
-            li {
-                display: none;
-            }
+            display: none;
         }
     }
 
