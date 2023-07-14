@@ -34,9 +34,19 @@ export const data = graphql`
 				}
 			}
 		}
-		midBannerImageQuery: file(name: { eq: "reviews-banner" }) {
+		midBannerImageQuery: file(name: { eq: "vevol-media-work-together-v1" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 1000 }, quality: 100)
+			}
+		}
+		formBannerImageQuery: file(name: { eq: "vevol-media-strategist" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 1000 }, quality: 100)
+			}
+		}
+		mainHeroImageQuery: file(name: { eq: "vevol-media-main-hero" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 1000 }, quality: 100)
 			}
 		}
 		collageImageQuery: file(name: { eq: "collage-projects" }) {
@@ -64,13 +74,23 @@ export const data = graphql`
 `;
 
 export default function Homepage({ data }) {
-	const { portfolioFeaturedImagesQuery, partnersImages, midBannerImageQuery, collageImageQuery, blogPosts } = data;
+	const {
+		portfolioFeaturedImagesQuery,
+		partnersImages,
+		midBannerImageQuery,
+		collageImageQuery,
+		blogPosts,
+		formBannerImageQuery,
+		mainHeroImageQuery,
+	} = data;
 	const midBannerImage = getImage(midBannerImageQuery);
+	const formBannerImage = getImage(formBannerImageQuery);
+	const mainHeroImage = getImage(mainHeroImageQuery);
 	const collageImage = getImage(collageImageQuery);
 
 	return (
-		<Layout>
-			<HomepageHero />
+		<Layout formBackgroundImage={formBannerImage}>
+			<HomepageHero imageBottom={mainHeroImage} />
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
 			<HomepageServices />
 			<ImagesMiniBanner images={partnersImages.nodes} />

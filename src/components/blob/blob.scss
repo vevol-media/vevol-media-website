@@ -3,10 +3,6 @@
     width: 90vw;
 }
 
-.blob path {
-    animation: blob linear infinite;
-}
-
 @keyframes blob {
     0% {
         d: path(

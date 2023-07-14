@@ -18,7 +18,7 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
 			}
 		}
-		brasovImageQuery: file(name: { eq: "vevol-team-brasov" }) {
+		brasovImageQuery: file(name: { eq: "vevol-media-team-v2" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
 			}

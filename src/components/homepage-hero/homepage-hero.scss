@@ -29,6 +29,12 @@
         }
     }
 
+    .homepage-hero__bottom-image {
+        position: absolute;
+        bottom: -100px;
+        right: -150px;
+    }
+
     .homepage-hero__continue-icon {
         position: absolute;
         z-index: 3;
@@ -60,6 +66,7 @@
             &:last-of-type {
                 font-size: 1.3em;
                 line-height: 1.4;
+                text-shadow: 2px 2px $black;
             }
         }
 
@@ -67,6 +74,7 @@
             font-size: 4em;
             margin: 10px 0 20px;
             font-weight: 900;
+            text-shadow: 3px 3px $black;
         }
 
         .vm-button {
@@ -86,7 +94,11 @@
 
     @include screen-medium {
         .homepage-hero__content h1 {
-            font-size: 5em;
+            font-size: 3em;
+        }
+
+        .homepage-hero__bottom-image {
+            opacity: 0.5;
         }
 
         .homepage-hero__bg-image {

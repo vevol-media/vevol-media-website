@@ -6,8 +6,9 @@ import { IconTopo } from '../../helpers/icons';
 import './main-form.scss';
 import { Fade } from 'react-reveal';
 import VevolSection from '../general-components/vm-section';
+import { BgImage } from 'gbimage-bridge';
 
-export default function MainForm({ title, subtitle, standalone }) {
+export default function MainForm({ title, subtitle, standalone, backgroundImage }) {
 	const [isSending, setIsSending] = useState(false);
 	const [isSent, setIsSent] = useState(false);
 	const form = useRef();
@@ -131,6 +132,7 @@ export default function MainForm({ title, subtitle, standalone }) {
 			) : (
 				<VevolSection className={'main-contact'}>
 					<IconTopo className="main-contact__pattern-one" />
+					<BgImage className="main-contact__background-image" image={backgroundImage} />
 					<Container>
 						<Content className="main-contact__intro">
 							<Fade bottom>

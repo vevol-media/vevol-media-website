@@ -11,7 +11,14 @@ import config from 'react-reveal/globals';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { AppProvider } from '../../context/app-context';
 
-export default function Layout({ children, headerBg, headerIsStatic, showBlob, hasMainForm = true }) {
+export default function Layout({
+	children,
+	headerBg,
+	headerIsStatic,
+	showBlob,
+	hasMainForm = true,
+	formBackgroundImage,
+}) {
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
 	}));
@@ -100,6 +107,7 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 				<main>{children}</main>
 				{hasMainForm && (
 					<MainForm
+						backgroundImage={formBackgroundImage}
 						title={'Talk to a Strategist'}
 						subtitle={
 							"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
