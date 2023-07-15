@@ -32,10 +32,6 @@ const teamList = [
 		role: 'Front End Developer',
 	},
 	{
-		name: 'Michaela Ries',
-		role: 'Copywriter',
-	},
-	{
 		name: 'Miruna Andriesei',
 		role: 'Front End Developer',
 	},
