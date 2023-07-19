@@ -102,6 +102,8 @@ export default function Layout({
 						}
 					`}
 					</script>
+					<script>{`window._nQc="89222768";`}</script>
+					<script async src="https://serve.albacross.com/track.js"></script>
 				</Helmet>
 				<Header background={headerBg} isStatic={headerIsStatic} />
 				<main>{children}</main>
