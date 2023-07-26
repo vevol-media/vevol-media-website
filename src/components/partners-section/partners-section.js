@@ -12,7 +12,7 @@ export default function PartnersSection({ logos, partnersList }) {
 	].sort();
 
 	return (
-		<div className="trusted-partners">
+		<div className="trusted-partners" id="trusted-partners">
 			<ul className="trusted-partners__filters">
 				<li
 					className={activeFilter === 'all' ? 'active' : ''}

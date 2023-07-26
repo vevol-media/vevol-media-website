@@ -5,7 +5,7 @@ import { Container } from 'bloomer';
 import VevolSection from '../components/general-components/vm-section';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import PartnersSection from '../components/partners-section/partners-section';
 import partnersList from '../enums/partners';
@@ -54,14 +54,22 @@ export default function StrategicPartnershipsPage({ data }) {
 						title={'Always Looking To Connect'}
 						textContent={[
 							<p className="mt-5">
-								Here at Vevol Media, we are willing to do whatever it takes to deliver the best possible services for our customers.
+								Here at Vevol Media, we are willing to do whatever it takes to deliver the best possible
+								services for our customers.
 							</p>,
 							<p className="mt-5">
-								Our Strategic Partnerships Program has this ideal in mind, as we are open to collaboration with other service providers if it is in the best interest of your project.
+								Our Strategic Partnerships Program has this ideal in mind, as we are open to
+								collaboration with other service providers if it is in the best interest of your
+								project.
 							</p>,
 							<p className="mt-5">
-								Our priority is helping our clients achieve their goals. We believe in the power of many. If your company is better suited for our client's requirements, we will happily recommend you!
+								Our priority is helping our clients achieve their goals. We believe in the power of
+								many. If your company is better suited for our client's requirements, we will happily
+								recommend you!
 							</p>,
+							<Link to="#trusted-partners" className="vm-button vm-button--black mt-5">
+								See our partners
+							</Link>,
 						]}
 					/>
 				</Container>
