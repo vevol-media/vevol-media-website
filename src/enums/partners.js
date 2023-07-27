@@ -18,6 +18,15 @@ const partnersList = [
 		isTrusted: true,
 	},
 	{
+		name: 'Coso.AI',
+		logo: 'coso-ai',
+		intro: 'Automatically generates engaging social media content for your brand each week, based on your brand’s personality and relevant social trends.',
+		website: 'https://coso.ai/',
+		tags: ['ai'],
+		isUsed: true,
+		isTrusted: true,
+	},
+	{
 		name: 'Rebuy',
 		logo: 'rebuy',
 		intro: 'The world’s top brands use Rebuy’s personalization platform to fuel data-driven shopping experiences, win and keep more customers, and accelerate growth.',
@@ -97,6 +106,6 @@ const partnersList = [
 		tags: ['shopify'],
 		isUsed: true,
 		isTrusted: true,
-	}
+	},
 ];
 export default partnersList;
