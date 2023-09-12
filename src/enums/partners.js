@@ -116,5 +116,14 @@ const partnersList = [
 		isUsed: true,
 		isTrusted: true,
 	},
+	{
+		name: 'Eyeris',
+		logo: 'eyeris',
+		intro: 'Create AI-powered product videos and images for your social and ad channels. Better content, less work. No design skills necessary.',
+		website: 'https://www.eyeris.io/',
+		tags: ['shopify', 'marketing'],
+		isUsed: true,
+		isTrusted: true,
+	},
 ];
 export default partnersList;
