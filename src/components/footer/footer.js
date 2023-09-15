@@ -35,6 +35,8 @@ export default function WebsiteFooter() {
 						<Link to="/contact">Contact Us</Link>
 						<Link to="/careers">Careers</Link>
 						<Link to="/strategic-partnerships">Strategic Partnerships</Link>
+						<Link to="/cookie-policy">Cookie Policy</Link>
+						<Link to="/privacy-policy">Privacy Policy</Link>
 						<Link to="/faqs">FAQ</Link>
 					</Column>
 					<Column className="footer__social">

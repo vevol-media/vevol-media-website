@@ -14,105 +14,158 @@ export default function Page() {
 			</Helmet>
 			<SlimHero heading="Cookie Policy" />
 			<VevolSection backgroundColour={'white'}>
-				<Container>
+				<Container className="cookie-policy__wrapper">
 					<p>
-						<strong>What Are Cookies</strong>
+						As one of the foremost Shopify agencies in Europe, Vevol Media Limited ("Vevol", “Vevol Media”, "we", "us" or "our")
+						prioritises offering a top-notch experience on our website, which includes the use of cookies. This policy describes the type
+						of cookies we employ and their purpose, as we believe it's crucial that you maintain control over your online privacy.
+					</p>
+					<p className="mt-5">
+						<strong>1. Understanding Cookies</strong>
 					</p>
 					<p className="mt-3">
-						As is common practice with almost all professional websites this site uses cookies, which are
-						tiny files that are downloaded to your computer, to improve your experience. This page describes
-						what information they gather, how we use it and why we sometimes need to store these cookies. We
-						will also share how you can prevent these cookies from being stored however this may downgrade
-						or 'break' certain elements of the sites functionality.
+						Cookies are minuscule text files that a website can store on a user's computer. Their function is to enable the website to
+						recognise its users upon subsequent visits or to permit other chosen websites to identify these users for a specific purpose.
+					</p>
+					<p className="mt-5">
+						<strong>2. Classifications of Cookies</strong>
 					</p>
 					<p className="mt-3">
-						<strong>How We Use Cookies</strong>
+						Generally, cookies can be classified into functional and non-functional categories. Non-functional cookies include Performance
+						cookies and Advertising/Targeting cookies. Functional cookies are crucial for a website to operate optimally. Without these
+						cookies, the website usage would be impaired. An apt example of a functional cookie is the shopping cart of a webshop which
+						stores the items you select.
 					</p>
 					<p className="mt-3">
-						We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no
-						industry standard options for disabling cookies without completely disabling the functionality
-						and features they add to this site. It is recommended that you leave on all cookies if you are
-						not sure whether you need them or not in case they are used to provide a service that you use.
+						Performance cookies anonymously accumulate data for statistical purposes on how visitors use a website, including the duration
+						of their visit and the pages they visit. These cookies help enhance the user experience on the website.
 					</p>
 					<p className="mt-3">
-						<strong>Disabling Cookies</strong>
+						Advertising/Tracking cookies are used to deliver advertisements and trace more user-specific information. They are commonly
+						utilised to present advertisements based on the data tracked via these cookies. If you have ever noticed an influx of
+						advertisements after searching for a product on a webshop, it is due to tracking cookies.
 					</p>
 					<p className="mt-3">
-						You can prevent the setting of cookies by adjusting the settings on your browser (see your
-						browser Help for how to do this). Be aware that disabling cookies will affect the functionality
-						of this and many other websites that you visit. Disabling cookies will usually result in also
-						disabling certain functionality and features of the this site. Therefore it is recommended that
-						you do not disable cookies. This Cookies Policy was created with the help of the{' '}
-						<a href="https://www.cookiepolicygenerator.com/cookie-policy-generator/">
-							Cookies Policy Generator
+						While functional and performance cookies do not require explicit consent, they necessitate user information. Tracking cookies,
+						on the other hand, need explicit user consent. Without this consent, it is not permitted to place tracking cookies.
+					</p>
+					<p className="mt-5">
+						<strong>3. Functionality Cookies</strong>
+					</p>
+					<p className="mt-3">
+						Functionality cookies, also known as strictly necessary cookies, are vital for appropriate website navigation and use. These
+						cookies enable basic services like a shopping cart or login system. Without these cookies, you cannot utilise these services.
+						They do not collect information about you for marketing or tracking purposes.
+					</p>
+					<p className="mt-3">It is not possible to block these cookies as they are essential for the website to function properly.</p>
+					<p className="mt-5">
+						<strong>4. Performance Cookies</strong>
+					</p>
+					<p className="mt-3">
+						Performance cookies, also referred to as Analytical cookies, are employed for measurement purposes. They collect anonymous
+						data for statistical purposes, enabling us to enhance the user experience on our website. They do not contain personal data.
+					</p>
+					<p className="mt-3">
+						Currently, we utilise performance cookies from Google Analytics and Hotjar to gain these insights. Performance cookies are
+						automatically placed whenever the website is visited.
+					</p>
+					<p className="mt-3">
+						{' '}
+						We collect data such as:
+						<ul>
+							<li>Number of visits and visitors to our web pages</li>
+							<li>Duration of the visit</li>
+							<li>
+								Information about the web browser and device used to visit our website, including operating system and screen size.
+								This information helps us optimise our website performance.
+							</li>
+							<li>Visitor’s company and other professional details</li>
+							<li>How a visitor arrived at our website, for instance, via an advertisement or a link in an email.</li>
+						</ul>
+					</p>
+					<p className="mt-3">
+						Our performance cookies do not collect personal data or IP addresses. For further information on how Google and Hotjar process
+						the data, please refer to their privacy policies. Please note that these policies may change over time.
+					</p>
+					<p className="mt-3">We never provide complete personal data to Hotjar and Google.</p>
+					<p className="mt-5">
+						<strong> Advertising and Targeting Cookies</strong>
+					</p>
+					<p className="mt-3">
+						At present, we use services from Hubspot, Albacross, DoubleClick (Google), Meta, Klaviyo, and Meta Custom Audiences on our
+						website. These services help us with targeted advertising and allow us to gather metadata on our visitors to better understand
+						our target audiences.
+					</p>
+					<p className="mt-3">
+						These cookies enable us to:
+						<ul>
+							<li>
+								Monitor which advertisements you've seen to prevent the same ad from being displayed repetitively.
+							</li>
+							<li>Check how many visitors have clicked on the advertisements.</li>
+							<li>Understand our target audience better to improve our services.</li>
+						</ul>
+					</p>
+					<p className="mt-3">
+						You may still see our advertisements even if you've declined our cookies because not all advertisements use cookies.
+					</p>
+					<p className="mt-3">
+						For further information on how these companies process the data, please refer to their privacy policies:
+						<ul>
+							<li>Hubspot</li>
+							<li>Albacross</li>
+							<li>Google</li>
+							<li>Meta</li>
+							<li>Klaviyo</li>
+							<li>Facebook</li>
+						</ul>
+					</p>
+					<p className="mt-3">
+						These cookies will only be placed on the computer once the visitor has granted the website permission to do so.
+					</p>
+					<p className="mt-5">
+						<strong>6. How Can You Control Your Cookies?</strong>
+					</p>
+					<p className="mt-3">
+						You can block the tracking and advertising cookies by clicking 'Decline' during your first visit to our website. This setting
+						is stored for a year, after which you will be asked for consent again. The consent box can be re-displayed by clearing all the
+						cookies from your computer. Instructions on how to do this for the most commonly used browsers are available online.
+					</p>
+
+					<p className="mt-3">
+						<a
+							href="https://support.microsoft.com/nl-nl/topic/cookies-verwijderen-in-internet-explorer-bca9446f-d873-78de-77ba-d42645fa52fc"
+							target="_blank"
+						>
+							Remove cookies from Microsoft Internet Explorer
 						</a>
-						.
 					</p>
-					<p className="mt-3">
-						<strong>The Cookies We Set</strong>
-					</p>
-					<ul>
-						<li>
-							<p className="mt-3">Forms related cookies</p>
-							<p className="mt-3">
-								When you submit data to through a form such as those found on contact pages or comment
-								forms cookies may be set to remember your user details for future correspondence.
-							</p>
-						</li>
-					</ul>
-					<p className="mt-3">
-						<strong>Third Party Cookies</strong>
-					</p>
-					<p className="mt-3">
-						In some special cases we also use cookies provided by trusted third parties. The following
-						section details which third party cookies you might encounter through this site.
-					</p>
-					<ul>
-						<li>
-							<p className="mt-3">
-								This site uses Google Analytics which is one of the most widespread and trusted
-								analytics solution on the web for helping us to understand how you use the site and ways
-								that we can improve your experience. These cookies may track things such as how long you
-								spend on the site and the pages that you visit so we can continue to produce engaging
-								content.
-							</p>
-							<p className="mt-3">
-								For more information on Google Analytics cookies, see the official Google Analytics
-								page.
-							</p>
-						</li>
-						<li>
-							<p className="mt-3">
-								As we sell products it's important for us to understand statistics about how many of the
-								visitors to our site actually make a purchase and as such this is the kind of data that
-								these cookies will track. This is important to you as it means that we can accurately
-								make business predictions that allow us to monitor our advertising and product costs to
-								ensure the best possible price.
-							</p>
-						</li>
-					</ul>
-					<p className="mt-3">
-						<strong>More Information</strong>
-					</p>
-					<p className="mt-3">
-						Hopefully that has clarified things for you and as was previously mentioned if there is
-						something that you aren't sure whether you need or not it's usually safer to leave cookies
-						enabled in case it does interact with one of the features you use on our site.
-					</p>
-					<p className="mt-3">
-						For more general information on cookies, please read{' '}
-						<a href="https://www.cookiepolicygenerator.com/sample-cookies-policy/">
-							the Cookies Policy article
+					<p>
+						<a
+							href="https://support.microsoft.com/nl-nl/microsoft-edge/browsergeschiedenis-weergeven-en-verwijderen-in-microsoft-edge-00cf7943-a9e1-975a-a33d-ac10ce454ca4"
+							target="_blank"
+						>
+							Remove cookies from Microsoft Edge
 						</a>
-						.
 					</p>
-					<p className="mt-3">
-						However if you are still looking for more information then you can contact us through one of our
-						preferred contact methods:
+					<p>
+						<a href="https://support.mozilla.org/nl/kb/cookies-verwijderen-gegevens-wissen-websites-opgeslagen" target="_blank">
+							Remove cookies from Mozilla Firefox
+						</a>
 					</p>
-					<ul>
-						<li>Email: hello@vevolmedia.com</li>
-					</ul>
+					<p>
+						<a href="https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=nl" target="_blank">
+							Remove cookies from Google Chrome
+						</a>
+					</p>
+					<p>
+						<a
+							href="https://support.apple.com/nl-nl/guide/safari/sfri11471/mac#:~:text=Websites%2C%20derden%20en%20adverteerders%20kunnen%20cookies%20en%20andere%20gegevens%20op,'%20of%20'Verwijder%20alles'."
+							target="_blank"
+						>
+							Remove cookies from Apple Safari
+						</a>
+					</p>
 				</Container>
 			</VevolSection>
 		</Layout>
