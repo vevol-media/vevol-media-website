@@ -69,3 +69,10 @@
         }
     }
 }
+
+.cookie-policy__wrapper, .privacy-policy__wrapper {
+    ul {
+        list-style: circle;
+        list-style-position: inside;
+    }
+}
