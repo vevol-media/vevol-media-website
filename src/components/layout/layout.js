@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../header/header';
 import WebsiteFooter from '../footer/footer';
 import { Cursor } from '../cursor/cursor';
@@ -10,6 +10,7 @@ import favicon from '../../images/icon.png';
 import config from 'react-reveal/globals';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { AppProvider } from '../../context/app-context';
+import CookieBar from '../cookie-bar/cookie-bar';
 
 export default function Layout({
 	children,
@@ -19,6 +20,8 @@ export default function Layout({
 	hasMainForm = true,
 	formBackgroundImage,
 }) {
+	const [cookieConsentValue, setCookieConsentValue] = useState('')
+	const [showCookieBar, setShowCookieBar] = useState(false)
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
 		transform: `translate3d(0px, 0px, 0)`,
 	}));
@@ -41,10 +44,31 @@ export default function Layout({
 		}
 	};
 
+
+	const setCookie = (value) => {
+        const date = new Date();
+		const days = value === 'all' ? 60 : 10
+		date.setTime(date.getTime() + 24 * days * 60 * 60 * 1e3);
+		document.cookie = `_cookieconsent=${value};expires=${date.toUTCString()};path=/;domain=.vevolmedia.com;`;
+		document.cookie = `_cookieconsent=${value};expires=${date.toUTCString()};path=/;domain=localhost;`;
+    }
+
 	config({ ssrFadeout: true });
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
+
+		const bigValue = `; ${document.cookie}`;
+		const parts = bigValue.split(`; _cookieconsent=`);
+		const value = parts.length === 2 ? parts.pop().split(';').shift() : false
+
+		if (!value) {
+			setShowCookieBar(true)
+			setCookieConsentValue('essentials')
+		} else {
+			setShowCookieBar(false)
+			setCookieConsentValue(value)
+		}
 	}, []);
 
 	return (
@@ -77,9 +101,6 @@ export default function Layout({
 					<meta name="twitter:title" content={metaTitle} />
 					<meta name="twitter:description" content={metaDescription} />
 					<meta name="twitter:image" content={ogImage} />
-
-					<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
-					<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>
 					<script type="application/ld+json">
 						{`
 						{
@@ -102,8 +123,10 @@ export default function Layout({
 						}
 					`}
 					</script>
-					<script>{`window._nQc="89222768";`}</script>
-					<script async src="https://serve.albacross.com/track.js"></script>
+					{cookieConsentValue === 'all' && <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>}
+					{cookieConsentValue === 'all' && <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>}
+					{cookieConsentValue === 'all' && <script>{`window._nQc="89222768";`}</script>}
+					{cookieConsentValue === 'all' && <script async src="https://serve.albacross.com/track.js"></script>}
 				</Helmet>
 				<Header background={headerBg} isStatic={headerIsStatic} />
 				<main>{children}</main>
@@ -116,6 +139,7 @@ export default function Layout({
 						}
 					/>
 				)}
+				{showCookieBar && <CookieBar setCookie={setCookie} cookieConsentValue={cookieConsentValue} setCookieConsentValue={setCookieConsentValue} setShowCookieBar={setShowCookieBar} />}
 				<WebsiteFooter />
 			</div>
 		</AppProvider>

@@ -125,5 +125,23 @@ const partnersList = [
 		isUsed: true,
 		isTrusted: true,
 	},
+	{
+		name: 'TBM Solution',
+		logo: 'tbm-solution',
+		intro: 'TBM Solution is the exclusive Irish fulfilment provider for fast, fixed-rate next-day delivery in the UK and Ireland. With hubs in Dublin and Bedfordshire, they offer seamless cross-border trade for startups to established brands. They simplify VAT and customs procedures, providing a seamless experience.',
+		website: 'https://www.tbm-solution.com/',
+		tags: ['supply chain'],
+		isUsed: true,
+		isTrusted: true,
+	},
+	{
+		name: 'Amore Digital',
+		logo: 'amore-digital',
+		intro: 'Amore Digital is a paid ads consultancy with a strong focus on paid media for e-commerce brands. This includes researching, building and managing performance campaigns across Google ads, shopping and meta ads with a strong focus on ROI.',
+		website: 'https://www.amoredigital.co.uk/',
+		tags: ['marketing'],
+		isUsed: true,
+		isTrusted: true,
+	},
 ];
 export default partnersList;
