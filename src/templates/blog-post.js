@@ -16,6 +16,7 @@ import SplitNav from '../components/general-components/split-nav';
 import TableOfContents from '../components/table-of-contents/table-of-contents';
 import ProgressBar from '../components/progress-bar/progress-bar';
 import ProsCons from '../components/pros-cons/pros-cons';
+import BlogQuote from '../components/blog-quote/blog-quote';
 
 export const query = graphql`
 	query ($slug: String!) {
@@ -66,6 +67,15 @@ export const query = graphql`
 						pros
 						consTitle
 						cons
+					}
+					... on ContentfulQuote {
+						contentful_id
+						avatar {
+							gatsbyImageData(placeholder: BLURRED, width: 200, quality: 100)
+						}
+						content: description {
+							description
+						}
 					}
 				}
 			}
@@ -141,7 +151,11 @@ export default function BlogPost(props) {
 
 				switch (assetItem.__typename) {
 					case 'ContentfulProsCons':
-						return <ProsCons pros={assetItem.pros} cons={assetItem.cons} prosTitle={assetItem.prosTitle} consTitle={assetItem.consTitle} />;
+						return (
+							<ProsCons pros={assetItem.pros} cons={assetItem.cons} prosTitle={assetItem.prosTitle} consTitle={assetItem.consTitle} />
+						);
+					case 'ContentfulQuote':
+						return <BlogQuote avatar={assetItem.avatar} content={assetItem.content} title={title}/>;
 					default:
 						const featuredImage = getImage(assetItem.featuredImage.gatsbyImageData);
 
@@ -171,7 +185,15 @@ export default function BlogPost(props) {
 				if (isYoutubeVideo) {
 					return (
 						<span className="rte-youtube">
-							<iframe width="560" height="315" src={node.data.uri} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+							<iframe
+								width="560"
+								height="315"
+								src={node.data.uri}
+								title="YouTube video player"
+								frameBorder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							></iframe>
 						</span>
 					);
 				} else {
@@ -271,7 +293,15 @@ export default function BlogPost(props) {
 					`}
 					</script>
 				</Helmet>
-				<BlogIntro title={title} image={featuredImageData} author={author} date={publishedDate} intro={intro.intro} readingTime={readingTime} type={type.title} />
+				<BlogIntro
+					title={title}
+					image={featuredImageData}
+					author={author}
+					date={publishedDate}
+					intro={intro.intro}
+					readingTime={readingTime}
+					type={type.title}
+				/>
 				<VevolSection backgroundColour={'white'}>
 					<Container className="blog-content">
 						<div className="blog-content__container">
@@ -283,9 +313,13 @@ export default function BlogPost(props) {
 								<span>{title}</span>
 							</div>
 							<>{blogContent}</>
-							{title === 'The Complete Shopify Checklist for an easy Shopify Store setup' && <div className="klaviyo-form-YAaFdq"></div>}
+							{title === 'The Complete Shopify Checklist for an easy Shopify Store setup' && (
+								<div className="klaviyo-form-YAaFdq"></div>
+							)}
 						</div>
-						<div className={`table-of-contents__progress-bar ${isTableOfContentsHidden ? 'table-of-contents__progress-bar--hidden' : ''}`}>
+						<div
+							className={`table-of-contents__progress-bar ${isTableOfContentsHidden ? 'table-of-contents__progress-bar--hidden' : ''}`}
+						>
 							<ProgressBar />
 							<TableOfContents
 								isTableOfContentsHidden={setIsTableOfContentsHidden}
