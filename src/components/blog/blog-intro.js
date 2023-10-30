@@ -10,7 +10,7 @@ export default function BlogIntro({ image, title, author, date, tag, intro, read
 	return (
 		<div className="blog-intro">
 			<BgImage image={image}>
-				<VevolSection>
+				<VevolSection backgroundColour={'transparent'}>
 					<Container>
 						<p className="blog-intro__type">{type}</p>
 						<Title>{title}</Title>
