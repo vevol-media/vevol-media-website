@@ -9,31 +9,31 @@ const teamList = [
 	},
 	{
 		name: 'Bogdan Dobrota',
-		role: 'Front End Developer',
+		role: 'Shopify Developer',
 	},
 	{
 		name: 'Bogdan Dogaru',
-		role: 'Head of Development',
+		role: 'Co-Founder & CTO',
+	},
+	{
+		name: 'Bogdan Dutca',
+		role: 'Shopify Developer',
 	},
 	{
 		name: 'Dan Nistor',
-		role: 'Head of Business Development',
+		role: 'Co-Founder & CEO',
 	},
 	{
 		name: 'Denis Nicolescu',
-		role: 'Front End Developer',
-	},
-	{
-		name: 'Ema Crisan',
-		role: 'eCommerce Assistant',
+		role: 'Shopify Developer',
 	},
 	{
 		name: 'Laura Hirtop',
-		role: 'Front End Developer',
+		role: 'Lead Developer',
 	},
 	{
 		name: 'Miruna Andriesei',
-		role: 'Front End Developer',
+		role: 'Shopify Developer',
 	},
 	{
 		name: 'Victoria Gurghis',
