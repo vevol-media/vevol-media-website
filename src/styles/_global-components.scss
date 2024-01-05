@@ -115,3 +115,7 @@ a {
         }
     }
 }
+
+.select:not(.is-multiple) {
+    height: auto;
+}
