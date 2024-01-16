@@ -143,5 +143,14 @@ const partnersList = [
 		isUsed: true,
 		isTrusted: true,
 	},
+	{
+		name: 'eCom Accel Romania',
+		logo: 'ecomm-accel',
+		intro: "Your e-commerce acceleration program, specially designed to help you develop and grow your success in the online environment in Romania and abroad. Don't have an online store yet? eComm Accel is your start in the world of e-commerce. You'll receive personalized strategies and guidance to build your online business now. Already have an online store and want to grow it? eComm Accel provides the resources and expertise needed for the expansion and optimization of your business.",
+		website: 'https://www.amoredigital.co.uk/',
+		tags: ['agency', 'omnichannel'],
+		isUsed: true,
+		isTrusted: true,
+	},
 ];
 export default partnersList;
