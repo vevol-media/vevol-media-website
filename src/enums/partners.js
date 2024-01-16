@@ -144,7 +144,7 @@ const partnersList = [
 		isTrusted: true,
 	},
 	{
-		name: 'eCom Accel Romania',
+		name: 'eComm Accel Romania',
 		logo: 'ecomm-accel',
 		intro: "Your e-commerce acceleration program, specially designed to help you develop and grow your success in the online environment in Romania and abroad. eComm Accel is your start in the world of e-commerce. You'll receive personalized strategies and guidance to build your online business now. eComm Accel provides the resources and expertise needed for the expansion and optimization of your business.",
 		website: 'https://myidea.ro/ecomm-accel/',
