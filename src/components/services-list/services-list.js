@@ -6,9 +6,9 @@ import { getImageByName } from '../../helpers/helpers';
 import { Link } from 'gatsby';
 import { IconTopo } from '../../helpers/icons';
 
-export default function ServicesList({ imageData, services, backgroundWhite, topMargin }) {
+export default function ServicesList({ imageData, services, backgroundWhite, topMargin, className, linkText }) {
 	return (
-		<div className={`services-list ${backgroundWhite ? 'vm-bg--white' : ''} ${topMargin && 'mt-6'}`}>
+		<div className={`services-list ${backgroundWhite ? 'vm-bg--white' : ''} ${topMargin && 'mt-6'} ${className}`}>
 			<ul>
 				{services.map((service, index) => (
 					<li key={index}>
@@ -24,7 +24,7 @@ export default function ServicesList({ imageData, services, backgroundWhite, top
 								{service.title}
 							</Title>
 							<p>{service.intro}</p>
-							<span className="vm-button vm-button--transparent-white">Read more</span>
+							{linkText && <span className="vm-button vm-button--transparent-white">{linkText}</span>}
 						</Link>
 					</li>
 				))}

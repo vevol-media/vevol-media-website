@@ -48,6 +48,10 @@
 
         .main-contact__form {
             width: 550px;
+
+            &.main-contact__form--meetup {
+                width: 750px;
+            }
         }
     }
 
@@ -69,7 +73,7 @@
             }
 
             .main-contact__form {
-                width: auto;
+                width: auto !important;
             }
         }
     }

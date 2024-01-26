@@ -1,9 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Title } from 'bloomer/lib/elements/Title';
 import './features-index.scss';
-import featuresIndex from '../../enums/features-index';
 
-export default function FeaturesIndex({ featuresIndexRef }) {
+export default function FeaturesIndex({ featuresIndexRef, featuresIndex }) {
 	const [activeFeature, setActiveFeature] = useState(0);
 	const blocksRef = useRef();
 

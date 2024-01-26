@@ -1,14 +1,15 @@
 import Layout from '../components/layout/layout';
 import React, { useRef } from 'react';
-import SlimHero from '../components/slim-hero/slim-hero';
 import { Container } from 'bloomer';
-import VevolSection from '../components/general-components/vm-section';
 import { Helmet } from 'react-helmet';
-import ServicePlans from '../components/service-plans/service-plans';
-import HeadingBlock from '../components/heading-block/heading-block';
+import featuresIndex from '../enums/features-index';
 import FeaturesIndex from '../components/features-index/features-index';
-import SideDrawer from '../components/side-drawer/side-drawer';
+import HeadingBlock from '../components/heading-block/heading-block';
 import MainForm from '../components/forms/main-form';
+import ServicePlans from '../components/service-plans/service-plans';
+import SideDrawer from '../components/side-drawer/side-drawer';
+import SlimHero from '../components/slim-hero/slim-hero';
+import VevolSection from '../components/general-components/vm-section';
 
 export default function Page() {
 	const featuresIndexRef = useRef();
@@ -53,7 +54,7 @@ export default function Page() {
 						className="mb-4em"
 						subtitle={'Learn more about each feature included in our plans'}
 					/>
-					<FeaturesIndex featuresIndexRef={featuresIndexRef} />
+					<FeaturesIndex featuresIndexRef={featuresIndexRef} featuresIndex={featuresIndex} />
 				</Container>
 			</VevolSection>
 			<SideDrawer>

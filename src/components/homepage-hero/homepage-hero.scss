@@ -35,6 +35,12 @@
         right: -150px;
     }
 
+    &--shopify-meetup {
+        .homepage-hero__bottom-image {
+            right: -550px;
+        }
+    }
+
     .homepage-hero__continue-icon {
         position: absolute;
         z-index: 3;
