@@ -23,7 +23,7 @@ import '../components/forms/main-form.scss';
 
 export const data = graphql`
 	query {
-		heroImageQuery: file(name: { eq: "event-image" }) {
+		heroImageQuery: file(name: { eq: "event-image-updated" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
