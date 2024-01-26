@@ -9,5 +9,9 @@
 
 	@include screen-small {
 		gap: 20px;
+
+		&--general .card-team {
+			width: 100%;
+		}
 	}
 }

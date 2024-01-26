@@ -12,7 +12,7 @@ export default function BlogQuote({ avatar, content, title }) {
 					image={getImage(avatar.gatsbyImageData)}
 				/>
 			</div>
-			<div class="blog-quote__content">&ldquo;{content.description}&rdquo;</div>
+			<div className="blog-quote__content">&ldquo;{content.description}&rdquo;</div>
 		</div>
 	);
 }

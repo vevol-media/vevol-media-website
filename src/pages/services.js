@@ -25,7 +25,12 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: DOMINANT_COLOR, blurredOptions: { width: 20 }, height: 60, quality: 100)
+					gatsbyImageData(
+						placeholder: DOMINANT_COLOR
+						blurredOptions: { width: 20 }
+						height: 60
+						quality: 100
+					)
 				}
 			}
 		}
@@ -55,7 +60,13 @@ export default function ServicesPage({ data }) {
 						highlightedWord={'Code'}
 						subtitle={"Clean, scalable, flexible and re-usable. That's our way of writing code."}
 					/>
-					<ServicesList imageData={servicesIcons.nodes} services={services.dev} backgroundWhite topMargin />
+					<ServicesList
+						imageData={servicesIcons.nodes}
+						services={services.dev}
+						backgroundWhite
+						topMargin
+						linkText={'Read more'}
+					/>
 				</Container>
 			</VevolSection>
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />

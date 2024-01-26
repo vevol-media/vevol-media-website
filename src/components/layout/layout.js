@@ -8,11 +8,19 @@ import { Helmet } from 'react-helmet';
 import ogImage from '../../images/vevol-media-og-image.jpg';
 import favicon from '../../images/icon.png';
 import config from 'react-reveal/globals';
-import '@splidejs/splide/dist/css/splide.min.css';
 import { AppProvider } from '../../context/app-context';
 import CookieBar from '../cookie-bar/cookie-bar';
+import '@splidejs/splide/dist/css/splide.min.css';
 
-export default function Layout({ children, headerBg, headerIsStatic, showBlob, hasMainForm = true, formBackgroundImage }) {
+export default function Layout({
+	children,
+	headerBg,
+	headerIsStatic,
+	showBlob,
+	hasMainForm = true,
+	formBackgroundImage,
+	hasHeader = true,
+}) {
 	const [cookieConsentValue, setCookieConsentValue] = useState('');
 	const [showCookieBar, setShowCookieBar] = useState(false);
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -30,10 +38,14 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 		'Shopify Experts based in Ireland that provide bespoke eCommerce complete services. From Shopify setup to theme development. Get in touch with us today!';
 
 	const handleScroll = (event) => {
-		if (window.scrollY > 100) {
-			document.querySelector('.vm-header').classList.add('vm-header--full');
-		} else {
-			document.querySelector('.vm-header').classList.remove('vm-header--full');
+		const pageHeader = document.querySelector('.vm-header');
+
+		if (pageHeader) {
+			if (window.scrollY > 100) {
+				pageHeader.classList.add('vm-header--full');
+			} else {
+				pageHeader.classList.remove('vm-header--full');
+			}
 		}
 	};
 
@@ -121,12 +133,14 @@ export default function Layout({ children, headerBg, headerIsStatic, showBlob, h
 							'allow_ad_personalization_signals': true
 						});`}</script>
 					)}
-					{cookieConsentValue === 'all' && <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>}
-					{cookieConsentValue === 'all' && <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>}
+					{cookieConsentValue === 'all' && (
+						<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
+					)}
+					<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>
 					{cookieConsentValue === 'all' && <script>{`window._nQc="89222768";`}</script>}
 					{cookieConsentValue === 'all' && <script async src="https://serve.albacross.com/track.js"></script>}
 				</Helmet>
-				<Header background={headerBg} isStatic={headerIsStatic} />
+				{hasHeader && <Header background={headerBg} isStatic={headerIsStatic} />}
 				<main>{children}</main>
 				{hasMainForm && (
 					<MainForm

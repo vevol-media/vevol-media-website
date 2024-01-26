@@ -46,6 +46,14 @@
 		margin-top: 0 !important;
 	}
 
+	.card-topic {
+		font-size: 14px;
+		border: 1px solid $black;
+		padding: 5px 10px;
+		background: $green;
+		font-weight: 600;
+	}
+
 	&:hover .card-img-team .gatsby-image-wrapper {
 		filter: grayscale(0);
 	}

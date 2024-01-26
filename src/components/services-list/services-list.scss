@@ -79,6 +79,24 @@
         }
     }
 
+    &--meetup {
+        h3 {
+            position: absolute;
+            font-size: 22em !important;
+            font-weight: 900;
+            transform: rotate(20deg);
+            opacity: 0.2;
+            top: 0;
+            left: 0;
+        }
+
+        ul li > a p {
+            opacity: 1;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+
     @include screen-general {
         &:after,
         &:before {

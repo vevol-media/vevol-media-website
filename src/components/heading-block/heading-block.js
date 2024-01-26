@@ -1,8 +1,9 @@
 import React from 'react';
 import { Title } from 'bloomer';
 import { Fade } from 'react-reveal';
+import { Link } from 'gatsby';
 
-export default function HeadingBlock({ title, subtitle, highlightedWord, alignRight, className }) {
+export default function HeadingBlock({ title, subtitle, highlightedWord, alignRight, className, ctaText, ctaUrl }) {
 	const insertSpan = (string, highlightedWord) => {
 		return string.split(' ').map((word, index) => {
 			return (
@@ -20,9 +21,18 @@ export default function HeadingBlock({ title, subtitle, highlightedWord, alignRi
 					{insertSpan(title, highlightedWord)}
 				</Title>
 			</Fade>
-			<Fade bottom delay={100}>
-				<p>{subtitle}</p>
-			</Fade>
+			{subtitle && (
+				<Fade bottom delay={100}>
+					<p>{subtitle}</p>
+				</Fade>
+			)}
+			{ctaText && (
+				<Fade bottom delay={200}>
+					<Link to={ctaUrl} className="vm-button vm-button--black vm-button--big mt-6">
+						{ctaText}
+					</Link>
+				</Fade>
+			)}
 		</div>
 	);
 }
