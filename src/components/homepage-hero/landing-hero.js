@@ -20,7 +20,7 @@ export default function LandingHero({
 			<GatsbyImage image={imageBottom} className="homepage-hero__bottom-image" alt={title} />
 			<Container>
 				<div className="homepage-hero__content">
-					{upperText && <p>{upperText}</p>}
+					{upperText && <p className='content__supra-title'>{upperText}</p>}
 					{title && <Title>{title}</Title>}
 					{subtitle && <p>{subtitle}</p>}
 					{buttonText && (

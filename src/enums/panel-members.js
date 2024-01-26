@@ -20,7 +20,7 @@ const panelMembers = [
 	{
 		name: 'Ana Savin',
 		image: 'ana-savin',
-		role: 'Founder at Savinskin',
+		role: 'Founder at Savin’Skin',
 		topic: 'www.savinskin.com',
 	},
 ];
