@@ -71,7 +71,7 @@ export default function ShopifyMeetupPage({ data }) {
 			<LandingHero
 				imageBottom={heroImageData}
 				title={'SHOPIFY MEETUP ROMANIA'}
-				upperText={'19th February 2024 @ Hotel Capitol, Bucharest'}
+				upperText={'February 19th 2024 @ Hotel Capitol, Bucharest'}
 				buttonText={'Register now'}
 				buttonLink={'#form'}
 				subtitle={'Powered by Vevol Media'}
@@ -139,8 +139,7 @@ export default function ShopifyMeetupPage({ data }) {
 						</Fade>
 						<Fade bottom delay={100}>
 							<p>
-								Join us for a day full of expert information on Shopify. Don't miss out: 19th February
-								2024 @ Hotel Capitol, Bucharest
+								Join us for a day full of expert information on Shopify. Don't miss out: February 19th 2024 @ Hotel Capitol, Bucharest
 							</p>
 						</Fade>
 					</Content>
