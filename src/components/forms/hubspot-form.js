@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
-import { useForm } from 'react-hook-form';
-import { Field, Control, Content, Container, Title, Help, Input } from 'bloomer';
+import React, {useEffect } from 'react';
+import {
+    Content, Container, Title
+} from 'bloomer';
 import { IconTopo } from '../../helpers/icons';
 import './main-form.scss';
 import { Fade } from 'react-reveal';
