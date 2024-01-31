@@ -152,13 +152,6 @@ export default function Layout({
 								"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
 							}
 						/>
-						<MainForm
-							backgroundImage={formBackgroundImage}
-							title={'Talk to a Strategist'}
-							subtitle={
-								"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
-							}
-							/>
 					</>
 				)}
 				{showCookieBar && (

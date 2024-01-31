@@ -29,15 +29,13 @@ export default function HubspotForm({ title, subtitle, standalone, backgroundIma
         document.head.appendChild(script);
 
         return () => {
-            // Cleanup function to remove the script when the component unmounts
+
             document.head.removeChild(script);
         };
     }, []);
 
     const formContent = (
-        <div id="form-container">
-            {/* Form will be rendered here */}
-        </div>
+        <div id="form-container" className="main-contact__form"></div>
     );
 
     return (
