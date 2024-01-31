@@ -4,6 +4,7 @@ import WebsiteFooter from '../footer/footer';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
 import MainForm from '../forms/main-form';
+import HubspotForm from '../forms/hubspot-form';
 import { Helmet } from 'react-helmet';
 import ogImage from '../../images/vevol-media-og-image.jpg';
 import favicon from '../../images/icon.png';
@@ -143,13 +144,15 @@ export default function Layout({
 				{hasHeader && <Header background={headerBg} isStatic={headerIsStatic} />}
 				<main>{children}</main>
 				{hasMainForm && (
-					<MainForm
-						backgroundImage={formBackgroundImage}
-						title={'Talk to a Strategist'}
-						subtitle={
-							"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
-						}
-					/>
+					<>
+						<HubspotForm
+							backgroundImage={formBackgroundImage}
+							title={'Talk to a Strategist'}
+							subtitle={
+								"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
+							}
+						/>
+					</>
 				)}
 				{showCookieBar && (
 					<CookieBar
