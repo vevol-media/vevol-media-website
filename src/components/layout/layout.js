@@ -3,7 +3,6 @@ import Header from '../header/header';
 import WebsiteFooter from '../footer/footer';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
-import MainForm from '../forms/main-form';
 import HubspotForm from '../forms/hubspot-form';
 import { Helmet } from 'react-helmet';
 import ogImage from '../../images/vevol-media-og-image.jpg';

@@ -4,6 +4,10 @@ const teamList = [
 		role: 'Project Manager',
 	},
 	{
+		name: 'Alexandru Vida',
+		role: 'Project Manager',
+	},
+	{
 		name: 'Alexia Chirita',
 		role: 'Account Executive',
 	},
@@ -20,12 +24,12 @@ const teamList = [
 		role: 'Shopify Developer',
 	},
 	{
-		name: 'Dan Nistor',
-		role: 'Co-Founder & CEO',
+		name: 'Calvin Tama',
+		role: 'UX/UI Design',
 	},
 	{
-		name: 'Denis Nicolescu',
-		role: 'Shopify Developer',
+		name: 'Dan Nistor',
+		role: 'Co-Founder & CEO',
 	},
 	{
 		name: 'Laura Hirtop',
@@ -36,8 +40,12 @@ const teamList = [
 		role: 'Shopify Developer',
 	},
 	{
-		name: 'Victoria Gurghis',
-		role: 'UX/UI Design',
+		name: 'Steli Grigore',
+		role: 'eCommerce Specialist',
+	},
+	{
+		name: 'Theea Ursu',
+		role: 'Marketing Specialist',
 	},
 ];
 
