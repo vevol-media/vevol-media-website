@@ -3,18 +3,18 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImage } from 'gatsby-plugin-image';
 import { SplideSlide, Splide } from '@splidejs/react-splide';
 
-export default function ImagesMiniBanner({ images }) {
+export default function ImagesMiniBanner({ images, arrowsVisible = false}) {
 	const splideSettings = {
 		wheel: false,
 		pagination: false,
 		perPage: 4,
 		start: 0,
 		padding: { left: 100, right: 100 },
-		arrows: false,
+		arrows: arrowsVisible,
+		gap: '50px',
 		breakpoints: {
-			480: {
+			760: {
 				perPage: 2,
-				gap: '50px',
 				padding: { left: 50, right: 50 },
 			},
 		},

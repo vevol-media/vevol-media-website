@@ -126,7 +126,7 @@ export default function ShopifyMeetupPage({ data }) {
 					/>
 				</Container>
 			</VevolSection>
-			<ImagesMiniBanner images={partnersImagesData} />
+			<ImagesMiniBanner images={partnersImagesData} arrowsVisible={true} />
 			<VevolSection className={'main-contact'} customId={'form'}>
 				<IconTopo className="main-contact__pattern-one" />
 				<BgImage className="main-contact__background-image" image={formBannerImageData} />
@@ -139,7 +139,8 @@ export default function ShopifyMeetupPage({ data }) {
 						</Fade>
 						<Fade bottom delay={100}>
 							<p>
-								Join us for a day full of expert information on Shopify. Don't miss out: February 19th 2024 @ Hotel Capitol, Bucharest
+								Join us for a day full of expert information on Shopify. Don't miss out: February 19th
+								2024 @ Hotel Capitol, Bucharest
 							</p>
 						</Fade>
 					</Content>
