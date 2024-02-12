@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import './team-members.scss';
 
-export default function GeneralMembers({ members }) {
+export default function GeneralMembers({ members, altLayout }) {
 	const imagesData = useStaticQuery(graphql`
 		query {
 			allFile(filter: { relativeDirectory: { eq: "people" } }) {
@@ -24,7 +24,7 @@ export default function GeneralMembers({ members }) {
 	`);
 
 	return (
-		<div className="team-container team-container--general">
+		<div className={`team-container team-container--general ${altLayout ? 'team-container--alt-layout' : ''}`}>
 			{members.map((member, index) => {
 				const memberImageData = imagesData.allFile.nodes.filter((image) => image.name === member.image);
 				const memberImageObject =

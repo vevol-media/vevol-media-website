@@ -33,7 +33,7 @@ const meetupSchedule = [
 	},
 	{
 		title: '14:00 - 15:00',
-		info: `Increasing Online Orders on Shopify (Panel) - Cosmin Costea, Stefan Chriacescu, Victor Stan, Razvan Rusu, Ana Savin`,
+		info: `Increasing Online Orders on Shopify (Panel) - Ana Savin, Cosmin Costea, Razvan Rusu, Valentin Radu, Victor Stan`,
 	},
 	{
 		title: '15:05 - 15:30',

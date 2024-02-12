@@ -75,3 +75,15 @@
 		}
 	}
 }
+
+.team-container--alt-layout {
+	.card-team {
+		width: calc(33.33% - 26.66px);
+	}
+
+	@include screen-small {
+		.card-team {
+			width: calc(50% - 10px);
+		}
+	}
+}

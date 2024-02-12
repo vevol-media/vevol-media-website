@@ -81,13 +81,13 @@ export default function ShopifyMeetupPage({ data }) {
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock title={'Meet the Speakers...'} highlightedWord={'Speakers'} className={'mb-6'} />
-					<GeneralMembers members={speakersList} />
+					<GeneralMembers members={speakersList} altLayout />
 				</Container>
 			</VevolSection>
 			<VevolSection backgroundColour={'grey'}>
 				<Container>
 					<HeadingBlock title={'...and the panel members'} highlightedWord={'panel'} className={'mb-6'} />
-					<GeneralMembers members={panelMembers} />
+					<GeneralMembers members={panelMembers} altLayout />
 				</Container>
 			</VevolSection>
 			<SidewayText lineOne={`19/02/2024`} lineTwo={'Bucharest'} />

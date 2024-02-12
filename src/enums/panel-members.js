@@ -17,12 +17,12 @@ const panelMembers = [
 		role: 'Founder at Razvan Idicel',
 		topic: 'www.razvanidicel.ro',
 	},
-	// {
-	// 	name: 'Valentin Radu',
-	// 	image: 'valentin-radu',
-	// 	role: 'Founder at Omniconvert',
-	// 	topic: 'www.omniconvert.com',
-	// },
+	{
+		name: 'Valentin Radu',
+		image: 'valentin-radu',
+		role: 'Founder at Omniconvert',
+		topic: 'www.omniconvert.com',
+	},
 	{
 		name: 'Victor Stan',
 		image: 'victor-stan',
