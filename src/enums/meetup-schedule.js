@@ -13,7 +13,7 @@ const meetupSchedule = [
 	},
 	{
 		title: '10:30 - 10:55',
-		info: `TBA`,
+		info: `Dan Nistor, CEO at Vevol Media - Why Shopify & Migrating an Online Store to Shopify (20min) + Q&A (5min)`,
 	},
 	{
 		title: '11:00 - 11:30',
@@ -25,7 +25,7 @@ const meetupSchedule = [
 	},
 	{
 		title: '12:20 - 12:55',
-		info: `Dan Nistor, CEO at Vevol Media & Bogdan Dogaru, CTO at Vevol Media - Shopify Benefits, Scalability, Migration, Trends in eCommerce (25min) + Q&A (10min)`,
+		info: `Bogdan Dogaru - Smart Shopify Management: How to Avoid Technical Mistakes That Cost You (20min) + Q&A (5min)`,
 	},
 	{
 		title: '13:00 - 13:45',
@@ -37,7 +37,7 @@ const meetupSchedule = [
 	},
 	{
 		title: '15:05 - 15:30',
-		info: `TBA.`,
+		info: `Tudor Goicea, CRO & Cofounder Aqurate - Personalisation in eCommerce - What we can learn from Google, Netflix, Amazon, and Facebook (20min) + Q&A (5min)`,
 	},
 	{
 		title: '15:35 - 16:00',

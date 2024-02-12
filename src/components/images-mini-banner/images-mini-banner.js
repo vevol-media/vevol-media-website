@@ -7,7 +7,7 @@ export default function ImagesMiniBanner({ images, arrowsVisible = false}) {
 	const splideSettings = {
 		wheel: false,
 		pagination: false,
-		perPage: 4,
+		perPage: 5,
 		start: 0,
 		padding: { left: 100, right: 100 },
 		arrows: arrowsVisible,
