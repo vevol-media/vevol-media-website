@@ -16,7 +16,7 @@ const meetupSchedule = [
 		info: `Dan Nistor, CEO at Vevol Media - Why Shopify & Migrating an Online Store to Shopify (20min) + Q&A (5min)`,
 	},
 	{
-		title: '11:00 - 11:30',
+		title: '11:00 - 11:45',
 		info: `Coffee Break & Networking`,
 	},
 	{
@@ -24,11 +24,11 @@ const meetupSchedule = [
 		info: `Benjamin Lang, Head of Benelux and Nordics Expansion at Shopify - About Shopify (30min)`,
 	},
 	{
-		title: '12:20 - 12:55',
+		title: '12:20 - 12:45',
 		info: `Bogdan Dogaru - Smart Shopify Management: How to Avoid Technical Mistakes That Cost You (20min) + Q&A (5min)`,
 	},
 	{
-		title: '13:00 - 13:45',
+		title: '12:45 - 14:00',
 		info: `Lunch Break & Networking`,
 	},
 	{
