@@ -5,7 +5,7 @@ const meetupSchedule = [
 	},
 	{
 		title: '09:30 - 09:55',
-		info: `Stefan Chiriacescu, Founder and CEO eCommerce Today - Email Marketing Automations on Shopify (20min) + Q&A (5min)`,
+		info: `Dan Nistor, CEO at Vevol Media - Why Shopify & Migrating an Online Store to Shopify (20min) + Q&A (5min)`,
 	},
 	{
 		title: '10:00 - 10:25',
@@ -13,7 +13,7 @@ const meetupSchedule = [
 	},
 	{
 		title: '10:30 - 10:55',
-		info: `Dan Nistor, CEO at Vevol Media - Why Shopify & Migrating an Online Store to Shopify (20min) + Q&A (5min)`,
+		info: `Stefan Chiriacescu, Founder and CEO eCommerce Today - Email Marketing Automations on Shopify (20min) + Q&A (5min)`,
 	},
 	{
 		title: '11:00 - 11:45',
@@ -42,6 +42,14 @@ const meetupSchedule = [
 	{
 		title: '15:35 - 16:00',
 		info: `Final thoughts and conclusions of the day`,
+	},
+	{
+		title: '16:00 - 16:30',
+		info: `Networking & Goodbyes`,
+	},
+	{
+		title: '17:00 - Late',
+		info: `After-drinks at Saint Patrick's Irish Pub in the Old Town`,
 	},
 ];
 

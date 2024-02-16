@@ -132,6 +132,7 @@ export default function ShopifyMeetupPage({ data }) {
 						className="mb-4em"
 						subtitle={'Find out what we have prepared for you'}
 					/>
+					<p className='mt-6 mb-6'>Save the date & location: <strong>19th February 2024, 09:00 - 16:00</strong>, Hotel Capitol, Bucharest, Calea Victoriei 29, București 010061, Romania. After-drinks at <strong>Saint Patrick's Irish Pub</strong> in the Old Town.</p>
 					<FeaturesIndex featuresIndexRef={featuresIndexRef} featuresIndex={meetupSchedule} />
 				</Container>
 			</VevolSection>
