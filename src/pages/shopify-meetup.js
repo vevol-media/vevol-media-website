@@ -28,6 +28,11 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
 		}
+		ogImageQuery: file(name: { eq: "og-image" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
+			}
+		}
 		servicesIconsQuery: allFile(filter: { relativeDirectory: { eq: "services-icons" } }) {
 			nodes {
 				name
@@ -53,20 +58,35 @@ export const data = graphql`
 `;
 
 export default function ShopifyMeetupPage({ data }) {
-	const { heroImageQuery, servicesIconsQuery, formBannerImageQuery, partnersImagesQuery } = data;
+	const { heroImageQuery, servicesIconsQuery, formBannerImageQuery, partnersImagesQuery, ogImageQuery } = data;
 	const heroImageData = getImage(heroImageQuery);
+	const ogImage = getImage(ogImageQuery);
 	const formBannerImageData = getImage(formBannerImageQuery);
 	const partnersImagesData = partnersImagesQuery.nodes;
 	const featuresIndexRef = useRef();
 
+	const metaTitle = 'Shopify MeetUp Romania: E-commerce Insights and Networking';
+	const metaDescription =
+		'Join us for key insights in Shopify and e-commerce. Benefit from networking with industry experts. Free and limited registration available. Register now!';
+
 	return (
 		<Layout hasMainForm={false} hasHeader={false}>
 			<Helmet>
-				<title>Shopify MeetUp Romania: E-commerce Insights and Networking</title>
-				<meta
-					name="description"
-					content="Join us for key insights in Shopify and e-commerce. Benefit from networking with industry experts. Free and limited registration available. Register now!"
-				/>
+				<title>{metaTitle}</title>
+				<meta name="description" content={metaDescription} />
+
+				<meta property="og:url" content="https://www.vevolmedia.com/shopify-meetup" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content={metaTitle} />
+				<meta property="og:description" content={metaDescription} />
+				<meta property="og:image" content={ogImage.images.fallback.src} />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:creator" content="@VevolMedia" />
+				<meta property="twitter:domain" content="vevolmedia.com" />
+				<meta property="twitter:url" content="https://www.vevolmedia.com/shopify-meetup" />
+				<meta name="twitter:title" content={metaTitle} />
+				<meta name="twitter:description" content={metaDescription} />
+				<meta name="twitter:image" content={ogImage.images.fallback.src} />
 			</Helmet>
 			<LandingHero
 				imageBottom={heroImageData}
