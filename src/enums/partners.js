@@ -74,7 +74,7 @@ const partnersList = [
 	{
 		name: 'Segmentify',
 		logo: 'segmentify',
-		intro: 'Segmentify is a Customer Engagement Platform, their focus is creating omnichannel personalised experiences for each customer throughout the entire eCommerce journey to increase conversions, engagement, revenue and customer lifetime value.',
+		intro: 'Segmentify boosts eCommerce with omnichannel, personalized experiences to increase conversions, engagement, revenue, and customer value.',
 		website: 'https://segmentify.com/',
 		tags: ['omnichannel', 'conversions'],
 		isUsed: true,
@@ -92,7 +92,7 @@ const partnersList = [
 	{
 		name: 'ReConvert',
 		logo: 'reconvert',
-		intro: 'ReConvert helps you sell more, by making it easy to optimize your post-purchase journey. Add checkout upsells, one-click upsells, thank you page offers & more in minutes.',
+		intro: 'ReConvert optimizes your post-purchase journey with easy checkout upsells, one-click upsells, and thank you page offers to boost sales.',
 		website: 'https://www.reconvert.io/',
 		tags: ['shopify', 'conversions'],
 		isUsed: true,
@@ -119,7 +119,7 @@ const partnersList = [
 	{
 		name: 'Applications Studio',
 		logo: 'applicationsstudio',
-		intro: 'Application studios: Native apps with premium performance for Android and iOS. Build your own mobile and send push notifications, integrate your marketing channels and increase your conversion rate with a no-code drag and drop builder.',
+		intro: 'Application studios offer premium native apps for Android and iOS. Build mobile apps and boost conversions with no-code, drag-and-drop tools and integrated marketing.',
 		website: 'https://www.applications.studio/',
 		tags: ['omnichannel', 'marketing'],
 		isUsed: true,
@@ -128,7 +128,7 @@ const partnersList = [
 	{
 		name: 'Rush',
 		logo: 'rush',
-		intro: 'Rush: Build a beautiful custom tracking page, access all shipments in one dashboard and provide an outstanding post-purchase experience. Integrate with all your marketing channels and passively increase your revenue.',
+		intro: 'Rush: Create a custom tracking page, manage all shipments from one dashboard, and enhance post-purchase experiences. Boost revenue with integrated marketing.',
 		website: 'https://www.rush.app/',
 		tags: ['shopify'],
 		isUsed: true,
@@ -164,7 +164,7 @@ const partnersList = [
 	{
 		name: 'Amore Digital',
 		logo: 'amore-digital',
-		intro: 'Amore Digital is a paid ads consultancy with a strong focus on paid media for e-commerce brands. This includes researching, building and managing performance campaigns across Google ads, shopping and meta ads with a strong focus on ROI.',
+		intro: 'Amore Digital specializes in paid media for e-commerce, managing performance campaigns across Google Ads and Meta with a focus on ROI.',
 		website: 'https://www.amoredigital.co.uk/',
 		tags: ['marketing'],
 		isUsed: true,
@@ -173,9 +173,18 @@ const partnersList = [
 	{
 		name: 'eComm Accel Romania',
 		logo: 'ecomm-accel',
-		intro: "Your e-commerce acceleration program, specially designed to help you develop and grow your success in the online environment in Romania and abroad. eComm Accel is your start in the world of e-commerce. You'll receive personalized strategies and guidance to build your online business now. eComm Accel provides the resources and expertise needed for the expansion and optimization of your business.",
+		intro: 'eComm Accel: Accelerate your e-commerce success in Romania and internationally with personalized strategies and expert guidance. Optimize and expand your online business with eComm Accel.',
 		website: 'https://myidea.ro/ecomm-accel/',
 		tags: ['agency', 'omnichannel'],
+		isUsed: true,
+		isTrusted: true,
+	},
+	{
+		name: 'Kimonix',
+		logo: 'kimonix',
+		intro: 'Kimonix is a profit-driven merchandising platform that enhances sales and optimizes inventory by syncing data points and enabling complex strategies with advanced functionalities.',
+		website: 'https://www.kimonix.com/',
+		tags: ['shopify', 'omnichannel'],
 		isUsed: true,
 		isTrusted: true,
 	},
