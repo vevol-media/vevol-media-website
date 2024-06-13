@@ -54,6 +54,26 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 800, quality: 100)
 			}
 		}
+		noblesseImageQuery: file(name: { eq: "noblesse-image" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 800, quality: 100)
+			}
+		}
+		mobileIconQuery: file(name: { eq: "mobile-icon" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
+			}
+		}
+		lightningIconQuery: file(name: { eq: "lightning-icon" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
+			}
+		}
+		cartIconQuery: file(name: { eq: "cart-icon" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
+			}
+		}
 		blogPosts: allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }, limit: 4) {
 			nodes {
 				title
@@ -79,6 +99,10 @@ export default function Homepage({ data }) {
 		partnersImages,
 		midBannerImageQuery,
 		collageImageQuery,
+		noblesseImageQuery,
+		mobileIconQuery,
+		lightningIconQuery,
+		cartIconQuery,
 		blogPosts,
 		formBannerImageQuery,
 		mainHeroImageQuery,
@@ -87,11 +111,47 @@ export default function Homepage({ data }) {
 	const formBannerImage = getImage(formBannerImageQuery);
 	const mainHeroImage = getImage(mainHeroImageQuery);
 	const collageImage = getImage(collageImageQuery);
+	const noblesseImage = getImage(noblesseImageQuery);
+	const mobileIcon = getImage(mobileIconQuery);
+	const lightningIcon = getImage(lightningIconQuery);
+	const cartIcon = getImage(cartIconQuery);
 
 	return (
 		<Layout formBackgroundImage={formBannerImage}>
 			<HomepageHero imageBottom={mainHeroImage} />
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
+			<VevolSection>
+				<Container>
+					<ImageWithText
+						alignRight
+						greenLine
+						image={<GatsbyImage image={noblesseImage} alt={'Official Shopify Theme created by Vevol Media'} />}
+						title={'Our First Official Shopify Theme!'}
+						textContent={[
+							<p className="mt-5">
+								We're very happy to launch Noblesse, our first Shopify Theme, perfectly adapted to fashion, jewellery and beauty!
+							</p>,
+							<p className="mt-5">
+								We wanted to create something different, for brands that want to stand out without the need for custom coding, but still CRO oriented.
+							</p>
+						]}
+						numbersContent={[
+							{
+								image: <GatsbyImage image={mobileIcon} alt="Mobile icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Story component',
+							},
+							{
+								image: <GatsbyImage image={lightningIcon} alt="Mobile icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Lightning fast',
+							},
+							{
+								image: <GatsbyImage image={cartIcon} alt="Mobile icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Mobile first checkout',
+							},
+						]}
+					/>
+				</Container>
+			</VevolSection>
 			<HomepageServices />
 			<ImagesMiniBanner images={partnersImages.nodes} />
 			<VevolSection>

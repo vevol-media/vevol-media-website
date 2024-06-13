@@ -30,7 +30,8 @@ export default function ImageWithText({ image, title, textContent, numbersConten
 							{numbersContent.map((item, index) => (
 								<Fade bottom key={index} delay={100 * index}>
 									<div className="iwt-numbers__item">
-										<span>{item.title}</span>
+									    <span>{item.image}</span>
+										<span><strong>{item.title}</strong></span>
 										<span>{item.subtitle}</span>
 									</div>
 								</Fade>
