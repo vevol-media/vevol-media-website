@@ -223,6 +223,15 @@ const partnersList = [
 		tags: ['shopify', 'themes'],
 		isUsed: true,
 		isTrusted: true,
+	},
+	{
+		name: 'Syncio',
+		logo: 'syncio',
+		intro: 'Real-time sync inventory, products, and orders across multiple Shopify and WooCommerce stores. Seamlessly collaborate with suppliers and sellers, expand your business to new regions and markets, and save hours each week.',
+		website: 'https://www.syncio.co/',
+		tags: ["shopify", "ecommerce", "sync", "collaboration", "inventory"],
+		isUsed: true,
+		isTrusted: true,
 	}
 ];
 export default partnersList;
