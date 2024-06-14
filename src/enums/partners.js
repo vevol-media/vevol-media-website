@@ -232,6 +232,15 @@ const partnersList = [
 		tags: ["shopify", "ecommerce", "sync", "collaboration", "inventory"],
 		isUsed: true,
 		isTrusted: true,
+	},
+	{
+		name: 'GiftNote',
+		logo: 'giftnote',
+		intro: 'Giftnote allows Shopify stores to enable an automated and paperless gift messaging and gift voucher experience that drives new revenue through gifting.',
+		website: 'https://giftnote.com/',
+		tags: ["shopify", "gift", "automation"],
+		isUsed: true,
+		isTrusted: true,
 	}
 ];
 export default partnersList;
