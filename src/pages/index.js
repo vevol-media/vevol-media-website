@@ -132,8 +132,9 @@ export default function Homepage({ data }) {
 								We're very happy to launch Noblesse, our first Shopify Theme, perfectly adapted to fashion, jewellery and beauty!
 							</p>,
 							<p className="mt-5">
-								We wanted to create something different, for brands that want to stand out without the need for custom coding, but still CRO oriented.
-							</p>
+								We wanted to create something different, for brands that want to stand out without the need for custom coding, but
+								still CRO oriented.
+							</p>,
 						]}
 						numbersContent={[
 							{
@@ -149,10 +150,11 @@ export default function Homepage({ data }) {
 								subtitle: 'Mobile first checkout',
 							},
 						]}
-					/>
-					<Link href="/blog/vevol-themes-first-shopify-theme" className="vm-button vm-button--green-alt">
-						Check the theme
-					</Link>
+					>
+						<Link href="/blog/vevol-themes-first-shopify-theme" className="vm-button vm-button--white mt-5">
+							Check the theme
+						</Link>
+					</ImageWithText>
 				</Container>
 			</VevolSection>
 			<HomepageServices />
@@ -165,17 +167,11 @@ export default function Homepage({ data }) {
 						image={<GatsbyImage image={collageImage} alt={'Vevol Media Projects Collage'} />}
 						title={'Your Success Is Our Success'}
 						textContent={[
+							<p className="mt-5">We love working with amazing brands and we are fully invested in all of our projects.</p>,
 							<p className="mt-5">
-								We love working with amazing brands and we are fully invested in all of our projects.
+								Our ethos is to provide quality above all else and we uphold our beliefs when offering our services to our clients.
 							</p>,
-							<p className="mt-5">
-								Our ethos is to provide quality above all else and we uphold our beliefs when offering
-								our services to our clients.
-							</p>,
-							<p className="mt-5">
-								We’ve been a part of many success stories and we can’t wait to join your journey to the
-								top!
-							</p>,
+							<p className="mt-5">We’ve been a part of many success stories and we can’t wait to join your journey to the top!</p>,
 						]}
 						numbersContent={[
 							{
@@ -221,12 +217,7 @@ export default function Homepage({ data }) {
 						subtitle={'Proven track record of our hard work.'}
 						className="mb-4em"
 					/>
-					<PortfolioCarousel
-						projectsList={portfolio}
-						imagesData={portfolioFeaturedImagesQuery.nodes}
-						backgroundWhite
-						cutBottomPadding
-					/>
+					<PortfolioCarousel projectsList={portfolio} imagesData={portfolioFeaturedImagesQuery.nodes} backgroundWhite cutBottomPadding />
 				</Container>
 			</VevolSection>
 			{blogPosts.nodes.length > 0 && (
@@ -235,9 +226,7 @@ export default function Homepage({ data }) {
 						<HeadingBlock
 							title={'Read More From Us'}
 							highlightedWord={'More'}
-							subtitle={
-								'Partnership announcements, news about the company or insightful articles from our team.'
-							}
+							subtitle={'Partnership announcements, news about the company or insightful articles from our team.'}
 							className="mb-4em"
 						/>
 						<HomepageArticles blogPosts={blogPosts.nodes} />

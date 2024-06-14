@@ -2,7 +2,7 @@ import React from 'react';
 import { Title } from 'bloomer';
 import { Fade } from 'react-reveal';
 
-export default function ImageWithText({ image, title, textContent, numbersContent, alignRight, greenLine, className }) {
+export default function ImageWithText({ image, title, textContent, numbersContent, alignRight, greenLine, className, children }) {
 	return (
 		<div
 			className={`image-with-text ${alignRight ? 'image-with-text--align-right' : ''} ${
@@ -38,7 +38,9 @@ export default function ImageWithText({ image, title, textContent, numbersConten
 							))}
 						</div>
 					)}
+					{children}
 				</div>
+				
 			</Fade>
 		</div>
 	);
