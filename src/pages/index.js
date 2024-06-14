@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import HomepageHero from '../components/homepage-hero/homepage-hero';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
@@ -142,7 +142,7 @@ export default function Homepage({ data }) {
 							},
 							{
 								image: <GatsbyImage image={lightningIcon} alt="Mobile icon" style={{ width: 30, height: 30 }} />,
-								subtitle: 'Lightning fast',
+								subtitle: 'Lightweight and fast',
 							},
 							{
 								image: <GatsbyImage image={cartIcon} alt="Mobile icon" style={{ width: 30, height: 30 }} />,
@@ -150,6 +150,9 @@ export default function Homepage({ data }) {
 							},
 						]}
 					/>
+					<Link href="/blog/vevol-themes-first-shopify-theme" className="vm-button vm-button--green-alt">
+						Check the theme
+					</Link>
 				</Container>
 			</VevolSection>
 			<HomepageServices />
