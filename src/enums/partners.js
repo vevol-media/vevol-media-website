@@ -218,8 +218,8 @@ const partnersList = [
 	{
 		name: 'Vevol Themes',
 		logo: 'vevol-themes',
-		intro: 'Vevol Themes builds modern and performant Shopify Themes. Aimed at multiple niches, themes are built to ease the merchants\' store setup and convert users into customers.',
-		website: 'www.vevolthemes.com/',
+		intro: "Vevol Themes builds modern and performant Shopify Themes. Aimed at multiple niches, themes are built to ease the merchants' store setup and convert users into customers.",
+		website: 'https://www.vevolthemes.com/',
 		tags: ['shopify', 'themes'],
 		isUsed: true,
 		isTrusted: true,
@@ -229,7 +229,7 @@ const partnersList = [
 		logo: 'syncio',
 		intro: 'Real-time sync inventory, products, and orders across multiple Shopify and WooCommerce stores. Seamlessly collaborate with suppliers and sellers, expand your business to new regions and markets, and save hours each week.',
 		website: 'https://www.syncio.co/',
-		tags: ["shopify", "ecommerce", "sync", "collaboration", "inventory"],
+		tags: ['shopify', 'ecommerce', 'sync', 'collaboration', 'inventory'],
 		isUsed: true,
 		isTrusted: true,
 	},
@@ -238,9 +238,9 @@ const partnersList = [
 		logo: 'giftnote',
 		intro: 'Giftnote allows Shopify stores to enable an automated and paperless gift messaging and gift voucher experience that drives new revenue through gifting.',
 		website: 'https://giftnote.com/',
-		tags: ["shopify", "gift", "automation"],
+		tags: ['shopify', 'gift', 'automation'],
 		isUsed: true,
 		isTrusted: true,
-	}
+	},
 ];
 export default partnersList;
