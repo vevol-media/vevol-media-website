@@ -59,17 +59,17 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 800, quality: 100)
 			}
 		}
-		mobileIconQuery: file(name: { eq: "mobile-icon" }) {
+		storyIconQuery: file(name: { eq: "story-icon" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
 			}
 		}
-		lightningIconQuery: file(name: { eq: "lightning-icon" }) {
+		palletIconQuery: file(name: { eq: "pallet-icon" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
 			}
 		}
-		cartIconQuery: file(name: { eq: "cart-icon" }) {
+		bagIconQuery: file(name: { eq: "bag-icon" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
 			}
@@ -100,9 +100,9 @@ export default function Homepage({ data }) {
 		midBannerImageQuery,
 		collageImageQuery,
 		noblesseImageQuery,
-		mobileIconQuery,
-		lightningIconQuery,
-		cartIconQuery,
+		storyIconQuery,
+		palletIconQuery,
+		bagIconQuery,
 		blogPosts,
 		formBannerImageQuery,
 		mainHeroImageQuery,
@@ -112,9 +112,9 @@ export default function Homepage({ data }) {
 	const mainHeroImage = getImage(mainHeroImageQuery);
 	const collageImage = getImage(collageImageQuery);
 	const noblesseImage = getImage(noblesseImageQuery);
-	const mobileIcon = getImage(mobileIconQuery);
-	const lightningIcon = getImage(lightningIconQuery);
-	const cartIcon = getImage(cartIconQuery);
+	const storyIcon = getImage(storyIconQuery);
+	const palletIcon = getImage(palletIconQuery);
+	const bagIcon = getImage(bagIconQuery);
 
 	return (
 		<Layout formBackgroundImage={formBannerImage}>
@@ -138,20 +138,20 @@ export default function Homepage({ data }) {
 						]}
 						numbersContent={[
 							{
-								image: <GatsbyImage image={mobileIcon} alt="Mobile icon" style={{ width: 30, height: 30 }} />,
-								subtitle: 'Story component',
+								image: <GatsbyImage image={storyIcon} alt="Star icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Visual Storytelling',
 							},
 							{
-								image: <GatsbyImage image={lightningIcon} alt="Mobile icon" style={{ width: 30, height: 30 }} />,
-								subtitle: 'Lightweight and fast',
+								image: <GatsbyImage image={palletIcon} alt="Pallet icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Highly Customisable',
 							},
 							{
-								image: <GatsbyImage image={cartIcon} alt="Mobile icon" style={{ width: 30, height: 30 }} />,
-								subtitle: 'Mobile first checkout',
+								image: <GatsbyImage image={bagIcon} alt="Bag icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Focused on Conversion',
 							},
 						]}
 					>
-						<Link href="/blog/vevol-themes-first-shopify-theme" className="vm-button vm-button--white mt-5">
+						<Link href="https://themes.shopify.com/themes/noblesse" target="_blank" className="vm-button vm-button--white mt-6">
 							Check the theme
 						</Link>
 					</ImageWithText>
