@@ -33,6 +33,10 @@
             flex: 1;
             padding: 20px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
 
             span {
                 color: $black;

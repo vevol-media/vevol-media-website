@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import HomepageHero from '../components/homepage-hero/homepage-hero';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
@@ -54,6 +54,26 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 800, quality: 100)
 			}
 		}
+		noblesseImageQuery: file(name: { eq: "noblesse-image" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 800, quality: 100)
+			}
+		}
+		storyIconQuery: file(name: { eq: "story-icon" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
+			}
+		}
+		palletIconQuery: file(name: { eq: "pallet-icon" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
+			}
+		}
+		bagIconQuery: file(name: { eq: "bag-icon" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
+			}
+		}
 		blogPosts: allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }, limit: 4) {
 			nodes {
 				title
@@ -79,6 +99,10 @@ export default function Homepage({ data }) {
 		partnersImages,
 		midBannerImageQuery,
 		collageImageQuery,
+		noblesseImageQuery,
+		storyIconQuery,
+		palletIconQuery,
+		bagIconQuery,
 		blogPosts,
 		formBannerImageQuery,
 		mainHeroImageQuery,
@@ -87,11 +111,52 @@ export default function Homepage({ data }) {
 	const formBannerImage = getImage(formBannerImageQuery);
 	const mainHeroImage = getImage(mainHeroImageQuery);
 	const collageImage = getImage(collageImageQuery);
+	const noblesseImage = getImage(noblesseImageQuery);
+	const storyIcon = getImage(storyIconQuery);
+	const palletIcon = getImage(palletIconQuery);
+	const bagIcon = getImage(bagIconQuery);
 
 	return (
 		<Layout formBackgroundImage={formBannerImage}>
 			<HomepageHero imageBottom={mainHeroImage} />
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
+			<VevolSection>
+				<Container>
+					<ImageWithText
+						alignRight
+						greenLine
+						image={<GatsbyImage image={noblesseImage} alt={'Official Shopify Theme created by Vevol Media'} />}
+						title={'Our First Official Shopify Theme!'}
+						textContent={[
+							<p className="mt-5">
+								We're very happy to launch Noblesse, our first Shopify Theme, perfectly adapted to fashion, jewellery and beauty!
+							</p>,
+							<p className="mt-5">
+								We wanted to create something different, for brands that want to stand out without the need for custom coding, but
+								still CRO oriented.
+							</p>,
+						]}
+						numbersContent={[
+							{
+								image: <GatsbyImage image={storyIcon} alt="Star icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Visual Storytelling',
+							},
+							{
+								image: <GatsbyImage image={palletIcon} alt="Pallet icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Highly Customisable',
+							},
+							{
+								image: <GatsbyImage image={bagIcon} alt="Bag icon" style={{ width: 30, height: 30 }} />,
+								subtitle: 'Focused on Conversion',
+							},
+						]}
+					>
+						<Link href="https://themes.shopify.com/themes/noblesse" target="_blank" className="vm-button vm-button--white mt-6">
+							Check the theme
+						</Link>
+					</ImageWithText>
+				</Container>
+			</VevolSection>
 			<HomepageServices />
 			<ImagesMiniBanner images={partnersImages.nodes} />
 			<VevolSection>
@@ -102,17 +167,11 @@ export default function Homepage({ data }) {
 						image={<GatsbyImage image={collageImage} alt={'Vevol Media Projects Collage'} />}
 						title={'Your Success Is Our Success'}
 						textContent={[
+							<p className="mt-5">We love working with amazing brands and we are fully invested in all of our projects.</p>,
 							<p className="mt-5">
-								We love working with amazing brands and we are fully invested in all of our projects.
+								Our ethos is to provide quality above all else and we uphold our beliefs when offering our services to our clients.
 							</p>,
-							<p className="mt-5">
-								Our ethos is to provide quality above all else and we uphold our beliefs when offering
-								our services to our clients.
-							</p>,
-							<p className="mt-5">
-								We’ve been a part of many success stories and we can’t wait to join your journey to the
-								top!
-							</p>,
+							<p className="mt-5">We’ve been a part of many success stories and we can’t wait to join your journey to the top!</p>,
 						]}
 						numbersContent={[
 							{
@@ -158,12 +217,7 @@ export default function Homepage({ data }) {
 						subtitle={'Proven track record of our hard work.'}
 						className="mb-4em"
 					/>
-					<PortfolioCarousel
-						projectsList={portfolio}
-						imagesData={portfolioFeaturedImagesQuery.nodes}
-						backgroundWhite
-						cutBottomPadding
-					/>
+					<PortfolioCarousel projectsList={portfolio} imagesData={portfolioFeaturedImagesQuery.nodes} backgroundWhite cutBottomPadding />
 				</Container>
 			</VevolSection>
 			{blogPosts.nodes.length > 0 && (
@@ -172,9 +226,7 @@ export default function Homepage({ data }) {
 						<HeadingBlock
 							title={'Read More From Us'}
 							highlightedWord={'More'}
-							subtitle={
-								'Partnership announcements, news about the company or insightful articles from our team.'
-							}
+							subtitle={'Partnership announcements, news about the company or insightful articles from our team.'}
 							className="mb-4em"
 						/>
 						<HomepageArticles blogPosts={blogPosts.nodes} />

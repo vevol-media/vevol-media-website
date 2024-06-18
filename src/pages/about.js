@@ -95,7 +95,7 @@ export default function PageAbout({ data }) {
 								Ireland, UK or Romania. You will also find us at relevant conferences or meet-ups like
 								Shopify Unite, eCommerce Expo, GPEC and many others.
 							</p>,
-							<Link to="/contact" className="vm-button vm-button--green mt-5">
+							<Link to="/contact" className="vm-button vm-button--white mt-5">
 								Contact us now
 							</Link>,
 						]}
