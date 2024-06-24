@@ -242,5 +242,13 @@ const partnersList = [
 		isUsed: true,
 		isTrusted: true,
 	},
+	{
+		name: 'Gadget',
+		logo: 'gadget',
+		intro: 'Gadget is a full-stack, serverless JavaScript platform for web app developers who want to build faster and maintain less. Skip the boilerplate features, repetitive code, and busywork, and get your ideas out the door in hours.',
+		website: 'https://gadget.dev/',
+		tags: ['shopify', 'development'],
+		isFeatured: true,
+	},
 ];
 export default partnersList;

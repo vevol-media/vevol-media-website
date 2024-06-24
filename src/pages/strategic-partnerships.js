@@ -1,7 +1,7 @@
 import Layout from '../components/layout/layout';
 import React from 'react';
 import SlimHero from '../components/slim-hero/slim-hero';
-import { Container } from 'bloomer';
+import { Container, Title } from 'bloomer';
 import VevolSection from '../components/general-components/vm-section';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
@@ -12,7 +12,7 @@ import partnersList from '../enums/partners';
 
 export const data = graphql`
 	query {
-		imageOneQuery: file(name: { eq: "opportunity" }) {
+		imageOneQuery: file(name: { eq: "oneonethree" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
 			}
@@ -32,6 +32,7 @@ export default function StrategicPartnershipsPage({ data }) {
 	const { imageOneQuery, partnersQuery } = data;
 	const imageOne = getImage(imageOneQuery);
 	const partnersLogos = partnersQuery.nodes;
+	const featuredPartner = partnersList.filter((partner) => partner.isFeatured);
 
 	return (
 		<Layout>
@@ -51,7 +52,7 @@ export default function StrategicPartnershipsPage({ data }) {
 					<ImageWithText
 						alignRight
 						image={<GatsbyImage image={imageOne} alt={'Opportunities for strategic partnerships'} />}
-						title={'Always Looking To Connect'}
+						title={'Always Looking To Bring More Value'}
 						textContent={[
 							<p className="mt-5">
 								Here at Vevol Media, we are willing to do whatever it takes to deliver the best possible
@@ -74,8 +75,21 @@ export default function StrategicPartnershipsPage({ data }) {
 					/>
 				</Container>
 			</VevolSection>
+			{featuredPartner.length > 0 && (
+				<VevolSection backgroundColour={'grey'}>
+					<Container>
+						<Title tag="h3" isSize={3} hasTextAlign="centered">
+							This month's featured partner
+						</Title>
+						<PartnersSection logos={partnersLogos} partnersList={featuredPartner} isFeatured />
+					</Container>
+				</VevolSection>
+			)}
 			<VevolSection backgroundColour={'white'}>
 				<Container>
+					<Title tag="h3" isSize={3}>
+						All our partners
+					</Title>
 					<PartnersSection
 						logos={partnersLogos}
 						partnersList={partnersList.sort((a, b) => a.name.localeCompare(b.name))}
