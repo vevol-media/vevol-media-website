@@ -198,9 +198,9 @@ const partnersList = [
 		isTrusted: true,
 	},
 	{
-		name: 'Alia Popup: Story Learn Popups',
+		name: 'Alia Popup',
 		logo: 'alia',
-		intro: 'Alia is a popup alternative that lets brands reward shoppers with discounts for learning more about their story and products. This engaging and educational experience results in 2x - 4x more purchases from new site visitors compared to traditional popups. Alia is trusted by top Shopify brands like Firebelly Tea, co-founded by the President of Shopify, MASA Chips, and Bibado.',
+		intro: 'Alia offers an alternative to traditional popups, letting brands reward shoppers with discounts for learning about their products. This engaging method doubles to quadruples new visitor purchases. Trusted by top Shopify brands.',
 		website: 'https://www.alialearn.com/',
 		tags: ['shopify', 'conversions'],
 		isUsed: true,
@@ -209,7 +209,7 @@ const partnersList = [
 	{
 		name: 'Vitra.ai',
 		logo: 'vitra',
-		intro: 'Vitra.ai empowers global businesses by breaking language barriers. Founded in 2020, Vitra.ai are translation and localization experts who can translate Videos, Images and Websites to 75+ languages with the power of their patented AI engine. Their plug-and-play solution has been a game-changer for enterprise content creation. Vitra.ai are funded by Inflexor vc, 100x VC and Mumbai angels.',
+		intro: 'Vitra.ai, founded in 2020, breaks language barriers for businesses by translating videos, images, and websites into 75+ languages using their AI engine. Funded by Inflexor VC, 100x VC, and Mumbai Angels.',
 		website: 'https://www.vitra.ai/',
 		tags: ['ai'],
 		isUsed: true,
