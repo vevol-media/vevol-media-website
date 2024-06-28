@@ -91,15 +91,15 @@ export default function ThemesContactPage({ data }) {
 							<Control>
 								<Label>Store URL</Label>
 								<input
-									className={`input ${errors.storeUrl && 'is-danger'}`}
+									className={`input ${errors.storeURL && 'is-danger'}`}
 									type="text"
-									placeholder="storename.myshopify.com"
-									name="storeUrl"
-									{...register('storeUrl', {
+									placeholder="STORENAME.myshopify.com OR admin.shopify.com/store/STORENAME"
+									name="storeURL"
+									{...register('storeURL', {
 										required: true,
 									})}
 								/>
-								{errors.phone && <Help isColor="warning">Store URL is required</Help>}
+								{errors.storeURL && <Help isColor="warning">Store URL is required</Help>}
 							</Control>
 						</Field>
 						<Field>
@@ -119,7 +119,7 @@ export default function ThemesContactPage({ data }) {
 							<Control>
 								<Label>Theme</Label>
 								<Select name="selectedTheme">
-									<option value="theme">Noblesse</option>
+									<option value="Noblesse">Noblesse</option>
 								</Select>
 							</Control>
 						</Field>
