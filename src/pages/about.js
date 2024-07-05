@@ -33,11 +33,20 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, height: 100, quality: 100)
 			}
 		}
+		allContentfulTeamMembers(sort: { fields: name, order: ASC }) {
+			nodes {
+				name
+				role
+				image {
+					gatsbyImageData(layout: CONSTRAINED, width: 600, height: 600)
+				}
+			}
+		}
 	}
 `;
 
 export default function PageAbout({ data }) {
-	const { locationImageQuery, brasovImageQuery, dbiBadgeQuery, techiesGoGreenQuery } = data;
+	const { locationImageQuery, brasovImageQuery, dbiBadgeQuery, techiesGoGreenQuery, allContentfulTeamMembers } = data;
 	const locationImage = getImage(locationImageQuery);
 	const brasovImage = getImage(brasovImageQuery);
 
@@ -71,7 +80,7 @@ export default function PageAbout({ data }) {
 							let's work together and prove these are not just words.
 						</p>
 					</Fade>
-					<TeamMembers />
+					<TeamMembers teamMembers={allContentfulTeamMembers.nodes} />
 				</Container>
 			</VevolSection>
 			<VevolSection>
