@@ -33,11 +33,20 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, height: 100, quality: 100)
 			}
 		}
+		allContentfulTeamMembers(sort: { fields: name, order: ASC }) {
+			nodes {
+				name
+				role
+				image {
+					gatsbyImageData(layout: CONSTRAINED, width: 300, height: 300)
+				}
+			}
+		}
 	}
 `;
 
 export default function PageAbout({ data }) {
-	const { locationImageQuery, brasovImageQuery, dbiBadgeQuery, techiesGoGreenQuery } = data;
+	const { locationImageQuery, brasovImageQuery, dbiBadgeQuery, techiesGoGreenQuery, allContentfulTeamMembers } = data;
 	const locationImage = getImage(locationImageQuery);
 	const brasovImage = getImage(brasovImageQuery);
 
@@ -59,19 +68,16 @@ export default function PageAbout({ data }) {
 					<HeadingBlock
 						title={'A Team Of Superstars'}
 						highlightedWord={'Team'}
-						subtitle={
-							'No project is too big or complex for us here at Vevol Media. Our mindset? Anything is possible!'
-						}
+						subtitle={'No project is too big or complex for us here at Vevol Media. Our mindset? Anything is possible!'}
 					/>
 					<Fade bottom>
 						<p className="py-6">
-							Our team is always ready to give 100% to your project. We do it with pride, and we value
-							your success as much as we value our own. Whether it comes to development, design,
-							strategies or business in general, everyone is fully invested in all projects we take on. So
-							let's work together and prove these are not just words.
+							Our team is always ready to give 100% to your project. We do it with pride, and we value your success as much as we value
+							our own. Whether it comes to development, design, strategies or business in general, everyone is fully invested in all
+							projects we take on. So let's work together and prove these are not just words.
 						</p>
 					</Fade>
-					<TeamMembers />
+					<TeamMembers teamMembers={allContentfulTeamMembers.nodes} />
 				</Container>
 			</VevolSection>
 			<VevolSection>
@@ -81,19 +87,16 @@ export default function PageAbout({ data }) {
 						title={'A Little Background'}
 						textContent={[
 							<p className="mt-5">
-								Vevol Media was founded in 2018 and initially offered Shopify Store Setup services. As
-								we continued to grow, the services expanded to custom theme development, SEO, CRO and
-								bespoke design.
+								Vevol Media was founded in 2018 and initially offered Shopify Store Setup services. As we continued to grow, the
+								services expanded to custom theme development, SEO, CRO and bespoke design.
 							</p>,
 							<p className="mt-5">
-								We have a remote-first work approach; therefore, we offer our services internationally.
-								Our team meets regularly in person to work and have fun together. We share common goals
-								and strive to achieve them as a group.
+								We have a remote-first work approach; therefore, we offer our services internationally. Our team meets regularly in
+								person to work and have fun together. We share common goals and strive to achieve them as a group.
 							</p>,
 							<p className="mt-5">
-								We can also facilitate face-to-face client meetings with our co-founders or managers in
-								Ireland, UK or Romania. You will also find us at relevant conferences or meet-ups like
-								Shopify Unite, eCommerce Expo, GPEC and many others.
+								We can also facilitate face-to-face client meetings with our co-founders or managers in Ireland, UK or Romania. You
+								will also find us at relevant conferences or meet-ups like Shopify Unite, eCommerce Expo, GPEC and many others.
 							</p>,
 							<Link to="/contact" className="vm-button vm-button--white mt-5">
 								Contact us now
@@ -110,17 +113,16 @@ export default function PageAbout({ data }) {
 						alignRight
 						textContent={[
 							<p className="mt-5">
-								Vevol Media is an Ireland-based and fully remote company, with our members working
-								independently from their own locations. So you can always meet us face to face in
-								Ireland, UK or Romania.
+								Vevol Media is an Ireland-based and fully remote company, with our members working independently from their own
+								locations. So you can always meet us face to face in Ireland, UK or Romania.
 							</p>,
 							<p className="mt-5">
-								Our mission is to help businesses grow by leveraging our skills and expertise in web
-								design & development, search engine and conversion rate optimisation.
+								Our mission is to help businesses grow by leveraging our skills and expertise in web design & development, search
+								engine and conversion rate optimisation.
 							</p>,
 							<p className="mt-5">
-								eCommerce and Shopify are at the core of our services, and our team has extensive
-								knowledge of how your business can take advantage of everything in the market.
+								eCommerce and Shopify are at the core of our services, and our team has extensive knowledge of how your business can
+								take advantage of everything in the market.
 							</p>,
 							<Link to="/contact" className="vm-button vm-button--black mt-5">
 								Get in touch
@@ -135,11 +137,7 @@ export default function PageAbout({ data }) {
 						Memberships
 					</Title>
 					<div className="vevol-memberships">
-						<a
-							href="https://www.digitalbusinessireland.ie/partner-directory/"
-							target={'_blank'}
-							rel="noreferrer"
-						>
+						<a href="https://www.digitalbusinessireland.ie/partner-directory/" target={'_blank'} rel="noreferrer">
 							<GatsbyImage image={getImage(dbiBadgeQuery)} alt={'Vevol Media DBI 2022'} />
 						</a>
 						<a href="https://www.techiesgogreen.com/signatories" target={'_blank'} rel="noreferrer">
