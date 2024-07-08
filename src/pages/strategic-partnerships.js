@@ -29,7 +29,7 @@ export const data = graphql`
 				node {
 				name
 				logo {
-					gatsbyImageData(layout: CONSTRAINED, width: 50, height: 50)
+					gatsbyImageData(layout: CONSTRAINED)
 				}
 				intro {
 					raw

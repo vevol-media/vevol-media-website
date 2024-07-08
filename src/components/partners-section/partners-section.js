@@ -6,8 +6,9 @@ import { Title } from 'bloomer/lib/elements/Title';
 export default function PartnersSection({ isFeatured, partners }) {
 	const [filteredPartners, setFilteredPartners] = useState(partners);
 	const [activeFilter, setActiveFilter] = useState('all');
+
 	const filtersList = [
-		...new Set(partners.map((partner) => partner.node.tags.tags).reduce((a, b) => a.concat(b), [])),
+		...new Set(partners.flatMap((partner) => partner.node.tags?.tags || []))
 	].sort();
 
 	const handleFilterChange = (filter) => {
@@ -15,7 +16,7 @@ export default function PartnersSection({ isFeatured, partners }) {
 		if (filter === 'all') {
 			setFilteredPartners(partners);
 		} else {
-			setFilteredPartners(partners.filter((partner) => partner.node.tags.tags.includes(filter)));
+			setFilteredPartners(partners.filter((partner) => partner.node.tags?.tags?.includes(filter)));
 		}
 	};
 
