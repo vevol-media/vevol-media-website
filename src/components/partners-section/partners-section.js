@@ -71,4 +71,4 @@ export default function PartnersSection({ isFeatured, partners }) {
 			</div>
 		</div>
 	);
-};
+}
