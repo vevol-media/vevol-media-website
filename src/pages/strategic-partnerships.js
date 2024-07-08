@@ -8,7 +8,6 @@ import ImageWithText from '../components/general-components/image-text-simple';
 import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import PartnersSection from '../components/partners-section/partners-section';
-import partnersList from '../enums/partners';
 
 export const data = graphql`
 	query {
@@ -25,14 +24,34 @@ export const data = graphql`
 				}
 			}
 		}
+		allContentfulPartners(sort: { fields: name, order: ASC }) {
+			edges {
+				node {
+				name
+				logo {
+					gatsbyImageData(layout: CONSTRAINED, width: 50, height: 50)
+				}
+				intro {
+					raw
+				}
+				tags {
+					tags
+				}
+				website
+				featured
+				}
+			}
+		}		
 	}
 `;
 
 export default function StrategicPartnershipsPage({ data }) {
-	const { imageOneQuery, partnersQuery } = data;
+	const { imageOneQuery, partnersQuery, allContentfulPartners } = data;
 	const imageOne = getImage(imageOneQuery);
 	const partnersLogos = partnersQuery.nodes;
-	const featuredPartner = partnersList.filter((partner) => partner.isFeatured);
+	const featuredPartners = allContentfulPartners.edges.filter(({ node }) => node.featured);
+	const allPartners = allContentfulPartners.edges.sort((a, b) => a.node.name.localeCompare(b.node.name, undefined, { sensitivity: 'base' }));
+
 
 	return (
 		<Layout>
@@ -75,13 +94,13 @@ export default function StrategicPartnershipsPage({ data }) {
 					/>
 				</Container>
 			</VevolSection>
-			{featuredPartner.length > 0 && (
+			{featuredPartners.length > 0 && (
 				<VevolSection backgroundColour={'grey'}>
 					<Container>
 						<Title tag="h3" isSize={3} hasTextAlign="centered">
 							This month's featured partner
 						</Title>
-						<PartnersSection logos={partnersLogos} partnersList={featuredPartner} isFeatured />
+						<PartnersSection logos={partnersLogos} partners={featuredPartners} isFeatured />
 					</Container>
 				</VevolSection>
 			)}
@@ -90,10 +109,7 @@ export default function StrategicPartnershipsPage({ data }) {
 					<Title tag="h3" isSize={3}>
 						All our partners
 					</Title>
-					<PartnersSection
-						logos={partnersLogos}
-						partnersList={partnersList.sort((a, b) => a.name.localeCompare(b.name))}
-					/>
+					<PartnersSection logos={partnersLogos} partners={allPartners} />
 				</Container>
 			</VevolSection>
 		</Layout>
