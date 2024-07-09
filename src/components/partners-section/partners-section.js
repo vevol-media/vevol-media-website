@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { getImageByName } from '../../helpers/helpers';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import './partners-section.scss';
 import { Title } from 'bloomer/lib/elements/Title';
 
-export default function PartnersSection({ logos, partnersList, isFeatured }) {
-	const [partners, setPartners] = useState(partnersList);
+export default function PartnersSection({ isFeatured, partners }) {
+	const [filteredPartners, setFilteredPartners] = useState(partners);
 	const [activeFilter, setActiveFilter] = useState('all');
+
 	const filtersList = [
-		...new Set(partnersList.map((partner) => [...partner.tags]).reduce((a, b) => a.concat(b), [])),
+		...new Set(partners.flatMap((partner) => partner.node.tags?.tags || []))
 	].sort();
+
+	const handleFilterChange = (filter) => {
+		setActiveFilter(filter);
+		if (filter === 'all') {
+			setFilteredPartners(partners);
+		} else {
+			setFilteredPartners(partners.filter((partner) => partner.node.tags?.tags?.includes(filter)));
+		}
+	};
 
 	return (
 		<div className="trusted-partners" id="trusted-partners">
@@ -17,16 +26,8 @@ export default function PartnersSection({ logos, partnersList, isFeatured }) {
 				<ul className="trusted-partners__filters">
 					<li
 						className={activeFilter === 'all' ? 'active' : ''}
-						onClick={(e) => {
-							setActiveFilter('all');
-							setPartners(partnersList);
-						}}
-						onKeyDown={(e) => {
-							if (e.keyCode === 32) {
-								setActiveFilter('all');
-								setPartners(partnersList);
-							}
-						}}
+						onClick={() => handleFilterChange('all')}
+						onKeyDown={(e) => e.keyCode === 32 && handleFilterChange('all')}
 						role="presentation"
 					>
 						{'All'}
@@ -35,16 +36,8 @@ export default function PartnersSection({ logos, partnersList, isFeatured }) {
 						<li
 							key={index}
 							className={filter === activeFilter ? 'active' : ''}
-							onClick={(e) => {
-								setActiveFilter(filter);
-								setPartners(partnersList.filter((partner) => partner.tags.includes(filter)));
-							}}
-							onKeyDown={(e) => {
-								if (e.keyCode === 32) {
-									setActiveFilter(filter);
-									setPartners(partnersList.filter((partner) => partner.tags.includes(filter)));
-								}
-							}}
+							onClick={() => handleFilterChange(filter)}
+							onKeyDown={(e) => e.keyCode === 32 && handleFilterChange(filter)}
 							role="presentation"
 						>
 							{filter}
@@ -53,7 +46,7 @@ export default function PartnersSection({ logos, partnersList, isFeatured }) {
 				</ul>
 			)}
 			<div className={`trusted-partners__list ${isFeatured && 'trusted-partners__list--featured'}`}>
-				{partners.map((partner, index) => (
+				{filteredPartners.map(({ node: partner }, index) => (
 					<a
 						className={`${isFeatured && 'is-featured'}`}
 						key={index}
@@ -62,14 +55,16 @@ export default function PartnersSection({ logos, partnersList, isFeatured }) {
 						rel="noreferrer"
 					>
 						<GatsbyImage
-							image={getImageByName(logos, partner.logo)}
+							image={getImage(partner.logo)}
 							alt={`${partner.name} - Vevol Media Partner`}
 							objectFit={'contain'}
 						/>
 						<Title tag="h3" isSize={4}>
 							{partner.name}
 						</Title>
-						<p>{partner.intro}</p>
+						<div className="partner-intro">
+							<p>{partner.intro && JSON.parse(partner.intro.raw).content[0].content[0].value}</p>
+						</div>
 						<span className="vm-button vm-button--black-transparent vm-button--small">Visit Partner</span>
 					</a>
 				))}
