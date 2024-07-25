@@ -11,7 +11,6 @@ import SidebarInfoText from '../../components/general-components/sidebar-info-te
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import HeadingBlock from '../../components/heading-block/heading-block';
 import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
-import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -47,14 +46,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Aspazia');
 
 	return (
-		<Layout headerBg="white">
-			<Helmet>
-				<title>Aspazia - Wordpress Woocommerce Print On Demand Store</title>
-				<meta
-					name="description"
-					content="Wordpress Woocommerce store setup with Inkthreadable Print On Demand Service integration."
-				/>
-			</Helmet>
+		<Layout headerBg="white" handle="aspazia">
 			<SlimHero
 				heading="Aspazia - Wordpress Woocommerce Print On Demand Store"
 				subheading="Wordpress Woocommerce store setup with Inkthreadable Print On Demand Service integration."

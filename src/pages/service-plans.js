@@ -1,7 +1,6 @@
 import Layout from '../components/layout/layout';
 import React, { useRef } from 'react';
 import { Container } from 'bloomer';
-import { Helmet } from 'react-helmet';
 import featuresIndex from '../enums/features-index';
 import FeaturesIndex from '../components/features-index/features-index';
 import HeadingBlock from '../components/heading-block/heading-block';
@@ -21,14 +20,7 @@ export default function Page() {
 	};
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Service Plans - Vevol Media</title>
-				<meta
-					name="description"
-					content="Reduce your service costs with our monthly, quaterly or yearly service plans. Choose one of our innovation packages and let's build your future together."
-				/>
-			</Helmet>
+		<Layout handle="service-plans">
 			<SlimHero
 				heading="Service Plans"
 				subheading="Cut down on your maintenance or development costs by paying a montly, quaterly or yearly fee."

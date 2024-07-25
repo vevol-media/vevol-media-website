@@ -6,7 +6,6 @@ import VevolSection from '../components/general-components/vm-section';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
-import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -23,14 +22,7 @@ export default function ContactPage({ data }) {
 	const contactImageData = getImage(contactImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Contact us for Shopify & Bespoke Development services</title>
-				<meta
-					name="description"
-					content="Let's connect and discuss about how Vevol Media can help your business. Innovative Shopify Partners and expert developers - just one click away. Get in touch today!"
-				/>
-			</Helmet>
+		<Layout handle="contact">
 			<SlimHero
 				heading="Talk To Us!"
 				subheading="Let us know how we can help and we'll get back to you within 24h."

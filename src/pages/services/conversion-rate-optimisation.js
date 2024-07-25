@@ -10,7 +10,6 @@ import HeadingBlock from '../../components/heading-block/heading-block';
 import ImageWithText from '../../components/general-components/image-text-simple';
 import BottomCTA from '../../components/bottom-cta/bottom-cta';
 import SplitNav from '../../components/general-components/split-nav';
-import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -39,14 +38,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Conversion Rate Optimisation - Vevol Media</title>
-				<meta
-					name="description"
-					content="We specialise in eCommerce CRO. We will analyse and generate reports, plan for actions and implement agreed suggestions."
-				/>
-			</Helmet>
+		<Layout handle="conversion-rate">
 			<SlimHero
 				heading="Conversion Rate Optimisation"
 				subheading="Increase sales numbers by tweaking your website for CRO."

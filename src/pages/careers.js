@@ -6,7 +6,6 @@ import VevolSection from '../components/general-components/vm-section';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { graphql, Link } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
-import { Helmet } from 'react-helmet';
 import MediumCard from '../components/general-components/medium-card';
 import { Title } from 'bloomer/lib/elements/Title';
 
@@ -37,14 +36,7 @@ export default function CareersPage({ data }) {
 	const contactImageData = getImage(contactImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Door is open! See what roles we are hiring for now at Vevol Media</title>
-				<meta
-					name="description"
-					content="We are always looking for talented people to join our team. Check out our open positions and apply today!"
-				/>
-			</Helmet>
+		<Layout handle="careers">
 			<SlimHero
 				heading="Join the gang!"
 				subheading="We are always looking for talented people to join our team. Check out our open positions and apply today!"

@@ -1,17 +1,12 @@
 import React from 'react';
 import Layout from '../components/layout/layout';
-import { Helmet } from 'react-helmet';
 import VevolSection from '../components/general-components/vm-section';
 import { Container } from 'bloomer/lib/layout/Container';
 import SlimHero from '../components/slim-hero/slim-hero';
 
 export default function Page() {
 	return (
-		<Layout>
-			<Helmet>
-				<title>Cookie Policy</title>
-				<meta name="description" content="Read more about Vevol Media's Cookie Policy." />
-			</Helmet>
+		<Layout handle="cookie-policy">
 			<SlimHero heading="Cookie Policy" />
 			<VevolSection backgroundColour={'white'}>
 				<Container className="cookie-policy__wrapper">

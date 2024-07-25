@@ -11,7 +11,6 @@ import ImageWithText from '../../components/general-components/image-text-simple
 import BottomCTA from '../../components/bottom-cta/bottom-cta';
 import SidebarInfoText from '../../components/general-components/sidebar-info-text';
 import SplitNav from '../../components/general-components/split-nav';
-import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -40,14 +39,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Bespoke Web Development - Vevol Media</title>
-				<meta
-					name="description"
-					content="Our team of Front End and Full Stack Developers can help you build your project from A to Z. We offer custom development services at affordable rates."
-				/>
-			</Helmet>
+		<Layout handle="bespoke-web-development">
 			<SlimHero
 				heading="Bespoke Web Development Services"
 				subheading="Outsource your development work to a team of experienced and trusted developers. White label development options available."

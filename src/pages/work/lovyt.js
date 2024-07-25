@@ -48,14 +48,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Lovyt');
 
 	return (
-		<Layout headerBg="white">
-			<Helmet>
-				<title>Lovyt Activewear - Shopify Store Setup & Launch</title>
-				<meta
-					name="description"
-					content="Fast Squarespace to Shopify migration with an eye-catching, sleek and clean design and a website with all functionalities ready for use."
-				/>
-			</Helmet>
+		<Layout headerBg="white" handle="lovyt">
 			<SlimHero
 				heading="Lovyt Activewear - Shopify Store Setup & Launch"
 				subheading="Squarespace to Shopify, Quick Launch, Storytelling Website"

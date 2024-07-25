@@ -48,14 +48,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'A&S Market');
 
 	return (
-		<Layout headerBg="white">
-			<Helmet>
-				<title>Case Study: A&S Market - Custom Shopify</title>
-				<meta
-					name="description"
-					content="Custom Shopify theme development, bespoke functionalities for Postcode checker and delivery, SEO, CRO and ongoing maintenance."
-				/>
-			</Helmet>
+		<Layout headerBg="white" handle="as-market">
 			<SlimHero
 				heading="A&S Market - Online Groceries Shop"
 				subheading="Custom Shopify theme development, bespoke functionalities for Postcode checker and delivery, SEO, CRO and ongoing maintenance."

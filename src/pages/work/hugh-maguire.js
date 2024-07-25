@@ -11,7 +11,6 @@ import SidebarInfoText from '../../components/general-components/sidebar-info-te
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import HeadingBlock from '../../components/heading-block/heading-block';
 import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
-import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -47,14 +46,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Hugh Maguire');
 
 	return (
-		<Layout headerBg="white">
-			<Helmet>
-				<title>Case Study: Hugh Maguire - WooComerce to Shopify Migration</title>
-				<meta
-					name="description"
-					content="Read how we migrated an Irish Butchers’ website to Shopify and doubled their sales."
-				/>
-			</Helmet>
+		<Layout headerBg="white" handle="hugh-maguire">
 			<SlimHero
 				heading="Hugh Maguire - WooComerce to Shopify Migration"
 				subheading="Read how we migrated an Irish Butchers’ website to Shopify and doubled their sales."

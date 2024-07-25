@@ -49,14 +49,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Fyne Jewellery');
 
 	return (
-		<Layout headerBg="white">
-			<Helmet>
-				<title>Case Study: Fyne Jewellery - Custom Shopify</title>
-				<meta
-					name="description"
-					content="Design revamp, custom Shopify components, including currency exchange, wishlist and ring size finder functionalities."
-				/>
-			</Helmet>
+		<Layout headerBg="white" handle="fyne-jewellery">
 			<SlimHero
 				heading="Fyne Jewellery - Ultra Fine Shopify"
 				subheading="Design revamp, custom Shopify components, including currency exchange, wishlist and ring size finder functionalities."

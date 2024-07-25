@@ -12,7 +12,6 @@ import Quote from '../../components/general-components/quote';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import HeadingBlock from '../../components/heading-block/heading-block';
 import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
-import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -48,14 +47,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'TOPL Cup');
 
 	return (
-		<Layout headerBg="white">
-			<Helmet>
-				<title>Featured Project: TOPL Cup - Custom Shopify</title>
-				<meta
-					name="description"
-					content="Shopify theme development, custom functionalities and components, cup personalisation and ongoing maintenance."
-				/>
-			</Helmet>
+		<Layout headerBg="white" handle="topl-cup">
 			<SlimHero
 				heading="TOPL Cup - Trademark for quality"
 				subheading="Shopify theme development, custom functionalities and components, cup personalisation and ongoing maintenance."

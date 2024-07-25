@@ -3,7 +3,6 @@ import React, { useRef } from 'react';
 import SlimHero from '../components/slim-hero/slim-hero';
 import { Container } from 'bloomer';
 import VevolSection from '../components/general-components/vm-section';
-import { Helmet } from 'react-helmet';
 import HeadingBlock from '../components/heading-block/heading-block';
 import GlossaryIndex from '../components/glossary-index/glossary-index';
 import ImageWithText from '../components/general-components/image-text-simple';
@@ -27,14 +26,7 @@ export default function EcommerceGlossaryPage({ data }) {
 	const glossaryIndexRef = useRef();
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Shopify and eCommerce Glossary of Terms: 100+ - Vevol Media</title>
-				<meta
-					name="description"
-					content="Unlock the secrets of eCommerce success with our comprehensive glossary of 100+ essential terms."
-				/>
-			</Helmet>
+		<Layout handle="ecommerce-glossary">
 			<SlimHero
 				heading="eCommerce Glossary"
 				subheading="Mastering eCommerce Jargon: Your Definitive Glossary of 100+ Terms to Excel in the Shopify Landscape"

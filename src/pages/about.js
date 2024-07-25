@@ -4,7 +4,6 @@ import SlimHero from '../components/slim-hero/slim-hero';
 import { Container, Title } from 'bloomer';
 import TeamMembers from '../components/team-section/team-members';
 import HeadingBlock from '../components/heading-block/heading-block';
-import { Helmet } from 'react-helmet';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, Link } from 'gatsby';
@@ -51,14 +50,7 @@ export default function PageAbout({ data }) {
 	const brasovImage = getImage(brasovImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Meet Vevol Media and our Team of Shopify Experts</title>
-				<meta
-					name="description"
-					content="Ireland Based Shopify & Bespoke Development Company. We specialise in bringing success to eCommerce businesses internationally."
-				/>
-			</Helmet>
+		<Layout handle="about">
 			<SlimHero
 				heading="About Vevol Media"
 				subheading="We are a passionate and dedicated team specialising in eCommerce and development. Quality is what drives us and we uphold this promise to all our clients."
