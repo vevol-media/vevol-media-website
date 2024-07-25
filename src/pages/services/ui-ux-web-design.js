@@ -10,7 +10,6 @@ import HeadingBlock from '../../components/heading-block/heading-block';
 import ImageWithText from '../../components/general-components/image-text-simple';
 import BottomCTA from '../../components/bottom-cta/bottom-cta';
 import SplitNav from '../../components/general-components/split-nav';
-import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -39,14 +38,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>UI/UX Web Design Services - Vevol Media</title>
-				<meta
-					name="description"
-					content="Fresh, modern web design for your website. High conversion rate and lead generation are at the core of our designs. Get in touch today."
-				/>
-			</Helmet>
+		<Layout handle="web-design">
 			<SlimHero
 				heading="UI/UX Web Design Services"
 				subheading="Turn your website into a brilliant one with a brand new look and feel."

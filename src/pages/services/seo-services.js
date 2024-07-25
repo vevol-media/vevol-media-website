@@ -11,7 +11,6 @@ import ImageWithText from '../../components/general-components/image-text-simple
 import BottomCTA from '../../components/bottom-cta/bottom-cta';
 import SidebarInfoText from '../../components/general-components/sidebar-info-text';
 import SplitNav from '../../components/general-components/split-nav';
-import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -40,14 +39,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Expert eCommerce SEO Services - Vevol Media</title>
-				<meta
-					name="description"
-					content="We offer professional SEO services with visible results in the first 3 months. ✔️ Ireland based B2B Company. ☝ Get in touch with our specialists!"
-				/>
-			</Helmet>
+		<Layout handle="seo-services">
 			<SlimHero
 				heading="eCommerce SEO Services"
 				subheading="Take your business to next level with help from our search engine optimisation experts. Audits, reports, strategies and, most importantly, results are what we offer."

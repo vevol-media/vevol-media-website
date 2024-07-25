@@ -20,13 +20,8 @@ export default function FaqPage() {
 	);
 
 	return (
-		<Layout>
+		<Layout handle="faqs">
 			<Helmet>
-				<title>Shopify & Web Development Questions For Vevol Media</title>
-				<meta
-					name="description"
-					content="Learn more about our Shopify & Bespoke Development Services find finding the right answers to most common questions aksed by clients."
-				/>
 				<script type="application/ld+json">
 					{`
 						{

@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../components/layout/layout';
-import { Helmet } from 'react-helmet';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, Link } from 'gatsby';
 import { CardImage } from 'bloomer/lib/components/Card/CardImage';
@@ -23,14 +22,7 @@ export default function Page404({ data }) {
 	const errorImage = getImage(errorImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>404 Error - Page Not Found</title>
-				<meta
-					name="description"
-					content="We get it, you're an explorer. Unfortunately there is nothing but 404 empty atoms here."
-				/>
-			</Helmet>
+		<Layout handle="page-not-found">
 			<CardImage>
 				<GatsbyImage image={errorImage} alt={'404 Error - Vevol Media'} objectFit="contain" />
 			</CardImage>

@@ -1,17 +1,12 @@
 import React from 'react';
 import Layout from '../components/layout/layout';
-import { Helmet } from 'react-helmet';
 import VevolSection from '../components/general-components/vm-section';
 import { Container } from 'bloomer/lib/layout/Container';
 import SlimHero from '../components/slim-hero/slim-hero';
 
 export default function Page() {
 	return (
-		<Layout>
-			<Helmet>
-				<title>Privacy Policy</title>
-				<meta name="description" content="Read more about Vevol Media's Privacy Policy." />
-			</Helmet>
+		<Layout handle="privacy-policy">
 			<SlimHero heading="Privacy Policy" subheading="Last updated: 20th July 2023" />
 			<VevolSection backgroundColour={'white'}>
 				<Container className="privacy-policy__wrapper">

@@ -6,7 +6,6 @@ import VevolSection from '../components/general-components/vm-section';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
 import { Link, graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import PartnersSection from '../components/partners-section/partners-section';
 
 export const data = graphql`
@@ -54,14 +53,7 @@ export default function StrategicPartnershipsPage({ data }) {
 
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Succesful Partnerships Opportunities - Vevol Media</title>
-				<meta
-					name="description"
-					content="Grow your partners network with eCommerce experts and developers. Let's build success stories together. Get in touch today!"
-				/>
-			</Helmet>
+		<Layout handle="strategic-partnership">
 			<SlimHero
 				heading="Strategic Partnerships"
 				subheading="We offer opportunities for like-minded businesses to link up with Vevol Media to provide better, more customer-centric service packages."

@@ -5,7 +5,6 @@ import { Container } from 'bloomer';
 import FeaturedWork from '../components/featured-work/featured-work';
 import HeadingBlock from '../components/heading-block/heading-block';
 import VevolSection from '../components/general-components/vm-section';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
 export const data = graphql`
@@ -42,14 +41,7 @@ export default function LearnPage({ data }) {
 	];
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Shared Knowledge - Learn with Vevol Media - Shopify Experts</title>
-				<meta
-					name="description"
-					content="Our eCommerce and Shopify Experts share their knowledge and experience to help you grow your business. Check out the latest insights."
-				/>
-			</Helmet>
+		<Layout handle="learn">
 			<SlimHero
 				heading="Shared Knowledge"
 				subheading="Our eCommerce and Shopify Experts share their knowledge and experience to help you grow your business. Check out the latest insights."

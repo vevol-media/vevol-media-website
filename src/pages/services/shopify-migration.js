@@ -49,14 +49,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout>
-			<Helmet>
-				<title>Shopify Migration Services - Vevol Media</title>
-				<meta
-					name="description"
-					content="We'll help and guide your move from any platform to Shopify. Transfer products, customers, orders hassle free with our experts' help."
-				/>
-			</Helmet>
+		<Layout handle="migration-services">
 			<SlimHero
 				heading="Shopify Migration"
 				subheading="Our expert team of experienced and trusted Shopify partners are dedicated to helping you migrate to Shopify smoothly and efficiently."

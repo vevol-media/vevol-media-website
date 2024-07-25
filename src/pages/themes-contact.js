@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { Field, Control, Container, Help, Select } from 'bloomer';
 import SlimHero from '../components/slim-hero/slim-hero';
 import VevolSection from '../components/general-components/vm-section';
-import { Helmet } from 'react-helmet';
 import { Label } from 'bloomer/lib/elements/Form/Label';
 
 export default function ThemesContactPage({ data }) {
@@ -42,14 +41,7 @@ export default function ThemesContactPage({ data }) {
 	};
 
 	return (
-		<Layout hasMainForm={false}>
-			<Helmet>
-				<title>Vevol Themes Support Form - Get in touch</title>
-				<meta
-					name="description"
-					content="Reach out to our support team about any issues you might have with our themes. We'll get back to you ASAP."
-				/>
-			</Helmet>
+		<Layout hasMainForm={false} handle="themes-contact">
 			<SlimHero
 				heading="Vevol Themes Support"
 				subheading="Reach out to our support team about any issues you might have with our themes. We'll get back to you ASAP."

@@ -11,7 +11,6 @@ import SidebarInfoText from '../../components/general-components/sidebar-info-te
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import HeadingBlock from '../../components/heading-block/heading-block';
 import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
-import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -47,14 +46,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Folkingtons');
 
 	return (
-		<Layout headerBg="white">
-			<Helmet>
-				<title>Folkingtons</title>
-				<meta
-					name="description"
-					content="Custom Shopify section development. We have created highly flexibile, scalable and reusable components and reduced future maintenance costs."
-				/>
-			</Helmet>
+		<Layout headerBg="white" handle="folkingtons">
 			<SlimHero
 				heading="Folkingtons - New Design, New Sections"
 				subheading="Flexible and reusable custom Shopify components based on provided design."
