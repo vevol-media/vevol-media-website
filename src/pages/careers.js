@@ -36,7 +36,7 @@ export default function CareersPage({ data }) {
 	const contactImageData = getImage(contactImageQuery);
 
 	return (
-		<Layout handle="careers">
+		<Layout>
 			<SlimHero
 				heading="Join the gang!"
 				subheading="We are always looking for talented people to join our team. Check out our open positions and apply today!"

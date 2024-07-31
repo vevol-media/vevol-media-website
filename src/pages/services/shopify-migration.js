@@ -12,7 +12,6 @@ import BottomCTA from '../../components/bottom-cta/bottom-cta';
 import SidebarInfoText from '../../components/general-components/sidebar-info-text';
 import SplitNav from '../../components/general-components/split-nav';
 import ImagesMiniBanner from '../../components/images-mini-banner/images-mini-banner';
-import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -49,7 +48,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout handle="migration-services">
+		<Layout>
 			<SlimHero
 				heading="Shopify Migration"
 				subheading="Our expert team of experienced and trusted Shopify partners are dedicated to helping you migrate to Shopify smoothly and efficiently."

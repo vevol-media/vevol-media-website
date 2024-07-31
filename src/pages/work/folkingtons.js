@@ -46,7 +46,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Folkingtons');
 
 	return (
-		<Layout headerBg="white" handle="folkingtons">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="Folkingtons - New Design, New Sections"
 				subheading="Flexible and reusable custom Shopify components based on provided design."

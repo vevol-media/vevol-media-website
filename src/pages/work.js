@@ -37,7 +37,7 @@ export default function WorkPage({ data }) {
 	const withoutCaseStudy = portfolio.filter((item) => !item.hasCaseStudy);
 
 	return (
-		<Layout handle="work">
+		<Layout>
 			<SlimHero
 				heading="Check Out Our Work"
 				subheading="We build eCommerce and brochure websites with passion and we are proud of the results. Have a look at our latest projects."

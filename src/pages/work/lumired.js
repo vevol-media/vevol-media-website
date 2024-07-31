@@ -47,7 +47,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Lumired');
 
 	return (
-		<Layout headerBg="white" handle="lumired">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="Lumired - Under New Lights"
 				subheading="Wordpress Woocommerce to Shopify migration, including customers, orders and products. Website Redesign and Store setup included."

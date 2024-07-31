@@ -1,27 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from '@reach/router';
 import Header from '../header/header';
 import WebsiteFooter from '../footer/footer';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
 import HubspotForm from '../forms/hubspot-form';
 import { Helmet } from 'react-helmet';
-import favicon from '../../images/icon.png';
+import ogImage from '../../images/vevol-media-og-image.jpg';
 import config from 'react-reveal/globals';
 import { AppProvider } from '../../context/app-context';
 import CookieBar from '../cookie-bar/cookie-bar';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { graphql, useStaticQuery } from 'gatsby';
 
-export default function Layout({
-	children,
-	headerBg,
-	headerIsStatic,
-	showBlob,
-	hasMainForm = true,
-	formBackgroundImage,
-	hasHeader = true,
-	handle
-}) {
+export default function Layout({ children, headerBg, headerIsStatic, showBlob, hasMainForm = true, formBackgroundImage, hasHeader = true }) {
 	const [cookieConsentValue, setCookieConsentValue] = useState('');
 	const [showCookieBar, setShowCookieBar] = useState(false);
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -33,10 +25,6 @@ export default function Layout({
 			transform: `translate3d(${event.clientX}px, ${event.clientY}px, 0)`,
 		});
 	};
-
-	const metaTitle = 'Innovative Shopify Experts & Developers - Vevol Media';
-	const metaDescription =
-		'Shopify Experts based in Ireland that provide bespoke eCommerce complete services. From Shopify setup to theme development. Get in touch with us today!';
 
 	const handleScroll = (event) => {
 		const pageHeader = document.querySelector('.vm-header');
@@ -75,39 +63,120 @@ export default function Layout({
 		}
 	}, []);
 
-	const data = useStaticQuery(graphql`
-		query {
-		  allContentfulPageMeta {
-			nodes {
-				metaTitle
-				metaDescription
-				ogTitle
-				ogDescription
-				ogUrl
-				ogType
-			 	ogImage {
-					gatsbyImageData(layout: CONSTRAINED, width: 600, height: 600)
-					file {
-						url
+	const Seo = () => {
+		const data = useStaticQuery(graphql`
+			query {
+				allContentfulPageMeta {
+					nodes {
+						metaTitle
+						metaDescription
+						ogImage {
+							gatsbyImageData(layout: CONSTRAINED, width: 600, height: 600)
+							file {
+								url
+							}
+						}
 					}
-			    }
-				questionsStructuredData {
-					questionsStructuredData
 				}
-			  	handle
 			}
-		  }
-		}
-	`);
+		`);
 
-	const pageMeta = data.allContentfulPageMeta.nodes.find(node => node.handle === handle);
+		const location = useLocation();
+		const pathname = location.pathname.replace(/\/$/, '');
 
-	if (!pageMeta) {
-	  return null; 
-	}
+		const pageMeta = data.allContentfulPageMeta.nodes.find((node) => node.handle === pathname);
+
+		React.useEffect(() => {
+			if (pageMeta) {
+				document.title = pageMeta.metaTitle;
+
+				const metaDescriptionTag = document.querySelector('meta[name="description"]');
+				if (metaDescriptionTag) {
+					metaDescriptionTag.content = pageMeta.metaDescription;
+				} else {
+					const meta = document.createElement('meta');
+					meta.name = 'description';
+					meta.content = pageMeta.metaDescription;
+					document.head.appendChild(meta);
+				}
+
+				const scriptTag = document.createElement('script');
+				scriptTag.type = 'application/ld+json';
+				scriptTag.innerHTML = `
+			  {
+				"@context": "https://schema.org",
+				"@type": "FAQ",
+				"mainEntity": ${pageMeta.questionsStructuredData.questionsStructuredData}
+			  }
+			`;
+				document.head.appendChild(scriptTag);
+
+				return () => {
+					if (scriptTag) {
+						document.head.removeChild(scriptTag);
+					}
+				};
+			}
+		}, [pageMeta]);
+
+		const renderHelmet = () => {
+			if (!pageMeta) {
+				const metaTitle = 'Innovative Shopify Experts & Developers - Vevol Media';
+				const metaDescription = 'Shopify Experts based in Ireland that provide bespoke eCommerce complete services. From Shopify setup to theme development. Get in touch with us today!';
+				return (
+					<Helmet
+						htmlAttributes={{
+							lang: 'en',
+						}}
+					>
+						<title>{metaTitle}</title>
+						<meta name="description" content={metaDescription} />
+						<meta property="og:url" content="https://www.vevolmedia.com" />
+						<meta property="og:type" content="website" />
+						<meta property="og:title" content={metaTitle} />
+						<meta property="og:description" content={metaDescription} />
+						<meta property="og:image" content={ogImage} />
+						<meta name="twitter:card" content="summary_large_image" />
+						<meta name="twitter:creator" content="@VevolMedia" />
+						<meta property="twitter:domain" content="vevolmedia.com" />
+						<meta property="twitter:url" content="https://www.vevolmedia.com" />
+						<meta name="twitter:title" content={metaTitle} />
+						<meta name="twitter:description" content={metaDescription} />
+						<meta name="twitter:image" content={ogImage} />
+					</Helmet>
+				);
+			}
+
+			return (
+				<Helmet
+					htmlAttributes={{
+						lang: 'en',
+					}}
+				>
+					<title>{pageMeta.metaTitle}</title>
+					<meta name="description" content={pageMeta.metaDescription} />
+					<meta property="og:url" content={`https://www.vevolmedia.com${pathname}`} />
+					<meta property="og:type" content="website" />
+					<meta property="og:title" content={pageMeta.metaTitle} />
+					<meta property="og:description" content={pageMeta.metaDescription} />
+					<meta property="og:image" content={pageMeta.ogImage.file.url} />
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:creator" content="@VevolMedia" />
+					<meta property="twitter:domain" content="vevolmedia.com" />
+					<meta property="twitter:url" content={`https://www.vevolmedia.com${pathname}`} />
+					<meta name="twitter:title" content={pageMeta.metaTitle} />
+					<meta name="twitter:description" content={pageMeta.metaDescription} />
+					<meta name="twitter:image" content={pageMeta.ogImage.file.url} />
+				</Helmet>
+			);
+		};
+
+		return renderHelmet();
+	};
 
 	return (
 		<AppProvider>
+			<Seo />
 			<div onMouseMove={handleMouseMove} role="presentation">
 				{showBlob && (
 					<div className="cursor-container">
@@ -116,62 +185,6 @@ export default function Layout({
 						</animated.div>
 					</div>
 				)}
-				<Helmet
-					htmlAttributes={{
-						lang: 'en',
-					}}
-				>
-					<link rel="icon" href={favicon} />
-					<title>{pageMeta.metaTitle}</title>
-					<meta name="description" content={pageMeta.metaDescription} />
-					<meta property="og:url" content={pageMeta.ogUrl} />
-					<meta property="og:type" content={pageMeta.ogType} />
-					<meta property="og:title" content={pageMeta.ogTitle} />
-					<meta property="og:description" content={pageMeta.ogDescription} />
-					<meta property="og:image" content={pageMeta.ogImage.file.url} />
-					<meta name="twitter:card" content="summary_large_image" />
-					<meta name="twitter:creator" content="@Website" />
-					<meta property="twitter:domain" content="website" />
-					<meta property="twitter:url" content={pageMeta.ogUrl} />
-					<meta name="twitter:title" content={pageMeta.ogTitle} />
-					<meta name="twitter:description" content={pageMeta.ogDescription} />
-					<meta name="twitter:image" content={pageMeta.ogImage.file.url} />
-					<script type="application/ld+json">
-						{`
-							{
-								"@context": "https://schema.org",
-								"@type": "Organization",
-								"name": "Vevol Media",
-								"address": {
-									"@type": "PostalAddress",
-									"addressLocality": "Dublin",
-									"addressRegion": "Leinster",
-									"postalCode": "D02 P593",
-									"streetAddress": "Ground Floor, 71 Lower Baggot Street"
-								},
-								"email": "mailto:hello@vevolmedia.com",
-								"aggregateRating": {
-									"@type": "AggregateRating",
-									"ratingValue": "4.9",
-									"reviewCount": "13"
-								}
-							}
-						`}
-					</script>
-					{/* Comment this on localhost, otherwise we end up with an error while developing */}
-					{cookieConsentValue === 'all' && (
-						<script defer>{`gtag('config', 'G-XTXF9YF0NB', {
-							'anonymize_ip': false,
-							'allow_ad_personalization_signals': true
-						});`}</script>
-					)}
-					{cookieConsentValue === 'all' && (
-						<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
-					)}
-					<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>
-					{cookieConsentValue === 'all' && <script>{`window._nQc="89222768";`}</script>}
-					{cookieConsentValue === 'all' && <script async src="https://serve.albacross.com/track.js"></script>}
-				</Helmet>
 				{hasHeader && <Header background={headerBg} isStatic={headerIsStatic} />}
 				<main>{children}</main>
 				{hasMainForm && (

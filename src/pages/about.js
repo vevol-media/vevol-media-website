@@ -50,7 +50,7 @@ export default function PageAbout({ data }) {
 	const brasovImage = getImage(brasovImageQuery);
 
 	return (
-		<Layout handle="about">
+		<Layout>
 			<SlimHero
 				heading="About Vevol Media"
 				subheading="We are a passionate and dedicated team specialising in eCommerce and development. Quality is what drives us and we uphold this promise to all our clients."

@@ -42,7 +42,7 @@ export default function Page({ data }) {
 	const otherArticles = blogPosts.edges.filter((post) => !first3PopularArticles.includes(post));
 
 	return (
-		<Layout handle="blog">
+		<Layout>
 			<SlimHero heading="The Vevol Media Blog" subheading="Get the latest updates about Vevol Media or read more about our journey, our thoughts and us sharing valuable knowledge within the community." />
 			<VevolSection backgroundColour={'white'}>
 				{blogPosts.edges.length === 0 && (

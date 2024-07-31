@@ -20,7 +20,7 @@ export default function FaqPage() {
 	);
 
 	return (
-		<Layout handle="faqs">
+		<Layout>
 			<Helmet>
 				<script type="application/ld+json">
 					{`

@@ -20,7 +20,7 @@ export default function Page() {
 	};
 
 	return (
-		<Layout handle="service-plans">
+		<Layout>
 			<SlimHero
 				heading="Service Plans"
 				subheading="Cut down on your maintenance or development costs by paying a montly, quaterly or yearly fee."

@@ -46,7 +46,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Verlin');
 
 	return (
-		<Layout headerBg="white" handle="verlin">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="Verlin - Shopify Migration from OpenCart"
 				subheading="Data Migration, Design & Web Development, Custom Pages and Ongoing Maintenance."

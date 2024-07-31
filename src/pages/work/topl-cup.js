@@ -47,7 +47,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'TOPL Cup');
 
 	return (
-		<Layout headerBg="white" handle="topl-cup">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="TOPL Cup - Trademark for quality"
 				subheading="Shopify theme development, custom functionalities and components, cup personalisation and ongoing maintenance."

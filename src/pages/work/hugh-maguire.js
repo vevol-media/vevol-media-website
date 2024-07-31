@@ -46,7 +46,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Hugh Maguire');
 
 	return (
-		<Layout headerBg="white" handle="hugh-maguire">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="Hugh Maguire - WooComerce to Shopify Migration"
 				subheading="Read how we migrated an Irish Butchers’ website to Shopify and doubled their sales."

@@ -38,7 +38,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout handle="conversion-rate">
+		<Layout>
 			<SlimHero
 				heading="Conversion Rate Optimisation"
 				subheading="Increase sales numbers by tweaking your website for CRO."

@@ -12,7 +12,6 @@ import Quote from '../../components/general-components/quote';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import HeadingBlock from '../../components/heading-block/heading-block';
 import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
-import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -48,7 +47,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'A&S Market');
 
 	return (
-		<Layout headerBg="white" handle="as-market">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="A&S Market - Online Groceries Shop"
 				subheading="Custom Shopify theme development, bespoke functionalities for Postcode checker and delivery, SEO, CRO and ongoing maintenance."

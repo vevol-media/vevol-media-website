@@ -39,7 +39,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout handle="seo-services">
+		<Layout>
 			<SlimHero
 				heading="eCommerce SEO Services"
 				subheading="Take your business to next level with help from our search engine optimisation experts. Audits, reports, strategies and, most importantly, results are what we offer."

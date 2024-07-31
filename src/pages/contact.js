@@ -22,7 +22,7 @@ export default function ContactPage({ data }) {
 	const contactImageData = getImage(contactImageQuery);
 
 	return (
-		<Layout handle="contact">
+		<Layout>
 			<SlimHero
 				heading="Talk To Us!"
 				subheading="Let us know how we can help and we'll get back to you within 24h."

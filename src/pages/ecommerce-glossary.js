@@ -26,7 +26,7 @@ export default function EcommerceGlossaryPage({ data }) {
 	const glossaryIndexRef = useRef();
 
 	return (
-		<Layout handle="ecommerce-glossary">
+		<Layout>
 			<SlimHero
 				heading="eCommerce Glossary"
 				subheading="Mastering eCommerce Jargon: Your Definitive Glossary of 100+ Terms to Excel in the Shopify Landscape"

@@ -38,7 +38,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout handle="web-design">
+		<Layout>
 			<SlimHero
 				heading="UI/UX Web Design Services"
 				subheading="Turn your website into a brilliant one with a brand new look and feel."

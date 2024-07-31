@@ -13,7 +13,6 @@ import SimpleImageCarousel from '../../components/simple-image-carousel/simple-i
 import InformationalContent from '../../components/general-components/informational-content';
 import HeadingBlock from '../../components/heading-block/heading-block';
 import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
-import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -49,7 +48,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Fyne Jewellery');
 
 	return (
-		<Layout headerBg="white" handle="fyne-jewellery">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="Fyne Jewellery - Ultra Fine Shopify"
 				subheading="Design revamp, custom Shopify components, including currency exchange, wishlist and ring size finder functionalities."

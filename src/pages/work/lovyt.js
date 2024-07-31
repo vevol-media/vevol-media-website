@@ -12,7 +12,6 @@ import Quote from '../../components/general-components/quote';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import HeadingBlock from '../../components/heading-block/heading-block';
 import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
-import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -48,7 +47,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Lovyt');
 
 	return (
-		<Layout headerBg="white" handle="lovyt">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="Lovyt Activewear - Shopify Store Setup & Launch"
 				subheading="Squarespace to Shopify, Quick Launch, Storytelling Website"

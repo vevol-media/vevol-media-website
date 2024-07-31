@@ -46,7 +46,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'Aspazia');
 
 	return (
-		<Layout headerBg="white" handle="aspazia">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="Aspazia - Wordpress Woocommerce Print On Demand Store"
 				subheading="Wordpress Woocommerce store setup with Inkthreadable Print On Demand Service integration."

@@ -41,7 +41,7 @@ export default function ThemesContactPage({ data }) {
 	};
 
 	return (
-		<Layout hasMainForm={false} handle="themes-contact">
+		<Layout hasMainForm={false}>
 			<SlimHero
 				heading="Vevol Themes Support"
 				subheading="Reach out to our support team about any issues you might have with our themes. We'll get back to you ASAP."

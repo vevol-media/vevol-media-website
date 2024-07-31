@@ -53,7 +53,7 @@ export default function StrategicPartnershipsPage({ data }) {
 
 
 	return (
-		<Layout handle="strategic-partnership">
+		<Layout>
 			<SlimHero
 				heading="Strategic Partnerships"
 				subheading="We offer opportunities for like-minded businesses to link up with Vevol Media to provide better, more customer-centric service packages."

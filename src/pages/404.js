@@ -22,7 +22,7 @@ export default function Page404({ data }) {
 	const errorImage = getImage(errorImageQuery);
 
 	return (
-		<Layout handle="page-not-found">
+		<Layout>
 			<CardImage>
 				<GatsbyImage image={errorImage} alt={'404 Error - Vevol Media'} objectFit="contain" />
 			</CardImage>

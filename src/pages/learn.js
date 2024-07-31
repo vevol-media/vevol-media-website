@@ -41,7 +41,7 @@ export default function LearnPage({ data }) {
 	];
 
 	return (
-		<Layout handle="learn">
+		<Layout>
 			<SlimHero
 				heading="Shared Knowledge"
 				subheading="Our eCommerce and Shopify Experts share their knowledge and experience to help you grow your business. Check out the latest insights."

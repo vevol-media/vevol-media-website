@@ -39,7 +39,7 @@ export default function PageSingleService({ data }) {
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
 
 	return (
-		<Layout handle="bespoke-web-development">
+		<Layout>
 			<SlimHero
 				heading="Bespoke Web Development Services"
 				subheading="Outsource your development work to a team of experienced and trusted developers. White label development options available."

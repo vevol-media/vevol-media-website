@@ -6,7 +6,7 @@ import SlimHero from '../components/slim-hero/slim-hero';
 
 export default function Page() {
 	return (
-		<Layout handle="privacy-policy">
+		<Layout>
 			<SlimHero heading="Privacy Policy" subheading="Last updated: 20th July 2023" />
 			<VevolSection backgroundColour={'white'}>
 				<Container className="privacy-policy__wrapper">

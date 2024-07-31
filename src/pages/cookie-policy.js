@@ -6,7 +6,7 @@ import SlimHero from '../components/slim-hero/slim-hero';
 
 export default function Page() {
 	return (
-		<Layout handle="cookie-policy">
+		<Layout>
 			<SlimHero heading="Cookie Policy" />
 			<VevolSection backgroundColour={'white'}>
 				<Container className="cookie-policy__wrapper">

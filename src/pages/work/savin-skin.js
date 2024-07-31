@@ -47,7 +47,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'SavinSkin');
 
 	return (
-		<Layout headerBg="white" handle="savin-skin">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="SavinSkin - PrestaShop to Shopify Migration"
 				subheading="Data Migration, Web Development, Custom Functionalities and Ongoing Maintenance."

@@ -40,7 +40,7 @@ export default function ServicesPage({ data }) {
 	const { servicesIcons, technologies } = data;
 
 	return (
-		<Layout handle="services">
+		<Layout>
 			<SlimHero
 				heading="What We Can Do For You"
 				subheading="Let us help you take your brand to new heights with our variety of cutting-edge eCommerce services. From Bespoke and Shopify Development to SEO Services and UX/UI Design - Vevol Media is your go-to destination if you want to take your business to the next level."

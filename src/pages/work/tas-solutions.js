@@ -46,7 +46,7 @@ export default function PortfolioPage({ data }) {
 	const otherProjects = portfolio.filter((item) => item.name !== 'TAS Solutions');
 
 	return (
-		<Layout headerBg="white" handle="tas-solutions">
+		<Layout headerBg="white">
 			<SlimHero
 				heading="TAS Solutions - GatsbyJS Custom Brochure Website"
 				subheading="ReactJS based framework, GatsbyJS enabled instant loading speed for this type of website."
