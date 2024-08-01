@@ -72,6 +72,7 @@ export default function Header({ background, isStatic }) {
 					<Link to="/blog">Blog</Link>
 					<Link to="/faqs">FAQ</Link>
 					<Link to="/strategic-partnerships">Strategic Partnerships</Link>
+					<a href="https://vevol-store.printify.me/products" target="_blank">Vevol Store</a>
 
 					<div
 						className="extra-nav__close"
