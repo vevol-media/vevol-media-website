@@ -8,7 +8,6 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImageByName } from '../../helpers/helpers';
 import VevolSection from '../../components/general-components/vm-section';
 import SidebarInfoText from '../../components/general-components/sidebar-info-text';
-import Quote from '../../components/general-components/quote';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
 import InformationalContent from '../../components/general-components/informational-content';
 import HeadingBlock from '../../components/heading-block/heading-block';
@@ -19,7 +18,7 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 export const data = graphql`
 	query {
-		currentProject: allFile(filter: { relativeDirectory: { eq: "peter-dobias/peter" } }) {
+		currentProject: allFile(filter: { relativeDirectory: { eq: "case-studies/peter-dobias" } }) {
 			nodes {
 				name
 				childImageSharp {
