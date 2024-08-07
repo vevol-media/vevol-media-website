@@ -130,7 +130,7 @@ const portfolio = [
 		description: 'Revitalizing Pet Health E-commerce: The Dr. Peter Dobias Success Story',
 		internalUrl: '/work/peter-dobias',
 		externalUrl: 'https://peterdobias.com/',
-		featuredImage: 'peterdobias',
+		featuredImage: 'peter-dobias',
 		hasCaseStudy: true,
 		hasPage: true,
 	}
