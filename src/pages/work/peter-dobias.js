@@ -8,13 +8,13 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImageByName } from '../../helpers/helpers';
 import VevolSection from '../../components/general-components/vm-section';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
-import InformationalContent from '../../components/general-components/informational-content';
 import HeadingBlock from '../../components/heading-block/heading-block';
 import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-carousel';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import Quote from '../../components/general-components/quote';
+import SidebarInfoText from '../../components/general-components/sidebar-info-text';
 
 export const data = graphql`
 	query {
@@ -22,12 +22,7 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(
-						placeholder: BLURRED
-						blurredOptions: { width: 125 }
-						quality: 100
-						layout: FULL_WIDTH
-					)
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100, layout: FULL_WIDTH)
 				}
 			}
 		}
@@ -39,9 +34,9 @@ export const data = graphql`
 				}
 			}
 		}
-        videoFile: file(relativePath: { eq: "case-studies/peter-dobias/testimonial.mp4" }) {
-            publicURL
-        }
+		videoFile: file(relativePath: { eq: "case-studies/peter-dobias/testimonial.mp4" }) {
+			publicURL
+		}
 	}
 `;
 
@@ -62,19 +57,12 @@ export default function PortfolioPage({ data }) {
 				backgroundWhite
 				hideBlob
 			/>
+			<Quote
+				secondPart={`...Vevol has made a huge change and difference in our company.`}
+				authorName={`Dr. Peter Dobias`}
+				authorRole={`Owner, Dr. Dobias Healing Solutions Inc.`}
+			/>
 			<VevolSection backgroundColour={'white'}>
-                <Quote
-                    secondPart={`...Vevol has made a huge change and difference in our company.`}
-                    authorName={`Dr. Peter Dobias`}
-                    authorRole={`Owner, Dr. Dobias Healing Solutions Inc.`}
-                />
-                <Container className="mb-6">
-                    {videoFile && (
-                        <video width="100%" controls>
-                            <source src={videoFile.publicURL} type="video/mp4" />
-                        </video>
-                    )}
-				</Container>
 				<Container>
 					<a className="mb-3 is-inline-block" href={'https://peterdobias.com/'} target={'_blank'} rel="noreferrer">
 						See Live Website <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -90,27 +78,36 @@ export default function PortfolioPage({ data }) {
 						online presence.
 					</p>
 
-                    <Title tag="h2" isSize={4} className="mt-5">
-                        The Challenge
-                    </Title>
-					<p className="mt-5">
-                        The initial assessment of Dr. Dobias's Shopify store revealed several areas needing immediate attention:
-					</p>
+					<Title tag="h2" isSize={4} className="mt-5">
+						The Challenge
+					</Title>
+					<p className="mt-5">The initial assessment of Dr. Dobias's Shopify store revealed several areas needing immediate attention:</p>
 					<ul className="mt-5">
-                        <li className="mt-3">
-                            <p>Outdated Theme & Legacy Code: The existing digital framework was creaking under the weight of outdated themes and a convoluted legacy codebase, drastically affecting performance and customization capabilities.</p>
-                        </li>
-                        <li className="mt-3">
-                            <p>Hardcoded Content Dilemma: The reliance on hardcoded content severely limited the ability to make dynamic changes to the website, stifling adaptability in a fast-paced market.</p>
-                        </li>
-                        <li className="mt-3">
-                            <p>Sluggish Performance: With loading speeds far from optimal, the site’s performance was a roadblock to delivering a seamless user experience, adversely affecting SEO rankings and customer satisfaction.</p>
-                        </li>
-                        <li className="mt-3">
-                            <p>Complex Synchronization Issues: The intricate challenge of synchronizing product availability and pricing across Canadian and U.S. stores created a tangled web of operational inefficiencies.</p>
-                        </li>
-                    </ul>
-
+						<li className="mt-3">
+							<p>
+								<strong>Outdated Theme & Legacy Code:</strong> The existing digital framework was creaking under the weight of
+								outdated themes and a convoluted legacy codebase, drastically affecting performance and customization capabilities.
+							</p>
+						</li>
+						<li className="mt-3">
+							<p>
+								<strong>Hardcoded Content Dilemma:</strong> The reliance on hardcoded content severely limited the ability to make
+								dynamic changes to the website, stifling adaptability in a fast-paced market.
+							</p>
+						</li>
+						<li className="mt-3">
+							<p>
+								<strong>Sluggish Performance:</strong> With loading speeds far from optimal, the site’s performance was a roadblock to
+								delivering a seamless user experience, adversely affecting SEO rankings and customer satisfaction.
+							</p>
+						</li>
+						<li className="mt-3">
+							<p>
+								<strong>Complex Synchronization Issues:</strong> The intricate challenge of synchronizing product availability and
+								pricing across Canadian and U.S. stores created a tangled web of operational inefficiencies.
+							</p>
+						</li>
+					</ul>
 				</Container>
 			</VevolSection>
 			<VevolSection>
@@ -147,42 +144,92 @@ export default function PortfolioPage({ data }) {
 					</p>
 				</Container>
 			</VevolSection>
+			<VevolSection backgroundColour={'white'}>
+				<Container>
+					{videoFile && (
+						<video width="100%" controls>
+							<source src={videoFile.publicURL} type="video/mp4" />
+						</video>
+					)}
+				</Container>
+			</VevolSection>
+			<VevolSection backgroundColour={'white'}>
+				<Container>
+					<SidebarInfoText
+						sidebarContent={[
+							{
+								title: 'Services',
+								text: 'Design, Shopify Theme Development, CRO, Custom Integrated Functionalities',
+							},
+							{
+								title: 'Tools & Technologies',
+								text: 'Figma, Liquid, Javascript, Web Components, CSS (Sass), Hubspot, Github, Shopify CLI',
+							},
+						]}
+						mainContent={[
+							{
+								title: 'Transformative Results',
+								text: 'The impact of our efforts was both immediate and profound:',
+							},
+							{
+								text: "We also revamped the Product Page by including more sections to enrich the user experience, such as UGC content, lifestyle imageries and customer reviews for social proof. Our collaboration is continuous, as we're constantly adding new features to the store.",
+							},
+							{
+								text: (
+									<>
+										<strong>A New Era of Customization:</strong> The newfound ability to customize every facet of the website has
+										unleashed a wave of creativity and responsiveness, enabling Dr. Dobias to engage their audience with tailored
+										content and promotions like never before
+									</>
+								),
+							},
+							{
+								text: (
+									<>
+										<strong>Synchronization Perfected:</strong> The streamlined process between the stores has not only improved
+										operational efficiency but also significantly enhanced customer trust and satisfaction, contributing to an
+										uptick in sales.
+									</>
+								),
+							},
+							{
+								text: (
+									<>
+										<strong>Speed, the Catalyst for Engagement:</strong> The dramatic improvement in loading times has transformed
+										the user experience, reducing bounce rates, and setting the stage for higher engagement and conversion rates.
+									</>
+								),
+							},
+							{
+								text: (
+									<>
+										<strong>Integrated Excellence:</strong> The integration of third-party applications has expanded the site’s
+										capabilities, offering users a richer, more comprehensive shopping experience and setting a new benchmark for
+										e-commerce in the pet health industry.
+									</>
+								),
+							},
+							{
+								text: (
+									<>
+										<strong>SEO and Sales, On the Rise:</strong> With enhanced SEO rankings driving increased organic traffic and
+										an optimized shopping experience boosting conversion rates, the website/s revamp has marked a significant
+										milestone in Dr. Dobias/s journey towards digital excellence.
+									</>
+								),
+							},
+						]}
+					/>
+				</Container>
+			</VevolSection>
+
 			<VevolSection>
 				<Container>
-					<InformationalContent
-						featuredImage={
-							<GatsbyImage
-								width={`500px`}
-								image={getImageByName(currentProject.nodes, 'page1')}
-								alt={'Dr. Peter Dobias Success Story - Results &amp; Impact'}
-							/>
-						}
-						title={'Transformative Results'}
-						description={'The impact of our efforts was both immediate and profound:'}
-						blocks={[]}
+					<GatsbyImage
+						width={`500px`}
+						image={getImageByName(currentProject.nodes, 'page1')}
+						alt={'Dr. Peter Dobias Success Story - Results &amp; Impact'}
 					/>
-
-					<p className="mt-5">
-						A New Era of Customization: The newfound ability to customize every facet of the website has unleashed a wave of creativity
-						and responsiveness, enabling Dr. Dobias to engage their audience with tailored content and promotions like never before
-					</p>
-					<p className="mt-5">
-						Synchronization Perfected: The streamlined process between the stores has not only improved operational efficiency but also
-						significantly enhanced customer trust and satisfaction, contributing to an uptick in sales.
-					</p>
-					<p className="mt-5">
-						Speed, the Catalyst for Engagement: The dramatic improvement in loading times has transformed the user experience, reducing
-						bounce rates, and setting the stage for higher engagement and conversion rates.
-					</p>
-					<p className="mt-5">
-						Integrated Excellence: The integration of third-party applications has expanded the site’s capabilities, offering users a
-						richer, more comprehensive shopping experience and setting a new benchmark for e-commerce in the pet health industry.
-					</p>
-					<p className="mt-5">
-						SEO and Sales, On the Rise: With enhanced SEO rankings driving increased organic traffic and an optimized shopping experience
-						boosting conversion rates, the website/s revamp has marked a significant milestone in Dr. Dobias/s journey towards digital
-						excellence.
-					</p>
 				</Container>
 			</VevolSection>
 			<VevolSection backgroundColour={'white'}>
@@ -203,7 +250,7 @@ export default function PortfolioPage({ data }) {
 					</p>
 				</Container>
 			</VevolSection>
-            <GatsbyImage image={getImageByName(currentProject.nodes, 'banner')} alt={'Dr. Peter Dobias Case Study - Vevol Media'} loading="lazy" />
+			<GatsbyImage image={getImageByName(currentProject.nodes, 'page3')} alt={'Dr. Peter Dobias Case Study - Vevol Media'} loading="lazy" />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
