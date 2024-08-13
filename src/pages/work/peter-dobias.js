@@ -227,7 +227,7 @@ export default function PortfolioPage({ data }) {
 				<Container>
 					<GatsbyImage
 						width={`500px`}
-						image={getImageByName(currentProject.nodes, 'page1')}
+						image={getImageByName(currentProject.nodes, 'page4')}
 						alt={'Dr. Peter Dobias Success Story - Results &amp; Impact'}
 					/>
 				</Container>
