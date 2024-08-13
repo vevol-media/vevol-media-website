@@ -244,8 +244,7 @@ export default function PortfolioPage({ data }) {
 						a thriving digital ecosystem.
 					</p>
 					<p className="mt-5">
-						Ready to embark on your transformation journey? Connect with us at hello@vevolmedia.com or explore our world of innovative
-						e-commerce solutions at [www.vevolmedia.com](https://www.vevolmedia.com). Together, let's craft an online experience that
+						Ready to embark on your transformation journey? Connect with us at hello@vevolmedia.com or explore our world of innovative <a href="/services">e-commerce solutions</a>. Together, let's craft an online experience that
 						resonates with your brand and your audience.
 					</p>
 				</Container>
