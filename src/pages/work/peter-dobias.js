@@ -146,15 +146,6 @@ export default function PortfolioPage({ data }) {
 			</VevolSection>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
-					{videoFile && (
-						<video width="100%" controls>
-							<source src={videoFile.publicURL} type="video/mp4" />
-						</video>
-					)}
-				</Container>
-			</VevolSection>
-			<VevolSection backgroundColour={'white'}>
-				<Container>
 					<SidebarInfoText
 						sidebarContent={[
 							{
@@ -222,7 +213,6 @@ export default function PortfolioPage({ data }) {
 					/>
 				</Container>
 			</VevolSection>
-
 			<VevolSection>
 				<Container>
 					<GatsbyImage
@@ -244,12 +234,33 @@ export default function PortfolioPage({ data }) {
 						a thriving digital ecosystem.
 					</p>
 					<p className="mt-5">
-						Ready to embark on your transformation journey? Connect with us at hello@vevolmedia.com or explore our world of innovative <a href="/services">e-commerce solutions</a>. Together, let's craft an online experience that
-						resonates with your brand and your audience.
+						Ready to embark on your transformation journey? Connect with us at hello@vevolmedia.com or explore our world of innovative{' '}
+						<a href="/services">e-commerce solutions</a>. Together, let's craft an online experience that resonates with your brand and
+						your audience.
 					</p>
 				</Container>
 			</VevolSection>
-			<GatsbyImage image={getImageByName(currentProject.nodes, 'page3')} alt={'Dr. Peter Dobias Case Study - Vevol Media'} loading="lazy" />
+			<VevolSection>
+				<Container>
+					<SidebarInfoText
+						className="centered-sidebar-info-text"
+						sidebarContent={
+							<div>
+								<p className="quote-text">"...Vevol has just excelled."</p>
+								<p>Dr. Peter Dobias - Owner, Dr. Dobias Healing Solutions Inc.</p>
+							</div>
+						}
+						mainContent={
+							videoFile && (
+								<video width="100%" controls>
+									<source src={videoFile.publicURL} type="video/mp4" />
+								</video>
+							)
+						}
+					/>
+				</Container>
+			</VevolSection>
+			<GatsbyImage className="mt-5" image={getImageByName(currentProject.nodes, 'page3')} alt={'Dr. Peter Dobias Case Study - Vevol Media'} loading="lazy" />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock

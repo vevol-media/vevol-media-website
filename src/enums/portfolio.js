@@ -1,5 +1,14 @@
 const portfolio = [
 	{
+		name: 'Peter Dobias',
+		description: 'Revitalizing Pet Health E-commerce: The Dr. Peter Dobias Success Story',
+		internalUrl: '/work/peter-dobias',
+		externalUrl: 'https://peterdobias.com/',
+		featuredImage: 'peter-dobias',
+		hasCaseStudy: true,
+		hasPage: true,
+	},
+	{
 		name: 'Fyne Jewellery',
 		description: 'Design, Custom Shopify Components, Store and Speed Optimisation.',
 		internalUrl: '/work/fyne-jewellery',
@@ -17,15 +26,15 @@ const portfolio = [
 		hasCaseStudy: true,
 		hasPage: true,
 	},
-	{
-		name: 'Lumired',
-		description: 'Custom Store Build with Design extended from official Shopify Theme.',
-		internalUrl: '/work/lumired',
-		externalUrl: 'https://lumired.ie',
-		featuredImage: 'lumired',
-		hasCaseStudy: true,
-		hasPage: true,
-	},
+	// {
+	// 	name: 'Lumired',
+	// 	description: 'Custom Store Build with Design extended from official Shopify Theme.',
+	// 	internalUrl: '/work/lumired',
+	// 	externalUrl: 'https://lumired.ie',
+	// 	featuredImage: 'lumired',
+	// 	hasCaseStudy: true,
+	// 	hasPage: true,
+	// },
 	{
 		name: 'A&S Market',
 		description: 'Bespoke Theme Development, Custom Functionalities, Additional Apps Integration.',
@@ -89,15 +98,15 @@ const portfolio = [
 		hasCaseStudy: false,
 		hasPage: true,
 	},
-	{
-		name: 'Aspazia',
-		description: 'Custom Wordpress Woocommerce Shop, New Hero Banner Module, Print On Demand Service Integration.',
-		internalUrl: '/work/aspazia',
-		externalUrl: 'https://aspazia.co.uk',
-		featuredImage: 'aspazia',
-		hasCaseStudy: false,
-		hasPage: true,
-	},
+	// {
+	// 	name: 'Aspazia',
+	// 	description: 'Custom Wordpress Woocommerce Shop, New Hero Banner Module, Print On Demand Service Integration.',
+	// 	internalUrl: '/work/aspazia',
+	// 	externalUrl: 'https://aspazia.co.uk',
+	// 	featuredImage: 'aspazia',
+	// 	hasCaseStudy: false,
+	// 	hasPage: true,
+	// },
 	{
 		name: 'Margee',
 		description: 'Complete Website Revamp on 2.0 Theme, New Navigation and Custom Filtering.',
@@ -124,15 +133,6 @@ const portfolio = [
 		featuredImage: 'ramona-albert',
 		hasCaseStudy: false,
 		hasPage: false,
-	},
-	{
-		name: 'Peter Dobias',
-		description: 'Revitalizing Pet Health E-commerce: The Dr. Peter Dobias Success Story',
-		internalUrl: '/work/peter-dobias',
-		externalUrl: 'https://peterdobias.com/',
-		featuredImage: 'peter-dobias',
-		hasCaseStudy: true,
-		hasPage: true,
 	}
 ];
 
