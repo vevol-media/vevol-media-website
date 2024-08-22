@@ -63,7 +63,7 @@ export default function PortfolioPage({ data }) {
 				authorRole={`Owner, Dr. Dobias Healing Solutions Inc.`}
 			/>
 			<VevolSection backgroundColour={'white'}>
-				<Container>
+				<Container className="pb-6">
 					<a className="mb-3 is-inline-block" href={'https://peterdobias.com/'} target={'_blank'} rel="noreferrer">
 						See Live Website <FontAwesomeIcon icon={faExternalLinkAlt} />
 					</a>
@@ -109,13 +109,31 @@ export default function PortfolioPage({ data }) {
 						</li>
 					</ul>
 				</Container>
+				<Container className="mt-6">
+					<SidebarInfoText
+						className="centered-sidebar-info-text"
+						sidebarContent={
+							<div>
+								<p className="quote-text">"...Vevol has just excelled."</p>
+								<p>Dr. Peter Dobias - Owner, Dr. Dobias Healing Solutions Inc.</p>
+							</div>
+						}
+						mainContent={
+							videoFile && (
+								<video width="100%" controls>
+									<source src={videoFile.publicURL} type="video/mp4" />
+								</video>
+							)
+						}
+					/>
+				</Container>
 			</VevolSection>
 			<VevolSection>
 				<Container>
 					<SimpleImageCarousel imagesArray={projectCarouselImages} />
 				</Container>
 			</VevolSection>
-			<VevolSection backgroundColour={'white'}>
+			<VevolSection backgroundColour={'white'} className="pb-0">
 				<Container>
 					<Title tag="h2" isSize={4} className="mt-5">
 						Our Approach
@@ -240,27 +258,12 @@ export default function PortfolioPage({ data }) {
 					</p>
 				</Container>
 			</VevolSection>
-			<VevolSection>
-				<Container>
-					<SidebarInfoText
-						className="centered-sidebar-info-text"
-						sidebarContent={
-							<div>
-								<p className="quote-text">"...Vevol has just excelled."</p>
-								<p>Dr. Peter Dobias - Owner, Dr. Dobias Healing Solutions Inc.</p>
-							</div>
-						}
-						mainContent={
-							videoFile && (
-								<video width="100%" controls>
-									<source src={videoFile.publicURL} type="video/mp4" />
-								</video>
-							)
-						}
-					/>
-				</Container>
-			</VevolSection>
-			<GatsbyImage className="mt-5" image={getImageByName(currentProject.nodes, 'page3')} alt={'Dr. Peter Dobias Case Study - Vevol Media'} loading="lazy" />
+			<GatsbyImage
+				className="mt-5"
+				image={getImageByName(currentProject.nodes, 'page3')}
+				alt={'Dr. Peter Dobias Case Study - Vevol Media'}
+				loading="lazy"
+			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
