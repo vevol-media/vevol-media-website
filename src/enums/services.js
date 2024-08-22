@@ -42,7 +42,7 @@ const services = {
 			title: 'Free Shopify SEO Audit',
 			intro: "We offer a free SEO audit for all Shopify Plus & Shopify Advanced stores who use or plan to use our Shopify services.",
 			sublist: ['text text text texta', 'text text text text', 'text text text text', 'text text text text'],
-			url: '/services/seo-audit',
+			url: '/services/shopify-seo-audit',
 		},
 		{
 			image: 'uiuxdesign',

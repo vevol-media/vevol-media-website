@@ -44,7 +44,7 @@ export default function PageSingleService({ data }) {
 				subheading="Maximise the Organic Traffic Potential of Your Shopify Plus or Advanced Store"
 			/>
 			<SidewayText lineOne={`ecommerce`} lineTwo={'audit'} lineTwoRepeat={30} />
-			<VevolSection backgroundColour={'grey'}>
+			<VevolSection backgroundColour={'grey'} className="pb-0">
 				<Container>
 					<ImageWithText
 						alignRight
