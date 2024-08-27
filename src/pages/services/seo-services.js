@@ -15,7 +15,7 @@ import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
-		imageOneQuery: file(name: { eq: "service-seo-analysis" }) {
+		imageOneQuery: file(name: { eq: "service-seo" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}
