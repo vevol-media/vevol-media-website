@@ -76,3 +76,12 @@
         list-style-position: inside;
     }
 }
+
+.centered-sidebar-info-text {
+    display: flex;
+    align-items: center;
+
+    .quote-text {
+        font-weight: 900;
+    }
+}

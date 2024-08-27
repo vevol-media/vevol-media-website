@@ -9,6 +9,10 @@ export default function SidebarInfoText({
 	sidebarContentTitle,
 	sidebarContentIsList,
 }) {
+	
+	const sidebarItems = Array.isArray(sidebarContent) ? sidebarContent : [sidebarContent];
+	const mainItems = Array.isArray(mainContent) ? mainContent : [mainContent];
+
 	return (
 		<div className={`sidebar-info-text ${className ? className : ''}`}>
 			{sidebarContent && (
@@ -23,7 +27,7 @@ export default function SidebarInfoText({
 						</Title>
 					)}
 					<ul>
-						{sidebarContent.map((item, index) => (
+						{sidebarItems.map((item, index) => (
 							<li key={index}>
 								{item.title && (
 									<Title tag="h5" isSize={5}>
@@ -31,6 +35,7 @@ export default function SidebarInfoText({
 									</Title>
 								)}
 								{item.text && <p>{item.text}</p>}
+								{!item.title && !item.text && item}
 							</li>
 						))}
 					</ul>
@@ -38,7 +43,7 @@ export default function SidebarInfoText({
 			)}
 
 			<div className={`sidebar-info-text__right`}>
-				{mainContent.map((item, index) => (
+				{mainItems.map((item, index) => (
 					<React.Fragment key={index}>
 						{item.title ? (
 							<Title tag="h4" isSize={4}>
@@ -48,6 +53,7 @@ export default function SidebarInfoText({
 							<></>
 						)}
 						{item.text && (Array.isArray(item.text) ? <div>{item.text}</div> : <p>{item.text}</p>)}
+						{!item.title && !item.text && item}
 					</React.Fragment>
 				))}
 			</div>

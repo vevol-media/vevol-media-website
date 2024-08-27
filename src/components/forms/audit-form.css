@@ -1,0 +1,7 @@
+.select select:focus {
+  outline: none;
+  border-color: #0FEAA1;
+}
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: #131517;
+}
