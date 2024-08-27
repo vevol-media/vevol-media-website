@@ -24,6 +24,7 @@ export default function WebsiteFooter() {
 						<Link to="/services/bespoke-development">Bespoke Development</Link>
 						<Link to="/services/shopify-migration">Shopify Migration</Link>
 						<Link to="/services/seo-services">SEO Services</Link>
+						<Link to="/services/shopify-seo-audit">Free Shopify SEO Audit</Link>
 						<Link to="/services/ui-ux-web-design">UI/UX Web Design</Link>
 					</Column>
 					<Column>

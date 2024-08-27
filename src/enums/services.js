@@ -38,6 +38,13 @@ const services = {
 			url: '/services/seo-services',
 		},
 		{
+			image: 'seo',
+			title: 'Free Shopify SEO Audit',
+			intro: "We offer a free SEO audit for all Shopify Plus & Shopify Advanced stores who use or plan to use our Shopify services.",
+			sublist: ['text text text texta', 'text text text text', 'text text text text', 'text text text text'],
+			url: '/services/shopify-seo-audit',
+		},
+		{
 			image: 'uiuxdesign',
 			title: 'UI/UX Web Design',
 			intro: 'We specialise in conversion rate focused web design services: bespoke, responsive and inline with your branding and vision. Our UI/UX design team will turn any website into a brilliant one!',
