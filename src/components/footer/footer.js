@@ -84,6 +84,9 @@ export default function WebsiteFooter() {
 							Latest
 						</Title>
 						<Link to="/blog">Read Blog</Link>
+						<a href="https://vevol-store.printify.me/products" target="_blank">
+							Visit our Store
+						</a>
 					</Column>
 				</Columns>
 			</Container>
