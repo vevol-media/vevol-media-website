@@ -20,7 +20,7 @@ export default function HomepageHero({ imageBottom }) {
 			<Container>
 				<div className="homepage-hero__content">
 					<p className="">eCommerce Custom Solutions</p>
-					<Title>Shopify Experts You Can Trust</Title>
+					<Title>Shopify & Shopify Plus Custom Development Services</Title>
 					<p>
 						We are Shopify partners and experienced developers, so you can be sure you are in great hands!
 					</p>
