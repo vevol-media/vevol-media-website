@@ -316,6 +316,9 @@ export default function BlogPost(props) {
 							{title === 'The Complete Shopify Checklist for an easy Shopify Store setup' && (
 								<div className="klaviyo-form-YAaFdq"></div>
 							)}
+							{title === 'BFCM Game Changers - Quick Wins for Instant Results' && (
+								<div class="klaviyo-form-SJBm8m"></div>
+							)}
 						</div>
 						<div
 							className={`table-of-contents__progress-bar ${isTableOfContentsHidden ? 'table-of-contents__progress-bar--hidden' : ''}`}
