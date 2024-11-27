@@ -25,7 +25,7 @@ export default function HomepageHero({ imageBottom }) {
 						We are Shopify partners and experienced developers, so you can be sure you are in great hands!
 					</p>
 					<Link to="/contact" className="vm-button vm-button--white vm-button--big">
-						Let's work together
+						Ask for availability
 					</Link>
 					<ClutchWidget />
 				</div>

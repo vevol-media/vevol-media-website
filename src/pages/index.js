@@ -74,6 +74,11 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
 			}
 		}
+		themesButton: file(name: { eq: "shopify-themes-button" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 300, quality: 100)
+			}
+		}
 		blogPosts: allContentfulBlogPost(sort: { order: DESC, fields: publishedDate }, limit: 4) {
 			nodes {
 				title
@@ -103,6 +108,7 @@ export default function Homepage({ data }) {
 		storyIconQuery,
 		palletIconQuery,
 		bagIconQuery,
+		themesButton,
 		blogPosts,
 		formBannerImageQuery,
 		mainHeroImageQuery,
@@ -115,6 +121,7 @@ export default function Homepage({ data }) {
 	const storyIcon = getImage(storyIconQuery);
 	const palletIcon = getImage(palletIconQuery);
 	const bagIcon = getImage(bagIconQuery);
+	const themesButtonImage = getImage(themesButton);
 
 	return (
 		<Layout formBackgroundImage={formBannerImage}>
@@ -151,8 +158,8 @@ export default function Homepage({ data }) {
 							},
 						]}
 					>
-						<Link href="https://themes.shopify.com/themes/noblesse" target="_blank" className="vm-button vm-button--white mt-6">
-							Check the theme
+						<Link href="https://themes.shopify.com/themes/noblesse" target="_blank" className="mt-6 themes-button">
+							<GatsbyImage image={themesButtonImage} alt="Shopify Themes Button" />
 						</Link>
 					</ImageWithText>
 				</Container>
