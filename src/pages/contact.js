@@ -25,7 +25,7 @@ export default function ContactPage({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Contact us for Shopify & Bespoke Development services</title>
+				<title>Shopify & Bespoke Development services. Ask for availability</title>
 				<meta
 					name="description"
 					content="Let's connect and discuss about how Vevol Media can help your business. Innovative Shopify Partners and expert developers - just one click away. Get in touch today!"

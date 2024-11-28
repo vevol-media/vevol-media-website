@@ -105,7 +105,7 @@ export default function PageAbout({ data }) {
 								Shopify Unite, eCommerce Expo, GPEC and many others.
 							</p>,
 							<Link to="/contact" className="vm-button vm-button--white mt-5">
-								Contact us now
+								Ask for availability
 							</Link>,
 						]}
 					/>

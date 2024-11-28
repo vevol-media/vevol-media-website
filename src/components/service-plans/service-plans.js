@@ -230,7 +230,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 											role="button"
 											tabIndex={0}
 										>
-											Contact Us Now
+											Ask for availability
 										</div>
 									);
 								}}

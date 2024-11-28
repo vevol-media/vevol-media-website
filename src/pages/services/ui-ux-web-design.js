@@ -88,7 +88,7 @@ export default function PageSingleService({ data }) {
 				title="Let's Work Together"
 				text="Get in touch to learn more about our bespoke development services"
 				url="/contact"
-				ctaText={'Contact Us'}
+				ctaText={'Ask for availability'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>
