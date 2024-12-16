@@ -13,7 +13,7 @@ import VevolSection from '../components/general-components/vm-section';
 
 export const data = graphql`
 	query {
-		locationImageQuery: file(name: { eq: "vevol-media-locations" }) {
+		locationImageQuery: file(name: { eq: "locations-24" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
 			}
