@@ -20,6 +20,7 @@ module.exports = {
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-robots-txt',
 		'gatsby-plugin-gatsby-cloud',
+		'gatsby-plugin-client-side-redirect',
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {
@@ -47,7 +48,7 @@ module.exports = {
 				head: true,
 				// enable ip anonymization
 				anonymize_ip: true,
-				allow_ad_personalization_signals: false
+				allow_ad_personalization_signals: false,
 			},
 		},
 		{

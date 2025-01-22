@@ -1,86 +1,90 @@
 [
-  {
-    "fromPath": "/our-portfolio",
-    "toPath": "/work"
-  },
-  {
-    "fromPath": "/contacts",
-    "toPath": "/contact"
-  },
-  {
-    "fromPath": "/tag/crypyo",
-    "toPath": "/"
-  },
-  {
-    "fromPath": "/tag/marketing",
-    "toPath": "/services"
-  },
-  {
-    "fromPath": "/terms-of-use",
-    "toPath": "/cookie-policy"
-  },
-  {
-    "fromPath": "/f-a-q",
-    "toPath": "/faqs"
-  },
-  {
-    "fromPath": "/services/web-design",
-    "toPath": "/services/ui-ux-web-design"
-  },
-  {
-    "fromPath": "/services/web-development",
-    "toPath": "/services/bespoke-development"
-  },
-  {
-    "fromPath": "/privacy-policy-2",
-    "toPath": "/cookie-policy"
-  },
-  {
-    "fromPath": "/services/content-marketing",
-    "toPath": "/services/seo-services"
-  },
-  {
-    "fromPath": "/category/web-development",
-    "toPath": "/services/bespoke-development"
-  },
-  {
-    "fromPath": "/category/smm-marketing",
-    "toPath": "/services"
-  },
-  {
-    "fromPath": "/services/ppc-management",
-    "toPath": "/services"
-  },
-  {
-    "fromPath": "/kc-section/title_hy",
-    "toPath": "/"
-  },
-  {
-    "fromPath": "/grid-2-column-s-b",
-    "toPath": "/"
-  },
-  {
-    "fromPath": "/ecommerce-news/how-quickly-can-a-new-site-be-promoted",
-    "toPath": "/services/seo-services"
-  },
-  {
-    "fromPath": "/ecommerce-news/a-guide-to-recession-proofing-your-e-commerce-business",
-    "toPath": "/services"
-  },
-  {
-    "fromPath": "/ecommerce-news/what-is-shopify-and-how-does-shopify-work-a-2022-guide",
-    "toPath": "/services/shopify-development"
-  },
-  {
-    "fromPath": "/ecommerce-news/the-main-differences-between-shopify-and-woocommerce-which-is-the-best-ecommerce-store-builder-for-you",
-    "toPath": "/services/shopify-development"
-  },
-  {
-    "fromPath": "/checklist",
-    "toPath": "/blog/the-complete-shopify-checklist-for-an-easy-shopify-store-setup"
-  },
-  {
-    "fromPath": "/partners",
-    "toPath": "/strategic-partnerships"
-  }
+	{
+		"fromPath": "/our-portfolio",
+		"toPath": "/work"
+	},
+	{
+		"fromPath": "/contacts",
+		"toPath": "/contact"
+	},
+	{
+		"fromPath": "/tag/crypyo",
+		"toPath": "/"
+	},
+	{
+		"fromPath": "/tag/marketing",
+		"toPath": "/services"
+	},
+	{
+		"fromPath": "/terms-of-use",
+		"toPath": "/cookie-policy"
+	},
+	{
+		"fromPath": "/f-a-q",
+		"toPath": "/faqs"
+	},
+	{
+		"fromPath": "/services/web-design",
+		"toPath": "/services/ui-ux-web-design"
+	},
+	{
+		"fromPath": "/services/web-development",
+		"toPath": "/services/bespoke-development"
+	},
+	{
+		"fromPath": "/privacy-policy-2",
+		"toPath": "/cookie-policy"
+	},
+	{
+		"fromPath": "/services/content-marketing",
+		"toPath": "/services/seo-services"
+	},
+	{
+		"fromPath": "/category/web-development",
+		"toPath": "/services/bespoke-development"
+	},
+	{
+		"fromPath": "/category/smm-marketing",
+		"toPath": "/services"
+	},
+	{
+		"fromPath": "/services/ppc-management",
+		"toPath": "/services"
+	},
+	{
+		"fromPath": "/kc-section/title_hy",
+		"toPath": "/"
+	},
+	{
+		"fromPath": "/grid-2-column-s-b",
+		"toPath": "/"
+	},
+	{
+		"fromPath": "/ecommerce-news/how-quickly-can-a-new-site-be-promoted",
+		"toPath": "/services/seo-services"
+	},
+	{
+		"fromPath": "/ecommerce-news/a-guide-to-recession-proofing-your-e-commerce-business",
+		"toPath": "/services"
+	},
+	{
+		"fromPath": "/ecommerce-news/what-is-shopify-and-how-does-shopify-work-a-2022-guide",
+		"toPath": "/services/shopify-development"
+	},
+	{
+		"fromPath": "/ecommerce-news/the-main-differences-between-shopify-and-woocommerce-which-is-the-best-ecommerce-store-builder-for-you",
+		"toPath": "/services/shopify-development"
+	},
+	{
+		"fromPath": "/checklist",
+		"toPath": "/blog/the-complete-shopify-checklist-for-an-easy-shopify-store-setup"
+	},
+	{
+		"fromPath": "/partners",
+		"toPath": "/strategic-partnerships"
+	},
+	{
+		"fromPath": "/meetup",
+		"toPath": "https://www.eventbrite.ie/e/shopify-meetup-central-eastern-europe-2025-tickets-1138409265759"
+	}
 ]

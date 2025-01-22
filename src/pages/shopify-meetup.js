@@ -90,14 +90,14 @@ export default function ShopifyMeetupPage({ data }) {
 			</Helmet>
 			<LandingHero
 				imageBottom={heroImageData}
-				title={'SHOPIFY MEETUP ROMANIA'}
-				upperText={'February 19th 2024 @ Hotel Capitol, Bucharest'}
+				title={'SHOPIFY MEETUP CENTRAL & EASTERN EUROPE'}
+				upperText={'April 3rd 2025 @ Hotel Caro, Bucharest'}
 				buttonText={'Register now'}
 				buttonLink={'#form'}
 				subtitle={'Powered by Vevol Media'}
 				customClassName={'homepage-hero--shopify-meetup'}
 			/>
-			<SidewayText lineOne={`shopify`} lineTwo={'romania'} />
+			<SidewayText lineOne={`shopify`} lineTwo={'meetup'} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock title={'Meet the Speakers...'} highlightedWord={'Speakers'} className={'mb-6'} />
@@ -110,7 +110,7 @@ export default function ShopifyMeetupPage({ data }) {
 					<GeneralMembers members={panelMembers} altLayout />
 				</Container>
 			</VevolSection>
-			<SidewayText lineOne={`19/02/2024`} lineTwo={'Bucharest'} />
+			<SidewayText lineOne={`03/04/2025`} lineTwo={'Bucharest'} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock title={'Why attend?'} highlightedWord={'Why'} />
@@ -132,7 +132,11 @@ export default function ShopifyMeetupPage({ data }) {
 						className="mb-4em"
 						subtitle={'Find out what we have prepared for you'}
 					/>
-					<p className='mt-6 mb-6'>Save the date & location: <strong>19th February 2024, 09:00 - 16:00</strong>, Hotel Capitol, Bucharest, Calea Victoriei 29, București 010061, Romania. After-drinks at <strong>Saint Patrick's Irish Pub</strong> in the Old Town.</p>
+					<p className="mt-6 mb-6">
+						Save the date & location: <strong>19th February 2024, 09:00 - 16:00</strong>, Hotel Capitol,
+						Bucharest, Calea Victoriei 29, București 010061, Romania. After-drinks at{' '}
+						<strong>Saint Patrick's Irish Pub</strong> in the Old Town.
+					</p>
 					<FeaturesIndex featuresIndexRef={featuresIndexRef} featuresIndex={meetupSchedule} />
 				</Container>
 			</VevolSection>
