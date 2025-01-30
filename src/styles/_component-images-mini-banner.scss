@@ -16,5 +16,14 @@
 		justify-content: center;
 		align-items: center;
 		gap: 2em;
+		padding-inline: 2em;
+
+		@include screen-small {
+			padding-inline: 20px;
+
+			.gatsby-image-wrapper {
+				max-width: 120px;
+			}
+		}
 	}
 }

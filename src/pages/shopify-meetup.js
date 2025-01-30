@@ -51,7 +51,7 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: DOMINANT_COLOR, height: 120, quality: 100)
+					gatsbyImageData(placeholder: DOMINANT_COLOR, height: 200, quality: 100)
 				}
 			}
 		}
@@ -91,14 +91,14 @@ export default function ShopifyMeetupPage({ data }) {
 			</Helmet>
 			<LandingHero
 				imageBottom={heroImageData}
-				title={'SHOPIFY MEETUP CENTRAL & EASTERN EUROPE'}
+				title={'CENTRAL & EASTERN EUROPE SHOPIFY MEETUP'}
 				upperText={'April 3rd 2025 @ Hotel Caro, Bucharest'}
-				buttonText={'View Schedule'}
-				buttonLink={'#meetup-schedule'}
+				buttonText={'Register now'}
+				buttonLink={'#shopify-meetup-cta'}
 				subtitle={'Powered by Vevol Media'}
 				customClassName={'homepage-hero--shopify-meetup'}
 			/>
-			<SidewayText lineOne={`shopify`} lineTwo={'meetup'} />
+			<SidewayText lineOne={`shopify`} lineTwo={'meetup'} lineOneRepeat={20} lineTwoRepeat={20} />
 			<SlimHero
 				heading="Join us for the first-ever Shopify Meetup Central & Eastern Europe 2025"
 				subheading="April 3rd 2025 @ Hotel Caro, Bucharest"
