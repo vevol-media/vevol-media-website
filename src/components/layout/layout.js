@@ -20,6 +20,7 @@ export default function Layout({
 	hasMainForm = true,
 	formBackgroundImage,
 	hasHeader = true,
+	customClass,
 }) {
 	const [cookieConsentValue, setCookieConsentValue] = useState('');
 	const [showCookieBar, setShowCookieBar] = useState(false);
@@ -76,7 +77,7 @@ export default function Layout({
 
 	return (
 		<AppProvider>
-			<div onMouseMove={handleMouseMove} role="presentation">
+			<div onMouseMove={handleMouseMove} role="presentation" className={customClass}>
 				{showBlob && (
 					<div className="cursor-container">
 						<animated.div style={animatedProps} className="cursor-wrapper">

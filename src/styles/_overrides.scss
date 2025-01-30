@@ -1,5 +1,5 @@
 .field:not(:last-child) {
-    margin-bottom: 1.1em;
+	margin-bottom: 1.1em;
 }
 
 .pagination-previous,
@@ -12,28 +12,28 @@
 .textarea,
 .input,
 .button {
-    height: 3em;
+	height: 3em;
 }
 
 .input,
 .textarea {
-    transition: 0.3s ease all;
+	transition: 0.3s ease all;
 
-    &.is-danger {
-        border-width: 1px 1px 1px 10px;
-    }
+	&.is-danger {
+		border-width: 1px 1px 1px 10px;
+	}
 }
 
 p {
-    line-height: 1.5;
+	line-height: 1.5;
 }
 
 .file-label {
-    .file-icon {
-        margin-right: 0;
-    }
+	.file-icon {
+		margin-right: 0;
+	}
 
-    .file-name {
-        line-height: 2em;
-    }
+	.file-name {
+		line-height: 2em;
+	}
 }

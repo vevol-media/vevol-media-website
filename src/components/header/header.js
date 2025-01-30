@@ -29,8 +29,9 @@ export default function Header({ background, isStatic }) {
 						</Link>
 						<div className="navigation__subnav">
 							<Link to="/services/shopify-development">Shopify Development</Link>
+							<Link to="/services/shopify-plus">Shopify Plus</Link>
+							<Link to="/services/shopify-apps">Shopify Apps</Link>
 							<Link to="/services/shopify-migration">Shopify Migration</Link>
-							<Link to="/services/bespoke-development">Bespoke Development</Link>
 							<Link to="/services/seo-services">SEO Services</Link>
 							<Link to="/services/ui-ux-web-design">UI/UX Web Design</Link>
 							<Link className="navigation__service-plans" to="/service-plans">
@@ -72,7 +73,9 @@ export default function Header({ background, isStatic }) {
 					<Link to="/blog">Blog</Link>
 					<Link to="/faqs">FAQ</Link>
 					<Link to="/strategic-partnerships">Strategic Partnerships</Link>
-					<a href="https://vevol-store.printify.me/products" target="_blank">Vevol Store</a>
+					<a href="https://vevol-store.printify.me/products" target="_blank">
+						Vevol Store
+					</a>
 
 					<div
 						className="extra-nav__close"

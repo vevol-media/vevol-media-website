@@ -1,46 +1,42 @@
 .heading-block {
-    border-left: 5px solid $green;
-    padding: 10px 0 10px 20px;
+	border-left: 5px solid $green;
+	padding: 10px 0 10px 20px;
 
-    &--reverse {
-        h2 {
-            margin-block: 0 !important;
-        }
-    }
+	&--reverse {
+		h2 {
+			margin-block: 0 !important;
+		}
+	}
 
-    &--align-right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        border-left: none;
-        border-right: 5px solid $green;
-        padding: 10px 20px 10px 0;
-    }
+	&--align-right {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		border-left: none;
+		border-right: 5px solid $green;
+		padding: 10px 20px 10px 0;
+	}
 
-    &--margin-bottom {
-        margin-bottom: 4em;
-    }
+	&--margin-bottom {
+		margin-bottom: 4em;
+	}
 
-    &--black {
-        color: $black;
-    }
+	&--black {
+		color: $black;
+	}
 
-    .title {
-        margin-bottom: 10px;
-    }
+	p {
+		font-size: 1.4em;
+	}
 
-    p {
-        font-size: 1.4em;
-    }
+	@include screen-small {
+		.title {
+			font-size: 2em;
+			margin-bottom: 15px;
+		}
 
-    @include screen-small {
-        .title {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 1.1em;
-        }
-    }
+		p {
+			font-size: 1.1em;
+		}
+	}
 }

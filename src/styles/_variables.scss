@@ -1,4 +1,4 @@
-$green: #22ffb8;
+$green: var(--green, #22ffb8);
 $green2: #10dab9;
 $black: #131517;
 $white: #ffffff;
@@ -13,6 +13,7 @@ $yellow: #ffc800;
 $blue: #3f5efb;
 $lightBlue: #23a6d5;
 $orange: #ee7752;
+$turquoise: #65ffe8;
 
-$font-family: "Montserrat", sans-serif;
-$font-family-secondary: "Inconsolata", monospace;
+$font-family: 'Montserrat', sans-serif;
+$font-family-secondary: 'Inconsolata', monospace;

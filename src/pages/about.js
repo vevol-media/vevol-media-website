@@ -132,7 +132,7 @@ export default function PageAbout({ data }) {
 								knowledge of how your business can take advantage of everything in the market.
 							</p>,
 							<Link to="/contact" className="vm-button vm-button--black mt-5">
-								Get in touch
+								Ask for availability
 							</Link>,
 						]}
 					/>

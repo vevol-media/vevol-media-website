@@ -1,87 +1,111 @@
 .card-image .gatsby-image-wrapper {
-    width: 100%;
+	width: 100%;
 }
 
 .vevol-memberships {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	justify-content: center;
+	align-items: center;
 }
 
 .job-listing-info {
-    .list-of-cards {
-        margin-bottom: 3em;
+	.list-of-cards {
+		margin-bottom: 3em;
 
-        @include screen-small {
-            .simple-card {
-                width: 100%;
-            }
-        }
-    }
+		@include screen-small {
+			.simple-card {
+				width: 100%;
+			}
+		}
+	}
 
-    ul {
-        list-style: disc;
-        padding-left: 20px;
-        margin-bottom: 0;
+	ul {
+		list-style: disc;
+		padding-left: 20px;
+		margin-bottom: 0;
 
-        li {
-            margin-bottom: 10px;
+		li {
+			margin-bottom: 10px;
 
-            &:last-child {
-                margin-bottom: 0;
-            }
+			&:last-child {
+				margin-bottom: 0;
+			}
 
-            p {
-                margin: 0 !important;
-            }
-        }
-    }
+			p {
+				margin: 0 !important;
+			}
+		}
+	}
 }
 
 .careers__job-list {
-    display: flex;
-    gap: 45px;
+	display: flex;
+	gap: 45px;
 
-    .medium-card {
-        width: calc(33.33% - 30px);
-    }
+	.medium-card {
+		width: calc(33.33% - 30px);
+	}
 
-    @include screen-general {
-        gap: 40px;
+	@include screen-general {
+		gap: 40px;
 
-        .medium-card {
-            width: calc(50% - 20px);
-        }
-    }
+		.medium-card {
+			width: calc(50% - 20px);
+		}
+	}
 
-    @include screen-small {
-        display: block;
+	@include screen-small {
+		display: block;
 
-        .medium-card {
-            width: 100%;
-            margin-bottom: 25px;
+		.medium-card {
+			width: 100%;
+			margin-bottom: 25px;
 
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-    }
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
-.cookie-policy__wrapper, .privacy-policy__wrapper {
-    ul {
-        list-style: circle;
-        list-style-position: inside;
-    }
+.cookie-policy__wrapper,
+.privacy-policy__wrapper {
+	ul {
+		list-style: circle;
+		list-style-position: inside;
+	}
 }
 
 .centered-sidebar-info-text {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
-    .quote-text {
-        font-weight: 900;
-    }
+	.quote-text {
+		font-weight: 900;
+	}
+}
+
+.shopify-meetup-page {
+	--green: #65ffe8;
+}
+
+.customer-logos-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2rem;
+	align-items: center;
+	justify-items: center;
+
+	@media screen and (max-width: 768px) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
 }

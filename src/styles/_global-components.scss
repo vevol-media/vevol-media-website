@@ -1,121 +1,125 @@
 .title {
-    color: inherit;
-    font-size: 3em;
+	color: inherit;
+	font-size: 3em;
 
-    span {
-        font-weight: bolder;
-    }
+	span {
+		font-weight: bolder;
+	}
 
-    @include screen-small {
-        font-size: 1.75em;
+	@include screen-small {
+		font-size: 1.75em;
 
-        &.is-1 {
-            font-size: 1.75em;
-        }
+		&.is-1 {
+			font-size: 1.75em;
+		}
 
-        &.is-2,
-        &.is-3 {
-            font-size: 1.65em;
-        }
-    }
+		&.is-2,
+		&.is-3 {
+			font-size: 1.65em;
+		}
+	}
 }
 
 .mb-4em {
-    margin-bottom: 4em !important;
+	margin-bottom: 4em !important;
 }
 
 .mb-2em {
-    margin-bottom: 2em !important;
+	margin-bottom: 2em !important;
 }
 
 .mt-4em {
-    margin-top: 4em !important;
+	margin-top: 4em !important;
 }
 
 .p-0 {
-    padding: 0 !important;
+	padding: 0 !important;
 }
 
 .vm-section {
-    padding: 6em 0;
+	padding: 6em 0;
 
-    &--background-grey {
-        background-color: $grey;
-        color: $black;
+	&--background-grey {
+		background-color: $grey;
+		color: $black;
 
-        .splide__pagination__page.is-active {
-            background: $black;
-        }
-    }
+		.splide__pagination__page.is-active {
+			background: $black;
+		}
+	}
 
-    &--background-dark-grey {
-        background-color: $darkGrey;
-        color: $white;
+	&--background-dark-grey {
+		background-color: $darkGrey;
+		color: $white;
 
-        .splide__pagination__page.is-active {
-            background: $white;
-        }
-    }
+		.splide__pagination__page.is-active {
+			background: $white;
+		}
+	}
 
-    &--background-black {
-        background-color: $black;
-        color: $white;
+	&--background-black {
+		background-color: $black;
+		color: $white;
 
-        .splide__pagination__page.is-active {
-            background: $white;
-        }
-    }
+		.splide__pagination__page.is-active {
+			background: $white;
+		}
+	}
 
-    &--background-white {
-        background-color: $white;
-        color: $black;
+	&--background-white {
+		background-color: $white;
+		color: $black;
 
-        .splide__pagination__page.is-active {
-            background: $black;
-        }
-    }
+		.splide__pagination__page.is-active {
+			background: $black;
+		}
+	}
 
-    @include screen-small {
-        padding: 4em 0;
-    }
+	@include screen-small {
+		padding: 4em 0;
+	}
 }
 
 .vm-bg--white {
-    background-color: $white;
-    color: $black;
+	background-color: $white;
+	color: $black;
 }
 
 .vm-bg--black {
-    background-color: $black;
-    color: $white;
+	background-color: $black;
+	color: $white;
 }
 
 .select select,
 .textarea,
 .input {
-    font-size: 1.1em;
+	font-size: 1.1em;
 }
 
 a {
-    color: $pink;
+	color: $pink;
 
-    &:hover {
-        color: $green;
-    }
+	&:hover {
+		color: $green;
+	}
 }
 
 .main-contact__form {
-    @include screen-medium {
-        max-height: calc(100% - 24px);
-        overflow: scroll;
-        padding-bottom: 20px;
+	@include screen-medium {
+		max-height: calc(100% - 24px);
+		overflow: scroll;
+		padding-bottom: 20px;
 
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
 }
 
 .select:not(.is-multiple) {
-    height: auto;
+	height: auto;
+}
+
+.text-center {
+	text-align: center;
 }

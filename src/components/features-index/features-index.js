@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Title } from 'bloomer/lib/elements/Title';
 import './features-index.scss';
 
-export default function FeaturesIndex({ featuresIndexRef, featuresIndex }) {
+export default function FeaturesIndex({ featuresIndexRef, featuresIndex, customID }) {
 	const [activeFeature, setActiveFeature] = useState(0);
 	const blocksRef = useRef();
 
@@ -19,7 +19,7 @@ export default function FeaturesIndex({ featuresIndexRef, featuresIndex }) {
 	};
 
 	return (
-		<div className="features-index">
+		<div className="features-index" id={customID}>
 			<ul className="features-index__list" ref={featuresIndexRef}>
 				{featuresIndex.map((feature, index) => (
 					<li

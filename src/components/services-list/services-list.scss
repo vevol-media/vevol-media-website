@@ -1,132 +1,136 @@
-@import "../../styles/mixins";
-@import "../../styles/variables";
+@import '../../styles/mixins';
+@import '../../styles/variables';
 
 .services-list {
-    &:after,
-    &:before {
-        opacity: 0.02 !important;
-        background-attachment: fixed;
-    }
+	&:after,
+	&:before {
+		opacity: 0.02 !important;
+		background-attachment: fixed;
+	}
 
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2em;
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2em;
 
-        li {
-            background: $black;
-            overflow: hidden;
-            position: relative;
-            width: calc(33.33% - 1.35em);
-            box-shadow: 9px 9px 0 0 $green;
+		li {
+			background: $black;
+			overflow: hidden;
+			position: relative;
+			width: calc(50% - 1em);
+			box-shadow: 9px 9px 0 0 $green;
 
-            .service__background-image {
-                display: flex;
-                transform: rotate(90deg);
-                top: -350px;
-                position: absolute;
-                right: -400px;
-                transition: 0.7s ease all;
+			.service__background-image {
+				display: flex;
+				transform: rotate(90deg);
+				top: -350px;
+				position: absolute;
+				right: -400px;
+				transition: 0.7s ease all;
 
-                svg {
-                    color: $green;
-                    opacity: 0.7;
-                    width: 600px;
-                    height: 600px;
-                }
-            }
+				svg {
+					color: $green;
+					opacity: 0.7;
+					width: 600px;
+					height: 600px;
+				}
+			}
 
-            > a {
-                position: relative;
-                z-index: 2;
-                padding: 30px;
-                display: flex;
-                color: $white;
-                height: 100%;
-                align-items: flex-start;
-                flex-direction: column;
+			> a {
+				position: relative;
+				z-index: 2;
+				padding: 30px;
+				display: flex;
+				color: $white;
+				height: 100%;
+				align-items: flex-start;
+				flex-direction: column;
 
-                .service__icon {
-                    background: $green;
-                    padding: 10px;
-                    border-radius: 5px;
-                    display: inline-block;
-                    margin-bottom: 30px;
-                    transition: 0.3s ease all;
-                }
+				.service__icon {
+					background: $green;
+					padding: 10px;
+					border-radius: 5px;
+					display: inline-block;
+					margin-bottom: 30px;
+					transition: 0.3s ease all;
+				}
 
-                p {
-                    opacity: 0.8;
-                    margin-bottom: 30px;
-                    line-height: 1.7;
-                }
+				p {
+					opacity: 0.8;
+					margin-bottom: 30px;
+					line-height: 1.7;
+				}
 
-                .vm-button {
-                    margin-top: auto;
-                }
-            }
+				.vm-button {
+					margin-top: auto;
+				}
+			}
 
-            &:hover {
-                > a .service__icon {
-                    background: $white;
-                }
+			&:hover {
+				> a .service__icon {
+					background: $white;
+				}
 
-                .service__background-image {
-                    filter: invert(1);
-                    transform: rotate(70deg) scale(1.1);
-                }
-            }
-        }
-    }
+				.service__background-image {
+					filter: invert(1);
+					transform: rotate(70deg) scale(1.1);
+				}
+			}
+		}
+	}
 
-    &--meetup {
-        h3 {
-            position: absolute;
-            font-size: 22em !important;
-            font-weight: 900;
-            transform: rotate(20deg);
-            opacity: 0.2;
-            top: 0;
-            left: 0;
-        }
+	&--meetup {
+		h3 {
+			position: absolute;
+			font-size: 22em !important;
+			font-weight: 900;
+			transform: rotate(20deg);
+			opacity: 0.2;
+			top: 0;
+			left: 0;
+		}
 
-        ul li > a p {
-            opacity: 1;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-    }
+		ul li {
+			width: calc(33% - 1.35em);
 
-    @include screen-general {
-        &:after,
-        &:before {
-            opacity: 0.07 !important;
-        }
+			& > a p {
+				opacity: 1;
+				font-size: 1.2em;
+				font-weight: bold;
+			}
+		}
+	}
 
-        ul {
-            flex-direction: column;
+	@include screen-general {
+		&:after,
+		&:before {
+			opacity: 0.07 !important;
+		}
 
-            li {
-                width: 700px;
+		ul {
+			flex-direction: column;
 
-                &:nth-child(2n) {
-                    margin-left: auto;
-                }
+			li {
+				width: 700px;
 
-                > a {
-                    padding-right: 150px;
-                }
-            }
-        }
-    }
+				&:nth-child(2n) {
+					margin-left: auto;
+				}
 
-    @include screen-small {
-        ul li {
-            width: 100%;
+				> a {
+					padding-right: 150px;
+				}
+			}
+		}
+	}
 
-            > a {
-                padding-right: 30px;
-            }
-        }
-    }
+	@include screen-small {
+		ul li {
+			width: 100%;
+
+			> a {
+				padding-right: 30px;
+			}
+		}
+	}
 }

@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faAngleDoubleRight, faShoppingCart, faSearchDollar } from '@fortawesome/free-solid-svg-icons';
 import { faShopify } from '@fortawesome/free-brands-svg-icons';
 import { IconTopo } from '../../helpers/icons';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import plusIcon from '../../images/services-icons/shopify-plus.png';
 
 export default function ServicePanel({ icon, heading, intro, sublist, url, delayTime }) {
 	const iconSwitch = (iconName) => {
@@ -18,6 +20,8 @@ export default function ServicePanel({ icon, heading, intro, sublist, url, delay
 				return <FontAwesomeIcon icon={faSearchDollar} className="hs-block__icon" />;
 			case 'faShopify':
 				return <FontAwesomeIcon icon={faShopify} className="hs-block__icon" />;
+			case 'plusIcon':
+				return <img src={plusIcon} alt="Plus icon" className="hs-block__icon--img" />;
 			default:
 				return <FontAwesomeIcon icon={faCode} className="hs-block__icon" />;
 		}

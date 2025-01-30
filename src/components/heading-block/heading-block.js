@@ -3,7 +3,16 @@ import { Title } from 'bloomer';
 import { Fade } from 'react-reveal';
 import { Link } from 'gatsby';
 
-export default function HeadingBlock({ title, subtitle, highlightedWord, alignRight, className, ctaText, ctaUrl }) {
+export default function HeadingBlock({
+	title,
+	subtitle,
+	highlightedWord,
+	alignRight,
+	className,
+	ctaText,
+	ctaUrl,
+	ctaIsExternal,
+}) {
 	const insertSpan = (string, highlightedWord) => {
 		return string.split(' ').map((word, index) => {
 			return (
@@ -17,7 +26,7 @@ export default function HeadingBlock({ title, subtitle, highlightedWord, alignRi
 			className={`heading-block ${alignRight ? 'heading-block--align-right' : ''} ${className ? className : ''}`}
 		>
 			<Fade bottom>
-				<Title tag="h2" isSize={1}>
+				<Title tag="h2" isSize={1} className={`${subtitle ? 'mb-3' : ''}`}>
 					{insertSpan(title, highlightedWord)}
 				</Title>
 			</Fade>
@@ -28,9 +37,15 @@ export default function HeadingBlock({ title, subtitle, highlightedWord, alignRi
 			)}
 			{ctaText && (
 				<Fade bottom delay={200}>
-					<Link to={ctaUrl} className="vm-button vm-button--black vm-button--big mt-6">
-						{ctaText}
-					</Link>
+					{ctaIsExternal ? (
+						<a href={ctaUrl} className="vm-button vm-button--black vm-button--big mt-6">
+							{ctaText}
+						</a>
+					) : (
+						<Link to={ctaUrl} className="vm-button vm-button--black vm-button--big mt-6">
+							{ctaText}
+						</Link>
+					)}
 				</Fade>
 			)}
 		</div>

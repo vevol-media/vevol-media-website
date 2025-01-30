@@ -1,10 +1,20 @@
-.images-mini-banner {
-    padding: 2em 0;
-    background: $darkGrey;
+@import '../styles/mixins';
 
-    li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.images-mini-banner {
+	padding: 2em 0;
+	background: $darkGrey;
+
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&--grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+	}
 }

@@ -41,17 +41,17 @@ export default function PageSingleService({ data }) {
 	return (
 		<Layout>
 			<SlimHero
-				heading="Shopify Developers You Can Count On."
-				subheading="Leave the development to us. We will be your partner in business, making sure everything on your website, both front end and back end, works smoothly!"
+				heading="Custom Shopify Development Services"
+				subheading="We create robust and scalable Shopify stores tailored to your business needs. Our experienced team ensures your store is not only visually appealing but also optimized for performance and user experience."
 			/>
 			<SidewayText lineOne={`shopify`} lineTwo={'development'} lineOneRepeat={15} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'We Take Shopify Development Seriously'}
+						title={'Expert Shopify Development Solutions'}
 						highlightedWord={'Shopify'}
 						subtitle={
-							"Our developers have extensive knowledge of the platform and our solutions are created with care, attention to details and they're future-proof."
+							'With over four years as trusted Shopify Partners, we deliver reliable and flexible solutions that drive business growth. Our approach combines technical excellence with strategic thinking.'
 						}
 						className="mb-4em"
 					/>
@@ -63,19 +63,19 @@ export default function PageSingleService({ data }) {
 								loading="lazy"
 							/>
 						}
-						title={'Reliablity & Flexibility'}
+						title={'Tailored Solutions for Your Business'}
 						textContent={[
 							<p className="mt-5">
-								When we take on a new Shopify build, we always aim to get the result that both our
-								clients and ourselves are proud of.
+								From custom theme development to performance optimization, we handle every aspect of
+								your Shopify store with meticulous attention to detail.
 							</p>,
 							<p className="mt-5">
-								As soon as the project begins, we become partners in your business and we strive for
-								your success as we do for ours.
+								Our mobile-first approach ensures your store provides an excellent shopping experience
+								across all devices, helping you reach more customers.
 							</p>,
 							<p className="mt-5">
-								From scoping to design, implementation and maintenance, we will always make sure you
-								receive only what is best, based on thorough research, testing and usability.
+								We implement SEO best practices and optimize performance to drive organic traffic and
+								increase conversions.
 							</p>,
 						]}
 						greenLine
@@ -87,7 +87,7 @@ export default function PageSingleService({ data }) {
 				title="Let's Work Together"
 				text="Book a free consultation with one of our team members now"
 				url="/contact"
-				ctaText={'Get in touch'}
+				ctaText={'Ask for availability'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>
@@ -95,57 +95,55 @@ export default function PageSingleService({ data }) {
 					<SidebarInfoText
 						sidebarContent={[
 							{
-								title: 'Scoping',
-								text: 'The initial phase where we make sure our mindset and our goals are aligned',
+								title: 'Custom Theme Development',
+								text: 'Unique designs that reflect your brand identity and enhance user experience',
 							},
 							{
-								title: 'Design',
-								text: 'We spare no time to make sure the look and feel matches your vision.',
+								title: 'Responsive Design',
+								text: 'Mobile-first approach ensuring flawless functionality across all devices',
 							},
 							{
-								title: 'Development',
-								text: 'Clean, flexibile and re-usable components, based on performance and industry requirements.',
+								title: 'App Integration',
+								text: 'Seamless integration of essential apps to enhance store functionality',
 							},
 							{
-								title: 'Quality Assurance',
-								text: 'Thorough testing of usability, functionality and purchase flow on all implementations.',
+								title: 'SEO Optimization',
+								text: 'Implementation of best practices to improve visibility and drive organic traffic',
 							},
 							{
-								title: 'Project Management',
-								text: 'Dedicated person to make sure all processes are followed and you stay updated with the progress.',
+								title: 'Performance Optimization',
+								text: 'Speed and efficiency improvements for better user experience and conversions',
 							},
 						]}
 						mainContent={[
 							{
-								title: 'We understand and drive the process',
-								text: 'We have been trusted Shopify Partners for over 4 years and with every project we deliver, we aim to perfect every little bit that makes a good success story.',
+								title: 'Comprehensive Development Approach',
+								text: 'We specialize in creating Shopify stores that combine aesthetic appeal with technical excellence, ensuring a seamless shopping experience for your customers.',
 							},
 							{
-								text: 'We will always kick off by gathering all relevant data when it comes to your brand and its strategy. This is paramount to a great workflow and a good partnerhsip.',
+								text: 'Every project begins with thorough planning and strategy, ensuring our solutions align perfectly with your business goals and requirements.',
 							},
 							{
-								text: 'All deliverables are pre-agreed and are we take ownership over fulfilling them. The progress is always transparent as we set milestones and deadlines and we always communicate with the customer.',
+								title: 'Custom Solutions & Integration',
+								text: 'Our custom theme development focuses on creating unique designs that reflect your brand identity while maintaining optimal performance.',
 							},
 							{
-								text: 'The project is considered finished only when all parts are satisfied. No half measures about this.',
+								text: `We carefully integrate essential Shopify apps and third-party tools to enhance your store's functionality without compromising performance.`,
 							},
 							{
-								title: 'Implementation and integration',
-								text: 'We are proud that we always use best approaches when it comes to Shopify theme development. Every feature we create is implemented with performance, usability and flexibility in mind.',
+								title: 'Optimization & Performance',
+								text: 'Our development process includes comprehensive optimization for speed, SEO, and user experience to drive better results.',
 							},
 							{
-								text: "We follow latest Shopify standards when writing code. We always go the extra mile and make sure the component we're building isn't just of single-use. Our promise is that you reduce maintenance and build costs on long term.",
+								text: 'We implement responsive design principles to ensure your store performs flawlessly across all devices and screen sizes.',
 							},
 							{
-								text: 'App integration is always done carefully and we make sure that all third-party blocks fit in design and functionality. We offer support and consultancy in cases where apps fail to align with your theme.',
+								title: 'Quality Assurance',
+								text: 'Rigorous testing across devices and browsers ensures your store functions perfectly in all scenarios.',
 							},
 							{
-								title: 'Testing and launch',
-								text: 'Stress free Shopify launches is our main goal. We test thoroughly before releasing any feature, we provide preview themes and always verify against deliverables.',
-							},
-							{
-								title: 'Shopify store maintenance',
-								text: 'We provide free support for all our work. We also offer affordable on-going maintenance packages or on-demand development hours.',
+								title: 'Ongoing Support',
+								text: 'We provide continuous support and maintenance to keep your store running efficiently, allowing you to focus on growing your business.',
 							},
 						]}
 					/>
@@ -156,31 +154,30 @@ export default function PageSingleService({ data }) {
 					<ImageWithText
 						alignRight
 						image={<GatsbyImage image={imageTwoData} alt={'Shopify Development Promise Vevol Media'} />}
-						title={'Our Promise'}
+						title={'Our Development Promise'}
 						greenLine
 						textContent={[
 							<p className="mt-5">
-								<strong>Create quality.</strong> We build Shopify stores as you should: completely
-								scalable, flexible and re-usable using most performant technology and approaches.
+								<strong>Quality First.</strong> We build scalable, flexible, and reusable solutions
+								using the most performant technology and approaches.
 							</p>,
 							<p className="mt-5">
-								<strong>Prevent technical debt.</strong> No need for a rebuild every year. Our code is
-								written correctly so your Shopify components can be used for longer and in unlimited
-								ways.
+								<strong>Future-Proof Development.</strong> Our code is written to stand the test of
+								time, reducing the need for frequent rebuilds and ensuring long-term value.
 							</p>,
 							<p className="mt-5">
-								<strong>Reduce maintenance costs.</strong> We enable you to customise your store the way
-								it feels right. Cut down on development costs every time you want a small change.
+								<strong>Cost-Effective Solutions.</strong> Our approach to development helps reduce
+								ongoing maintenance costs while providing the flexibility to easily make future updates.
 							</p>,
 						]}
 					/>
 				</Container>
 			</VevolSection>
 			<SplitNav
-				leftTitle={'UI/UX Web Design'}
-				leftUrl={'/services/ui-ux-web-design'}
-				rightTitle={'Shopify Migration'}
-				rightUrl={'/services/shopify-migration'}
+				leftTitle={'Shopify Plus'}
+				leftUrl={'/services/shopify-plus'}
+				rightTitle={'Shopify Apps'}
+				rightUrl={'/services/shopify-apps'}
 			/>
 		</Layout>
 	);

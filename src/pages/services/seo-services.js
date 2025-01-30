@@ -85,7 +85,7 @@ export default function PageSingleService({ data }) {
 				title="Let's Work Together"
 				text="Book a free consultation with one of our team members now"
 				url="/contact"
-				ctaText={'Get in touch'}
+				ctaText={'Ask for availability'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>

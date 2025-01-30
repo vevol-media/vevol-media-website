@@ -3,9 +3,30 @@ const services = {
 		{
 			image: 'shopify',
 			title: 'Shopify Development',
-			intro: 'As Shopify Partners, our strong web development skills allow us to build beautiful and functional websites for our clients. We work with businesses of all sizes and can tailor projects based on your specific business needs.',
-			sublist: ['text text text texta', 'text text text text', 'text text text text', 'text text text text'],
+			intro: 'We create robust and scalable Shopify stores tailored to your business needs. Our experienced team ensures your store is not only visually appealing but also optimized for performance and user experience.',
+			sublist: [
+				'Custom Theme Development',
+				'Responsive Design',
+				'App Integration',
+				'SEO Optimization',
+				'Performance Optimization',
+				'Ongoing Support',
+			],
 			url: '/services/shopify-development',
+		},
+		{
+			image: 'shopify',
+			title: 'Shopify Plus Development',
+			intro: 'For high-growth enterprises seeking advanced e-commerce solutions, our Shopify Plus Development services offer unparalleled customization, scalability, and performance enhancements.',
+			sublist: [
+				'Advanced Customization',
+				'Checkout Extensibility',
+				'API Integration',
+				'Internationalization',
+				'B2B Functionality',
+				'Launchpad Implementation',
+			],
+			url: '/services/shopify-plus',
 		},
 		{
 			image: 'migration',
@@ -16,10 +37,17 @@ const services = {
 		},
 		{
 			image: 'bespoke-dev',
-			title: 'Bespoke Development',
-			intro: 'Are you looking for something specific for your unique website or Shopify platform? We love a challenge and are always eager to fulfil any custom requests our clients may have.',
-			sublist: ['text text text texta', 'text text text text', 'text text text text', 'text text text text'],
-			url: '/services/bespoke-development',
+			title: 'Shopify Apps Development',
+			intro: `We develop Shopify apps that extend your store's functionality and automate business processes. Whether you need a private app for your store or a public app for the Shopify App Store, our team delivers scalable solutions.`,
+			sublist: [
+				'Custom App Development',
+				'API Integration',
+				'Process Automation',
+				'Performance Optimization',
+				'App Store Submission',
+				'Ongoing Maintenance',
+			],
+			url: '/services/shopify-apps',
 		},
 	],
 	ecommerce: [
@@ -40,7 +68,7 @@ const services = {
 		{
 			image: 'seo',
 			title: 'Free Shopify SEO Audit',
-			intro: "We offer a free SEO audit for all Shopify Plus & Shopify Advanced stores who use or plan to use our Shopify services.",
+			intro: 'We offer a free SEO audit for all Shopify Plus & Shopify Advanced stores who use or plan to use our Shopify services.',
 			sublist: ['text text text texta', 'text text text text', 'text text text text', 'text text text text'],
 			url: '/services/shopify-seo-audit',
 		},
