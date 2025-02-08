@@ -26,15 +26,6 @@ const portfolio = [
 		hasCaseStudy: true,
 		hasPage: true,
 	},
-	// {
-	// 	name: 'Lumired',
-	// 	description: 'Custom Store Build with Design extended from official Shopify Theme.',
-	// 	internalUrl: '/work/lumired',
-	// 	externalUrl: 'https://lumired.ie',
-	// 	featuredImage: 'lumired',
-	// 	hasCaseStudy: true,
-	// 	hasPage: true,
-	// },
 	{
 		name: 'A&S Market',
 		description: 'Bespoke Theme Development, Custom Functionalities, Additional Apps Integration.',
@@ -90,24 +81,6 @@ const portfolio = [
 		hasPage: true,
 	},
 	{
-		name: 'TAS Solutions',
-		description: 'Bespoke GatsbyJS Brochure Website with Application Form Functionality and Job Listing.',
-		internalUrl: '/work/tas-solutions',
-		externalUrl: 'https://www.tassolutions-recruit.co.uk/',
-		featuredImage: 'tas-solutions',
-		hasCaseStudy: false,
-		hasPage: true,
-	},
-	// {
-	// 	name: 'Aspazia',
-	// 	description: 'Custom Wordpress Woocommerce Shop, New Hero Banner Module, Print On Demand Service Integration.',
-	// 	internalUrl: '/work/aspazia',
-	// 	externalUrl: 'https://aspazia.co.uk',
-	// 	featuredImage: 'aspazia',
-	// 	hasCaseStudy: false,
-	// 	hasPage: true,
-	// },
-	{
 		name: 'Margee',
 		description: 'Complete Website Revamp on 2.0 Theme, New Navigation and Custom Filtering.',
 		internalUrl: '/work/margee',
@@ -133,7 +106,7 @@ const portfolio = [
 		featuredImage: 'ramona-albert',
 		hasCaseStudy: false,
 		hasPage: false,
-	}
+	},
 ];
 
 export default portfolio;

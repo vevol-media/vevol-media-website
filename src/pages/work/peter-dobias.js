@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import Quote from '../../components/general-components/quote';
 import SidebarInfoText from '../../components/general-components/sidebar-info-text';
+import VideoBanner from '../../components/video-banner/video-banner';
 
 export const data = graphql`
 	query {
@@ -65,6 +66,7 @@ export default function PortfolioPage({ data }) {
 				backgroundWhite
 				hideBlob
 			/>
+			<VideoBanner />
 			<Quote
 				secondPart={`...Vevol has made a huge change and difference in our company.`}
 				authorName={`Dr. Peter Dobias`}
