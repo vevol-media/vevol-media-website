@@ -50,6 +50,64 @@ export default function Layout({
 		}
 	};
 
+	const sendEvent = async () => {
+		const API_VERSION = "v22.0";
+		const PIXEL_ID = "2127249697728474";
+		const ACCESS_TOKEN = "EAAUJ7H6mPxUBO2bdSNkxZCU3ZCZBV87tmBtmF8FaU81AvGFZAmV4h4oEZCSyy9BZALaIZATe0tzqymk3Pav3SRdHjtAENy3ZAwbZAyfElareIWp2QgO8iNhJZC3W6GbqLxXvPMriGuxnZAIWwVWJ7dfaIJyeZAXfV1g3nM5Yht8FbcYuYA4BL3jysTvAxid1CXU0cEQHgwZDZD";
+	  
+		const url = `https://graph.facebook.com/${API_VERSION}/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`;
+	  
+		const payload = {
+		  data: [
+			{
+				"event_name": "Purchase",
+				"event_time": 1739197687,
+				"user_data": {
+				  "em": [
+					"309a0a5c3e211326ae75ca18196d301a9bdbd1a882a4d2569511033da23f0abd"
+				  ],
+				  "ph": [
+					"254aa248acb47dd654ca3ea53f48c2c26d641d23d7e2e93a1ec56258df7674c4",
+					"6f4fcb9deaeadc8f9746ae76d97ce1239e98b404efe5da3ee0b7149740f89ad6"
+				  ],
+				  "client_ip_address": "123.123.123.123",
+				  "client_user_agent": "$CLIENT_USER_AGENT",
+				  "fbc": "fb.1.1554763741205.AbCdEfGhIjKlMnOpQrStUvWxYz1234567890",
+				  "fbp": "fb.1.1558571054389.1098115397"
+				},
+				"custom_data": {
+				  "currency": "usd",
+				  "value": 123.45,
+				  "contents": [
+					{
+					  "id": "product123",
+					  "quantity": 1,
+					  "delivery_category": "home_delivery"
+					}
+				  ]
+				},
+				"event_source_url": "http://jaspers-market.com/product/123",
+				"action_source": "website"
+			  },
+		  ],
+		};
+	  
+		try {
+			const response = await fetch(url, {
+				method: "POST",
+				headers: {
+				  "Content-Type": "application/json",
+				},
+				body: JSON.stringify(payload),
+			  });
+		  
+	  
+		  console.log("Response:", response.data);
+		} catch (error) {
+		  console.error("Error:", error.response?.data || error.message);
+		}
+	  };
+
 	const setCookie = (value) => {
 		const date = new Date();
 		const days = value === 'all' ? 60 : 10;
@@ -73,6 +131,7 @@ export default function Layout({
 			setShowCookieBar(false);
 			setCookieConsentValue(value);
 		}
+		sendEvent();
 	}, []);
 
 	return (
@@ -140,7 +199,9 @@ export default function Layout({
 					<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>
 					{cookieConsentValue === 'all' && <script>{`window._nQc="89222768";`}</script>}
 					{cookieConsentValue === 'all' && <script async src="https://serve.albacross.com/track.js"></script>}
+
 				</Helmet>
+				
 				{hasHeader && <Header background={headerBg} isStatic={headerIsStatic} />}
 				<main>{children}</main>
 				{hasMainForm && (
