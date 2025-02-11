@@ -2,6 +2,7 @@ import React from 'react';
 import { Title } from 'bloomer';
 import { Fade } from 'react-reveal';
 import { Link } from 'gatsby';
+import { sendEventConversionAPI } from '../../helpers/helpers';
 
 export default function HeadingBlock({
 	title,
@@ -12,6 +13,8 @@ export default function HeadingBlock({
 	ctaText,
 	ctaUrl,
 	ctaIsExternal,
+	sendConversionEvent,
+	conversionEventName,
 }) {
 	const insertSpan = (string, highlightedWord) => {
 		return string.split(' ').map((word, index) => {
@@ -38,11 +41,38 @@ export default function HeadingBlock({
 			{ctaText && (
 				<Fade bottom delay={200}>
 					{ctaIsExternal ? (
-						<a href={ctaUrl} className="vm-button vm-button--black vm-button--big mt-6">
+						<a
+							href={ctaUrl}
+							onClick={(e) => {
+								if (sendConversionEvent) {
+									e.preventDefault(); 
+									sendEventConversionAPI(conversionEventName);
+
+									
+									setTimeout(() => {
+										window.location.href = ctaUrl;
+									}, 300);
+								}
+							}}
+							className="vm-button vm-button--black vm-button--big mt-6"
+						>
 							{ctaText}
 						</a>
 					) : (
-						<Link to={ctaUrl} className="vm-button vm-button--black vm-button--big mt-6">
+						<Link
+							to={ctaUrl}
+							onClick={(e) => {
+								if (sendConversionEvent) {
+									e.preventDefault(); 
+									sendEventConversionAPI(conversionEventName);
+
+									setTimeout(() => {
+										window.location.href = ctaUrl;
+									}, 300);
+								}
+							}}
+							className="vm-button vm-button--black vm-button--big mt-6"
+						>
 							{ctaText}
 						</Link>
 					)}

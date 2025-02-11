@@ -140,7 +140,9 @@ export default function Layout({
 					<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>
 					{cookieConsentValue === 'all' && <script>{`window._nQc="89222768";`}</script>}
 					{cookieConsentValue === 'all' && <script async src="https://serve.albacross.com/track.js"></script>}
+
 				</Helmet>
+				
 				{hasHeader && <Header background={headerBg} isStatic={headerIsStatic} />}
 				<main>{children}</main>
 				{hasMainForm && (

@@ -21,6 +21,8 @@ import speakersList from '../enums/speakers-list';
 import panelMembers from '../enums/panel-members';
 import eventInfo from '../enums/event-info';
 import '../components/forms/main-form.scss';
+import {sendEventConversionAPI} from '../helpers/helpers';
+import {useEffect} from 'react';
 
 export const data = graphql`
 	query {
@@ -69,6 +71,11 @@ export default function ShopifyMeetupPage({ data }) {
 	const metaTitle = 'Shopify MeetUp - Central & Eastern Europe: E-commerce Insights and Networking';
 	const metaDescription =
 		'Join us for key insights in Shopify and e-commerce. Benefit from networking with industry experts. Limited tickets available. Register now!';
+
+
+	useEffect(() => {
+		sendEventConversionAPI("ViewContent");
+		}, []);
 
 	return (
 		<Layout hasMainForm={false} hasHeader={false} customClass={'shopify-meetup-page'}>
@@ -212,6 +219,8 @@ export default function ShopifyMeetupPage({ data }) {
 						ctaUrl={
 							'https://www.eventbrite.ie/e/shopify-meetup-central-eastern-europe-2025-tickets-1138409265759'
 						}
+						sendConversionEvent={true}
+						conversionEventName={'InitiateCheckout'}
 						ctaIsExternal={true}
 					/>
 				</Container>
