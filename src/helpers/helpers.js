@@ -24,10 +24,13 @@ export const sendEventConversionAPI = async (type) => {
 		const ipResponse = await fetch("https://ipapi.co/json/");
 		const ipData = await ipResponse.json();
 	
-		// 2. Hash country and city (ct)
+		// 2. Hash sensitive data
 		const hashedCountry = ipData.country_name ? await sha256(ipData.country_name) : null;
 		const hashedCity = ipData.city ? await sha256(ipData.city) : null;
+		const hashedState = ipData.region ? await sha256(ipData.region) : null;
+		const hashedZip = ipData.postal ? await sha256(ipData.postal) : null;
 	
+		// 3. Construct the payload
 		const payload = {
 		  data: [
 			{
@@ -38,15 +41,19 @@ export const sendEventConversionAPI = async (type) => {
 			  user_data: {
 				client_ip_address: ipData.ip || null,
 				client_user_agent: navigator.userAgent || null,
-				fbp: getCookie("_fbp"), // Retrieve Facebook browser ID if available
+				fbp: getCookie("_fbp"), // Browser ID
+				fbc: getCookie("_fbc"), // Click ID
+				fb_login_id: null, // Set this dynamically if available
 				country: hashedCountry ? [hashedCountry] : [],
 				ct: hashedCity ? [hashedCity] : [],
+				st: hashedState ? [hashedState] : [], // State
+				zp: hashedZip ? [hashedZip] : [], // Zip Code
 			  },
 			},
 		  ],
 		};
 	
-		// 3. Send data to Facebook
+		// 4. Send data to Facebook
 		const response = await fetch(url, {
 		  method: "POST",
 		  headers: {
@@ -60,7 +67,7 @@ export const sendEventConversionAPI = async (type) => {
 	  } catch (error) {
 		console.error("Error sending event:", error);
 	  }
-	};
+	}
 	
 
 // Helper function to get cookies
