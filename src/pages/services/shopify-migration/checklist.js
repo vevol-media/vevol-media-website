@@ -5,8 +5,29 @@ import VevolSection from '../../../components/general-components/vm-section';
 import { Container } from 'bloomer';
 import SidebarInfoText from '../../../components/general-components/sidebar-info-text';
 import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import ImageWithText from '../../../components/general-components/image-text-simple';
 
-export default function MigrationChecklist() {
+export const query = graphql`
+	query {
+		handbookPdf: file(name: { eq: "vevol-merchant-handbook" }, extension: { eq: "pdf" }) {
+			publicURL
+		}
+		previewImage: file(name: { eq: "handbook-preview" }, extension: { eq: "jpg" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
+			}
+		}
+	}
+`;
+
+export default function MigrationChecklist({ data }) {
+	const handbookUrl = data?.handbookPdf?.publicURL;
+	const previewImage = getImage(data.previewImage);
+
+	console.log(data);
+
 	return (
 		<Layout>
 			<Helmet>
@@ -383,6 +404,38 @@ export default function MigrationChecklist() {
 									</ul>
 								),
 							},
+						]}
+					/>
+				</Container>
+			</VevolSection>
+			<VevolSection backgroundColour={'grey'}>
+				<Container>
+					<ImageWithText
+						alignRight
+						image={<GatsbyImage image={previewImage} alt="Shopify Migration Merchant Handbook Preview" />}
+						title="The Merchant Handbook"
+						textContent={[
+							<p className="mt-5">
+								Our comprehensive Merchant Handbook is a detailed questionnaire designed to capture
+								every aspect of your business needs and technical requirements for a successful Shopify
+								migration.
+							</p>,
+							<p className="mt-5">
+								By completing this handbook, you help us tailor our approach, set clear expectations,
+								and ensure a smooth migration process that aligns perfectly with your business vision.
+							</p>,
+							handbookUrl ? (
+								<a
+									href={handbookUrl}
+									className="vm-button vm-button--black mt-5"
+									download
+									aria-label="Download Shopify Migration Merchant Handbook PDF"
+								>
+									Download Merchant Handbook (PDF)
+								</a>
+							) : (
+								<p className="mt-5">Handbook coming soon</p>
+							),
 						]}
 					/>
 				</Container>
