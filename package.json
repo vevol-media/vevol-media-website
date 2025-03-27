@@ -46,6 +46,7 @@
     "gatsby-transformer-sharp": "^3.11.0",
     "gbimage-bridge": "^0.2.1",
     "googleapis": "^107.0.0",
+    "html2pdf.js": "^0.10.3",
     "node-sass": "^9.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

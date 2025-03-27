@@ -9,9 +9,21 @@ export default function SidebarInfoText({
 	sidebarContentTitle,
 	sidebarContentIsList,
 }) {
-	
 	const sidebarItems = Array.isArray(sidebarContent) ? sidebarContent : [sidebarContent];
 	const mainItems = Array.isArray(mainContent) ? mainContent : [mainContent];
+
+	const renderContent = (text) => {
+		// If text is a React element and its type is 'ul', wrap it in a div
+		if (React.isValidElement(text) && text.type === 'ul') {
+			return <div>{text}</div>;
+		}
+		// For arrays (multiple elements), check if any is a ul
+		if (Array.isArray(text)) {
+			return <div>{text}</div>;
+		}
+		// Otherwise, render as paragraph
+		return <p>{text}</p>;
+	};
 
 	return (
 		<div className={`sidebar-info-text ${className ? className : ''}`}>
@@ -52,7 +64,7 @@ export default function SidebarInfoText({
 						) : (
 							<></>
 						)}
-						{item.text && (Array.isArray(item.text) ? <div>{item.text}</div> : <p>{item.text}</p>)}
+						{item.text && renderContent(item.text)}
 						{!item.title && !item.text && item}
 					</React.Fragment>
 				))}

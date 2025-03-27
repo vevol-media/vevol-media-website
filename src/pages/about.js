@@ -1,7 +1,7 @@
 import Layout from '../components/layout/layout';
 import React from 'react';
 import SlimHero from '../components/slim-hero/slim-hero';
-import { Container, Title } from 'bloomer';
+import { Container } from 'bloomer';
 import TeamMembers from '../components/team-section/team-members';
 import HeadingBlock from '../components/heading-block/heading-block';
 import { Helmet } from 'react-helmet';
@@ -23,16 +23,6 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, width: 800, quality: 100)
 			}
 		}
-		dbiBadgeQuery: file(name: { eq: "dbi-2022-badge" }) {
-			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, height: 100, quality: 100)
-			}
-		}
-		techiesGoGreenQuery: file(name: { eq: "techies-go-green-badge" }) {
-			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, height: 100, quality: 100)
-			}
-		}
 		allContentfulTeamMembers(sort: { fields: name, order: ASC }) {
 			nodes {
 				name
@@ -46,7 +36,7 @@ export const data = graphql`
 `;
 
 export default function PageAbout({ data }) {
-	const { locationImageQuery, brasovImageQuery, dbiBadgeQuery, techiesGoGreenQuery, allContentfulTeamMembers } = data;
+	const { locationImageQuery, brasovImageQuery, allContentfulTeamMembers } = data;
 	const locationImage = getImage(locationImageQuery);
 	const brasovImage = getImage(brasovImageQuery);
 
@@ -136,25 +126,6 @@ export default function PageAbout({ data }) {
 							</Link>,
 						]}
 					/>
-				</Container>
-			</VevolSection>
-			<VevolSection backgroundColour={'grey'}>
-				<Container>
-					<Title tag="h2" isSize={3} className="has-text-centered">
-						Memberships
-					</Title>
-					<div className="vevol-memberships">
-						<a
-							href="https://www.digitalbusinessireland.ie/partner-directory/"
-							target={'_blank'}
-							rel="noreferrer"
-						>
-							<GatsbyImage image={getImage(dbiBadgeQuery)} alt={'Vevol Media DBI 2022'} />
-						</a>
-						<a href="https://www.techiesgogreen.com/signatories" target={'_blank'} rel="noreferrer">
-							<GatsbyImage image={getImage(techiesGoGreenQuery)} alt={'Vevol Media Techies Go Green'} />
-						</a>
-					</div>
 				</Container>
 			</VevolSection>
 		</Layout>

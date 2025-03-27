@@ -13,6 +13,7 @@ import SidebarInfoText from '../../components/general-components/sidebar-info-te
 import SplitNav from '../../components/general-components/split-nav';
 import ImagesMiniBanner from '../../components/images-mini-banner/images-mini-banner';
 import { Helmet } from 'react-helmet';
+import { Link } from 'gatsby';
 
 export const data = graphql`
 	query {
@@ -135,6 +136,16 @@ export default function PageSingleService({ data }) {
 							},
 							{
 								text: 'We know that success in eCommerce requires a lot of hard work and dedication, so let us handle the technical stuff, so you can focus on what truly matters - growing your business.',
+							},
+							{
+								text: (
+									<Link
+										to="/services/shopify-migration/checklist"
+										className="vm-button vm-button--black"
+									>
+										Check our migration checklist
+									</Link>
+								),
 							},
 						]}
 					/>
