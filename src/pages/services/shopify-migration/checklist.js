@@ -11,10 +11,10 @@ import ImageWithText from '../../../components/general-components/image-text-sim
 
 export const query = graphql`
 	query {
-		handbookPdf: file(name: { eq: "vevol-merchant-handbook" }, extension: { eq: "pdf" }) {
+		handbookPdf: file(name: { eq: "The Complete Shopify Checklist - by Vevol Media" }, extension: { eq: "pdf" }) {
 			publicURL
 		}
-		previewImage: file(name: { eq: "handbook-preview" }, extension: { eq: "jpg" }) {
+		previewImage: file(name: { eq: "checklist-promo" }, extension: { eq: "png" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}
@@ -412,29 +412,29 @@ export default function MigrationChecklist({ data }) {
 				<Container>
 					<ImageWithText
 						alignRight
-						image={<GatsbyImage image={previewImage} alt="Shopify Migration Merchant Handbook Preview" />}
-						title="The Merchant Handbook"
+						image={<GatsbyImage image={previewImage} alt="Complete Shopify Migration Checklist Preview" />}
+						title="The Complete Shopify Checklist"
 						textContent={[
 							<p className="mt-5">
-								Our comprehensive Merchant Handbook is a detailed questionnaire designed to capture
-								every aspect of your business needs and technical requirements for a successful Shopify
-								migration.
+								Our comprehensive Shopify Migration Checklist is a detailed guide that walks you through every crucial step 
+								of migrating your e-commerce store to Shopify. From pre-migration planning to post-launch optimization, 
+								we've covered all the essential aspects.
 							</p>,
 							<p className="mt-5">
-								By completing this handbook, you help us tailor our approach, set clear expectations,
-								and ensure a smooth migration process that aligns perfectly with your business vision.
+								Use this checklist to ensure no critical steps are missed during your migration journey, helping you achieve 
+								a seamless transition to Shopify while maintaining your business operations and customer experience.
 							</p>,
 							handbookUrl ? (
 								<a
 									href={handbookUrl}
 									className="vm-button vm-button--black mt-5"
 									download
-									aria-label="Download Shopify Migration Merchant Handbook PDF"
+									aria-label="Download Complete Shopify Migration Checklist PDF"
 								>
-									Download Merchant Handbook (PDF)
+									Download Complete Checklist (PDF)
 								</a>
 							) : (
-								<p className="mt-5">Handbook coming soon</p>
+								<p className="mt-5">Checklist PDF coming soon</p>
 							),
 						]}
 					/>

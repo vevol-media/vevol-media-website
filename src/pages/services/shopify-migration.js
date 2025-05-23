@@ -143,7 +143,7 @@ export default function PageSingleService({ data }) {
 										to="/services/shopify-migration/checklist"
 										className="vm-button vm-button--black"
 									>
-										Check our migration checklist
+										Check our migration checklists
 									</Link>
 								),
 							},
