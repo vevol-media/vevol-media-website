@@ -10,6 +10,7 @@ import { graphql } from 'gatsby';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
 import portfolio from '../enums/portfolio';
 import GridList from '../components/grid-list/grid-list';
+import TagNav from '../components/general-components/tag-nav';
 
 export const data = graphql`
 	query {
@@ -50,6 +51,7 @@ export default function WorkPage({ data }) {
 				heading="Check Out Our Work"
 				subheading="We build eCommerce and brochure websites with passion and we are proud of the results. Have a look at our latest projects."
 			/>
+			<TagNav isBuildsPage={true} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
@@ -58,6 +60,13 @@ export default function WorkPage({ data }) {
 						subtitle={'Read more about the context, the process and the results'}
 					/>
 					<FeaturedWork projectsList={withCaseStudy} images={featuredImagesQuery.nodes} />
+					<p style={{ marginBottom: '2rem', fontWeight: 500 }}>
+						We build{' '}
+						<a href="/apps" style={{ color: '#00b386', textDecoration: 'underline' }}>
+							Shopify apps
+						</a>{' '}
+						too, check them out
+					</p>
 				</Container>
 			</VevolSection>
 			<SidewayText lineOne={`building`} lineTwo={'ecommerce'} />

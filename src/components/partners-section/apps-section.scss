@@ -1,0 +1,167 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.apps-section {
+    .apps-section__filters {
+        margin-bottom: 2em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        li {
+            padding: 7px 15px;
+            border: 1px solid $black;
+            user-select: none;
+            cursor: pointer;
+            transition: 0.3s ease all;
+            text-transform: capitalize;
+
+            &:hover,
+            &.active {
+                background: $black;
+                color: $white;
+            }
+        }
+    }
+
+    .apps-section__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        a.apps-section__item {
+            border: 1px solid $black;
+            box-shadow: 9px 9px 0 0 $green;
+            transition: 0.3s ease all;
+            width: calc(25% - 22.5px);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+
+            .gatsby-image-wrapper {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-bottom: 1px solid $grey;
+            }
+
+            .gatsby-image-wrapper img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: contain;
+                background: $white;
+            }
+
+            .apps-section__bottom {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            }
+
+            h3 {
+                margin: 20px 0 0;
+                color: $black !important;
+            }
+
+            p {
+                color: $black !important;
+                font-size: 0.85em;
+                margin-top: auto;
+                padding: 20px 0;
+            }
+
+            .vm-button {
+                margin-top: auto;
+            }
+
+            &:hover {
+                box-shadow: 4px 4px 0 0 $green;
+            }
+
+            @include screen-general {
+                width: calc(33.33% - 20px);
+            }
+
+            @include screen-medium {
+                width: calc(50% - 15px);
+
+                h3 {
+                    font-size: 1.2em;
+                }
+            }
+
+            @include screen-mobile {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.apps-section__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 10px;
+	justify-content: center;
+}
+
+.apps-section__tag {
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 12px;
+	font-size: 0.75em;
+	font-weight: 600;
+	background: $lightGrey;
+	color: $black;
+	margin-right: 4px;
+	margin-bottom: 2px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	border: 1px solid $grey;
+
+	&--vevol {
+		background: $green;
+		color: $black;
+		border-color: $green;
+	}
+	&--external {
+		background: $pink;
+		color: $white;
+		border-color: $pink;
+	}
+	&--public {
+		background: $blue;
+		color: $white;
+		border-color: $blue;
+	}
+	&--custom {
+		background: $black;
+		color: $white;
+		border-color: $black;
+	}
+}
+
+.case-study__tech-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.case-study__tech-tag {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 12px;
+	font-size: 0.75em;
+	font-weight: 600;
+	background: $lightGrey;
+	color: $black;
+	margin-right: 4px;
+	margin-bottom: 2px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	border: 1px solid $grey;
+} 

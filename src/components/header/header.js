@@ -44,7 +44,23 @@ export default function Header({ background, isStatic }) {
 							</Link>
 						</div>
 					</div>
-					<Link to="/work">Our Work</Link>
+					<div className="navigation__item">
+						<Link to="/work">Our Work</Link>
+						<div className="navigation__subnav no-padding">
+							<Link className="navigation__service-plans no-margin" to="/work">
+								<p>Shopify Builds</p>
+								<p>
+									Custom Shopify store builds, theme development, and full eCommerce solutions tailored to your brand.
+								</p>
+							</Link>
+							<Link className="navigation__service-plans no-margin" to="/apps">
+								<p>Shopify Apps</p>
+								<p>
+									Custom Shopify app development, integrations, and automation to extend your store's functionality.
+								</p>
+							</Link>
+						</div>
+					</div>
 				</div>
 				<div
 					className="vm-header__burger"
@@ -73,9 +89,6 @@ export default function Header({ background, isStatic }) {
 					<Link to="/blog">Blog</Link>
 					<Link to="/faqs">FAQ</Link>
 					<Link to="/strategic-partnerships">Strategic Partnerships</Link>
-					<a href="https://vevol-store.printify.me/products" target="_blank">
-						Vevol Store
-					</a>
 
 					<div
 						className="extra-nav__close"

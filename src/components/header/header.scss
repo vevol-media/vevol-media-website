@@ -87,6 +87,10 @@
             width: 500px;
             border: 1px solid $border;
 
+            &.no-padding {
+                padding-top: 0;
+            }
+
             a {
                 color: $black;
                 white-space: nowrap;
@@ -105,6 +109,11 @@
                 padding: 20px;
                 margin-top: 10px;
                 border-top: 1px solid $border;
+
+                &.no-margin {
+                    background: $white;
+                    margin-top: 0;
+                }
 
                 span {
                     background: $pink;

@@ -7,36 +7,36 @@ export default function SimpleImageCarousel({ imagesArray, className }) {
 	const splideSettings = {
 		rewind: true,
 		perPage: 2,
-		height: 500,
+		perMove: 1,
 		loop: true,
 		wheel: false,
 		gap: '3rem',
 		breakpoints: {
 			1140: {
 				gap: '20px',
-				height: 400,
 			},
 			749: {
 				perPage: 1,
-				height: 300,
 			},
 		},
 	};
 
-	const carouselImages = imagesArray.map((imageData, index) => {
-		const image = getImage(imageData.childImageSharp.gatsbyImageData);
+	const carouselImages = imagesArray
+		.filter((imageData) => imageData && imageData.childImageSharp && imageData.childImageSharp.gatsbyImageData)
+		.map((imageData, index) => {
+			const image = getImage(imageData.childImageSharp.gatsbyImageData);
 
-		return (
-			<SplideSlide key={index}>
-				<GatsbyImage
-					className="image-carousel"
-					alt={`Vevol Media Carousel Image - ${index}`}
-					image={image}
-					loading="lazy"
-				/>
-			</SplideSlide>
-		);
-	});
+			return (
+				<SplideSlide key={index}>
+					<GatsbyImage
+						className="image-carousel"
+						alt={`Vevol Media Carousel Image - ${index}`}
+						image={image}
+						loading="lazy"
+					/>
+				</SplideSlide>
+			);
+		});
 
 	return (
 		<div className={`simple-image-carousel ${className}`}>
