@@ -24,9 +24,7 @@ export default function Header({ background, isStatic }) {
 
 				<div className="vm-header__navigation">
 					<div className="navigation__item">
-						<Link to="/services">
-							Services <span className="navigation__notification">1</span>
-						</Link>
+						<Link to="/services">Services</Link>
 						<div className="navigation__subnav">
 							<Link to="/services/shopify-development">Shopify Development</Link>
 							<Link to="/services/shopify-plus">Shopify Plus</Link>
@@ -35,7 +33,6 @@ export default function Header({ background, isStatic }) {
 							<Link to="/services/seo-services">SEO Services</Link>
 							<Link to="/services/ui-ux-web-design">UI/UX Web Design</Link>
 							<Link className="navigation__service-plans" to="/service-plans">
-								<span>New</span>
 								<p>Service Plans</p>
 								<p>
 									Choose a monthly, quaterly or yearly recurring payment and get discounted quality
@@ -45,18 +42,23 @@ export default function Header({ background, isStatic }) {
 						</div>
 					</div>
 					<div className="navigation__item">
-						<Link to="/work">Our Work</Link>
+						<Link to="/work">
+							Our Work <span className="navigation__notification">1</span>
+						</Link>
 						<div className="navigation__subnav no-padding">
 							<Link className="navigation__service-plans no-margin" to="/work">
 								<p>Shopify Builds</p>
 								<p>
-									Custom Shopify store builds, theme development, and full eCommerce solutions tailored to your brand.
+									Custom Shopify store builds, theme development, and full eCommerce solutions
+									tailored to your brand.
 								</p>
 							</Link>
 							<Link className="navigation__service-plans no-margin" to="/apps">
+								<span>New</span>
 								<p>Shopify Apps</p>
 								<p>
-									Custom Shopify app development, integrations, and automation to extend your store's functionality.
+									Custom Shopify app development, integrations, and automation to extend your store's
+									functionality.
 								</p>
 							</Link>
 						</div>
