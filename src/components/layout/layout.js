@@ -34,9 +34,9 @@ export default function Layout({
 		});
 	};
 
-	const metaTitle = 'Innovative Shopify Experts & Developers - Vevol Media';
+	const metaTitle = 'Shopify Migration & Development Agency - Vevol Media';
 	const metaDescription =
-		'Shopify Experts based in Ireland that provide bespoke eCommerce complete services. From Shopify setup to theme development. Get in touch with us today!';
+		'Shopify migration experts trusted by 35+ ecommerce brands. Vevol Media handles full data transfers, custom theme & app builds, complex development and performance optimisation.';
 
 	const handleScroll = (event) => {
 		const pageHeader = document.querySelector('.vm-header');
@@ -140,9 +140,8 @@ export default function Layout({
 					<script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VvRbcB"></script>
 					{cookieConsentValue === 'all' && <script>{`window._nQc="89222768";`}</script>}
 					{cookieConsentValue === 'all' && <script async src="https://serve.albacross.com/track.js"></script>}
-
 				</Helmet>
-				
+
 				{hasHeader && <Header background={headerBg} isStatic={headerIsStatic} />}
 				<main>{children}</main>
 				{hasMainForm && (
