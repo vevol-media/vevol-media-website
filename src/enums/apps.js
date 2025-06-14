@@ -3,7 +3,7 @@ const appsPortfolio = [
 		name: 'Company Form - Romania',
 		description: 'Company Form is a simple and effective way to collect company information from your customers.',
 		internalUrl: '/apps/company-form-romania',
-		externalUrl: 'https://apps.shopify.com/company-form-romania',
+		externalUrl: 'https://apps.shopify.com/company-form',
 		featuredImage: 'company-form-romania',
 		isPublic: true,
 		isVevolApp: true,
