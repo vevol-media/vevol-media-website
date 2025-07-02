@@ -5,9 +5,11 @@ import ClutchWidget from './clutch-widget';
 import Blob from '../blob/blob';
 import './homepage-hero.scss';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function HomepageHero({ imageBottom }) {
-	console.log(imageBottom)
+	const { t, currentLocale } = useTranslations();
+
 	return (
 		<div className="homepage-hero">
 			<Blob className={'homepage-hero__blob homepage-hero__blob--top'} size={350} translate={120} duration={15} />
@@ -19,13 +21,14 @@ export default function HomepageHero({ imageBottom }) {
 			/>
 			<Container>
 				<div className="homepage-hero__content">
-					<p>eCommerce Custom Solutions</p>
-					<Title className={'homepage-hero__title'}>Shopify & Shopify Plus Custom Development</Title>
-					<p>
-						We are Shopify partners and experienced developers, so you can be sure you are in great hands!
-					</p>
-					<Link to="/contact" className="vm-button vm-button--white vm-button--big">
-						Ask for availability
+					<p>{t('homepage.hero.subtitle')}</p>
+					<Title className={'homepage-hero__title'}>{t('homepage.hero.title')}</Title>
+					<p>{t('homepage.hero.description')}</p>
+					<Link
+						to={currentLocale === 'ro' ? '/ro/contact' : '/contact'}
+						className="vm-button vm-button--white vm-button--big"
+					>
+						{t('homepage.hero.cta')}
 					</Link>
 					<ClutchWidget />
 				</div>

@@ -14,7 +14,6 @@ import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-car
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import VideoBanner from '../../components/video-banner/video-banner';
 
 export const data = graphql`
 	query {
@@ -62,10 +61,9 @@ export default function PortfolioPage({ data }) {
 				backgroundWhite
 				hideBlob
 			/>
-			<VideoBanner />
 			<GatsbyImage
 				image={getImageByName(currentProject.nodes, 'hero')}
-				alt={'Hugh Maguire Case Study - Vevol Media'}
+				alt={'Featured Project - Hugh Maguire - Vevol Media'}
 				loading="lazy"
 			/>
 			<VevolSection backgroundColour={'grey'}>

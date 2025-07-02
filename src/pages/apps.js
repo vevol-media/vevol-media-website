@@ -25,8 +25,9 @@ export const data = graphql`
 export default function AppsPage({ data }) {
 	const { appsImages } = data;
 
-	const appsWithImages = appsPortfolio.map((app) => {
+	const appsWithImages = appsPortfolio.en.map((app) => {
 		const imageNode = appsImages.nodes.find((img) => img.name === app.featuredImage);
+
 		return {
 			...app,
 			featuredImage: imageNode ? imageNode.childImageSharp : null,

@@ -6,10 +6,12 @@ import { BgImage } from 'gbimage-bridge';
 import { getImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function GridList({ items, imagesData, className }) {
 	const placeholderImageData = imagesData.filter((image) => image.name === 'placeholder');
 	const placeholderImage = getImage(placeholderImageData[0].childImageSharp.gatsbyImageData);
+	const { t } = useTranslations();
 
 	return (
 		<ul className={`grid-list ${className}`}>
@@ -30,7 +32,7 @@ export default function GridList({ items, imagesData, className }) {
 											{item.name}
 										</Title>
 										<span className="is-flex is-align-items-center">
-											Read More
+											{t('common.readCaseStudy')}
 											<FontAwesomeIcon icon={faArrowRight} />
 										</span>
 									</div>

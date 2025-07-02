@@ -41,6 +41,14 @@
 .vm-section {
 	padding: 6em 0;
 
+	&--border-top {
+		border-top: 1px solid #e9e9e9;
+	}
+
+	&--border-bottom {
+		border-bottom: 1px solid #e9e9e9;
+	}
+
 	&--background-grey {
 		background-color: $grey;
 		color: $black;
@@ -161,4 +169,35 @@ a {
 		cursor: pointer;
 		flex: 1;
 	}
+}
+
+.app-demo-container {
+	display: flex;
+	background: $black;
+	box-shadow: 9px 9px 0px 0px $green;
+	border: 1px solid $black;
+
+	.app-demo-container__text {
+		min-width: 300px;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 20px;
+		gap: 20px;
+
+		.gatsby-image-wrapper {
+			max-width: 200px;
+			align-self: center;
+		}
+	}
+
+	@include screen-small {
+		flex-direction: column;
+		min-width: 0;
+	}
+}
+
+.bg-white {
+	background-color: $white;
 }

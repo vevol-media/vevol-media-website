@@ -3,12 +3,14 @@ import { Title } from 'bloomer/lib/elements/Title';
 import './service-plans.scss';
 import servicePlans from '../../enums/service-plans';
 import { AppContext } from '../../context/app-context';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function ServicePlans({ scrollToFeatures }) {
 	const statigSegments = useRef();
 	const fixedSegments = useRef();
 	const plansList = useRef();
 	const [activeSegment, setActiveSegment] = useState('Quaterly');
+	const { t, currentLocale } = useTranslations();
 	const useIsInViewport = (ref) => {
 		const [isIntersecting, setIsIntersecting] = useState(false);
 
@@ -64,7 +66,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 				}`}
 				ref={fixedSegments}
 			>
-				<p>Payment Plan:</p>
+				<p>{t('servicePlans.paymentPlan')}</p>
 				<div className="segments__types">
 					{['Quaterly', 'Yearly'].map((segment, index) => (
 						<span
@@ -86,7 +88,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 				</div>
 			</div>
 			<div className="service-plans__list" ref={plansList}>
-				{servicePlans.map((plan, index) => {
+				{servicePlans[currentLocale].map((plan, index) => {
 					const currentSegment = activeSegment.toLocaleLowerCase();
 					let planPrice = plan.prices[currentSegment];
 					const yearlyPrice = (planPrice / 1000).toFixed(1);
@@ -102,11 +104,11 @@ export default function ServicePlans({ scrollToFeatures }) {
 								<p>{plan.description}</p>
 							</div>
 							{index === 0 && (
-								<div className="service-plan__popular">Feature Packed - Most Effective</div>
+								<div className="service-plan__popular">{t('servicePlans.featurePacked')}</div>
 							)}
 							<div className="service-plan__features">
 								<Title tag="h3" isSize={5}>
-									Features
+									{t('servicePlans.features')}
 								</Title>
 								<ul>
 									{plan.features.map((feature, index) => (
@@ -128,11 +130,11 @@ export default function ServicePlans({ scrollToFeatures }) {
 									}}
 									role="presentation"
 								>
-									View Features Index
+									{t('servicePlans.viewFeaturesIndex')}
 								</span>
 							</div>
 							<div className="service-plan__hours">
-								<p>Commited Number of Hours per Month:</p>
+								<p>{t('servicePlans.committedHours')}</p>
 								<span>{plan.hours}</span>
 							</div>
 							<div className="service-plan__actions">
@@ -154,7 +156,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 												role="button"
 												tabIndex={0}
 											>
-												Get Started
+												{t('servicePlans.getStarted')}
 											</div>
 										);
 									}}
@@ -168,28 +170,25 @@ export default function ServicePlans({ scrollToFeatures }) {
 						<Title tag="h2" isSize={3}>
 							Enterprise
 						</Title>
-						<p>
-							This plan is catered directly on the needs of your company. We fully integrate in your
-							business and cover all your technical requirements.
-						</p>
+						<p>{t('servicePlans.enterprisePlanDescription')}</p>
 					</div>
 					<div className="enterprise-plan__bottom">
 						<div className="service-plan__features">
 							<Title tag="h3" isSize={5}>
-								Features
+								{t('servicePlans.features')}
 							</Title>
 							<ul>
 								<li>
 									<span>✔</span>
-									<p>All Features Available</p>
+									<p>{t('servicePlans.allFeaturesAvailable')}</p>
 								</li>
 								<li>
 									<span>✔</span>
-									<p>Reduced Costs</p>
+									<p>{t('servicePlans.reducedCosts')}</p>
 								</li>
 								<li>
 									<span>✔</span>
-									<p>High Priority</p>
+									<p>{t('servicePlans.highPriority')}</p>
 								</li>
 							</ul>
 							<span
@@ -204,16 +203,16 @@ export default function ServicePlans({ scrollToFeatures }) {
 								}}
 								role="presentation"
 							>
-								View Features Index
+								{t('servicePlans.viewFeaturesIndex')}
 							</span>
 							<div className="service-plan__hours">
-								<p>Commited Number of Hours per Month:</p>
-								<span>50+ / Full Time</span>
+								<p>{t('servicePlans.committedHours')}</p>
+								<span>{t('servicePlans.fullTime')}</span>
 							</div>
 						</div>
 						<div className="service-plan__actions">
 							<div className="plan-actions__pricing">
-								<p>Custom Pricing</p>
+								<p>{t('servicePlans.customPricing')}</p>
 								{/* <span>Starting at €420/day</span> */}
 							</div>
 							<AppContext.Consumer>
@@ -230,7 +229,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 											role="button"
 											tabIndex={0}
 										>
-											Ask for availability
+											{t('servicePlans.askForAvailability')}
 										</div>
 									);
 								}}

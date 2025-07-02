@@ -7,23 +7,23 @@ import ServicePanel from './service-panel';
 import './homepage-services.scss';
 import HeadingBlock from '../heading-block/heading-block';
 import VevolSection from '../general-components/vm-section';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function HomepageServices() {
+	const { t, currentLocale } = useTranslations();
 	const [services, setServices] = useState([]);
 
 	useEffect(() => {
-		setServices(homepageServices);
-	}, []);
+		setServices(homepageServices[currentLocale]);
+	}, [currentLocale]);
 
 	return (
 		<VevolSection className={'homepage-services'}>
 			<Container>
 				<HeadingBlock
-					title={'Take your store to the next level'}
-					highlightedWord={'Right'}
-					subtitle={
-						"You deserve high quality services from people who know their stuff. We know our stuff - that's a promise!"
-					}
+					title={t('homepageServices.title')}
+					highlightedWord={t('homepageServices.highlightedWord')}
+					subtitle={t('homepageServices.subtitle')}
 				/>
 				<ul className="homepage-services__list">
 					{services.map((service, index) => {
@@ -32,9 +32,9 @@ export default function HomepageServices() {
 				</ul>
 				<Fade delay={500}>
 					<div className="has-text-centered homepage-sevices__actions">
-						<p>Oh, and we can do much more than that!</p>
+						<p>{t('homepageServices.cta')}</p>
 						<Link to="/services" className="vm-button vm-button--green">
-							Find out more
+							{t('homepageServices.ctaButton')}
 						</Link>
 					</div>
 				</Fade>

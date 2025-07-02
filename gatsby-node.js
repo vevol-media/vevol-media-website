@@ -76,3 +76,30 @@ exports.createPages = async ({ graphql, actions }) => {
 		})
 	);
 };
+
+exports.onCreatePage = ({ page, actions }) => {
+	const { createPage, deletePage } = actions;
+
+	// Handle Romanian pages
+	if (page.path.includes('/ro/')) {
+		// This is already a Romanian page, no need to modify
+		return;
+	}
+
+	// For non-Romanian pages, create Romanian versions if they should exist
+	const shouldHaveRomanianVersion = ['/strategic-partnerships'];
+
+	// Don't create Romanian version for homepage since we have a dedicated Romanian homepage
+	if (shouldHaveRomanianVersion.includes(page.path)) {
+		const romanianPath = `/ro${page.path}`;
+
+		createPage({
+			...page,
+			path: romanianPath,
+			context: {
+				...page.context,
+				locale: 'ro',
+			},
+		});
+	}
+};

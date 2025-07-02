@@ -11,6 +11,7 @@ import SidewayText from '../components/sideways-text-banner/sideway-text-banner'
 import portfolio from '../enums/portfolio';
 import GridList from '../components/grid-list/grid-list';
 import TagNav from '../components/general-components/tag-nav';
+import VideoBanner from '../components/video-banner/video-banner';
 
 export const data = graphql`
 	query {
@@ -39,7 +40,7 @@ export default function WorkPage({ data }) {
 	const withoutCaseStudy = portfolio.filter((item) => !item.hasCaseStudy);
 
 	return (
-		<Layout>
+		<Layout isTransparent>
 			<Helmet>
 				<title>Success Stories in our Portfolio - Vevol Media - Shopify Experts</title>
 				<meta
@@ -47,10 +48,11 @@ export default function WorkPage({ data }) {
 					content="We love building quality, conversion-oriented websites. See our work and let's build a success story for your business."
 				/>
 			</Helmet>
-			<SlimHero
+			{/* <SlimHero
 				heading="Check Out Our Work"
 				subheading="We build eCommerce and brochure websites with passion and we are proud of the results. Have a look at our latest projects."
-			/>
+			/> */}
+			<VideoBanner />
 			<TagNav isBuildsPage={true} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>

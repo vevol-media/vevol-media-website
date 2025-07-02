@@ -1,7 +1,34 @@
 const portfolio = [
 	{
+		name: 'Blackstone Unlimited',
+		description: {
+			en: 'Magento 2 to Shopify Plus Migration for Digital Library System',
+			ro: 'Migrare Magento 2 la Shopify Plus pentru Sistem Digital de Bibliotecă',
+		},
+		internalUrl: '/work/blackstone-unlimited',
+		externalUrl: 'https://www.blackstoneunlimited.com/',
+		featuredImage: 'blackstone-unlimited',
+		hasCaseStudy: true,
+		hasPage: true,
+	},
+	{
+		name: 'Dossier',
+		description: {
+			en: 'High-Performance Headless Shopify Plus Storefront Using Remix',
+			ro: 'Storefront Shopify Plus Headless de Înaltă Performanță Folosind Remix',
+		},
+		internalUrl: '/work/shopify-hydrogen-dossier',
+		externalUrl: 'https://dossier.co/',
+		featuredImage: 'dossier',
+		hasCaseStudy: true,
+		hasPage: true,
+	},
+	{
 		name: 'Peter Dobias',
-		description: 'Revitalizing Pet Health E-commerce: The Dr. Peter Dobias Success Story',
+		description: {
+			en: 'Revitalizing Pet Health E-commerce: The Dr. Peter Dobias Success Story',
+			ro: 'Revitalizarea e-commerce pentru sănătatea animalelor: Cazul de succes Dr. Peter Dobias',
+		},
 		internalUrl: '/work/peter-dobias',
 		externalUrl: 'https://peterdobias.com/',
 		featuredImage: 'peter-dobias',
@@ -9,8 +36,35 @@ const portfolio = [
 		hasPage: true,
 	},
 	{
+		name: 'Skinseen',
+		description: {
+			en: 'OpenCart to Shopify Migration with Custom Skin Quiz',
+			ro: 'Migrare OpenCart la Shopify cu Quiz Personalizat pentru Piele',
+		},
+		internalUrl: '/work/skinseen',
+		externalUrl: 'https://skinseen.ro',
+		featuredImage: 'skinseen',
+		hasCaseStudy: true,
+		hasPage: true,
+	},
+	{
+		name: 'Casa Vie',
+		description: {
+			en: 'Shopify Theme Overhaul with Interactive Shopping Features',
+			ro: 'Revizuire Temă Shopify cu Funcționalități Interactive de Cumpărare',
+		},
+		internalUrl: '/work/casa-vie',
+		externalUrl: 'https://casavie.ro',
+		featuredImage: 'casa-vie',
+		hasCaseStudy: true,
+		hasPage: true,
+	},
+	{
 		name: 'Fyne Jewellery',
-		description: 'Design, Custom Shopify Components, Store and Speed Optimisation.',
+		description: {
+			en: 'Design, Custom Shopify Components, Store and Speed Optimisation.',
+			ro: 'Design, componente personalizate Shopify, magazin și optimizare viteză.',
+		},
 		internalUrl: '/work/fyne-jewellery',
 		externalUrl: 'https://fynejewellery.com',
 		featuredImage: 'fyne-jewellery',
@@ -19,7 +73,10 @@ const portfolio = [
 	},
 	{
 		name: 'Hugh Maguire',
-		description: 'Bespoke Shopify Theme Design, WooCommerce Migration and CRO.',
+		description: {
+			en: 'Bespoke Shopify Theme Design, WooCommerce Migration and CRO.',
+			ro: 'Design temă personalizată Shopify, migrare WooCommerce și CRO.',
+		},
 		internalUrl: '/work/hugh-maguire',
 		externalUrl: 'https://hughmaguirebutchers.com',
 		featuredImage: 'hugh-maguire',
@@ -28,7 +85,10 @@ const portfolio = [
 	},
 	{
 		name: 'A&S Market',
-		description: 'Bespoke Theme Development, Custom Functionalities, Additional Apps Integration.',
+		description: {
+			en: 'Bespoke Theme Development, Custom Functionalities, Additional Apps Integration.',
+			ro: 'Dezvoltare temă personalizată, funcționalități personalizate, integrare aplicații suplimentare.',
+		},
 		internalUrl: '/work/as-market',
 		externalUrl: 'https://www.asmarket.co.uk',
 		featuredImage: 'as-market',
@@ -37,7 +97,10 @@ const portfolio = [
 	},
 	{
 		name: 'TOPL Cup',
-		description: 'Design & Custom Theme Development, Personalisation Tool and Hubspot Integration.',
+		description: {
+			en: 'Design & Custom Theme Development, Personalisation Tool and Hubspot Integration.',
+			ro: 'Design și dezvoltare temă personalizată, instrument de personalizare și integrare Hubspot.',
+		},
 		internalUrl: '/work/topl-cup',
 		externalUrl: 'https://toplcup.com',
 		featuredImage: 'topl-cup',
@@ -46,7 +109,10 @@ const portfolio = [
 	},
 	{
 		name: 'SavinSkin',
-		description: 'Custom Shopify Theme with Additional Components & Functionalities.',
+		description: {
+			en: 'Custom Shopify Theme with Additional Components & Functionalities.',
+			ro: 'Tema personalizată Shopify cu componente și funcționalități suplimentare.',
+		},
 		internalUrl: '/work/savin-skin',
 		externalUrl: 'https://savinskin.com',
 		featuredImage: 'savinskin',
@@ -55,7 +121,10 @@ const portfolio = [
 	},
 	{
 		name: 'Verlin',
-		description: 'OpenCart to Shopify Migration, Design and Custom Pages & Components.',
+		description: {
+			en: 'OpenCart to Shopify Migration, Design and Custom Pages & Components.',
+			ro: 'Migrare OpenCart la Shopify, design și pagini și componente personalizate.',
+		},
 		internalUrl: '/work/verlin',
 		externalUrl: 'https://verlin.ro',
 		featuredImage: 'verlin',
@@ -64,7 +133,10 @@ const portfolio = [
 	},
 	{
 		name: 'Lovyt',
-		description: 'New Shopify Store Setup, Apps Integration and Additional Components',
+		description: {
+			en: 'New Shopify Store Setup, Apps Integration and Additional Components',
+			ro: 'Setare magazin nou Shopify, integrare aplicații și componente suplimentare',
+		},
 		internalUrl: '/work/lovyt',
 		externalUrl: 'https://lovyt.com',
 		featuredImage: 'lovyt',
@@ -73,7 +145,10 @@ const portfolio = [
 	},
 	{
 		name: 'Folkingtons',
-		description: 'New Flexible, Scalable and Reusable Components based on new Design.',
+		description: {
+			en: 'New Flexible, Scalable and Reusable Components based on new Design.',
+			ro: 'Componente flexibile, scalabile și reutilizabile bazate pe design nou.',
+		},
 		internalUrl: '/work/folkingtons',
 		externalUrl: 'https://www.folkingtons.co.uk',
 		featuredImage: 'folkingtons',
@@ -82,7 +157,10 @@ const portfolio = [
 	},
 	{
 		name: 'Margee',
-		description: 'Complete Website Revamp on 2.0 Theme, New Navigation and Custom Filtering.',
+		description: {
+			en: 'Complete Website Revamp on 2.0 Theme, New Navigation and Custom Filtering.',
+			ro: 'Revizionare completă a site-ului pe temă 2.0, navigare nouă și filtrare personalizată.',
+		},
 		internalUrl: '/work/margee',
 		externalUrl: 'https://margee.com',
 		featuredImage: 'margee',
@@ -91,7 +169,10 @@ const portfolio = [
 	},
 	{
 		name: 'Evcoms',
-		description: 'Wordpress Brochure Website, Woocommerce Integration and Job Application Form Service.',
+		description: {
+			en: 'Wordpress Brochure Website, Woocommerce Integration and Job Application Form Service.',
+			ro: 'Site de prezentare Wordpress, integrare Woocommerce și serviciu de formular de aplicare pentru job.',
+		},
 		internalUrl: '/work/evcoms',
 		externalUrl: 'https://www.evcoms.com',
 		featuredImage: 'evcoms',
@@ -100,12 +181,27 @@ const portfolio = [
 	},
 	{
 		name: 'Ramona Albert',
-		description: 'Technical & Content SEO, Shopify Maintenance, 3D Models Integration.',
+		description: {
+			en: 'Technical & Content SEO, Shopify Maintenance, 3D Models Integration.',
+			ro: 'SEO tehnic și de conținut, mentenanță Shopify, integrare modele 3D.',
+		},
 		internalUrl: '/work/ramona-albert',
 		externalUrl: 'https://ramonaalbert.shop',
 		featuredImage: 'ramona-albert',
 		hasCaseStudy: false,
 		hasPage: false,
+	},
+	{
+		name: 'Concept Office',
+		description: {
+			en: 'Modern Digital Showcase for Office Stationery Provider',
+			ro: 'Prezentare Digitală Modernă pentru Furnizor de Articole de Birou',
+		},
+		internalUrl: '/work/concept-office',
+		externalUrl: 'https://conceptoffice.com',
+		featuredImage: 'concept-office',
+		hasCaseStudy: true,
+		hasPage: true,
 	},
 ];
 
