@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet';
 import VevolSection from '../../components/general-components/vm-section';
 import { Container, Title } from 'bloomer';
 import SimpleImageCarousel from '../../components/simple-image-carousel/simple-image-carousel';
-import Quote from '../../components/general-components/quote';
 import appsPortfolio from '../../enums/apps';
 import SlimHero from '../../components/slim-hero/slim-hero';
 import { Link } from 'gatsby';
@@ -24,11 +23,9 @@ export const query = graphql`
 `;
 
 export default function CompanyFormRomaniaPage({ data }) {
-	const app = appsPortfolio.find((a) => a.internalUrl === '/apps/company-form-romania');
+	const app = appsPortfolio.en.find((a) => a.internalUrl === '/apps/company-form-romania');
 	const caseStudy = app?.caseStudy;
 	const images = data.images.nodes;
-
-	console.log(images);
 
 	return (
 		<Layout>
@@ -65,7 +62,9 @@ export default function CompanyFormRomaniaPage({ data }) {
 						</Title>
 						<div className="case-study__tech-tags">
 							{caseStudy?.technologies?.map((tech, i) => (
-								<span key={i} className="case-study__tech-tag">{tech}</span>
+								<span key={i} className="case-study__tech-tag">
+									{tech}
+								</span>
 							))}
 						</div>
 					</div>

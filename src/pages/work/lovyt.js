@@ -15,7 +15,6 @@ import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-car
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import VideoBanner from '../../components/video-banner/video-banner';
 
 export const data = graphql`
 	query {
@@ -68,7 +67,6 @@ export default function PortfolioPage({ data }) {
 				alt={'Featured Project - Lovyt Activewear - Vevol Media'}
 				loading="lazy"
 			/>
-			<VideoBanner />
 			<VevolSection backgroundColour={'grey'}>
 				<Container>
 					<a

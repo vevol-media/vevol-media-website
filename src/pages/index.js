@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import HomepageHero from '../components/homepage-hero/homepage-hero';
 import SidewayText from '../components/sideways-text-banner/sideway-text-banner';
@@ -10,11 +10,11 @@ import { Container } from 'bloomer/lib/layout/Container';
 import HeadingBlock from '../components/heading-block/heading-block';
 import PortfolioCarousel from '../components/portfolio-carousel/portfolio-carousel';
 import portfolio from '../enums/portfolio';
-import ImagesMiniBanner from '../components/images-mini-banner/images-mini-banner';
 import BottomCTA from '../components/bottom-cta/bottom-cta';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
 import HomepageArticles from '../components/blog/homepage-articles';
+import NoblesseThemeSection from '../components/general-components/noblesse-theme-section';
 
 export const data = graphql`
 	query {
@@ -23,14 +23,6 @@ export const data = graphql`
 				name
 				childImageSharp {
 					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 750, quality: 100)
-				}
-			}
-		}
-		partnersImages: allFile(filter: { relativeDirectory: { eq: "platforms" } }) {
-			nodes {
-				name
-				childImageSharp {
-					gatsbyImageData(placeholder: DOMINANT_COLOR, height: 60, quality: 100)
 				}
 			}
 		}
@@ -109,7 +101,6 @@ export const data = graphql`
 export default function Homepage({ data }) {
 	const {
 		portfolioFeaturedImagesQuery,
-		partnersImages,
 		customerLogos,
 		midBannerImageQuery,
 		collageImageQuery,
@@ -136,61 +127,15 @@ export default function Homepage({ data }) {
 		<Layout formBackgroundImage={formBannerImage}>
 			<HomepageHero imageBottom={mainHeroImage} />
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
-			<VevolSection>
-				<Container>
-					<ImageWithText
-						alignRight
-						greenLine
-						image={
-							<GatsbyImage image={noblesseImage} alt={'Official Shopify Theme created by Vevol Media'} />
-						}
-						title={'Our First Official Shopify Theme!'}
-						textContent={[
-							<p className="mt-5">
-								We're very happy to launch Noblesse, our first Shopify Theme, perfectly adapted to
-								fashion, jewellery and beauty!
-							</p>,
-							<p className="mt-5">
-								We wanted to create something different, for brands that want to stand out without the
-								need for custom coding, but still CRO oriented.
-							</p>,
-						]}
-						numbersContent={[
-							{
-								image: (
-									<GatsbyImage image={storyIcon} alt="Star icon" style={{ width: 30, height: 30 }} />
-								),
-								subtitle: 'Visual Storytelling',
-							},
-							{
-								image: (
-									<GatsbyImage
-										image={palletIcon}
-										alt="Pallet icon"
-										style={{ width: 30, height: 30 }}
-									/>
-								),
-								subtitle: 'Highly Customisable',
-							},
-							{
-								image: <GatsbyImage image={bagIcon} alt="Bag icon" style={{ width: 30, height: 30 }} />,
-								subtitle: 'Focused on Conversion',
-							},
-						]}
-					>
-						<Link
-							href="https://themes.shopify.com/themes/noblesse"
-							target="_blank"
-							className="mt-6 themes-button"
-						>
-							<GatsbyImage image={themesButtonImage} alt="Shopify Themes Button" />
-						</Link>
-					</ImageWithText>
-				</Container>
-			</VevolSection>
-			<HomepageServices />
-			{/* <ImagesMiniBanner images={partnersImages.nodes} /> */}
 
+			<NoblesseThemeSection
+				noblesseImage={noblesseImage}
+				storyIcon={storyIcon}
+				palletIcon={palletIcon}
+				bagIcon={bagIcon}
+				themesButtonImage={themesButtonImage}
+			/>
+			<HomepageServices />
 			<VevolSection>
 				<Container>
 					<ImageWithText
@@ -207,7 +152,7 @@ export default function Homepage({ data }) {
 								our services to our clients.
 							</p>,
 							<p className="mt-5">
-								We’ve been a part of many success stories and we can’t wait to join your journey to the
+								We've been a part of many success stories and we can't wait to join your journey to the
 								top!
 							</p>,
 						]}

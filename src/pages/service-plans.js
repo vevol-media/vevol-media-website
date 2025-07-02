@@ -54,7 +54,7 @@ export default function Page() {
 						className="mb-4em"
 						subtitle={'Learn more about each feature included in our plans'}
 					/>
-					<FeaturesIndex featuresIndexRef={featuresIndexRef} featuresIndex={featuresIndex} />
+					<FeaturesIndex featuresIndexRef={featuresIndexRef} featuresIndex={featuresIndex.en} />
 				</Container>
 			</VevolSection>
 			<SideDrawer>

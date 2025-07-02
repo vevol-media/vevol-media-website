@@ -76,3 +76,51 @@ exports.createPages = async ({ graphql, actions }) => {
 		})
 	);
 };
+
+exports.onCreatePage = ({ page, actions }) => {
+	const { createPage, deletePage } = actions;
+
+	// Handle Romanian pages
+	if (page.path.includes('/ro/')) {
+		// This is already a Romanian page, no need to modify
+		return;
+	}
+
+	// For non-Romanian pages, create Romanian versions if they should exist
+	const shouldHaveRomanianVersion = ['/strategic-partnerships'];
+
+	// Don't create Romanian version for homepage since we have a dedicated Romanian homepage
+	if (shouldHaveRomanianVersion.includes(page.path)) {
+		const romanianPath = `/ro${page.path}`;
+
+		createPage({
+			...page,
+			path: romanianPath,
+			context: {
+				...page.context,
+				locale: 'ro',
+			},
+		});
+	}
+};
+
+// Disable CSS ordering warnings from mini-css-extract-plugin
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+	// Apply to all stages, not just build-javascript
+	const config = getConfig();
+
+	// Disable CSS ordering warnings
+	config.plugins.forEach((plugin) => {
+		if (plugin.constructor.name === 'MiniCssExtractPlugin') {
+			plugin.options.ignoreOrder = true;
+		}
+	});
+
+	// Also suppress webpack warnings about CSS ordering
+	config.stats = {
+		...config.stats,
+		warningsFilter: [/Conflicting order/, /mini-css-extract-plugin/],
+	};
+
+	actions.replaceWebpackConfig(config);
+};

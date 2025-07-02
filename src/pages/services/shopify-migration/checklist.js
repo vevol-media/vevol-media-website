@@ -26,8 +26,6 @@ export default function MigrationChecklist({ data }) {
 	const handbookUrl = data?.handbookPdf?.publicURL;
 	const previewImage = getImage(data.previewImage);
 
-	console.log(data);
-
 	return (
 		<Layout>
 			<Helmet>
@@ -416,13 +414,14 @@ export default function MigrationChecklist({ data }) {
 						title="The Complete Shopify Checklist"
 						textContent={[
 							<p className="mt-5">
-								Our comprehensive Shopify Migration Checklist is a detailed guide that walks you through every crucial step 
-								of migrating your e-commerce store to Shopify. From pre-migration planning to post-launch optimization, 
-								we've covered all the essential aspects.
+								Our comprehensive Shopify Migration Checklist is a detailed guide that walks you through
+								every crucial step of migrating your e-commerce store to Shopify. From pre-migration
+								planning to post-launch optimization, we've covered all the essential aspects.
 							</p>,
 							<p className="mt-5">
-								Use this checklist to ensure no critical steps are missed during your migration journey, helping you achieve 
-								a seamless transition to Shopify while maintaining your business operations and customer experience.
+								Use this checklist to ensure no critical steps are missed during your migration journey,
+								helping you achieve a seamless transition to Shopify while maintaining your business
+								operations and customer experience.
 							</p>,
 							handbookUrl ? (
 								<a

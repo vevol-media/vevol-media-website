@@ -1,5 +1,5 @@
-@import "/src/styles/variables";
-@import "/src/styles/mixins";
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
 
 .portfolio-carousel {
 	.splide {
@@ -8,6 +8,7 @@
 		.portfolio-item {
 			height: 100%;
 			display: flex;
+			border: 1px solid $black;
 
 			.portfolio-item__actions {
 				display: flex;
@@ -36,18 +37,13 @@
 
 			svg {
 				fill: $black;
-				transition: 0.3s ease all;
 				margin-left: 10px;
 			}
 
 			&:hover {
 				.portfolio-item__actions {
-					background: rgba($white, 0.65);
+					background: rgba($white, 0.95);
 					top: 0;
-				}
-
-				svg {
-					transform: rotate(-45deg);
 				}
 			}
 		}

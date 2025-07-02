@@ -15,11 +15,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import Quote from '../../components/general-components/quote';
 import SidebarInfoText from '../../components/general-components/sidebar-info-text';
-import VideoBanner from '../../components/video-banner/video-banner';
 
 export const data = graphql`
 	query {
-		currentProject: allFile(filter: { relativeDirectory: { eq: "case-studies/peter-dobias" } }) {
+		currentProject: allFile(
+			filter: {
+				relativeDirectory: { eq: "case-studies/peter-dobias" }
+				extension: { in: ["jpg", "jpeg", "png", "gif", "webp"] }
+			}
+		) {
 			nodes {
 				name
 				childImageSharp {
@@ -32,7 +36,12 @@ export const data = graphql`
 				}
 			}
 		}
-		allPortfolio: allFile(filter: { relativeDirectory: { eq: "portfolio-featured-images" } }) {
+		allPortfolio: allFile(
+			filter: {
+				relativeDirectory: { eq: "portfolio-featured-images" }
+				extension: { in: ["jpg", "jpeg", "png", "gif", "webp"] }
+			}
+		) {
 			nodes {
 				name
 				childImageSharp {
@@ -66,7 +75,11 @@ export default function PortfolioPage({ data }) {
 				backgroundWhite
 				hideBlob
 			/>
-			<VideoBanner />
+			<GatsbyImage
+				image={getImageByName(currentProject.nodes, 'hero')}
+				alt={'Featured Project - Dr. Peter Dobias - Vevol Media'}
+				loading="lazy"
+			/>
 			<Quote
 				secondPart={`...Vevol has made a huge change and difference in our company.`}
 				authorName={`Dr. Peter Dobias`}
@@ -118,7 +131,7 @@ export default function PortfolioPage({ data }) {
 						</li>
 						<li className="mt-3">
 							<p>
-								<strong>Sluggish Performance:</strong> With loading speeds far from optimal, the site’s
+								<strong>Sluggish Performance:</strong> With loading speeds far from optimal, the site's
 								performance was a roadblock to delivering a seamless user experience, adversely
 								affecting SEO rankings and customer satisfaction.
 							</p>
@@ -145,6 +158,7 @@ export default function PortfolioPage({ data }) {
 							videoFile && (
 								<video width="100%" controls>
 									<source src={videoFile.publicURL} type="video/mp4" />
+									<track kind="captions" />
 								</video>
 							)
 						}
@@ -241,7 +255,7 @@ export default function PortfolioPage({ data }) {
 								text: (
 									<>
 										<strong>Integrated Excellence:</strong> The integration of third-party
-										applications has expanded the site’s capabilities, offering users a richer, more
+										applications has expanded the site's capabilities, offering users a richer, more
 										comprehensive shopping experience and setting a new benchmark for e-commerce in
 										the pet health industry.
 									</>

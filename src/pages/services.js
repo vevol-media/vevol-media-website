@@ -62,7 +62,7 @@ export default function ServicesPage({ data }) {
 					/>
 					<ServicesList
 						imageData={servicesIcons.nodes}
-						services={services.dev}
+						services={services.en.dev}
 						backgroundWhite
 						topMargin
 						linkText={'Read more'}
@@ -80,7 +80,7 @@ export default function ServicesPage({ data }) {
 					/>
 					<ServicesList
 						imageData={servicesIcons.nodes}
-						services={services.ecommerce}
+						services={services.en.ecommerce}
 						backgroundWhite
 						topMargin
 					/>

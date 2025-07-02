@@ -1,0 +1,97 @@
+{
+	"navigation": {
+		"services": "Servicii Shopify",
+		"shopifyDevelopment": "Dezvoltare de teme",
+		"shopifyPlus": "Shopify Plus",
+		"shopifyApps": "Aplicații și Integrări",
+		"shopifyMigration": "Migrare Shopify",
+		"seoServices": "Servicii SEO",
+		"uiUxWebDesign": "Design UI/UX Web",
+		"servicePlans": "Planuri de mentenanță",
+		"servicePlansDescription": "Alegeți o plată recurentă lunară, trimestrială sau anuală și obțineți servicii de calitate cu reducere",
+		"ourWork": "Proiecte",
+		"shopifyBuilds": "Magazine Shopify",
+		"shopifyBuildsDescription": "Dezvoltare personalizată de magazine Shopify, dezvoltare de teme și soluții complete de eCommerce adaptate brandului tău.",
+		"new": "Nou",
+		"shopifyAppsDescription": "Dezvoltare de aplicații Shopify personalizate, integrări și automatizări pentru a extinde funcționalitatea magazinului tău.",
+		"learn": "Invata",
+		"aboutUs": "Despre Noi",
+		"contactUs": "Contactează-ne",
+		"blog": "Blog",
+		"faq": "Întrebări Frecvente",
+		"strategicPartnerships": "Parteneriate Strategice",
+		"work": "Magazine Shopify",
+		"apps": "Aplicații Shopify"
+	},
+	"common": {
+		"close": "Închide Meniul",
+		"vevolMediaLogo": "Logo Vevol Media",
+		"moreInfo": "Mai multe informații",
+		"readCaseStudy": "Vezi proiectul",
+		"checkLiveSite": "Vezi site-ul live"
+	},
+	"homepage": {
+		"hero": {
+			"title": "Dezvoltare de teme și aplicații Shopify",
+			"subtitle": "Soluții personalizate de eCommerce",
+			"description": "Suntem parteneri Shopify și dezvoltatori experimentați, așa că puteți fi siguri că sunteți în mâini bune!",
+			"cta": "Verifică disponibilitatea"
+		}
+	},
+	"cookieBar": {
+		"info": "Folosim cookie-uri pentru a îmbunătăți experiența ta pe site-ul nostru. Unele sunt esențiale pentru funcționalitatea de bază, în timp ce altele ne ajută să îmbunătățim și să personalizăm experiența ta. Prin apăsarea 'Permite toate' consimțiți la utilizarea tuturor cookie-urilor.",
+		"useNecessaryCookies": "Folosește cookie-urile esențiale",
+		"allowAll": "Permite toate"
+	},
+	"noblesseTheme": {
+		"title": "Prima noastră temă oficială Shopify!",
+		"description": "Am lansat cu succes Noblesse, prima temă oficială Shopify marca Vevol Media, perfect adaptată pentru modă, bijuterii și frumusețe!",
+		"description2": "Vrem să creăm ceva diferit, pentru branduri care doresc să se deosebească fără a avea nevoie de cod personalizat, dar cu o multitudine de funcționalități unice.",
+		"numbersContent": {
+			"0": {
+				"subtitle": "Storytelling vizual"
+			},
+			"1": {
+				"subtitle": "Personalizabil"
+			},
+			"2": {
+				"subtitle": "Focusat pe CRO"
+			}
+		},
+		"themesButton": {
+			"alt": "Buton teme Shopify",
+			"text": "Vezi detalii"
+		}
+	},
+	"reviews": {
+		"seeProject": "Vezi proiectul",
+		"readFullReview": "Vezi recenzia"
+	},
+	"homepageServices": {
+		"title": "Shopify la următorul nivel",
+		"highlightedWord": "Corect",
+		"subtitle": "Promisiunea noastră este să oferim servicii de calitate și să respectăm standardele cele mai înalte.",
+		"cta": "Și putem face mai mult decât atât!",
+		"panelCta": "Află mai multe",
+		"ctaButton": "Vezi toate serviciile"
+	},
+	"mainForm": {
+		"title": "Vorbește cu un specialist",
+		"subtitle": "Contactează-ne dacă dorești să obții un deviz pentru proiectul tău sau dacă doar vrei să zici 'salut'! Ne-ar plăcea să auzim de la tine!"
+	},
+	"servicePlans": {
+		"paymentPlan": "Plan de plată:",
+		"featurePacked": "Pachet de funcționalități - Cel mai eficient",
+		"features": "Funcționalități",
+		"viewFeaturesIndex": "Vezi indexul de funcționalități",
+		"committedHours": "Număr de ore comise pe lună:",
+		"getStarted": "Începe",
+		"enterprisePlanDescription": "Acest plan este dedicat direct nevoilor companiei dumneavoastră. Noi integrăm în mod complet afacerea dumneavoastră și acoperim toate cerințele tehnice.",
+		"allFeaturesAvailable": "Toate funcționalitățile sunt disponibile",
+		"reducedCosts": "Reducere de costuri",
+		"highPriority": "Prioritate ridicată",
+		"fullTime": "50+ / Timp întreg",
+		"customPricing": "Preț personalizat",
+		"askForAvailability": "Cere disponibilitate"
+	}
+}

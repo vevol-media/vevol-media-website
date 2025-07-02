@@ -24,11 +24,9 @@ export const query = graphql`
 `;
 
 export default function AddisonLeePage({ data }) {
-	const app = appsPortfolio.find((a) => a.internalUrl === '/apps/addison-lee');
+	const app = appsPortfolio.en.find((a) => a.internalUrl === '/apps/addison-lee');
 	const caseStudy = app?.caseStudy;
 	const images = data.images.nodes;
-
-	console.log(images);
 
 	return (
 		<Layout>

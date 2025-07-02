@@ -6,10 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faAngleDoubleRight, faShoppingCart, faSearchDollar } from '@fortawesome/free-solid-svg-icons';
 import { faShopify } from '@fortawesome/free-brands-svg-icons';
 import { IconTopo } from '../../helpers/icons';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import plusIcon from '../../images/services-icons/shopify-plus.png';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function ServicePanel({ icon, heading, intro, sublist, url, delayTime }) {
+	const { t } = useTranslations();
+
 	const iconSwitch = (iconName) => {
 		switch (iconName) {
 			case 'faCode':
@@ -46,7 +48,7 @@ export default function ServicePanel({ icon, heading, intro, sublist, url, delay
 						);
 					})}
 				</ul>
-				<Link to={url}>Interested? Learn More</Link>
+				<Link to={url}>{t('homepageServices.panelCta')}</Link>
 			</li>
 		</Fade>
 	);

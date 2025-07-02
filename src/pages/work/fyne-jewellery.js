@@ -16,7 +16,6 @@ import PortfolioCarousel from '../../components/portfolio-carousel/portfolio-car
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import VideoBanner from '../../components/video-banner/video-banner';
 
 export const data = graphql`
 	query {
@@ -66,10 +65,9 @@ export default function PortfolioPage({ data }) {
 			/>
 			<GatsbyImage
 				image={getImageByName(currentProject.nodes, 'hero')}
-				alt={'Fyne Jewellery Case Study - Vevol Media'}
+				alt={'Featured Project - Fyne Jewellery - Vevol Media'}
 				loading="lazy"
 			/>
-			<VideoBanner />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<a

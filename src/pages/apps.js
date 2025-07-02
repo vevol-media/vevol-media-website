@@ -11,7 +11,9 @@ import TagNav from '../components/general-components/tag-nav';
 
 export const data = graphql`
 	query {
-		appsImages: allFile(filter: { relativeDirectory: { eq: "apps" } }) {
+		appsImages: allFile(
+			filter: { relativeDirectory: { eq: "apps" }, extension: { in: ["jpg", "jpeg", "png", "gif", "webp"] } }
+		) {
 			nodes {
 				name
 				childImageSharp {
@@ -25,8 +27,9 @@ export const data = graphql`
 export default function AppsPage({ data }) {
 	const { appsImages } = data;
 
-	const appsWithImages = appsPortfolio.map((app) => {
+	const appsWithImages = appsPortfolio.en.map((app) => {
 		const imageNode = appsImages.nodes.find((img) => img.name === app.featuredImage);
+
 		return {
 			...app,
 			featuredImage: imageNode ? imageNode.childImageSharp : null,

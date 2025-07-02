@@ -5,8 +5,12 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 import { Title } from 'bloomer/lib/elements/Title';
 import { IconTopo } from '../../helpers/icons';
+import { useTranslations } from '../../helpers/useTranslations';
 
-export default function FeaturedWork({ projectsList, images, ctaText = 'Read Case Study' }) {
+export default function FeaturedWork({ projectsList, images, ctaText }) {
+	const { t, currentLocale } = useTranslations();
+	const buttonLabel = ctaText || t('common.readCaseStudy');
+
 	return (
 		<ul className="featured-work">
 			{projectsList.map((item, index) => {
@@ -25,8 +29,8 @@ export default function FeaturedWork({ projectsList, images, ctaText = 'Read Cas
 									<Title tag="h3" isSize={2}>
 										{item.name}
 									</Title>
-									<p>{item.description}</p>
-									<span className="vm-button vm-button--white">{ctaText}</span>
+									<p>{item.description[currentLocale]}</p>
+									<span className="vm-button vm-button--white">{buttonLabel}</span>
 								</div>
 							</div>
 						</Link>

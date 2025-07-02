@@ -1,0 +1,97 @@
+{
+	"navigation": {
+		"services": "Services",
+		"shopifyDevelopment": "Shopify Development",
+		"shopifyPlus": "Shopify Plus",
+		"shopifyApps": "Shopify Apps",
+		"shopifyMigration": "Shopify Migration",
+		"seoServices": "SEO Services",
+		"uiUxWebDesign": "UI/UX Web Design",
+		"servicePlans": "Service Plans",
+		"servicePlansDescription": "Choose a monthly, quaterly or yearly recurring payment and get discounted quality services",
+		"ourWork": "Our Work",
+		"shopifyBuilds": "Shopify Builds",
+		"shopifyBuildsDescription": "Custom Shopify store builds, theme development, and full eCommerce solutions tailored to your brand.",
+		"new": "New",
+		"shopifyAppsDescription": "Custom Shopify app development, integrations, and automation to extend your store's functionality.",
+		"learn": "Learn",
+		"aboutUs": "About Us",
+		"contactUs": "Contact Us",
+		"blog": "Blog",
+		"faq": "FAQ",
+		"strategicPartnerships": "Strategic Partnerships",
+		"work": "Shopify Builds",
+		"apps": "Shopify Apps"
+	},
+	"common": {
+		"close": "Close Menu",
+		"vevolMediaLogo": "Vevol Media Logo",
+		"moreInfo": "More Info",
+		"readCaseStudy": "View Project",
+		"checkLiveSite": "Check Live Site"
+	},
+	"homepage": {
+		"hero": {
+			"title": "Shopify & Shopify Plus Custom Development",
+			"subtitle": "eCommerce Custom Solutions",
+			"description": "We are Shopify partners and experienced developers, so you can be sure you are in great hands!",
+			"cta": "Ask for availability"
+		}
+	},
+	"cookieBar": {
+		"info": "We use cookies to enhance your experience on our website. Some are essential for basic functionality, while others help us improve and personalize your experience. By clicking 'Allow all' you consent to the use of all cookies.",
+		"useNecessaryCookies": "Use necessary cookies",
+		"allowAll": "Allow all"
+	},
+	"noblesseTheme": {
+		"title": "Our First Official Shopify Theme!",
+		"description": "We're very happy to launch Noblesse, our first Shopify Theme, perfectly adapted to fashion, jewellery and beauty!",
+		"description2": "We wanted to create something different, for brands that want to stand out without the need for custom coding, but still CRO oriented.",
+		"numbersContent": {
+			"0": {
+				"subtitle": "Visual Storytelling"
+			},
+			"1": {
+				"subtitle": "Highly Customisable"
+			},
+			"2": {
+				"subtitle": "Focused on Conversion"
+			}
+		},
+		"themesButton": {
+			"alt": "Shopify Themes Button",
+			"text": "View Details"
+		}
+	},
+	"reviews": {
+		"seeProject": "See Project",
+		"readFullReview": "Read Full Review"
+	},
+	"homepageServices": {
+		"title": "Take your store to the next level",
+		"highlightedWord": "Right",
+		"subtitle": "You deserve high quality services from people who know their stuff. We know our stuff - that's a promise!",
+		"cta": "Oh, and we can do much more than that!",
+		"panelCta": "Interested? Learn More",
+		"ctaButton": "See all services"
+	},
+	"mainForm": {
+		"title": "Talk to a Strategist",
+		"subtitle": "Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
+	},
+	"servicePlans": {
+		"paymentPlan": "Payment Plan:",
+		"featurePacked": "Feature Packed - Most Effective",
+		"features": "Features",
+		"viewFeaturesIndex": "View Features Index",
+		"committedHours": "Commited Number of Hours per Month:",
+		"getStarted": "Get Started",
+		"enterprisePlanDescription": "This plan is catered directly on the needs of your company. We fully integrate in your business and cover all your technical requirements.",
+		"allFeaturesAvailable": "All Features Available",
+		"reducedCosts": "Reduced Costs",
+		"highPriority": "High Priority",
+		"fullTime": "50+ / Full Time",
+		"customPricing": "Custom Pricing",
+		"askForAvailability": "Ask for availability"
+	}
+}

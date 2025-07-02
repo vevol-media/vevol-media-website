@@ -22,12 +22,20 @@ module.exports = {
 		'gatsby-plugin-gatsby-cloud',
 		'gatsby-plugin-client-side-redirect',
 		{
+			resolve: 'gatsby-plugin-i18n',
+			options: {
+				langKeyDefault: 'en',
+				useLangKeyLayout: false,
+				prefixDefault: false,
+			},
+		},
+		{
 			resolve: `gatsby-source-contentful`,
 			options: {
 				spaceId: `yojwlxn4kmqi`,
 				// Learn about environment variables: https://gatsby.dev/env-vars
 				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-				localesToGenerate: ['en-US'],
+				localesToGenerate: ['en-US', 'ro'],
 			},
 		},
 		{

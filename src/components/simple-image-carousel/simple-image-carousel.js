@@ -3,7 +3,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import './simple-image-carousel.scss';
 
-export default function SimpleImageCarousel({ imagesArray, className }) {
+export default function SimpleImageCarousel({ imagesArray, className, maxHeight }) {
 	const splideSettings = {
 		rewind: true,
 		perPage: 2,
@@ -33,6 +33,7 @@ export default function SimpleImageCarousel({ imagesArray, className }) {
 						alt={`Vevol Media Carousel Image - ${index}`}
 						image={image}
 						loading="lazy"
+						style={{ maxHeight: maxHeight ? maxHeight : 'auto' }}
 					/>
 				</SplideSlide>
 			);

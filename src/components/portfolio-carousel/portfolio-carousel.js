@@ -5,9 +5,11 @@ import { SplideSlide, Splide } from '@splidejs/react-splide';
 import { Link } from 'gatsby';
 import { BgImage } from 'gbimage-bridge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function PortfolioCarousel({ projectsList, imagesData, cutBottomPadding }) {
+	const { t } = useTranslations();
 	const splideSettings = {
 		rewind: true,
 		perPage: 3,
@@ -37,26 +39,21 @@ export default function PortfolioCarousel({ projectsList, imagesData, cutBottomP
 
 		return (
 			<SplideSlide key={index}>
-				{project.hasPage && (
-					<Link to={project.internalUrl}>
-						<BgImage className="portfolio-item" image={bgImage}>
-							<div className="portfolio-item__actions">
-								<p className="pb-3">{project.name}</p>
-								<span className="is-flex is-align-items-center">
-									Read More
-									<FontAwesomeIcon icon={faArrowRight} />
-								</span>
-							</div>
-						</BgImage>
-					</Link>
-				)}
-				{!project.hasPage && (
+				<Link
+					to={project.hasPage ? project.internalUrl : project.externalUrl}
+					target={project.hasPage ? '_self' : '_blank'}
+				>
 					<BgImage className="portfolio-item" image={bgImage}>
-						<div className="portfolio-item__actions portfolio-item__actions--no-link">
+						<div className="portfolio-item__actions">
 							<p className="pb-3">{project.name}</p>
+							<span className="is-flex is-align-items-center">
+								{project.hasPage ? t('common.readCaseStudy') : t('common.checkLiveSite')}
+								{project.hasPage && <FontAwesomeIcon icon={faArrowRight} />}
+								{!project.hasPage && <FontAwesomeIcon icon={faExternalLinkAlt} />}
+							</span>
 						</div>
 					</BgImage>
-				)}
+				</Link>
 			</SplideSlide>
 		);
 	});

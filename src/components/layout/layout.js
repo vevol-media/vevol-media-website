@@ -11,6 +11,7 @@ import config from 'react-reveal/globals';
 import { AppProvider } from '../../context/app-context';
 import CookieBar from '../cookie-bar/cookie-bar';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function Layout({
 	children,
@@ -21,7 +22,9 @@ export default function Layout({
 	formBackgroundImage,
 	hasHeader = true,
 	customClass,
+	isTransparent,
 }) {
+	const { t, currentLocale } = useTranslations();
 	const [cookieConsentValue, setCookieConsentValue] = useState('');
 	const [showCookieBar, setShowCookieBar] = useState(false);
 	const [animatedProps, setAnimatedProps] = useSpring(() => ({
@@ -87,7 +90,7 @@ export default function Layout({
 				)}
 				<Helmet
 					htmlAttributes={{
-						lang: 'en',
+						lang: currentLocale,
 					}}
 				>
 					<link rel="icon" href={favicon} />
@@ -142,18 +145,14 @@ export default function Layout({
 					{cookieConsentValue === 'all' && <script async src="https://serve.albacross.com/track.js"></script>}
 				</Helmet>
 
-				{hasHeader && <Header background={headerBg} isStatic={headerIsStatic} />}
+				{hasHeader && <Header background={headerBg} isStatic={headerIsStatic} isTransparent={isTransparent} />}
 				<main>{children}</main>
 				{hasMainForm && (
-					<>
-						<HubspotForm
-							backgroundImage={formBackgroundImage}
-							title={'Talk to a Strategist'}
-							subtitle={
-								"Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
-							}
-						/>
-					</>
+					<HubspotForm
+						backgroundImage={formBackgroundImage}
+						title={t('mainForm.title')}
+						subtitle={t('mainForm.subtitle')}
+					/>
 				)}
 				{showCookieBar && (
 					<CookieBar

@@ -3,8 +3,11 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import './apps-section.scss';
 import { Title } from 'bloomer/lib/elements/Title';
 import { Link } from 'gatsby';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function AppsSection({ apps }) {
+	const { t, currentLocale } = useTranslations();
+
 	const getTags = (app) => {
 		const tags = [];
 
@@ -21,7 +24,7 @@ export default function AppsSection({ apps }) {
 			<div className="apps-section__list">
 				{apps.map((app, index) => {
 					const tags = getTags(app);
-					const linkTo = app.caseStudy ? app.internalUrl : '/contact';
+					const linkTo = app.caseStudy ? app.internalUrl : `${currentLocale === 'ro' ? '/ro' : ''}/contact`;
 
 					return (
 						<Link className="apps-section__item" key={index} to={linkTo}>
@@ -50,7 +53,7 @@ export default function AppsSection({ apps }) {
 									<p>{app.description}</p>
 								</div>
 								<span className="vm-button vm-button--black-transparent vm-button--small">
-									More Info
+									{t('common.moreInfo')}
 								</span>
 							</div>
 						</Link>

@@ -76,6 +76,7 @@
 
     &.vm-button--transparent-white {
         border: 1px solid $white;
+        color: $white;
 
         &:hover {
             background: $white;
