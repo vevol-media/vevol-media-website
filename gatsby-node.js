@@ -103,3 +103,24 @@ exports.onCreatePage = ({ page, actions }) => {
 		});
 	}
 };
+
+// Disable CSS ordering warnings from mini-css-extract-plugin
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+	// Apply to all stages, not just build-javascript
+	const config = getConfig();
+
+	// Disable CSS ordering warnings
+	config.plugins.forEach((plugin) => {
+		if (plugin.constructor.name === 'MiniCssExtractPlugin') {
+			plugin.options.ignoreOrder = true;
+		}
+	});
+
+	// Also suppress webpack warnings about CSS ordering
+	config.stats = {
+		...config.stats,
+		warningsFilter: [/Conflicting order/, /mini-css-extract-plugin/],
+	};
+
+	actions.replaceWebpackConfig(config);
+};

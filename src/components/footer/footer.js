@@ -45,16 +45,36 @@ export default function WebsiteFooter() {
 							Social
 						</Title>
 						<div className="footer-social__links">
-							<a className="mr-5" href="https://www.linkedin.com/company/vevolmedia/" target="_blank" rel="noopener noreferrer">
+							<a
+								className="mr-5"
+								href="https://www.linkedin.com/company/vevolmedia/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<FontAwesomeIcon icon={faLinkedinIn} />
 							</a>
-							<a className="mr-5" href="https://facebook.com/vevolmediaweb" target="_blank" rel="noopener noreferrer">
+							<a
+								className="mr-5"
+								href="https://facebook.com/vevolmediaweb"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<FontAwesomeIcon icon={faFacebookF} />
 							</a>
-							<a className="mr-5" href="https://www.instagram.com/vevolmedia" target="_blank" rel="noopener noreferrer">
+							<a
+								className="mr-5"
+								href="https://www.instagram.com/vevolmedia"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<FontAwesomeIcon icon={faInstagram} />
 							</a>
-							<a className="mr-5" href="https://twitter.com/vevolmedia" target="_blank" rel="noopener noreferrer">
+							<a
+								className="mr-5"
+								href="https://twitter.com/vevolmedia"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<svg
 									viewBox="0 0 256 256"
 									width="20px"
@@ -91,7 +111,7 @@ export default function WebsiteFooter() {
 							Latest
 						</Title>
 						<Link to="/blog">Read Blog</Link>
-						<a href="https://vevol-store.printify.me/products" target="_blank">
+						<a href="https://vevol-store.printify.me/products" target="_blank" rel="noopener noreferrer">
 							Visit our Store
 						</a>
 					</Column>

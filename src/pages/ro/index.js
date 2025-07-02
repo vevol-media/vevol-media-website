@@ -125,7 +125,6 @@ export default function RomanianHomepage() {
 				palletIcon={palletIcon}
 				bagIcon={bagIcon}
 				themesButtonImage={themesButtonImage}
-				externalLink
 			/>
 			<VevolSection backgroundColour={'white'} borderTop borderBottom>
 				<Container>
@@ -164,7 +163,10 @@ export default function RomanianHomepage() {
 						<GatsbyImage image={companyFormImage} alt={'Company Form Screenshot'} />
 						<div className="app-demo-container__text">
 							<GatsbyImage image={shopifyAppStoreImage} alt={'Shopify App Store'} />
-							<Link to="/ro/proiecte/aplicatii-shopify/company-form" className="vm-button vm-button--transparent-white">
+							<Link
+								to="/ro/proiecte/aplicatii-shopify/company-form"
+								className="vm-button vm-button--transparent-white"
+							>
 								Detalii
 							</Link>
 							<a

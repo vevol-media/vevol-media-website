@@ -134,7 +134,6 @@ export default function Homepage({ data }) {
 				palletIcon={palletIcon}
 				bagIcon={bagIcon}
 				themesButtonImage={themesButtonImage}
-				externalLink
 			/>
 			<HomepageServices />
 			<VevolSection>

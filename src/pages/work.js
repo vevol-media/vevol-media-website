@@ -1,6 +1,5 @@
 import Layout from '../components/layout/layout';
 import React from 'react';
-import SlimHero from '../components/slim-hero/slim-hero';
 import { Container } from 'bloomer';
 import FeaturedWork from '../components/featured-work/featured-work';
 import HeadingBlock from '../components/heading-block/heading-block';

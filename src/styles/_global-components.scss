@@ -201,3 +201,30 @@ a {
 .bg-white {
 	background-color: $white;
 }
+
+.vm-box {
+	border: 1px solid $black;
+	box-shadow: 9px 9px 0px 0px $black;
+
+	&__content {
+		padding: 20px;
+
+		p {
+			font-size: 1rem;
+		}
+	}
+
+	&__tags {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		margin-top: 1rem;
+
+		span {
+			padding: 0.25rem 0.5rem;
+			background-color: #e9ecef;
+			border-radius: 12px;
+			font-size: 0.8rem;
+		}
+	}
+}

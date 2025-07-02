@@ -27,7 +27,8 @@
 		"close": "Închide Meniul",
 		"vevolMediaLogo": "Logo Vevol Media",
 		"moreInfo": "Mai multe informații",
-		"readCaseStudy": "Vezi proiectul"
+		"readCaseStudy": "Vezi proiectul",
+		"checkLiveSite": "Vezi site-ul live"
 	},
 	"homepage": {
 		"hero": {
@@ -58,7 +59,8 @@
 			}
 		},
 		"themesButton": {
-			"alt": "Buton teme Shopify"
+			"alt": "Buton teme Shopify",
+			"text": "Vezi detalii"
 		}
 	},
 	"reviews": {

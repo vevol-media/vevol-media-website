@@ -28,8 +28,6 @@ export default function DispotradingPage({ data }) {
 	const caseStudy = app?.caseStudy;
 	const images = data.images.nodes;
 
-	console.log(images);
-
 	return (
 		<Layout>
 			<Helmet>

@@ -27,7 +27,8 @@
 		"close": "Close Menu",
 		"vevolMediaLogo": "Vevol Media Logo",
 		"moreInfo": "More Info",
-		"readCaseStudy": "Read Case Study"
+		"readCaseStudy": "View Project",
+		"checkLiveSite": "Check Live Site"
 	},
 	"homepage": {
 		"hero": {
@@ -58,7 +59,8 @@
 			}
 		},
 		"themesButton": {
-			"alt": "Shopify Themes Button"
+			"alt": "Shopify Themes Button",
+			"text": "View Details"
 		}
 	},
 	"reviews": {

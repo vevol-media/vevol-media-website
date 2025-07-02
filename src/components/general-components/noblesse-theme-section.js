@@ -6,19 +6,12 @@ import VevolSection from './vm-section';
 import ImageWithText from './image-text-simple';
 import { useTranslations } from '../../helpers/useTranslations';
 
-export default function NoblesseThemeSection({
-	noblesseImage,
-	storyIcon,
-	palletIcon,
-	bagIcon,
-	themesButtonImage,
-	externalLink,
-}) {
-	const { t } = useTranslations();
+export default function NoblesseThemeSection({ noblesseImage, storyIcon, palletIcon, bagIcon, themesButtonImage }) {
+	const { t, currentLocale } = useTranslations();
 
 	return (
 		<VevolSection backgroundColour={'grey'}>
-			<Container>
+			<Container className="noblesse-theme-section">
 				<ImageWithText
 					alignRight
 					image={<GatsbyImage image={noblesseImage} alt={'Official Shopify Theme created by Vevol Media'} />}
@@ -44,21 +37,22 @@ export default function NoblesseThemeSection({
 						},
 					]}
 				>
-					{externalLink && (
+					<div className="noblesse-theme-section__buttons">
+						<Link
+							to={currentLocale === 'ro' ? '/ro/teme/noblesse' : '/themes/noblesse'}
+							className="vm-button vm-button--black-transparent"
+						>
+							{t('noblesseTheme.themesButton.text')}
+						</Link>
 						<a
 							href="https://themes.shopify.com/themes/noblesse"
 							target="_blank"
-							className="mt-6 themes-button"
+							rel="noopener noreferrer"
+							className="themes-button"
 						>
 							<GatsbyImage image={themesButtonImage} alt={t('noblesseTheme.themesButton.alt')} />
 						</a>
-					)}
-
-					{!externalLink && (
-						<Link to="/themes/noblesse" className="mt-6 themes-button">
-							<GatsbyImage image={themesButtonImage} alt={t('noblesseTheme.themesButton.alt')} />
-						</Link>
-					)}
+					</div>
 				</ImageWithText>
 			</Container>
 		</VevolSection>

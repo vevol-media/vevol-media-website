@@ -11,7 +11,9 @@ import TagNav from '../components/general-components/tag-nav';
 
 export const data = graphql`
 	query {
-		appsImages: allFile(filter: { relativeDirectory: { eq: "apps" } }) {
+		appsImages: allFile(
+			filter: { relativeDirectory: { eq: "apps" }, extension: { in: ["jpg", "jpeg", "png", "gif", "webp"] } }
+		) {
 			nodes {
 				name
 				childImageSharp {
