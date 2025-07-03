@@ -77,7 +77,15 @@
 	},
 	"mainForm": {
 		"title": "Vorbește cu un specialist",
-		"subtitle": "Contactează-ne dacă dorești să obții un deviz pentru proiectul tău sau dacă doar vrei să zici 'salut'! Ne-ar plăcea să auzim de la tine!"
+		"subtitle": "Contactează-ne dacă dorești să obții un deviz pentru proiectul tău sau dacă doar vrei să zici 'salut'! Ne-ar plăcea să auzim de la tine!",
+		"fullNameRequired": "Numele complet este obligatoriu",
+		"businessEmailRequired": "Email-ul de business este obligatoriu",
+		"businessPhoneRequired": "Telefonul de business este obligatoriu",
+		"companyNameRequired": "Numele companiei este obligatoriu",
+		"messageRequired": "Mesajul este obligatoriu",
+		"sendMessage": "Trimite mesaj",
+		"disclaimer": "Prin trimiterea acestui formular, sunteți de acord ca Vevol Media să vă contacteze în legătură cu întrebarea dumneavoastră.",
+		"messageSent": "Mesajul a fost trimis cu succes. Vom reveni la tine în cel mai scurt timp posibil."
 	},
 	"servicePlans": {
 		"paymentPlan": "Plan de plată:",

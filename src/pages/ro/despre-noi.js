@@ -97,7 +97,7 @@ export default function PageAbout({ data }) {
 								conferințe sau meet-ups relevante ca Shopify Unite, eCommerce Expo, GPEC și multe
 								altele.
 							</p>,
-							<Link to="/contact" className="vm-button vm-button--white mt-5">
+							<Link to="/ro/contact" className="vm-button vm-button--white mt-5">
 								Contactează-ne
 							</Link>,
 						]}
@@ -125,7 +125,7 @@ export default function PageAbout({ data }) {
 								E-commerce și Shopify sunt la coadă serviciilor noastre, iar echipa noastră are extensă
 								cunoștință despre cum afacerile dumneavoastră pot
 							</p>,
-							<Link to="/contact" className="vm-button vm-button--black mt-5">
+							<Link to="/ro/contact" className="vm-button vm-button--black mt-5">
 								Contactează-ne
 							</Link>,
 						]}

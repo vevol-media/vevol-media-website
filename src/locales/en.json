@@ -77,7 +77,15 @@
 	},
 	"mainForm": {
 		"title": "Talk to a Strategist",
-		"subtitle": "Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!"
+		"subtitle": "Get in touch with us if you want to get a quote for your project or simply want to say hello! We'd love to hear from you!",
+		"fullNameRequired": "Full name is required",
+		"businessEmailRequired": "Business email is required",
+		"businessPhoneRequired": "Business phone is required",
+		"companyNameRequired": "Company name is required",
+		"messageRequired": "Message is required",
+		"sendMessage": "Send Message",
+		"disclaimer": "By submitting this form you agree for Vevol Media to contact you in regards to your query.",
+		"messageSent": "Message was successfuly sent. We'll get back to you ASAP."
 	},
 	"servicePlans": {
 		"paymentPlan": "Payment Plan:",

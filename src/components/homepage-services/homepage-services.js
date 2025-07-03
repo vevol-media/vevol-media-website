@@ -33,7 +33,10 @@ export default function HomepageServices() {
 				<Fade delay={500}>
 					<div className="has-text-centered homepage-sevices__actions">
 						<p>{t('homepageServices.cta')}</p>
-						<Link to="/services" className="vm-button vm-button--green">
+						<Link
+							to={currentLocale === 'ro' ? '/ro/servicii-shopify' : '/services'}
+							className="vm-button vm-button--green"
+						>
 							{t('homepageServices.ctaButton')}
 						</Link>
 					</div>

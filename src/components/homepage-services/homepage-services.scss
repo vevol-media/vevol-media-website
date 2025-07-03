@@ -9,10 +9,7 @@
 		display: flex;
 		gap: 40px;
 		margin-top: 50px;
-
-		@include screen-medium {
-			flex-direction: column;
-		}
+		flex-direction: column;
 	}
 }
 
@@ -24,6 +21,12 @@
 	flex: 1;
 	overflow: hidden;
 	align-items: flex-start;
+
+	.hs-block__heading {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
 
 	&--shadow {
 		box-shadow: 9px 9px 0 0 $green;
@@ -54,13 +57,11 @@
 		font-size: 40px;
 		color: $black;
 		position: relative;
-		margin-bottom: 20px;
 	}
 
 	.hs-block__icon--img {
 		height: 40px;
 		object-fit: contain;
-		margin-bottom: 20px;
 	}
 
 	> a {
