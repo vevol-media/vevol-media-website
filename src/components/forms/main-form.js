@@ -7,11 +7,13 @@ import './main-form.scss';
 import { Fade } from 'react-reveal';
 import VevolSection from '../general-components/vm-section';
 import { BgImage } from 'gbimage-bridge';
+import { useTranslations } from '../../helpers/useTranslations';
 
 export default function MainForm({ title, subtitle, standalone, backgroundImage }) {
 	const [isSending, setIsSending] = useState(false);
 	const [isSent, setIsSent] = useState(false);
 	const form = useRef();
+	const { t } = useTranslations();
 	const {
 		register,
 		handleSubmit,
@@ -52,7 +54,7 @@ export default function MainForm({ title, subtitle, standalone, backgroundImage 
 						name="fullName"
 						{...register('fullName', { required: true })}
 					/>
-					{errors.fullName && <Help isColor="warning">Full name is required</Help>}
+					{errors.fullName && <Help isColor="warning">{t('mainForm.fullNameRequired')}</Help>}
 				</Control>
 			</Field>
 			<Field>
@@ -68,7 +70,7 @@ export default function MainForm({ title, subtitle, standalone, backgroundImage 
 							message: 'invalid email address',
 						})}
 					/>
-					{errors.email && <Help isColor="warning">Business email is required</Help>}
+					{errors.email && <Help isColor="warning">{t('mainForm.businessEmailRequired')}</Help>}
 				</Control>
 			</Field>
 			<Field>
@@ -82,7 +84,7 @@ export default function MainForm({ title, subtitle, standalone, backgroundImage 
 							required: true,
 						})}
 					/>
-					{errors.phone && <Help isColor="warning">Business phone is required</Help>}
+					{errors.phone && <Help isColor="warning">{t('mainForm.businessPhoneRequired')}</Help>}
 				</Control>
 			</Field>
 			<Field>
@@ -95,7 +97,7 @@ export default function MainForm({ title, subtitle, standalone, backgroundImage 
 						{...register('company', { required: true })}
 						autoComplete="organization"
 					/>
-					{errors.company && <Help isColor="warning">Company name is required</Help>}
+					{errors.company && <Help isColor="warning">{t('mainForm.companyNameRequired')}</Help>}
 				</Control>
 			</Field>
 			<Field>
@@ -112,16 +114,14 @@ export default function MainForm({ title, subtitle, standalone, backgroundImage 
 						name="email"
 						{...register('message', { required: true })}
 					></textarea>
-					{errors.message && <Help isColor="warning">Message is required</Help>}
+					{errors.message && <Help isColor="warning">{t('mainForm.messageRequired')}</Help>}
 				</Control>
 			</Field>
-			<p className="main-contact__disclaimer is-size-6 mb-5">
-				By submitting this form you agree for Vevol Media to contact you in regards to your query.
-			</p>
+			<p className="main-contact__disclaimer is-size-6 mb-5">{t('mainForm.disclaimer')}</p>
 			<button className={`vm-button vm-button--green-alt button ${isSending && 'is-loading'}`} type="submit">
-				Send Message
+				{t('mainForm.sendMessage')}
 			</button>
-			{isSent && <Help isColor="success">Message was successfuly sent. We'll get back to you ASAP.</Help>}
+			{isSent && <Help isColor="success">{t('mainForm.messageSent')}</Help>}
 		</form>
 	);
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../header/header';
 import WebsiteFooter from '../footer/footer';
+import WebsiteFooterRO from '../footer/footerRO';
 import { Cursor } from '../cursor/cursor';
 import { useSpring, animated } from 'react-spring';
 import HubspotForm from '../forms/hubspot-form';
@@ -162,7 +163,7 @@ export default function Layout({
 						setShowCookieBar={setShowCookieBar}
 					/>
 				)}
-				<WebsiteFooter />
+				{currentLocale === 'ro' ? <WebsiteFooterRO /> : <WebsiteFooter />}
 			</div>
 		</AppProvider>
 	);

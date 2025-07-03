@@ -164,7 +164,7 @@ export default function RomanianHomepage() {
 						<div className="app-demo-container__text">
 							<GatsbyImage image={shopifyAppStoreImage} alt={'Shopify App Store'} />
 							<Link
-								to="/ro/proiecte/aplicatii-shopify/company-form"
+								to="/ro/proiecte/aplicatii-shopify/validare-cui-romania"
 								className="vm-button vm-button--transparent-white"
 							>
 								Detalii
