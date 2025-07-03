@@ -1,21 +1,22 @@
 {
 	"navigation": {
-		"services": "Servicii Shopify",
+		"services": "Servicii Complete Shopify",
 		"shopifyDevelopment": "Dezvoltare de teme",
 		"shopifyPlus": "Shopify Plus",
 		"shopifyApps": "Aplicații și Integrări",
 		"shopifyMigration": "Migrare Shopify",
 		"seoServices": "Servicii SEO",
 		"uiUxWebDesign": "Design UI/UX Web",
-		"servicePlans": "Planuri de mentenanță",
-		"servicePlansDescription": "Alegeți o plată recurentă lunară, trimestrială sau anuală și obțineți servicii de calitate cu reducere",
-		"ourWork": "Proiecte",
+		"croOptimization": "Optimizare Conversii",
+		"servicePlans": "Suport Profesional Continuu",
+		"servicePlansDescription": "Planuri flexibile pentru toate nevoile - de la startup la enterprise",
+		"ourWork": "Portofoliul Nostru",
 		"shopifyBuilds": "Magazine Shopify",
 		"shopifyBuildsDescription": "Dezvoltare personalizată de magazine Shopify, dezvoltare de teme și soluții complete de eCommerce adaptate brandului tău.",
 		"new": "Nou",
 		"shopifyAppsDescription": "Dezvoltare de aplicații Shopify personalizate, integrări și automatizări pentru a extinde funcționalitatea magazinului tău.",
 		"learn": "Invata",
-		"aboutUs": "Despre Noi",
+		"aboutUs": "Echipa de Experți Shopify",
 		"contactUs": "Contactează-ne",
 		"blog": "Blog",
 		"faq": "Întrebări Frecvente",
@@ -32,14 +33,14 @@
 	},
 	"homepage": {
 		"hero": {
-			"title": "Dezvoltare de teme și aplicații Shopify",
-			"subtitle": "Soluții personalizate de eCommerce",
-			"description": "Suntem parteneri Shopify și dezvoltatori experimentați, așa că puteți fi siguri că sunteți în mâini bune!",
+			"title": "Parteneri Certificați Shopify România",
+			"subtitle": "Soluții Complete eCommerce",
+			"description": "Suntem parteneri oficiali Shopify cu peste 5 ani de experiență în dezvoltare eCommerce, specializați în soluții enterprise pentru piața românească și internațională.",
 			"cta": "Verifică disponibilitatea"
 		}
 	},
 	"cookieBar": {
-		"info": "Folosim cookie-uri pentru a îmbunătăți experiența ta pe site-ul nostru. Unele sunt esențiale pentru funcționalitatea de bază, în timp ce altele ne ajută să îmbunătățim și să personalizăm experiența ta. Prin apăsarea 'Permite toate' consimțiți la utilizarea tuturor cookie-urilor.",
+		"info": "Folosim cookie-uri pentru a îmbunătăți experiența ta pe site-ul nostru. Unele sunt esențiale pentru funcționalitatea de bază, în timp ce altele ne ajută să înțelegem cum folosești site-ul și să personalizăm experiența ta. Prin acceptarea cookie-urilor, ne ajuți să îmbunătățim serviciile noastre.",
 		"useNecessaryCookies": "Folosește cookie-urile esențiale",
 		"allowAll": "Permite toate"
 	},
@@ -69,15 +70,15 @@
 	},
 	"homepageServices": {
 		"title": "Shopify la următorul nivel",
-		"highlightedWord": "Corect",
+		"highlightedWord": "Shopify",
 		"subtitle": "Promisiunea noastră este să oferim servicii de calitate și să respectăm standardele cele mai înalte.",
-		"cta": "Și putem face mai mult decât atât!",
+		"cta": "Soluții Complete Shopify pentru Afacerea Ta",
 		"panelCta": "Află mai multe",
 		"ctaButton": "Vezi toate serviciile"
 	},
 	"mainForm": {
-		"title": "Vorbește cu un specialist",
-		"subtitle": "Contactează-ne dacă dorești să obții un deviz pentru proiectul tău sau dacă doar vrei să zici 'salut'! Ne-ar plăcea să auzim de la tine!",
+		"title": "Vorbește cu un Specialist Shopify",
+		"subtitle": "Analizăm gratuit nevoile tale și oferim soluții personalizate. Echipa noastră de experți certificați Shopify îți va oferi consultanță personalizată și soluții adaptate obiectivelor afacerii tale.",
 		"fullNameRequired": "Numele complet este obligatoriu",
 		"businessEmailRequired": "Email-ul de business este obligatoriu",
 		"businessPhoneRequired": "Telefonul de business este obligatoriu",
@@ -91,14 +92,14 @@
 		"paymentPlan": "Plan de plată:",
 		"featurePacked": "Pachet de funcționalități - Cel mai eficient",
 		"features": "Funcționalități",
-		"viewFeaturesIndex": "Vezi indexul de funcționalități",
+		"viewFeaturesIndex": "Vezi detalii",
 		"committedHours": "Număr de ore comise pe lună:",
-		"getStarted": "Începe",
+		"getStarted": "Verifică disponibilitatea",
 		"enterprisePlanDescription": "Acest plan este dedicat direct nevoilor companiei dumneavoastră. Noi integrăm în mod complet afacerea dumneavoastră și acoperim toate cerințele tehnice.",
 		"allFeaturesAvailable": "Toate funcționalitățile sunt disponibile",
 		"reducedCosts": "Reducere de costuri",
 		"highPriority": "Prioritate ridicată",
-		"fullTime": "50+ / Timp întreg",
+		"fullTime": "100+",
 		"customPricing": "Preț personalizat",
 		"askForAvailability": "Cere disponibilitate"
 	}

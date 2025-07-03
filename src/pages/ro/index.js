@@ -111,10 +111,10 @@ export default function RomanianHomepage() {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Vevol Media - Liderul Shopify în România & Europa de Est</title>
+				<title>Partener Certificat Shopify România - Vevol Media</title>
 				<meta
 					name="description"
-					content="Agenție Shopify România. Experți Shopify Plus, migrări, dezvoltare de teme, aplicații și integrări. Organizatori Shopify MeetUp România și CEE."
+					content="Parteneri oficiali Shopify cu peste 5 ani experiență în dezvoltare eCommerce. Servicii complete: magazine, Shopify Plus, migrare, aplicații, SEO și CRO pentru piața românească."
 				/>
 			</Helmet>
 			<HomepageHero imageBottom={mainHeroImage} />
@@ -130,13 +130,13 @@ export default function RomanianHomepage() {
 				<Container>
 					<ImageWithText
 						image={<GatsbyImage image={meetupImage} alt={'Shopify Meetup 2024'} />}
-						title={'Shopify Romania'}
+						title={'Parteneri Certificați Shopify'}
 						textContent={[
 							<p className="mt-5">
 								Suntem principalul promotor Shopify în România și în regiunea Europei de Est. De la
 								primul Shopify MeetUp organizat în București (februarie 2024) până la evenimentul extins
 								de tip Central & Eastern Europe (aprilie 2025), echipa noastră a condus comunitatea
-								locală în adoptarea Shopify
+								locală în adoptarea Shopify.
 							</p>,
 							<p className="mt-5">
 								Facilităm networking de calitate, aducem experți internaționali și împărtășim cele mai
@@ -153,12 +153,17 @@ export default function RomanianHomepage() {
 			<VevolSection backgroundColour={'grey'}>
 				<Container>
 					<HeadingBlock
-						title={'Rezolvăm probleme pentru piața românească'}
+						title={'Soluții pentru piața românească'}
 						highlightedWord={'românească'}
 						subtitle={
-							'De curând am lansat o aplicație care ajută comercianții români să valideze și să colecteze CUI-ul persoanelor juridice'
+							'Dezvoltăm aplicații și soluții personalizate pentru nevoile specifice ale pieței românești'
 						}
 					/>
+					<p className="py-6">
+						De curând am lansat o aplicație care ajută comercianții români să valideze și să colecteze
+						CUI-ul persoanelor juridice. Aplicația este disponibilă în App Store-ul Shopify și este gratuită
+						pentru toți clienții noștri Shopify Plus.
+					</p>
 					<div className="app-demo-container mt-5">
 						<GatsbyImage image={companyFormImage} alt={'Company Form Screenshot'} />
 						<div className="app-demo-container__text">
@@ -195,6 +200,33 @@ export default function RomanianHomepage() {
 						alignRight
 						greenLine
 						image={<GatsbyImage image={collageImage} alt={'Vevol Media Projects Collage'} />}
+						title={'Peste 50 de proiecte realizate cu succes'}
+						textContent={[
+							<p className="mt-5">
+								Portofoliul nostru reflectă diversitatea și complexitatea proiectelor Shopify pe care
+								le-am livrat pentru clienți din România și internațional. De la magazine online simple
+								la soluții enterprise complexe, fiecare proiect demonstrează experiența și standardele
+								noastre în dezvoltarea de soluții eCommerce performante și scalabile.
+							</p>,
+							<p className="mt-5">
+								Magazinele dezvoltate de noi înregistrează în medie o creștere de 40% a ratelor de
+								conversie față de soluțiile anterioare. Implementăm optimizări care asigură timpi de
+								încărcare sub 3 secunde și scoruri Google PageSpeed de peste 90.
+							</p>,
+							<Link to="/ro/proiecte" className="vm-button vm-button--white mt-5">
+								Vezi portofoliul nostru
+							</Link>,
+						]}
+					/>
+				</Container>
+			</VevolSection>
+			<HomepageServices />
+			<VevolSection>
+				<Container>
+					<ImageWithText
+						alignRight
+						greenLine
+						image={<GatsbyImage image={collageImage} alt={'Vevol Media Projects Collage'} />}
 						title={'Succesul vostru este succesul nostru'}
 						textContent={[
 							<p className="mt-5">
@@ -202,12 +234,8 @@ export default function RomanianHomepage() {
 								noastre.
 							</p>,
 							<p className="mt-5">
-								Etică noastră este să oferim calitatea de primul loc și să respectăm credințele noastre
-								atunci când oferim serviciile noastre clienților.
-							</p>,
-							<p className="mt-5">
-								Am fost parte din multe succese și nu putem să așteptăm să ne alăturăm călătoria ta spre
-								vârful!
+								Nu ne dezicem de etica, profesionalismul și standardele înalte cu care lucrăm. Clienții
+								ne sunt parteneri, iar drumul spre succes îl pavăm împreună.
 							</p>,
 						]}
 						numbersContent={[
@@ -235,15 +263,14 @@ export default function RomanianHomepage() {
 			<VevolSection backgroundColour={'grey'} borderBottom>
 				<Container>
 					<HeadingBlock
-						title={'Lucrăm greu pentru a asigura calitatea'}
+						title={'Asigurăm calitatea în fiecare proiect'}
 						highlightedWord={'calitate'}
-						subtitle={'Și clienții noștri îl apreciază'}
+						subtitle={'Iar clienții apreciază implicarea noastră'}
 						className="mb-4em"
 					/>
 					<ReviewsSection whiteBackground romanianReviews />
 				</Container>
 			</VevolSection>
-			<HomepageServices />
 		</Layout>
 	);
 }

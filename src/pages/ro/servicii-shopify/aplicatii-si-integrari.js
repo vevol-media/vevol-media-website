@@ -41,20 +41,25 @@ export default function PageSingleService({ data }) {
 	return (
 		<Layout>
 			<SlimHero
-				heading="Dezvoltare Aplicații și Integrări Shopify"
-				subheading="Noi creăm aplicații și integrări personalizate pentru magazinul dumneavoastră Shopify, adaptate nevoilor dumneavoastră de afacere. Echipa noastră de experți ne asigură că aplicațiile și integrările noastre nu doar că funcționează, ci și că aduc valoare și performanță."
+				heading="Aplicații și Integrări Shopify"
+				subheading="Construim aplicații personalizate și integrăm sistemul tău Shopify cu toate instrumentele de care ai nevoie. Suntem puntea tehnică între afacerea ta și toate serviciile care te ajută să crești."
 			/>
 			<SidewayText lineOne={`shopify`} lineTwo={'development'} lineOneRepeat={15} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Soluții Expert de Dezvoltare Aplicații și Integrări'}
+						title={'Aplicații și Integrări care Conectează Totul'}
 						highlightedWord={'Shopify'}
 						subtitle={
-							'Cu peste patru ani ca parteneri Shopify de încredere, livrăm soluții fiabile și flexibile care stimulează creșterea afacerii. Abordarea noastră combină excelență tehnică cu gândire strategică. Noi creăm aplicații și integrări personalizate pentru magazinul dumneavoastră Shopify, adaptate nevoilor dumneavoastră de afacere. Echipa noastră de experți ne asigură că aplicațiile și integrările noastre nu doar că funcționează, ci și că aduc valoare și performanță.'
+							'Extindem funcționalitatea magazinului tău Shopify cu funcționalități care te ajută să crești'
 						}
-						className="mb-4em"
+						className="mb-2em"
 					/>
+					<p className="mb-6">
+						Ca parteneri Shopify din 2018, înțelegem că magazinul tău online nu funcționează singur.
+						Construim aplicațiile personalizate și integrăm toate sistemele care îți fac afacerea să
+						funcționeze ca o mașină bine unsă. Suntem cei care ne asigurăm că totul comunică cu succes.
+					</p>
 					<ImageWithText
 						image={
 							<GatsbyImage
@@ -63,22 +68,19 @@ export default function PageSingleService({ data }) {
 								loading="lazy"
 							/>
 						}
-						title={'Soluții Personalizate pentru Afacerile Dvs.'}
+						title={'Soluții care Se Potrivesc cu Afacerea Ta'}
 						textContent={[
 							<p className="mt-5">
-								De la dezvoltarea aplicațiilor și integrărilor personalizate la optimizarea
-								performanței, gestionăm fiecare aspect al magazinului dumneavoastră Shopify cu atenție
-								deosebită.
+								De la aplicații personalizate la integrări cu sistemele tale existente, construim
+								soluțiile tehnice care îți permit să te concentrezi pe creșterea afacerii.
 							</p>,
 							<p className="mt-5">
-								Abordarea noastră ne asigură că aplicațiile și integrările noastre nu doar că
-								funcționează, ci și că aduc valoare și performanță.
+								Lucrăm cu echipa ta de marketing, SEO și CRO pentru a ne asigura că toate modificările
+								tehnice sprijină strategiile lor și nu le împiedică.
 							</p>,
 							<p className="mt-5">
-								Noi creăm aplicații și integrări personalizate pentru magazinul dumneavoastră Shopify,
-								adaptate nevoilor dumneavoastră de afacere. Echipa noastră de experți ne asigură că
-								aplicațiile și integrările noastre nu doar că funcționează, ci și că aduc valoare și
-								performanță.
+								Construim aplicații care se integrează perfect cu Shopify și cu toate instrumentele pe
+								care le folosești deja, fără să trebuiască să schimbi nimic în modul în care lucrezi.
 							</p>,
 						]}
 						greenLine
@@ -87,10 +89,10 @@ export default function PageSingleService({ data }) {
 			</VevolSection>
 			<BottomCTA
 				bgImage={bottomBannerImage}
-				title="Să lucrăm împreună"
-				text="Contactați-ne pentru a face o consultare gratuită cu unul dintre membrii echipei noastre acum"
+				title="Să Construim Împreună"
+				text="Hai să vorbim despre cum putem conecta toate sistemele tale și să construim aplicațiile de care ai nevoie"
 				url="/ro/contact"
-				ctaText={'Cere disponibilitate'}
+				ctaText={'Verifică disponibilitatea'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>
@@ -98,51 +100,84 @@ export default function PageSingleService({ data }) {
 					<SidebarInfoText
 						sidebarContent={[
 							{
-								title: 'Dezvoltare Aplicații Personalizate',
-								text: 'Aplicații unice care reflectă identitatea dumneavoastră de brand și îmbunătățesc experiența utilizatorului',
+								title: 'Aplicații Personalizate',
+								text: 'Construim aplicații unice care reflectă brandul tău și îmbunătățesc experiența clienților',
 							},
 							{
-								title: 'Integrare Aplicații',
-								text: 'Integrare fără eșec a aplicațiilor esențiale pentru a îmbunătăți funcționalitatea magazinului',
+								title: 'Shopify Functions',
+								text: 'Dezvoltăm funcții personalizate pentru checkout care îți permit să controlezi logica de business',
+							},
+							{
+								title: 'Checkout Extensions',
+								text: 'Creează experiențe de checkout unice cu extensii personalizate care îți aparțin',
+							},
+							{
+								title: 'Thank You Page Extensions',
+								text: 'Optimizează pagina de mulțumire pentru conversii mai bune și experiențe post-cumpărare',
+							},
+							{
+								title: 'Integrări Sistem',
+								text: 'Conectăm Shopify cu toate instrumentele tale - de la ERP la marketing automation',
 							},
 							{
 								title: 'Optimizare Performanță',
-								text: 'Îmbunătățiri ale vitezei și a eficienței pentru o experiență utilizator mai bună și conversii mai ridicate',
+								text: 'Ne asigurăm că toate integrările funcționează rapid și nu încetinesc magazinul',
 							},
 							{
-								title: 'Asigurare Calitate',
-								text: 'Testări riguroase pe toate dispozitivele și browsere asigură funcționarea perfectă a magazinului dumneavoastră în toate scenariile.',
+								title: 'Testare Completă',
+								text: 'Testăm totul pe toate dispozitivele pentru a ne asigura că funcționează perfect.',
 							},
 						]}
 						mainContent={[
 							{
-								title: 'Abordare dezvoltare integrală',
-								text: 'Specializăm în crearea magazinelor Shopify care combină atractivitatea vizuală cu excelență tehnică, asigurându-ne o experiență de cumpărare fără eșec pentru clienții dumneavoastră.',
+								title: 'Abordare de Coordonare Tehnică',
+								text: 'Suntem puntea între nevoile tale de afacere și soluțiile tehnice. Lucrăm cu echipa ta pentru a înțelege exact ce ai nevoie și apoi construim soluțiile care se potrivesc perfect.',
 							},
 							{
-								text: 'Fiecare proiect începe cu o planificare și strategie detaliată, asigurându-ne că soluțiile noastre se aliniază perfect obiectivelor și cerințelor afacerii dumneavoastră.',
+								text: 'Fiecare proiect începe cu o înțelegere clară a obiectivelor tale și a modului în care toate sistemele tale trebuie să lucreze împreună.',
 							},
 							{
-								title: 'Soluții Personalizate & Integrare',
-								text: 'Dezvoltarea temelor personalizate se concentrează pe crearea de design-uri unice care reflectă identitatea dumneavoastră de brand, menținând în același timp performanța optimă.',
+								title: 'Shopify Functions - Controlul Complet al Checkout-ului',
+								text: 'Shopify Functions îți oferă controlul total asupra logicii de business în checkout. Construim funcții personalizate care îți permit să implementezi reguli de discount complexe, calcule de taxe personalizate, validări de inventar și multe altele, toate fără să afectezi performanța.',
 							},
 							{
-								text: `Integrăm cu grijă aplicațiile Shopify esențiale și alte instrumente de terță parte pentru a îmbunătăți funcționalitatea magazinului dumneavoastră fără a compromite performanța.`,
+								text: 'Aceste funcții rulează pe infrastructura Shopify, asigurându-ne că sunt rapide și fiabile. Poți implementa logica de business specifică afacerii tale fără să te îngrijorezi de scalabilitate sau securitate.',
 							},
 							{
-								title: 'Optimizare & Performanță',
-								text: 'Procesul nostru de dezvoltare include o optimizare integrală pentru viteză, SEO și experiență utilizator, ajutându-ne să obținem rezultate mai bune.',
+								title: 'Checkout Extensions - Experiențe Unice',
+								text: 'Checkout Extensions îți permit să personalizezi complet experiența de checkout. Construim extensii care se integrează perfect cu designul tău, adăugând funcționalități precum recomandări de produse, informații suplimentare despre comandă, sau integrarea cu sistemele tale de fidelitate.',
 							},
 							{
-								text: 'Implementăm principiile de design responsiv pentru a asigura că magazinul dumneavoastră funcționează fără eșec pe toate dispozitivele și dimensiunile ecranului.',
+								text: 'Aceste extensii îți aparțin complet și nu sunt afectate de actualizările temelor. Poți crea experiențe de checkout care reflectă perfect brandul tău și îți ajută clienții să finalizeze cumpărăturile.',
+							},
+							{
+								title: 'Thank You Page Extensions - Optimizare Post-Cumpărare',
+								text: 'Pagina de mulțumire este ultima șansă de a interacționa cu clienții după cumpărare. Construim extensii care optimizează această experiență - de la recomandări de produse și programe de fidelitate la integrarea cu sistemele tale de email marketing și analytics.',
+							},
+							{
+								text: 'Aceste extensii îți ajută să maximizezi valoarea fiecărei comenzi și să construiești relații mai puternice cu clienții tăi.',
+							},
+							{
+								title: 'Construire & Integrare',
+								text: 'Construim aplicații personalizate care reflectă identitatea brandului tău și se integrează perfect cu Shopify, menținând în același timp performanța optimă.',
+							},
+							{
+								text: `Integrăm cu atenție aplicațiile Shopify esențiale și alte instrumente pentru a îmbunătăți funcționalitatea magazinului tău fără să compromitem viteza sau experiența utilizatorului.`,
+							},
+							{
+								title: 'Optimizare & Viteză',
+								text: 'Procesul nostru include optimizarea pentru viteză, SEO și experiență utilizator, asigurându-ne că toate integrările îți ajută să obții rezultate mai bune.',
+							},
+							{
+								text: 'Implementăm design responsiv pentru a ne asigura că magazinul tău funcționează perfect pe toate dispozitivele și dimensiunile ecranului.',
 							},
 							{
 								title: 'Asigurare Calitate',
-								text: 'Testări riguroase pe toate dispozitivele și browsere asigură funcționarea perfectă a magazinului dumneavoastră în toate scenariile.',
+								text: 'Testăm riguros pe toate dispozitivele și browsere pentru a ne asigura că totul funcționează perfect în toate scenariile.',
 							},
 							{
 								title: 'Suport Continuu',
-								text: 'Furnizăm suport și mentenanță continuă pentru a menține magazinul dumneavoastră în funcțiune eficient, vă ajutând să vă concentrați pe creșterea afacerii dumneavoastră.',
+								text: 'Oferim suport și mentenanță continuă pentru a menține toate integrările în funcțiune eficient, astfel încât să te poți concentra pe creșterea afacerii.',
 							},
 						]}
 					/>
@@ -153,22 +188,20 @@ export default function PageSingleService({ data }) {
 					<ImageWithText
 						alignRight
 						image={<GatsbyImage image={imageTwoData} alt={'Shopify Development Promise Vevol Media'} />}
-						title={'Promisiunea noastră de dezvoltare'}
+						title={'Cum Lucrăm'}
 						greenLine
 						textContent={[
 							<p className="mt-5">
-								<strong>Calitatea primulă.</strong> Construim soluții scalabile, flexibile și
-								reutilizabile folosind cea mai performantă tehnologie și abordări.
+								<strong>Calitate înainte de toate.</strong> Construim soluții scalabile și flexibile
+								folosind tehnologii moderne și abordări testate în timp.
 							</p>,
 							<p className="mt-5">
-								<strong>Dezvoltare Future-Proof.</strong> Codul nostru este scris pentru a rezista
-								testelor timpului, reducând nevoia de reconstrucții frecvente și asigurând valoare pe
-								termen lung.
+								<strong>Cod pentru viitor.</strong> Scriem cod care rezistă testelor timpului, reducând
+								nevoia de modificări frecvente și asigurând valoare pe termen lung.
 							</p>,
 							<p className="mt-5">
-								<strong>Soluții eficiente din punct de vedere al costurilor.</strong> Abordarea noastră
-								de dezvoltare ajută la reducerea costurilor de mentenanță în curs de desfășurare,
-								oferindu-vă flexibilitatea de a face actualizări viitoare ușor.
+								<strong>Soluții eficiente.</strong> Abordarea noastră ajută la reducerea costurilor de
+								mentenanță, oferindu-ți flexibilitatea de a face actualizări viitoare ușor și rapid.
 							</p>,
 						]}
 					/>

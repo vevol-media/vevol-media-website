@@ -11,6 +11,7 @@ import ImageWithText from '../../../components/general-components/image-text-sim
 import BottomCTA from '../../../components/bottom-cta/bottom-cta';
 import SidebarInfoText from '../../../components/general-components/sidebar-info-text';
 import SplitNav from '../../../components/general-components/split-nav';
+import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -40,21 +41,32 @@ export default function PageSingleService({ data }) {
 
 	return (
 		<Layout>
+			<Helmet>
+				<title>Dezvoltare Teme Shopify Personalizate România - Partener Certificat</title>
+				<meta
+					name="description"
+					content="Dezvoltare teme Shopify personalizate în România. Design responsiv, optimizare SEO și performanță superioară pentru magazine online profesionale."
+				/>
+			</Helmet>
 			<SlimHero
-				heading="Dezvoltare Teme Personalizate Shopify"
-				subheading="Noi creăm magazine Shopify robuste și scalabile, adaptate nevoilor dumneavoastră de afacere. Echipa noastră de experți ne asigură că magazinul dumneavoastră nu este doar vizual atractiv, ci și optimizat pentru performanță și experiență utilizator."
+				heading="Dezvoltare Teme Shopify Personalizate"
+				subheading="Design Unic și Funcționalitate Avansată pentru Afacerea Ta"
 			/>
-			<SidewayText lineOne={`shopify`} lineTwo={'development'} lineOneRepeat={15} />
+			<SidewayText lineOne={`shopify`} lineTwo={'themes'} lineOneRepeat={15} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Soluții Expert de Dezvoltare Shopify'}
-						highlightedWord={'Shopify'}
-						subtitle={
-							'Cu peste patru ani ca parteneri Shopify de încredere, livrăm soluții fiabile și flexibile care stimulează creșterea afacerii. Abordarea noastră combină excelență tehnică cu gândire strategică.'
-						}
+						title={'Experiență în Dezvoltare Teme Shopify'}
+						highlightedWord={'Experiență'}
+						subtitle={'Parteneri certificați cu experiență dovedită'}
 						className="mb-4em"
 					/>
+					<p className="py-6">
+						Ca parteneri certificați Shopify cu peste 5 ani de experiență, dezvoltăm teme personalizate care
+						combină designul atractiv cu funcționalitatea avansată. Fiecare temă este optimizată pentru
+						performanță, SEO și experiența utilizatorului, adaptându-se perfect identității de brand și
+						nevoilor specifice ale pieței româneşti.
+					</p>
 					<ImageWithText
 						image={
 							<GatsbyImage
@@ -63,20 +75,21 @@ export default function PageSingleService({ data }) {
 								loading="lazy"
 							/>
 						}
-						title={'Soluții Personalizate pentru Afacerile Dvs.'}
+						title={'De Ce Să Alegi Temele Shopify'}
 						textContent={[
+							<p className="mt-5">Soluții tehnice superioare pentru rezultate excepționale</p>,
 							<p className="mt-5">
-								De la dezvoltarea temelor personalizate la optimizarea performanței, gestionăm fiecare
-								aspect al magazinului dumneavoastră Shopify cu atenție deosebită.
+								<strong>Design Responsiv și Mobile-First:</strong> Abordarea mobile-first asigură
+								funcționalitate perfectă pe toate dispozitivele, oferind experiență optimă pentru
+								utilizatorii mobili din România.
 							</p>,
 							<p className="mt-5">
-								Abordarea noastră mobil-primul ne asigură că magazinul dumneavoastră oferă o experiență
-								de cumpărare excelentă pe toate dispozitivele, ajutându-vă să atingeți mai mulți
-								clienți.
+								<strong>Optimizare SEO Integrată:</strong> Implementăm cele mai bune practici SEO direct
+								în structura temei pentru a îmbunătăți poziționarea în rezultatele de căutare Google.
 							</p>,
 							<p className="mt-5">
-								Implementăm cele mai bune practici SEO și optimizăm performanța pentru a conduce
-								traficul organic și să creștem conversia.
+								<strong>Performanță și Viteză Optimizată:</strong> Temele noastre sunt optimizate pentru
+								viteza de încărcare și performanța superioară, factori cruciali pentru conversii și SEO.
 							</p>,
 						]}
 						greenLine
@@ -96,55 +109,47 @@ export default function PageSingleService({ data }) {
 					<SidebarInfoText
 						sidebarContent={[
 							{
-								title: 'Dezvoltare Teme Personalizate',
-								text: 'Design-uri unice care reflectă identitatea dumneavoastră de brand și îmbunătățesc experiența utilizatorului',
+								title: 'Analiză și Planificare Strategică',
+								text: 'Analizăm nevoile afacerii și definim strategia de dezvoltare, asigurându-ne că soluția finală răspunde obiectivelor comerciale',
 							},
 							{
-								title: 'Design Responsiv',
-								text: 'Abordare mobil-primul care asigură funcționalitate fără eșec pe toate dispozitivele',
+								title: 'Design și Prototipare',
+								text: 'Creăm designul temei de la zero, folosind un design existent sau pe baza unei teme oficiale Shopify.',
 							},
 							{
-								title: 'Integrare Aplicații',
-								text: 'Integrare fără eșec a aplicațiilor esențiale pentru a îmbunătăți funcționalitatea magazinului',
+								title: 'Dezvoltare și Testare',
+								text: 'Implementăm tema folosind cele mai bune practici de cod, urmată de testare riguroasă pe toate dispozitivele și browserele',
 							},
 							{
-								title: 'Optimizare SEO',
-								text: 'Implementarea celor mai bune practici pentru a îmbunătăți vizibilitatea și a conduce traficul organic',
+								title: 'Cod Curat și Scalabil',
+								text: 'Scriem cod structurat și documentat, ușor de menținut și de extins pe măsură ce afacerea crește',
 							},
 							{
-								title: 'Optimizare Performanță',
-								text: 'Îmbunătățiri ale vitezei și a eficienței pentru o experiență utilizator mai bună și conversii mai ridicate',
+								title: 'Integrări Seamless',
+								text: 'Integrăm aplicațiile și serviciile de terțe părți fără a compromite performanța sau stabilitatea magazinului',
 							},
 						]}
 						mainContent={[
 							{
-								title: 'Abordare dezvoltare integrală',
-								text: 'Specializăm în crearea magazinelor Shopify care combină atractivitatea vizuală cu excelență tehnică, asigurându-ne o experiență de cumpărare fără eșec pentru clienții dumneavoastră.',
+								title: 'Procesul Nostru de Dezvoltare',
+								text: 'De la concept la implementare și optimizare',
 							},
 							{
-								text: 'Fiecare proiect începe cu o planificare și strategie detaliată, asigurându-ne că soluțiile noastre se aliniază perfect obiectivelor și cerințelor afacerii dumneavoastră.',
+								text: 'Implementăm tema folosind cele mai bune practici de cod, urmată de testare riguroasă pe toate dispozitivele și browserele. Creăm designul temei sau colaborăm cu echipa de design existentă. Urmărim să eficientizăm integrarea funcționalităților specifice fără a reinventa roata.',
 							},
 							{
-								title: 'Soluții Personalizate & Integrare',
-								text: 'Dezvoltarea temelor personalizate se concentrează pe crearea de design-uri unice care reflectă identitatea dumneavoastră de brand, menținând în același timp performanța optimă.',
+								title: 'Caracteristici Tehnice Avansate',
+								text: 'Tehnologie de vârf pentru performanță superioară',
 							},
 							{
-								text: `Integrăm cu grijă aplicațiile Shopify esențiale și alte instrumente de terță parte pentru a îmbunătăți funcționalitatea magazinului dumneavoastră fără a compromite performanța.`,
+								text: 'Scriem cod structurat și documentat, ușor de menținut și de extins pe măsură ce afacerea crește. Integrăm aplicațiile și serviciile de terțe părți fără a compromite performanța sau stabilitatea magazinului.',
 							},
 							{
-								title: 'Optimizare & Performanță',
-								text: 'Procesul nostru de dezvoltare include o optimizare integrală pentru viteză, SEO și experiență utilizator, ajutându-ne să obținem rezultate mai bune.',
+								title: 'Angajamentul Nostru',
+								text: 'Calitate garantată și suport specializat',
 							},
 							{
-								text: 'Implementăm principiile de design responsiv pentru a asigura că magazinul dumneavoastră funcționează fără eșec pe toate dispozitivele și dimensiunile ecranului.',
-							},
-							{
-								title: 'Asigurare Calitate',
-								text: 'Testări riguroase pe toate dispozitivele și browsere asigură funcționarea perfectă a magazinului dumneavoastră în toate scenariile.',
-							},
-							{
-								title: 'Suport Continuu',
-								text: 'Furnizăm suport și mentenanță continuă pentru a menține magazinul dumneavoastră în funcțiune eficient, vă ajutând să vă concentrați pe creșterea afacerii dumneavoastră.',
+								text: 'Fiecare temă vine cu garanție de calitate și suport tehnic continuu. Echipa noastră rămâne disponibilă pentru actualizări, optimizări și rezolvarea oricăror probleme tehnice care pot apărea.',
 							},
 						]}
 					/>
@@ -155,22 +160,20 @@ export default function PageSingleService({ data }) {
 					<ImageWithText
 						alignRight
 						image={<GatsbyImage image={imageTwoData} alt={'Shopify Development Promise Vevol Media'} />}
-						title={'Promisiunea noastră de dezvoltare'}
+						title={'Suport Continuu'}
 						greenLine
 						textContent={[
 							<p className="mt-5">
-								<strong>Calitatea primulă.</strong> Construim soluții scalabile, flexibile și
-								reutilizabile folosind cea mai performantă tehnologie și abordări.
+								<strong>Oferim suport tehnic și mentenanță</strong> pentru a asigura funcționarea optimă
+								a temei pe termen lung.
 							</p>,
 							<p className="mt-5">
-								<strong>Dezvoltare Future-Proof.</strong> Codul nostru este scris pentru a rezista
-								testelor timpului, reducând nevoia de reconstrucții frecvente și asigurând valoare pe
-								termen lung.
+								<strong>Actualizări regulate</strong> pentru a menține tema compatibilă cu cele mai
+								recente versiuni Shopify și standarde de securitate.
 							</p>,
 							<p className="mt-5">
-								<strong>Soluții eficiente din punct de vedere al costurilor.</strong> Abordarea noastră
-								de dezvoltare ajută la reducerea costurilor de mentenanță în curs de desfășurare,
-								oferindu-vă flexibilitatea de a face actualizări viitoare ușor.
+								<strong>Optimizări continue</strong> bazate pe feedback-ul utilizatorilor și cele mai
+								recente tendințe din industrie.
 							</p>,
 						]}
 					/>

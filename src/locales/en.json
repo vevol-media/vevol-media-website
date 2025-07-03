@@ -7,6 +7,7 @@
 		"shopifyMigration": "Shopify Migration",
 		"seoServices": "SEO Services",
 		"uiUxWebDesign": "UI/UX Web Design",
+		"croOptimization": "Conversion Optimization",
 		"servicePlans": "Service Plans",
 		"servicePlansDescription": "Choose a monthly, quaterly or yearly recurring payment and get discounted quality services",
 		"ourWork": "Our Work",
@@ -98,7 +99,7 @@
 		"allFeaturesAvailable": "All Features Available",
 		"reducedCosts": "Reduced Costs",
 		"highPriority": "High Priority",
-		"fullTime": "50+ / Full Time",
+		"fullTime": "100+ / Full Time",
 		"customPricing": "Custom Pricing",
 		"askForAvailability": "Ask for availability"
 	}

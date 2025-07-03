@@ -60,16 +60,6 @@ export default function WorkPage({ data }) {
 						subtitle={'Citește mai multe despre context, proces și rezultate'}
 					/>
 					<FeaturedWork projectsList={withCaseStudy} images={featuredImagesQuery.nodes} />
-					<p style={{ marginBottom: '2rem', fontWeight: 500 }}>
-						Construim{' '}
-						<a
-							href="/ro/proiecte/magazine-shopify"
-							style={{ color: '#00b386', textDecoration: 'underline' }}
-						>
-							magazine online
-						</a>{' '}
-						cu pasiune și suntem mândri de rezultate.
-					</p>
 				</Container>
 			</VevolSection>
 			<SidewayText lineOne={`magazine`} lineTwo={'online'} />

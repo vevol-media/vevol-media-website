@@ -118,7 +118,7 @@ export default function WebsiteFooter() {
 				</Columns>
 			</Container>
 			<Container className="footer__copyright">
-				<p>© {year} Vevol Media | All Rights Reserved | VAT No. IE3919679TH</p>
+				<p>© {year} Vevol Media Limited | All Rights Reserved | VAT No. IE3919679TH</p>
 			</Container>
 		</Footer>
 	);

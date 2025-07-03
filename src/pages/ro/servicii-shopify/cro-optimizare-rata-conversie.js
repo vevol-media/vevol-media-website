@@ -44,44 +44,43 @@ export default function PageSingleService({ data }) {
 				<title>Optimizare Ratei de Conversie - Vevol Media</title>
 				<meta
 					name="description"
-					content="Specializăm în CRO eCommerce. Vom analiza și vom genera rapoarte, vom planifica acțiuni și vom implementa sugestiile acordate."
+					content="Coordonăm strategiile CRO cu echipa ta de marketing. Implementăm tehnic sugestiile și urmărim progresul pentru rezultate măsurabile."
 				/>
 			</Helmet>
 			<SlimHero
 				heading="Optimizare Ratei de Conversie"
-				subheading="Creșteți numărul de vânzări prin ajustarea website-ului dumneavoastră pentru CRO."
+				subheading="Transformă vizitatorii în clienți prin coordonarea strategiilor CRO cu implementarea tehnică."
 			/>
 			<SidewayText lineOne={`conversion`} lineTwo={'rate'} lineTwoRepeat={30} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'CRO la centru al succesului'}
-						highlightedWord={'succes'}
+						title={'CRO coordonat pentru rezultate'}
+						highlightedWord={'rezultate'}
 						subtitle={
-							'Când website-ul dumneavoastră are un trafic ridicat, dar vânzări scăzute, CRO este primul pe lista de acțiuni.'
+							'Când ai trafic dar nu convertește, problema nu e întotdeauna marketingul. Suntem aici să implementăm tehnic strategiile CRO.'
 						}
 						className="mb-4em"
 					/>
 					<ImageWithText
 						image={<GatsbyImage image={imageOneData} alt={'CRO Vevol Media'} />}
-						title={'Analiză și Rapoarte'}
+						title={'Analiză și Coordonare'}
 						textContent={[
 							<p className="mt-5">
-								Datele nu mint. Când vine vorba de CRO, noi întotdeauna rulăm analiza inițială a
-								datelor, în scopul de a înțelege situația actuală.
+								Începem cu o analiză completă a datelor tale. Nu inventăm metrici - lucrăm cu ce ai deja
+								și identificăm unde se pierd clienții.
 							</p>,
 							<p className="mt-5">
-								Colectarea datelor poate fi făcută într-o captură sau putem ajuta să vă integrați
-								servicii de hărți de căldură. Acestea ne vor oferi o imagine mai detaliată despre cum
-								utilizatorul potential gândește și de ce nu convertește.
+								Integrăm hărți de căldură și tool-uri de analiză pentru a vedea exact cum se comportă
+								utilizatorii. Apoi traducem aceste date în acțiuni concrete.
 							</p>,
 							<p className="mt-5">
-								Rapoartele periodice vor fi generate, pe baza tipului de date colectat. Aceste rapoarte
-								vor include acțiuni și strategii de implementat pentru rate de conversie mai ridicate.
+								Generăm rapoarte clare cu priorități de implementare. Nu doar sugestii - planuri de
+								acțiune pe care le putem implementa împreună cu echipa ta.
 							</p>,
 							<p className="mt-5">
-								Toate strategiile noastre sunt aliniate cu standardele industriale cele mai recente, pe
-								baza nichului dumneavoastră, tipologiei utilizatorilor și UX/UI.
+								Strategiile sunt personalizate pentru afacerea ta, nu template-uri generice. Luăm în
+								considerare tipul de produse, publicul țintă și experiența utilizatorului.
 							</p>,
 						]}
 						greenLine
@@ -90,10 +89,10 @@ export default function PageSingleService({ data }) {
 			</VevolSection>
 			<BottomCTA
 				bgImage={bottomBannerImage}
-				title="Să lucrăm împreună"
-				text="Contactați-ne pentru a afla mai multe despre serviciile noastre de CRO"
+				title="Spune-ne despre proiectul tău"
+				text="Discută cu noi despre cum putem implementa strategiile CRO pentru magazinul tău"
 				url="/ro/contact"
-				ctaText={'Cere disponibilitate'}
+				ctaText={'Verifică disponibilitatea'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>
@@ -101,19 +100,19 @@ export default function PageSingleService({ data }) {
 					<ImageWithText
 						alignRight
 						image={<GatsbyImage image={imageTwoData} alt={'Vevol Media CRO Results'} />}
-						title={'Implementare și Rezultate'}
+						title={'Implementare și Urmărire'}
 						textContent={[
 							<p className="mt-5">
-								Toate acțiunile și strategiile din rapoartele noastre pot fi implementate imediat de
-								către echipa noastră. Unele vor necesita dezvoltare, altele pot fi luate de dvs.
+								Implementăm tehnic toate modificările necesare - de la ajustări simple în Shopify până
+								la dezvoltări personalizate. Unele le poți face tu, altele le facem noi.
 							</p>,
 							<p className="mt-5">
-								Ar trebui să vedeți rezultate de la început, în special în cazul în care elementele de
-								bază ale ratei de conversie sunt lipsite.
+								Vezi îmbunătățiri rapide, mai ales dacă elementele de bază lipsesc. Nu promitem miracole
+								- doar implementare corectă a strategiilor CRO.
 							</p>,
 							<p className="mt-5">
-								Misiunea noastră nu se termină aici. Continuăm să lucrăm cu dvs. și urmărim progresul în
-								mod constant, în scopul ajustării oricăror strategii necesare.
+								Nu te lăsăm singur după implementare. Urmărim progresul și ajustăm strategiile pe măsură
+								ce evoluează afacerea ta.
 							</p>,
 						]}
 					/>

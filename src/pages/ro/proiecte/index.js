@@ -33,23 +33,29 @@ export default function ProiectePage({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Proiecte în portofoliu - Vevol Media - Experți Shopify</title>
+				<title>Proiecte Shopify România - Portofoliu Vevol Media Magazine Online</title>
 				<meta
 					name="description"
-					content="Construim magazine online cu pasiune și suntem mândri de rezultate. Vezi proiectele noastre recente."
+					content="Descoperă proiectele noastre Shopify din România și international. Magazine online și aplicații dezvoltate de parteneri certificați cu experiență dovedită."
 				/>
 			</Helmet>
 			<SlimHero
-				heading="Vezi Proiectele Noastre"
-				subheading="Construim magazine online cu pasiune și suntem mândri de rezultate. Vezi proiectele noastre recente."
+				heading="Proiectele Noastre Shopify"
+				subheading="Portofoliu de Magazine Online și Aplicații de Succes"
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Portofoliul Nostru de Proiecte'}
-						highlightedWord={'Portofoliul'}
-						subtitle={'Descoperă cum transformăm viziunile în realitate digitală'}
+						title={'Transformăm Viziuni în Succese Digitale'}
+						highlightedWord={'Viziuni'}
+						subtitle={'Peste 50 de proiecte realizate cu rezultate măsurabile'}
 					/>
+					<p className="pt-6">
+						Portofoliul nostru reflectă diversitatea și complexitatea proiectelor Shopify pe care le-am
+						livrat pentru clienți din România și internațional. De la magazine online simple la soluții
+						enterprise complexe, fiecare proiect demonstrează experiența noastră în dezvoltarea de soluții
+						eCommerce performante și scalabile.
+					</p>
 				</Container>
 			</VevolSection>
 
@@ -57,19 +63,13 @@ export default function ProiectePage({ data }) {
 				<Container>
 					<ImageWithText
 						image={<GatsbyImage image={imageTwoData} alt={'Magazine Online Shopify'} />}
-						title={'Magazine Online și Aplicații'}
+						title={'Diversitate de Soluții pentru Toate Nevoile'}
 						textContent={[
+							<p className="mt-5">De la startup la enterprise - experiență în toate sectoarele</p>,
 							<p className="mt-5">
-								Lucrăm cu pasiune pentru a construi magazine online excepționale și aplicații Shopify
-								care transformă viziunile afacerilor în realitate digitală.
-							</p>,
-							<p className="mt-5">
-								De la magazine online personalizate la aplicații publice și private, echipa noastră de
-								experți combină creativitatea cu tehnologia pentru a livra soluții care fac diferența.
-							</p>,
-							<p className="mt-5">
-								Fiecare proiect este o oportunitate de a inova și de a crea experiențe digitale care
-								inspiră și convertesc.
+								De la magazine online B2C și platforme B2B la marketplace-uri multi-vendor și magazine
+								internaționale, acoperim întregul spectru al soluțiilor eCommerce. Fiecare proiect este
+								adaptat nevoilor specifice ale afacerii și optimizat pentru rezultate măsurabile.
 							</p>,
 						]}
 						greenLine
@@ -83,28 +83,31 @@ export default function ProiectePage({ data }) {
 						sidebarContent={[
 							{
 								title: 'Dezvoltare Teme Personalizate',
-								text: 'Design-uri unice care reflectă identitatea de brand și îmbunătățesc experiența utilizatorului',
+								text: 'Creăm designuri unice care reflectă perfect identitatea de brand și optimizează experiența utilizatorului pentru conversii maxime',
 							},
 							{
 								title: 'Optimizare Performanță',
-								text: 'Viteză și eficiență îmbunătățite pentru o experiență utilizator mai bună și conversii mai ridicate',
+								text: 'Implementăm cele mai bune practici pentru viteza de încărcare și performanța optimă pe toate dispozitivele',
 							},
 							{
-								title: 'Integrare Aplicații',
-								text: 'Integrare fără eșec a aplicațiilor esențiale pentru a îmbunătăți funcționalitatea magazinului',
+								title: 'Integrări Complexe',
+								text: 'Conectăm magazinele cu sisteme externe (ERP, CRM, WMS) pentru operațiuni integrate și automatizate',
 							},
 							{
-								title: 'SEO și CRO',
-								text: 'Implementarea celor mai bune practici pentru vizibilitate și conversii optimizate',
+								title: 'SEO și Marketing',
+								text: 'Optimizăm fiecare magazin pentru motoarele de căutare și implementăm strategii de marketing digital',
 							},
 						]}
 						mainContent={[
 							{
-								title: 'Construim Magazine Online Excepționale',
-								text: 'Abordarea noastră pentru construirea magazinelor online se bazează pe înțelegerea profundă a nevoilor afacerii și a publicului țintă. Fiecare magazin pe care îl construim este o combinație perfectă între design atractiv și funcționalitate avansată.',
+								title: 'Magazine Online Excepționale',
+								text: 'Combinația perfectă între design și funcționalitate',
 							},
 							{
-								text: 'Utilizăm cele mai recente tehnologii și cele mai bune practici din industrie pentru a asigura că magazinele noastre nu doar arată bine, ci și performează excepțional. De la optimizarea vitezei la implementarea strategiilor de conversie, fiecare aspect este gândit strategic.',
+								text: 'Creăm designuri unice care reflectă perfect identitatea de brand și optimizează experiența utilizatorului pentru conversii maxime. Implementăm cele mai bune practici pentru viteza de încărcare și performanța optimă pe toate dispozitivele.',
+							},
+							{
+								text: 'Conectăm magazinele cu sisteme externe (ERP, CRM, WMS) pentru operațiuni integrate și automatizate. Optimizăm fiecare magazin pentru motoarele de căutare și implementăm strategii de marketing digital.',
 							},
 							{
 								text: (
@@ -126,20 +129,18 @@ export default function ProiectePage({ data }) {
 					<ImageWithText
 						alignRight
 						image={<GatsbyImage image={imageOneData} alt={'Shopify Apps Development'} />}
-						title={'Aplicații și Integrări Shopify'}
+						title={'Aplicații Shopify Inovatoare'}
 						textContent={[
+							<p className="mt-5">Soluții tehnice pentru automatizarea și extinderea funcționalității</p>,
 							<p className="mt-5">
-								Dezvoltăm aplicații Shopify publice și private, precum și integrări personalizate care
-								extind funcționalitatea magazinelor și automatizează procesele de afaceri.
+								Dezvoltăm aplicații scalabile pentru distribuție prin Shopify App Store, respectând
+								toate standardele de calitate. Creăm soluții personalizate pentru nevoi specifice ale
+								afacerii, integrate perfect cu operațiunile existente.
 							</p>,
 							<p className="mt-5">
-								De la aplicații simple de gestionare a stocului la soluții complexe de integrare cu
-								sisteme ERP, echipa noastră de dezvoltatori creează soluții tehnice robuste și
-								scalabile.
-							</p>,
-							<p className="mt-5">
-								Utilizăm Gadget.dev pentru aplicații complexe, asigurându-ne că livrăm soluții de
-								calitate superioară în timp record.
+								Conectăm magazinele cu sistemele de management al resurselor întreprinderii pentru
+								sincronizarea datelor. Automatizăm gestionarea stocurilor cu sincronizare în timp real
+								între canale multiple.
 							</p>,
 						]}
 						greenLine
@@ -153,39 +154,31 @@ export default function ProiectePage({ data }) {
 						sidebarContent={[
 							{
 								title: 'Aplicații Publice',
-								text: 'Aplicații scalabile pentru distribuție prin Shopify App Store',
+								text: 'Dezvoltăm aplicații scalabile pentru distribuție prin Shopify App Store, respectând toate standardele de calitate',
 							},
 							{
 								title: 'Aplicații Private',
-								text: 'Soluții personalizate pentru nevoi specifice ale magazinului',
+								text: 'Soluții personalizate pentru nevoi specifice ale afacerii, integrate perfect cu operațiunile existente',
 							},
 							{
 								title: 'Integrări ERP',
-								text: 'Conectare fără probleme cu sistemele de gestionare a resurselor întreprinderii',
+								text: 'Conectăm magazinele cu sistemele de management al resurselor întreprinderii pentru sincronizarea datelor',
 							},
 							{
-								title: 'Sincronizare Stoc',
-								text: 'Soluții automate pentru gestionarea inventarului în timp real',
-							},
-							{
-								title: 'Checkout Extensions',
-								text: 'Extensii personalizate pentru experiențe de checkout avansate',
-							},
-							{
-								title: 'Shopify Functions',
-								text: 'Funcții personalizate pentru extinderea funcționalității platformei',
+								title: 'Soluții de Inventar',
+								text: 'Automatizăm gestionarea stocurilor cu sincronizare în timp real între canale multiple',
 							},
 						]}
 						mainContent={[
 							{
-								title: 'Experiență și Abordare Avansată',
-								text: 'Cu ani de experiență în dezvoltarea aplicațiilor Shopify, echipa noastră înțelege complexitățile platformei și știe cum să creeze soluții care nu doar funcționează, ci și cresc cu afacerea.',
+								title: 'Ce am construit până acum',
+								text: 'Am dezvoltat peste 10 aplicații private pentru clienții noștri, cu funcționalități specifice nevoilor lor: dezvoltare B2B, integrări cu ERP-uri, sincronizare de stocuri sau feed-uri de produse pentru marketplace-uri.',
 							},
 							{
-								text: 'Utilizăm Gadget.dev pentru aplicații complexe, o platformă care ne permite să dezvoltăm rapid aplicații robuste cu arhitectură scalabilă. Această abordare ne permite să livrăm soluții de calitate superioară în timp record, fără să compromitem performanța sau securitatea.',
+								text: 'Avem experiență cu cele mai noi API-uri de la Shopify și putem extinde funcționalitățile de bază ale magazinului.',
 							},
 							{
-								text: 'De la integrarea cu sisteme ERP la sincronizarea stocului în timp real, de la extensii de checkout personalizate la funcții Shopify avansate, acoperim întregul spectru al dezvoltării de aplicații pentru platforma Shopify.',
+								text: 'Lucrăm cu magazine Shopify Plus pentru extinderea funcționalității în paginile de Checkout sau în contul clientului. De asemenea, lucrăm cu xConnector la modulul de livrare în locker.',
 							},
 							{
 								text: (

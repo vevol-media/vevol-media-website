@@ -11,7 +11,6 @@ import ImageWithText from '../../../components/general-components/image-text-sim
 import BottomCTA from '../../../components/bottom-cta/bottom-cta';
 import SidebarInfoText from '../../../components/general-components/sidebar-info-text';
 import SplitNav from '../../../components/general-components/split-nav';
-import ImagesMiniBanner from '../../../components/images-mini-banner/images-mini-banner';
 import { Helmet } from 'react-helmet';
 
 export const data = graphql`
@@ -26,14 +25,6 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, width: 1000, quality: 100)
 			}
 		}
-		partnersImages: allFile(filter: { relativeDirectory: { eq: "platforms" } }) {
-			nodes {
-				name
-				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, height: 60, quality: 100)
-				}
-			}
-		}
 		bottomBannerImageQuery: file(name: { eq: "bottom-banner" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 125 }, quality: 100)
@@ -43,7 +34,7 @@ export const data = graphql`
 `;
 
 export default function PageSingleService({ data }) {
-	const { imageOneQuery, imageTwoQuery, bottomBannerImageQuery, partnersImages } = data;
+	const { imageOneQuery, imageTwoQuery, bottomBannerImageQuery } = data;
 	const imageOneData = getImage(imageOneQuery);
 	const imageTwoData = getImage(imageTwoQuery);
 	const bottomBannerImage = getImage(bottomBannerImageQuery);
@@ -51,42 +42,43 @@ export default function PageSingleService({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Migrare Shopify - Vevol Media</title>
+				<title>Migrare Magazin Online la Shopify - Partener Shopify România | Vevol Media</title>
 				<meta
 					name="description"
-					content="Vom ajuta și vă vom ghida să vă mutați de la orice platformă la Shopify. Transferă produse, clienți, comenzi fără griji cu ajutorul experților noștri."
+					content="Servicii de migrare Shopify în România. Coordonăm întreaga migrare de la WooCommerce, Magento sau alte platforme la Shopify, gestionând comunicarea cu toți furnizorii de servicii."
 				/>
 			</Helmet>
 			<SlimHero
-				heading="Migrare Shopify"
-				subheading="Echipa noastră de parteneri Shopify experți și de încredere este dedicată să vă ajute să migrați la Shopify în mod smooth și eficient."
+				heading="Migrare Magazin Online la Shopify"
+				subheading="Suntem partenerul Shopify care coordonează întreaga migrare, gestionând comunicarea cu echipa dumneavoastră de SEO, marketing și alte servicii specializate."
 			/>
 			<SidewayText lineOne={`shopify`} lineTwo={'migration'} lineOneRepeat={15} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Faceți-vă mutarea ușoară și fără griji'}
-						highlightedWord={'Fără griji'}
+						title={'Coordonăm migrarea, voi vă concentrați pe afacere'}
+						highlightedWord={'Coordonăm'}
 						subtitle={
-							'Echipa noastră de parteneri Shopify experți și de încredere este dedicată să vă ajute să migrați la Shopify în mod smooth și eficient.'
+							'Ca parteneri Shopify în România, gestionăm partea tehnică a migrării în timp ce coordonăm cu echipa dumneavoastră de specialiști pentru un proces fluid și eficient.'
 						}
 						className="mb-4em"
 					/>
 					<ImageWithText
-						image={<GatsbyImage image={imageOneData} alt={'Migrate to Shopify with Vevol Media'} />}
-						title={'Înțelegem nevoile dumneavoastră'}
+						image={<GatsbyImage image={imageOneData} alt={'Coordonare migrare Shopify cu Vevol Media'} />}
+						title={'Vorbim atât limba tehnică, cât și cea de business'}
 						textContent={[
 							<p className="mt-5">
-								Indiferent ce este obiectivul dumneavoastră pentru afacerea dumneavoastră, suntem aici
-								ca să vă ajutăm să atingem acel obiectiv.
+								Înțelegem că migrarea unui magazin online implică mai multe echipe - SEO, marketing,
+								contabilitate, ERP. Suntem puntea de legătură care asigură că toate acestea funcționează
+								împreună.
 							</p>,
 							<p className="mt-5">
-								Ca parteneri Shopify, știm că abordarea strategică necesară pentru a migra sau a
-								re-platforma la Shopify.
+								Ca parteneri Shopify, nu înlocuim specialiștii dumneavoastră - coordonăm cu ei.
+								Gestionăm comunicarea tehnică în timp ce ei se concentrează pe expertiza lor.
 							</p>,
 							<p className="mt-5">
-								Fie că vă mutați de la WooCommerce, Magento sau orice altă platformă, avem expertiza
-								necesară pentru a vă ajuta să faceți schimbarea cu un minimum de griji.
+								Fie că migrați de la WooCommerce, Magento, VTEX sau orice altă platformă, asigurăm că
+								toate integrările și comunicarea între sisteme funcționează perfect.
 							</p>,
 						]}
 					/>
@@ -94,72 +86,70 @@ export default function PageSingleService({ data }) {
 			</VevolSection>
 			<BottomCTA
 				bgImage={bottomBannerImage}
-				title="Să lucrăm împreună"
-				text="Contactați-ne pentru a afla mai multe despre serviciile noastre de migrare Shopify"
+				title="Să coordonăm migrarea împreună"
+				text="Contactați-ne pentru a discuta cum putem coordona migrarea cu echipa dumneavoastră de specialiști"
 				url="/ro/contact"
-				ctaText={'Cere disponibilitate'}
+				ctaText={'Cere consultație'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<SidebarInfoText
 						sidebarContentIsList
-						sidebarContentTitle={'Servicii de Migrare'}
+						sidebarContentTitle={'Coordonare Tehnică Migrare'}
 						sidebarContent={[
 							{
-								text: 'Analiză și Urmărire Date',
+								text: 'Analiză și Planificare Migrare',
 							},
 							{
-								text: 'Design Magazin',
+								text: 'Coordonare cu Echipa SEO',
 							},
 							{
-								text: 'SEO & Optimizare URL',
+								text: 'Integrare Sisteme Existente',
 							},
 							{
-								text: 'Integrare cu Aplicații, Unelte și Servicii de Terți',
+								text: 'Gestionare Comunicare între Furnizori',
 							},
 							{
-								text: 'Configurare Canal de Vânzări',
+								text: 'Configurare și Testare',
 							},
 							{
-								text: '& Multe altele',
+								text: 'Suport Post-Migrare',
 							},
 						]}
 						mainContent={[
 							{
-								title: 'Servicii de Migrare Shopify Ușoare și Fluide',
-								text: 'Mutați-vă magazinul online pe o nouă platformă poate fi intimidant, dar noi suntem aici pentru a vă asigura că migrarea se desfășoară fără griji.',
+								title: 'Coordonare Completă a Procesului de Migrare',
+								text: 'Migrarea unui magazin online nu este doar o problemă tehnică - este o coordonare complexă între multiple echipe și sisteme. Suntem aici să gestionăm această coordonare.',
 							},
 							{
-								text: 'Suntem experți în migrare, repackaging și redesenarea platformei dumneavoastră Shopify. Scopul nostru nu este doar să vă ajutăm să migrați ușor, ci și să vă asigurăm că magazinul dumneavoastră Shopify nou este optimizat cu precizie, obținând cele mai bune rezultate posibile pentru afacerea dumneavoastră.',
+								text: 'Procesul nostru începe cu înțelegerea ecosistemului dumneavoastră de furnizori de servicii. Coordonăm cu echipa de SEO pentru păstrarea rankingurilor, cu echipa de marketing pentru continuitatea campaniilor, și cu echipa de contabilitate pentru integrările ERP necesare.',
 							},
 							{
-								text: 'Știm că succesul în eCommerce necesită multă muncă și devotament, așa că lasă-ne să gestionăm lucrurile tehnice, astfel încât să puteți concentra-vă pe ce contează - creșterea afaceții dumneavoastră.',
+								text: 'Nu doar că migrăm datele - asigurăm că toate integrările funcționează, că comunicarea între sisteme este fluidă, și că echipa dumneavoastră poate continua să lucreze fără întreruperi. Vă permitem să vă concentrați pe creșterea afacerii în timp ce gestionăm complexitatea tehnică.',
 							},
 						]}
 					/>
 				</Container>
 			</VevolSection>
-			<ImagesMiniBanner images={partnersImages.nodes} />
-			<VevolSection backgroundColour={'white'}>
+			<VevolSection backgroundColour={'grey'} borderTop>
 				<Container>
 					<ImageWithText
 						alignRight
-						image={<GatsbyImage image={imageTwoData} alt={'De ce Shopify?'} />}
-						title={'De ce Shopify?'}
+						image={<GatsbyImage image={imageTwoData} alt={'De ce Shopify pentru coordonare?'} />}
+						title={'De ce Shopify pentru coordonare?'}
 						greenLine
 						textContent={[
 							<p className="mt-5">
-								Ca parteneri Shopify, credem că Shopify este platforma optimă pentru magazinul
-								dumneavoastră online. Shopify este încărcat cu aplicații și funcții incredibile pentru a
-								vă duce afacerea la următorul nivel, iar scopul nostru este să ajungem acolo cu
-								dumneavoastră.
+								Shopify oferă ecosistemul cel mai robust pentru coordonarea între multiple servicii și
+								integrări. Ca parteneri Shopify, avem acces la API-uri și unelte care ne permit să
+								coordonăm eficient între toate sistemele dumneavoastră de business.
 							</p>,
 							<p className="mt-5">
-								Metodele noastre concentrate pe creștere ne asigură că afacerea dumneavoastră va primi
-								atenția și îngrijirea pe care o merită pentru a se deosebi în comparație cu restul. Pe
-								măsură ce Shopify continuă să evolueze, așa facem și noi, asigurându-ne că clienții
-								noștri oferă servicii de ultimă oră clienților lor.
+								Platforma Shopify este construită pentru a funcționa cu ecosistemul larg de furnizori de
+								servicii. Fie că aveți nevoie de integrare cu sisteme de contabilitate românești,
+								gateway-uri de plată locale, sau servicii de marketing internaționale, Shopify oferă
+								flexibilitatea necesară pentru coordonarea eficientă a tuturor acestor servicii.
 							</p>,
 						]}
 					/>

@@ -11,6 +11,7 @@ import ImageWithText from '../../../components/general-components/image-text-sim
 import BottomCTA from '../../../components/bottom-cta/bottom-cta';
 import SidebarInfoText from '../../../components/general-components/sidebar-info-text';
 import SplitNav from '../../../components/general-components/split-nav';
+import { Helmet } from 'react-helmet';
 
 export const data = graphql`
 	query {
@@ -40,44 +41,52 @@ export default function PageSingleService({ data }) {
 
 	return (
 		<Layout>
+			<Helmet>
+				<title>Shopify Plus România - Coordonare Enterprise eCommerce | Vevol Media</title>
+				<meta
+					name="description"
+					content="Coordonăm implementarea Shopify Plus pentru companii enterprise în România. Gestionăm comunicarea cu toți furnizorii de servicii pentru soluții scalabile și personalizate."
+				/>
+			</Helmet>
 			<SlimHero
-				heading="Dezvoltare Enterprise-Level Shopify Plus"
-				subheading="Vă ridicați afacerea dumneavoastră de comerț electronic cu soluțiile noastre avansate de Shopify Plus. Vom exploata toate capacitățile platformei pentru a livra magazine online scalabile, performante pentru clienți de nivel enterprise."
+				heading="Shopify Plus România"
+				subheading="Coordonăm implementarea enterprise pentru companii în creștere rapidă"
 			/>
 			<SidewayText lineOne={`shopify`} lineTwo={'plus'} lineOneRepeat={15} lineTwoRepeat={25} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Excelență în Comerț Electronic de Nivel Enterprise'}
-						highlightedWord={'Enterprise'}
+						title={'Coordonăm implementarea enterprise'}
+						highlightedWord={'Coordonăm'}
 						subtitle={
-							'Ca parteneri Shopify Plus experimentați, înțelegem provocările și oportunitățile unice ale scalării unei afaceri de comerț electronic de nivel enterprise. Soluțiile noastre sunt construite pentru performanță, scalabilitate și creștere.'
+							'Gestionăm comunicarea cu toți furnizorii de servicii pentru soluții Shopify Plus scalabile'
 						}
 						className="mb-4em"
 					/>
+					<p className="py-6">
+						Ca parteneri Shopify Plus, coordonăm implementarea soluțiilor enterprise pentru companii românești și internaționale. Gestionăm comunicarea cu echipele de ERP, CRM, marketing și alte servicii specializate pentru a asigura o implementare fluidă și eficientă.
+					</p>
 					<ImageWithText
 						image={
 							<GatsbyImage
 								image={imageOneData}
-								alt={'Shopify Plus Development - Vevol Media'}
+								alt={'Coordonare Shopify Plus - Vevol Media'}
 								loading="lazy"
 							/>
 						}
-						title={'Soluții Avansate pentru Afaceri în Creștere'}
+						title={'Coordonăm ecosistemul enterprise'}
 						textContent={[
 							<p className="mt-5">
-								Serviciile noastre de dezvoltare Shopify Plus merg mai departe decât funcționalitatea
-								standard a comerțului electronic, oferind funcționalități avansate și de nivel
-								enterprise care dirijează creșterea afacerii.
+								Implementarea Shopify Plus implică coordonarea cu multiple echipe și sisteme
 							</p>,
 							<p className="mt-5">
-								De la experiențe de checkout personalizate la expansiune internațională, exploatăm
-								capacitățile îmbunătățite ale Shopify Plus pentru a crea soluții care se pot scală cu
-								afacerile dumneavoastră.
+								<strong>Coordonare cu Echipele ERP:</strong> Gestionăm comunicarea cu furnizorii de sisteme ERP pentru integrări complexe, asigurându-ne că toate datele fluctuează corect între sisteme.
 							</p>,
 							<p className="mt-5">
-								Fiecare implementare este testată și optimizată pentru performanță, asigurându-se că
-								magazinul dumneavoastră poate gestiona traficul de volum ridicat și tranzacțiile fluent.
+								<strong>Integrare cu Serviciile de Marketing:</strong> Coordonăm cu echipele de marketing pentru configurarea campaniilor, tracking-ului și automatizărilor în Shopify Plus.
+							</p>,
+							<p className="mt-5">
+								<strong>Gestionarea Furnizorilor de Servicii:</strong> Asigurăm că toate integrările cu sisteme de plată, logistică și contabilitate funcționează perfect împreună.
 							</p>,
 						]}
 						greenLine
@@ -86,10 +95,10 @@ export default function PageSingleService({ data }) {
 			</VevolSection>
 			<BottomCTA
 				bgImage={bottomBannerImage}
-				title="Să lucrăm împreună"
-				text="Contactați-ne pentru a afla mai multe despre serviciile noastre de dezvoltare Shopify Plus"
+				title="Să coordonăm implementarea împreună"
+				text="Contactați-ne pentru a discuta cum putem coordona implementarea Shopify Plus cu echipa dumneavoastră"
 				url="/ro/contact"
-				ctaText={'Cere disponibilitate'}
+				ctaText={'Cere discuție'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>
@@ -97,63 +106,46 @@ export default function PageSingleService({ data }) {
 					<SidebarInfoText
 						sidebarContent={[
 							{
-								title: 'Personalizare Avansată',
-								text: 'Funcționalitate și design personalizate pentru a răspunde cerințelor complexe ale afacerii de nivel enterprise',
+								title: 'Coordonare Implementare',
+								text: 'Gestionăm comunicarea cu toți furnizorii de servicii pentru o implementare fluidă Shopify Plus',
 							},
 							{
-								title: 'Extensibilitate Checkout',
-								text: 'Experiențe de checkout personalizate cu promovări personalizate și reduceri automate',
+								title: 'Integrări Enterprise',
+								text: 'Coordonăm conectarea cu sisteme ERP, CRM, WMS și alte soluții enterprise pentru operațiuni integrate',
 							},
 							{
-								title: 'Integrare API',
-								text: 'Integrare fără griji cu sisteme ERP, CRM și PIM pentru operațiuni eficiente',
+								title: 'Soluții B2B Coordonate',
+								text: 'Gestionăm implementarea funcționalităților B2B în coordonare cu echipa de vânzări și serviciile de contabilitate',
 							},
 							{
-								title: 'Internationalizare',
-								text: 'Configurare multi-magazin cu conținut localizat, monede și soluții de plată',
-							},
-							{
-								title: 'Funcționalitate B2B',
-								text: 'Canale dedicate de vânzare cu prețuri personalizate și produse exclusive',
+								title: 'Expansiune Internațională',
+								text: 'Coordonăm configurarea multi-magazin cu echipele de marketing internațional și serviciile de localizare',
 							},
 						]}
 						mainContent={[
 							{
-								title: 'Soluții de Nivel Enterprise',
-								text: 'Specializăm în crearea de magazine Shopify Plus sofisticate care gestionează cerințele complexe ale afacerii, menținând performanța și experiența utilizatorului la nivelul cel mai înalt.',
+								title: 'Coordonare Completă Enterprise',
+								text: 'Gestionăm complexitatea implementării pentru voi',
 							},
 							{
-								text: `Echipa noastră exploatează funcționalitățile avansate ale Shopify Plus pentru a crea soluții personalizate care se pot scală cu afacerile dumneavoastră, de la fluxuri automate la comerț multi-canal.`,
+								text: 'Implementarea Shopify Plus implică coordonarea cu multiple echipe și sisteme. Suntem puntea de legătură care asigură că toate integrările funcționează împreună, de la sistemele ERP până la serviciile de marketing și contabilitate.',
 							},
 							{
-								title: 'Funcționalități Avansate și Integrare',
-								text: 'Implementăm funcționalități sofisticate care includ Shopify Flow pentru automatizarea proceselor de afaceri, Shopify Functions pentru reguli de preț personalizate sau Shopify Markets pentru expansiune internațională.',
+								title: 'Procesul Nostru de Coordonare',
+								text: 'De la analiză la lansare și optimizare continuă',
 							},
 							{
-								text: 'Expertiza noastră în integrare asigură faptul că magazinul dumneavoastră funcționează fără griji cu sisteme enterprise, menținând coerența datelor în toate operațiunile afacerii.',
+								text: 'Începem prin a înțelege ecosistemul dumneavoastră de furnizori de servicii și definim planul de coordonare. Implementăm soluția Shopify Plus în coordonare cu toate echipele relevante, asigurându-ne că fiecare integrare este testată și optimizată.',
 							},
 							{
-								title: 'Experiență de Checkout',
-								text: 'Creatăm experiențe de checkout personalizate care îmbunătățesc procesul de cumpărare, inclusiv promovări personalizate, reduceri automate, reguli personalizate și multe altele.',
+								text: 'Gestionăm comunicarea între toate sistemele și echipele pentru o lansare fără probleme.',
 							},
 							{
-								title: 'Integrări de Terți',
-								text: 'Exploatăm Shopify Plus pentru a integra fără griji cu sisteme ERP, CRM și PIM de terți.',
+								title: 'Suport Continuu de Coordonare',
+								text: 'Echipă dedicată pentru gestionarea relațiilor cu furnizorii',
 							},
 							{
-								title: 'Soluții de Comerț Global',
-								text: 'Ajutăm afacerile să se extindă global cu suport pentru mai multe monede, conținut localizat și portale de plată internaționale.',
-							},
-							{
-								text: 'Soluțiile noastre B2B permit operațiuni de vânzare cu amănuntul cu prețuri personalizate, cataloage exclusive și procese de comandă streamline.',
-							},
-							{
-								title: 'Performanță și Securitate',
-								text: 'Asigurăm că magazinul dumneavoastră menține performanța de vârf chiar în evenimente de trafic ridicat, cu măsuri de securitate de nivel enterprise și hosting fiabil.',
-							},
-							{
-								title: 'Suport Continuu',
-								text: 'Echipa noastră oferă suport dedicat și întreținere pentru a menține magazinul dumneavoastră Shopify Plus în funcțiune optim, cu răspunsuri rapide pentru probleme critice.',
+								text: 'Oferim suport continuu pentru coordonarea cu toți furnizorii de servicii. Echipa noastră rămâne punctul central de contact pentru orice probleme de integrare, optimizări sau dezvoltări noi pe măsură ce afacerea evoluează.',
 							},
 						]}
 					/>
@@ -164,22 +156,19 @@ export default function PageSingleService({ data }) {
 					<ImageWithText
 						alignRight
 						image={
-							<GatsbyImage image={imageTwoData} alt={'Shopify Plus Development Promise Vevol Media'} />
+							<GatsbyImage image={imageTwoData} alt={'Coordonare Enterprise Shopify Plus'} />
 						}
-						title={'Excelență în Comerț Electronic de Nivel Enterprise'}
+						title={'Suport Continuu de Coordonare'}
 						greenLine
 						textContent={[
 							<p className="mt-5">
-								<strong>Capacități Avansate.</strong> Exploatăm întreaga putere a Shopify Plus cu
-								experiențe de checkout personalizate, fluxuri automate și integrații enterprise.
+								<strong>Gestionare comunicare</strong> cu toți furnizorii de servicii pentru probleme critice și optimizări.
 							</p>,
 							<p className="mt-5">
-								<strong>Soluții Scalabile.</strong> Construiți pentru creștere cu arhitectură care
-								gestionează trafic de volum ridicat și tranzacții, menținând performanța de vârf.
+								<strong>Coordonare proactivă</strong> pentru a preveni problemele de integrare înainte să afecteze operațiunile.
 							</p>,
 							<p className="mt-5">
-								<strong>Extindere Globală.</strong> Extindeți afacerea dumneavoastră global cu
-								configurări multi-magazin, conținut localizat și soluții de plată internaționale.
+								<strong>Echipă dedicată</strong> pentru gestionarea relațiilor cu toți furnizorii și optimizarea continuă a integrărilor.
 							</p>,
 						]}
 					/>

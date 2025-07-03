@@ -28,6 +28,7 @@
 				p {
 					font-weight: bold;
 					font-size: 1.3em;
+					filter: contrast(0);
 				}
 
 				span {
@@ -44,6 +45,10 @@
 				.portfolio-item__actions {
 					background: rgba($white, 0.95);
 					top: 0;
+
+					p {
+						filter: contrast(1);
+					}
 				}
 			}
 		}

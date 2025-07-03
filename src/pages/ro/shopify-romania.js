@@ -63,7 +63,7 @@ export default function ShopifyRomaniaPage({ data }) {
 
 			<SlimHero
 				heading="Vevol Media - Principalul Promotor Shopify în România"
-				subheading="Construim comunitatea eCommerce românească prin meetup-uri, conexiuni și expertiză Shopify"
+				subheading="Construim comunitatea eCommerce românească prin meetup-uri, conexiuni și experiența noastră în Shopify"
 				backgroundWhite
 			/>
 

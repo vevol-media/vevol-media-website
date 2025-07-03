@@ -25,15 +25,15 @@ export default function ContactPage({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Vevol Media - Contactează-ne</title>
+				<title>Contact Vevol Media România - Parteneri Shopify Certificați</title>
 				<meta
 					name="description"
-					content="Contactează-ne dacă dorești să obții un deviz pentru proiectul tău sau dacă doar vrei să zici 'salut'! Ne-ar plăcea să auzim de la tine!"
+					content="Contactează echipa Vevol Media pentru servicii Shopify în România. Consultație gratuită pentru proiectul tău eCommerce cu parteneri certificați."
 				/>
 			</Helmet>
 			<SlimHero
-				heading="Vorbește cu noi!"
-				subheading="Spune-ne cum putem ajuta și vom reveni la tine în cel mai scurt timp posibil."
+				heading="Contactează Echipa Vevol Media"
+				subheading="Consultație Gratuită pentru Proiectul Tău Shopify"
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
@@ -42,38 +42,48 @@ export default function ContactPage({ data }) {
 						greenLine
 						alignRight
 						image={<GatsbyImage image={contactImageData} alt={'Vevol Media Team'} />}
-						title={'Vorbește cu noi'}
+						title={'Să Discutăm Despre Proiectul Tău'}
 						textContent={[
+							<p className="mt-6">Echipa noastră este gata să te ajute</p>,
+							<p className="mt-5">
+								Suntem aici pentru a răspunde la toate întrebările tale despre serviciile Shopify și
+								pentru a discuta cum putem contribui la succesul afacerii tale online. Indiferent dacă
+								ai nevoie de o consultație rapidă sau de o analiză detaliată a nevoilor, echipa noastră
+								de experți este pregătită să te ajute.
+							</p>,
 							<p className="mt-6">
-								<strong>Co-founder: </strong>
-								<span>Dan Nistor</span>
+								<strong>Dan Nistor - Co-founder și CEO</strong>
 							</p>,
 							<p className="mt-5">
-								<strong>Phone Number: </strong>
+								<strong>Telefon: </strong>
 								<a href="tel:+353892052402">+353 89 205 2402</a>
 							</p>,
 							<p className="mt-5">
-								<strong>Email Address: </strong>
+								<strong>Email: </strong>
 								<a href="mailto:hello@vevolmedia.com">hello@vevolmedia.com</a>
 							</p>,
-							<p className="mt-6">
-								<strong>Vevol Media Limited </strong>este o companie înființată în Republica Irlanda.
-							</p>,
-							<p className="mt-2">Registration No: 705441</p>,
-							<p className="mt-2">VAT No: IE3919679TH</p>,
 							<p className="mt-5">
-								<strong>Birou Corporativ:</strong> Kildare Town, Co. Kildare, Irlanda.
+								<strong>Specializare: </strong>Consultanță strategică și soluții enterprise
 							</p>,
-							<p className="mt-2">
-								<strong>Birou Înregistrat:</strong> Ground Floor, 71 Lower Baggot Street, Dublin, D02
-								P593, Irlanda.
+							<p className="mt-6">
+								<strong>Contact România:</strong>
 							</p>,
+							<p className="mt-2">Disponibilitate: Întâlniri în persoană în România</p>,
+							<p className="mt-2">Acoperire: București, Cluj-Napoca, Iași, Timișoara</p>,
+							<p className="mt-2">Servicii: Consultații locale și suport în limba română</p>,
 						]}
 					/>
 					<p>
-						Aici la Vevol Media, credem că comunicarea este esențială. Dacă ai orice întrebări, comentarii
-						sau nelămuriri, nu ezita să ne contactezi, iar echipa noastră prietenoasă vă va reveni în cel
-						mai scurt timp posibil.
+						<strong>Vevol Media Limited</strong> - Companie înregistrată în Republica Irlanda
+					</p>
+					<p className="mt-2">Număr înregistrare: 705441</p>
+					<p className="mt-2">Cod TVA: IE3919679TH</p>
+					<p className="mt-5">
+						<strong>Birou Corporativ:</strong> Kildare Town, Co. Kildare, Irlanda
+					</p>
+					<p className="mt-2">
+						<strong>Birou Înregistrat:</strong> Ground Floor, 71 Lower Baggot Street, Dublin, D02 P593,
+						Irlanda
 					</p>
 				</Container>
 			</VevolSection>

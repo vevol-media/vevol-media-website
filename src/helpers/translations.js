@@ -31,6 +31,7 @@ const routeMapping = {
 	'/apps/aqurate': '/ro/proiecte/aplicatii-shopify/aqurate',
 	'/apps/dispotrading': '/ro/proiecte/aplicatii-shopify/dispotrading',
 	'/apps/company-form-romania': '/ro/proiecte/aplicatii-shopify/validare-cui-romania',
+	'/themes/noblesse': '/ro/teme/noblesse',
 };
 
 // Romanian routes that don't have English equivalents (redirect to English homepage)
@@ -64,6 +65,8 @@ const romanianToEnglishMapping = {
 	// Main pages
 	'/ro/despre-noi': '/about',
 	'/ro/contact': '/contact',
+	'/ro/teme/noblesse': '/themes/noblesse',
+	'/ro/servicii-shopify/digitalizare': '/',
 };
 
 export const t = (key, locale = 'en') => {
@@ -76,6 +79,7 @@ export const t = (key, locale = 'en') => {
 		} else {
 			// Fallback to English if translation not found
 			value = locales.en;
+
 			for (const fallbackKey of keys) {
 				if (value && value[fallbackKey] !== undefined) {
 					value = value[fallbackKey];
@@ -114,6 +118,7 @@ export const switchLocale = (newLocale) => {
 			} else {
 				// Check if Romanian version exists
 				const romanianPath = routeMapping[currentPath];
+
 				if (romanianPath) {
 					newPath = romanianPath;
 				} else {
@@ -130,6 +135,7 @@ export const switchLocale = (newLocale) => {
 				} else {
 					// Check if English version exists
 					const englishPath = romanianToEnglishMapping[currentPath];
+
 					if (englishPath) {
 						newPath = englishPath;
 					} else {

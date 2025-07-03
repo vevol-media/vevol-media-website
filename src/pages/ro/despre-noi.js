@@ -43,32 +43,29 @@ export default function PageAbout({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Vevol Media - Despre noi</title>
+				<title>Partener Certificat Shopify România - Echipa Vevol Media</title>
 				<meta
 					name="description"
-					content="Vevol Media este o companie de dezvoltare web și e-commerce care oferă servicii de dezvoltare web, design, SEO și CRO pentru clienți din România și din întreaga lume."
+					content="Descoperă echipa de experți Shopify din România cu peste 5 ani experiență în dezvoltare eCommerce, parteneri oficiali Shopify pentru soluții enterprise."
 				/>
 			</Helmet>
 			<SlimHero
 				heading="Despre Vevol Media"
-				subheading="Suntem o echipă de profesioniști în domeniul dezvoltării web și e-commerce, dedicați să oferim servicii de calitate și să ne asigurăm că clienții noștri au succes."
+				subheading="Parteneri Certificați Shopify cu Experiență Românească"
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'O Echipă de Superstar-uri'}
-						highlightedWord={'Echipă'}
-						subtitle={
-							'Niciun proiect nu este prea mare sau complex pentru noi aici la Vevol Media. Noi credem că orice este posibil!'
-						}
+						title={'Experți Shopify în România'}
+						highlightedWord={'Experți'}
+						subtitle={'Transformăm viziunile în magazine online de succes'}
 					/>
 					<Fade bottom>
 						<p className="py-6">
-							Echipa noastră este mereu gata să dea 100% pentru proiectul tău. O facem cu orgoliul și
-							valoarea succesului dumneavoastră la fel de mult ca și valoarea propriei noastre. Fie că
-							este vorba despre dezvoltare, design, strategii sau afaceri în general, toată lumea este
-							investită în toate proiectele pe care le luăm. Deci, hai să lucrăm împreună și să probăm că
-							nu sunt doar cuvinte.
+							Suntem o echipă de profesioniști în dezvoltarea eCommerce și parteneri oficiali Shopify,
+							specializați în soluții enterprise pentru piața românească și internațională. Cu peste 5 ani
+							de experiență, am ajutat zeci de companii să își transforme viziunile în magazine online
+							performante.
 						</p>
 					</Fade>
 					<TeamMembers teamMembers={allContentfulTeamMembers.nodes} />
@@ -78,24 +75,14 @@ export default function PageAbout({ data }) {
 				<Container>
 					<ImageWithText
 						image={<GatsbyImage image={brasovImage} alt={'Vevol Media team'} />}
-						title={'Un Fundal Mic'}
+						title={'O Echipă de Specialiști Shopify'}
 						textContent={[
+							<p className="mt-5">Experiență combinată pentru rezultate extraordinare</p>,
 							<p className="mt-5">
-								Vevol Media a fost înființată în 2018 și inițial a oferit servicii de configurare a
-								magazinelor Shopify. Pe măsură ce am crescut, serviciile s-au extins la dezvoltarea de
-								teme personalizate, SEO, CRO și design bespoke.
-							</p>,
-							<p className="mt-5">
-								Avem o abordare de muncă la distanță; prin urmare, oferim serviciile noastre
-								internațional. Echipa noastră se întâmpină în mod regulat în persoană pentru a lucra și
-								avea rău împreună. Noi împărtășim obiective comune și ne străduim să le realizăm ca
-								grup.
-							</p>,
-							<p className="mt-5">
-								Noi putem de asemenea facilita întâlniri cu clienții noștri în persoană cu co-fondatori
-								noștri sau manageri în Irlanda, Regatul Unit sau România. Veți găsi și pe noi la
-								conferințe sau meet-ups relevante ca Shopify Unite, eCommerce Expo, GPEC și multe
-								altele.
+								Echipa noastră reunește specialiști în dezvoltare Shopify, consultanți eCommerce,
+								experți SEO și designeri UX/UI. Fiecare membru aduce experiență valoroasă pentru a
+								asigura succesul proiectelor noastre. Suntem mândri să lucrăm cu parteneri din Statele
+								Unite, Canada, România, Irlanda și Marea Britanie.
 							</p>,
 							<Link to="/ro/contact" className="vm-button vm-button--white mt-5">
 								Contactează-ne
@@ -108,28 +95,47 @@ export default function PageAbout({ data }) {
 				<Container>
 					<ImageWithText
 						image={<GatsbyImage image={locationImage} alt={'Vevol Media locations'} />}
-						title={'Bazat în Europa'}
+						title={'Background și Experiență'}
 						alignRight
 						textContent={[
+							<p className="mt-5">De la startup la partener Shopify de încredere</p>,
 							<p className="mt-5">
-								Vevol Media este o companie irlandeză și completă la distanță, cu membrii noștri care
-								lucră independent de locațiile lor proprii. Astfel, puteți întâlni mereu pe noi în
-								persoană în Irlanda, Regatul Unit sau România.
+								Vevol Media a fost înființată în 2018 și a evoluat rapid de la servicii de configurare
+								Shopify la dezvoltarea de soluții enterprise complete. Serviciile noastre s-au extins
+								pentru a include dezvoltarea de teme personalizate, optimizare SEO, CRO și consultanță
+								strategică pentru afaceri de toate dimensiunile.
 							</p>,
 							<p className="mt-5">
-								Misiunea noastră este să ajutăm afacerile să crească prin utilizarea abilităților și
-								expertizei noastre în design web și dezvoltare, motor de căutare și optimizare a ratei
-								de conversie.
-							</p>,
-							<p className="mt-5">
-								E-commerce și Shopify sunt la coadă serviciilor noastre, iar echipa noastră are extensă
-								cunoștință despre cum afacerile dumneavoastră pot
+								Deși avem o abordare de muncă la distanță, facilitând servicii internaționale, echipa
+								noastră se întâlnește regulat pentru a colabora direct pe proiecte. Oferim consultanță
+								față în față cu co-fondatorii noștri în România, Irlanda și Marea Britanie, participând
+								activ la conferințe precum Shopify Unite, eCommerce Expo și GPEC.
 							</p>,
 							<Link to="/ro/contact" className="vm-button vm-button--black mt-5">
 								Contactează-ne
 							</Link>,
 						]}
 					/>
+				</Container>
+			</VevolSection>
+			<VevolSection backgroundColour={'grey'} borderTop>
+				<Container>
+					<HeadingBlock
+						title={'Misiunea Noastră'}
+						highlightedWord={'Misiunea'}
+						subtitle={
+							'Creșterea afacerilor prin strategii complete și soluții eficiente pentru piața românească și internațională'
+						}
+					/>
+					<Fade bottom>
+						<p className="py-6">
+							Misiunea noastră este să ajutăm companiile româneşti și internaționale să crească prin
+							utilizarea experienței noastre în design web, dezvoltare Shopify, optimizare SEO și
+							strategii de conversie. eCommerce și Shopify sunt fundamentul serviciilor noastre, iar
+							echipa noastră posedă cunoștințe extinse despre modul în care afacerile pot prospera în
+							mediul digital.
+						</p>
+					</Fade>
 				</Container>
 			</VevolSection>
 		</Layout>

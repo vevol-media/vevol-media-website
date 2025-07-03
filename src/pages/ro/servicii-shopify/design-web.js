@@ -41,42 +41,43 @@ export default function PageSingleService({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Design Web UI/UX - Vevol Media</title>
+				<title>Design Web UI/UX - Coordonare Design eCommerce | Vevol Media</title>
 				<meta
 					name="description"
-					content="Design web UI/UX pentru website-ul dumneavoastră. Conversie ridicată și generare de leaduri sunt la coadă de design-ul nostru."
+					content="Coordonăm procesul de design web UI/UX pentru magazine online. Gestionăm comunicarea între designeri, dezvoltatori și echipa de marketing pentru rezultate optimale."
 				/>
 			</Helmet>
 			<SlimHero
 				heading="Design Web UI/UX"
-				subheading="Transformă website-ul dumneavoastră într-unul minunat cu o nouă privire și sentiment."
+				subheading="Coordonăm procesul de design pentru a transforma viziunea în realitate digitală"
 			/>
 			<SidewayText lineOne={`web`} lineTwo={'design'} lineOneRepeat={30} lineTwoRepeat={15} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Focusat pe Web'}
-						highlightedWord={'Web'}
+						title={'Coordonăm procesul de design'}
+						highlightedWord={'Coordonăm'}
 						subtitle={
-							'Website-uri eCommerce sau brochure, atunci când vine vorba de design, trebuie să se deosebească și să convertească.'
+							'Gestionăm comunicarea între designeri, dezvoltatori și echipa de marketing pentru rezultate care convertează'
 						}
 						className="mb-4em"
 					/>
 					<ImageWithText
-						image={<GatsbyImage image={imageOneData} alt={'Web Design Vevol Media'} />}
-						title={'Concepție Idei'}
+						image={<GatsbyImage image={imageOneData} alt={'Coordonare Design Web - Vevol Media'} />}
+						title={'Coordonăm viziunea cu implementarea'}
 						textContent={[
 							<p className="mt-5">
-								Începem procesul nostru de design prin a învăța despre identitatea dumneavoastră de
-								brand, valorile dumneavoastră și clienții dumneavoastră. and your customers.
+								Începem prin a înțelege identitatea brandului, valorile și clienții, apoi coordonăm 
+								între echipa de design și echipa de dezvoltare pentru a transforma viziunea în realitate.
 							</p>,
 							<p className="mt-5">
-								Folosim tehnici și abordări moderne pentru a ne asigura că toate părțile implicate în
-								proces sunt mulțumite de rezultate: de la proprietar la utilizator.
+								Gestionăm comunicarea între toate părțile implicate - de la proprietar la designer, 
+								de la dezvoltator la utilizator final. Asigurăm că fiecare persoană înțelege și 
+								contribuie la obiectivul comun.
 							</p>,
 							<p className="mt-5">
-								Ne place să gândim în afara cutiei și design-urile noastre corespund viziunii noastre.
-								Ele sunt captivante, noi și pe punct și convertează.
+								Coordonăm cu echipa de marketing pentru a ne asigura că designul nu doar arată bine, 
+								ci și convertează. Gestionăm feedback-ul și reviziile pentru a ajunge la rezultatul optim.
 							</p>,
 						]}
 						greenLine
@@ -85,30 +86,31 @@ export default function PageSingleService({ data }) {
 			</VevolSection>
 			<BottomCTA
 				bgImage={bottomBannerImage}
-				title="Să lucrăm împreună"
-				text="Contactați-ne pentru a afla mai multe despre serviciile noastre de dezvoltare bespoke"
+				title="Să coordonăm designul împreună"
+				text="Contactați-ne pentru a discuta cum putem coordona procesul de design cu echipa dumneavoastră"
 				url="/ro/contact"
-				ctaText={'Cere disponibilitate'}
+				ctaText={'Cere discuție'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<ImageWithText
 						alignRight
-						image={<GatsbyImage image={imageTwoData} alt={'UI/UX Design Package'} />}
-						title={'Totul într-un pachet'}
+						image={<GatsbyImage image={imageTwoData} alt={'Coordonare Proces Design'} />}
+						title={'Coordonăm întregul proces'}
 						textContent={[
 							<p className="mt-5">
-								Nu trebuie să vă faceți griji despre nimic. Vom crea design-uri mobile, wireframes,
-								mockups și procesul va fi transparent.
+								Gestionăm comunicarea între toate echipele implicate - designeri, dezvoltatori, 
+								marketing și voi. Asigurăm că fiecare persoană știe ce trebuie să facă și când.
 							</p>,
 							<p className="mt-5">
-								Există o infinitate de revizii pe care le puteți solicita. Nu ne oprim până când
-								design-ul corespunde așteptărilor.
+								Coordonăm reviziile și feedback-ul între toate părțile implicate. Nu ne oprim 
+								până când designul corespunde așteptărilor tuturor și este gata pentru implementare.
 							</p>,
 							<p className="mt-5">
-								Rezultatele vor fi accesibile și disponibile pentru previzualizare, partajare,
-								descărcare și chiar editare.
+								Asigurăm că toate materialele de design sunt organizate, accesibile și gata 
+								pentru dezvoltatori. Gestionăm versiunile și asigurăm că toată lumea lucrează 
+								cu fișierele corecte.
 							</p>,
 						]}
 					/>

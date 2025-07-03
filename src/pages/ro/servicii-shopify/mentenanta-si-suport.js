@@ -23,36 +23,40 @@ export default function Page() {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Mentenanță și Suport - Vevol Media</title>
+				<title>Mentenanță Shopify România - Suport Tehnic și Servicii Administrare</title>
 				<meta
 					name="description"
-					content="Reduceți costurile de mentenanță sau dezvoltare prin plata unei taxe lunare, trimestriale sau anuale. Alegeți unul dintre pachetele noastre de inovație și construim viitorul împreună."
+					content="Servicii de mentenanță și suport pentru Shopify în România. Planuri flexibile, suport tehnic prioritar și dezvoltare continuă pentru magazinul online."
 				/>
 			</Helmet>
 			<SlimHero
-				heading="Mentenanță și Suport"
-				subheading="Reduceți costurile de mentenanță sau dezvoltare prin plata unei taxe lunare, trimestriale sau anuale."
+				heading="Mentenanță și Suport Shopify"
+				subheading="Servicii Profesionale pentru Funcționarea Optimă a Magazinului"
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Obțineți Servicii Expert Regulare'}
-						highlightedWord={'Expert'}
+						title={'De Ce Este Esențială Mentenanța Regulată'}
+						highlightedWord={'Esențială'}
 						className="mb-4em"
-						subtitle={
-							'Permiteți afacerii dumneavoastră să crească mai rapid și mai mare cu pachetele noastre de servicii îmbunătățite.'
-						}
+						subtitle={'Investiție în stabilitate, securitate și performanță'}
 					/>
+					<p className="py-6">
+						Mentenanța regulată a magazinului Shopify este crucială pentru asigurarea funcționării optime,
+						securității datelor și experiența utilizatorilor. Serviciile noastre de mentenanță previn
+						problemele înainte să afecteze afacerea și asigură că magazinul rămâne actualizat cu cele mai
+						recente funcționalități și standarde de securitate.
+					</p>
 					<ServicePlans scrollToFeatures={scrollToFeatures} />
 				</Container>
 			</VevolSection>
 			<VevolSection backgroundColour={'grey'}>
 				<Container>
 					<HeadingBlock
-						title={'Index Funcționalități'}
-						highlightedWord={'Funcționalități'}
+						title={'Procesul de Mentenanță'}
+						highlightedWord={'Procesul'}
 						className="mb-4em"
-						subtitle={'Află mai multe despre fiecare funcționalitate inclusă în pachetele noastre'}
+						subtitle={'De la startup la enterprise - soluții personalizate'}
 					/>
 					<FeaturesIndex featuresIndexRef={featuresIndexRef} featuresIndex={featuresIndex.ro} />
 				</Container>

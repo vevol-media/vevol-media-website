@@ -29,23 +29,26 @@ export default function ServicesPage({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Servicii Focusate pe eCommerce - Dezvoltare și Creștere - Vevol Media</title>
+				<title>Servicii Shopify România - Partener Certificat Dezvoltare eCommerce</title>
 				<meta
 					name="description"
-					content="Augmentează veniturile online cu serviciile noastre eficiente. Companie irlandeză B2B. Contactează-ne cu specialiștii noștri!"
+					content="Servicii complete Shopify în România: dezvoltare magazine, Shopify Plus, migrare, aplicații, SEO și CRO. Partener oficiali pentru soluții enterprise."
 				/>
 			</Helmet>
 			<SlimHero
-				heading="Ce putem face pentru tine"
-				subheading="Lăsați-ne să vă ajutăm să vă ridicați brandul la noi înălțimi cu varietatea de servicii eCommerce de ultimă oră. De la Dezvoltare Bespoke și Shopify până la Servicii SEO și Design UX/UI - Vevol Media este destinul dacă doriți să vă ridicați la următorul nivel."
+				heading="Servicii Shopify România"
+				subheading="Parteneri Certificați pentru Soluții eCommerce Complete"
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Ne place codul frumos'}
-						highlightedWord={'Cod'}
-						subtitle={'Curat, scalabil, flexibil și reutilizabil. Asta este modul nostru de a scrie cod.'}
+						title={'Ce oferim companiilor din România'}
+						highlightedWord={'companiilor'}
+						subtitle={'Soluții eCommerce de la startup la enterprise'}
 					/>
+					<p className="py-6">
+						Oferim servicii complete Shopify adaptate pieței românești: de la dezvoltarea de magazine online personalizate la implementarea soluțiilor enterprise Shopify Plus. Echipa noastră de experți certificați asigură că magazinul dvs. este optimizat pentru performanță, SEO și conversii în contextul specific al pieței românești.
+					</p>
 					<ServicesList
 						imageData={servicesIcons.nodes}
 						services={services.ro.dev}
@@ -55,17 +58,20 @@ export default function ServicesPage({ data }) {
 					/>
 				</Container>
 			</VevolSection>
-			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
+			<SidewayText lineOne={`shopify`} lineTwo={'expertise'} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Vorbim eCommerce'}
-						highlightedWord={'eCommerce'}
+						title={'Expertise Tehnică Avansată'}
+						highlightedWord={'Tehnică'}
 						subtitle={
-							'Lăsați-ne să vă ajutăm să vă ridicați brandul la următorul nivel. De la frumos la minunat!'
+							'Cod curat, scalabil și performant'
 						}
 						alignRight
 					/>
+					<p className="py-6">
+						Scriem cod curat, scalabil și reutilizabil pentru toate proiectele Shopify. Abordarea noastră tehnică combină cele mai bune practici din industrie cu soluții personalizate pentru fiecare client, asigurând că magazinele sunt pregătite pentru creștere pe termen lung.
+					</p>
 					<ServicesList
 						imageData={servicesIcons.nodes}
 						services={services.ro.ecommerce}

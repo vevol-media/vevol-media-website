@@ -80,6 +80,18 @@ export default function Header({ background, isStatic, isTransparent }) {
 								{t('navigation.uiUxWebDesign')}
 							</Link>
 							<Link
+								to={
+									currentLocale === 'ro'
+										? '/ro/servicii-shopify/cro-optimizare-rata-conversie'
+										: '/services/cro-optimization'
+								}
+							>
+								{t('navigation.croOptimization')}
+							</Link>
+							{currentLocale === 'ro' && (
+								<Link to="/ro/servicii-shopify/digitalizare">Digitalizare IMM</Link>
+							)}
+							<Link
 								className="navigation__service-plans"
 								to={
 									currentLocale === 'ro'

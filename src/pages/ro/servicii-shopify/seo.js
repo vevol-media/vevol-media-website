@@ -45,37 +45,35 @@ export default function PageSingleService({ data }) {
 				<title>Servicii SEO eCommerce - Vevol Media</title>
 				<meta
 					name="description"
-					content="Vom oferi servicii SEO profesionale cu rezultate vizibile în primele 3 luni. ✔️ Irlanda, companie B2B. ☝ Contactați-ne cu experții noștri!"
+					content="Coordonăm strategiile SEO cu echipa ta tehnică pentru rezultate durabile. Partener Shopify din Irlanda, specializat în optimizare eCommerce."
 				/>
 			</Helmet>
 			<SlimHero
-				heading="Servicii SEO eCommerce"
-				subheading="Vă duceți afacerea la următorul nivel cu ajutorul experților noștri de optimizare a motorului de căutare. Audit-uri, rapoarte, strategii și, cel mai important, rezultate sunt ceea ce oferim."
+				heading="Coordonare SEO eCommerce"
+				subheading="Lucrăm cu echipa ta de SEO pentru a implementa strategiile tehnice care contează. Nu înlocuim specialiștii tăi - îi ajutăm să funcționeze mai bine împreună."
 			/>
 			<SidewayText lineOne={`ecommerce`} lineTwo={'seo'} lineTwoRepeat={30} />
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<HeadingBlock
-						title={'Ajungeți la înălțimi noi'}
-						highlightedWord={'Înălțimi'}
+						title={'Să construim împreună strategia ta'}
+						highlightedWord={'împreună'}
 						subtitle={
-							'Website-ul dumneavoastră are potențial nelimitat. Să lucrăm împreună și să vă ajutați să creșteți în continuare.'
+							'Website-ul tău are potențial nelimitat. Să lucrăm cu echipa ta de SEO pentru a transforma strategiile în implementări tehnice care funcționează.'
 						}
 						className="mb-4em"
 					/>
 					<ImageWithText
-						image={<GatsbyImage image={imageOneData} alt={'SEO Services Vevol Media'} />}
-						title={'Analiză În Profunditate a Niche-ului și Raport de Performanță'}
+						image={<GatsbyImage image={imageOneData} alt={'SEO Coordination Services Vevol Media'} />}
+						title={'Analiză și Coordonare SEO Strategică'}
 						textContent={[
 							<p className="mt-5">
-								Performăm o analiză competitivă a website-ului dumneavoastră împotriva celor mai
-								relevanți concurenți din niche-ul dumneavoastră.
+								Analizăm împreună cu echipa ta de SEO performanța site-ului și identificăm
+								oportunitățile tehnice de îmbunătățire.
 							</p>,
 							<p className="mt-5">
-								Creatăm rapoarte care includ cum site-ul dumneavoastră performă în funcție de o serie de
-								metrice SEO, cum ar fi autoritatea domeniului, link-urile de intrare, clasamentul
-								cheilor de căutare, traficul organic lunar, viteza site-ului, partajarea socială și
-								multe altele.
+								Creăm rapoarte clare care traduc strategiile SEO în acțiuni tehnice concrete - de la
+								optimizarea structurii site-ului până la implementarea celor mai recente cerințe Google.
 							</p>,
 						]}
 					/>
@@ -83,74 +81,74 @@ export default function PageSingleService({ data }) {
 			</VevolSection>
 			<BottomCTA
 				bgImage={bottomBannerImage}
-				title="Să lucrăm împreună"
-				text="Contactați-ne pentru a afla mai multe despre serviciile noastre de SEO"
+				title="Să coordonăm următorul proiect"
+				text="Contactează-ne pentru a vedea cum putem lucra cu echipa ta de SEO"
 				url="/ro/contact"
-				ctaText={'Cere disponibilitate'}
+				ctaText={'Verifică disponibilitatea'}
 				gradientColour="black"
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>
 					<SidebarInfoText
-						sidebarContentTitle="Serviciile noastre SEO Include:"
+						sidebarContentTitle="Cum coordonăm SEO-ul tău:"
 						sidebarContentIsList
 						sidebarContent={[
 							{
-								text: 'Căutare Chei de Căutare SEO',
+								text: 'Implementare tehnică strategii SEO',
 							},
 							{
-								text: 'Analiză Competitivă',
+								text: 'Coordonare cu echipa ta de marketing',
 							},
 							{
-								text: 'Audit și Planificare SEO',
+								text: 'Audit și optimizare tehnică',
 							},
 							{
-								text: 'SEO On-Page și Off-Page',
+								text: 'Integrare SEO on-page și off-page',
 							},
 							{
-								text: 'SEO Tehnical',
+								text: 'Optimizare tehnică avansată',
 							},
 							{
-								text: 'Campanii de Construire de Link-uri',
+								text: 'Implementare link building',
 							},
 							{
-								text: 'Servicii SEO Local',
+								text: 'SEO local și geolocalizare',
 							},
 							{
-								text: 'SEO eCommerce',
+								text: 'Optimizare eCommerce specifică',
 							},
 							{
-								text: 'Gestionare Conținut',
+								text: 'Coordonare conținut cu copywriterii',
 							},
 							{
-								text: 'Planificare și Creare Conținut',
+								text: 'Planificare și implementare conținut',
 							},
 							{
-								text: 'Marketing Motor de Căutare (SEM)',
+								text: 'Integrare campanii SEM',
 							},
 						]}
 						mainContent={[
 							{
-								title: 'De ce ar trebui să investiți în servicii SEO?',
-								text: 'Avem o gamă largă de tehnici SEO efective pentru a vă ajuta să dirijați traficul organic și să vă îmbunătățiți clasamentul site-ului dumneavoastră.',
+								title: 'De ce ai nevoie de coordonare tehnică pentru SEO?',
+								text: 'Cea mai bună strategie SEO nu ajută dacă nu este implementată corect. Lucrăm cu echipa ta pentru a transforma planurile în acțiuni tehnice care funcționează.',
 							},
 							{
-								text: 'Un website optimizat oferă o experiență de utilizator fantastică și dirijează mai mult trafic, ceea ce înseamnă că mai mulți oameni descoperă produsele sau serviciile dumneavoastră fără costuri suplimentare.',
+								text: 'Un site optimizat tehnic oferă o experiență mai bună utilizatorilor și ajută Google să înțeleagă mai bine conținutul tău. Rezultatul? Mai mult trafic organic fără costuri suplimentare.',
 							},
 							{
-								text: 'Dacă combinați eforturile dumneavoastră de SEO cu strategii excelente de marketing de conținut, veți crește și autoritatea dumneavoastră și veți câștiga încrederea potențialilor clienți în faza de cercetare.',
+								text: 'Când coordonăm SEO-ul cu strategiile de marketing de conținut, construim autoritatea brandului tău și câștigăm încrederea clienților în faza de cercetare.',
 							},
 							{
-								text: 'Ceea ce contează cel mai mult în SEO este descoperirea, comunicarea și construirea relațiilor puternice cu publicul targe. ',
+								text: 'Secretul SEO-ului de succes este comunicarea clară între strategie și implementare. Noi ne asigurăm că nimic nu se pierde pe drum.',
 							},
 							{
-								text: 'Așa că lasă-ne să ajutăm să comunicăm cu clienții dumneavoastră de mâine și să dovedim Google cât de valoroasă este conținutul dumneavoastră pentru publicul targe. ',
+								text: 'Să ajutăm echipa ta să comunice mai eficient cu clienții de mâine și să demonstreze Google cât de valoroasă este afacerea ta pentru publicul tău.',
 							},
 							{
-								text: 'Vrei să îmbunătățiți optimizarea motorului de căutare, strategia dumneavoastră de conținut sau să găseșteți cheile de căutare pe care publicul targe le caută? ',
+								text: 'Vrei să îmbunătățești coordonarea între strategia SEO și implementarea tehnică?',
 							},
 							{
-								text: 'Contactați-ne astăzi!',
+								text: 'Să vorbim!',
 							},
 						]}
 					/>
@@ -161,21 +159,21 @@ export default function PageSingleService({ data }) {
 					<ImageWithText
 						alignRight
 						greenLine
-						image={<GatsbyImage image={imageTwoData} alt={'Technical SEO Audit'} />}
-						title={'Technical SEO'}
+						image={<GatsbyImage image={imageTwoData} alt={'Technical SEO Implementation'} />}
+						title={'Implementare Tehnică SEO'}
 						textContent={[
 							<p className="mt-5">
-								Optimizarea organică depinde nu numai de conținut, ci și de modul în care conținutul
-								este dispus pe website-ul dumneavoastră. Un website rapid, responsiv și bine construit
-								vă va ajuta să creșteți mai rapid.
+								SEO-ul organic depinde nu doar de conținut, ci și de modul în care site-ul tău este
+								construit. Un site rapid, responsiv și bine structurat ajută strategiile tale de SEO să
+								funcționeze mai bine.
 							</p>,
 							<p className="mt-5">
-								Ne menținem la curent cu ultimele cerințe ale Google în ceea ce privește partea tehnică
-								a SEO și experții noștri au cunoștințe extensive în implementarea acestora.
+								Ne menținem la curent cu ultimele cerințe Google și implementăm soluțiile tehnice care
+								ajută echipa ta de SEO să obțină rezultate mai bune.
 							</p>,
 							<p className="mt-5">
-								Date structurate, viteză site, indexare, accesibilitate și canonicitate sunt doar câteva
-								dintre zonele în care vă putem ajuta. Contactați-ne astăzi!
+								Date structurate, viteză site, indexare, accesibilitate și canonicitate sunt zonele în
+								care transformăm strategiile SEO în implementări tehnice. Să vorbim!
 							</p>,
 						]}
 					/>

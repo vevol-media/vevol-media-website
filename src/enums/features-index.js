@@ -55,56 +55,56 @@ const featuresIndex = {
 	],
 	ro: [
 		{
-			title: 'Mentenanță și Suport',
-			info: `Reduceți costurile de mentenanță sau dezvoltare prin plata unei taxe lunare, trimestriale sau anuale. Alegeți unul dintre pachetele noastre de inovație și construim viitorul împreună.`,
+			title: 'Proactivitate',
+			info: `Serviciu pro-activ de întreținere care asigură securitatea, stabilitatea și performanța magazinului Shopify. Reduceți costurile de mentenanță prin pachete lunare, trimestriale sau anuale și beneficiați de monitorizare 24/7, actualizări critice, backup-uri automate și rapoarte detaliate de performanță.`,
 		},
 		{
 			title: 'Mentenanță și Suport',
-			info: `Construim componente flexibile, reutilizabile și scalabile pentru website-ul dumneavoastră. Scriem cod curat și ușor de citit și integram cu componente existente. Putem construi pe baza design-urilor furnizate sau putem solicita designerului nostru să furnizeze mockups.`,
+			info: `Dezvoltăm componente modulare, reutilizabile și scalabile pentru website-ul dumneavoastră, folosind cod curat, documentat și ușor de întreținut. Integram cu arhitectura existentă sau livrăm designuri noi realizate de echipa noastră UX/UI, asigurând coerență vizuală și tehnică în întregul ecosistem.`,
 		},
 		{
 			title: 'Corectarea Bug-urilor',
-			info: `Toate website-urile ar trebui să fie fără bug-uri. Noi promitem să găsim și să corectăm orice blocante, mici sau mari. Vom furniza rapoarte și putem lucra pe cerere pe baza listei de bug-uri furnizate.`,
+			info: `Ne angajăm să menținem un magazin fără erori prin audituri tehnice periodice și remedierea imediată a problemelor critice. Raportăm transparent fiecare bug, prioritizăm în funcție de impactul asupra conversiilor și oferim soluții rapide care elimină blocajele de vânzare.`,
 		},
 		{
 			title: 'Suport și Mentenanță',
-			info: `Website personalizat, magazin Shopify sau oricare altă platformă - toate trebuie să fie urmărite lunar. Vom acoperi orice actualizări de aplicații, plugin-uri sau teme și chiar vom lua grijă de comunicarea de suport pentru brand-ul dumneavoastră.`,
+			info: `Acoperim toate actualizările lunare de aplicații, plugin-uri și teme, gestionăm comunicarea de suport cu terți și menținem platforma aliniată la cele mai noi standarde Shopify. Serviciul include monitorizare SLA, alerte în timp real și intervenții rapide fără întreruperi pentru clienți.`,
 		},
 		{
 			title: 'Design UX/UI',
-			info: `Vom proiecta noi componente, pagini de landing, campanii de email sau chiar vă vom da un aspect nou website-ului dumneavoastră. Noi ne concentram pe design-ul web care transformă utilizatorii în cumpărători sau în potențiali clienți.`,
+			info: `Concepem pagini de produs, landing-pages și template-uri de e-mail care transformă vizitatorii în clienți. Fie că este vorba de un refresh de brand sau de campanii sezoniere, punem accent pe design mobile-first, micro-interacțiuni și principii CRO pentru creșterea ratelor de conversie.`,
 		},
 		{
 			title: 'Consultanță Strategică',
-			info: `Echipa noastră de experți va furniza sfaturi valoroase pentru a vă asigura că afacerea dumneavoastră crește mai departe. Vom furniza suport pentru alegerea celor mai buni parteneri, servicii sau strategii digitale, pe diverse subiecte: SEO, CRO, Design, Dezvoltare.`,
+			info: `Obțineți acces la o echipă multidisciplinară (SEO, CRO, Design, Dev) care elaborează strategii data-driven menite să crească performanța eCommerce. Vă ghidăm în selecția celor mai potrivite tehnologii, parteneri și inițiative digitale pentru a accelera scalarea afacerii.`,
 		},
 		{
 			title: 'Developer dedicat',
-			info: `Disponibil pentru pachetele ScaleUp și Enterprise, această opțiune vă oferă acces la un dezvoltator din echipa noastră care se concentrează în primul rând pe succesul dumneavoastră. Ei vor integra în platformele de management și comunicare și vor începe să lucreze imediat.`,
+			info: `Disponibil în pachetele ScaleUp și Enterprise, un developer din echipa noastră se integrează în fluxul vostru de lucru, participă la sprinturi agile și livrează funcționalități la cerere. Veți beneficia de comunicare directă pe Slack/Jira și timp de reacție prioritar.`,
 		},
 		{
 			title: 'Audit și Acțiune pentru Optimizarea Ratei de Conversie',
-			info: `Cu cunoștințe extinse în standardele industriale, echipa noastră poate rula audituri profunde ale website-ului dumneavoastră concentrate pe Generarea de Lead-uri sau Optimizarea Ratei de Conversie. Toate rapoartele includ sarcini care pot fi efectuate de echipa noastră de dezvoltare sau SEO.`,
+			info: `Realizăm audituri complete axate pe CRO și Lead Generation, combinând analize de funnel, heatmaps și teste A/B. Fiecare raport include un roadmap prioritar cu acțiuni implementabile de echipa noastră dev sau de marketing.`,
 		},
 		{
 			title: 'Analiză de Date și Rapoarte',
-			info: `Colectăm date despre activitatea utilizatorilor și interacțiunea lor folosind hărți de căldură digitale. Generăm rapoarte și sarcini gata de acțiune de către echipa noastră.`,
+			info: `Colectăm și interpretăm date comportamentale prin GA4, Hotjar și Shopify Analytics pentru a identifica oportunități de optimizare. Furnizăm rapoarte interactive și dashboard-uri ce permit decizii rapide și măsurabile.`,
 		},
 		{
 			title: 'Optimizare Viteză',
-			info: `Generăm rapoarte folosind cele mai bune instrumente de pe piață: Google PageSpeed / Lighthouse, GTMetrix, WebPageTest. Găsim ce împiedică website-ul dumneavoastră și corectăm problemele pentru a permite potențialul său.`,
+			info: `Folosim Google Lighthouse, GTMetrix și WebPageTest pentru a diagnostica fiecare milisecundă pierdută. Optimizăm imagini, minificăm codul și configurăm CDN-uri astfel încât magazinul să atingă scoruri PageSpeed 90+ pe desktop și mobile.`,
 		},
 		{
 			title: 'Suport în Afara Orelor de Lucru',
-			info: `Când alegeți pachetul ScaleUp sau Enterprise, primiți acces direct la membrii seniori ai echipei noastre care sunt gata să meargă peste măsură când vine vorba de oferirea de suport în afara orei de lucru.`,
+			info: `Pentru pachetele Enterprise oferim linie directă către echipa senioră, cu timp de răspuns sub 2 ore la solicitările critice, inclusiv în weekend și sărbători.`,
 		},
 		{
 			title: 'Planificare Strategică și Reuniune de Brainstorming Lunară',
-			info: `Rulăm întâlniri lunare cu stakeholder-ii concentrându-ne pe cum să facem cel mai mult din ce este pe piață. Obțineți acces la o rețea de parteneri de încredere care oferă diverse servicii valoroase care pot crește afacerea dumneavoastră la niveluri mai înalte.`,
+			info: `Organizăm sesiuni lunare cu stakeholder-ii pentru a identifica rapid tendințele de piață, oportunitățile de campanii și optimizările tehnice. Accesați rețeaua noastră extinsă de parteneri (plăți, logistică, marketing) pentru creștere accelerată.`,
 		},
 		{
 			title: 'Consulting Arhitectură Tehnică',
-			info: `Dezvoltatorii noștri seniori au cunoștințe profunde despre ce cadre și tehnologii sunt cele mai potrivite pentru afacerea dumneavoastră. Utilizăm aceste cunoștințe pentru a crea cea mai bună arhitectură tehnică pentru proiectul dumneavoastră.`,
+			info: `Seniorii noștri arhitecți definesc cea mai potrivită infrastructură (headless, micro-services, ERP/CRM integrări) pentru nevoile voastre enterprise, asigurând scalabilitate și costuri operaționale optimizate.`,
 		},
 	],
 };
