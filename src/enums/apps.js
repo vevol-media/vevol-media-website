@@ -178,6 +178,46 @@ const appsPortfolio = {
 				],
 			},
 		},
+		{
+			name: 'xConnector Lockers - Shopify Extension',
+			description:
+				'xConnector Lockers is a powerful Shopify Thank You Page and Order Confirmation Page extension that connects your store to a wide network of parcel locker and pickup point providers.',
+			internalUrl: '/apps/xconnector-lockers',
+			externalUrl: 'https://apps.shopify.com/xconnector',
+			featuredImage: 'xconnector',
+			isPublic: true,
+			isVevolApp: false,
+			caseStudy: {
+				imagesFolder: 'xconnector-lockers',
+				title: 'xConnector Lockers - Shopify Extension',
+				description:
+					'xConnector Lockers is a powerful Shopify Thank You Page and Order Confirmation Page extension that connects your store to a wide network of parcel locker and pickup point providers.',
+				problem: [
+					'Shopify has deprecated Thank You Page scripts, making it difficult to implement a seamless integration with locker and pickup point networks',
+					'Manual handling of delivery preferences, leading to fulfillment errors and customer confusion',
+					'Lack of real-time location selection and validation at checkout or post-purchase',
+					'Limited automation for exporting orders to courier systems',
+					'Inconsistent customer experience for choosing delivery lockers or pickup points',
+				],
+				solution: [
+					'Vevol Media has partnered with xConnector to provide a seamless integration with their network of parcel locker and pickup point providers',
+					'Enables real-time location selection for customers at checkout or post-purchase, with interactive maps and search',
+					'Automates order export and booking with supported couriers, reducing manual work and fulfillment errors',
+					'Provides live status updates and locker details for both merchants and customers',
+					'Flexible configuration for available networks, fallback options, and custom delivery rules within Shopify',
+				],
+				technologies: [
+					'Shopify Checkout Extensions API',
+					'Shopify Post-Purchase Extensions',
+					'Shopify Admin API',
+					'Shopify Webhooks',
+					'React',
+					'Gadget.dev',
+					'Custom Courier APIs',
+					'Interactive Maps (Leaflet, Google Maps, or similar)',
+				],
+			},
+		},
 	],
 	ro: [
 		{
@@ -350,6 +390,43 @@ const appsPortfolio = {
 					'Shopify Webhooks',
 					'Gadget.dev',
 					'Shopify Metaobjects API',
+				],
+			},
+		},
+		{
+			name: 'xConnector Lockers - Extensie Shopify',
+			description:
+				'xConnector Lockers este o extensie Shopify puternică care conectează magazinul dumneavoastră la o rețea largă de furnizori de lockere pentru colete și puncte de ridicare.',
+			internalUrl: '/ro/proiecte/aplicatii-shopify/livrare-locker-xconnector',
+			externalUrl: 'https://apps.shopify.com/xconnector',
+			featuredImage: 'xconnector',
+			isPublic: true,
+			isVevolApp: false,
+			caseStudy: {
+				imagesFolder: 'xconnector-lockers',
+				title: 'xConnector Lockers - Extensie Shopify',
+				description:
+					'xConnector Lockers este o extensie Shopify care conectează magazinul dumneavoastră la o rețea largă de furnizori de lockere pentru colete și puncte de ridicare.',
+				problem: [
+					'Shopify a eliminat scripturile de pagină de mulțumit, ceea ce face dificilă integrarea cu rețelele de lockere și puncte de ridicare',
+					'Gestionarea manuală a preferințelor de livrare, care duce la erori de îndeplinire și confuzie pentru clienți',
+					'Nu există o selecție în timp real a locației și validare la checkout sau după achiziție',
+					'Limitare a automatizării pentru exportul ordinelor către sistemele de curierat',
+					'Experiență inconsistentă pentru clienți în alegerea lockerelor de livrare sau punctelor de ridicare',
+				],
+				solution: [
+					'Vevol Media a colaborat cu xConnector pentru a integra fără probleme rețelele majore de lockere și puncte de ridicare (ex. Packeta, DPD, GLS și altele) cu magazinul dumneavoastră',
+					'Permite selecția locației în timp real pentru clienți la checkout sau după achiziție, cu hărți interactive și căutare',
+					'Automatizează exportul ordinelor și rezervarea cu curierii suportați, reducând munca manuală și erorile de îndeplinire',
+					'Furnizează actualizări de statut în timp real și detalii despre lockere pentru ambii comercianți și clienți',
+					'Configurare flexibilă pentru rețelele disponibile, opțiuni de rezervă și reguli personalizate de livrare în Shopify',
+				],
+				technologies: [
+					'Shopify Checkout Extensions API',
+					'Shopify Post-Purchase Extensions',
+					'Shopify Admin API',
+					'Shopify Webhooks',
+					'React',
 				],
 			},
 		},
