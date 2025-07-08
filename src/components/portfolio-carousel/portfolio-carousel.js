@@ -39,21 +39,31 @@ export default function PortfolioCarousel({ projectsList, imagesData, cutBottomP
 
 		return (
 			<SplideSlide key={index}>
-				<Link
-					to={project.hasPage ? project.internalUrl : project.externalUrl}
-					target={project.hasPage ? '_self' : '_blank'}
-				>
-					<BgImage className="portfolio-item" image={bgImage}>
-						<div className="portfolio-item__actions">
-							<p className="pb-3">{project.name}</p>
-							<span className="is-flex is-align-items-center">
-								{project.hasPage ? t('common.readCaseStudy') : t('common.checkLiveSite')}
-								{project.hasPage && <FontAwesomeIcon icon={faArrowRight} />}
-								{!project.hasPage && <FontAwesomeIcon icon={faExternalLinkAlt} />}
-							</span>
-						</div>
-					</BgImage>
-				</Link>
+				{project.hasPage ? (
+					<Link to={project.internalUrl}>
+						<BgImage className="portfolio-item" image={bgImage}>
+							<div className="portfolio-item__actions">
+								<p className="pb-3">{project.name}</p>
+								<span className="is-flex is-align-items-center">
+									{t('common.readCaseStudy')}
+									<FontAwesomeIcon icon={faArrowRight} />
+								</span>
+							</div>
+						</BgImage>
+					</Link>
+				) : (
+					<a href={project.externalUrl} target="_blank" rel="noopener noreferrer">
+						<BgImage className="portfolio-item" image={bgImage}>
+							<div className="portfolio-item__actions">
+								<p className="pb-3">{project.name}</p>
+								<span className="is-flex is-align-items-center">
+									{t('common.checkLiveSite')}
+									<FontAwesomeIcon icon={faExternalLinkAlt} />
+								</span>
+							</div>
+						</BgImage>
+					</a>
+				)}
 			</SplideSlide>
 		);
 	});

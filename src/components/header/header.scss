@@ -268,7 +268,7 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 100vh;
+	height: 100dvh;
 	background: $black;
 	justify-content: center;
 	align-items: center;
@@ -277,6 +277,7 @@
 	opacity: 0;
 	z-index: -99;
 	pointer-events: none;
+	padding-bottom: 60px;
 
 	&.show-nav {
 		opacity: 1;
