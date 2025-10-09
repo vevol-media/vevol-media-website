@@ -24,9 +24,16 @@
 
 	.vm-header__logo {
 		display: inline-block;
+		gap: 20px;
+		display: flex;
+		align-items: baseline;
 
 		img {
 			height: 45px;
+
+			&:last-of-type {
+				height: 35px;
+			}
 		}
 	}
 
@@ -258,6 +265,10 @@
 		.vm-header__logo img {
 			max-width: 200px;
 			height: auto;
+
+			&:last-of-type {
+				display: none;
+			}
 		}
 	}
 }
@@ -304,6 +315,17 @@
 
 		&.vm-button {
 			display: none;
+		}
+	}
+
+	.extra-nav__plus-logo {
+		position: absolute;
+		left: 30px;
+		top: 30px;
+		transition: 0.3s ease all;
+
+		img {
+			width: 100px;
 		}
 	}
 

@@ -5,6 +5,8 @@ import { Container } from 'bloomer';
 import iconClose from '../../images/icon-close.svg';
 import logoWhite from '../../images/logo-vevol-media.svg';
 import logoBlack from '../../images/logo-vevol-media-black.svg';
+import plusLogoWhite from '../../images/shopify-plus-partner-logo-white.png';
+import plusLogoBlack from '../../images/shopify-plus-partner-logo.png';
 import LanguageSwitcher from '../language-switcher/language-switcher';
 import { useTranslations } from '../../helpers/useTranslations';
 import './header.scss';
@@ -23,6 +25,7 @@ export default function Header({ background, isStatic, isTransparent }) {
 			<Container>
 				<Link to={currentLocale === 'ro' ? '/ro/' : '/'} className="vm-header__logo">
 					<img src={background === 'white' ? logoBlack : logoWhite} alt={t('common.vevolMediaLogo')} />
+					<img src={background === 'white' ? plusLogoBlack : plusLogoWhite} alt="Shopify Plus Partner" />
 				</Link>
 
 				<div className="vm-header__navigation">
@@ -162,6 +165,10 @@ export default function Header({ background, isStatic, isTransparent }) {
 					)}
 
 					<LanguageSwitcher />
+
+					<div className="extra-nav__plus-logo">
+						<img src={plusLogoWhite} alt="Shopify Plus Partner" />
+					</div>
 
 					<div
 						className="extra-nav__close"
