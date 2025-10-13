@@ -86,7 +86,7 @@ export default function Header({ background, isStatic, isTransparent }) {
 								to={
 									currentLocale === 'ro'
 										? '/ro/servicii-shopify/cro-optimizare-rata-conversie'
-										: '/services/cro-optimization'
+										: '/services/conversion-rate-optimisation'
 								}
 							>
 								{t('navigation.croOptimization')}
