@@ -1,5 +1,5 @@
 import Layout from '../components/layout/layout';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
 import { Field, Control, Container, Help, Select } from 'bloomer';
@@ -11,12 +11,70 @@ import { Label } from 'bloomer/lib/elements/Form/Label';
 export default function ThemesContactPage({ data }) {
 	const [isSending, setIsSending] = useState(false);
 	const [isSent, setIsSent] = useState(false);
+	const [mathChallenge, setMathChallenge] = useState({ question: '', answer: 0 });
+	const [userAnswer, setUserAnswer] = useState('');
+	const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
 	const form = useRef();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
+
+	// Generate random math equation with result between 1-9
+	const generateMathChallenge = () => {
+		const operations = ['+', '-', '*'];
+		const operation = operations[Math.floor(Math.random() * operations.length)];
+		let num1, num2, answer, question;
+
+		do {
+			num1 = Math.floor(Math.random() * 10) + 1; // 1-10
+			num2 = Math.floor(Math.random() * 10) + 1; // 1-10
+
+			switch (operation) {
+				case '+':
+					answer = num1 + num2;
+					question = `${num1} + ${num2}`;
+
+					break;
+				case '-':
+					// Ensure positive result
+					if (num1 < num2) [num1, num2] = [num2, num1];
+					answer = num1 - num2;
+					question = `${num1} - ${num2}`;
+
+					break;
+				case '*':
+					// Limit numbers to keep result reasonable
+					num1 = Math.floor(Math.random() * 5) + 1; // 1-5
+					num2 = Math.floor(Math.random() * 5) + 1; // 1-5
+					answer = num1 * num2;
+					question = `${num1} × ${num2}`;
+
+					break;
+				default:
+					// Fallback to addition
+					answer = num1 + num2;
+					question = `${num1} + ${num2}`;
+
+					break;
+			}
+		} while (answer <= 0 || answer >= 10);
+
+		return { question, answer };
+	};
+
+	// Initialize math challenge on component mount
+	useEffect(() => {
+		setMathChallenge(generateMathChallenge());
+	}, []);
+
+	// Check if user answer is correct
+	const handleAnswerChange = (e) => {
+		const value = e.target.value;
+		setUserAnswer(value);
+		setIsAnswerCorrect(parseInt(value) === mathChallenge.answer);
+	};
 
 	const onSubmit = (data) => {
 		setIsSending(true);
@@ -133,9 +191,25 @@ export default function ThemesContactPage({ data }) {
 								></input>
 							</Control>
 						</Field>
+						<Field>
+							<Control>
+								<Label>Security check: What is {mathChallenge.question}?</Label>
+								<input
+									className={`input ${userAnswer && !isAnswerCorrect ? 'is-danger' : ''}`}
+									type="number"
+									placeholder="Enter your answer"
+									value={userAnswer}
+									onChange={handleAnswerChange}
+								/>
+								{userAnswer && !isAnswerCorrect && (
+									<Help isColor="warning">Incorrect answer. Please try again.</Help>
+								)}
+							</Control>
+						</Field>
 						<button
 							className={`vm-button vm-button--green-alt button ${isSending && 'is-loading'}`}
 							type="submit"
+							disabled={!isAnswerCorrect || isSending}
 						>
 							Send Message
 						</button>
