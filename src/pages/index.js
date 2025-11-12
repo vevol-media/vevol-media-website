@@ -15,6 +15,7 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import ImageWithText from '../components/general-components/image-text-simple';
 import HomepageArticles from '../components/blog/homepage-articles';
 import NoblesseThemeSection from '../components/general-components/noblesse-theme-section';
+import HomepageVideo from '../components/homepage-video/homepage-video';
 
 export const data = graphql`
 	query {
@@ -127,6 +128,8 @@ export default function Homepage({ data }) {
 		<Layout formBackgroundImage={formBannerImage}>
 			<HomepageHero imageBottom={mainHeroImage} />
 			<SidewayText lineOne={`ecommerce`} lineTwo={'development'} />
+
+			<HomepageVideo videoId="eoB9hhq9_R4" />
 
 			<NoblesseThemeSection
 				noblesseImage={noblesseImage}
