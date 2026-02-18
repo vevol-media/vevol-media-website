@@ -1,5 +1,6 @@
 {
 	"navigation": {
+		"servicesAll": "All Services",
 		"services": "Services",
 		"shopifyDevelopment": "Shopify Development",
 		"shopifyPlus": "Shopify Plus",
@@ -22,9 +23,11 @@
 		"faq": "FAQ",
 		"strategicPartnerships": "Strategic Partnerships",
 		"work": "Shopify Builds",
-		"apps": "Shopify Apps"
+		"apps": "Shopify Apps",
+		"ecommerceMobileAppDevelopment": "eCommerce Mobile Apps"
 	},
 	"common": {
+		"back": "Back",
 		"close": "Close Menu",
 		"vevolMediaLogo": "Vevol Media Logo",
 		"moreInfo": "More Info",
