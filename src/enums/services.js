@@ -52,7 +52,7 @@ const services = {
 			},
 			{
 				image: 'bespoke-dev',
-				title: 'Ecommerce Mobile App Development for Shopify',
+				title: 'eCommerce Mobile Apps',
 				intro: 'We develop Shopify mobile apps that extend your store\'s functionality and automate business processes. Whether you need a private app for your store or a public app for the Shopify App Store, our team delivers scalable solutions.',
 				sublist: [
 					'Custom App Development',

@@ -11,6 +11,8 @@ import LanguageSwitcher from '../language-switcher/language-switcher';
 import { useTranslations } from '../../helpers/useTranslations';
 import './header.scss';
 import services from '../../enums/services';
+import Icon from '../icons/icon';
+
 const localeKey = (locale) => (locale === 'ro' ? 'ro' : 'en');
 
 export default function Header({ background, isStatic, isTransparent }) {
@@ -171,17 +173,6 @@ export default function Header({ background, isStatic, isTransparent }) {
 				<div className={`vm-header__extra-nav ${isNavVisible ? 'show-nav' : ''}`}>
 					{isServicesSubnavVisible ? (
 						<div className="extra-nav__services-panel">
-							<div className="extra-nav__services-panel-header">
-								<button
-									type="button"
-									className="extra-nav__back"
-									onClick={() => setIsServicesSubnavVisible(false)}
-									aria-label={t('common.back')}
-								>
-									← {t('common.back')}
-								</button>
-
-							</div>
 
 							<Link
 								to={currentLocale === 'ro' ? '/ro/servicii-shopify' : '/services'}
@@ -211,7 +202,7 @@ export default function Header({ background, isStatic, isTransparent }) {
 								onKeyDown={(e) => e.key === 'Enter' && setIsServicesSubnavVisible(true)}
 							>
 								{t('navigation.services')} {' '}
-								<span>→</span>
+								<Icon name="arrow-right"/>
 							</button>
 							<Link to={currentLocale === 'ro' ? '/ro/servicii-shopify/mentenanta-si-suport' : '/service-plans'} onClick={closeNav}>
 								{t('navigation.servicePlans')}
@@ -234,19 +225,27 @@ export default function Header({ background, isStatic, isTransparent }) {
 						<img src={plusLogoWhite} alt="Shopify Plus Partner" />
 					</div>
 
-					<div
-						className="extra-nav__close"
-						role="button"
-						tabIndex={0}
-						onKeyDown={(e) => {
-							if (e.key === 'Enter') {
-								closeNav();
-							}
-						}}
-						onClick={closeNav}
-					>
-						<img src={iconClose} alt={t('common.close')} />
-					</div>
+					{isServicesSubnavVisible ? (
+						<button
+							type="button"
+							className="extra-nav__close extra-nav__close--back"
+							onClick={() => setIsServicesSubnavVisible(false)}
+							onKeyDown={(e) => e.key === 'Enter' && setIsServicesSubnavVisible(false)}
+							aria-label={t('common.back')}
+						>
+							<Icon name="arrow-left" className="extra-nav__close-icon" />
+						</button>
+					) : (
+						<div
+							className="extra-nav__close"
+							role="button"
+							tabIndex={0}
+							onKeyDown={(e) => e.key === 'Enter' && closeNav()}
+							onClick={closeNav}
+						>
+							<img src={iconClose} alt={t('common.close')} />
+						</div>
+					)}
 
 					<MenuAnimation />
 				</div>
