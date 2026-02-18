@@ -106,7 +106,7 @@ export default function Header({ background, isStatic, isTransparent }) {
 							<Link
 								to={
 									currentLocale === 'ro'
-										? '/ro/servicii-shopify/ecommerce-mobile-app-development-for-shopify'
+										? '/ro/servicii-shopify/aplicatii-mobile'
 										: '/services/ecommerce-mobile-app-development-for-shopify'
 								}
 							>
