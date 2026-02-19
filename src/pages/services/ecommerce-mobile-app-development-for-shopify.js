@@ -11,6 +11,8 @@ import ImageWithText from '../../components/general-components/image-text-simple
 import BottomCTA from '../../components/bottom-cta/bottom-cta';
 import SplitNav from '../../components/general-components/split-nav';
 import { Helmet } from 'react-helmet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export const data = graphql`
 	query {
@@ -147,7 +149,8 @@ export default function PageEcommerceMobileApp({ data }) {
 						textContent={[
 							<ul key="process" className="mt-5 vm-service-list">
 								{PROCESS_STEPS.map((step) => (
-									<li key={step}>{step}</li>
+									<li key={step}>
+										<FontAwesomeIcon icon={faCheck} className="mr-2" />{step}</li>
 								))}
 							</ul>,
 							<p className="mt-5">
