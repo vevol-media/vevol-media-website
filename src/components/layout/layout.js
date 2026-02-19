@@ -137,7 +137,7 @@ export default function Layout({
 							'anonymize_ip': false,
 							'allow_ad_personalization_signals': true
 						});`}</script>
-					)} 
+					)}
 					{cookieConsentValue === 'all' && (
 						<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
 					)}
