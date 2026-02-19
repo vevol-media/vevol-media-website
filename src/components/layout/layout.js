@@ -132,12 +132,12 @@ export default function Layout({
 					`}
 					</script>
 					{/* Comment this on localhost, otherwise we end up with an error while developing */}
-					{/* {cookieConsentValue === 'all' && (
+					{cookieConsentValue === 'all' && (
 						<script defer>{`gtag('config', 'G-XTXF9YF0NB', {
 							'anonymize_ip': false,
 							'allow_ad_personalization_signals': true
 						});`}</script>
-					)} */}
+					)} 
 					{cookieConsentValue === 'all' && (
 						<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=f7f4db75"></script>
 					)}
