@@ -2,7 +2,9 @@ import { getImage } from 'gatsby-plugin-image';
 
 export function getImageByName(imagesArray, imageName) {
 	const image = imagesArray.filter((image) => image.name === imageName)[0];
-
+	if (!image) {
+		console.error(`Image ${imageName} not found`);
+	}
 	return getImage(image.childImageSharp.gatsbyImageData);
 }
 

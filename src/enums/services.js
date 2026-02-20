@@ -50,6 +50,17 @@ const services = {
 				],
 				url: '/services/shopify-apps',
 			},
+			{
+				image: 'bespoke-dev',
+				title: 'eCommerce Mobile Apps',
+				intro: 'Transform your Shopify store into a high-performance mobile app. Boost retention, conversions, and customer loyalty with custom iOS & Android apps built for speed, scalability, and seamless Shopify integration.',
+				sublist: [
+					'Custom App Development',
+					'API Integration',
+					'Process Automation',
+				],
+				url: '/services/ecommerce-mobile-app-development-for-shopify',
+			}
 		],
 		ecommerce: [
 			{
@@ -81,6 +92,7 @@ const services = {
 				url: '/services/ui-ux-web-design',
 			},
 		],
+
 	},
 	ro: {
 		dev: [
@@ -163,6 +175,17 @@ const services = {
 				sublist: ['Actualizări de teme', 'Implementare de audite CRO, SEO, UI/UX', 'Suport tehnic'],
 				url: '/ro/servicii-shopify/mentenanta-si-suport',
 			},
+			{
+				image: 'bespoke-dev',
+				title: 'Aplicații mobile pentru eCommerce',
+				intro: 'Dezvoltăm aplicații mobile pentru eCommerce Shopify care extind funcționalitatea magazinului dumneavoastră și automatizează procesele afacerii. Fie că aveți nevoie de o aplicație privată pentru magazinul dumneavoastră, fie de o aplicație publică pentru magazinul din App Store Shopify, echipa noastră livrează soluții scalabile.',
+				sublist: [
+					'Dezvoltare Aplicație Personalizată',
+					'Integrare API',
+					'Automatizare Procese',
+				],
+				url: '/ro/servicii-shopify/aplicatii-mobile',
+			}
 		],
 	},
 };

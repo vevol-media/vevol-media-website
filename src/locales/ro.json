@@ -1,5 +1,6 @@
 {
 	"navigation": {
+		"servicesAll": "Toate serviciile",
 		"services": "Servicii Complete Shopify",
 		"shopifyDevelopment": "Dezvoltare de teme",
 		"shopifyPlus": "Shopify Plus",
@@ -22,9 +23,11 @@
 		"faq": "Întrebări Frecvente",
 		"strategicPartnerships": "Parteneriate Strategice",
 		"work": "Magazine Shopify",
-		"apps": "Aplicații Shopify"
+		"apps": "Aplicații Shopify",
+		"ecommerceMobileAppDevelopment": "Aplicații mobile eCommerce"
 	},
 	"common": {
+		"back": "Înapoi",
 		"close": "Închide Meniul",
 		"vevolMediaLogo": "Logo Vevol Media",
 		"moreInfo": "Mai multe informații",

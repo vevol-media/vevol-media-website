@@ -9,6 +9,7 @@
 	z-index: 4;
 	transition: 0.3s ease all;
 
+
 	&--transparent {
 		background: rgba(0, 0, 0, 0.2);
 	}
@@ -95,7 +96,7 @@
 			box-shadow: 9px 9px 0 0 $green;
 			display: flex;
 			flex-wrap: wrap;
-			width: 500px;
+			width: 550px;
 			border: 1px solid $border;
 
 			&.no-padding {
@@ -318,6 +319,87 @@
 		}
 	}
 
+	.extra-nav__link-as-button {
+		background: none;
+		border: none;
+		color: $white;
+		padding: 5px 20px;
+		margin: 10px 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 1px;
+		cursor: pointer;
+		position: relative;
+		font-size: 1.5em;
+		z-index: 2;
+		font-family: inherit;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		svg{
+			width: 24px;
+			height: 24px;
+			fill: $white;
+			transition: 0.3s ease all;
+		}
+
+		&:hover {
+			color: $green;
+
+			svg{
+				fill: $green;
+				// transform: rotate(45deg);
+			}
+		}
+	}
+
+	.extra-nav__services-panel {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		max-height: 80vh;
+		overflow-y: auto;
+	}
+
+	.extra-nav__back {
+		background: none;
+		border: none;
+		color: $white;
+		font-size: 1em;
+		padding: 10px 0;
+		cursor: pointer;
+		font-weight: 600;
+		letter-spacing: 1px;
+		font-family: inherit;
+		text-align: left;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: $white;
+		}
+
+		&:hover {
+			color: $green;
+		}
+	}
+
+	.extra-nav__services-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 10px;
+
+		a {
+			font-size: 1rem;
+			text-transform: none;
+		}
+	}
+
 	.extra-nav__plus-logo {
 		position: absolute;
 		left: 30px;
@@ -337,6 +419,8 @@
 		transition: 0.3s ease all;
 		cursor: pointer;
 		z-index: 2;
+		background: none;
+		border: none;
 
 		img {
 			filter: invert(1);
@@ -345,6 +429,19 @@
 
 		&:hover {
 			transform: rotate(45deg);
+		}
+
+		&--back {
+			&:hover {
+				transform: none;
+			}
+
+			.extra-nav__close-icon {
+				display: block;
+				width: 40px;
+				height: auto;
+				filter: invert(1);
+			}
 		}
 	}
 
@@ -409,13 +506,15 @@
 	}
 
 	@include screen-general {
-		a {
+		a,
+		.extra-nav__link-as-button {
 			margin: 5px 0;
 		}
 	}
 
 	@include screen-small {
-		a {
+		a,
+		.extra-nav__link-as-button {
 			font-size: 1.25em;
 
 			&.vm-button {
@@ -426,7 +525,8 @@
 	}
 
 	@include screen-mobile {
-		a {
+		a,
+		.extra-nav__link-as-button {
 			font-size: 1.1em;
 		}
 	}

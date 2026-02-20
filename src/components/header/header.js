@@ -10,17 +10,31 @@ import plusLogoBlack from '../../images/shopify-plus-partner-logo.png';
 import LanguageSwitcher from '../language-switcher/language-switcher';
 import { useTranslations } from '../../helpers/useTranslations';
 import './header.scss';
+import services from '../../enums/services';
+import Icon from '../icons/icon';
+
+const localeKey = (locale) => (locale === 'ro' ? 'ro' : 'en');
 
 export default function Header({ background, isStatic, isTransparent }) {
 	const [isNavVisible, setIsNavVisible] = useState(false);
+	const [isServicesSubnavVisible, setIsServicesSubnavVisible] = useState(false);
 	const { t, currentLocale } = useTranslations();
+
+	const closeNav = () => {
+		setIsNavVisible(false);
+		setIsServicesSubnavVisible(false);
+	};
+
+	const servicesList = [
+		...(services[localeKey(currentLocale)]?.dev ?? []),
+		...(services[localeKey(currentLocale)]?.ecommerce ?? []),
+	];
 
 	return (
 		<div
 			id="header"
-			className={`vm-header vm-header--${background ? 'white' : 'black'} vm-header--${
-				isStatic ? 'relative' : ''
-			} vm-header--${isTransparent ? 'transparent' : ''}`}
+			className={`vm-header vm-header--${background ? 'white' : 'black'} vm-header--${isStatic ? 'relative' : ''
+				} vm-header--${isTransparent ? 'transparent' : ''}`}
 		>
 			<Container>
 				<Link to={currentLocale === 'ro' ? '/ro/' : '/'} className="vm-header__logo">
@@ -91,6 +105,15 @@ export default function Header({ background, isStatic, isTransparent }) {
 							>
 								{t('navigation.croOptimization')}
 							</Link>
+							<Link
+								to={
+									currentLocale === 'ro'
+										? '/ro/servicii-shopify/aplicatii-mobile'
+										: '/services/ecommerce-mobile-app-development-for-shopify'
+								}
+							>
+								{t('navigation.ecommerceMobileAppDevelopment')}
+							</Link>
 							{currentLocale === 'ro' && (
 								<Link to="/ro/servicii-shopify/digitalizare">Digitalizare IMM</Link>
 							)}
@@ -148,43 +171,81 @@ export default function Header({ background, isStatic, isTransparent }) {
 					<span></span>
 				</div>
 				<div className={`vm-header__extra-nav ${isNavVisible ? 'show-nav' : ''}`}>
-					<Link to={currentLocale === 'ro' ? '/ro/servicii-shopify' : '/services'}>
-						{t('navigation.services')}
-					</Link>
-					<Link to={currentLocale === 'ro' ? '/ro/servicii-shopify/mentenanta-si-suport' : '/service-plans'}>
-						{t('navigation.servicePlans')}
-					</Link>
-					<Link to={currentLocale === 'ro' ? '/ro/proiecte' : '/work'}>{t('navigation.ourWork')}</Link>
-					{currentLocale === 'en' && <Link to="/learn">{t('navigation.learn')}</Link>}
-					<Link to={currentLocale === 'ro' ? '/ro/despre-noi' : '/about'}>{t('navigation.aboutUs')}</Link>
-					<Link to={currentLocale === 'ro' ? '/ro/contact' : '/contact'}>{t('navigation.contactUs')}</Link>
-					{currentLocale === 'en' && <Link to="/blog">{t('navigation.blog')}</Link>}
-					{currentLocale === 'en' && <Link to="/faqs">{t('navigation.faq')}</Link>}
-					{currentLocale === 'en' && (
-						<Link to="/strategic-partnerships">{t('navigation.strategicPartnerships')}</Link>
-					)}
+					{isServicesSubnavVisible ? (
+						<div className="extra-nav__services-panel">
 
-					<LanguageSwitcher />
+							<Link
+								to={currentLocale === 'ro' ? '/ro/servicii-shopify' : '/services'}
+								className="extra-nav__services-all"
+								onClick={closeNav}
+							>
+								{t('navigation.servicesAll')}
+							</Link>
+							<nav className="extra-nav__services-list" aria-label={t('navigation.services')}>
+								{servicesList.map((service) => (
+									<Link
+										key={service.url}
+										to={service.url}
+										onClick={closeNav}
+									>
+										{service.title}
+									</Link>
+								))}
+							</nav>
+						</div>
+					) : (
+						<>
+							<button
+								type="button"
+								className="extra-nav__link-as-button"
+								onClick={() => setIsServicesSubnavVisible(true)}
+								onKeyDown={(e) => e.key === 'Enter' && setIsServicesSubnavVisible(true)}
+							>
+								{t('navigation.services')} {' '}
+								<Icon name="arrow-right"/>
+							</button>
+							<Link to={currentLocale === 'ro' ? '/ro/servicii-shopify/mentenanta-si-suport' : '/service-plans'} onClick={closeNav}>
+								{t('navigation.servicePlans')}
+							</Link>
+							<Link to={currentLocale === 'ro' ? '/ro/proiecte' : '/work'} onClick={closeNav}>{t('navigation.ourWork')}</Link>
+							{currentLocale === 'en' && <Link to="/learn" onClick={closeNav}>{t('navigation.learn')}</Link>}
+							<Link to={currentLocale === 'ro' ? '/ro/despre-noi' : '/about'} onClick={closeNav}>{t('navigation.aboutUs')}</Link>
+							<Link to={currentLocale === 'ro' ? '/ro/contact' : '/contact'} onClick={closeNav}>{t('navigation.contactUs')}</Link>
+							{currentLocale === 'en' && <Link to="/blog" onClick={closeNav}>{t('navigation.blog')}</Link>}
+							{currentLocale === 'en' && <Link to="/faqs" onClick={closeNav}>{t('navigation.faq')}</Link>}
+							{currentLocale === 'en' && (
+								<Link to="/strategic-partnerships" onClick={closeNav}>{t('navigation.strategicPartnerships')}</Link>
+							)}
+
+							<LanguageSwitcher />
+						</>
+					)}
 
 					<div className="extra-nav__plus-logo">
 						<img src={plusLogoWhite} alt="Shopify Plus Partner" />
 					</div>
 
-					<div
-						className="extra-nav__close"
-						role="button"
-						tabIndex={0}
-						onKeyDown={(e) => {
-							if (e.keyCode === 13) {
-								setIsNavVisible(!isNavVisible);
-							}
-						}}
-						onClick={() => {
-							setIsNavVisible(!isNavVisible);
-						}}
-					>
-						<img src={iconClose} alt={t('common.close')} />
-					</div>
+					{isServicesSubnavVisible ? (
+						<button
+							type="button"
+							className="extra-nav__close extra-nav__close--back"
+							onClick={() => setIsServicesSubnavVisible(false)}
+							onKeyDown={(e) => e.key === 'Enter' && setIsServicesSubnavVisible(false)}
+							aria-label={t('common.back')}
+						>
+							<Icon name="arrow-left" className="extra-nav__close-icon" />
+						</button>
+					) : (
+						<div
+							className="extra-nav__close"
+							role="button"
+							tabIndex={0}
+							onKeyDown={(e) => e.key === 'Enter' && closeNav()}
+							onClick={closeNav}
+						>
+							<img src={iconClose} alt={t('common.close')} />
+						</div>
+					)}
 
 					<MenuAnimation />
 				</div>
