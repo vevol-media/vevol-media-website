@@ -100,8 +100,17 @@ export default function BlogPost(props) {
 	const featuredImageData = getImage(featuredImage);
 	const authorSlug = author.name.toLocaleLowerCase().replace(' ', '-');
 	const dateISO = new Date(publishedDate).toISOString();
-	const editStringId = (string) => {
-		return string.toString().replaceAll(' ', '-').replaceAll('/n', '');
+	const getHeadingText = (children) => {
+		if (children == null) return '';
+		if (typeof children === 'string' || typeof children === 'number') return String(children).trim();
+		if (Array.isArray(children)) return children.map(getHeadingText).join('').trim();
+		if (typeof children === 'object' && children?.props?.children !== undefined) {
+			return getHeadingText(children.props.children);
+		}
+		return '';
+	};
+	const editStringId = (children) => {
+		return getHeadingText(children).replace(/\s+/g, '-').replace(/\n/g, '') || 'heading';
 	};
 	const [isTableOfContentsHidden, setIsTableOfContentsHidden] = useState(true);
 	const renderOptions = {
@@ -148,6 +157,7 @@ export default function BlogPost(props) {
 			},
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
 				const assetItem = content.references.filter((item) => item.contentful_id === node.data.target.sys.id)[0];
+				if(!assetItem) return null;
 
 				switch (assetItem.__typename) {
 					case 'ContentfulProsCons':
@@ -327,7 +337,7 @@ export default function BlogPost(props) {
 							<TableOfContents
 								isTableOfContentsHidden={setIsTableOfContentsHidden}
 								content={blogContent
-									.filter((content) => content.props.tag === 'h2' || content.props.tag === 'h4')
+									.filter((content) => content?.props?.tag === 'h2' || content?.props?.tag === 'h4')
 									.map((content) => {
 										return content.props;
 									})}

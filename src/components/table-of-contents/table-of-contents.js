@@ -4,6 +4,20 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+function getHeadingText(children) {
+	if (children == null) return '';
+	if (typeof children === 'string' || typeof children === 'number') return String(children).trim();
+	if (Array.isArray(children)) return children.map(getHeadingText).join('').trim();
+	if (typeof children === 'object' && children.props?.children !== undefined) {
+		return getHeadingText(children.props.children);
+	}
+	return '';
+}
+
+function toId(text) {
+	return getHeadingText(text).replace(/\s+/g, '-').replace(/\n/g, '') || 'heading';
+}
+
 function TableOfContents({ content, isTableOfContentsHidden }) {
 	const [isTableOfContentsOpen, setIsTableOfContentsOpen] = useState(false);
 
@@ -24,24 +38,30 @@ function TableOfContents({ content, isTableOfContentsHidden }) {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					const id = entry.target.getAttribute('id').toString().replaceAll(' ', '-').replaceAll('/n', '');
-					const currentChapter = document.querySelector(`.table-of-contents__chapter[data-id="${id}"]`);
-					const allChapters = document.querySelectorAll(`.table-of-contents__chapter`);
+					const rawId = entry.target.getAttribute('id');
+					const id = rawId != null ? String(rawId).replace(/\s+/g, '-').replace(/\n/g, '') : '';
+					const isValidId = id && !id.includes('object');
 
 					if (id !== 'about-author' && id !== 'header') {
 						isTableOfContentsHidden(false);
 
-						if (entry.isIntersecting && currentChapter && allChapters) {
-							allChapters.forEach((chapter) => {
-								chapter.classList.remove('active');
-							});
-							currentChapter.classList.add('active');
+						if (entry.isIntersecting && isValidId) {
+							try {
+								const currentChapter = document.querySelector(
+									`.table-of-contents__chapter[data-id="${id}"]`
+								);
+								const allChapters = document.querySelectorAll('.table-of-contents__chapter');
+								if (currentChapter && allChapters.length) {
+									allChapters.forEach((chapter) => chapter.classList.remove('active'));
+									currentChapter.classList.add('active');
+								}
+							} catch (_) {
+								// invalid selector, skip
+							}
 						}
 					} else {
-						allChapters.forEach((chapter) => {
-							chapter.classList.remove('active');
-						});
-
+						const allChapters = document.querySelectorAll('.table-of-contents__chapter');
+						allChapters.forEach((chapter) => chapter.classList.remove('active'));
 						isTableOfContentsHidden(true);
 					}
 				});
@@ -63,22 +83,18 @@ function TableOfContents({ content, isTableOfContentsHidden }) {
 	}, []);
 
 	const contentRender = content
-		.filter((item) => item.children || item.children.length !== 0)
+		.filter((item) => getHeadingText(item.children).length > 0)
 		.map((item, key) => {
-			let id = `${item.children.toString().replaceAll(' ', '-').replaceAll('/n', '')}`;
+			const id = toId(item.children);
 
 			return (
 				<div
 					className="table-of-contents__chapter"
 					data-id={id}
-					onClick={(event) =>
-						scrolltoId(event, `${item.children.toString().replaceAll(' ', '-').replaceAll('/n', '')}`)
-					}
-					onKeyPress={(event) =>
-						scrolltoId(event, `${item.children.toString().replaceAll(' ', '-').replaceAll('/n', '')}`)
-					}
+					onClick={(e) => scrolltoId(e, id)}
+					onKeyPress={(e) => scrolltoId(e, id)}
 					role="button"
-					tabIndex="0"
+					tabIndex={0}
 					key={key}
 				>
 					<span className={`table-of-contents__${item.tag}`}>{item.children}</span>
