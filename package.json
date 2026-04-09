@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Vevol Media",
+  "engines": {
+    "node": "18.x"
+  },
   "author": "Bogdan Dogaru",
   "keywords": [
     "gatsby"
