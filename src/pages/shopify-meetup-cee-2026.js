@@ -4,7 +4,14 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../components/layout/layout';
 import SponsorshipTier from '../components/sponsorship-tier/sponsorship-tier';
-import { MAX_PARTNER_LOGOS, footerImageRef, otherImageRefs, otherSponsorships, tierConfigs } from '../data/shopify-meetup-cee-2026';
+import {
+	MAX_PARTNER_LOGOS,
+	footerImageRef,
+	otherImageRefs,
+	otherSponsorships,
+	sponsorLogoOrder,
+	tierConfigs,
+} from '../data/shopify-meetup-cee-2026';
 
 export const data = graphql`
 	query {
@@ -64,11 +71,14 @@ export const data = graphql`
 				}
 			}
 		}
-		eventPartners: allFile(filter: { relativeDirectory: { eq: "event-partners" } }) {
+		sponsorLogos: allFile(
+			filter: { relativeDirectory: { eq: "shopify-meetup-cee-2026/logos" } }
+			sort: { fields: name, order: ASC }
+		) {
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 150 }, height: 80, quality: 100)
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 180 }, height: 80, quality: 100)
 				}
 			}
 		}
@@ -87,16 +97,20 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		pillarImage3,
 		event2024,
 		event2025,
-		eventPartners,
+		sponsorLogos,
 	} = data;
 	const shopifyLogoData = getImage(shopifyLogo);
 	const ecommerceTodayLogoData = getImage(ecommerceTodayLogo);
 	const vevolMediaLogoData = getImage(vevolMediaLogo);
 	const photoSources = {
-		'2024': event2024?.nodes || [],
-		'2025': event2025?.nodes || [],
+		2024: event2024?.nodes || [],
+		2025: event2025?.nodes || [],
 	};
-	const partnerLogos = (eventPartners?.nodes || []).slice(0, MAX_PARTNER_LOGOS);
+	const sponsorLogoNodes = sponsorLogos?.nodes || [];
+	const partnerLogos = sponsorLogoOrder
+		.map((name) => sponsorLogoNodes.find((node) => node.name === name))
+		.filter(Boolean)
+		.slice(0, MAX_PARTNER_LOGOS);
 
 	const resolveImage = (ref) => getImage(photoSources[ref.source]?.[ref.index]);
 	const resolveImages = (refs) => refs.map(resolveImage);
@@ -120,7 +134,7 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		if (prefersReducedMotion) return undefined;
 
 		const targets = document.querySelectorAll(
-			'.meetup-sponsorship-deck__about-photo, .meetup-sponsorship-deck__pillars-photo',
+			'.meetup-sponsorship-deck__about-photo, .meetup-sponsorship-deck__pillars-photo, .meetup-sponsorship-deck__sponsor-logo',
 		);
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -179,10 +193,10 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 								</div>
 							</div>
 						</div>
-					<h2 className="meetup-sponsorship-deck__title">
-						<span className="meetup-sponsorship-deck__title-highlight">SPONSORSHIP</span> DECK
-					</h2>
-				</section>
+						<h2 className="meetup-sponsorship-deck__title">
+							<span className="meetup-sponsorship-deck__title-highlight">SPONSORSHIP</span> DECK
+						</h2>
+					</section>
 				</div>
 
 				<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__about">
@@ -206,8 +220,8 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 								builders and merchants from all around Europe, we decided to put together the Shopify Meetup CEE 2026.
 							</p>
 							<p>
-								We received a LOT of positive feedback from tech vendors and agencies, and we are aiming to bring 250 Shopify folks
-								to the 2026 edition. Sponsors will have the privilege to participate in our private dinner the evening prior to the
+								We received a LOT of positive feedback from tech vendors and agencies, and we are aiming to bring 250 Shopify folks to
+								the 2026 edition. Sponsors will have the privilege to participate in our private dinner the evening prior to the
 								event, host a workshop, talk on stage and of course, the afterparty!
 							</p>
 							<p>We&rsquo;re inviting you to join us!</p>
@@ -250,10 +264,10 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 					</div>
 				</section>
 
-				<div className="container">
-					<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__past-sponsors">
+				<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__past-sponsors">
+					<div className="meetup-sponsorship-deck__past-sponsors-inner">
 						<h3 className="meetup-sponsorship-deck__section-title meetup-sponsorship-deck__section-title--center">
-							OUR PREVIOUS <span className="meetup-sponsorship-deck__section-title-highlight">SHOPIFY MEETUP</span> SPONSORS
+							OUR PREVIOUS SHOPIFY MEETUP SPONSORS
 						</h3>
 						<div className="meetup-sponsorship-deck__sponsor-grid">
 							{partnerLogos.map((logo) => {
@@ -266,55 +280,55 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 								) : null;
 							})}
 						</div>
-					</section>
+					</div>
+				</section>
 
-					{resolvedTierConfigs.map((config) => (
-						<SponsorshipTier key={config.variant} config={config} />
-					))}
+				{resolvedTierConfigs.map((config) => (
+					<SponsorshipTier key={config.variant} config={config} />
+				))}
 
-					<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__other">
-						<h3 className="meetup-sponsorship-deck__section-title">
-							<span className="meetup-sponsorship-deck__section-title-highlight">OTHER</span> SPONSORSHIPS
-						</h3>
-						<div className="meetup-sponsorship-deck__other-frame">
-							<div className="meetup-sponsorship-deck__other-grid">
-								{otherSponsorships.map((item) => {
-									const image = otherImages[item.imageIndex];
-									const cardClasses = ['meetup-sponsorship-deck__other-card'];
+				<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__other">
+					<h3 className="meetup-sponsorship-deck__section-title">
+						<span className="meetup-sponsorship-deck__section-title-highlight">OTHER</span> SPONSORSHIPS
+					</h3>
+					<div className="meetup-sponsorship-deck__other-frame">
+						<div className="meetup-sponsorship-deck__other-grid">
+							{otherSponsorships.map((item) => {
+								const image = otherImages[item.imageIndex];
+								const cardClasses = ['meetup-sponsorship-deck__other-card'];
 
-									if (item.sold) cardClasses.push('meetup-sponsorship-deck__other-card--sold');
+								if (item.sold) cardClasses.push('meetup-sponsorship-deck__other-card--sold');
 
-									return (
-										<div key={item.label} className={cardClasses.join(' ')}>
-											<div className="meetup-sponsorship-deck__other-image">
-												{image && <GatsbyImage image={image} alt={item.label} />}
-												{item.sold && <span className="meetup-sponsorship-deck__other-sold">SOLD!</span>}
-											</div>
-											<div className="meetup-sponsorship-deck__other-meta">
-												<span className="meetup-sponsorship-deck__other-label">{item.label}</span>
-												<span className="meetup-sponsorship-deck__other-price">{item.price}</span>
-											</div>
+								return (
+									<div key={item.label} className={cardClasses.join(' ')}>
+										<div className="meetup-sponsorship-deck__other-image">
+											{image && <GatsbyImage image={image} alt={item.label} />}
+											{item.sold && <span className="meetup-sponsorship-deck__other-sold">SOLD!</span>}
 										</div>
-									);
-								})}
-							</div>
+										<div className="meetup-sponsorship-deck__other-meta">
+											<span className="meetup-sponsorship-deck__other-label">{item.label}</span>
+											<span className="meetup-sponsorship-deck__other-price">{item.price}</span>
+										</div>
+									</div>
+								);
+							})}
 						</div>
-					</section>
+					</div>
+				</section>
 
-					<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__next-steps">
-						<h3 className="meetup-sponsorship-deck__section-title meetup-sponsorship-deck__section-title--center meetup-sponsorship-deck__section-title--sm">
-							NEXT STEPS
-						</h3>
-						<p>
-							Please contact us ASAP to express your interest in sponsoring the event at <strong>dan.nistor@vevolmedia.com</strong>
-						</p>
-						<p>
-							<strong>Note</strong>: Your sponsorship is not guaranteed until it has been reviewed and approved by our team, ensuring
-							alignment with our criteria for carefully vetted partners.
-						</p>
-						<p>Thanks for understanding.</p>
-					</section>
-				</div>
+				<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__next-steps">
+					<h3 className="meetup-sponsorship-deck__section-title meetup-sponsorship-deck__section-title--center meetup-sponsorship-deck__section-title--sm">
+						NEXT STEPS
+					</h3>
+					<p>
+						Please contact us ASAP to express your interest in sponsoring the event at <strong>dan.nistor@vevolmedia.com</strong>
+					</p>
+					<p>
+						<strong>Note</strong>: Your sponsorship is not guaranteed until it has been reviewed and approved by our team, ensuring
+						alignment with our criteria for carefully vetted partners.
+					</p>
+					<p>Thanks for understanding.</p>
+				</section>
 
 				<div className="meetup-sponsorship-deck__footer-banner">
 					{footerImage && <GatsbyImage image={footerImage} alt="Shopify Meetup attendees" />}

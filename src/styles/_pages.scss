@@ -525,20 +525,63 @@
 	}
 
 	&__past-sponsors {
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		text-align: center;
+		padding: 6rem 0;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: url('../images/shopify-meetup-cee-2026/pattern.png');
+			background-repeat: repeat;
+			opacity: 0.18;
+			pointer-events: none;
+		}
+	}
+
+	&__past-sponsors-inner {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 1240px;
+		margin: 0 auto;
+
+		.meetup-sponsorship-deck__section-title {
+			margin-bottom: 3.5rem;
+		}
 	}
 
 	&__sponsor-grid {
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: 2.5rem 3rem;
+		gap: 3rem;
 		align-items: center;
 		justify-items: center;
 	}
 
 	&__sponsor-logo {
 		width: 100%;
-		max-width: 180px;
+		max-width: 200px;
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+		@for $i from 1 through 16 {
+			&:nth-child(#{$i}) {
+				transition-delay: #{($i - 1) * 60}ms;
+			}
+		}
+
+		&.is-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
 
 		.gatsby-image-wrapper {
 			width: 100%;
@@ -546,7 +589,6 @@
 
 		img {
 			object-fit: contain !important;
-			filter: brightness(0) invert(1);
 		}
 	}
 
@@ -1024,6 +1066,22 @@
 
 		&__pillar + &__pillar::before {
 			display: none;
+		}
+
+		&__past-sponsors {
+			padding: 3rem 0;
+
+			&::before {
+				background-size: 220px auto;
+			}
+		}
+
+		&__past-sponsors-inner {
+			padding: 0 1.5rem;
+
+			.meetup-sponsorship-deck__section-title {
+				margin-bottom: 2rem;
+			}
 		}
 
 		&__sponsor-grid {

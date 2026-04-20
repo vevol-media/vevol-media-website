@@ -1,5 +1,24 @@
 export const MAX_PARTNER_LOGOS = 16;
 
+export const sponsorLogoOrder = [
+	'octaine_logo',
+	'omnisend_logo',
+	'vevol_themes_logo',
+	'midsummer_logo',
+	'shopify_logo',
+	'ecommerce_today_logo',
+	'xconnector_logo',
+	'newcurrent_logo',
+	'upswing_logo',
+	'zapiet_logo',
+	'frisbo_logo',
+	'alien_store_logo',
+	'love_logo',
+	'krown_themes_logo',
+	'business_legue_logo',
+	'leanpay_logo',
+];
+
 export const otherSponsorships = [
 	{ label: 'GIVEAWAY SPONSOR', price: '€1500', imageIndex: 0 },
 	{ label: 'PR SPONSOR', price: '€1500', imageIndex: 1 },
