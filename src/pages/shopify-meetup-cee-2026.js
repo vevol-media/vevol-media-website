@@ -55,6 +55,16 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 720, quality: 100)
 			}
 		}
+		tierPremier1: file(name: { eq: "tier_premier_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 100)
+			}
+		}
+		tierPremier2: file(name: { eq: "tier_premier_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 620, quality: 100)
+			}
+		}
 		event2024: allFile(filter: { relativeDirectory: { eq: "event/2024" } }, sort: { fields: name, order: ASC }) {
 			nodes {
 				name
@@ -95,6 +105,8 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		pillarImage1,
 		pillarImage2,
 		pillarImage3,
+		tierPremier1,
+		tierPremier2,
 		event2024,
 		event2025,
 		sponsorLogos,
@@ -123,9 +135,12 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 	const otherImages = resolveImages(otherImageRefs);
 	const footerImage = resolveImage(footerImageRef);
 
+	const tierImageOverrides = {
+		premier: [getImage(tierPremier1), getImage(tierPremier2)],
+	};
 	const resolvedTierConfigs = tierConfigs.map((config) => ({
 		...config,
-		images: resolveImages(config.imageRefs),
+		images: tierImageOverrides[config.variant] || resolveImages(config.imageRefs),
 	}));
 
 	useEffect(() => {
@@ -134,7 +149,7 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		if (prefersReducedMotion) return undefined;
 
 		const targets = document.querySelectorAll(
-			'.meetup-sponsorship-deck__about-photo, .meetup-sponsorship-deck__pillars-photo, .meetup-sponsorship-deck__sponsor-logo',
+			'.meetup-sponsorship-deck__about-photo, .meetup-sponsorship-deck__pillars-photo, .meetup-sponsorship-deck__sponsor-logo, .meetup-sponsorship-deck__circle, .meetup-sponsorship-deck__stack-photo, .meetup-sponsorship-deck__tier-image--single .gatsby-image-wrapper, .meetup-sponsorship-deck__tier-title, .meetup-sponsorship-deck__tier-body',
 		);
 		const observer = new IntersectionObserver(
 			(entries) => {

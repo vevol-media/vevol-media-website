@@ -70,21 +70,23 @@ export default function SponsorshipTier({ config }) {
 
 	return (
 		<section className={sectionClasses.join(' ')}>
-			<TierImages layout={imageLayout} images={images} altPrefix={`${title.highlight} sponsor`} />
-
-			<div className="meetup-sponsorship-deck__tier-body">
+			<div className="meetup-sponsorship-deck__tier-inner">
 				<h3 className="meetup-sponsorship-deck__tier-title">
-					{title.prefix}{' '}
-					<span className="meetup-sponsorship-deck__tier-title-highlight">{title.highlight}</span>{' '}
+					{title.prefix} <span className="meetup-sponsorship-deck__tier-title-highlight">{title.highlight}</span>{' '}
 					{title.suffix}
 				</h3>
-				<ul className="meetup-sponsorship-deck__tier-list">
-					{features.map((item, i) => (
-						<FeatureItem key={i} item={item} />
-					))}
-				</ul>
-				{availability && <p className="meetup-sponsorship-deck__tier-availability">{availability}</p>}
-				{price && <p className="meetup-sponsorship-deck__tier-price">{price}</p>}
+				<div className="meetup-sponsorship-deck__tier-content">
+					<TierImages layout={imageLayout} images={images} altPrefix={`${title.highlight} sponsor`} />
+					<div className="meetup-sponsorship-deck__tier-body">
+						<ul className="meetup-sponsorship-deck__tier-list">
+							{features.map((item, i) => (
+								<FeatureItem key={i} item={item} />
+							))}
+						</ul>
+						{availability && <p className="meetup-sponsorship-deck__tier-availability">{availability}</p>}
+						{price && <p className="meetup-sponsorship-deck__tier-price">{price}</p>}
+					</div>
+				</div>
 			</div>
 		</section>
 	);

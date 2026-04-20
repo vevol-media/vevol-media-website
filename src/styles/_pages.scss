@@ -124,6 +124,10 @@
 	background-image: radial-gradient(circle at 50% 50%, #194446 0%, #153b3d 24%, #102f32 46%, #0d2528 68%, #0a1c1e 100%);
 	color: $white;
 
+	strong {
+		color: inherit;
+	}
+
 	&__hero {
 		min-height: 100vh;
 		min-height: 100dvh;
@@ -593,13 +597,45 @@
 	}
 
 	&__tier {
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 6rem 0;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: url('../images/shopify-meetup-cee-2026/pattern.png');
+			background-repeat: repeat;
+			opacity: 0.18;
+			pointer-events: none;
+		}
+	}
+
+	&__tier-inner {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 1240px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	&__tier-content {
 		display: grid;
 		grid-template-columns: minmax(280px, 42%) 1fr;
-		gap: 3rem;
+		column-gap: 4rem;
+		row-gap: 2rem;
 		align-items: center;
 	}
 
-	&__tier--reverse {
+	&__tier--reverse &__tier-content {
 		grid-template-columns: 1fr minmax(280px, 42%);
 
 		.meetup-sponsorship-deck__tier-image {
@@ -616,6 +652,34 @@
 			width: 100%;
 			border-radius: 3px;
 			overflow: hidden;
+			opacity: 0;
+			transform: translate(var(--slide-x, 60px), 0) scale(0.96);
+			transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+			will-change: transform, opacity;
+			cursor: pointer;
+
+			&.is-visible {
+				opacity: 1;
+				transform: translate(0, 0) scale(1);
+			}
+
+			img {
+				transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+			}
+
+			&:hover {
+				box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+
+				img {
+					transform: scale(1.06);
+				}
+			}
+		}
+	}
+
+	&__tier--reverse &__tier-image--single {
+		.gatsby-image-wrapper {
+			--slide-x: -60px;
 		}
 	}
 
@@ -631,8 +695,17 @@
 		position: absolute;
 		border-radius: 50%;
 		overflow: hidden;
-		border: 2px solid var(--green);
-		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+		box-shadow: 0 0 0 8px rgba(250, 255, 250, 0.65), 0 0 0 14px rgba(111, 216, 202, 0.3), 0 18px 40px rgba(255, 255, 255, 0);
+		opacity: 0;
+		transform: translate(var(--slide-x, 0), var(--slide-y, 0)) scale(0.85);
+		transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+		will-change: transform, opacity;
+		cursor: pointer;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translate(0, 0) scale(1);
+		}
 
 		.gatsby-image-wrapper,
 		img {
@@ -642,12 +715,29 @@
 			border-radius: 50%;
 		}
 
+		img {
+			transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+		}
+
+		&.is-visible:hover {
+			box-shadow: 0 0 0 8px rgba(250, 255, 250, 0.85), 0 0 0 14px rgba(111, 216, 202, 0.5), 0 24px 50px rgba(0, 0, 0, 0.5);
+			transform: translate(0, 0) scale(1.04);
+			z-index: 3;
+
+			img {
+				transform: scale(1.08);
+			}
+		}
+
 		&--primary {
 			top: 0;
 			left: 0;
 			width: 78%;
 			aspect-ratio: 1 / 1;
 			z-index: 1;
+			--slide-x: -60px;
+			--slide-y: -40px;
+			transition-delay: 0.05s;
 		}
 
 		&--secondary {
@@ -656,6 +746,9 @@
 			width: 48%;
 			aspect-ratio: 1 / 1;
 			z-index: 2;
+			--slide-x: 60px;
+			--slide-y: 40px;
+			transition-delay: 0.2s;
 		}
 	}
 
@@ -677,14 +770,41 @@
 		border-radius: 3px;
 		overflow: hidden;
 		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+		opacity: 0;
+		transform: translate(var(--slide-x, 0), var(--slide-y, 0)) rotate(var(--rotation, 0deg));
+		transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+		will-change: transform, opacity;
+		cursor: pointer;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translate(0, 0) rotate(var(--rotation, 0deg));
+		}
+
+		img {
+			transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+		}
+
+		&.is-visible:hover {
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+			transform: translate(0, 0) rotate(0deg) scale(1.03);
+			z-index: 3;
+
+			img {
+				transform: scale(1.08);
+			}
+		}
 
 		&--a {
 			top: 0;
 			right: 5%;
 			width: 58%;
 			aspect-ratio: 3 / 4;
-			transform: rotate(2deg);
+			--rotation: 2deg;
+			--slide-x: 70px;
+			--slide-y: -30px;
 			z-index: 2;
+			transition-delay: 0.1s;
 		}
 
 		&--b {
@@ -692,7 +812,9 @@
 			left: 0;
 			width: 55%;
 			aspect-ratio: 4 / 3;
-			transform: rotate(-2deg);
+			--rotation: -2deg;
+			--slide-x: -70px;
+			--slide-y: 30px;
 			z-index: 1;
 		}
 	}
@@ -704,10 +826,33 @@
 		letter-spacing: 0.02em;
 		margin: 0 0 1.25rem;
 		line-height: 1.05;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(-20px);
+		transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+		will-change: transform, opacity;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	&__tier-title-highlight {
 		color: var(--green);
+	}
+
+	&__tier-body {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+		transition-delay: 0.15s;
+		will-change: transform, opacity;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	&__tier-list {
@@ -889,9 +1034,9 @@
 			gap: 2rem;
 		}
 
-		&__tier,
-		&__tier--reverse {
+		&__tier-inner {
 			grid-template-columns: minmax(240px, 40%) 1fr;
+			gap: 3rem;
 		}
 
 		&__other-grid {
@@ -1089,17 +1234,33 @@
 			gap: 1.75rem 1.25rem;
 		}
 
-		&__tier,
-		&__tier--reverse {
+		&__tier {
+			padding: 3rem 0;
+
+			&::before {
+				background-size: 220px auto;
+			}
+		}
+
+		&__tier-inner {
+			gap: 1.5rem;
+			padding: 0 1.5rem;
+		}
+
+		&__tier-content {
 			grid-template-columns: 1fr;
 			gap: 1.75rem;
+		}
+
+		&__tier--reverse &__tier-content {
+			grid-template-columns: 1fr;
 
 			.meetup-sponsorship-deck__tier-image {
-				order: 1;
+				order: 0;
 			}
 
 			.meetup-sponsorship-deck__tier-body {
-				order: 2;
+				order: 0;
 			}
 		}
 
