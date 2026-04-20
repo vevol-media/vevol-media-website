@@ -1,17 +1,10 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../components/layout/layout';
 import SponsorshipTier from '../components/sponsorship-tier/sponsorship-tier';
-import {
-	MAX_PARTNER_LOGOS,
-	footerImageRef,
-	otherImageRefs,
-	otherSponsorships,
-	pillarImageRefs,
-	tierConfigs,
-} from '../data/shopify-meetup-cee-2026';
+import { MAX_PARTNER_LOGOS, footerImageRef, otherImageRefs, otherSponsorships, tierConfigs } from '../data/shopify-meetup-cee-2026';
 
 export const data = graphql`
 	query {
@@ -38,6 +31,21 @@ export const data = graphql`
 		aboutImageB: file(name: { eq: "about_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 980, quality: 100)
+			}
+		}
+		pillarImage1: file(name: { eq: "pillars_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 100)
+			}
+		}
+		pillarImage2: file(name: { eq: "pillars_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 100)
+			}
+		}
+		pillarImage3: file(name: { eq: "pillars_3" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 720, quality: 100)
 			}
 		}
 		event2024: allFile(filter: { relativeDirectory: { eq: "event/2024" } }, sort: { fields: name, order: ASC }) {
@@ -68,7 +76,19 @@ export const data = graphql`
 `;
 
 export default function ShopifyMeetupCEE2026Page({ data }) {
-	const { shopifyLogo, ecommerceTodayLogo, vevolMediaLogo, aboutImageA, aboutImageB, event2024, event2025, eventPartners } = data;
+	const {
+		shopifyLogo,
+		ecommerceTodayLogo,
+		vevolMediaLogo,
+		aboutImageA,
+		aboutImageB,
+		pillarImage1,
+		pillarImage2,
+		pillarImage3,
+		event2024,
+		event2025,
+		eventPartners,
+	} = data;
 	const shopifyLogoData = getImage(shopifyLogo);
 	const ecommerceTodayLogoData = getImage(ecommerceTodayLogo);
 	const vevolMediaLogoData = getImage(vevolMediaLogo);
@@ -83,7 +103,9 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 
 	const aboutImageAData = getImage(aboutImageA);
 	const aboutImageBData = getImage(aboutImageB);
-	const [pillarImageA, pillarImageB, pillarImageC] = resolveImages(pillarImageRefs);
+	const pillarImageA = getImage(pillarImage1);
+	const pillarImageB = getImage(pillarImage3);
+	const pillarImageC = getImage(pillarImage2);
 	const otherImages = resolveImages(otherImageRefs);
 	const footerImage = resolveImage(footerImageRef);
 
@@ -91,6 +113,28 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		...config,
 		images: resolveImages(config.imageRefs),
 	}));
+
+	useEffect(() => {
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		if (prefersReducedMotion) return undefined;
+
+		const targets = document.querySelectorAll(
+			'.meetup-sponsorship-deck__about-photo, .meetup-sponsorship-deck__pillars-photo',
+		);
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					entry.target.classList.toggle('is-visible', entry.isIntersecting);
+				});
+			},
+			{ threshold: 0.25 },
+		);
+
+		targets.forEach((el) => observer.observe(el));
+
+		return () => observer.disconnect();
+	}, []);
 
 	return (
 		<Layout hasHeader={false} hasMainForm={false} customClass={'shopify-meetup-page'}>
@@ -179,8 +223,8 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 					</div>
 				</section>
 
-				<div className="container">
-					<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__pillars-slide">
+				<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__pillars-slide">
+					<div className="meetup-sponsorship-deck__pillars-inner">
 						<div className="meetup-sponsorship-deck__pillars-collage">
 							{pillarImageA && (
 								<div className="meetup-sponsorship-deck__pillars-photo meetup-sponsorship-deck__pillars-photo--a">
@@ -203,8 +247,10 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 							<li className="meetup-sponsorship-deck__pillar">WIN CUSTOMERS</li>
 							<li className="meetup-sponsorship-deck__pillar">LEARN AI IN ECOMMERCE</li>
 						</ul>
-					</section>
+					</div>
+				</section>
 
+				<div className="container">
 					<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__past-sponsors">
 						<h3 className="meetup-sponsorship-deck__section-title meetup-sponsorship-deck__section-title--center">
 							OUR PREVIOUS <span className="meetup-sponsorship-deck__section-title-highlight">SHOPIFY MEETUP</span> SPONSORS

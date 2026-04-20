@@ -12,12 +12,6 @@ export const aboutImageRefs = [
 	{ source: '2024', index: 1 },
 ];
 
-export const pillarImageRefs = [
-	{ source: '2024', index: 2 },
-	{ source: '2024', index: 3 },
-	{ source: '2025', index: 1 },
-];
-
 export const otherImageRefs = [
 	{ source: '2024', index: 7 },
 	{ source: '2025', index: 4 },

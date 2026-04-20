@@ -309,11 +309,10 @@
 	&__about {
 		position: relative;
 		width: 100%;
-		min-height: 100dvh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 2.5rem 0;
+		padding: 6rem 0;
 		overflow: hidden;
 
 		&::before {
@@ -350,6 +349,15 @@
 		border-radius: 14px;
 		overflow: hidden;
 		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+		opacity: 0;
+		transform: translate(var(--slide-x, 0), var(--slide-y, 0));
+		transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+		will-change: transform, opacity;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
 
 		.gatsby-image-wrapper,
 		img {
@@ -364,6 +372,7 @@
 			width: 50%;
 			aspect-ratio: 1 / 1;
 			z-index: 1;
+			--slide-x: -80px;
 		}
 
 		&--b {
@@ -372,6 +381,7 @@
 			width: 78%;
 			aspect-ratio: 4 / 3;
 			z-index: 2;
+			--slide-x: 80px;
 		}
 	}
 
@@ -396,22 +406,55 @@
 	}
 
 	&__pillars-slide {
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		text-align: center;
+		padding: 6rem 0;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: url('../images/shopify-meetup-cee-2026/pattern.png');
+			background-repeat: repeat;
+			opacity: 0.18;
+			pointer-events: none;
+		}
+	}
+
+	&__pillars-inner {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 1240px;
+		margin: 0 auto;
 	}
 
 	&__pillars-collage {
 		position: relative;
 		width: 100%;
-		max-width: 900px;
-		margin: 0 auto 2.75rem;
-		aspect-ratio: 16 / 9;
+		margin: 0 auto 2.5rem;
+		aspect-ratio: 2 / 1;
 	}
 
 	&__pillars-photo {
 		position: absolute;
-		border-radius: 3px;
+		border-radius: 14px;
 		overflow: hidden;
-		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+		opacity: 0;
+		transform: translate(var(--slide-x, 0), var(--slide-y, 0)) rotate(var(--rotation, 0deg));
+		transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+		will-change: transform, opacity;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translate(0, 0) rotate(var(--rotation, 0deg));
+		}
 
 		.gatsby-image-wrapper,
 		img {
@@ -423,28 +466,31 @@
 		&--a {
 			top: 0;
 			left: 0;
-			width: 42%;
+			width: 34%;
 			aspect-ratio: 4 / 3;
-			transform: rotate(-1deg);
 			z-index: 2;
+			--rotation: -2deg;
+			--slide-x: -80px;
 		}
 
 		&--b {
-			bottom: 0;
-			left: 18%;
-			width: 30%;
-			aspect-ratio: 4 / 3;
-			transform: rotate(2deg);
-			z-index: 3;
+			top: 4%;
+			right: 0;
+			width: 44%;
+			aspect-ratio: 3 / 2;
+			z-index: 1;
+			--rotation: 1deg;
+			--slide-x: 80px;
 		}
 
 		&--c {
-			top: 8%;
-			right: 0;
-			width: 52%;
-			aspect-ratio: 16 / 10;
-			transform: rotate(1deg);
-			z-index: 1;
+			bottom: 0;
+			left: 18%;
+			width: 36%;
+			aspect-ratio: 4 / 3;
+			z-index: 3;
+			--rotation: -2deg;
+			--slide-y: 80px;
 		}
 	}
 
@@ -921,9 +967,49 @@
 			}
 		}
 
+		&__pillars-slide {
+			padding: 2.5rem 0;
+
+			&::before {
+				background-size: 220px auto;
+			}
+		}
+
+		&__pillars-inner {
+			padding: 0 1.5rem;
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 2rem;
+		}
+
 		&__pillars-collage {
-			aspect-ratio: 3 / 2;
-			margin-bottom: 1.75rem;
+			aspect-ratio: auto;
+			max-width: 100%;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		&__pillars-photo {
+			position: relative;
+			width: 100%;
+			transform: translate(var(--slide-x, 0), var(--slide-y, 0));
+
+			&.is-visible {
+				transform: translate(0, 0);
+			}
+
+			&--a,
+			&--b,
+			&--c {
+				top: auto;
+				bottom: auto;
+				left: auto;
+				right: auto;
+				width: 100%;
+				aspect-ratio: 4 / 3;
+			}
 		}
 
 		&__pillars {
