@@ -1,12 +1,10 @@
-import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import React from 'react';
 
 function FeatureItem({ item }) {
-	const classes = ['meetup-sponsorship-deck__tier-item'];
+	const classes = ['meetup-sponsorship-deck__tier-item', item.strike && 'meetup-sponsorship-deck__tier-item--strike'].filter(Boolean).join(' ');
 
-	if (item.strike) classes.push('meetup-sponsorship-deck__tier-item--strike');
-
-	return <li className={classes.join(' ')}>{item.bold ? <strong>{item.text}</strong> : item.text}</li>;
+	return <li className={classes}>{item.bold ? <strong>{item.text}</strong> : item.text}</li>;
 }
 
 function TierImages({ layout, images, altPrefix }) {
@@ -58,26 +56,32 @@ function TierImages({ layout, images, altPrefix }) {
 }
 
 export default function SponsorshipTier({ config }) {
-	const { variant, reverse, title, imageLayout, images, features, availability, price } = config;
+	const { variant, reverse, title, imageLayout, images, features, availability, price, titleInBody } = config;
 
 	const sectionClasses = [
 		'meetup-sponsorship-deck__section',
 		'meetup-sponsorship-deck__tier',
 		`meetup-sponsorship-deck__tier--${variant}`,
-	];
+		reverse && 'meetup-sponsorship-deck__tier--reverse',
+		titleInBody && 'meetup-sponsorship-deck__tier--title-in-body',
+	]
+		.filter(Boolean)
+		.join(' ');
 
-	if (reverse) sectionClasses.push('meetup-sponsorship-deck__tier--reverse');
+	const TitleNode = (
+		<h3 className="meetup-sponsorship-deck__tier-title">
+			{title.prefix} <span className="meetup-sponsorship-deck__tier-title-highlight">{title.highlight}</span> {title.suffix}
+		</h3>
+	);
 
 	return (
-		<section className={sectionClasses.join(' ')}>
+		<section className={sectionClasses}>
 			<div className="meetup-sponsorship-deck__tier-inner">
-				<h3 className="meetup-sponsorship-deck__tier-title">
-					{title.prefix} <span className="meetup-sponsorship-deck__tier-title-highlight">{title.highlight}</span>{' '}
-					{title.suffix}
-				</h3>
+				{!titleInBody && TitleNode}
 				<div className="meetup-sponsorship-deck__tier-content">
 					<TierImages layout={imageLayout} images={images} altPrefix={`${title.highlight} sponsor`} />
 					<div className="meetup-sponsorship-deck__tier-body">
+						{titleInBody && TitleNode}
 						<ul className="meetup-sponsorship-deck__tier-list">
 							{features.map((item, i) => (
 								<FeatureItem key={i} item={item} />

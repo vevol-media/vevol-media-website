@@ -42,6 +42,8 @@ export const footerImageRef = { source: '2024', index: 0 };
 
 const premierTierConfig = {
 	variant: 'premier',
+	reverse: false,
+	titleInBody: false,
 	title: { prefix: 'BECOME THE', highlight: 'PREMIER', suffix: 'SPONSOR' },
 	imageLayout: 'circles',
 	imageRefs: [
@@ -71,6 +73,7 @@ const premierTierConfig = {
 const plusTierConfig = {
 	variant: 'plus',
 	reverse: true,
+	titleInBody: true,
 	title: { prefix: 'BECOME A', highlight: 'PLUS', suffix: 'SPONSOR' },
 	imageLayout: 'stack',
 	imageRefs: [
@@ -98,6 +101,7 @@ const plusTierConfig = {
 const bronzeTierConfig = {
 	variant: 'bronze',
 	reverse: true,
+	titleInBody: true,
 	title: { prefix: 'BECOME A', highlight: 'BRONZE', suffix: 'SPONSOR' },
 	imageLayout: 'single',
 	imageRefs: [{ source: '2024', index: 6 }],

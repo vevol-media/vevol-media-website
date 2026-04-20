@@ -65,6 +65,16 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 620, quality: 100)
 			}
 		}
+		tierPlus1: file(name: { eq: "tier_plus_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 100)
+			}
+		}
+		tierPlus2: file(name: { eq: "tier_plus_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 100)
+			}
+		}
 		event2024: allFile(filter: { relativeDirectory: { eq: "event/2024" } }, sort: { fields: name, order: ASC }) {
 			nodes {
 				name
@@ -107,6 +117,8 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		pillarImage3,
 		tierPremier1,
 		tierPremier2,
+		tierPlus1,
+		tierPlus2,
 		event2024,
 		event2025,
 		sponsorLogos,
@@ -137,6 +149,7 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 
 	const tierImageOverrides = {
 		premier: [getImage(tierPremier1), getImage(tierPremier2)],
+		plus: [getImage(tierPlus1), getImage(tierPlus2)],
 	};
 	const resolvedTierConfigs = tierConfigs.map((config) => ({
 		...config,
