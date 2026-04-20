@@ -368,17 +368,19 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 				</section>
 
 				<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__next-steps">
-					<h3 className="meetup-sponsorship-deck__section-title meetup-sponsorship-deck__section-title--center meetup-sponsorship-deck__section-title--sm">
-						NEXT STEPS
-					</h3>
-					<p>
-						Please contact us ASAP to express your interest in sponsoring the event at <strong>dan.nistor@vevolmedia.com</strong>
-					</p>
-					<p>
-						<strong>Note</strong>: Your sponsorship is not guaranteed until it has been reviewed and approved by our team, ensuring
-						alignment with our criteria for carefully vetted partners.
-					</p>
-					<p>Thanks for understanding.</p>
+					<div className="meetup-sponsorship-deck__next-steps-inner">
+						<h3 className="meetup-sponsorship-deck__section-title meetup-sponsorship-deck__section-title--center meetup-sponsorship-deck__section-title--sm">
+							NEXT STEPS
+						</h3>
+						<p>
+							Please contact us ASAP to express your interest in sponsoring the event at <strong>dan.nistor@vevolmedia.com</strong>
+						</p>
+						<p>
+							<strong>Note</strong>: Your sponsorship is not guaranteed until it has been reviewed and approved by our team, ensuring
+							alignment with our criteria for carefully vetted partners.
+						</p>
+						<p>Thanks for understanding.</p>
+					</div>
 				</section>
 
 				<section

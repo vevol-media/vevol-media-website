@@ -1026,14 +1026,36 @@
 	}
 
 	&__next-steps {
-		text-align: center;
-		max-width: 640px;
+		position: relative;
+		width: 100%;
+		padding: 6rem 0;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: url('../images/shopify-meetup-cee-2026/pattern.png');
+			background-repeat: repeat;
+			opacity: 0.18;
+			pointer-events: none;
+		}
+	}
+
+	&__next-steps-inner {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 900px;
 		margin: 0 auto;
+		padding: 0 1.5rem;
+		text-align: center;
 
 		p {
 			color: rgba($white, 0.95);
 			line-height: 1.7;
-			margin: 0 0 1.25rem;
+			margin: 0 0 1.75rem;
+			font-size: clamp(1.2rem, 1rem + 0.7vw, 1.55rem);
 
 			&:last-child {
 				margin-bottom: 0;
@@ -1297,6 +1319,14 @@
 
 		&__other {
 			padding: 3rem 0;
+		}
+
+		&__next-steps {
+			padding: 3rem 0;
+
+			&::before {
+				background-size: 220px auto;
+			}
 		}
 
 		&__other-inner {
