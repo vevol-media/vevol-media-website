@@ -31,8 +31,6 @@ export const aboutImageRefs = [
 	{ source: '2024', index: 1 },
 ];
 
-export const footerImageRef = { source: '2024', index: 0 };
-
 const premierTierConfig = {
 	variant: 'premier',
 	reverse: false,

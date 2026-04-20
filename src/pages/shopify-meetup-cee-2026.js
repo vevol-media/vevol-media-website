@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../components/layout/layout';
 import SponsorshipTier from '../components/sponsorship-tier/sponsorship-tier';
-import { MAX_PARTNER_LOGOS, footerImageRef, otherSponsorships, sponsorLogoOrder, tierConfigs } from '../data/shopify-meetup-cee-2026';
+import { MAX_PARTNER_LOGOS, otherSponsorships, sponsorLogoOrder, tierConfigs } from '../data/shopify-meetup-cee-2026';
 
 export const data = graphql`
 	query {
@@ -84,6 +84,14 @@ export const data = graphql`
 				}
 			}
 		}
+		footerBanner: file(
+			name: { eq: "Shopify Meetup CEE 2026 - Sponsorship Deck by Vevol Media & Ecommerce Today" }
+			relativeDirectory: { eq: "shopify-meetup-cee-2026" }
+		) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 240 }, width: 1920, quality: 100)
+			}
+		}
 		event2024: allFile(filter: { relativeDirectory: { eq: "event/2024" } }, sort: { fields: name, order: ASC }) {
 			nodes {
 				name
@@ -127,6 +135,7 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		tierPlus2,
 		tierBronze1,
 		otherImages: otherImagesData,
+		footerBanner,
 		event2024,
 		event2025,
 		sponsorLogos,
@@ -153,7 +162,7 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 	const pillarImageB = getImage(pillarImage3);
 	const pillarImageC = getImage(pillarImage2);
 	const otherImages = (otherImagesData?.nodes || []).map((node) => getImage(node));
-	const footerImage = resolveImage(footerImageRef);
+	const footerImage = getImage(footerBanner);
 
 	const tierImageOverrides = {
 		premier: [getImage(tierPremier1), getImage(tierPremier2)],
@@ -372,9 +381,12 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 					<p>Thanks for understanding.</p>
 				</section>
 
-				<div className="meetup-sponsorship-deck__footer-banner">
-					{footerImage && <GatsbyImage image={footerImage} alt="Shopify Meetup attendees" />}
-				</div>
+				<section
+					className="meetup-sponsorship-deck__section meetup-sponsorship-deck__footer-banner"
+					aria-label="Shopify Meetup CEE 2026 sponsorship deck"
+				>
+					{footerImage && <GatsbyImage image={footerImage} alt="Shopify Meetup CEE 2026 - Sponsorship Deck by Vevol Media & Ecommerce Today" />}
+				</section>
 			</section>
 		</Layout>
 	);
