@@ -307,23 +307,49 @@
 	}
 
 	&__about {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 3rem;
+		position: relative;
+		width: 100%;
+		min-height: 100dvh;
+		display: flex;
+		justify-content: center;
 		align-items: center;
+		padding: 2.5rem 0;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: url('../images/shopify-meetup-cee-2026/pattern.png');
+			background-repeat: repeat;
+			opacity: 0.18;
+			pointer-events: none;
+		}
+	}
+
+	&__about-inner {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 2.5rem;
+		align-items: center;
+		width: 100%;
+		max-width: 1240px;
+		margin: 0 auto;
 	}
 
 	&__about-collage {
 		position: relative;
 		width: 100%;
-		aspect-ratio: 5 / 4;
+		aspect-ratio: 1 / 1;
 	}
 
 	&__about-photo {
 		position: absolute;
-		border-radius: 3px;
+		border-radius: 14px;
 		overflow: hidden;
-		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
 
 		.gatsby-image-wrapper,
 		img {
@@ -335,26 +361,27 @@
 		&--a {
 			top: 0;
 			left: 0;
-			width: 62%;
-			aspect-ratio: 4 / 3;
-			transform: rotate(-1.5deg);
-			z-index: 2;
+			width: 50%;
+			aspect-ratio: 1 / 1;
+			z-index: 1;
 		}
 
 		&--b {
 			bottom: 0;
 			right: 0;
-			width: 70%;
+			width: 78%;
 			aspect-ratio: 4 / 3;
-			transform: rotate(1.5deg);
-			z-index: 1;
+			z-index: 2;
 		}
 	}
 
 	&__about-copy {
 		p {
 			color: rgba($white, 0.92);
-			line-height: 1.65;
+			font-size: clamp(1rem, 0.92rem + 0.3vw, 1.15rem);
+			font-weight: 400;
+			line-height: 1.55;
+			letter-spacing: 0.005em;
 			margin: 0 0 1rem;
 		}
 	}
@@ -364,7 +391,7 @@
 	}
 
 	&__about-note {
-		margin-top: 1.5rem !important;
+		margin-top: 2rem !important;
 		color: rgba($white, 0.85);
 	}
 
@@ -859,14 +886,39 @@
 		}
 
 		&__about {
+			padding: 2.5rem 0;
+
+			&::before {
+				background-size: 220px auto;
+			}
+		}
+
+		&__about-inner {
 			grid-template-columns: 1fr;
-			gap: 1.75rem;
+			gap: 2rem;
+			padding: 0 1.5rem;
 		}
 
 		&__about-collage {
-			aspect-ratio: 4 / 3;
-			max-width: 420px;
+			aspect-ratio: auto;
+			max-width: 100%;
 			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		&__about-photo {
+			position: relative;
+			width: 100%;
+
+			&--a {
+				aspect-ratio: 4 / 3;
+			}
+
+			&--b {
+				aspect-ratio: 4 / 3;
+			}
 		}
 
 		&__pillars-collage {

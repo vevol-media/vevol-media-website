@@ -6,7 +6,6 @@ import Layout from '../components/layout/layout';
 import SponsorshipTier from '../components/sponsorship-tier/sponsorship-tier';
 import {
 	MAX_PARTNER_LOGOS,
-	aboutImageRefs,
 	footerImageRef,
 	otherImageRefs,
 	otherSponsorships,
@@ -29,6 +28,16 @@ export const data = graphql`
 		vevolMediaLogo: file(name: { eq: "vevol_media_transparent" }) {
 			childImageSharp {
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 160 }, width: 160, quality: 100)
+			}
+		}
+		aboutImageA: file(name: { eq: "about_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 100)
+			}
+		}
+		aboutImageB: file(name: { eq: "about_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
+			childImageSharp {
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 980, quality: 100)
 			}
 		}
 		event2024: allFile(filter: { relativeDirectory: { eq: "event/2024" } }, sort: { fields: name, order: ASC }) {
@@ -59,7 +68,7 @@ export const data = graphql`
 `;
 
 export default function ShopifyMeetupCEE2026Page({ data }) {
-	const { shopifyLogo, ecommerceTodayLogo, vevolMediaLogo, event2024, event2025, eventPartners } = data;
+	const { shopifyLogo, ecommerceTodayLogo, vevolMediaLogo, aboutImageA, aboutImageB, event2024, event2025, eventPartners } = data;
 	const shopifyLogoData = getImage(shopifyLogo);
 	const ecommerceTodayLogoData = getImage(ecommerceTodayLogo);
 	const vevolMediaLogoData = getImage(vevolMediaLogo);
@@ -72,7 +81,8 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 	const resolveImage = (ref) => getImage(photoSources[ref.source]?.[ref.index]);
 	const resolveImages = (refs) => refs.map(resolveImage);
 
-	const [aboutImageA, aboutImageB] = resolveImages(aboutImageRefs);
+	const aboutImageAData = getImage(aboutImageA);
+	const aboutImageBData = getImage(aboutImageB);
 	const [pillarImageA, pillarImageB, pillarImageC] = resolveImages(pillarImageRefs);
 	const otherImages = resolveImages(otherImageRefs);
 	const footerImage = resolveImage(footerImageRef);
@@ -125,21 +135,23 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 								</div>
 							</div>
 						</div>
-						<h2 className="meetup-sponsorship-deck__title">
-							<span className="meetup-sponsorship-deck__title-highlight">SPONSORSHIP</span> DECK
-						</h2>
-					</section>
+					<h2 className="meetup-sponsorship-deck__title">
+						<span className="meetup-sponsorship-deck__title-highlight">SPONSORSHIP</span> DECK
+					</h2>
+				</section>
+				</div>
 
-					<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__about">
+				<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__about">
+					<div className="meetup-sponsorship-deck__about-inner">
 						<div className="meetup-sponsorship-deck__about-collage">
-							{aboutImageA && (
+							{aboutImageAData && (
 								<div className="meetup-sponsorship-deck__about-photo meetup-sponsorship-deck__about-photo--a">
-									<GatsbyImage image={aboutImageA} alt="Shopify Meetup CEE photo" />
+									<GatsbyImage image={aboutImageAData} alt="Shopify Meetup CEE registration desk" />
 								</div>
 							)}
-							{aboutImageB && (
+							{aboutImageBData && (
 								<div className="meetup-sponsorship-deck__about-photo meetup-sponsorship-deck__about-photo--b">
-									<GatsbyImage image={aboutImageB} alt="Shopify Meetup CEE photo" />
+									<GatsbyImage image={aboutImageBData} alt="Shopify Meetup CEE attendees" />
 								</div>
 							)}
 						</div>
@@ -150,8 +162,8 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 								builders and merchants from all around Europe, we decided to put together the Shopify Meetup CEE 2026.
 							</p>
 							<p>
-								We received a LOT of positive feedback from tech vendors and agencies, and we are aiming to bring 250 Shopify folks to
-								the 2026 edition. Sponsors will have the privilege to participate in our private dinner the evening prior to the
+								We received a LOT of positive feedback from tech vendors and agencies, and we are aiming to bring 250 Shopify folks
+								to the 2026 edition. Sponsors will have the privilege to participate in our private dinner the evening prior to the
 								event, host a workshop, talk on stage and of course, the afterparty!
 							</p>
 							<p>We&rsquo;re inviting you to join us!</p>
@@ -164,8 +176,10 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 							</p>
 							<p className="meetup-sponsorship-deck__about-note">Limited sponsorship spots on a first-come, first-served basis.</p>
 						</div>
-					</section>
+					</div>
+				</section>
 
+				<div className="container">
 					<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__pillars-slide">
 						<div className="meetup-sponsorship-deck__pillars-collage">
 							{pillarImageA && (
