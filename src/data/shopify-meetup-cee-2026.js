@@ -20,22 +20,15 @@ export const sponsorLogoOrder = [
 ];
 
 export const otherSponsorships = [
-	{ label: 'GIVEAWAY SPONSOR', price: '€1500', imageIndex: 0 },
-	{ label: 'PR SPONSOR', price: '€1500', imageIndex: 1 },
-	{ label: 'LANYARD SPONSOR', price: '€1500', imageIndex: 2, sold: true },
-	{ label: 'FOOD & DRINKS SPONSOR', price: '€2500', imageIndex: 3 },
+	{ label: 'GIVEAWAY SPONSOR', price: '€1500' },
+	{ label: 'PR SPONSOR', price: '€1500' },
+	{ label: 'LANYARD SPONSOR', price: '€1500', sold: true },
+	{ label: 'FOOD & DRINKS SPONSOR', price: '€2500' },
 ];
 
 export const aboutImageRefs = [
 	{ source: '2025', index: 0 },
 	{ source: '2024', index: 1 },
-];
-
-export const otherImageRefs = [
-	{ source: '2024', index: 7 },
-	{ source: '2025', index: 4 },
-	{ source: '2024', index: 0 },
-	{ source: '2025', index: 5 },
 ];
 
 export const footerImageRef = { source: '2024', index: 0 };

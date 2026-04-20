@@ -4,14 +4,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../components/layout/layout';
 import SponsorshipTier from '../components/sponsorship-tier/sponsorship-tier';
-import {
-	MAX_PARTNER_LOGOS,
-	footerImageRef,
-	otherImageRefs,
-	otherSponsorships,
-	sponsorLogoOrder,
-	tierConfigs,
-} from '../data/shopify-meetup-cee-2026';
+import { MAX_PARTNER_LOGOS, footerImageRef, otherSponsorships, sponsorLogoOrder, tierConfigs } from '../data/shopify-meetup-cee-2026';
 
 export const data = graphql`
 	query {
@@ -80,6 +73,17 @@ export const data = graphql`
 				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 900, quality: 100)
 			}
 		}
+		otherImages: allFile(
+			filter: { relativeDirectory: { eq: "shopify-meetup-cee-2026" }, name: { regex: "/^other_[0-9]+$/" } }
+			sort: { fields: name, order: ASC }
+		) {
+			nodes {
+				name
+				childImageSharp {
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 600, quality: 100)
+				}
+			}
+		}
 		event2024: allFile(filter: { relativeDirectory: { eq: "event/2024" } }, sort: { fields: name, order: ASC }) {
 			nodes {
 				name
@@ -96,10 +100,7 @@ export const data = graphql`
 				}
 			}
 		}
-		sponsorLogos: allFile(
-			filter: { relativeDirectory: { eq: "shopify-meetup-cee-2026/logos" } }
-			sort: { fields: name, order: ASC }
-		) {
+		sponsorLogos: allFile(filter: { relativeDirectory: { eq: "shopify-meetup-cee-2026/logos" } }, sort: { fields: name, order: ASC }) {
 			nodes {
 				name
 				childImageSharp {
@@ -125,6 +126,7 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		tierPlus1,
 		tierPlus2,
 		tierBronze1,
+		otherImages: otherImagesData,
 		event2024,
 		event2025,
 		sponsorLogos,
@@ -150,7 +152,7 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 	const pillarImageA = getImage(pillarImage1);
 	const pillarImageB = getImage(pillarImage3);
 	const pillarImageC = getImage(pillarImage2);
-	const otherImages = resolveImages(otherImageRefs);
+	const otherImages = (otherImagesData?.nodes || []).map((node) => getImage(node));
 	const footerImage = resolveImage(footerImageRef);
 
 	const tierImageOverrides = {
@@ -169,7 +171,7 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		if (prefersReducedMotion) return undefined;
 
 		const targets = document.querySelectorAll(
-			'.meetup-sponsorship-deck__about-photo, .meetup-sponsorship-deck__pillars-photo, .meetup-sponsorship-deck__sponsor-logo, .meetup-sponsorship-deck__circle, .meetup-sponsorship-deck__stack-photo, .meetup-sponsorship-deck__tier-image--single .gatsby-image-wrapper, .meetup-sponsorship-deck__tier-title, .meetup-sponsorship-deck__tier-body',
+			'.meetup-sponsorship-deck__about-photo, .meetup-sponsorship-deck__pillars-photo, .meetup-sponsorship-deck__sponsor-logo, .meetup-sponsorship-deck__circle, .meetup-sponsorship-deck__stack-photo, .meetup-sponsorship-deck__tier-image--single .gatsby-image-wrapper, .meetup-sponsorship-deck__tier-title, .meetup-sponsorship-deck__tier-body, .meetup-sponsorship-deck__other-card, .meetup-sponsorship-deck__other-frame',
 		);
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -323,30 +325,35 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 				))}
 
 				<section className="meetup-sponsorship-deck__section meetup-sponsorship-deck__other">
-					<h3 className="meetup-sponsorship-deck__section-title">
-						<span className="meetup-sponsorship-deck__section-title-highlight">OTHER</span> SPONSORSHIPS
-					</h3>
-					<div className="meetup-sponsorship-deck__other-frame">
-						<div className="meetup-sponsorship-deck__other-grid">
-							{otherSponsorships.map((item) => {
-								const image = otherImages[item.imageIndex];
-								const cardClasses = ['meetup-sponsorship-deck__other-card'];
+					<div className="meetup-sponsorship-deck__other-inner">
+						<h3 className="meetup-sponsorship-deck__section-title meetup-sponsorship-deck__section-title--center">
+							OTHER <span className="meetup-sponsorship-deck__section-title-highlight">SPONSORSHIPS</span>
+						</h3>
+						<div className="meetup-sponsorship-deck__other-frame">
+							<div className="meetup-sponsorship-deck__other-grid">
+								{otherSponsorships.map((item, index) => {
+									const image = otherImages[index];
+									const cardClasses = [
+										'meetup-sponsorship-deck__other-card',
+										item.sold && 'meetup-sponsorship-deck__other-card--sold',
+									]
+										.filter(Boolean)
+										.join(' ');
 
-								if (item.sold) cardClasses.push('meetup-sponsorship-deck__other-card--sold');
-
-								return (
-									<div key={item.label} className={cardClasses.join(' ')}>
-										<div className="meetup-sponsorship-deck__other-image">
-											{image && <GatsbyImage image={image} alt={item.label} />}
-											{item.sold && <span className="meetup-sponsorship-deck__other-sold">SOLD!</span>}
+									return (
+										<div key={item.label} className={cardClasses}>
+											<div className="meetup-sponsorship-deck__other-image">
+												{image && <GatsbyImage image={image} alt={item.label} />}
+												<div className="meetup-sponsorship-deck__other-meta">
+													<span className="meetup-sponsorship-deck__other-label">{item.label}</span>
+													<span className="meetup-sponsorship-deck__other-price">{item.price}</span>
+												</div>
+												{item.sold && <span className="meetup-sponsorship-deck__other-sold">SOLD OUT!</span>}
+											</div>
 										</div>
-										<div className="meetup-sponsorship-deck__other-meta">
-											<span className="meetup-sponsorship-deck__other-label">{item.label}</span>
-											<span className="meetup-sponsorship-deck__other-price">{item.price}</span>
-										</div>
-									</div>
-								);
-							})}
+									);
+								})}
+							</div>
 						</div>
 					</div>
 				</section>

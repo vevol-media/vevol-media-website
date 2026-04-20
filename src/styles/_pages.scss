@@ -863,33 +863,67 @@
 	}
 
 	&__other {
-		text-align: left;
+		position: relative;
+		width: 100%;
+		padding: 6rem 0;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: url('../images/shopify-meetup-cee-2026/pattern.png');
+			background-repeat: repeat;
+			opacity: 0.18;
+			pointer-events: none;
+		}
+	}
+
+	&__other-inner {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 1240px;
+		margin: 0 auto;
+
+		.meetup-sponsorship-deck__section-title {
+			margin-bottom: 2.5rem;
+		}
 	}
 
 	&__other-frame {
 		position: relative;
-		padding: 2.25rem 1.5rem;
+		padding: 3rem 0;
 
 		&::before,
 		&::after {
 			content: '';
 			position: absolute;
-			width: 80px;
-			height: 80px;
-			border: 2px solid var(--green);
+			width: 250px;
+			height: 250px;
+			border: 5px solid $white;
 			pointer-events: none;
+			filter: drop-shadow(0 0 8px rgba(111, 216, 202, 0)) drop-shadow(0 0 16px rgba(111, 216, 202, 0));
+			opacity: 0;
+			transition: opacity 1s ease, filter 1s ease;
+		}
+
+		&.is-visible::before,
+		&.is-visible::after {
+			opacity: 1;
+			filter: drop-shadow(0 0 8px rgba(111, 216, 202, 0.9)) drop-shadow(0 0 16px rgba(111, 216, 202, 0.45));
 		}
 
 		&::before {
-			top: 0;
-			left: 0;
+			top: 1.5rem;
+			left: -1.5rem;
 			border-right: none;
 			border-bottom: none;
 		}
 
 		&::after {
-			bottom: 0;
-			right: 0;
+			bottom: 1.5rem;
+			right: -1.5rem;
 			border-left: none;
 			border-top: none;
 		}
@@ -898,21 +932,36 @@
 	&__other-grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		gap: 1.25rem;
+		gap: 0;
+		row-gap: 1rem;
 	}
 
 	&__other-card {
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: 0.85rem;
+		opacity: 0;
+		transform: translateY(40px);
+		transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+		will-change: transform, opacity;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i}) {
+				transition-delay: #{($i - 1) * 120}ms;
+			}
+		}
 	}
 
 	&__other-image {
 		position: relative;
-		border-radius: 3px;
 		overflow: hidden;
-		aspect-ratio: 3 / 4;
-		border: 1px solid rgba($white, 0.18);
+		aspect-ratio: 1 / 2;
+		border-right: 3px solid #6fd8ca;
 
 		.gatsby-image-wrapper,
 		img {
@@ -922,11 +971,16 @@
 		}
 	}
 
+	&__other-card:last-child &__other-image {
+		border-right: none;
+	}
+
 	&__other-sold {
 		position: absolute;
-		top: 38%;
+		bottom: 2.5rem;
 		left: 50%;
-		transform: translate(-50%, -50%) rotate(-18deg);
+		transform: translate(-50%, 0) rotate(-12deg);
+		z-index: 2;
 		padding: 0.35rem 1.15rem;
 		border: 3px solid $pink;
 		color: $pink;
@@ -940,10 +994,17 @@
 	}
 
 	&__other-meta {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 2rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.15rem;
+		gap: 0.2rem;
 		text-align: center;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 100%, rgba(0, 0, 0, 0) 100%);
+		z-index: 1;
 	}
 
 	&__other-label {
@@ -1090,10 +1151,6 @@
 
 		&__about {
 			padding: 2.5rem 0;
-
-			&::before {
-				background-size: 220px auto;
-			}
 		}
 
 		&__about-inner {
@@ -1126,10 +1183,6 @@
 
 		&__pillars-slide {
 			padding: 2.5rem 0;
-
-			&::before {
-				background-size: 220px auto;
-			}
 		}
 
 		&__pillars-inner {
@@ -1185,10 +1238,6 @@
 
 		&__past-sponsors {
 			padding: 3rem 0;
-
-			&::before {
-				background-size: 220px auto;
-			}
 		}
 
 		&__past-sponsors-inner {
@@ -1206,10 +1255,6 @@
 
 		&__tier {
 			padding: 3rem 0;
-
-			&::before {
-				background-size: 220px auto;
-			}
 		}
 
 		&__tier-inner {
@@ -1243,19 +1288,49 @@
 			margin: 0 auto;
 		}
 
+		&__other {
+			padding: 3rem 0;
+		}
+
+		&__other-inner {
+			padding: 0 1.5rem;
+
+			.meetup-sponsorship-deck__section-title {
+				margin-bottom: 2rem;
+			}
+		}
+
 		&__other-frame {
-			padding: 1.25rem 0.75rem;
+			padding: 1.25rem 0;
 
 			&::before,
 			&::after {
-				width: 36px;
-				height: 36px;
+				width: 48px;
+				height: 48px;
+			}
+
+			&::before {
+				top: 0;
+				left: -1rem;
+			}
+
+			&::after {
+				bottom: 0;
+				right: -1rem;
 			}
 		}
 
 		&__other-grid {
 			grid-template-columns: repeat(2, 1fr);
-			gap: 1rem;
+			row-gap: 1.5rem;
+		}
+
+		&__other-card:nth-child(2n) &__other-image {
+			border-right: none;
+		}
+
+		&__other-card:nth-child(2n + 1) &__other-image {
+			border-right: 3px solid #6fd8ca;
 		}
 
 		&__footer-banner img {
