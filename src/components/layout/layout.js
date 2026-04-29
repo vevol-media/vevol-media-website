@@ -20,6 +20,7 @@ export default function Layout({
 	headerIsStatic,
 	showBlob,
 	hasMainForm = true,
+	hasFooter = true,
 	formBackgroundImage,
 	hasHeader = true,
 	customClass,
@@ -163,7 +164,7 @@ export default function Layout({
 						setShowCookieBar={setShowCookieBar}
 					/>
 				)}
-				{currentLocale === 'ro' ? <WebsiteFooterRO /> : <WebsiteFooter />}
+				{hasFooter && (currentLocale === 'ro' ? <WebsiteFooterRO /> : <WebsiteFooter />)}
 			</div>
 		</AppProvider>
 	);
