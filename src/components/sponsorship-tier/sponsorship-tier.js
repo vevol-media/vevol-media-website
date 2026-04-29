@@ -83,8 +83,8 @@ export default function SponsorshipTier({ config }) {
 					<div className="meetup-sponsorship-deck__tier-body">
 						{titleInBody && TitleNode}
 						<ul className="meetup-sponsorship-deck__tier-list">
-							{features.map((item, i) => (
-								<FeatureItem key={i} item={item} />
+							{features.map((item) => (
+								<FeatureItem key={item.text} item={item} />
 							))}
 						</ul>
 						{availability && <p className="meetup-sponsorship-deck__tier-availability">{availability}</p>}

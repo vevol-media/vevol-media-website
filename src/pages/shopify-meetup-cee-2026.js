@@ -6,71 +6,85 @@ import Layout from '../components/layout/layout';
 import SponsorshipTier from '../components/sponsorship-tier/sponsorship-tier';
 import { MAX_PARTNER_LOGOS, otherSponsorships, sponsorLogoOrder, tierConfigs } from '../data/shopify-meetup-cee-2026';
 
+const staggerStyle = (index) => /** @type {React.CSSProperties} */ ({ '--stagger-index': index });
+
+const ANIMATED_SELECTORS = [
+	'.meetup-sponsorship-deck__about-photo',
+	'.meetup-sponsorship-deck__pillars-photo',
+	'.meetup-sponsorship-deck__sponsor-grid',
+	'.meetup-sponsorship-deck__circle',
+	'.meetup-sponsorship-deck__stack-photo',
+	'.meetup-sponsorship-deck__tier-image--single .gatsby-image-wrapper',
+	'.meetup-sponsorship-deck__tier-title',
+	'.meetup-sponsorship-deck__tier-body',
+	'.meetup-sponsorship-deck__other-frame',
+];
+
 export const data = graphql`
 	query {
 		shopifyLogo: file(name: { eq: "shopify_transparent_logo" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 300 }, width: 300, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 300 }, width: 300, quality: 85)
 			}
 		}
 		ecommerceTodayLogo: file(name: { eq: "ecommerce_today_transparent" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 160 }, width: 160, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 160 }, width: 160, quality: 85)
 			}
 		}
 		vevolMediaLogo: file(name: { eq: "vevol_media_transparent" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 160 }, width: 160, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 160 }, width: 160, quality: 85)
 			}
 		}
 		aboutImageA: file(name: { eq: "about_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 80)
 			}
 		}
 		aboutImageB: file(name: { eq: "about_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 980, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 980, quality: 80)
 			}
 		}
 		pillarImage1: file(name: { eq: "pillars_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 80)
 			}
 		}
 		pillarImage2: file(name: { eq: "pillars_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 860, quality: 80)
 			}
 		}
 		pillarImage3: file(name: { eq: "pillars_3" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 720, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 720, quality: 80)
 			}
 		}
 		tierPremier1: file(name: { eq: "tier_premier_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 80)
 			}
 		}
 		tierPremier2: file(name: { eq: "tier_premier_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 620, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 620, quality: 80)
 			}
 		}
 		tierPlus1: file(name: { eq: "tier_plus_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 80)
 			}
 		}
 		tierPlus2: file(name: { eq: "tier_plus_2" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 820, quality: 80)
 			}
 		}
 		tierBronze1: file(name: { eq: "tier_bronze_1" }, relativeDirectory: { eq: "shopify-meetup-cee-2026" }) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 900, quality: 100)
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 900, quality: 80)
 			}
 		}
 		otherImages: allFile(
@@ -80,7 +94,7 @@ export const data = graphql`
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 600, quality: 100)
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 220 }, width: 600, quality: 80)
 				}
 			}
 		}
@@ -89,30 +103,14 @@ export const data = graphql`
 			relativeDirectory: { eq: "shopify-meetup-cee-2026" }
 		) {
 			childImageSharp {
-				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 240 }, width: 1920, quality: 100)
-			}
-		}
-		event2024: allFile(filter: { relativeDirectory: { eq: "event/2024" } }, sort: { fields: name, order: ASC }) {
-			nodes {
-				name
-				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 200 }, quality: 85)
-				}
-			}
-		}
-		event2025: allFile(filter: { relativeDirectory: { eq: "event/2025" } }, sort: { fields: name, order: ASC }) {
-			nodes {
-				name
-				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 200 }, quality: 85)
-				}
+				gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 240 }, width: 1920, quality: 80)
 			}
 		}
 		sponsorLogos: allFile(filter: { relativeDirectory: { eq: "shopify-meetup-cee-2026/logos" } }, sort: { fields: name, order: ASC }) {
 			nodes {
 				name
 				childImageSharp {
-					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 180 }, height: 80, quality: 100)
+					gatsbyImageData(placeholder: BLURRED, blurredOptions: { width: 180 }, height: 80, quality: 85)
 				}
 			}
 		}
@@ -136,25 +134,16 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 		tierBronze1,
 		otherImages: otherImagesData,
 		footerBanner,
-		event2024,
-		event2025,
 		sponsorLogos,
 	} = data;
 	const shopifyLogoData = getImage(shopifyLogo);
 	const ecommerceTodayLogoData = getImage(ecommerceTodayLogo);
 	const vevolMediaLogoData = getImage(vevolMediaLogo);
-	const photoSources = {
-		2024: event2024?.nodes || [],
-		2025: event2025?.nodes || [],
-	};
 	const sponsorLogoNodes = sponsorLogos?.nodes || [];
 	const partnerLogos = sponsorLogoOrder
 		.map((name) => sponsorLogoNodes.find((node) => node.name === name))
 		.filter(Boolean)
 		.slice(0, MAX_PARTNER_LOGOS);
-
-	const resolveImage = (ref) => getImage(photoSources[ref.source]?.[ref.index]);
-	const resolveImages = (refs) => refs.map(resolveImage);
 
 	const aboutImageAData = getImage(aboutImageA);
 	const aboutImageBData = getImage(aboutImageB);
@@ -164,36 +153,56 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 	const otherImages = (otherImagesData?.nodes || []).map((node) => getImage(node));
 	const footerImage = getImage(footerBanner);
 
-	const tierImageOverrides = {
+	const tierImages = {
 		premier: [getImage(tierPremier1), getImage(tierPremier2)],
 		plus: [getImage(tierPlus1), getImage(tierPlus2)],
 		bronze: [getImage(tierBronze1)],
 	};
 	const resolvedTierConfigs = tierConfigs.map((config) => ({
 		...config,
-		images: tierImageOverrides[config.variant] || resolveImages(config.imageRefs),
+		images: tierImages[config.variant] || [],
 	}));
 
 	useEffect(() => {
-		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+		let observer;
 
-		if (prefersReducedMotion) return undefined;
+		const attach = () => {
+			if (motionQuery.matches) return;
 
-		const targets = document.querySelectorAll(
-			'.meetup-sponsorship-deck__about-photo, .meetup-sponsorship-deck__pillars-photo, .meetup-sponsorship-deck__sponsor-logo, .meetup-sponsorship-deck__circle, .meetup-sponsorship-deck__stack-photo, .meetup-sponsorship-deck__tier-image--single .gatsby-image-wrapper, .meetup-sponsorship-deck__tier-title, .meetup-sponsorship-deck__tier-body, .meetup-sponsorship-deck__other-card, .meetup-sponsorship-deck__other-frame',
-		);
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					entry.target.classList.toggle('is-visible', entry.isIntersecting);
-				});
-			},
-			{ threshold: 0.25 },
-		);
+			const targets = document.querySelectorAll(ANIMATED_SELECTORS.join(', '));
 
-		targets.forEach((el) => observer.observe(el));
+			observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						entry.target.classList.toggle('is-visible', entry.isIntersecting);
+					});
+				},
+				{ threshold: 0.25 },
+			);
 
-		return () => observer.disconnect();
+			targets.forEach((el) => observer.observe(el));
+		};
+
+		const detach = () => {
+			if (observer) {
+				observer.disconnect();
+				observer = undefined;
+			}
+		};
+
+		const handleChange = () => {
+			detach();
+			attach();
+		};
+
+		attach();
+		motionQuery.addEventListener('change', handleChange);
+
+		return () => {
+			detach();
+			motionQuery.removeEventListener('change', handleChange);
+		};
 	}, []);
 
 	return (
@@ -316,11 +325,11 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 							OUR PREVIOUS SHOPIFY MEETUP SPONSORS
 						</h3>
 						<div className="meetup-sponsorship-deck__sponsor-grid">
-							{partnerLogos.map((logo) => {
+							{partnerLogos.map((logo, index) => {
 								const logoImg = getImage(logo);
 
 								return logoImg ? (
-									<div key={logo.name} className="meetup-sponsorship-deck__sponsor-logo">
+									<div key={logo.name} className="meetup-sponsorship-deck__sponsor-logo" style={staggerStyle(index)}>
 										<GatsbyImage image={logoImg} alt={logo.name} objectFit="contain" />
 									</div>
 								) : null;
@@ -350,14 +359,22 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 										.join(' ');
 
 									return (
-										<div key={item.label} className={cardClasses}>
+										<div key={item.label} className={cardClasses} style={staggerStyle(index)}>
 											<div className="meetup-sponsorship-deck__other-image">
 												{image && <GatsbyImage image={image} alt={item.label} />}
 												<div className="meetup-sponsorship-deck__other-meta">
 													<span className="meetup-sponsorship-deck__other-label">{item.label}</span>
 													<span className="meetup-sponsorship-deck__other-price">{item.price}</span>
 												</div>
-												{item.sold && <span className="meetup-sponsorship-deck__other-sold">SOLD OUT!</span>}
+												{item.sold && (
+													<span
+														className="meetup-sponsorship-deck__other-sold"
+														role="status"
+														aria-label={`${item.label} sold out`}
+													>
+														SOLD OUT!
+													</span>
+												)}
 											</div>
 										</div>
 									);
@@ -387,7 +404,9 @@ export default function ShopifyMeetupCEE2026Page({ data }) {
 					className="meetup-sponsorship-deck__section meetup-sponsorship-deck__footer-banner"
 					aria-label="Shopify Meetup CEE 2026 sponsorship deck"
 				>
-					{footerImage && <GatsbyImage image={footerImage} alt="Shopify Meetup CEE 2026 - Sponsorship Deck by Vevol Media & Ecommerce Today" />}
+					{footerImage && (
+						<GatsbyImage image={footerImage} alt="Shopify Meetup CEE 2026 - Sponsorship Deck by Vevol Media & Ecommerce Today" />
+					)}
 				</section>
 			</section>
 		</Layout>

@@ -26,21 +26,12 @@ export const otherSponsorships = [
 	{ label: 'FOOD & DRINKS SPONSOR', price: '€2500' },
 ];
 
-export const aboutImageRefs = [
-	{ source: '2025', index: 0 },
-	{ source: '2024', index: 1 },
-];
-
 const premierTierConfig = {
 	variant: 'premier',
 	reverse: false,
 	titleInBody: false,
 	title: { prefix: 'BECOME THE', highlight: 'PREMIER', suffix: 'SPONSOR' },
 	imageLayout: 'circles',
-	imageRefs: [
-		{ source: '2024', index: 4 },
-		{ source: '2024', index: 5 },
-	],
 	features: [
 		{ text: 'Custom expo stand table' },
 		{ text: 'Custom roll-up' },
@@ -67,10 +58,6 @@ const plusTierConfig = {
 	titleInBody: true,
 	title: { prefix: 'BECOME A', highlight: 'PLUS', suffix: 'SPONSOR' },
 	imageLayout: 'stack',
-	imageRefs: [
-		{ source: '2025', index: 2 },
-		{ source: '2025', index: 3 },
-	],
 	features: [
 		{ text: 'Custom expo stand table' },
 		{ text: 'Custom roll-up' },
@@ -95,7 +82,6 @@ const bronzeTierConfig = {
 	titleInBody: true,
 	title: { prefix: 'BECOME A', highlight: 'BRONZE', suffix: 'SPONSOR' },
 	imageLayout: 'single',
-	imageRefs: [{ source: '2024', index: 6 }],
 	features: [
 		{ text: 'Custom expo stand table', strike: true },
 		{ text: 'Custom roll-up' },
