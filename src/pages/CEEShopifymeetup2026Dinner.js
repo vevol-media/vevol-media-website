@@ -324,11 +324,11 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 										<a href="https://vevolmedia.com/" target="_blank" rel="noopener noreferrer" className="detail-link">
 											Vevol Media
 										</a>
-										,{' '}
+										|
 										<a href="https://ecommerce-today.com/" target="_blank" rel="noopener noreferrer" className="detail-link">
 											Ecommerce Today
-										</a>{' '}
-										&amp;{' '}
+										</a>
+										|
 										<a href="https://axon.ai/en" target="_blank" rel="noopener noreferrer" className="detail-link">
 											Axon
 										</a>
