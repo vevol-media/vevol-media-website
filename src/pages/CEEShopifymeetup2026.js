@@ -119,10 +119,12 @@ const speakers = [
 const expectedItems = [
 	'🎤 High-impact talks from top eCommerce leaders across CEE and beyond',
 	'🛠 Hands-on workshops with practical takeaways you can use straight away',
-	'🤝 Real networking with 200+ merchants, agencies and app developers',
+	'🤝 Real networking with 250+ merchants, agencies and app developers',
+	'🏪 Expo area with booths from top Shopify solution providers — see the tools in action and talk directly to the teams building them',
 	'🍽️ Lunch included, because great ideas need fuel',
 	'🍸 Afterparty to keep the conversations going after the talks end',
 	"⭐ A curated Shopify community experience you'll want to return to every year",
+	'🌍 Attendees from across Central & Eastern Europe — merchants, founders, and operators all under one roof',
 ];
 
 const carouselLogos = [
@@ -529,11 +531,12 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 
 			<section className="section section-white" id="event">
 				<div className="section-inner">
-					<p className="section-label reveal">The Main Event</p>
+					<p className="section-label reveal">The Event</p>
 					<h2 className="section-heading reveal reveal-delay-1">Shopify Meetup CEE 2026</h2>
 					<p className="section-intro reveal reveal-delay-2">
-						The biggest official Shopify Meetup in Europe returns for its 2nd edition. After 200+ attendees in 2025, we're going bigger.
-						Grand Hotel Bucharest, May 28.
+						The biggest official Shopify Meetup in Europe returns for its 2nd edition. After 200+ attendees in 2025, we're
+						going bigger — Grand Hotel Bucharest, May 28. One day of high-impact talks, hands-on workshops, and real networking
+						with the best minds in Shopify commerce across the region.
 					</p>
 					<div className="details-grid reveal reveal-delay-3 event-details-grid">
 						<div className="detail-item">
@@ -559,7 +562,11 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 							</div>
 							<div className="detail-text">
 								<span className="detail-label">Venue</span>
-								<span>Grand Hotel Bucharest (ex-Intercontinental)</span>
+								<span>
+									<a href="https://www.grandhotelbucharest.com/" target="_blank" rel="noopener noreferrer">
+										Grand Hotel Bucharest (ex-Intercontinental)
+									</a>
+								</span>
 							</div>
 						</div>
 						<div className="detail-item">
@@ -571,7 +578,7 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 							</div>
 							<div className="detail-text">
 								<span className="detail-label">Hours</span>
-								<span>8:00 AM - 6:00 PM</span>
+								<span>8:00 AM – 6:00 PM</span>
 							</div>
 						</div>
 						<div className="detail-item">
@@ -590,7 +597,9 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 						</div>
 					</div>
 
-					<p className="sub-heading reveal">Agenda</p>
+					<p className="sub-heading reveal" id="agenda">
+						Agenda
+					</p>
 					<div className="track-tabs reveal reveal-delay-1" role="tablist" aria-label="Agenda tracks">
 						<button
 							type="button"
