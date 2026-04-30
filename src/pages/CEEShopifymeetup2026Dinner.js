@@ -511,11 +511,24 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 								key={`${speaker.initials}-${speaker.name}-${index}`}
 								className={`speaker-card ${speaker.surprise ? 'surprise' : ''}`.trim()}
 							>
-								<div className="speaker-avatar" style={{ background: speaker.bg }}>
-									{speaker.image ? <img src={speaker.image} alt={speaker.name} loading="lazy" /> : speaker.initials}
+								{(() => {
+									const [speakerTitle = '', speakerCompany = ''] = (speaker.role || '').split('·').map((part) => part.trim());
+
+									return (
+										<>
+								<div className="speaker-media">
+									<div className="speaker-avatar" style={{ background: speaker.bg }}>
+										{speaker.image ? <img src={speaker.image} alt={speaker.name} loading="lazy" /> : speaker.initials}
+									</div>
 								</div>
-								<div className="speaker-name">{speaker.name}</div>
-								<div className="speaker-role">{speaker.role}</div>
+								<div className="speaker-content">
+									<div className="speaker-name">{speaker.name}</div>
+									<div className="speaker-role">{speakerTitle || speaker.role}</div>
+									{speakerCompany && <div className="speaker-company">{speakerCompany}</div>}
+								</div>
+										</>
+									);
+								})()}
 							</div>
 						))}
 					</div>
