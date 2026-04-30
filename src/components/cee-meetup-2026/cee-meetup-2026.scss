@@ -1,6 +1,21 @@
 @import '../cee-meetup-2026-private-dinner/cee-meetup-2026-private-dinner.scss';
 
 .cee-dinner-page {
+	.top-bar-brand .dot {
+		animation: meetupPulse 2s ease-in-out infinite;
+	}
+
+	@keyframes meetupPulse {
+		0%,
+		100% {
+			box-shadow: 0 0 6px rgba(34, 255, 184, 0.6);
+		}
+
+		50% {
+			box-shadow: 0 0 14px rgba(34, 255, 184, 0.9);
+		}
+	}
+
 	.cookie-bar {
 		color: var(--white);
 	}

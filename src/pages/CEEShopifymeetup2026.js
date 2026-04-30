@@ -232,7 +232,7 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 					<div className="dot"></div>
 					CEE Shopify Meetup 2026
 				</div>
-				<span className="top-bar-badge">Invitation</span>
+				<span className="top-bar-badge">May 28 · Bucharest</span>
 			</header>
 
 			<section className="hero">
