@@ -332,6 +332,16 @@
     border-color: #0a9e72;
   }
 
+  .detail-links .detail-link + .detail-link::before {
+    content: ', ';
+    color: inherit;
+    font-weight: inherit;
+  }
+
+  .detail-links .detail-link:last-child::before {
+    content: ' & ';
+  }
+
   .event-details-grid {
     margin-bottom: 40px;
   }

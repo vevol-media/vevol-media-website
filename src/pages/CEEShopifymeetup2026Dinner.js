@@ -320,15 +320,13 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 								</div>
 								<div className="detail-text">
 									<span className="detail-label">Hosted by</span>
-									<span>
+									<span className="detail-links">
 										<a href="https://vevolmedia.com/" target="_blank" rel="noopener noreferrer" className="detail-link">
 											Vevol Media
 										</a>
-										,{' '}
 										<a href="https://ecommerce-today.com/" target="_blank" rel="noopener noreferrer" className="detail-link">
 											Ecommerce Today
-										</a>{' '}
-										&{' '}
+										</a>
 										<a href="https://axon.ai/en" target="_blank" rel="noopener noreferrer" className="detail-link">
 											Axon
 										</a>
