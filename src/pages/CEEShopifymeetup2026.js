@@ -1,10 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import '../components/cee-meetup-2026-private-dinner/cee-meetup-2026-private-dinner.scss';
+import '../components/cee-meetup-2026/cee-meetup-2026.scss';
 import Layout from '../components/layout/layout';
 import abhishekChandraImage from '../images/cee-meetup-2026-private-dinner/abhishek-chandra.svg';
 import anaOpritaImage from '../images/cee-meetup-2026-private-dinner/ana-oprita.svg';
 import bogdanDogaruImage from '../images/cee-meetup-2026-private-dinner/bogdan-dogaru.svg';
+import bucharestHotelImageOne from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_1.webp';
+import bucharestHotelImageTwo from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_2.webp';
 import catalinCiochinaImage from '../images/cee-meetup-2026-private-dinner/catalin-ciochina.svg';
 import ciprianCazacuImage from '../images/cee-meetup-2026-private-dinner/ciprian-cazacu.svg';
 import davidSimaImage from '../images/cee-meetup-2026-private-dinner/david-sima.svg';
@@ -17,15 +19,13 @@ import restaurantImageOne from '../images/cee-meetup-2026-private-dinner/restaur
 import restaurantImageTwo from '../images/cee-meetup-2026-private-dinner/restaurant_2.webp';
 import thanasisPsychogiosImage from '../images/cee-meetup-2026-private-dinner/thanasis-psychogios.svg';
 import tudorGoiceaImage from '../images/cee-meetup-2026-private-dinner/tudor-goicea.svg';
-import bucharestHotelImageOne from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_1.webp';
-import bucharestHotelImageTwo from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_2.webp';
 import aquarateLogo from '../images/cee-meetup-2026/aquarate.svg';
 import axonLogo from '../images/cee-meetup-2026/axon.svg';
 import businessLeagueLogo from '../images/cee-meetup-2026/business_league.svg';
 import dataRevoltLogo from '../images/cee-meetup-2026/data_revolt.svg';
 import easySalesLogo from '../images/cee-meetup-2026/easy_sales.svg';
-import fulfiloLogo from '../images/cee-meetup-2026/fulfilo.svg';
 import foxSellLogo from '../images/cee-meetup-2026/fox_sell.svg';
+import fulfiloLogo from '../images/cee-meetup-2026/fulfilo.svg';
 import kleverLogo from '../images/cee-meetup-2026/klever.svg';
 import loveLoyaltyLogo from '../images/cee-meetup-2026/love_loyalty.svg';
 import mejixLogo from '../images/cee-meetup-2026/mejix.svg';
@@ -370,14 +370,14 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 								</svg>
 								Event · May 28
 							</span>
-							<div className="venue-name">Grand Hotel du Boulevard</div>
+							<div className="venue-name">Grand Hotel Bucharest</div>
 							<div className="venue-date">Bucharest · Main event venue</div>
 							<div className="venue-images">
 								<div className="venue-img-placeholder">
-									<img src={bucharestHotelImageOne} alt="Grand Hotel du Boulevard exterior" loading="lazy" />
+									<img src={bucharestHotelImageOne} alt="Grand Hotel Bucharest exterior" loading="lazy" />
 								</div>
 								<div className="venue-img-placeholder">
-									<img src={bucharestHotelImageTwo} alt="Grand Hotel du Boulevard event space" loading="lazy" />
+									<img src={bucharestHotelImageTwo} alt="Grand Hotel Bucharest event space" loading="lazy" />
 								</div>
 							</div>
 						</div>

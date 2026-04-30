@@ -5,6 +5,8 @@ import Layout from '../components/layout/layout';
 import abhishekChandraImage from '../images/cee-meetup-2026-private-dinner/abhishek-chandra.svg';
 import anaOpritaImage from '../images/cee-meetup-2026-private-dinner/ana-oprita.svg';
 import bogdanDogaruImage from '../images/cee-meetup-2026-private-dinner/bogdan-dogaru.svg';
+import bucharestHotelImageOne from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_1.webp';
+import bucharestHotelImageTwo from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_2.webp';
 import catalinCiochinaImage from '../images/cee-meetup-2026-private-dinner/catalin-ciochina.svg';
 import ciprianCazacuImage from '../images/cee-meetup-2026-private-dinner/ciprian-cazacu.svg';
 import davidSimaImage from '../images/cee-meetup-2026-private-dinner/david-sima.svg';
@@ -17,8 +19,6 @@ import restaurantImageOne from '../images/cee-meetup-2026-private-dinner/restaur
 import restaurantImageTwo from '../images/cee-meetup-2026-private-dinner/restaurant_2.webp';
 import thanasisPsychogiosImage from '../images/cee-meetup-2026-private-dinner/thanasis-psychogios.svg';
 import tudorGoiceaImage from '../images/cee-meetup-2026-private-dinner/tudor-goicea.svg';
-import bucharestHotelImageOne from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_1.webp';
-import bucharestHotelImageTwo from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_2.webp';
 
 const mainAgenda = [
 	{ time: '08:00-08:45', title: 'Reception and Check-in: pastries, coffee and tea', type: 'break' },
@@ -288,14 +288,14 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 								</svg>
 								Event · May 28
 							</span>
-							<div className="venue-name">Grand Hotel du Boulevard</div>
+							<div className="venue-name">Grand Hotel Bucharest</div>
 							<div className="venue-date">Bucharest · Main event venue</div>
 							<div className="venue-images">
 								<div className="venue-img-placeholder">
-									<img src={bucharestHotelImageOne} alt="Grand Hotel du Boulevard exterior" loading="lazy" />
+									<img src={bucharestHotelImageOne} alt="Grand Hotel Bucharest exterior" loading="lazy" />
 								</div>
 								<div className="venue-img-placeholder">
-									<img src={bucharestHotelImageTwo} alt="Grand Hotel du Boulevard event space" loading="lazy" />
+									<img src={bucharestHotelImageTwo} alt="Grand Hotel Bucharest event space" loading="lazy" />
 								</div>
 							</div>
 						</div>
@@ -516,16 +516,16 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 
 									return (
 										<>
-								<div className="speaker-media">
-									<div className="speaker-avatar" style={{ background: speaker.bg }}>
-										{speaker.image ? <img src={speaker.image} alt={speaker.name} loading="lazy" /> : speaker.initials}
-									</div>
-								</div>
-								<div className="speaker-content">
-									<div className="speaker-name">{speaker.name}</div>
-									<div className="speaker-role">{speakerTitle || speaker.role}</div>
-									{speakerCompany && <div className="speaker-company">{speakerCompany}</div>}
-								</div>
+											<div className="speaker-media">
+												<div className="speaker-avatar" style={{ background: speaker.bg }}>
+													{speaker.image ? <img src={speaker.image} alt={speaker.name} loading="lazy" /> : speaker.initials}
+												</div>
+											</div>
+											<div className="speaker-content">
+												<div className="speaker-name">{speaker.name}</div>
+												<div className="speaker-role">{speakerTitle || speaker.role}</div>
+												{speakerCompany && <div className="speaker-company">{speakerCompany}</div>}
+											</div>
 										</>
 									);
 								})()}
