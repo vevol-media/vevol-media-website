@@ -253,6 +253,96 @@
     margin-bottom: 36px;
   }
 
+  .venues-section {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .venues-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .venue-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .venue-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0a9e72;
+    background: var(--green-xlight);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border-green);
+    align-self: flex-start;
+  }
+
+  .venue-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--dark);
+    letter-spacing: -0.01em;
+  }
+
+  .venue-date {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .venue-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .venue-img-placeholder {
+    aspect-ratio: 3 / 2;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1.5px dashed var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    overflow: hidden;
+  }
+
+  .venue-img-placeholder svg {
+    width: 22px;
+    height: 22px;
+    opacity: 0.4;
+  }
+
+  .venue-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .venue-divider {
+    width: 1px;
+    background: var(--border);
+    align-self: stretch;
+  }
+
   .dinner-card {
     background: var(--white);
     border: 1px solid var(--border-green);
@@ -724,6 +814,16 @@
 
     .speakers-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .venues-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .venue-divider {
+      display: none;
     }
   }
 

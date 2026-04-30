@@ -13,8 +13,12 @@ import ilieMihalacheImage from '../images/cee-meetup-2026-private-dinner/ilie-mi
 import paulApostuImage from '../images/cee-meetup-2026-private-dinner/paul-apostu.svg';
 import prakharShrivastavaImage from '../images/cee-meetup-2026-private-dinner/prakhar-shrivastava.svg';
 import raresBanescuImage from '../images/cee-meetup-2026-private-dinner/rares-banescu.svg';
+import restaurantImageOne from '../images/cee-meetup-2026-private-dinner/restaurant_1.webp';
+import restaurantImageTwo from '../images/cee-meetup-2026-private-dinner/restaurant_2.webp';
 import thanasisPsychogiosImage from '../images/cee-meetup-2026-private-dinner/thanasis-psychogios.svg';
 import tudorGoiceaImage from '../images/cee-meetup-2026-private-dinner/tudor-goicea.svg';
+import bucharestHotelImageOne from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_1.webp';
+import bucharestHotelImageTwo from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_2.webp';
 
 const mainAgenda = [
 	{ time: '08:00-08:45', title: 'Reception and Check-in: pastries, coffee and tea', type: 'break' },
@@ -146,6 +150,8 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 			<Helmet>
 				<title>{metaTitle}</title>
 				<meta name="description" content={metaDescription} />
+				<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+				<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 				<link
@@ -243,6 +249,57 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 					>
 						Get Complementary VIP Ticket
 					</a>
+				</div>
+			</section>
+
+			<section className="section venues-section" id="venues">
+				<div className="section-inner">
+					<p className="section-label reveal">Venues</p>
+					<h2 className="section-heading reveal reveal-delay-1">
+						Two exceptional
+						<br />
+						settings.
+					</h2>
+					<div className="venues-grid reveal reveal-delay-2">
+						<div className="venue-block">
+							<span className="venue-tag">
+								<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2.5">
+									<path d="M3 11l19-9-9 19-2-8-8-2z" />
+								</svg>
+								Dinner · May 27
+							</span>
+							<div className="venue-name">Akos Restaurant</div>
+							<div className="venue-date">Bucharest · Exclusive pre-event dinner</div>
+							<div className="venue-images">
+								<div className="venue-img-placeholder">
+									<img src={restaurantImageOne} alt="Akos Restaurant dining interior" loading="lazy" />
+								</div>
+								<div className="venue-img-placeholder">
+									<img src={restaurantImageTwo} alt="Akos Restaurant private dinner setup" loading="lazy" />
+								</div>
+							</div>
+						</div>
+
+						<div className="venue-block">
+							<span className="venue-tag" style={{ color: '#5C6AC4', background: '#eef0fb', borderColor: '#c4c9f0' }}>
+								<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2.5">
+									<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+									<polyline points="9 22 9 12 15 12 15 22" />
+								</svg>
+								Event · May 28
+							</span>
+							<div className="venue-name">Grand Hotel du Boulevard</div>
+							<div className="venue-date">Bucharest · Main event venue</div>
+							<div className="venue-images">
+								<div className="venue-img-placeholder">
+									<img src={bucharestHotelImageOne} alt="Grand Hotel du Boulevard exterior" loading="lazy" />
+								</div>
+								<div className="venue-img-placeholder">
+									<img src={bucharestHotelImageTwo} alt="Grand Hotel du Boulevard event space" loading="lazy" />
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 
