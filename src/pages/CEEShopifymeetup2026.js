@@ -17,7 +17,7 @@ import thanasisPsychogiosImage from '../images/cee-meetup-2026-private-dinner/th
 import tudorGoiceaImage from '../images/cee-meetup-2026-private-dinner/tudor-goicea.svg';
 import aquarateLogo from '../images/cee-meetup-2026/aquarate.svg';
 import axonLogo from '../images/cee-meetup-2026/axon.svg';
-import businessLeagueLogo from '../images/cee-meetup-2026/business_league.svg';
+import businessLeagueLogo from '../images/cee-meetup-2026/business_league_logo.webp';
 import dataRevoltLogo from '../images/cee-meetup-2026/data_revolt.svg';
 import easySalesLogo from '../images/cee-meetup-2026/easy_sales.svg';
 import foxSellLogo from '../images/cee-meetup-2026/fox_sell.svg';
@@ -30,7 +30,7 @@ import neuCurrentLogo from '../images/cee-meetup-2026/neu_current.svg';
 import skroutzLogo from '../images/cee-meetup-2026/skroutz.svg';
 import syncapLogo from '../images/cee-meetup-2026/syncap.svg';
 import theMarketerLogo from '../images/cee-meetup-2026/the_marketer.svg';
-import vevolThemesLogo from '../images/cee-meetup-2026/vevol_themes.svg';
+import vevolThemesLogo from '../images/cee-meetup-2026/vevol_themes_logo.webp';
 import videoWiseLogo from '../images/cee-meetup-2026/video_wise.svg';
 import xConnectorLogo from '../images/cee-meetup-2026/x_connectpr.svg';
 
@@ -114,6 +114,8 @@ const speakers = [
 	{ initials: '?', name: 'Surprise Guest', role: 'Shopify', bg: '#22ffb8', surprise: true },
 	{ initials: '?', name: 'Surprise Guest', role: 'Shopify', bg: '#0fd49a', surprise: true },
 	{ initials: '?', name: 'Surprise Guest', role: 'Shopify', bg: '#0fd49a', surprise: true },
+	{ initials: '?', name: 'Surprise Guest', role: 'Retail Industry Leader', bg: '#3b6fd4', surprise: true, surpriseBlue: true },
+	{ initials: '?', name: 'Surprise Guest', role: 'Retail Industry Leader', bg: '#3b6fd4', surprise: true, surpriseBlue: true },
 ];
 
 const expectedItems = [
@@ -148,6 +150,187 @@ const carouselLogos = [
 	{ name: 'DataRevolt', image: dataRevoltLogo },
 	{ name: 'Vevol Themes', image: vevolThemesLogo },
 	{ name: 'Syncap', image: syncapLogo },
+];
+
+const sponsorTiers = [
+	{
+		key: 'premier',
+		label: 'Premier Sponsor',
+		items: [
+			{
+				name: 'GoKwik',
+				url: 'https://www.gokwik.co/uk/product/kwikengage',
+				cardStyle: { background: '#fff8e6', borderColor: '#e8c840' },
+				pillStyle: { color: '#7a5c00' },
+			},
+		],
+	},
+	{
+		key: 'plus',
+		label: 'Plus Sponsors',
+		items: [
+			{
+				name: 'BusinessLeague',
+				url: 'https://businessleague.com/',
+				image: businessLeagueLogo,
+				logoColor: 'original',
+				logoScale: 3.8,
+				cardStyle: { background: '#f0f6ff', borderColor: '#a0c4f5' },
+				pillStyle: { color: '#0c447c' },
+			},
+			{
+				name: 'TheMarketer',
+				url: 'https://themarketer.com/',
+				image: theMarketerLogo,
+				logoScale: 3.2,
+				logoFilter: 'contrast(2.8) brightness(0.42) saturate(1.2)',
+				cardStyle: { background: '#fff0f4', borderColor: '#f5a0bc' },
+				pillStyle: { color: '#8b0030' },
+			},
+			{
+				name: 'Mollie',
+				url: 'https://www.mollie.com/',
+				image: mollieLogo,
+				logoScale: 3.3,
+				cardStyle: { background: '#f5f0ff', borderColor: '#c4a8f5' },
+				pillStyle: { color: '#3b0080' },
+			},
+			{
+				name: 'xConnector',
+				url: 'https://about.xconnector.app/',
+				image: xConnectorLogo,
+				logoScale: 3.4,
+				logoFilter: 'contrast(2.8) brightness(0.4) saturate(1.2)',
+				cardStyle: { background: '#f0fff8', borderColor: '#a0f0d0' },
+				pillStyle: { color: '#0a5e42' },
+			},
+		],
+	},
+	{
+		key: 'bronze',
+		label: 'Bronze Sponsors',
+		items: [
+			{
+				name: 'FoxSell',
+				url: 'https://foxsell.com/',
+				image: foxSellLogo,
+				logoScale: 3,
+				cardStyle: { background: '#fff5e6', borderColor: '#f5c880' },
+				pillStyle: { color: '#7a3a00' },
+			},
+			{
+				name: 'Easy Sales',
+				url: 'https://easy-sales.com/',
+				image: easySalesLogo,
+				logoScale: 3.45,
+				cardStyle: { background: '#e6fff5', borderColor: '#80f5c8' },
+				pillStyle: { color: '#004d30' },
+			},
+			{
+				name: 'Videowise',
+				url: 'https://videowise.com/',
+				image: videoWiseLogo,
+				logoScale: 3,
+				cardStyle: { background: '#f0f0ff', borderColor: '#b0b0f5' },
+				pillStyle: { color: '#1a1a7a' },
+			},
+			{
+				name: 'Aqurate',
+				url: 'https://aqurate.ai/en/',
+				image: aquarateLogo,
+				logoScale: 3,
+				cardStyle: { background: '#e6f8ff', borderColor: '#80d8f5' },
+				pillStyle: { color: '#003d5c' },
+			},
+			{
+				name: 'Skroutz',
+				url: 'https://www.skroutz.ro/',
+				image: skroutzLogo,
+				logoScale: 3.2,
+				cardStyle: { background: '#fff5e6', borderColor: '#f5a880' },
+				pillStyle: { color: '#7a2200' },
+			},
+			{
+				name: 'Fulfilo',
+				url: 'https://www.fulfilo.ro/',
+				image: fulfiloLogo,
+				logoScale: 3.8,
+				logoFilter: 'contrast(2.9) brightness(0.38) saturate(1.15)',
+				cardStyle: { background: '#f5f5f5', borderColor: '#cccccc' },
+				pillStyle: { color: '#333333' },
+			},
+			{
+				name: 'Axon',
+				url: 'https://axon.ai/en',
+				image: axonLogo,
+				logoScale: 3.1,
+				cardStyle: { background: '#f0fff0', borderColor: '#90e090' },
+				pillStyle: { color: '#1a4d1a' },
+			},
+			{
+				name: 'Klever',
+				url: 'https://klever.agency/',
+				image: kleverLogo,
+				logoScale: 3.15,
+				cardStyle: { background: '#fffae6', borderColor: '#f5e080' },
+				pillStyle: { color: '#5c4400' },
+			},
+			{
+				name: 'Consentmo',
+				url: 'https://www.consentmo.com/',
+				cardStyle: { background: '#f0f8ff', borderColor: '#90c8f5' },
+				pillStyle: { color: '#003366' },
+			},
+			{
+				name: 'Mejix',
+				url: 'https://www.mejix.com/',
+				image: mejixLogo,
+				logoScale: 3.2,
+				cardStyle: { background: '#fff0f8', borderColor: '#f5a0d0' },
+				pillStyle: { color: '#6b0040' },
+			},
+		],
+	},
+	{
+		key: 'partners',
+		label: 'Event Partners',
+		items: [
+			{
+				name: 'NeuCurrent',
+				url: 'https://neucurrent.com/',
+				image: neuCurrentLogo,
+				logoScale: 3.25,
+				cardStyle: { background: '#f0f8ff', borderColor: '#90c0f0' },
+				pillStyle: { color: '#003366' },
+			},
+			{
+				name: 'Love Loyalty',
+				url: 'https://www.loveloyalty.app/',
+				image: loveLoyaltyLogo,
+				logoScale: 3.35,
+				logoFilter: 'contrast(2.7) brightness(0.42) saturate(1.2)',
+				cardStyle: { background: '#fff0f4', borderColor: '#f5a0bc' },
+				pillStyle: { color: '#8b0030' },
+			},
+			{
+				name: 'DataRevolt',
+				url: 'https://datarevolt.agency/ro/',
+				image: dataRevoltLogo,
+				logoScale: 3.25,
+				cardStyle: { background: '#f5f0ff', borderColor: '#c4a0f5' },
+				pillStyle: { color: '#3b0080' },
+			},
+			{
+				name: 'Vevol Themes',
+				url: 'https://vevolthemes.com/',
+				image: vevolThemesLogo,
+				logoScale: 3.5,
+				logoFilter: 'contrast(2.9) brightness(0.36) saturate(1.2)',
+				cardStyle: { background: '#f0fffa', borderColor: '#a0f5dc' },
+				pillStyle: { color: '#0a5e42' },
+			},
+		],
+	},
 ];
 
 export default function CeeMeetup2026PrivateDinnerPage() {
@@ -291,8 +474,7 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 
 						canvasContext.beginPath();
 						canvasContext.arc(dot.x, dot.y, baseDotRadius + proximity * 1.4, 0, Math.PI * 2);
-						canvasContext.fillStyle =
-							proximity > 0.05 ? `rgba(34,255,184,${dot.alpha})` : `rgba(10,158,114,${dot.alpha})`;
+						canvasContext.fillStyle = proximity > 0.05 ? `rgba(34,255,184,${dot.alpha})` : `rgba(10,158,114,${dot.alpha})`;
 						canvasContext.fill();
 					});
 
@@ -490,7 +672,12 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 					</div>
 				</div>
 				<div className="hero-cta-group reveal reveal-delay-4">
-					<a href="https://www.eventbrite.ie/e/1980132676138?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" className="btn-primary">
+					<a
+						href="https://www.eventbrite.ie/e/1980132676138?aff=oddtdtcreator"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="btn-primary"
+					>
 						<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5">
 							<path d="M20 12V22H4V12" />
 							<path d="M22 7H2v5h20V7z" />
@@ -534,9 +721,9 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 					<p className="section-label reveal">The Event</p>
 					<h2 className="section-heading reveal reveal-delay-1">Shopify Meetup CEE 2026</h2>
 					<p className="section-intro reveal reveal-delay-2">
-						The biggest official Shopify Meetup in Europe returns for its 2nd edition. After 200+ attendees in 2025, we're
-						going bigger — Grand Hotel Bucharest, May 28. One day of high-impact talks, hands-on workshops, and real networking
-						with the best minds in Shopify commerce across the region.
+						The biggest official Shopify Meetup in Europe returns for its 2nd edition. After 200+ attendees in 2025, we're going bigger —
+						Grand Hotel Bucharest, May 28. One day of high-impact talks, hands-on workshops, and real networking with the best minds in
+						Shopify commerce across the region.
 					</p>
 					<div className="details-grid reveal reveal-delay-3 event-details-grid">
 						<div className="detail-item">
@@ -677,6 +864,52 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 							);
 						})}
 					</div>
+				</div>
+			</section>
+
+			<section className="section" id="sponsors">
+				<div className="section-inner">
+					<p className="section-label reveal">Our Sponsors</p>
+					<h2 className="section-heading reveal reveal-delay-1">The companies making it happen</h2>
+					<p className="section-intro reveal reveal-delay-2">
+						CEE Shopify Meetup 2026 is made possible by the support of industry-leading partners across eCommerce, technology, and growth.
+					</p>
+
+					{sponsorTiers.map((tier, tierIndex) => (
+						<div key={tier.key} className={`sponsor-tier ${tier.key} reveal reveal-delay-${Math.min(4, tierIndex + 2)}`}>
+							<div className="sponsor-tier-label">{tier.label}</div>
+							<div className="sponsor-logos">
+								{tier.items.map((sponsor) => (
+									<a
+										key={sponsor.name}
+										href={sponsor.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className={`sponsor-logo-card ${sponsor.image ? 'has-image' : 'has-text'}`.trim()}
+										title={sponsor.name}
+										style={sponsor.cardStyle}
+									>
+										{sponsor.image ? (
+											<span className="sponsor-logo-frame">
+												<img
+													src={sponsor.image}
+													alt={sponsor.name}
+													className={`sponsor-logo-image ${
+														sponsor.logoColor === 'original' ? '' : 'sponsor-logo-image--black'
+													}`.trim()}
+													loading="lazy"
+												/>
+											</span>
+										) : (
+											<div className="sponsor-name-pill" style={sponsor.pillStyle}>
+												{sponsor.name}
+											</div>
+										)}
+									</a>
+								))}
+							</div>
+						</div>
+					))}
 				</div>
 			</section>
 
