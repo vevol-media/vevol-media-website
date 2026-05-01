@@ -122,5 +122,11 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 		warningsFilter: [/Conflicting order/, /mini-css-extract-plugin/],
 	};
 
+	config.resolve = config.resolve || {};
+	config.resolve.alias = {
+		...(config.resolve.alias || {}),
+		'@': path.resolve(__dirname, 'src'),
+	};
+
 	actions.replaceWebpackConfig(config);
 };
