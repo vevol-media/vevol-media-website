@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import '../components/cee-meetup-2026/cee-meetup-2026.scss';
-import Layout from '../components/layout/layout';
-import useMeetupLandingEffects from '../components/cee-meetup-2026/hooks/useMeetupLandingEffects';
-import EditionsSection from '../components/cee-meetup-2026/sections/EditionsSection';
-import LocationSection from '../components/cee-meetup-2026/sections/LocationSection';
-import RegisterSection from '../components/cee-meetup-2026/sections/RegisterSection';
-import SponsorsSection from '../components/cee-meetup-2026/sections/SponsorsSection';
+import '@/components/cee-meetup-2026/cee-meetup-2026.scss';
+import Layout from '@/components/layout/layout';
+import useMeetupLandingEffects from '@/components/cee-meetup-2026/hooks/useMeetupLandingEffects';
+import EditionsSection from '@/components/cee-meetup-2026/sections/EditionsSection';
+import LocationSection from '@/components/cee-meetup-2026/sections/LocationSection';
+import RegisterSection from '@/components/cee-meetup-2026/sections/RegisterSection';
+import SponsorsSection from '@/components/cee-meetup-2026/sections/SponsorsSection';
 import {
 	carouselLogos,
 	editionsGallerySlots,
@@ -17,7 +17,7 @@ import {
 	speakers,
 	sponsorTiers,
 	workshopAgenda,
-} from '../components/cee-meetup-2026/data/meetupData';
+} from '@/components/cee-meetup-2026/data/meetupData';
 
 export default function CeeShopifyMeetup2026Page() {
 	const [activeTrack, setActiveTrack] = useState('main');
@@ -193,7 +193,7 @@ export default function CeeShopifyMeetup2026Page() {
 							{carouselLogos.map((logo) => (
 								<div
 									key={logo.name}
-									className={`carousel-logo-ph ${logo.image ? 'has-image' : 'is-fallback'}`.trim()}
+									className={`carousel-logo-ph ${logo.image ? 'has-image' : 'is-fallback'} ${logo.name === 'BusinessLeague' ? 'carousel-logo-ph--business-league' : ''}`.trim()}
 									aria-label={logo.name}
 								>
 									{logo.image ? <img src={logo.image} alt={logo.name} className="carousel-logo-img" loading="lazy" /> : logo.name}
@@ -202,7 +202,10 @@ export default function CeeShopifyMeetup2026Page() {
 						</div>
 						<div className="carousel-track" aria-hidden="true">
 							{carouselLogos.map((logo) => (
-								<div key={`${logo.name}-duplicate`} className={`carousel-logo-ph ${logo.image ? 'has-image' : 'is-fallback'}`.trim()}>
+								<div
+									key={`${logo.name}-duplicate`}
+									className={`carousel-logo-ph ${logo.image ? 'has-image' : 'is-fallback'} ${logo.name === 'BusinessLeague' ? 'carousel-logo-ph--business-league' : ''}`.trim()}
+								>
 									{logo.image ? <img src={logo.image} alt="" className="carousel-logo-img" loading="lazy" /> : logo.name}
 								</div>
 							))}

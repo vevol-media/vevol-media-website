@@ -281,6 +281,11 @@
 		transform-origin: center;
 	}
 
+	.carousel-logo-ph--business-league .carousel-logo-img {
+		width: 50%;
+		transform: none;
+	}
+
 	#event .section-intro {
 		max-width: 850px;
 	}
@@ -390,8 +395,7 @@
 
 	.sponsor-tier.premier .sponsor-logo-card {
 		width: 100%;
-		max-width: 460px;
-		height: 92px;
+		height: auto;
 		border-color: #e8d96a;
 		border-width: 1.5px;
 	}
