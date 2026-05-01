@@ -20,6 +20,14 @@
 		color: var(--white);
 	}
 
+	#sponsors,
+	#editions,
+	#location,
+	#register {
+		content-visibility: auto;
+		contain-intrinsic-size: auto 520px;
+	}
+
 	.hero {
 		position: relative;
 		background: radial-gradient(
@@ -205,6 +213,10 @@
 		animation: carousel-scroll 65s linear infinite;
 		will-change: transform;
 		--carousel-shift: 50%;
+	}
+
+	.carousel-marquee.is-animation-paused {
+		animation-play-state: paused;
 	}
 
 	.carousel-track {
@@ -904,6 +916,16 @@
 
 		.sponsor-tier.plus .sponsor-logo-image {
 			height: 38px;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.top-bar-brand .dot {
+			animation: none;
+		}
+
+		.carousel-marquee {
+			animation: none;
 		}
 	}
 }
