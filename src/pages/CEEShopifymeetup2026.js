@@ -23,6 +23,14 @@ import easySalesLogo from '../images/cee-meetup-2026/easy_sales.svg';
 import foxSellLogo from '../images/cee-meetup-2026/fox_sell.svg';
 import fulfiloLogo from '../images/cee-meetup-2026/fulfilo.svg';
 import kleverLogo from '../images/cee-meetup-2026/klever.svg';
+import lastYearPhotoOne from '../images/cee-meetup-2026/last_year_photos/last_year_1.webp';
+import lastYearPhotoTwo from '../images/cee-meetup-2026/last_year_photos/last_year_2.webp';
+import lastYearPhotoThree from '../images/cee-meetup-2026/last_year_photos/last_year_3.webp';
+import lastYearPhotoFour from '../images/cee-meetup-2026/last_year_photos/last_year_4.webp';
+import lastYearPhotoFive from '../images/cee-meetup-2026/last_year_photos/last_year_5.webp';
+import lastYearPhotoSix from '../images/cee-meetup-2026/last_year_photos/last_year_6.webp';
+import lastYearPhotoSeven from '../images/cee-meetup-2026/last_year_photos/last_year_7.webp';
+import lastYearPhotoEight from '../images/cee-meetup-2026/last_year_photos/last_year_8.webp';
 import loveLoyaltyLogo from '../images/cee-meetup-2026/love_loyalty.svg';
 import mejixLogo from '../images/cee-meetup-2026/mejix.svg';
 import mollieLogo from '../images/cee-meetup-2026/mollie.svg';
@@ -331,6 +339,24 @@ const sponsorTiers = [
 			},
 		],
 	},
+];
+
+const editionsGallerySlots = [
+	{ image: lastYearPhotoSeven, className: 'tall' },
+	{ image: lastYearPhotoTwo, className: '' },
+	{ image: lastYearPhotoThree, className: '' },
+	{ image: lastYearPhotoFour, className: 'wide' },
+	{ image: lastYearPhotoFive, className: '' },
+	{ image: lastYearPhotoSix, className: '' },
+	{ image: lastYearPhotoOne, className: '' },
+	{ image: lastYearPhotoEight, className: 'wide' },
+];
+
+const editionsStats = [
+	{ value: '200+', label: 'Attendees' },
+	{ value: '10+', label: 'Speakers' },
+	{ value: '8', label: 'Countries represented' },
+	{ value: '1', label: 'Unforgettable day' },
 ];
 
 export default function CeeMeetup2026PrivateDinnerPage() {
@@ -910,6 +936,34 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 							</div>
 						</div>
 					))}
+				</div>
+			</section>
+
+			<section className="section section-white" id="editions">
+				<div className="section-inner">
+					<p className="section-label reveal">2025 Edition</p>
+					<h2 className="section-heading reveal reveal-delay-1">See what happened last year</h2>
+					<p className="section-intro reveal reveal-delay-2">
+						Over 200 merchants, agencies, and partners gathered in Bucharest for the first CEE Shopify Meetup. Here's a glimpse of what it
+						looked like.
+					</p>
+
+					<div className="gallery-grid reveal reveal-delay-3">
+						{editionsGallerySlots.map((slot, index) => (
+							<div key={`gallery-slot-${slot.className || 'default'}-${index}`} className={`gallery-photo ${slot.className}`.trim()}>
+								<img src={slot.image} alt={`CEE Shopify Meetup 2025 photo ${index + 1}`} loading="lazy" />
+							</div>
+						))}
+					</div>
+
+					<div className="gallery-stat-row reveal reveal-delay-4">
+						{editionsStats.map((stat) => (
+							<div key={stat.label} className="gallery-stat">
+								<div className="gallery-stat-num">{stat.value}</div>
+								<div className="gallery-stat-label">{stat.label}</div>
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
 
