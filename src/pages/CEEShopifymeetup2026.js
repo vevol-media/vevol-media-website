@@ -19,7 +19,7 @@ import {
 	workshopAgenda,
 } from '../components/cee-meetup-2026/data/meetupData';
 
-export default function CeeMeetup2026PrivateDinnerPage() {
+export default function CeeShopifyMeetup2026Page() {
 	const [activeTrack, setActiveTrack] = useState('main');
 	const { locationPhotoOne, locationPhotoTwo, locationPhotoThree } = locationPhotos;
 
@@ -28,7 +28,8 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 	const activeAgenda = useMemo(() => (activeTrack === 'main' ? mainAgenda : workshopAgenda), [activeTrack]);
 
 	const metaTitle = "CEE Shopify Meetup 2026 - You're Invited";
-	const metaDescription = 'Exclusive pre-event dinner invitation and VIP access for CEE Shopify Meetup 2026 in Bucharest, May 27-28.';
+	const metaDescription =
+		'Official CEE Shopify Meetup 2026 in Bucharest on May 28. Join 250+ merchants, partners, and operators for talks, workshops, and networking.';
 	const pageUrl = 'https://www.vevolmedia.com/CEEShopifymeetup2026';
 
 	return (
