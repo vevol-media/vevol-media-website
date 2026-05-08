@@ -1,16 +1,20 @@
 import abhishekChandraImage from '@/images/cee-meetup-2026-private-dinner/abhishek-chandra.svg';
 import anaOpritaImage from '@/images/cee-meetup-2026-private-dinner/ana-oprita.svg';
 import bogdanDogaruImage from '@/images/cee-meetup-2026-private-dinner/bogdan-dogaru.svg';
+import carlottaZorziChapmanImage from '@/images/cee-meetup-2026-private-dinner/carlotta-zorzi-chapman.svg';
 import catalinCiochinaImage from '@/images/cee-meetup-2026-private-dinner/catalin-ciochina.svg';
 import ciprianCazacuImage from '@/images/cee-meetup-2026-private-dinner/ciprian-cazacu.svg';
+import danNistorImage from '@/images/cee-meetup-2026-private-dinner/dan-nistor.svg';
 import davidSimaImage from '@/images/cee-meetup-2026-private-dinner/david-sima.svg';
 import graceRadleyImage from '@/images/cee-meetup-2026-private-dinner/grace-radley.svg';
 import ilieMihalacheImage from '@/images/cee-meetup-2026-private-dinner/ilie-mihalache.svg';
 import paulApostuImage from '@/images/cee-meetup-2026-private-dinner/paul-apostu.svg';
 import prakharShrivastavaImage from '@/images/cee-meetup-2026-private-dinner/prakhar-shrivastava.svg';
 import raresBanescuImage from '@/images/cee-meetup-2026-private-dinner/rares-banescu.svg';
+import stefanChiriacescuImage from '@/images/cee-meetup-2026-private-dinner/stefan-chiriacescu.svg';
 import thanasisPsychogiosImage from '@/images/cee-meetup-2026-private-dinner/thanasis-psychogios.svg';
 import tudorGoiceaImage from '@/images/cee-meetup-2026-private-dinner/tudor-goicea.svg';
+import yaelWeissImage from '@/images/cee-meetup-2026-private-dinner/yael-weiss.svg';
 import aquarateLogo from '@/images/cee-meetup-2026/aquarate.svg';
 import axonLogo from '@/images/cee-meetup-2026/axon.svg';
 import businessLeagueLogo from '@/images/cee-meetup-2026/business_league_logo.webp';
@@ -98,6 +102,8 @@ export const workshopAgenda = [
 ];
 
 export const speakers = [
+	{ initials: 'DN', name: 'Dan Nistor', role: 'Co-Founder & CEO · Vevol Media', bg: '#0a6e4a', image: danNistorImage },
+	{ initials: 'SC', name: 'Stefan Chiriacescu', role: 'Founder and CEO · Ecommerce Today', bg: '#553c9a', image: stefanChiriacescuImage },
 	{ initials: 'C', name: 'Ciprian Cazacu', role: 'Co-Founder & CEO · Easy Sales', bg: '#1a1a1a', image: ciprianCazacuImage },
 	{ initials: 'D', name: 'David Sima', role: 'Key Account Executive · Vevol Media', bg: '#5C6AC4', image: davidSimaImage },
 	{ initials: 'P', name: 'Prakhar Shrivastava', role: 'Co-founder · FoxSell Bundles', bg: '#22ffb8', image: prakharShrivastavaImage },
@@ -111,6 +117,8 @@ export const speakers = [
 	{ initials: 'I', name: 'Ilie Mihalache', role: 'Partnership Support · TheMarketer', bg: '#b45309', image: ilieMihalacheImage },
 	{ initials: 'Tu', name: 'Tudor Goicea', role: 'Co-founder & CRO · Aqurate', bg: '#1e6091', image: tudorGoiceaImage },
 	{ initials: 'Ca', name: 'Catalin Ciochina', role: 'Founder · xConnector', bg: '#6b21a8', image: catalinCiochinaImage },
+	{ initials: 'YW', name: 'Yael Weiss', role: 'Lead Partner Solutions Engineer · Shopify', bg: '#2c5282', image: yaelWeissImage },
+	{ initials: 'CZ', name: 'Carlotta Zorzi-Chapman', role: 'Head of Market Expansion, EMEA · Shopify', bg: '#276749', image: carlottaZorziChapmanImage },
 	{ initials: '?', name: 'Surprise Guest', role: 'Shopify', bg: '#22ffb8', surprise: true },
 	{ initials: '?', name: 'Surprise Guest', role: 'Shopify', bg: '#0fd49a', surprise: true },
 	{ initials: '?', name: 'Surprise Guest', role: 'Shopify', bg: '#0fd49a', surprise: true },
