@@ -586,6 +586,8 @@
 		border: 1px solid var(--border);
 		border-radius: 12px;
 		overflow: hidden;
+		display: flex;
+		flex-direction: column;
 		transition: box-shadow 0.2s, transform 0.2s;
 	}
 
@@ -626,6 +628,9 @@
 	.speaker-content {
 		padding: 14px 14px 16px;
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
 	}
 
 	.speaker-name {
@@ -648,6 +653,8 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		margin-top: auto;
+		align-self: center;
 		border-radius: 999px;
 		border: 1px solid var(--border-green);
 		background: var(--green-xlight);
