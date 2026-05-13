@@ -85,6 +85,22 @@
 	},
 	{
 		"fromPath": "/meetup",
-		"toPath": "/shopify-meetup"
+		"toPath": "/shopify-meetup-cee-2026",
+		"isPermanent": true
+	},
+	{
+		"fromPath": "/shopify-meetup",
+		"toPath": "/shopify-meetup-cee-2026",
+		"isPermanent": true
+	},
+	{
+		"fromPath": "/CEEShopifymeetup2026",
+		"toPath": "/shopify-meetup-cee-2026",
+		"isPermanent": true
+	},
+	{
+		"fromPath": "/CEEShopifymeetup2026Dinner",
+		"toPath": "/shopify-meetup-cee-2026-dinner",
+		"isPermanent": true
 	}
 ]
