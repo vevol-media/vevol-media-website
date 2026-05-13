@@ -143,7 +143,7 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 
 	const metaTitle = "CEE Shopify Meetup 2026 - You're Invited";
 	const metaDescription = 'Exclusive pre-event dinner invitation and VIP access for CEE Shopify Meetup 2026 in Bucharest, May 27-28.';
-	const pageUrl = 'https://www.vevolmedia.com/CEEShopifymeetup2026Dinner';
+	const pageUrl = 'https://www.vevolmedia.com/shopify-meetup-cee-2026-dinner';
 
 	return (
 		<Layout hasMainForm={false} hasHeader={false} hasFooter={false} customClass={'cee-dinner-page'}>
@@ -334,7 +334,7 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 								</div>
 								<div className="detail-text">
 									<span className="detail-label">Date</span>
-									<span>Tuesday, May 27, 2026</span>
+									<span>Wednesday, May 27, 2026</span>
 								</div>
 							</div>
 							<div className="detail-item">
@@ -425,7 +425,7 @@ export default function CeeMeetup2026PrivateDinnerPage() {
 							</div>
 							<div className="detail-text">
 								<span className="detail-label">Date</span>
-								<span>Wednesday, May 28, 2026</span>
+								<span>Thursday, May 28, 2026</span>
 							</div>
 						</div>
 						<div className="detail-item">

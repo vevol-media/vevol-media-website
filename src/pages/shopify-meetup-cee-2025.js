@@ -92,7 +92,7 @@ export default function ShopifyMeetupPage({ data }) {
 				<title>{metaTitle}</title>
 				<meta name="description" content={metaDescription} />
 
-				<meta property="og:url" content="https://www.vevolmedia.com/shopify-meetup" />
+				<meta property="og:url" content="https://www.vevolmedia.com/shopify-meetup-cee-2025" />
 				<meta property="og:type" content="website" />
 				<meta property="og:title" content={metaTitle} />
 				<meta property="og:description" content={metaDescription} />
@@ -100,7 +100,7 @@ export default function ShopifyMeetupPage({ data }) {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@VevolMedia" />
 				<meta property="twitter:domain" content="vevolmedia.com" />
-				<meta property="twitter:url" content="https://www.vevolmedia.com/shopify-meetup" />
+				<meta property="twitter:url" content="https://www.vevolmedia.com/shopify-meetup-cee-2025" />
 				<meta name="twitter:title" content={metaTitle} />
 				<meta name="twitter:description" content={metaDescription} />
 				<meta name="twitter:image" content={ogImage.images.fallback.src} />
