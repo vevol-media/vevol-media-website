@@ -110,6 +110,8 @@ export default function Layout({
 					<meta name="twitter:title" content={metaTitle} />
 					<meta name="twitter:description" content={metaDescription} />
 					<meta name="twitter:image" content={ogImage} />
+					<script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="LqpyEn9xK88UapNc" data-version="062024"></script>
+
 					<script type="application/ld+json">
 						{`
 						{
