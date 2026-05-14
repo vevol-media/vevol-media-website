@@ -110,6 +110,7 @@ export default function Layout({
 					<meta name="twitter:title" content={metaTitle} />
 					<meta name="twitter:description" content={metaDescription} />
 					<meta name="twitter:image" content={ogImage} />
+
 					<script type="application/ld+json">
 						{`
 						{
