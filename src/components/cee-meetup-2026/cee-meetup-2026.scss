@@ -20,7 +20,7 @@
 		color: var(--white);
 	}
 
-	#sponsors,
+	#partners,
 	#editions,
 	#location,
 	#register {
@@ -308,19 +308,19 @@
 	}
 
 	/* SPONSORS */
-	#sponsors .section-inner {
+	#partners .section-inner {
 		max-width: 980px;
 	}
 
-	.sponsor-tier {
+	.partner-tier {
 		margin-bottom: 48px;
 	}
 
-	.sponsor-tier:last-child {
+	.partner-tier:last-child {
 		margin-bottom: 0;
 	}
 
-	.sponsor-tier-label {
+	.partner-tier-label {
 		display: inline-flex;
 		align-items: center;
 		gap: 8px;
@@ -332,7 +332,7 @@
 		margin-bottom: 16px;
 	}
 
-	.sponsor-tier-label::before {
+	.partner-tier-label::before {
 		content: '';
 		display: block;
 		width: 14px;
@@ -340,28 +340,28 @@
 		background: currentColor;
 	}
 
-	.sponsor-tier.premier .sponsor-tier-label {
+	.partner-tier.premier .partner-tier-label {
 		color: #b08000;
 	}
 
-	.sponsor-tier.plus .sponsor-tier-label {
+	.partner-tier.plus .partner-tier-label {
 		color: #5c6ac4;
 	}
 
-	.sponsor-tier.bronze .sponsor-tier-label {
+	.partner-tier.bronze .partner-tier-label {
 		color: #a05c2a;
 	}
 
-	.sponsor-tier.partners .sponsor-tier-label {
+	.partner-tier.partners .partner-tier-label {
 		color: var(--muted);
 	}
 
-	.sponsor-logos {
+	.partner-logos {
 		display: grid;
 		gap: 14px;
 	}
 
-	.sponsor-logo-card {
+	.partner-logo-card {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -373,12 +373,12 @@
 		overflow: hidden;
 	}
 
-	.sponsor-logo-card.has-image {
+	.partner-logo-card.has-image {
 		background: transparent;
 		padding: 4px;
 	}
 
-	.sponsor-logo-frame {
+	.partner-logo-frame {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -387,51 +387,51 @@
 		border-radius: 7px;
 	}
 
-	.sponsor-logo-card:hover {
+	.partner-logo-card:hover {
 		border-color: var(--border-green);
 		box-shadow: var(--card-shadow-hover);
 		transform: translateY(-1px);
 	}
 
-	.sponsor-tier.premier .sponsor-logo-card {
+	.partner-tier.premier .partner-logo-card {
 		width: 100%;
 		height: auto;
 		border-color: #e8d96a;
 		border-width: 1.5px;
 	}
 
-	.sponsor-tier.plus .sponsor-logos {
+	.partner-tier.plus .partner-logos {
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: 14px;
 	}
 
-	.sponsor-tier.plus .sponsor-logo-card {
+	.partner-tier.plus .partner-logo-card {
 		width: 100%;
 		height: auto;
 		border-radius: 10px;
 	}
 
-	.sponsor-tier.bronze .sponsor-logos {
+	.partner-tier.bronze .partner-logos {
 		grid-template-columns: repeat(5, minmax(0, 1fr));
 	}
 
-	.sponsor-tier.bronze .sponsor-logo-card {
+	.partner-tier.bronze .partner-logo-card {
 		width: 100%;
 		min-width: 0;
 		height: 84px;
 	}
 
-	.sponsor-tier.partners .sponsor-logos {
+	.partner-tier.partners .partner-logos {
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 
-	.sponsor-tier.partners .sponsor-logo-card {
+	.partner-tier.partners .partner-logo-card {
 		width: 100%;
 		min-width: 0;
 		height: 88px;
 	}
 
-	.sponsor-name-pill {
+	.partner-name-pill {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -445,7 +445,7 @@
 		line-height: 1.2;
 	}
 
-	.sponsor-logo-image {
+	.partner-logo-image {
 		width: 100%;
 		height: auto;
 		object-fit: contain;
@@ -454,35 +454,35 @@
 		filter: none;
 	}
 
-	.sponsor-logo-image--black {
+	.partner-logo-image--black {
 		filter: brightness(0) saturate(100%);
 	}
 
-	.sponsor-tier.premier .sponsor-name-pill {
+	.partner-tier.premier .partner-name-pill {
 		font-size: 22px;
 	}
 
-	.sponsor-tier.bronze .sponsor-logo-image,
-	.sponsor-tier.partners .sponsor-logo-image {
+	.partner-tier.bronze .partner-logo-image,
+	.partner-tier.partners .partner-logo-image {
 		width: 100%;
 		height: auto;
 	}
 
-	.sponsor-tier.plus .sponsor-logo-image {
+	.partner-tier.plus .partner-logo-image {
 		width: auto;
 		max-width: 100%;
 		height: auto;
 	}
 
-	.sponsor-tier.plus .sponsor-name-pill {
+	.partner-tier.plus .partner-name-pill {
 		font-size: 14px;
 	}
 
-	.sponsor-tier.bronze .sponsor-name-pill {
+	.partner-tier.bronze .partner-name-pill {
 		font-size: 11px;
 	}
 
-	.sponsor-tier.partners .sponsor-name-pill {
+	.partner-tier.partners .partner-name-pill {
 		font-size: 11px;
 	}
 
@@ -849,23 +849,23 @@
 			max-width: 100%;
 		}
 
-		.sponsor-tier.plus .sponsor-logos {
+		.partner-tier.plus .partner-logos {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
-		.sponsor-tier.bronze .sponsor-logos {
+		.partner-tier.bronze .partner-logos {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
-		.sponsor-tier.bronze .sponsor-logo-card {
+		.partner-tier.bronze .partner-logo-card {
 			height: 74px;
 		}
 
-		.sponsor-tier.partners .sponsor-logos {
+		.partner-tier.partners .partner-logos {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
-		.sponsor-tier.partners .sponsor-logo-card {
+		.partner-tier.partners .partner-logo-card {
 			height: 76px;
 		}
 
@@ -906,19 +906,19 @@
 	}
 
 	@media (max-width: 400px) {
-		.sponsor-tier.plus .sponsor-logos,
-		.sponsor-tier.bronze .sponsor-logos,
-		.sponsor-tier.partners .sponsor-logos {
+		.partner-tier.plus .partner-logos,
+		.partner-tier.bronze .partner-logos,
+		.partner-tier.partners .partner-logos {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
-		.sponsor-tier.plus .sponsor-logo-card,
-		.sponsor-tier.bronze .sponsor-logo-card,
-		.sponsor-tier.partners .sponsor-logo-card {
+		.partner-tier.plus .partner-logo-card,
+		.partner-tier.bronze .partner-logo-card,
+		.partner-tier.partners .partner-logo-card {
 			height: 68px;
 		}
 
-		.sponsor-tier.plus .sponsor-logo-image {
+		.partner-tier.plus .partner-logo-image {
 			height: 38px;
 		}
 	}

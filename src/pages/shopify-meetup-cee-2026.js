@@ -6,7 +6,7 @@ import useMeetupLandingEffects from '@/components/cee-meetup-2026/hooks/useMeetu
 import EditionsSection from '@/components/cee-meetup-2026/sections/EditionsSection';
 import LocationSection from '@/components/cee-meetup-2026/sections/LocationSection';
 import RegisterSection from '@/components/cee-meetup-2026/sections/RegisterSection';
-import SponsorsSection from '@/components/cee-meetup-2026/sections/SponsorsSection';
+import PartnersSection from '@/components/cee-meetup-2026/sections/PartnersSection';
 import {
 	carouselLogos,
 	editionsGallerySlots,
@@ -15,7 +15,7 @@ import {
 	locationPhotos,
 	mainAgenda,
 	speakers,
-	sponsorTiers,
+	partnerTiers,
 	workshopAgenda,
 } from '@/components/cee-meetup-2026/data/meetupData';
 
@@ -365,7 +365,7 @@ export default function CeeShopifyMeetup2026Page() {
 				</div>
 			</section>
 
-			<SponsorsSection sponsorTiers={sponsorTiers} />
+			<PartnersSection partnerTiers={partnerTiers} />
 
 			<EditionsSection editionsGallerySlots={editionsGallerySlots} editionsStats={editionsStats} />
 

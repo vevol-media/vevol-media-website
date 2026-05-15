@@ -1,6 +1,7 @@
 import abhishekChandraImage from '@/images/cee-meetup-2026-private-dinner/abhishek-chandra.svg';
 import anaOpritaImage from '@/images/cee-meetup-2026-private-dinner/ana-oprita.svg';
 import bogdanDogaruImage from '@/images/cee-meetup-2026-private-dinner/bogdan-dogaru.svg';
+import bogdanShkarupaImage from '@/images/cee-meetup-2026-private-dinner/bogdan-shkarupa.png';
 import carlottaZorziChapmanImage from '@/images/cee-meetup-2026-private-dinner/carlotta-zorzi-chapman.svg';
 import catalinCiochinaImage from '@/images/cee-meetup-2026-private-dinner/catalin-ciochina.svg';
 import ciprianCazacuImage from '@/images/cee-meetup-2026-private-dinner/ciprian-cazacu.svg';
@@ -88,7 +89,11 @@ export const mainAgenda = [
 		title: 'AI-Powered Email Automation: Smarter Journeys. Higher Profits.',
 		speaker: 'Paul Apostu · Chief Growth Officer, Ecommerce Today',
 	},
-	{ time: '16:20-16:35', title: 'Session TBA' },
+	{
+		time: '16:20-16:35',
+		title: 'Turning Fragmented Omnichannel Retail into Behaviour-Triggered Customer Retention',
+		speaker: 'Bogdan Shkarupa · Co-Founder & CEO, NeuCurrent',
+	},
 	{ time: '16:40-17:10', title: 'Surprise Guests from Shopify', type: 'special' },
 ];
 
@@ -113,6 +118,7 @@ export const speakers = [
 	{ initials: 'T', name: 'Thanasis Psychogios', role: 'Sr. Intl. BD Manager · Skroutz', bg: '#702459', image: thanasisPsychogiosImage },
 	{ initials: 'Ab', name: 'Abhishek Chandra', role: 'CRO · Gokwik', bg: '#1a365d', image: abhishekChandraImage },
 	{ initials: 'Pa', name: 'Paul Apostu', role: 'Chief Growth Officer · Ecommerce Today', bg: '#553c9a', image: paulApostuImage },
+	{ initials: 'BS', name: 'Bogdan Shkarupa', role: 'Co-Founder & CEO · NeuCurrent', bg: '#1a365d', image: bogdanShkarupaImage },
 	{ initials: 'B', name: 'Bogdan Dogaru', role: 'CTO · Vevol Media', bg: '#0a6e4a', image: bogdanDogaruImage },
 	{ initials: 'I', name: 'Ilie Mihalache', role: 'Partnership Support · TheMarketer', bg: '#b45309', image: ilieMihalacheImage },
 	{ initials: 'Tu', name: 'Tudor Goicea', role: 'Co-founder & CRO · Aqurate', bg: '#1e6091', image: tudorGoiceaImage },
@@ -164,10 +170,10 @@ export const carouselLogos = [
 	{ name: 'Syncap', image: syncapLogo },
 ];
 
-export const sponsorTiers = [
+export const partnerTiers = [
 	{
 		key: 'premier',
-		label: 'Premier Sponsor',
+		label: 'Premier Partners',
 		items: [
 			{
 				name: 'GoKwik',
@@ -180,7 +186,7 @@ export const sponsorTiers = [
 	},
 	{
 		key: 'plus',
-		label: 'Plus Sponsors',
+		label: 'Plus Partners',
 		items: [
 			{
 				name: 'BusinessLeague',
@@ -221,7 +227,7 @@ export const sponsorTiers = [
 	},
 	{
 		key: 'bronze',
-		label: 'Bronze Sponsors',
+		label: 'Bronze Partners',
 		items: [
 			{
 				name: 'FoxSell',
@@ -302,12 +308,6 @@ export const sponsorTiers = [
 				cardStyle: { background: '#fff0f8', borderColor: '#f5a0d0' },
 				pillStyle: { color: '#6b0040' },
 			},
-		],
-	},
-	{
-		key: 'partners',
-		label: 'Event Partners',
-		items: [
 			{
 				name: 'NeuCurrent',
 				url: 'https://neucurrent.com/',
@@ -316,6 +316,12 @@ export const sponsorTiers = [
 				cardStyle: { background: '#f0f8ff', borderColor: '#90c0f0' },
 				pillStyle: { color: '#003366' },
 			},
+		],
+	},
+	{
+		key: 'partners',
+		label: 'Event Partners',
+		items: [
 			{
 				name: 'Love Loyalty',
 				url: 'https://www.loveloyalty.app/',

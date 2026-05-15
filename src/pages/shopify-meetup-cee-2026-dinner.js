@@ -1,14 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import '../components/cee-meetup-2026-private-dinner/cee-meetup-2026-private-dinner.scss';
+import '@/components/cee-meetup-2026/cee-meetup-2026.scss';
 import Layout from '../components/layout/layout';
 import abhishekChandraImage from '../images/cee-meetup-2026-private-dinner/abhishek-chandra.svg';
 import anaOpritaImage from '../images/cee-meetup-2026-private-dinner/ana-oprita.svg';
 import bogdanDogaruImage from '../images/cee-meetup-2026-private-dinner/bogdan-dogaru.svg';
+import bogdanShkarupaImage from '../images/cee-meetup-2026-private-dinner/bogdan-shkarupa.png';
 import bucharestHotelImageOne from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_1.webp';
 import bucharestHotelImageTwo from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_2.webp';
-import catalinCiochinaImage from '../images/cee-meetup-2026-private-dinner/catalin-ciochina.svg';
 import carlottaZorziChapmanImage from '../images/cee-meetup-2026-private-dinner/carlotta-zorzi-chapman.svg';
+import catalinCiochinaImage from '../images/cee-meetup-2026-private-dinner/catalin-ciochina.svg';
 import ciprianCazacuImage from '../images/cee-meetup-2026-private-dinner/ciprian-cazacu.svg';
 import danNistorImage from '../images/cee-meetup-2026-private-dinner/dan-nistor.svg';
 import davidSimaImage from '../images/cee-meetup-2026-private-dinner/david-sima.svg';
@@ -70,7 +71,11 @@ const mainAgenda = [
 		title: 'AI-Powered Email Automation: Smarter Journeys. Higher Profits.',
 		speaker: 'Paul Apostu · Chief Growth Officer, Ecommerce Today',
 	},
-	{ time: '16:20-16:35', title: 'Session TBA' },
+	{
+		time: '16:20-16:35',
+		title: 'Turning Fragmented Omnichannel Retail into Behaviour-Triggered Customer Retention',
+		speaker: 'Bogdan Shkarupa · Co-Founder & CEO, NeuCurrent',
+	},
 	{ time: '16:40-17:10', title: 'Surprise Guests from Shopify', type: 'special' },
 ];
 
@@ -99,6 +104,7 @@ const speakers = [
 	{ initials: 'T', name: 'Thanasis Psychogios', role: 'Sr. Intl. BD Manager · Skroutz', bg: '#702459', image: thanasisPsychogiosImage },
 	{ initials: 'Ab', name: 'Abhishek Chandra', role: 'CRO · Gokwik', bg: '#1a365d', image: abhishekChandraImage },
 	{ initials: 'Pa', name: 'Paul Apostu', role: 'Chief Growth Officer · Ecommerce Today', bg: '#553c9a', image: paulApostuImage },
+	{ initials: 'BS', name: 'Bogdan Shkarupa', role: 'Co-Founder & CEO · NeuCurrent', bg: '#1a365d', image: bogdanShkarupaImage },
 	{ initials: 'B', name: 'Bogdan Dogaru', role: 'CTO · Vevol Media', bg: '#0a6e4a', image: bogdanDogaruImage },
 	{ initials: 'I', name: 'Ilie Mihalache', role: 'Partnership Support · TheMarketer', bg: '#b45309', image: ilieMihalacheImage },
 	{ initials: 'Tu', name: 'Tudor Goicea', role: 'Co-founder & CRO · Aqurate', bg: '#1e6091', image: tudorGoiceaImage },
