@@ -10,7 +10,7 @@ import bucharestHotelImageOne from '../images/cee-meetup-2026-private-dinner/buc
 import bucharestHotelImageTwo from '../images/cee-meetup-2026-private-dinner/bucharest_hotel_2.webp';
 import carlottaZorziChapmanImage from '../images/cee-meetup-2026-private-dinner/carlotta-zorzi-chapman.svg';
 import catalinCiochinaImage from '../images/cee-meetup-2026-private-dinner/catalin-ciochina.svg';
-import ciprianCazacuImage from '../images/cee-meetup-2026-private-dinner/ciprian-cazacu.svg';
+import stelutaSticiImage from '../images/cee-meetup-2026-private-dinner/steluta-stici.png';
 import danNistorImage from '../images/cee-meetup-2026-private-dinner/dan-nistor.svg';
 import davidSimaImage from '../images/cee-meetup-2026-private-dinner/david-sima.svg';
 import graceRadleyImage from '../images/cee-meetup-2026-private-dinner/grace-radley.svg';
@@ -30,7 +30,7 @@ const mainAgenda = [
 	{
 		time: '09:20-09:35',
 		title: 'What 1,000+ CEE Merchants Taught Us About Multichannel Growth',
-		speaker: 'Ciprian Cazacu · Co-Founder & CEO, Easy Sales',
+		speaker: 'Steluta Stici · Key Account Manager, Easy Sales',
 	},
 	{
 		time: '09:40-10:10',
@@ -64,8 +64,23 @@ const mainAgenda = [
 		speaker: 'Thanasis Psychogios · Sr. Intl. BD Manager, Skroutz',
 	},
 	{ time: '13:00-14:00', title: 'Lunch break: buffet included', type: 'break' },
-	{ time: '14:00-15:00', title: 'Panel Discussion', speaker: '6 special guests · TBC' },
-	{ time: '15:05-15:40', title: 'Abhishek Chandra', speaker: 'CRO, Gokwik' },
+	{
+		time: '14:00-15:00',
+		title: 'Panel: How AI is Transforming Ecommerce & Retention in 2026',
+		speaker: [
+			'Hosted by Dan Nistor · Co-Founder & CEO, Vevol Media',
+			'Bogdan Dogaru · Co-founder & CTO, Vevol Media',
+			'Stefan Chiriacescu · Co-founder & CEO, Ecommerce Today',
+			'Gabriel Bonciu · Business Development Director, BusinessLeague',
+			'Abhishek Chandra · Chief Revenue Officer, Gokwik',
+			'Carlotta Zorzi-Chapman · Head of Market Expansion, EMEA, Shopify',
+		].join('\n'),
+	},	
+	{
+		time: '15:05-15:40',
+		title: 'Your customers are on WhatsApp, your competitors are not!',
+		speaker: 'Abhishek Chandra · Chief Revenue Officer, Gokwik',
+	},
 	{
 		time: '15:45-16:15',
 		title: 'AI-Powered Email Automation: Smarter Journeys. Higher Profits.',
@@ -76,40 +91,48 @@ const mainAgenda = [
 		title: 'Turning Fragmented Omnichannel Retail into Behaviour-Triggered Customer Retention',
 		speaker: 'Bogdan Shkarupa · Co-Founder & CEO, NeuCurrent',
 	},
-	{ time: '16:40-17:10', title: 'Surprise Guests from Shopify', type: 'special' },
+	{
+		time: '16:40-17:10',
+		title: 'Building for CEE: What’s Next on Shopify',
+		speaker: 'Carlotta Zorzi-Chapman & Yael Weiss · Shopify',
+		type: 'special',
+	},
 ];
 
 const workshopAgenda = [
-	{ time: '09:00-10:15', title: 'Gokwik Workshop', speaker: 'Topic TBA' },
-	{ time: '10:15-11:30', title: 'Ecommerce Today Workshop', speaker: 'Topic TBA' },
+	{
+		time: '09:00-10:15',
+		title: 'Faster Fulfillment, Easier Returns: Shopify Operations',
+		speaker: 'Catalin Ciochina · xConnector',
+	},
+	{
+		time: '10:15-11:30',
+		title: 'The Complete Shopify Workshop: Setup, Functionality & Optimization with E-commerce Today',
+		speaker: 'Andreea Balasa & Diana Matei · E-commerce Today',
+	},
 	{
 		time: '11:30-12:45',
 		title: 'More Revenue, Same Traffic: A Step-by-Step Guide to AI Personalization That Converts',
-		speaker: 'Aqurate',
+		speaker: 'Tudor Goicea · Aqurate',
 	},
-	{ time: '14:00-15:15', title: 'From Data to Success: Automated Flows That Bring Results', speaker: 'TheMarketer' },
-	{ time: '15:15-16:30', title: 'Vevol Media Workshop', speaker: 'Topic TBA' },
-	{ time: '16:30-17:45', title: 'xConnector Workshop', speaker: 'Topic TBA' },
+	{
+		time: '14:00-15:15',
+		title: 'From Data to Success: Automated flows that bring results across any eCommerce niche',
+		speaker: 'Ilie Mihalache · TheMarketer',
+	},
+	{
+		time: '15:15-16:30',
+		title: 'AI-Driven Shopify Strategy and Delivery: Orchestrating Growth',
+		speaker: 'Bogdan Dogaru · Vevol Media',
+	},
+	{
+		time: '16:30-17:45',
+		title: 'From Clicks to Chats: The Future of Conversational Commerce',
+		speaker: 'Connor William Blakey · Head of Partnerships, GoKwik',
+	},
 ];
 
 const speakers = [
-	{ initials: 'DN', name: 'Dan Nistor', role: 'Co-Founder & CEO · Vevol Media', bg: '#0a6e4a', image: danNistorImage },
-	{ initials: 'SC', name: 'Stefan Chiriacescu', role: 'Founder and CEO · Ecommerce Today', bg: '#553c9a', image: stefanChiriacescuImage },
-	{ initials: 'C', name: 'Ciprian Cazacu', role: 'Co-Founder & CEO · Easy Sales', bg: '#1a1a1a', image: ciprianCazacuImage },
-	{ initials: 'D', name: 'David Sima', role: 'Key Account Executive · Vevol Media', bg: '#5C6AC4', image: davidSimaImage },
-	{ initials: 'P', name: 'Prakhar Shrivastava', role: 'Co-founder · FoxSell Bundles', bg: '#22ffb8', image: prakharShrivastavaImage },
-	{ initials: 'R', name: 'Rareș Bănescu', role: 'Founder · TheMarketer', bg: '#2c5282', image: raresBanescuImage },
-	{ initials: 'A', name: 'Ana Opriță', role: 'Deputy CEO · BusinessLeague', bg: '#744210', image: anaOpritaImage },
-	{ initials: 'G', name: 'Grace Radley', role: 'Sr. Country Partnerships · Mollie', bg: '#276749', image: graceRadleyImage },
-	{ initials: 'T', name: 'Thanasis Psychogios', role: 'Sr. Intl. BD Manager · Skroutz', bg: '#702459', image: thanasisPsychogiosImage },
-	{ initials: 'Ab', name: 'Abhishek Chandra', role: 'CRO · Gokwik', bg: '#1a365d', image: abhishekChandraImage },
-	{ initials: 'Pa', name: 'Paul Apostu', role: 'Chief Growth Officer · Ecommerce Today', bg: '#553c9a', image: paulApostuImage },
-	{ initials: 'BS', name: 'Bogdan Shkarupa', role: 'Co-Founder & CEO · NeuCurrent', bg: '#1a365d', image: bogdanShkarupaImage },
-	{ initials: 'B', name: 'Bogdan Dogaru', role: 'CTO · Vevol Media', bg: '#0a6e4a', image: bogdanDogaruImage },
-	{ initials: 'I', name: 'Ilie Mihalache', role: 'Partnership Support · TheMarketer', bg: '#b45309', image: ilieMihalacheImage },
-	{ initials: 'Tu', name: 'Tudor Goicea', role: 'Co-founder & CRO · Aqurate', bg: '#1e6091', image: tudorGoiceaImage },
-	{ initials: 'Ca', name: 'Catalin Ciochina', role: 'Founder · xConnector', bg: '#6b21a8', image: catalinCiochinaImage },
-	{ initials: 'YW', name: 'Yael Weiss', role: 'Lead Partner Solutions Engineer · Shopify', bg: '#2c5282', image: yaelWeissImage },
 	{
 		initials: 'CZ',
 		name: 'Carlotta Zorzi-Chapman',
@@ -117,9 +140,23 @@ const speakers = [
 		bg: '#276749',
 		image: carlottaZorziChapmanImage,
 	},
-	{ initials: '?', name: 'Surprise Guest', role: 'Shopify', bg: '#0fd49a', surprise: true },
-	{ initials: '?', name: 'Surprise Guest', role: 'Retail Industry Leader', bg: '#3b6fd4', surprise: true, surpriseBlue: true },
-	{ initials: '?', name: 'Surprise Guest', role: 'Retail Industry Leader', bg: '#3b6fd4', surprise: true, surpriseBlue: true },
+	{ initials: 'YW', name: 'Yael Weiss', role: 'Lead Partner Solutions Engineer · Shopify', bg: '#2c5282', image: yaelWeissImage },
+	{ initials: 'R', name: 'Rareș Bănescu', role: 'Founder · TheMarketer', bg: '#2c5282', image: raresBanescuImage },
+	{ initials: 'A', name: 'Ana Opriță', role: 'Deputy CEO · BusinessLeague', bg: '#744210', image: anaOpritaImage },
+	{ initials: 'P', name: 'Prakhar Shrivastava', role: 'Co-founder · FoxSell Bundles', bg: '#22ffb8', image: prakharShrivastavaImage },
+	{ initials: 'G', name: 'Grace Radley', role: 'Sr. Country Partnerships · Mollie', bg: '#276749', image: graceRadleyImage },
+	{ initials: 'SS', name: 'Steluta Stici', role: 'Key Account Manager · Easy Sales', bg: '#1a1a1a', image: stelutaSticiImage },
+	{ initials: 'T', name: 'Thanasis Psychogios', role: 'Sr. Intl. BD Manager · Skroutz', bg: '#702459', image: thanasisPsychogiosImage },
+	{ initials: 'Ab', name: 'Abhishek Chandra', role: 'CRO · Gokwik', bg: '#1a365d', image: abhishekChandraImage },
+	{ initials: 'BS', name: 'Bogdan Shkarupa', role: 'Co-Founder & CEO · NeuCurrent', bg: '#1a365d', image: bogdanShkarupaImage },
+	{ initials: 'I', name: 'Ilie Mihalache', role: 'Partnership Support · TheMarketer', bg: '#b45309', image: ilieMihalacheImage },
+	{ initials: 'Tu', name: 'Tudor Goicea', role: 'Co-founder & CRO · Aqurate', bg: '#1e6091', image: tudorGoiceaImage },
+	{ initials: 'Ca', name: 'Catalin Ciochina', role: 'Founder · xConnector', bg: '#6b21a8', image: catalinCiochinaImage },
+	{ initials: 'DN', name: 'Dan Nistor', role: 'Co-Founder & CEO · Vevol Media', bg: '#0a6e4a', image: danNistorImage },
+	{ initials: 'SC', name: 'Stefan Chiriacescu', role: 'Founder and CEO · Ecommerce Today', bg: '#553c9a', image: stefanChiriacescuImage },
+	{ initials: 'B', name: 'Bogdan Dogaru', role: 'CTO · Vevol Media', bg: '#0a6e4a', image: bogdanDogaruImage },
+	{ initials: 'D', name: 'David Sima', role: 'Key Account Executive · Vevol Media', bg: '#5C6AC4', image: davidSimaImage },
+	{ initials: 'Pa', name: 'Paul Apostu', role: 'Chief Growth Officer · Ecommerce Today', bg: '#553c9a', image: paulApostuImage },
 ];
 
 const expectedItems = [
