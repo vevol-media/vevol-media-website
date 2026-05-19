@@ -153,8 +153,8 @@ const speakers = [
 	{ initials: 'Tu', name: 'Tudor Goicea', role: 'Co-founder & CRO · Aqurate', bg: '#1e6091', image: tudorGoiceaImage },
 	{ initials: 'Ca', name: 'Catalin Ciochina', role: 'Founder · xConnector', bg: '#6b21a8', image: catalinCiochinaImage },
 	{ initials: 'DN', name: 'Dan Nistor', role: 'Co-Founder & CEO · Vevol Media', bg: '#0a6e4a', image: danNistorImage },
-	{ initials: 'SC', name: 'Stefan Chiriacescu', role: 'Founder and CEO · Ecommerce Today', bg: '#553c9a', image: stefanChiriacescuImage },
-	{ initials: 'B', name: 'Bogdan Dogaru', role: 'CTO · Vevol Media', bg: '#0a6e4a', image: bogdanDogaruImage },
+	{ initials: 'SC', name: 'Stefan Chiriacescu', role: 'Co-Founder & CEO · Ecommerce Today', bg: '#553c9a', image: stefanChiriacescuImage },
+	{ initials: 'B', name: 'Bogdan Dogaru', role: 'Co-Founder & CTO · Vevol Media', bg: '#0a6e4a', image: bogdanDogaruImage },
 	{ initials: 'D', name: 'David Sima', role: 'Key Account Executive · Vevol Media', bg: '#5C6AC4', image: davidSimaImage },
 	{ initials: 'Pa', name: 'Paul Apostu', role: 'Chief Growth Officer · Ecommerce Today', bg: '#553c9a', image: paulApostuImage },
 ];
