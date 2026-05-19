@@ -555,6 +555,7 @@
 	.agenda-speaker {
 		font-size: 12px;
 		color: var(--muted);
+		white-space: pre-line;
 	}
 
 	.agenda-slot.break .agenda-title {
