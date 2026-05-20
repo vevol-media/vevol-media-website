@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 export default function ClutchWidget() {
 	useEffect(() => {
-		typeof window !== 'undefined' && window.CLUTCHCO.Init();
+		typeof window !== 'undefined' && window?.CLUTCHCO?.Init();
 	});
 
 	return (
