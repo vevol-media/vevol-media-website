@@ -36,30 +36,6 @@ const portfolio = [
 		hasPage: true,
 	},
 	{
-		name: 'Skinseen',
-		description: {
-			en: 'OpenCart to Shopify Migration with Custom Skin Quiz',
-			ro: 'Migrare OpenCart la Shopify cu Quiz Personalizat pentru Piele',
-		},
-		internalUrl: '/work/skinseen',
-		externalUrl: 'https://skinseen.ro',
-		featuredImage: 'skinseen',
-		hasCaseStudy: true,
-		hasPage: true,
-	},
-	{
-		name: 'Casa Vie',
-		description: {
-			en: 'Shopify Theme Overhaul with Interactive Shopping Features',
-			ro: 'Revizuire Temă Shopify cu Funcționalități Interactive de Cumpărare',
-		},
-		internalUrl: '/work/casa-vie',
-		externalUrl: 'https://casavie.ro',
-		featuredImage: 'casa-vie',
-		hasCaseStudy: true,
-		hasPage: true,
-	},
-	{
 		name: 'Fyne Jewellery',
 		description: {
 			en: 'Design, Custom Shopify Components, Store and Speed Optimisation.',

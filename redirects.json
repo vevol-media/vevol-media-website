@@ -102,5 +102,15 @@
 		"fromPath": "/CEEShopifymeetup2026Dinner",
 		"toPath": "/shopify-meetup-cee-2026-dinner",
 		"isPermanent": true
+	},
+	{
+		"fromPath": "/work/skinseen",
+		"toPath": "/work",
+		"isPermanent": true
+	},
+	{
+		"fromPath": "/work/casa-vie",
+		"toPath": "/work",
+		"isPermanent": true
 	}
 ]
