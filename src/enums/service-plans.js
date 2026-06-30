@@ -7,7 +7,7 @@ const servicePlans = {
 			hours: 60,
 			totalHours: {
 				monthly: 60,
-				quaterly: 240,
+				quarterly: 240,
 				yearly: 720,
 			},
 			features: [
@@ -25,7 +25,7 @@ const servicePlans = {
 			],
 			prices: {
 				monthly: 2710,
-				quaterly: 10440,
+				quarterly: 10440,
 				yearly: 29520,
 			},
 		},
@@ -35,7 +35,7 @@ const servicePlans = {
 			hours: 30,
 			totalHours: {
 				monthly: 30,
-				quaterly: 120,
+				quarterly: 120,
 				yearly: 360,
 			},
 			features: [
@@ -49,7 +49,7 @@ const servicePlans = {
 			],
 			prices: {
 				monthly: 1380,
-				quaterly: 4140,
+				quarterly: 4140,
 				yearly: 15660,
 			},
 		},
@@ -60,13 +60,13 @@ const servicePlans = {
 			hours: 15,
 			totalHours: {
 				monthly: 15,
-				quaterly: 60,
+				quarterly: 60,
 				yearly: 180,
 			},
 			features: ['Website QA & Testing', 'Custom Development', 'Bug Fixing', 'Support & Maintenance'],
 			prices: {
 				monthly: 582,
-				quaterly: 2328,
+				quarterly: 2328,
 				yearly: 6624,
 			},
 		},
@@ -79,7 +79,7 @@ const servicePlans = {
 			hours: 60,
 			totalHours: {
 				monthly: 60,
-				quaterly: 240,
+				quarterly: 240,
 				yearly: 720,
 			},
 			features: [
@@ -97,7 +97,7 @@ const servicePlans = {
 			],
 			prices: {
 				monthly: 2710,
-				quaterly: 10440,
+				quarterly: 10440,
 				yearly: 29520,
 			},
 		},
@@ -108,7 +108,7 @@ const servicePlans = {
 			hours: 30,
 			totalHours: {
 				monthly: 30,
-				quaterly: 120,
+				quarterly: 120,
 				yearly: 360,
 			},
 			features: [
@@ -122,7 +122,7 @@ const servicePlans = {
 			],
 			prices: {
 				monthly: 1380,
-				quaterly: 4140,
+				quarterly: 4140,
 				yearly: 15660,
 			},
 		},
@@ -133,7 +133,7 @@ const servicePlans = {
 			hours: 15,
 			totalHours: {
 				monthly: 15,
-				quaterly: 60,
+				quarterly: 60,
 				yearly: 180,
 			},
 			features: [
@@ -145,7 +145,7 @@ const servicePlans = {
 			],
 			prices: {
 				monthly: 582,
-				quaterly: 2328,
+				quarterly: 2328,
 				yearly: 6624,
 			},
 		},

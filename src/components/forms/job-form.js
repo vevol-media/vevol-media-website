@@ -91,7 +91,7 @@ export default function JobForm({ jobRole }) {
 			<button className={`vm-button vm-button--green-alt button ${isSending && 'is-loading'}`} type="submit">
 				Send Message
 			</button>
-			{isSent && <Help isColor="success">Message was successfuly sent. We'll get back to you ASAP.</Help>}
+			{isSent && <Help isColor="success">Message was successfully sent. We'll get back to you ASAP.</Help>}
 		</form>
 	);
 }

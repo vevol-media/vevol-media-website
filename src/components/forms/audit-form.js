@@ -101,7 +101,7 @@ export default function AuditForm() {
 			</Field>
 			<Field>
 				<Control>
-					<Input type="text" placeholder="Website" autcomplete="website" name="website" />
+					<Input type="text" placeholder="Website" autocomplete="website" name="website" />
 				</Control>
 			</Field>
 			<Field>
@@ -121,7 +121,7 @@ export default function AuditForm() {
 			<button className={`vm-button vm-button--black button ${isSending && 'is-loading'}`} type="submit">
 				Request Audit
 			</button>
-			{isSent && <Help isColor="success">Message was successfuly sent. We'll get back to you ASAP.</Help>}
+			{isSent && <Help isColor="success">Message was successfully sent. We'll get back to you ASAP.</Help>}
 		</form>
 	);
 

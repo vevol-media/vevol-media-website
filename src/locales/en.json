@@ -10,7 +10,7 @@
 		"uiUxWebDesign": "UI/UX Web Design",
 		"croOptimization": "Conversion Optimization",
 		"servicePlans": "Service Plans",
-		"servicePlansDescription": "Choose a monthly, quaterly or yearly recurring payment and get discounted quality services",
+		"servicePlansDescription": "Choose a monthly, quarterly or yearly recurring payment and get discounted quality services",
 		"ourWork": "Our Work",
 		"shopifyBuilds": "Shopify Builds",
 		"shopifyBuildsDescription": "Custom Shopify store builds, theme development, and full eCommerce solutions tailored to your brand.",
@@ -89,14 +89,14 @@
 		"messageRequired": "Message is required",
 		"sendMessage": "Send Message",
 		"disclaimer": "By submitting this form you agree for Vevol Media to contact you in regards to your query.",
-		"messageSent": "Message was successfuly sent. We'll get back to you ASAP."
+		"messageSent": "Message was successfully sent. We'll get back to you ASAP."
 	},
 	"servicePlans": {
 		"paymentPlan": "Payment Plan:",
 		"featurePacked": "Feature Packed - Most Effective",
 		"features": "Features",
 		"viewFeaturesIndex": "View Features Index",
-		"committedHours": "Commited Number of Hours per Month:",
+		"committedHours": "Committed Number of Hours per Month:",
 		"getStarted": "Get Started",
 		"enterprisePlanDescription": "This plan is catered directly on the needs of your company. We fully integrate in your business and cover all your technical requirements.",
 		"allFeaturesAvailable": "All Features Available",
