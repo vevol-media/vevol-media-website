@@ -26,12 +26,12 @@ export default function Page() {
 				<title>Service Plans - Vevol Media</title>
 				<meta
 					name="description"
-					content="Reduce your service costs with our monthly, quaterly or yearly service plans. Choose one of our innovation packages and let's build your future together."
+					content="Reduce your service costs with our monthly, quarterly or yearly service plans. Choose one of our innovation packages and let's build your future together."
 				/>
 			</Helmet>
 			<SlimHero
 				heading="Service Plans"
-				subheading="Cut down on your maintenance or development costs by paying a montly, quaterly or yearly fee."
+				subheading="Cut down on your maintenance or development costs by paying a montly, quarterly or yearly fee."
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>

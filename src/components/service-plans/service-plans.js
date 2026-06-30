@@ -9,7 +9,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 	const statigSegments = useRef();
 	const fixedSegments = useRef();
 	const plansList = useRef();
-	const [activeSegment, setActiveSegment] = useState('Quaterly');
+	const [activeSegment, setActiveSegment] = useState('Quarterly');
 	const { t, currentLocale } = useTranslations();
 	const useIsInViewport = (ref) => {
 		const [isIntersecting, setIsIntersecting] = useState(false);
@@ -41,7 +41,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 			<div className="service-plans__segments" ref={statigSegments}>
 				{/* <p>Payment Plan:</p> */}
 				{/* <div className="segments__types">
-					{['Quaterly', 'Yearly'].map((segment, index) => (
+					{['Quarterly', 'Yearly'].map((segment, index) => (
 						<span
 							key={index}
 							onClick={() => {
@@ -68,7 +68,7 @@ export default function ServicePlans({ scrollToFeatures }) {
 			>
 				<p>{t('servicePlans.paymentPlan')}</p>
 				<div className="segments__types">
-					{['Quaterly', 'Yearly'].map((segment, index) => (
+					{['Quarterly', 'Yearly'].map((segment, index) => (
 						<span
 							key={index}
 							onClick={() => {
