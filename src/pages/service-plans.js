@@ -31,7 +31,7 @@ export default function Page() {
 			</Helmet>
 			<SlimHero
 				heading="Service Plans"
-				subheading="Cut down on your maintenance or development costs by paying a montly, quarterly or yearly fee."
+				subheading="Cut down on your maintenance or development costs by paying a monthly, quarterly or yearly fee."
 			/>
 			<VevolSection backgroundColour={'white'}>
 				<Container>

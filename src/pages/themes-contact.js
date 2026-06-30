@@ -214,7 +214,7 @@ export default function ThemesContactPage({ data }) {
 							Send Message
 						</button>
 						{isSent && (
-							<Help isColor="success">Message was successfuly sent. We'll get back to you ASAP.</Help>
+							<Help isColor="success">Message was successfully sent. We'll get back to you ASAP.</Help>
 						)}
 					</form>
 				</Container>

@@ -56,7 +56,7 @@ export default function StrategicPartnershipsPage({ data }) {
 	return (
 		<Layout>
 			<Helmet>
-				<title>Succesful Partnerships Opportunities - Vevol Media</title>
+				<title>Successful Partnerships Opportunities - Vevol Media</title>
 				<meta
 					name="description"
 					content="Grow your partners network with eCommerce experts and developers. Let's build success stories together. Get in touch today!"
