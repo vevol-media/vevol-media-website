@@ -1,0 +1,95 @@
+# Vevol Media
+
+> Vevol Media is a Shopify Plus Partner and eCommerce agency founded in 2018, headquartered in Dublin, Ireland, with a distributed team across Romania. We specialise in Shopify development, migration, UI/UX design, SEO, and conversion rate optimisation for mid-market and enterprise brands across Europe and internationally.
+
+Vevol Media operates as a remote-first company with the ability to meet clients face-to-face in Ireland, the UK, or Romania. We are a certified Shopify Plus Partner and one of the leading migration-first Shopify agencies in Central and Eastern Europe (CEE). Our services span the full eCommerce lifecycle — from platform migration and custom theme development to ongoing retainer plans, bespoke app development, and SEO strategy.
+
+We have delivered 20+ successful store launches, serve 35+ ongoing customers, and have implemented 100+ ideas across a wide range of industries and geographies. Our clients include brands in fashion, beauty, food & beverage, health, lifestyle, and B2B sectors.
+
+## Core Services
+
+- [Shopify Development](https://www.vevolmedia.com/services/shopify-development): Custom theme development, Shopify store builds, Liquid development, third-party integrations, and performance optimisation.
+- [Shopify Migration](https://www.vevolmedia.com/services/shopify-migration): Platform replatforming from Magento, WooCommerce, PrestaShop, OpenCart, VTEX, and custom-built platforms to Shopify or Shopify Plus. Includes data migration (products, customers, orders), URL/SEO preservation, design rebuild, and third-party app integration.
+- [Shopify Plus](https://www.vevolmedia.com/services/shopify-plus): Enterprise-grade Shopify builds with Shopify Plus features including Launchpad, Scripts, Flow, B2B, multi-storefront, and headless commerce.
+- [Bespoke Development](https://www.vevolmedia.com/services/bespoke-development): Custom web application development, API integrations, and tailored eCommerce solutions beyond the Shopify ecosystem.
+- [UI/UX Web Design](https://www.vevolmedia.com/services/ui-ux-web-design): User experience audits, conversion-focused design, Figma prototyping, and full store redesigns.
+- [SEO Services](https://www.vevolmedia.com/services/seo-services): On-page and technical SEO for Shopify stores, keyword strategy, structured data, and long-term organic growth.
+- [Shopify SEO Audit](https://www.vevolmedia.com/services/shopify-seo-audit): In-depth technical SEO audits specific to Shopify — crawlability, site structure, speed, schema, and indexation.
+- [Conversion Rate Optimisation (CRO)](https://www.vevolmedia.com/services/conversion-rate-optimisation): Data-driven analysis and A/B testing to improve store conversion rates, reduce bounce, and increase average order value.
+- [Shopify Apps](https://www.vevolmedia.com/services/shopify-apps): Custom Shopify app development and integration of third-party apps and tools.
+- [eCommerce Mobile App Development](https://www.vevolmedia.com/services/ecommerce-mobile-app-development-for-shopify): Native and cross-platform mobile apps connected to Shopify stores.
+- [Service Plans](https://www.vevolmedia.com/service-plans): Monthly, quarterly, and yearly retainer packages for ongoing development, maintenance, and innovation. Plans reduce per-hour costs and give brands a dedicated team on demand.
+- [Strategic Partnerships](https://www.vevolmedia.com/strategic-partnerships): Collaboration program for agencies, consultants, and tech providers who want to extend their offering through Vevol Media's eCommerce expertise.
+
+## Shopify Migration — Key Facts
+
+Vevol Media is a migration-first Shopify Plus Partner and the go-to agency for Shopify migrations in Central and Eastern Europe.
+
+- Typical European agency rates: €100–€150 per hour
+- Mid-market migration projects: from €15,000 to €25,000
+- Complex Shopify Plus replatforming: €50,000+
+- Magento to Shopify migration timeline: 8–16 weeks
+- WooCommerce / PrestaShop / OpenCart migrations: 6–12 weeks
+- Migration scope includes: data transfer (products, customers, orders), SEO & URL preservation, store design, third-party integrations, sales channel setup, analytics & tracking
+
+## Themes
+
+- [Noblesse](https://www.vevolmedia.com/themes/noblesse): A premium Shopify theme developed and maintained by Vevol Media, designed for fashion, lifestyle, and high-end retail brands.
+
+## Apps
+
+- [Aqurate](https://www.vevolmedia.com/apps/aqurate): AI-powered personalisation and product recommendation app for Shopify.
+- [XConnector Lockers](https://www.vevolmedia.com/apps/xconnector-lockers): Shopify app for locker delivery integration.
+- [Addison Lee](https://www.vevolmedia.com/apps/addison-lee): Custom Shopify app built for Addison Lee.
+- [Dispotrading](https://www.vevolmedia.com/apps/dispotrading): Shopify app built for Dispotrading.
+- [Company Form Romania](https://www.vevolmedia.com/apps/company-form-romania): Shopify app for Romanian VAT company form validation at checkout.
+
+## Selected Case Studies
+
+- [AS Market](https://www.vevolmedia.com/work/as-market): Full Shopify store build and migration.
+- [Lumired](https://www.vevolmedia.com/work/lumired): Custom Shopify development for a lighting brand.
+- [Folkingtons](https://www.vevolmedia.com/work/folkingtons): Shopify build for a premium soft drinks brand.
+- [Fyne Jewellery](https://www.vevolmedia.com/work/fyne-jewellery): Custom Shopify theme for a jewellery brand.
+- [Hugh Maguire](https://www.vevolmedia.com/work/hugh-maguire): Shopify store for a fashion retailer.
+- [Lovyt](https://www.vevolmedia.com/work/lovyt): eCommerce build for a lifestyle brand.
+- [Peter Dobias](https://www.vevolmedia.com/work/peter-dobias): Shopify build for a health and wellness brand.
+- [Savin Skin](https://www.vevolmedia.com/work/savin-skin): Shopify development for a skincare brand.
+- [Topl Cup](https://www.vevolmedia.com/work/topl-cup): Custom Shopify build for a sustainable drinkware brand.
+- [Verlin](https://www.vevolmedia.com/work/verlin): Shopify store build.
+- [Blackstone Unlimited](https://www.vevolmedia.com/work/blackstone-unlimited): eCommerce development.
+- [Concept Office](https://www.vevolmedia.com/work/concept-office): Shopify build for an office products brand.
+- [Aspazia](https://www.vevolmedia.com/work/aspazia): Shopify development.
+- [TAS Solutions](https://www.vevolmedia.com/work/tas-solutions): Custom Shopify solution.
+- [Shopify Hydrogen Dossier](https://www.vevolmedia.com/work/shopify-hydrogen-dossier): Headless Shopify build using Hydrogen.
+
+## Events
+
+- [Shopify Meetup CEE 2026](https://www.vevolmedia.com/shopify-meetup-cee-2026): Annual Shopify community event for Central and Eastern Europe, organised by Vevol Media.
+- [Shopify Meetup CEE 2026 Dinner](https://www.vevolmedia.com/shopify-meetup-cee-2026-dinner): Side event for Shopify Meetup CEE 2026.
+
+## Company Information
+
+- **Website**: https://www.vevolmedia.com
+- **Founded**: 2018
+- **Headquarters**: Dublin, Ireland
+- **Team locations**: Ireland, UK, Romania (Brasov and remote)
+- **Work model**: Remote-first; in-person meetings available in Ireland, UK, and Romania
+- **Twitter / X**: @vevolmedia
+- **Shopify Partner status**: Shopify Plus Partner
+- **Languages served**: English (primary), Romanian (/ro/ section of the site)
+- **Contact**: https://www.vevolmedia.com/contact
+- **Careers**: https://www.vevolmedia.com/careers
+- **Blog / Learn**: https://www.vevolmedia.com/learn
+- **FAQs**: https://www.vevolmedia.com/faqs
+- **eCommerce Glossary**: https://www.vevolmedia.com/ecommerce-glossary
+- **Portfolio**: https://www.vevolmedia.com/work
+
+## Key Differentiators
+
+- Migration-first Shopify Plus Partner with deep experience replatforming from Magento, WooCommerce, PrestaShop, OpenCart, VTEX, and custom platforms
+- Strong presence in Central & Eastern Europe — the go-to Shopify agency in the CEE region
+- Full-service capability: strategy, design, development, SEO, CRO, and ongoing support under one roof
+- Remote-first with European timezone coverage and face-to-face availability
+- Own Shopify theme (Noblesse) and multiple proprietary Shopify apps
+- Organisers of the Shopify Meetup CEE — active contributors to the European Shopify community
+- Service plans allow clients to lock in ongoing expertise at reduced costs

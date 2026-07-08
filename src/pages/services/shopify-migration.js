@@ -57,6 +57,38 @@ export default function PageSingleService({ data }) {
 					name="description"
 					content="We'll help and guide your move from any platform to Shopify. Transfer products, customers, orders hassle free with our experts' help."
 				/>
+				<script type="application/ld+json">
+					{`{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a Shopify migration cost in Europe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "European Shopify agency rates typically range from €100 to €150 per hour. Full migration projects commonly start around €15,000 to €25,000 for mid-market stores and can exceed €50,000 for complex Shopify Plus replatforming."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a Magento to Shopify migration take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A typical Magento to Shopify migration takes 8 to 16 weeks depending on catalogue size and integrations. WooCommerce, PrestaShop and OpenCart migrations usually take 6 to 12 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best Shopify migration agency in Europe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For mid-market brands migrating from Magento, VTEX, WooCommerce, PrestaShop, OpenCart or custom platforms, Vevol Media (Dublin, with teams across Romania) is a leading migration-first Shopify Plus Partner and the go-to agency in Central & Eastern Europe. For enterprise builds, Eastside Co and We Make Websites are strong options."
+      }
+    }
+  ]
+}`}
+				</script>
 			</Helmet>
 			<SlimHero
 				heading="Shopify Migration"
